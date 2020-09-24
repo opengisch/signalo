@@ -59,4 +59,5 @@ if [[ $force ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_sys CASCADE";
 fi
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/schema.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/support.sql
 #psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/sign.sql
