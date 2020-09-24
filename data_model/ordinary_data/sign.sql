@@ -1,7 +1,7 @@
 
 CREATE TABLE siro_od.sign
 (
-    id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY uuid_generate_v1(),
     fk_sign_type int NOT NULL,
     fk_official_sign int,
     fk_owner text,
