@@ -1,0 +1,53 @@
+name: Test and build Docker image
+
+on:
+  push:
+    branches:
+      - master
+    tags:
+      - '*'
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  docker-tests:
+    name: Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: "build dockerfile"
+        run: docker build -f .docker/Dockerfile --tag opengisch/siro:unstable .
+
+      - name: "initialize container"
+        run: |
+          docker run -d -p 5432:5432 --name siro opengisch/siro:unstable
+          docker exec siro init_db.sh wait
+
+      - name: "dockerhub login"
+        if: github.event_name != 'pull_request'
+        env:
+          DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
+          DOCKERHUB_PASSWORD: ${{ secrets.DOCKERHUB_PASSWORD }}
+        run: |
+          docker login --username "$DOCKER_USERNAME" --password "$DOCKER_PASSWORD"
+
+      - name: "push to dockerhub"
+        if: github.event_name != 'pull_request'
+        run: |
+          docker push opengisch/siro:unstable
+
+      - name: "push release to dockerhub"
+        if: github.event_name != 'pull_request' && github.ref != 'refs/heads/master'
+        run: |
+          docker tag opengisch/siro:unstable opengisch/siro:${GITHUB_REF##*/}
+          docker push opengisch/siro:${GITHUB_REF##*/}
+          docker tag opengisch/siro:unstable opengisch/siro:latest
+          docker push opengisch/siro:latest
+
+      - name: "failure logs"
+        if: failure()
+        run: |
+          docker logs siro
