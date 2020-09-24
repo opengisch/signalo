@@ -14,4 +14,4 @@ INSERT INTO siro_vl.coating (id, value_en, value_fr, value_de) VALUES (1, 'unkno
 INSERT INTO siro_vl.coating (id, value_en, value_fr, value_de) VALUES (2, 'other', 'autre', 'other');
 INSERT INTO siro_vl.coating (id, value_en, value_fr, value_de) VALUES (3, 'to be determined', 'à déterminer', 'to be determined');
 
-INSERT INTO siro_vl.coating (id, value_en, value_fr, value_de) VALUES (1, 'xxx', 'xxx', 'xxx');
+INSERT INTO siro_vl.coating (id, value_en, value_fr, value_de) VALUES (10, 'xxx', 'xxx', 'xxx');
