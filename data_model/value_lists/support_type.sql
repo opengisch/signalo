@@ -15,4 +15,4 @@ INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (4, 'lamppost', 'c
 INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (5, 'jib', 'potence', 'jib');
 INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (6, 'facade', 'façade', 'facade');
 INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (7, 'wall', 'mur', 'wall');
-INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (7, 'other', 'autre', 'other');
+INSERT INTO siro_vl (id, value_en, value_fr, value_de) VALUES (8, 'other', 'autre', 'other');
