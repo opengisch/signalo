@@ -16,10 +16,10 @@ CREATE TABLE siro_od.sign
     fk_lighting int,
     destination text,
     azimut smallint,
-    comment text
+    comment text,
     photo text,
-    CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_type) REFERENCES siro_vl.sign_type (id) MATCH SIMPLE,
-    CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official) REFERENCES siro_vl.official_sign (id) MATCH SIMPLE,
+    CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_sign_type) REFERENCES siro_vl.sign_type (id) MATCH SIMPLE,
+    CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES siro_vl.official_sign (id) MATCH SIMPLE,
     CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES siro_od.sign (id) MATCH SIMPLE,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_durability FOREIGN KEY (fk_durability) REFERENCES siro_vl.durability (id) MATCH SIMPLE,
