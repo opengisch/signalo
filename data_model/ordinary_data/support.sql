@@ -4,7 +4,7 @@
 
 CREATE TABLE siro_od.support
 (
-    id uuid PRIMARY KEY,
+    id uuid PRIMARY KEY default uuid_generate_v1(),
     adress text,
     fk_support_type integer,
     fk_owner text,

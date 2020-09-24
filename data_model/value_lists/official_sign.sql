@@ -3,6 +3,7 @@
 CREATE TABLE siro_vl.official_sign
 (
   id text primary key,
+  active boolean default true,
   value_en text,
   value_fr text,
   value_de text,
