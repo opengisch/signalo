@@ -6,7 +6,7 @@ CREATE TABLE siro_vl.support_type
   active boolean default true,
   value_en text,
   value_fr text,
-  value_de text,
+  value_de text
 );
 
 INSERT INTO siro_vl.support_type (id, value_en, value_fr, value_de) VALUES (1, 'unknown', 'inconnu', 'unknown');
