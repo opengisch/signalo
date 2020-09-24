@@ -6,7 +6,7 @@ CREATE TABLE siro_od.support
 (
     id uuid PRIMARY KEY,
     adress text,
-    fk_support_type integer,
+    fk_support_type_type integer,
     fk_owner text,
     type_base integer,
     height numeric(8,3),
