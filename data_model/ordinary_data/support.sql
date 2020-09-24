@@ -8,7 +8,7 @@ CREATE TABLE siro_od.support
     adress text,
     fk_support_type integer,
     fk_owner text,
-    fk_type_base integer,
+    fk_base_type integer,
     height numeric(8,3),
     height_free_under_signal numeric(8,3),
     date_install date,
@@ -19,5 +19,5 @@ CREATE TABLE siro_od.support
     geometry geometry(Point,2056) NOT NULL,
     CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES siro_vl.support_type (id) MATCH SIMPLE,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH SIMPLE,
-    CONSTRAINT fkey_type_base FOREIGN KEY (fk_type_base) REFERENCES siro_vl.type_base (id) MATCH SIMPLE
+    CONSTRAINT fkey_base_type FOREIGN KEY (fk_base_type) REFERENCES siro_vl.base_type (id) MATCH SIMPLE
 );
