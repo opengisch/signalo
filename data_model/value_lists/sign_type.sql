@@ -10,9 +10,9 @@ CREATE TABLE siro_vl.sign_type
   value_de text
 );
 
-INSERT INTO siro_vl.status (id, value_en, value_fr, value_de) VALUES (1, 'unknown', 'inconnu', 'unknown');
-INSERT INTO siro_vl.status (id, value_en, value_fr, value_de) VALUES (2, 'other', 'autre', 'other');
-INSERT INTO siro_vl.status (id, value_en, value_fr, value_de) VALUES (3, 'to be determined', 'à déterminer', 'to be determined');
+INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (1, 'unknown', 'inconnu', 'unknown');
+INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (2, 'other', 'autre', 'other');
+INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (3, 'to be determined', 'à déterminer', 'to be determined');
 
 INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (10, 'official', 'officiel', 'official');
 INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (11, 'touristic', 'touristique', 'touristic');
