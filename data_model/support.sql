@@ -1,14 +1,14 @@
--- Table: siro.shelf
+-- Table: siro_od.support
 
--- DROP TABLE siro.shelf;
+-- DROP TABLE siro_od.support;
 
-CREATE TABLE siro.shelf
+CREATE TABLE siro_od.support
 (
     id serial PRIMARY KEY,
     adress text COLLATE pg_catalog."default",
     adress_no abstime,
     adress_additional text COLLATE pg_catalog."default",
-    type_shelf integer,
+    type_support integer,
     owner integer,
     type_base integer,
     height numeric(8,3),
@@ -25,5 +25,5 @@ WITH (
 )
 TABLESPACE pg_default;
 
-ALTER TABLE siro.shelf
+ALTER TABLE siro_od.support
     OWNER to postgres;
