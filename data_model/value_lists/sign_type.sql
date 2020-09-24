@@ -6,7 +6,7 @@ CREATE TABLE siro_vl.sign_type
   id serial primary key,
   value_en text,
   value_fr text,
-  value_de text,
+  value_de text
 );
 
 INSERT INTO siro_vl.sign_type (id, value_en, value_fr, value_de) VALUES (1, 'official', 'officiel', 'official');

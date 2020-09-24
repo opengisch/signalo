@@ -3,8 +3,8 @@
 
 CREATE TABLE siro_od.owner
 (
-    id uuid PRIMARY KEY,
-    name text,
+    id uuid PRIMARY KEY DEFAULT uuid_generate_v1(),
+    name text
 );
 
 INSERT INTO siro_od.owner (name) VALUES ('Commune');

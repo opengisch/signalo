@@ -8,7 +8,7 @@ CREATE TABLE siro_vl.official_sign
   value_de text,
   description_en text,
   description_fr text,
-  description_en text,
+  description_de text
 );
 
 
