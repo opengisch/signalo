@@ -60,4 +60,7 @@ if [[ $force ]]; then
 fi
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/schema.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/support.sql
-#psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/sign.sql
+
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/official_sign.sql
+
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/sign.sql
