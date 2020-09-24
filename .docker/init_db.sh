@@ -75,7 +75,7 @@ if [ "$#" == "0" ] || [ "$1" == "build" ]; then
 
 fi
 
-if [ "$#" == "0" ] || [ "$1" == "build_pum" ]; then
+if [ "$1" == "build_pum" ]; then
 
   recreate_db "${DB_BASE_NAME}_build_pum"
   echo '----------------------------------------'
