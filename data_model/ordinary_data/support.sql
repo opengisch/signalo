@@ -19,5 +19,6 @@ CREATE TABLE siro_od.support
     geometry geometry(Point,2056) NOT NULL,
     CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES siro_vl.support_type (id) MATCH SIMPLE,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH SIMPLE,
+    CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_support_base_type FOREIGN KEY (fk_support_base_type) REFERENCES siro_vl.support_base_type (id) MATCH SIMPLE
 );
