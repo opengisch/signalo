@@ -7,7 +7,7 @@ CREATE TABLE siro_od.frame
     id uuid PRIMARY KEY default uuid_generate_v1(),
     fk_frame_type int,
     fk_fixing_type int,
-    double-sided boolean,
+    double_sided boolean,
     fk_status int,
     rank int,
     fk_frame_type int,
