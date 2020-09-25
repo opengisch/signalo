@@ -11,7 +11,7 @@ CREATE TABLE siro_od.frame
     fk_status int,
     rank int,
     fk_frame_type int,
-    fk_fixing_type int,
+    fk_frame_fixing_typee int,
     double_sided boolean,
     fk_status int,
     comment text,
