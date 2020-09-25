@@ -9,6 +9,7 @@ CREATE TABLE siro_od.sign
     fk_durability int,
     fk_status int,
     installation_date date,
+    manufacturing_date date, -- to manage the the guarantee
     case_id text,
     case_decision text,
     -- date_repose
