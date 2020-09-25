@@ -36,6 +36,7 @@ while getopts ":drfs:p:" opt; do
       ;;
     d)
       demo_data=True
+      ;;
     s)
       SRID=$OPTARG
       echo "-s was triggered, SRID: $SRID" >&2
