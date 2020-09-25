@@ -10,7 +10,6 @@ CREATE TABLE siro_od.frame
     double_sided boolean,
     fk_status int,
     rank int,
-    fk_frame_type int,
     fk_fixing_type int,
     double_sided boolean,
     fk_status int,
