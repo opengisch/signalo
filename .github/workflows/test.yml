@@ -27,6 +27,7 @@ jobs:
         run: |
           docker run -d -p 5432:5432 --name siro opengisch/siro:unstable
           docker exec siro init_db.sh wait
+          docker exec siro init_db.sh build -d
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
