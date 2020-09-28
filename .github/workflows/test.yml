@@ -21,12 +21,12 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: "build dockerfile"
-        run: docker build -f .docker/Dockerfile --tag opengisch/siro:unstable .
+        run: docker build -f .docker/Dockerfile  --build-arg AUTO_INIT=False --tag opengisch/siro:unstable .
 
       - name: "initialize container"
         run: |
           docker run -d -p 5432:5432 --name siro opengisch/siro:unstable
-          docker exec siro init_db.sh wait
+          docker exec siro init_db.sh build -d
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'

@@ -68,7 +68,7 @@ if [ "$#" == "0" ] || [ "$1" == "build" ]; then
   echo '----------------------------------------'
   echo "Building database normally"
 
-  PGSERVICE=${DB_BASE_NAME}_build ./data_model/setup.sh
+  PGSERVICE=${DB_BASE_NAME}_build ./data_model/setup.sh ${@:2}
 
   echo "Done ! Database ${DB_BASE_NAME}_build can now be used."
   echo '----------------------------------------'
