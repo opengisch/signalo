@@ -66,7 +66,7 @@ if [ "$#" == "0" ] || [ "$1" == "build" ]; then
 
   recreate_db "${DB_BASE_NAME}_build"
   echo '----------------------------------------'
-  echo "Building database normally"
+  echo "Building database normally (passing argument: ${@:2})"
 
   PGSERVICE=${DB_BASE_NAME}_build ./data_model/setup.sh ${@:2}
 
