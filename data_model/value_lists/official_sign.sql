@@ -1,5 +1,7 @@
 
 
+-- see https://www.astra.admin.ch/astra/fr/home/documentation/regles-de-la-circulation/signaux.html
+
 CREATE TABLE siro_vl.official_sign
 (
   id text primary key,
