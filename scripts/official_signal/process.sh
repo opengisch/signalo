@@ -10,7 +10,8 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #chmod +x ${DIR}/download.sh
 
 # create insert SQL
-cat ${DIR}/wiki_list.dat | gsed "s/’/'/; s/'/''/g" | gsed -r 's@^(.*)\|([0-9](\.[0-9]+)+a?) (.*)$@INSERT INTO siro_vl.official_sign (id, value_en, value_fr, value_de, img) VALUES (\x27\2\x27, \x27\x27, \x27\4\x27, \x27\x27, §\2§);@' > ${DIR}/insert.sql
-gsed -i -r 's/§([0-9])\.([0-9]+a?)(\.[0-9])?§/\x27\1\2\3.svg\x27/' ${DIR}/insert.sql
+cat ${DIR}/wiki_list.dat | gsed "s/’/'/; s/'/''/g" | gsed -r 's@^(.*)\|([0-9](\.[0-9]+)+a?) (.*)$@INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES (\x27\2\x27, \x27\4\x27, §\2§, §\2§, §\2§, §\2§);@' > ${DIR}/insert.sql
+gsed -i -r 's/§([0-9])\.([0-9]+a?)(\.[0-9])?§/\x27\1\2\3.svg\x27/g' ${DIR}/insert.sql
+gsed -i -r 's/\.([0-9])\.svg/-\1.svg/g' ${DIR}/insert.sql
 
 
