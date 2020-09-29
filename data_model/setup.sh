@@ -76,8 +76,8 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/
 
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/owner.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/support.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/sign.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/frame.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/sign.sql
 
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
