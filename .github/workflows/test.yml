@@ -29,6 +29,11 @@ jobs:
           docker exec siro init_db.sh wait
           docker exec siro init_db.sh build -d
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+        
       - name: "schema lint"
         run: |
           npm i -g schemalint
