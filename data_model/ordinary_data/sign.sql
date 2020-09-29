@@ -25,7 +25,7 @@ CREATE TABLE siro_od.sign
     CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES siro_od.sign (id) MATCH SIMPLE,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_durability FOREIGN KEY (fk_durability) REFERENCES siro_vl.durability (id) MATCH SIMPLE,
-    CONSTRAINT fkey_frame FOREIGN KEY (fk_frame) REFERENCES siro_frame (id) MATCH SIMPLE,
+    CONSTRAINT fkey_frame FOREIGN KEY (fk_frame) REFERENCES siro_od.frame (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_coating FOREIGN KEY (fk_coating) REFERENCES siro_vl.coating (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_lighting FOREIGN KEY (fk_lighting) REFERENCES siro_vl.lighting (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH SIMPLE
