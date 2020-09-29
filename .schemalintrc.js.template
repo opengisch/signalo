@@ -1,0 +1,28 @@
+module.exports = {
+  connection: {
+    host: 'localhost',
+    user: 'postgres',
+    password: 'postgres',
+    database: 'siro_build',
+    charset: 'utf8',
+  },
+
+  rules: {
+    'name-casing': ['error', 'snake'],
+    'name-inflection': ['error', 'singular'],
+    'prefer-jsonb-to-json': ['error'],
+    'prefer-text-to-varchar': ['error'],
+    'prefer-identity-to-serial': ['error'],
+    'require-primary-key': ['error']
+  },
+
+  schemas: [
+    { name: 'siro_od' },
+    { name: 'siro_vl' },
+    { name: 'siro_sys' },
+  ],
+
+  ignores: [
+    { identifierPattern: 'siro_vl\\.status', rulePattern: 'name-inflection' },
+  ]
+};

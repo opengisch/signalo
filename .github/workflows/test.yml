@@ -29,6 +29,17 @@ jobs:
           docker exec siro init_db.sh wait
           docker exec siro init_db.sh build -d
 
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - run: npm install
+        
+      - name: "schema lint"
+        run: |
+          npm i -g schemalint
+          cp .schemalintrc.js.template .schemalintrc.js
+          schemalint
+
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
