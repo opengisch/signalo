@@ -13,6 +13,7 @@ CREATE TABLE siro_od.sign
     case_id text,
     case_decision text,
     -- date_repose
+    fk_frame uuid,
     fk_coating int,
     fk_lighting int,
     destination text,

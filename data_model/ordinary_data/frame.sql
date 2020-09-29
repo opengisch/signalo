@@ -10,6 +10,7 @@ CREATE TABLE siro_od.frame
     fk_frame_fixing_type int,
     double_sided boolean,
     fk_status int,
+    fk_support uuid,
     comment text,
     picture text,
     CONSTRAINT fkey_vl_frame_type FOREIGN KEY (fk_frame_type) REFERENCES siro_vl.frame_type (id) MATCH SIMPLE,
