@@ -27,3 +27,4 @@ for IMAGE in ${DIR}/*.svg; do
 done
 
 exit ${return_code}
+
