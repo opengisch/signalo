@@ -6,9 +6,9 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../images/official
 
 return_code=0
 
-LANGS=(de fr it ro)
-for LANG in "${LANGS[@]}"; do
-  IMAGES=$(psql -t -c "SELECT img_${LANG} FROM siro_vl.official_sign")
+LANGUAGES=(de fr it ro)
+for LANGUAGE in "${LANGUAGES[@]}"; do
+  IMAGES=$(psql -t -c "SELECT img_${LANGUAGE} FROM siro_vl.official_sign")
   for IMAGE in ${IMAGES}; do
     if [[ ! -f ${DIR}/${IMAGE} ]]; then
       FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${LANG} = '${IMAGE}'")
