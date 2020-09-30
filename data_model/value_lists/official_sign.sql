@@ -116,9 +116,9 @@ INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro)
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.2-NP', 'Signal de zone sans stationnement', '259-2-b.svg', '259-2-b.svg', '259-2-e.svg', '259-2-e.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.2-P', 'Signal de zone de parc', '259-2-c.svg', '259-2-c.svg', '259-2-f.svg', '259-2-f.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.3', 'Zone piétonne', '259-3-a.svg', '259-3-a.svg', '259-3-b.svg', '259-3-b.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.4', 'Fin de la zone piétonne', '259-4.svg', '259-4.svg', '259-4.svg', '259-4.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.5', 'Zone de rencontre', '259-5.svg', '259-5.svg', '259-5.svg', '259-5.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.6', 'Fin de la zone de rencontre', '259-6.svg', '259-6.svg', '259-6.svg', '259-6.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.4', 'Fin de la zone piétonne', '259-4-a.svg', '259-4-a.svg', '259-4-b.svg', '259-4-b.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.5', 'Zone de rencontre', '259-5-a.svg', '259-5-a.svg', '259-5-b.svg', '259-5-b.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.59.6', 'Fin de la zone de rencontre', '259-6-a.svg', '259-6-a.svg', '259-6-b.svg', '259-6-b.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.60', 'Piste cyclable', '260.svg', '260.svg', '260.svg', '260.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.60.1', 'Fin de la piste cyclable', '260-1.svg', '260-1.svg', '260-1.svg', '260-1.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('2.61', 'Chemin pour piétons', '261.svg', '261.svg', '261.svg', '261.svg');
@@ -213,7 +213,7 @@ INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro)
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.60', 'Panneau annonçant la prochaine jonction', '460.svg', '460.svg', '460.svg', '460.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.61', 'Indicateur de direction avancé, destiné aux jonctions', '461.svg', '461.svg', '461.svg', '461.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.62', 'Indicateur de direction avancé destiné aux jonctions', '462.svg', '462.svg', '462.svg', '462.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.63', 'Panneau indicateur de sortie', '463.svg', '463.svg', '463.svg', '463.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.63', 'Panneau indicateur de sortie', '463-a.svg', '463-b.svg', '463-c.svg', '463-c.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.64', 'Panneau de bifurcation', '464.svg', '464.svg', '464.svg', '464.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.65', 'Panneau des distances en kilomètres', '465.svg', '465.svg', '465.svg', '465.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.66', 'Panneau de ramification', '466.svg', '466.svg', '466.svg', '466.svg');
@@ -221,7 +221,7 @@ INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro)
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.68', 'Deuxième indicateur de direction avancé, destiné aux ramifications', '468.svg', '468.svg', '468.svg', '468.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.69', 'Panneau de présélection au- dessus d''une voie de circulation sur autoroute et semi-autoroute', '469.svg', '469.svg', '469.svg', '469.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.70', 'Plaque indiquant un téléphone de secours', '470.svg', '470.svg', '470.svg', '470.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.71', 'Panneau indiquant un centre de police', '471.svg', '471.svg', '471.svg', '471.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.71', 'Panneau indiquant un centre de police', '471-a.svg', '471-b.svg', '471-c.svg', '471-c.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.72', 'Plaque indiquant le nombre de kilomètres', '472.svg', '472.svg', '472.svg', '472.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.73', 'Plaque indiquant le nombre d''hectomètres', '473.svg', '473.svg', '473.svg', '473.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.75', 'Etat de la route', '475.svg', '475.svg', '475.svg', '475.svg');
@@ -240,7 +240,7 @@ INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro)
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.88', 'Poste d''information', '488.svg', '488.svg', '488.svg', '488.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.89', '[[Auberge de jeunesse]]', '489.svg', '489.svg', '489.svg', '489.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.90', 'Bulletin routier radiophonique', '490.svg', '490.svg', '490.svg', '490.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.91', 'Service religieux', '491.svg', '491.svg', '491.svg', '491.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.91', 'Service religieux', '491-a.svg', '491-b.svg', '491-c.svg', '491-d.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.92', 'Extincteur', '492.svg', '492.svg', '492.svg', '492.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.93', 'Information sur les limitations générales de vitesse', '493.svg', '493.svg', '493.svg', '493.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('4.94', 'Direction et distance vers l''issue de secours la plus proche', '494.svg', '494.svg', '494.svg', '494.svg');
@@ -277,7 +277,7 @@ INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro)
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.33', 'Pousser le cycle', '533.svg', '533.svg', '533.svg', '533.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.34', 'Piéton', '534.svg', '534.svg', '534.svg', '534.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.35', 'Tramway ou chemin de fer routier', '535.svg', '535.svg', '535.svg', '535.svg');
-INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.36', 'Tracteur', '536.svg', '536.svg', '536.svg', '536.svg');
+INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.36', 'Tracteur', '536b.svg', '536b.svg', '536b.svg', '536b.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.37', 'Char', '537.svg', '537.svg', '537.svg', '537.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.38', 'Dameuse de pistes', '538.svg', '538.svg', '538.svg', '538.svg');
 INSERT INTO siro_vl.official_sign (id, value_fr, img_de, img_fr, img_it, img_ro) VALUES ('5.39', 'Ski de fond', '539.svg', '539.svg', '539.svg', '539.svg');

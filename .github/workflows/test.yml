@@ -33,6 +33,9 @@ jobs:
         with:
           node-version: '12'
       - run: npm install
+
+      - name: "test images"
+        run: docker exec siro sh -c "PGSERVICE=siro_build /src/tests/official_sign_images.sh"
         
       - name: "schema lint"
         run: |
