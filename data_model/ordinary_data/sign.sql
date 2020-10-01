@@ -2,6 +2,7 @@
 CREATE TABLE siro_od.sign
 (
     id uuid PRIMARY KEY default uuid_generate_v1(),
+    rank int default 1,
     fk_sign_type int NOT NULL,
     fk_official_sign text,
     fk_parent uuid, --self-reference
