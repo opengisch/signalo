@@ -1,4 +1,4 @@
-ARG POSTGIS_VERSION=11-2.5
+ARG POSTGIS_VERSION=11-3.0
 FROM postgis/postgis:${POSTGIS_VERSION}
 
 ARG AUTO_INIT=True
@@ -17,9 +17,9 @@ RUN mkdir /downloads
 RUN chown postgres /downloads
 
 # Configure the postgres connections
-RUN printf '[siro_release]\ndbname=siro_release\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
-RUN printf '[siro_build]\ndbname=siro_build\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
-RUN printf '[siro_build_pum]\ndbname=siro_build_pum\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
+RUN printf '[siro_release]\ndbname=siro_release\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro_build]\ndbname=siro_build\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro_build_pum]\ndbname=siro_build_pum\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
 
 RUN chmod +x /src/.docker/init_db.sh
 ENV PATH="/src/.docker:${PATH}"
