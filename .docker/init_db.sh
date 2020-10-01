@@ -11,6 +11,9 @@ if [ ! "$#" == "0" ]; then
   fi
 fi
 
+# copy pg_service.conf for psycopg2 (it cannot find it currently)
+cp $(pg_config --sysconfdir)/pg_service.conf ~/.pg_service.conf
+
 printf "waiting for postgres…"
 until psql -U postgres -c '\q' > /dev/null 2>&1; do
   printf " 🐘"
