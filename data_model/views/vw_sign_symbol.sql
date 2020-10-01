@@ -15,6 +15,7 @@ SELECT
     sign.rank AS sign_rank,
     sign.fk_official_sign,
     img_fr,
+    img_height,
     ROW_NUMBER () OVER (
     PARTITION BY az_group.azimut
     ) AS final_rank,
