@@ -1,4 +1,3 @@
-DROP VIEW IF EXISTS siro_od.vw_sign_symbol;
 
 CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS
 

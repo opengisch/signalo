@@ -7,7 +7,7 @@ ARG AUTO_INIT=True
 RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev wget && apt-get clean
 
 # Python deps
-RUN pip3 install pytest
+RUN pip3 install pytest psycopg2
 
 # Add source
 ADD . /src

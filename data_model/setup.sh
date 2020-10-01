@@ -19,7 +19,7 @@ set -e
 
 SRID=2056
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/..
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [[ -z ${PGSERVICE} ]]; then
   PGSERVICE=pg_siro
@@ -61,25 +61,27 @@ if [[ $force == True ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_vl CASCADE";
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_sys CASCADE";
 fi
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/schema.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/schema.sql
 
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/durability.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/sign_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/frame_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/frame_fixing_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/support_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/support_base_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/status.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/lighting.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/coating.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/value_lists/official_sign.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/durability.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/sign_type.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/frame_type.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/frame_fixing_type.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/support_type.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/support_base_type.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/status.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/lighting.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/coating.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/official_sign.sql
 
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/owner.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/support.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/frame.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/ordinary_data/sign.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/owner.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/support.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/frame.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/sign.sql
 
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/data_model/demo_data/demo_data.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/demo_data.sql
 fi
+
+${DIR}/views/create_views.py --pg_service ${PGSERVICE}
