@@ -9,7 +9,12 @@ CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS
 --LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
 --LEFT JOIN siro_od.support ON support.id = frame.fk_support
 
-SELECT az_group.azimut, sign.id, frame.rank AS frame_rank, sign.rank AS sign_rank
+SELECT
+    az_group.azimut,
+    sign.id,
+    frame.rank AS frame_rank,
+    sign.rank AS sign_rank,
+    sign.fk_official_sign
 FROM siro_od.sign
 LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
 LEFT JOIN siro_od.support ON support.id = frame.fk_support

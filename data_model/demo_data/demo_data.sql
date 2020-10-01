@@ -24,17 +24,17 @@ VALUES ('00000000-0000-0000-ffff-000000000007',6,1,1,true,1,'00000000-0000-0000-
 
 -- Insert signs
 
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000001',1,1,1,1,20,'00000000-0000-0000-ffff-000000000002');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000002',1,1,3,1,19,'00000000-0000-0000-ffff-000000000003');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000003',1,1,1,1,214,'00000000-0000-0000-ffff-000000000004');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000004',1,1,1,1,210,'00000000-0000-0000-ffff-000000000005');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000005',1,1,1,1,180,'00000000-0000-0000-ffff-000000000006');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000006',1,1,1,1,180,'00000000-0000-0000-ffff-000000000007');
-INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_durability,fk_status,azimut,fk_frame)
-VALUES ('00000000-0000-0000-eeee-000000000007',2,1,1,1,20,'00000000-0000-0000-ffff-000000000002');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000001',1,1,'1.01',1,1,20,'00000000-0000-0000-ffff-000000000002');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000002',1,1,'1.03',1,1,19,'00000000-0000-0000-ffff-000000000003');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000003',1,1,'1.25a',1,1,214,'00000000-0000-0000-ffff-000000000004');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000004',1,1,'1.30',1,1,210,'00000000-0000-0000-ffff-000000000005');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000005',1,1,'2.15.1',1,1,180,'00000000-0000-0000-ffff-000000000006');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000006',1,1,'2.16',1,1,180,'00000000-0000-0000-ffff-000000000007');
+INSERT INTO siro_od.sign(id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,azimut,fk_frame)
+VALUES ('00000000-0000-0000-eeee-000000000007',2,1,'4.52',1,1,20,'00000000-0000-0000-ffff-000000000002');
