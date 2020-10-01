@@ -26,22 +26,22 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     view_sql = """
         CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS        
         SELECT
-            sign.id,
-            az_group.azimut,
-            {sign_columns}
-            {vl_official_sign_columns}
-            ROW_NUMBER () OVER (
-            PARTITION BY az_group.azimut
-            ) AS final_rank,
-            support.geometry::geometry(Point,%(SRID)s)
+            sign.id
+            , az_group.azimut_group
+            , {sign_columns}
+            , {vl_official_sign_columns}
+            , ROW_NUMBER () OVER (
+                PARTITION BY azimut_group
+                ) AS final_rank
+            , support.geometry::geometry(Point,%(SRID)s)
         FROM siro_od.sign
         LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
         LEFT JOIN siro_od.support ON support.id = frame.fk_support
         LEFT JOIN siro_vl.official_sign ON official_sign.id = sign.fk_official_sign
-        LEFT JOIN generate_series(-5,355,10) az_group (azimut)
-            ON sign.azimut >= az_group.azimut
-            AND sign.azimut < az_group.azimut + 10
-        ORDER BY azimut, final_rank;
+        LEFT JOIN generate_series(-5,355,10) az_group (azimut_group)
+            ON sign.azimut >= azimut_group
+            AND sign.azimut < azimut_group + 10
+        ORDER BY azimut_group, final_rank;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
@@ -49,11 +49,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ),
         vl_official_sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_vl', table_name='official_sign',
-            remove_pkey=False, indent=4
+            remove_pkey=False, indent=4, prefix='vl_official_sign'
         ),
     )
 
-    cursor.execute(view_sql)
+    cursor.execute(view_sql, variables)
     conn.commit()
     conn.close()
 
