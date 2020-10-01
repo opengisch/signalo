@@ -2,10 +2,12 @@
 
 import psycopg2
 import argparse
-
-import sys, os
+import sys
+import os
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
+
+from vw_sign_symbol import vw_sign_symbol
 
 
 def run_sql(file_path: str, pg_service: str, variables: dict = {}):
@@ -28,7 +30,7 @@ def create_views(srid: int,
     variables = {'SRID': srid}
 
     run_sql('data_model/views/drop_views.sql', pg_service, variables)
-    run_sql('data_model/views/vw_sign_symbol.sql', pg_service, variables)
+    vw_sign_symbol(pg_service=pg_service, srid=srid)
 
 
 if __name__ == "__main__":

@@ -1,4 +1,34 @@
+#!/usr/bin/env python3
+#
+# -- View: vw_qgep_wastewater_structure
 
+import argparse
+import os
+import psycopg2
+from yaml import safe_load
+from pirogue.utils import select_columns, insert_command, update_command, table_parts
+
+
+def vw_qgep_wastewater_structure(srid: int,
+                                 pg_service: str = None,
+                                 extra_definition: dict = None):
+    """
+    Creates qgep_wastewater_structure view
+    :param srid: EPSG code for geometries
+    :param pg_service: the PostgreSQL service name
+    :param extra_definition: a dictionary for additional read-only columns
+    """
+    if not pg_service:
+        pg_service = os.getenv('PGSERVICE')
+    assert pg_service
+    extra_definition = extra_definition or {}
+
+    variables = {'SRID': int(srid)}
+
+    conn = psycopg2.connect("service={0}".format(pg_service))
+    cursor = conn.cursor()
+
+    view_sql = """
 CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS
 
 --SELECT
