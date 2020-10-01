@@ -7,6 +7,7 @@ import sys, os
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 
+
 def run_sql(file_path: str, pg_service: str, variables: dict = {}):
     sql = open(file_path).read()
     conn = psycopg2.connect("service={0}".format(pg_service))
@@ -28,6 +29,7 @@ def create_views(srid: int,
 
     run_sql('data_model/views/drop_views.sql', pg_service, variables)
     run_sql('data_model/views/vw_sign_symbol.sql', pg_service, variables)
+
 
 if __name__ == "__main__":
 
