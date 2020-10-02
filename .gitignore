@@ -4,3 +4,4 @@
 .schemalintrc.js
 __pycache__
 *.qgs~
+local_test.sh

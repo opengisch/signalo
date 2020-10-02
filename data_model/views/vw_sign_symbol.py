@@ -48,7 +48,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         )     
         SELECT
           ordered_signs.*,
-          SUM( vl_official_sign_img_height ) OVER rolling_window AS shift
+          SUM( vl_official_sign_img_height ) OVER rolling_window AS shift,
+          COUNT (*) OVER ( PARTITION BY fk_frame ) AS nr_sign_per_frame
         FROM
           ordered_signs
           WINDOW rolling_window AS ( PARTITION BY support_id, azimut_group ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
