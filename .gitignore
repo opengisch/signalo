@@ -3,3 +3,4 @@
 *.orig
 .schemalintrc.js
 __pycache__
+*.qgs~

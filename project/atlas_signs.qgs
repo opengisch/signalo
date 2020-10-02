@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveDateTime="2020-10-02T08:49:01" version="3.14.16-Pi" saveUser="lunic" saveUserFull="Lucie Nicolier">
+<qgis saveUser="denis" version="3.14.0-Pi" projectname="" saveDateTime="2020-10-02T13:48:00" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -7,29 +7,29 @@
   <trust active="0"/>
   <projectCrs>
     <spatialrefsys>
-      <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-      <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+      <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+      <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
       <srsid>47</srsid>
       <srid>2056</srid>
       <authid>EPSG:2056</authid>
       <description>CH1903+ / LV95</description>
       <projectionacronym>somerc</projectionacronym>
-      <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+      <ellipsoidacronym>bessel</ellipsoidacronym>
       <geographicflag>false</geographicflag>
     </spatialrefsys>
   </projectCrs>
   <layer-tree-group>
     <customproperties/>
-    <layer-tree-layer providerKey="postgres" legend_exp="" name="vw_sign_symbol" source="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" expanded="1" patch_size="-1,-1" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" checked="Qt::Checked" legend_split_behavior="0">
+    <layer-tree-layer patch_size="-1,-1" expanded="1" providerKey="postgres" checked="Qt::Checked" legend_split_behavior="0" legend_exp="" name="vw_sign_symbol" source="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer providerKey="postgres" legend_exp="" name="support" source="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" expanded="1" patch_size="-1,-1" id="support_347aa750_1661_498f_a7e8_017adc616ba0" checked="Qt::Checked" legend_split_behavior="0">
+    <layer-tree-layer patch_size="-1,-1" expanded="1" providerKey="postgres" checked="Qt::Checked" legend_split_behavior="0" legend_exp="" name="support" source="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" id="support_347aa750_1661_498f_a7e8_017adc616ba0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer providerKey="postgres" legend_exp="" name="official_sign" source="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" expanded="1" patch_size="-1,-1" id="official_sign_699051fb_cfb7_41bd_adec_29758644a878" checked="Qt::Checked" legend_split_behavior="0">
+    <layer-tree-layer patch_size="-1,-1" expanded="1" providerKey="postgres" checked="Qt::Checked" legend_split_behavior="0" legend_exp="" name="official_sign" source="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" id="official_sign_699051fb_cfb7_41bd_adec_29758644a878">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer providerKey="wms" legend_exp="" name="OSM.ch Swiss-Style" source="type=xyz&amp;zmin=0&amp;zmax=18&amp;url=http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png" expanded="1" patch_size="-1,-1" id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997" checked="Qt::Checked" legend_split_behavior="0">
+    <layer-tree-layer patch_size="-1,-1" expanded="1" providerKey="wms" checked="Qt::Checked" legend_split_behavior="0" legend_exp="" name="OSM.ch Swiss-Style" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.osm.ch/osm-swiss-style/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0" id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997">
       <customproperties/>
     </layer-tree-layer>
     <custom-order enabled="0">
@@ -38,14 +38,150 @@
       <item>OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997</item>
     </custom-order>
   </layer-tree-group>
-  <snapping-settings mode="2" self-snapping="0" enabled="0" intersection-snapping="0" tolerance="12" scaleDependencyMode="0" maxScale="0" type="1" unit="1" minScale="0">
+  <snapping-settings self-snapping="0" maxScale="0" minScale="0" mode="2" intersection-snapping="0" type="1" scaleDependencyMode="0" enabled="0" tolerance="12" unit="1">
     <individual-layer-settings>
-      <layer-setting enabled="0" tolerance="12" maxScale="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" type="1" units="1" minScale="0"/>
-      <layer-setting enabled="0" tolerance="12" maxScale="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" type="1" units="1" minScale="0"/>
+      <layer-setting maxScale="0" units="1" minScale="0" type="1" enabled="0" tolerance="12" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
+      <layer-setting maxScale="0" units="1" minScale="0" type="1" enabled="0" tolerance="12" id="support_347aa750_1661_498f_a7e8_017adc616ba0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations/>
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
+    <units>meters</units>
+    <extent>
+      <xmin>2537921.77816921006888151</xmin>
+      <ymin>1152502.52669487404637039</ymin>
+      <xmax>2537993.00148602854460478</xmax>
+      <ymax>1152537.57380574918352067</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>47</srsid>
+        <srid>2056</srid>
+        <authid>EPSG:2056</authid>
+        <description>CH1903+ / LV95</description>
+        <projectionacronym>somerc</projectionacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <DataPlotly>
+    <Option type="Map">
+      <Option type="Map" name="dynamic_properties">
+        <Option value="" type="QString" name="name"/>
+        <Option name="properties"/>
+        <Option value="collection" type="QString" name="type"/>
+      </Option>
+      <Option type="Map" name="plot_layout">
+        <Option value="" type="QString" name="additional_info_expression"/>
+        <Option value="group" type="QString" name="bar_mode"/>
+        <Option value="0" type="double" name="bargaps"/>
+        <Option value="false" type="bool" name="bins_check"/>
+        <Option value="true" type="bool" name="legend"/>
+        <Option value="v" type="QString" name="legend_orientation"/>
+        <Option type="invalid" name="legend_title"/>
+        <Option type="Map" name="polar">
+          <Option type="Map" name="angularaxis">
+            <Option value="clockwise" type="QString" name="direction"/>
+          </Option>
+        </Option>
+        <Option type="Map" name="range_slider">
+          <Option value="1" type="int" name="borderwidth"/>
+          <Option value="false" type="bool" name="visible"/>
+        </Option>
+        <Option value="" type="QString" name="title"/>
+        <Option type="invalid" name="x_inv"/>
+        <Option type="invalid" name="x_max"/>
+        <Option type="invalid" name="x_min"/>
+        <Option value="" type="QString" name="x_title"/>
+        <Option value="linear" type="QString" name="x_type"/>
+        <Option type="invalid" name="xaxis"/>
+        <Option type="invalid" name="y_inv"/>
+        <Option type="invalid" name="y_max"/>
+        <Option type="invalid" name="y_min"/>
+        <Option value="" type="QString" name="y_title"/>
+        <Option value="linear" type="QString" name="y_type"/>
+        <Option value="" type="QString" name="z_title"/>
+      </Option>
+      <Option type="Map" name="plot_properties">
+        <Option type="invalid" name="additional_hover_text"/>
+        <Option value="10" type="int" name="bins"/>
+        <Option value="v" type="QString" name="box_orientation"/>
+        <Option value="false" type="bool" name="box_outliers"/>
+        <Option value="false" type="bool" name="box_stat"/>
+        <Option value="Greys" type="QString" name="color_scale"/>
+        <Option value="false" type="bool" name="color_scale_data_defined_in_check"/>
+        <Option value="false" type="bool" name="color_scale_data_defined_in_invert_check"/>
+        <Option value="fill" type="QString" name="cont_type"/>
+        <Option value="Fill" type="QString" name="contour_type_combo"/>
+        <Option value="false" type="bool" name="cumulative"/>
+        <Option type="List" name="custom">
+          <Option value="" type="QString"/>
+        </Option>
+        <Option value="auto" type="QString" name="hover_label_position"/>
+        <Option type="invalid" name="hover_label_text"/>
+        <Option value="all" type="QString" name="hover_text"/>
+        <Option value="#8ebad9" type="QString" name="in_color"/>
+        <Option value="false" type="bool" name="invert_color_scale"/>
+        <Option value="increasing" type="QString" name="invert_hist"/>
+        <Option value="Solid Line" type="QString" name="line_combo"/>
+        <Option value="solid" type="QString" name="line_dash"/>
+        <Option value="markers" type="QString" name="marker"/>
+        <Option value="10" type="double" name="marker_size"/>
+        <Option value="0" type="int" name="marker_symbol"/>
+        <Option value="Points" type="QString" name="marker_type_combo"/>
+        <Option value="1" type="double" name="marker_width"/>
+        <Option value="" type="QString" name="name"/>
+        <Option value="" type="QString" name="normalization"/>
+        <Option value="1" type="double" name="opacity"/>
+        <Option value="#1f77b4" type="QString" name="out_color"/>
+        <Option value="" type="QString" name="point_combo"/>
+        <Option value="false" type="bool" name="selected_features_only"/>
+        <Option value="false" type="bool" name="show_colorscale_legend"/>
+        <Option value="true" type="bool" name="show_lines"/>
+        <Option value="true" type="bool" name="show_lines_check"/>
+        <Option value="true" type="bool" name="show_mean_line"/>
+        <Option value="true" type="bool" name="violin_box"/>
+        <Option value="both" type="QString" name="violin_side"/>
+        <Option value="false" type="bool" name="visible_features_only"/>
+        <Option value="" type="QString" name="x_name"/>
+        <Option value="" type="QString" name="y_name"/>
+        <Option value="" type="QString" name="z_name"/>
+      </Option>
+      <Option value="scatter" type="QString" name="plot_type"/>
+      <Option value="official_sign_699051fb_cfb7_41bd_adec_29758644a878" type="QString" name="source_layer_id"/>
+    </Option>
+  </DataPlotly>
+  <legend updateDrawingOrder="true">
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="vw_sign_symbol" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile visible="1" isInOverview="0" layerid="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="support" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile visible="1" isInOverview="0" layerid="support_347aa750_1661_498f_a7e8_017adc616ba0"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="official_sign" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile visible="1" isInOverview="0" layerid="official_sign_699051fb_cfb7_41bd_adec_29758644a878"/>
+      </filegroup>
+    </legendlayer>
+    <legendlayer drawingOrder="-1" open="true" checked="Qt::Checked" name="OSM.ch Swiss-Style" showFeatureCount="0">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile visible="1" isInOverview="0" layerid="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997"/>
+      </filegroup>
+    </legendlayer>
+  </legend>
+  <mapViewDocks/>
+  <mapViewDocks3D/>
+  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
     <units>meters</units>
     <extent>
       <xmin>2537874.68556831544265151</xmin>
@@ -56,47 +192,72 @@
     <rotation>0</rotation>
     <destinationsrs>
       <spatialrefsys>
-        <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-        <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
         <srsid>47</srsid>
         <srid>2056</srid>
         <authid>EPSG:2056</authid>
         <description>CH1903+ / LV95</description>
         <projectionacronym>somerc</projectionacronym>
-        <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
         <geographicflag>false</geographicflag>
       </spatialrefsys>
     </destinationsrs>
     <rendermaptile>0</rendermaptile>
     <expressionContextScope/>
   </mapcanvas>
-  <projectModels/>
-  <legend updateDrawingOrder="true">
-    <legendlayer open="true" showFeatureCount="0" drawingOrder="-1" name="vw_sign_symbol" checked="Qt::Checked">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" visible="1" isInOverview="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer open="true" showFeatureCount="0" drawingOrder="-1" name="support" checked="Qt::Checked">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="support_347aa750_1661_498f_a7e8_017adc616ba0" visible="1" isInOverview="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer open="true" showFeatureCount="0" drawingOrder="-1" name="official_sign" checked="Qt::Checked">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="official_sign_699051fb_cfb7_41bd_adec_29758644a878" visible="1" isInOverview="0"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer open="true" showFeatureCount="0" drawingOrder="-1" name="OSM.ch Swiss-Style" checked="Qt::Checked">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997" visible="1" isInOverview="0"/>
-      </filegroup>
-    </legendlayer>
-  </legend>
-  <mapViewDocks/>
-  <mapViewDocks3D/>
+  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
+    <units>meters</units>
+    <extent>
+      <xmin>2537874.68556831544265151</xmin>
+      <ymin>1152478.34866851940751076</ymin>
+      <xmax>2538057.5326707954518497</xmax>
+      <ymax>1152568.32289269380271435</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>47</srsid>
+        <srid>2056</srid>
+        <authid>EPSG:2056</authid>
+        <description>CH1903+ / LV95</description>
+        <projectionacronym>somerc</projectionacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
+  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
+    <units>meters</units>
+    <extent>
+      <xmin>2537874.68556831544265151</xmin>
+      <ymin>1152478.34866851940751076</ymin>
+      <xmax>2538057.5326707954518497</xmax>
+      <ymax>1152568.32289269380271435</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+        <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+        <srsid>47</srsid>
+        <srid>2056</srid>
+        <authid>EPSG:2056</authid>
+        <description>CH1903+ / LV95</description>
+        <projectionacronym>somerc</projectionacronym>
+        <ellipsoidacronym>bessel</ellipsoidacronym>
+        <geographicflag>false</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
   <projectlayers>
-    <maplayer refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" maxScale="0" autoRefreshTime="0" type="raster" styleCategories="AllStyleCategories" minScale="1e+08">
+    <maplayer maxScale="0" autoRefreshTime="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" minScale="1e+08" refreshOnNotifyMessage="" type="raster" refreshOnNotifyEnabled="0">
       <extent>
         <xmin>-20037508.34278924390673637</xmin>
         <ymin>-20037508.34278925508260727</ymin>
@@ -104,7 +265,7 @@
         <ymax>20037508.34278924390673637</ymax>
       </extent>
       <id>OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997</id>
-      <datasource>type=xyz&amp;zmin=0&amp;zmax=18&amp;url=http://tile.osm.ch/osm-swiss-style/{z}/{x}/{y}.png</datasource>
+      <datasource>crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.osm.ch/osm-swiss-style/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -112,14 +273,14 @@
       <layername>OSM.ch Swiss-Style</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["WGS 84 / Pseudo-Mercator",BASEGEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4326]],CONVERSION["Popular Visualisation Pseudo-Mercator",METHOD["Popular Visualisation Pseudo Mercator",ID["EPSG",1024]],PARAMETER["Latitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8801]],PARAMETER["Longitude of natural origin",0,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8802]],PARAMETER["False easting",0,LENGTHUNIT["metre",1],ID["EPSG",8806]],PARAMETER["False northing",0,LENGTHUNIT["metre",1],ID["EPSG",8807]]],CS[Cartesian,2],AXIS["easting (X)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["northing (Y)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["World - 85°S to 85°N"],BBOX[-85.06,-180,85.06,180]],ID["EPSG",3857]]</wkt>
-          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0 +lon_0=0 +x_0=0 +y_0=0 +k=1 +units=m +nadgrids=@null +wktext +no_defs</proj4>
+          <wkt>PROJCS["WGS 84 / Pseudo-Mercator",GEOGCS["WGS 84",DATUM["WGS_1984",SPHEROID["WGS 84",6378137,298.257223563,AUTHORITY["EPSG","7030"]],AUTHORITY["EPSG","6326"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4326"]],PROJECTION["Mercator_1SP"],PARAMETER["central_meridian",0],PARAMETER["scale_factor",1],PARAMETER["false_easting",0],PARAMETER["false_northing",0],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["X",EAST],AXIS["Y",NORTH],EXTENSION["PROJ4","+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs"],AUTHORITY["EPSG","3857"]]</wkt>
+          <proj4>+proj=merc +a=6378137 +b=6378137 +lat_ts=0.0 +lon_0=0.0 +x_0=0.0 +y_0=0 +k=1.0 +units=m +nadgrids=@null +wktext +no_defs</proj4>
           <srsid>3857</srsid>
           <srid>3857</srid>
           <authid>EPSG:3857</authid>
           <description>WGS 84 / Pseudo-Mercator</description>
           <projectionacronym>merc</projectionacronym>
-          <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+          <ellipsoidacronym>WGS84</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -143,7 +304,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -160,17 +321,17 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" fetchMode="0" enabled="0">
+      <temporal fetchMode="0" mode="0" enabled="0">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="identify/format" value="Undefined"/>
+        <property value="Undefined" key="identify/format"/>
       </customproperties>
       <pipe>
-        <rasterrenderer alphaBand="-1" opacity="1" band="1" nodataColor="" type="singlebandcolordata">
+        <rasterrenderer band="1" nodataColor="" alphaBand="-1" type="singlebandcolordata" opacity="1">
           <rasterTransparency/>
           <minMaxOrigin>
             <limits>None</limits>
@@ -182,12 +343,12 @@
           </minMaxOrigin>
         </rasterrenderer>
         <brightnesscontrast contrast="0" brightness="0"/>
-        <huesaturation colorizeGreen="128" saturation="0" colorizeRed="255" colorizeBlue="128" grayscaleMode="0" colorizeStrength="100" colorizeOn="0"/>
+        <huesaturation colorizeBlue="128" colorizeStrength="100" grayscaleMode="0" colorizeOn="0" saturation="0" colorizeRed="255" colorizeGreen="128"/>
         <rasterresampler maxOversampling="2"/>
       </pipe>
       <blendMode>0</blendMode>
     </maplayer>
-    <maplayer refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" wkbType="NoGeometry" geometry="No geometry" autoRefreshEnabled="0" maxScale="0" autoRefreshTime="0" type="vector" styleCategories="AllStyleCategories" minScale="1e+08" readOnly="0">
+    <maplayer maxScale="0" autoRefreshTime="0" autoRefreshEnabled="0" styleCategories="AllStyleCategories" geometry="No geometry" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" readOnly="0" minScale="1e+08" refreshOnNotifyMessage="" type="vector" refreshOnNotifyEnabled="0">
       <id>official_sign_699051fb_cfb7_41bd_adec_29758644a878</id>
       <datasource>service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."official_sign"</datasource>
       <keywordList>
@@ -204,7 +365,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -227,7 +388,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -247,7 +408,7 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" startExpression="" startField="" durationUnit="min" enabled="0" endExpression="" endField="" durationField="" accumulate="0" fixedDuration="0">
+      <temporal accumulate="0" startExpression="" endExpression="" durationUnit="min" fixedDuration="0" mode="0" endField="" enabled="0" startField="" durationField="">
         <fixedRange>
           <start></start>
           <end></end>
@@ -370,80 +531,80 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias index="0" name="" field="id"/>
-        <alias index="1" name="" field="active"/>
-        <alias index="2" name="" field="value_de"/>
-        <alias index="3" name="" field="value_fr"/>
-        <alias index="4" name="" field="value_it"/>
-        <alias index="5" name="" field="value_ro"/>
-        <alias index="6" name="" field="description_de"/>
-        <alias index="7" name="" field="description_fr"/>
-        <alias index="8" name="" field="description_it"/>
-        <alias index="9" name="" field="description_ro"/>
-        <alias index="10" name="" field="img_de"/>
-        <alias index="11" name="" field="img_fr"/>
-        <alias index="12" name="" field="img_it"/>
-        <alias index="13" name="" field="img_ro"/>
-        <alias index="14" name="" field="img_height"/>
+        <alias index="0" field="id" name=""/>
+        <alias index="1" field="active" name=""/>
+        <alias index="2" field="value_de" name=""/>
+        <alias index="3" field="value_fr" name=""/>
+        <alias index="4" field="value_it" name=""/>
+        <alias index="5" field="value_ro" name=""/>
+        <alias index="6" field="description_de" name=""/>
+        <alias index="7" field="description_fr" name=""/>
+        <alias index="8" field="description_it" name=""/>
+        <alias index="9" field="description_ro" name=""/>
+        <alias index="10" field="img_de" name=""/>
+        <alias index="11" field="img_fr" name=""/>
+        <alias index="12" field="img_it" name=""/>
+        <alias index="13" field="img_ro" name=""/>
+        <alias index="14" field="img_height" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" expression="" field="id"/>
-        <default applyOnUpdate="0" expression="" field="active"/>
-        <default applyOnUpdate="0" expression="" field="value_de"/>
-        <default applyOnUpdate="0" expression="" field="value_fr"/>
-        <default applyOnUpdate="0" expression="" field="value_it"/>
-        <default applyOnUpdate="0" expression="" field="value_ro"/>
-        <default applyOnUpdate="0" expression="" field="description_de"/>
-        <default applyOnUpdate="0" expression="" field="description_fr"/>
-        <default applyOnUpdate="0" expression="" field="description_it"/>
-        <default applyOnUpdate="0" expression="" field="description_ro"/>
-        <default applyOnUpdate="0" expression="" field="img_de"/>
-        <default applyOnUpdate="0" expression="" field="img_fr"/>
-        <default applyOnUpdate="0" expression="" field="img_it"/>
-        <default applyOnUpdate="0" expression="" field="img_ro"/>
-        <default applyOnUpdate="0" expression="" field="img_height"/>
+        <default field="id" expression="" applyOnUpdate="0"/>
+        <default field="active" expression="" applyOnUpdate="0"/>
+        <default field="value_de" expression="" applyOnUpdate="0"/>
+        <default field="value_fr" expression="" applyOnUpdate="0"/>
+        <default field="value_it" expression="" applyOnUpdate="0"/>
+        <default field="value_ro" expression="" applyOnUpdate="0"/>
+        <default field="description_de" expression="" applyOnUpdate="0"/>
+        <default field="description_fr" expression="" applyOnUpdate="0"/>
+        <default field="description_it" expression="" applyOnUpdate="0"/>
+        <default field="description_ro" expression="" applyOnUpdate="0"/>
+        <default field="img_de" expression="" applyOnUpdate="0"/>
+        <default field="img_fr" expression="" applyOnUpdate="0"/>
+        <default field="img_it" expression="" applyOnUpdate="0"/>
+        <default field="img_ro" expression="" applyOnUpdate="0"/>
+        <default field="img_height" expression="" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint unique_strength="1" constraints="3" exp_strength="0" notnull_strength="1" field="id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="active"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="value_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="value_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="value_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="value_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="description_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="description_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="description_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="description_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="img_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="img_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="img_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="img_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="img_height"/>
+        <constraint unique_strength="1" exp_strength="0" field="id" notnull_strength="1" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" field="active" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="value_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="value_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="value_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="value_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="description_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="description_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="description_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="description_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="img_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="img_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="img_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="img_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="img_height" notnull_strength="0" constraints="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint desc="" field="id" exp=""/>
-        <constraint desc="" field="active" exp=""/>
-        <constraint desc="" field="value_de" exp=""/>
-        <constraint desc="" field="value_fr" exp=""/>
-        <constraint desc="" field="value_it" exp=""/>
-        <constraint desc="" field="value_ro" exp=""/>
-        <constraint desc="" field="description_de" exp=""/>
-        <constraint desc="" field="description_fr" exp=""/>
-        <constraint desc="" field="description_it" exp=""/>
-        <constraint desc="" field="description_ro" exp=""/>
-        <constraint desc="" field="img_de" exp=""/>
-        <constraint desc="" field="img_fr" exp=""/>
-        <constraint desc="" field="img_it" exp=""/>
-        <constraint desc="" field="img_ro" exp=""/>
-        <constraint desc="" field="img_height" exp=""/>
+        <constraint exp="" desc="" field="id"/>
+        <constraint exp="" desc="" field="active"/>
+        <constraint exp="" desc="" field="value_de"/>
+        <constraint exp="" desc="" field="value_fr"/>
+        <constraint exp="" desc="" field="value_it"/>
+        <constraint exp="" desc="" field="value_ro"/>
+        <constraint exp="" desc="" field="description_de"/>
+        <constraint exp="" desc="" field="description_fr"/>
+        <constraint exp="" desc="" field="description_it"/>
+        <constraint exp="" desc="" field="description_ro"/>
+        <constraint exp="" desc="" field="img_de"/>
+        <constraint exp="" desc="" field="img_fr"/>
+        <constraint exp="" desc="" field="img_it"/>
+        <constraint exp="" desc="" field="img_ro"/>
+        <constraint exp="" desc="" field="img_height"/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
-        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+      <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
         <columns/>
       </attributetableconfig>
       <conditionalstyles>
@@ -465,7 +626,13 @@
       <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer minScale="100000000" simplifyDrawingTol="1" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyMaxScale="1" labelsEnabled="0" wkbType="Point" autoRefreshEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" readOnly="0" simplifyLocal="1" refreshOnNotifyEnabled="0" simplifyDrawingHints="1" geometry="Point" type="vector" styleCategories="AllStyleCategories">
+    <maplayer autoRefreshEnabled="0" readOnly="0" geometry="Point" minScale="100000000" labelsEnabled="0" hasScaleBasedVisibilityFlag="0" type="vector" simplifyDrawingHints="1" autoRefreshTime="0" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" wkbType="Point" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingTol="1" maxScale="0" simplifyMaxScale="1">
+      <extent>
+        <xmin>2537954.41999999992549419</xmin>
+        <ymin>1152512.21999999997206032</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152589.80000000004656613</ymax>
+      </extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
       <datasource>service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."support" (geometry)</datasource>
       <keywordList>
@@ -474,14 +641,14 @@
       <layername>support</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -497,14 +664,14 @@
         <encoding></encoding>
         <crs>
           <spatialrefsys>
-            <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-            <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+            <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+            <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
             <srsid>47</srsid>
             <srid>2056</srid>
             <authid>EPSG:2056</authid>
             <description>CH1903+ / LV95</description>
             <projectionacronym>somerc</projectionacronym>
-            <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+            <ellipsoidacronym>bessel</ellipsoidacronym>
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
@@ -525,16 +692,16 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" startExpression="" startField="" durationUnit="min" enabled="0" endExpression="" endField="date_last_stability_check" durationField="" accumulate="0" fixedDuration="0">
+      <temporal accumulate="0" startExpression="" endExpression="" durationUnit="min" fixedDuration="0" mode="0" endField="date_last_stability_check" enabled="0" startField="" durationField="">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
-      <renderer-v2 symbollevels="0" enableorderby="0" type="singleSymbol" forceraster="0">
+      <renderer-v2 symbollevels="0" forceraster="0" type="singleSymbol" enableorderby="0">
         <symbols>
-          <symbol name="0" clip_to_extent="1" type="marker" force_rhr="0" alpha="1">
-            <layer class="SimpleMarker" enabled="1" locked="0" pass="0">
+          <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="0">
+            <layer locked="0" pass="0" class="SimpleMarker" enabled="1">
               <prop k="angle" v="0"/>
               <prop k="color" v="190,207,80,255"/>
               <prop k="horizontal_anchor_point" v="1"/>
@@ -555,9 +722,9 @@
               <prop k="vertical_anchor_point" v="1"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option value="" name="name" type="QString"/>
+                  <Option value="" type="QString" name="name"/>
                   <Option name="properties"/>
-                  <Option value="collection" name="type" type="QString"/>
+                  <Option value="collection" type="QString" name="type"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -665,68 +832,68 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias index="0" name="" field="id"/>
-        <alias index="1" name="" field="adress"/>
-        <alias index="2" name="" field="fk_support_type"/>
-        <alias index="3" name="" field="fk_owner"/>
-        <alias index="4" name="" field="fk_support_base_type"/>
-        <alias index="5" name="" field="height"/>
-        <alias index="6" name="" field="height_free_under_signal"/>
-        <alias index="7" name="" field="date_install"/>
-        <alias index="8" name="" field="date_last_stability_check"/>
-        <alias index="9" name="" field="fk_status"/>
-        <alias index="10" name="" field="comment"/>
-        <alias index="11" name="" field="picture"/>
+        <alias index="0" field="id" name=""/>
+        <alias index="1" field="adress" name=""/>
+        <alias index="2" field="fk_support_type" name=""/>
+        <alias index="3" field="fk_owner" name=""/>
+        <alias index="4" field="fk_support_base_type" name=""/>
+        <alias index="5" field="height" name=""/>
+        <alias index="6" field="height_free_under_signal" name=""/>
+        <alias index="7" field="date_install" name=""/>
+        <alias index="8" field="date_last_stability_check" name=""/>
+        <alias index="9" field="fk_status" name=""/>
+        <alias index="10" field="comment" name=""/>
+        <alias index="11" field="picture" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" expression="" field="id"/>
-        <default applyOnUpdate="0" expression="" field="adress"/>
-        <default applyOnUpdate="0" expression="" field="fk_support_type"/>
-        <default applyOnUpdate="0" expression="" field="fk_owner"/>
-        <default applyOnUpdate="0" expression="" field="fk_support_base_type"/>
-        <default applyOnUpdate="0" expression="" field="height"/>
-        <default applyOnUpdate="0" expression="" field="height_free_under_signal"/>
-        <default applyOnUpdate="0" expression="" field="date_install"/>
-        <default applyOnUpdate="0" expression="" field="date_last_stability_check"/>
-        <default applyOnUpdate="0" expression="" field="fk_status"/>
-        <default applyOnUpdate="0" expression="" field="comment"/>
-        <default applyOnUpdate="0" expression="" field="picture"/>
+        <default field="id" expression="" applyOnUpdate="0"/>
+        <default field="adress" expression="" applyOnUpdate="0"/>
+        <default field="fk_support_type" expression="" applyOnUpdate="0"/>
+        <default field="fk_owner" expression="" applyOnUpdate="0"/>
+        <default field="fk_support_base_type" expression="" applyOnUpdate="0"/>
+        <default field="height" expression="" applyOnUpdate="0"/>
+        <default field="height_free_under_signal" expression="" applyOnUpdate="0"/>
+        <default field="date_install" expression="" applyOnUpdate="0"/>
+        <default field="date_last_stability_check" expression="" applyOnUpdate="0"/>
+        <default field="fk_status" expression="" applyOnUpdate="0"/>
+        <default field="comment" expression="" applyOnUpdate="0"/>
+        <default field="picture" expression="" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint unique_strength="1" constraints="3" exp_strength="0" notnull_strength="1" field="id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="adress"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_support_type"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_owner"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_support_base_type"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="height"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="height_free_under_signal"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="date_install"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="date_last_stability_check"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_status"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="comment"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="picture"/>
+        <constraint unique_strength="1" exp_strength="0" field="id" notnull_strength="1" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" field="adress" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_support_type" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_owner" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_support_base_type" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="height" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="height_free_under_signal" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="date_install" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="date_last_stability_check" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_status" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="comment" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="picture" notnull_strength="0" constraints="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint desc="" field="id" exp=""/>
-        <constraint desc="" field="adress" exp=""/>
-        <constraint desc="" field="fk_support_type" exp=""/>
-        <constraint desc="" field="fk_owner" exp=""/>
-        <constraint desc="" field="fk_support_base_type" exp=""/>
-        <constraint desc="" field="height" exp=""/>
-        <constraint desc="" field="height_free_under_signal" exp=""/>
-        <constraint desc="" field="date_install" exp=""/>
-        <constraint desc="" field="date_last_stability_check" exp=""/>
-        <constraint desc="" field="fk_status" exp=""/>
-        <constraint desc="" field="comment" exp=""/>
-        <constraint desc="" field="picture" exp=""/>
+        <constraint exp="" desc="" field="id"/>
+        <constraint exp="" desc="" field="adress"/>
+        <constraint exp="" desc="" field="fk_support_type"/>
+        <constraint exp="" desc="" field="fk_owner"/>
+        <constraint exp="" desc="" field="fk_support_base_type"/>
+        <constraint exp="" desc="" field="height"/>
+        <constraint exp="" desc="" field="height_free_under_signal"/>
+        <constraint exp="" desc="" field="date_install"/>
+        <constraint exp="" desc="" field="date_last_stability_check"/>
+        <constraint exp="" desc="" field="fk_status"/>
+        <constraint exp="" desc="" field="comment"/>
+        <constraint exp="" desc="" field="picture"/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
-        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+      <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
         <columns/>
       </attributetableconfig>
       <conditionalstyles>
@@ -748,7 +915,13 @@
       <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer minScale="100000000" simplifyDrawingTol="1" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" maxScale="0" simplifyMaxScale="1" labelsEnabled="0" wkbType="Point" autoRefreshEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" readOnly="0" simplifyLocal="1" refreshOnNotifyEnabled="0" simplifyDrawingHints="1" geometry="Point" type="vector" styleCategories="AllStyleCategories">
+    <maplayer autoRefreshEnabled="0" readOnly="0" geometry="Point" minScale="100000000" labelsEnabled="0" hasScaleBasedVisibilityFlag="0" type="vector" simplifyDrawingHints="1" autoRefreshTime="0" simplifyAlgorithm="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" wkbType="Point" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyDrawingTol="1" maxScale="0" simplifyMaxScale="1">
+      <extent>
+        <xmin>2537954.41999999992549419</xmin>
+        <ymin>1152523.13999999989755452</ymin>
+        <xmax>2537954.41999999992549419</xmax>
+        <ymax>1152523.13999999989755452</ymax>
+      </extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
       <datasource>service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
@@ -757,14 +930,14 @@
       <layername>vw_sign_symbol</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+          <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+          <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
           <srsid>47</srsid>
           <srid>2056</srid>
           <authid>EPSG:2056</authid>
           <description>CH1903+ / LV95</description>
           <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+          <ellipsoidacronym>bessel</ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -780,14 +953,14 @@
         <encoding></encoding>
         <crs>
           <spatialrefsys>
-            <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-            <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
+            <wkt>PROJCS["CH1903+ / LV95",GEOGCS["CH1903+",DATUM["CH1903+",SPHEROID["Bessel 1841",6377397.155,299.1528128,AUTHORITY["EPSG","7004"]],TOWGS84[674.374,15.056,405.346,0,0,0,0],AUTHORITY["EPSG","6150"]],PRIMEM["Greenwich",0,AUTHORITY["EPSG","8901"]],UNIT["degree",0.0174532925199433,AUTHORITY["EPSG","9122"]],AUTHORITY["EPSG","4150"]],PROJECTION["Hotine_Oblique_Mercator_Azimuth_Center"],PARAMETER["latitude_of_center",46.95240555555556],PARAMETER["longitude_of_center",7.439583333333333],PARAMETER["azimuth",90],PARAMETER["rectified_grid_angle",90],PARAMETER["scale_factor",1],PARAMETER["false_easting",2600000],PARAMETER["false_northing",1200000],UNIT["metre",1,AUTHORITY["EPSG","9001"]],AXIS["Easting",EAST],AXIS["Northing",NORTH],AUTHORITY["EPSG","2056"]]</wkt>
+            <proj4>+proj=somerc +lat_0=46.95240555555556 +lon_0=7.439583333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
             <srsid>47</srsid>
             <srid>2056</srid>
             <authid>EPSG:2056</authid>
             <description>CH1903+ / LV95</description>
             <projectionacronym>somerc</projectionacronym>
-            <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
+            <ellipsoidacronym>bessel</ellipsoidacronym>
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
@@ -808,16 +981,16 @@
         <Removable>1</Removable>
         <Searchable>1</Searchable>
       </flags>
-      <temporal mode="0" startExpression="" startField="" durationUnit="min" enabled="0" endExpression="" endField="" durationField="" accumulate="0" fixedDuration="0">
+      <temporal accumulate="0" startExpression="" endExpression="" durationUnit="min" fixedDuration="0" mode="0" endField="" enabled="0" startField="" durationField="">
         <fixedRange>
           <start></start>
           <end></end>
         </fixedRange>
       </temporal>
-      <renderer-v2 symbollevels="0" enableorderby="0" type="singleSymbol" forceraster="0">
+      <renderer-v2 symbollevels="0" forceraster="0" type="singleSymbol" enableorderby="0">
         <symbols>
-          <symbol name="0" clip_to_extent="1" type="marker" force_rhr="0" alpha="1">
-            <layer class="SvgMarker" enabled="1" locked="0" pass="0">
+          <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="marker" name="0">
+            <layer locked="0" pass="0" class="SvgMarker" enabled="1">
               <prop k="angle" v="0"/>
               <prop k="color" v="225,89,137,255"/>
               <prop k="fixedAspectRatio" v="0"/>
@@ -837,40 +1010,40 @@
               <prop k="vertical_anchor_point" v="1"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option value="" name="name" type="QString"/>
-                  <Option name="properties" type="Map">
-                    <Option name="angle" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="&quot;azimut_group&quot; -180" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                  <Option value="" type="QString" name="name"/>
+                  <Option type="Map" name="properties">
+                    <Option type="Map" name="angle">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="&quot;azimut_group&quot; -180" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
-                    <Option name="hAnchor" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="'center'" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                    <Option type="Map" name="hAnchor">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="'center'" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
-                    <Option name="name" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_de&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_fr&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_it&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_ro&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                    <Option type="Map" name="name">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_de&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_fr&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_it&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_ro&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
-                    <Option name="offset" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="'0,' ||  to_string( &quot;shift&quot; /3)" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                    <Option type="Map" name="offset">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="'0,' ||  to_string( &quot;shift&quot; /3)" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
-                    <Option name="vAnchor" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="'bottom'" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                    <Option type="Map" name="vAnchor">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="'bottom'" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
-                    <Option name="width" type="Map">
-                      <Option value="true" name="active" type="bool"/>
-                      <Option value="&quot;vl_official_sign_img_height&quot;/3" name="expression" type="QString"/>
-                      <Option value="3" name="type" type="int"/>
+                    <Option type="Map" name="width">
+                      <Option value="true" type="bool" name="active"/>
+                      <Option value="&quot;vl_official_sign_img_height&quot;/3" type="QString" name="expression"/>
+                      <Option value="3" type="int" name="type"/>
                     </Option>
                   </Option>
-                  <Option value="collection" name="type" type="QString"/>
+                  <Option value="collection" type="QString" name="type"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -880,9 +1053,7 @@
         <sizescale/>
       </renderer-v2>
       <customproperties>
-        <property key="dualview/previewExpressions">
-          <value>"vl_official_sign_description_de"</value>
-        </property>
+        <property value="&quot;vl_official_sign_description_de&quot;" key="dualview/previewExpressions"/>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
@@ -1157,207 +1328,207 @@
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias index="0" name="" field="id"/>
-        <alias index="1" name="" field="azimut_group"/>
-        <alias index="2" name="" field="fk_sign_type"/>
-        <alias index="3" name="" field="fk_official_sign"/>
-        <alias index="4" name="" field="fk_parent"/>
-        <alias index="5" name="" field="fk_owner"/>
-        <alias index="6" name="" field="fk_durability"/>
-        <alias index="7" name="" field="fk_status"/>
-        <alias index="8" name="" field="installation_date"/>
-        <alias index="9" name="" field="manufacturing_date"/>
-        <alias index="10" name="" field="case_id"/>
-        <alias index="11" name="" field="case_decision"/>
-        <alias index="12" name="" field="fk_frame"/>
-        <alias index="13" name="" field="fk_coating"/>
-        <alias index="14" name="" field="fk_lighting"/>
-        <alias index="15" name="" field="destination"/>
-        <alias index="16" name="" field="azimut"/>
-        <alias index="17" name="" field="comment"/>
-        <alias index="18" name="" field="photo"/>
-        <alias index="19" name="" field="vl_official_sign_id"/>
-        <alias index="20" name="" field="vl_official_sign_active"/>
-        <alias index="21" name="" field="vl_official_sign_value_de"/>
-        <alias index="22" name="" field="vl_official_sign_value_fr"/>
-        <alias index="23" name="" field="vl_official_sign_value_it"/>
-        <alias index="24" name="" field="vl_official_sign_value_ro"/>
-        <alias index="25" name="" field="vl_official_sign_description_de"/>
-        <alias index="26" name="" field="vl_official_sign_description_fr"/>
-        <alias index="27" name="" field="vl_official_sign_description_it"/>
-        <alias index="28" name="" field="vl_official_sign_description_ro"/>
-        <alias index="29" name="" field="vl_official_sign_img_de"/>
-        <alias index="30" name="" field="vl_official_sign_img_fr"/>
-        <alias index="31" name="" field="vl_official_sign_img_it"/>
-        <alias index="32" name="" field="vl_official_sign_img_ro"/>
-        <alias index="33" name="" field="vl_official_sign_img_height"/>
-        <alias index="34" name="" field="final_rank"/>
-        <alias index="35" name="" field="support_id"/>
-        <alias index="36" name="" field="shift"/>
+        <alias index="0" field="id" name=""/>
+        <alias index="1" field="azimut_group" name=""/>
+        <alias index="2" field="fk_sign_type" name=""/>
+        <alias index="3" field="fk_official_sign" name=""/>
+        <alias index="4" field="fk_parent" name=""/>
+        <alias index="5" field="fk_owner" name=""/>
+        <alias index="6" field="fk_durability" name=""/>
+        <alias index="7" field="fk_status" name=""/>
+        <alias index="8" field="installation_date" name=""/>
+        <alias index="9" field="manufacturing_date" name=""/>
+        <alias index="10" field="case_id" name=""/>
+        <alias index="11" field="case_decision" name=""/>
+        <alias index="12" field="fk_frame" name=""/>
+        <alias index="13" field="fk_coating" name=""/>
+        <alias index="14" field="fk_lighting" name=""/>
+        <alias index="15" field="destination" name=""/>
+        <alias index="16" field="azimut" name=""/>
+        <alias index="17" field="comment" name=""/>
+        <alias index="18" field="photo" name=""/>
+        <alias index="19" field="vl_official_sign_id" name=""/>
+        <alias index="20" field="vl_official_sign_active" name=""/>
+        <alias index="21" field="vl_official_sign_value_de" name=""/>
+        <alias index="22" field="vl_official_sign_value_fr" name=""/>
+        <alias index="23" field="vl_official_sign_value_it" name=""/>
+        <alias index="24" field="vl_official_sign_value_ro" name=""/>
+        <alias index="25" field="vl_official_sign_description_de" name=""/>
+        <alias index="26" field="vl_official_sign_description_fr" name=""/>
+        <alias index="27" field="vl_official_sign_description_it" name=""/>
+        <alias index="28" field="vl_official_sign_description_ro" name=""/>
+        <alias index="29" field="vl_official_sign_img_de" name=""/>
+        <alias index="30" field="vl_official_sign_img_fr" name=""/>
+        <alias index="31" field="vl_official_sign_img_it" name=""/>
+        <alias index="32" field="vl_official_sign_img_ro" name=""/>
+        <alias index="33" field="vl_official_sign_img_height" name=""/>
+        <alias index="34" field="final_rank" name=""/>
+        <alias index="35" field="support_id" name=""/>
+        <alias index="36" field="shift" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
       <defaults>
-        <default applyOnUpdate="0" expression="" field="id"/>
-        <default applyOnUpdate="0" expression="" field="azimut_group"/>
-        <default applyOnUpdate="0" expression="" field="fk_sign_type"/>
-        <default applyOnUpdate="0" expression="" field="fk_official_sign"/>
-        <default applyOnUpdate="0" expression="" field="fk_parent"/>
-        <default applyOnUpdate="0" expression="" field="fk_owner"/>
-        <default applyOnUpdate="0" expression="" field="fk_durability"/>
-        <default applyOnUpdate="0" expression="" field="fk_status"/>
-        <default applyOnUpdate="0" expression="" field="installation_date"/>
-        <default applyOnUpdate="0" expression="" field="manufacturing_date"/>
-        <default applyOnUpdate="0" expression="" field="case_id"/>
-        <default applyOnUpdate="0" expression="" field="case_decision"/>
-        <default applyOnUpdate="0" expression="" field="fk_frame"/>
-        <default applyOnUpdate="0" expression="" field="fk_coating"/>
-        <default applyOnUpdate="0" expression="" field="fk_lighting"/>
-        <default applyOnUpdate="0" expression="" field="destination"/>
-        <default applyOnUpdate="0" expression="" field="azimut"/>
-        <default applyOnUpdate="0" expression="" field="comment"/>
-        <default applyOnUpdate="0" expression="" field="photo"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_id"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_active"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_value_de"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_value_fr"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_value_it"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_value_ro"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_description_de"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_description_fr"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_description_it"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_description_ro"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_img_de"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_img_fr"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_img_it"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_img_ro"/>
-        <default applyOnUpdate="0" expression="" field="vl_official_sign_img_height"/>
-        <default applyOnUpdate="0" expression="" field="final_rank"/>
-        <default applyOnUpdate="0" expression="" field="support_id"/>
-        <default applyOnUpdate="0" expression="" field="shift"/>
+        <default field="id" expression="" applyOnUpdate="0"/>
+        <default field="azimut_group" expression="" applyOnUpdate="0"/>
+        <default field="fk_sign_type" expression="" applyOnUpdate="0"/>
+        <default field="fk_official_sign" expression="" applyOnUpdate="0"/>
+        <default field="fk_parent" expression="" applyOnUpdate="0"/>
+        <default field="fk_owner" expression="" applyOnUpdate="0"/>
+        <default field="fk_durability" expression="" applyOnUpdate="0"/>
+        <default field="fk_status" expression="" applyOnUpdate="0"/>
+        <default field="installation_date" expression="" applyOnUpdate="0"/>
+        <default field="manufacturing_date" expression="" applyOnUpdate="0"/>
+        <default field="case_id" expression="" applyOnUpdate="0"/>
+        <default field="case_decision" expression="" applyOnUpdate="0"/>
+        <default field="fk_frame" expression="" applyOnUpdate="0"/>
+        <default field="fk_coating" expression="" applyOnUpdate="0"/>
+        <default field="fk_lighting" expression="" applyOnUpdate="0"/>
+        <default field="destination" expression="" applyOnUpdate="0"/>
+        <default field="azimut" expression="" applyOnUpdate="0"/>
+        <default field="comment" expression="" applyOnUpdate="0"/>
+        <default field="photo" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_id" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_active" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_value_de" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_value_fr" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_value_it" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_value_ro" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_description_de" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_description_fr" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_description_it" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_description_ro" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_img_de" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_img_fr" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_img_it" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_img_ro" expression="" applyOnUpdate="0"/>
+        <default field="vl_official_sign_img_height" expression="" applyOnUpdate="0"/>
+        <default field="final_rank" expression="" applyOnUpdate="0"/>
+        <default field="support_id" expression="" applyOnUpdate="0"/>
+        <default field="shift" expression="" applyOnUpdate="0"/>
       </defaults>
       <constraints>
-        <constraint unique_strength="1" constraints="3" exp_strength="0" notnull_strength="1" field="id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="azimut_group"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_sign_type"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_official_sign"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_parent"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_owner"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_durability"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_status"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="installation_date"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="manufacturing_date"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="case_id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="case_decision"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_frame"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_coating"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="fk_lighting"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="destination"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="azimut"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="comment"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="photo"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_active"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_value_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_value_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_value_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_value_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_description_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_description_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_description_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_description_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_img_de"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_img_fr"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_img_it"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_img_ro"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="vl_official_sign_img_height"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="final_rank"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="support_id"/>
-        <constraint unique_strength="0" constraints="0" exp_strength="0" notnull_strength="0" field="shift"/>
+        <constraint unique_strength="1" exp_strength="0" field="id" notnull_strength="1" constraints="3"/>
+        <constraint unique_strength="0" exp_strength="0" field="azimut_group" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_sign_type" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_official_sign" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_parent" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_owner" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_durability" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_status" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="installation_date" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="manufacturing_date" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="case_id" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="case_decision" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_frame" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_coating" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="fk_lighting" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="destination" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="azimut" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="comment" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="photo" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_id" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_active" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_value_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_value_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_value_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_value_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_description_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_description_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_description_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_description_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_img_de" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_img_fr" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_img_it" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_img_ro" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="vl_official_sign_img_height" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="final_rank" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="support_id" notnull_strength="0" constraints="0"/>
+        <constraint unique_strength="0" exp_strength="0" field="shift" notnull_strength="0" constraints="0"/>
       </constraints>
       <constraintExpressions>
-        <constraint desc="" field="id" exp=""/>
-        <constraint desc="" field="azimut_group" exp=""/>
-        <constraint desc="" field="fk_sign_type" exp=""/>
-        <constraint desc="" field="fk_official_sign" exp=""/>
-        <constraint desc="" field="fk_parent" exp=""/>
-        <constraint desc="" field="fk_owner" exp=""/>
-        <constraint desc="" field="fk_durability" exp=""/>
-        <constraint desc="" field="fk_status" exp=""/>
-        <constraint desc="" field="installation_date" exp=""/>
-        <constraint desc="" field="manufacturing_date" exp=""/>
-        <constraint desc="" field="case_id" exp=""/>
-        <constraint desc="" field="case_decision" exp=""/>
-        <constraint desc="" field="fk_frame" exp=""/>
-        <constraint desc="" field="fk_coating" exp=""/>
-        <constraint desc="" field="fk_lighting" exp=""/>
-        <constraint desc="" field="destination" exp=""/>
-        <constraint desc="" field="azimut" exp=""/>
-        <constraint desc="" field="comment" exp=""/>
-        <constraint desc="" field="photo" exp=""/>
-        <constraint desc="" field="vl_official_sign_id" exp=""/>
-        <constraint desc="" field="vl_official_sign_active" exp=""/>
-        <constraint desc="" field="vl_official_sign_value_de" exp=""/>
-        <constraint desc="" field="vl_official_sign_value_fr" exp=""/>
-        <constraint desc="" field="vl_official_sign_value_it" exp=""/>
-        <constraint desc="" field="vl_official_sign_value_ro" exp=""/>
-        <constraint desc="" field="vl_official_sign_description_de" exp=""/>
-        <constraint desc="" field="vl_official_sign_description_fr" exp=""/>
-        <constraint desc="" field="vl_official_sign_description_it" exp=""/>
-        <constraint desc="" field="vl_official_sign_description_ro" exp=""/>
-        <constraint desc="" field="vl_official_sign_img_de" exp=""/>
-        <constraint desc="" field="vl_official_sign_img_fr" exp=""/>
-        <constraint desc="" field="vl_official_sign_img_it" exp=""/>
-        <constraint desc="" field="vl_official_sign_img_ro" exp=""/>
-        <constraint desc="" field="vl_official_sign_img_height" exp=""/>
-        <constraint desc="" field="final_rank" exp=""/>
-        <constraint desc="" field="support_id" exp=""/>
-        <constraint desc="" field="shift" exp=""/>
+        <constraint exp="" desc="" field="id"/>
+        <constraint exp="" desc="" field="azimut_group"/>
+        <constraint exp="" desc="" field="fk_sign_type"/>
+        <constraint exp="" desc="" field="fk_official_sign"/>
+        <constraint exp="" desc="" field="fk_parent"/>
+        <constraint exp="" desc="" field="fk_owner"/>
+        <constraint exp="" desc="" field="fk_durability"/>
+        <constraint exp="" desc="" field="fk_status"/>
+        <constraint exp="" desc="" field="installation_date"/>
+        <constraint exp="" desc="" field="manufacturing_date"/>
+        <constraint exp="" desc="" field="case_id"/>
+        <constraint exp="" desc="" field="case_decision"/>
+        <constraint exp="" desc="" field="fk_frame"/>
+        <constraint exp="" desc="" field="fk_coating"/>
+        <constraint exp="" desc="" field="fk_lighting"/>
+        <constraint exp="" desc="" field="destination"/>
+        <constraint exp="" desc="" field="azimut"/>
+        <constraint exp="" desc="" field="comment"/>
+        <constraint exp="" desc="" field="photo"/>
+        <constraint exp="" desc="" field="vl_official_sign_id"/>
+        <constraint exp="" desc="" field="vl_official_sign_active"/>
+        <constraint exp="" desc="" field="vl_official_sign_value_de"/>
+        <constraint exp="" desc="" field="vl_official_sign_value_fr"/>
+        <constraint exp="" desc="" field="vl_official_sign_value_it"/>
+        <constraint exp="" desc="" field="vl_official_sign_value_ro"/>
+        <constraint exp="" desc="" field="vl_official_sign_description_de"/>
+        <constraint exp="" desc="" field="vl_official_sign_description_fr"/>
+        <constraint exp="" desc="" field="vl_official_sign_description_it"/>
+        <constraint exp="" desc="" field="vl_official_sign_description_ro"/>
+        <constraint exp="" desc="" field="vl_official_sign_img_de"/>
+        <constraint exp="" desc="" field="vl_official_sign_img_fr"/>
+        <constraint exp="" desc="" field="vl_official_sign_img_it"/>
+        <constraint exp="" desc="" field="vl_official_sign_img_ro"/>
+        <constraint exp="" desc="" field="vl_official_sign_img_height"/>
+        <constraint exp="" desc="" field="final_rank"/>
+        <constraint exp="" desc="" field="support_id"/>
+        <constraint exp="" desc="" field="shift"/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
-        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
+      <attributetableconfig sortExpression="" sortOrder="0" actionWidgetStyle="dropDown">
         <columns>
-          <column hidden="0" name="id" type="field" width="-1"/>
-          <column hidden="0" name="azimut_group" type="field" width="-1"/>
-          <column hidden="0" name="fk_sign_type" type="field" width="-1"/>
-          <column hidden="0" name="fk_official_sign" type="field" width="-1"/>
-          <column hidden="0" name="fk_parent" type="field" width="-1"/>
-          <column hidden="0" name="fk_owner" type="field" width="-1"/>
-          <column hidden="0" name="fk_durability" type="field" width="-1"/>
-          <column hidden="0" name="fk_status" type="field" width="-1"/>
-          <column hidden="0" name="installation_date" type="field" width="-1"/>
-          <column hidden="0" name="manufacturing_date" type="field" width="-1"/>
-          <column hidden="0" name="case_id" type="field" width="-1"/>
-          <column hidden="0" name="case_decision" type="field" width="-1"/>
-          <column hidden="0" name="fk_frame" type="field" width="-1"/>
-          <column hidden="0" name="fk_coating" type="field" width="-1"/>
-          <column hidden="0" name="fk_lighting" type="field" width="-1"/>
-          <column hidden="0" name="destination" type="field" width="-1"/>
-          <column hidden="0" name="azimut" type="field" width="-1"/>
-          <column hidden="0" name="comment" type="field" width="-1"/>
-          <column hidden="0" name="photo" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_id" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_active" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_value_de" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_value_fr" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_value_it" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_value_ro" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_description_de" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_description_fr" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_description_it" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_description_ro" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_img_de" type="field" width="185"/>
-          <column hidden="0" name="vl_official_sign_img_fr" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_img_it" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_img_ro" type="field" width="-1"/>
-          <column hidden="0" name="vl_official_sign_img_height" type="field" width="-1"/>
-          <column hidden="0" name="final_rank" type="field" width="-1"/>
-          <column hidden="0" name="support_id" type="field" width="-1"/>
-          <column hidden="0" name="shift" type="field" width="-1"/>
-          <column hidden="1" type="actions" width="-1"/>
+          <column width="-1" type="field" name="id" hidden="0"/>
+          <column width="-1" type="field" name="azimut_group" hidden="0"/>
+          <column width="-1" type="field" name="fk_sign_type" hidden="0"/>
+          <column width="-1" type="field" name="fk_official_sign" hidden="0"/>
+          <column width="-1" type="field" name="fk_parent" hidden="0"/>
+          <column width="-1" type="field" name="fk_owner" hidden="0"/>
+          <column width="-1" type="field" name="fk_durability" hidden="0"/>
+          <column width="-1" type="field" name="fk_status" hidden="0"/>
+          <column width="-1" type="field" name="installation_date" hidden="0"/>
+          <column width="-1" type="field" name="manufacturing_date" hidden="0"/>
+          <column width="-1" type="field" name="case_id" hidden="0"/>
+          <column width="-1" type="field" name="case_decision" hidden="0"/>
+          <column width="-1" type="field" name="fk_frame" hidden="0"/>
+          <column width="-1" type="field" name="fk_coating" hidden="0"/>
+          <column width="-1" type="field" name="fk_lighting" hidden="0"/>
+          <column width="-1" type="field" name="destination" hidden="0"/>
+          <column width="-1" type="field" name="azimut" hidden="0"/>
+          <column width="-1" type="field" name="comment" hidden="0"/>
+          <column width="-1" type="field" name="photo" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_id" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_active" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_value_de" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_value_fr" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_value_it" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_value_ro" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_description_de" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_description_fr" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_description_it" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_description_ro" hidden="0"/>
+          <column width="185" type="field" name="vl_official_sign_img_de" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_img_fr" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_img_it" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_img_ro" hidden="0"/>
+          <column width="-1" type="field" name="vl_official_sign_img_height" hidden="0"/>
+          <column width="-1" type="field" name="final_rank" hidden="0"/>
+          <column width="-1" type="field" name="support_id" hidden="0"/>
+          <column width="-1" type="field" name="shift" hidden="0"/>
+          <column width="-1" type="actions" hidden="1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -1503,13 +1674,15 @@
   </properties>
   <dataDefinedServerProperties>
     <Option type="Map">
-      <Option value="" name="name" type="QString"/>
+      <Option value="" type="QString" name="name"/>
       <Option name="properties"/>
-      <Option value="collection" name="type" type="QString"/>
+      <Option value="collection" type="QString" name="type"/>
     </Option>
   </dataDefinedServerProperties>
   <visibility-presets/>
-  <transformContext/>
+  <transformContext>
+    <srcDest sourceTransform="" dest="EPSG:2056" destTransform="+towgs84=674.374,15.056,405.346" source="EPSG:3857"/>
+  </transformContext>
   <projectMetadata>
     <identifier></identifier>
     <parentidentifier></parentidentifier>
@@ -1532,12 +1705,12 @@
   </projectMetadata>
   <Annotations/>
   <Layouts>
-    <Layout printResolution="300" name="atlas" worldFileMap="" units="mm">
+    <Layout units="mm" worldFileMap="" printResolution="300" name="official sign (multi)">
       <Snapper snapToGrid="0" snapToItems="1" snapToGuides="1" tolerance="5"/>
-      <Grid offsetX="0" offsetUnits="mm" resolution="10" resUnits="mm" offsetY="0"/>
+      <Grid resolution="10" offsetY="0" resUnits="mm" offsetX="0" offsetUnits="mm"/>
       <PageCollection>
-        <symbol name="" clip_to_extent="1" type="fill" force_rhr="0" alpha="1">
-          <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+        <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="fill" name="">
+          <layer locked="0" pass="0" class="SimpleFill" enabled="1">
             <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
             <prop k="color" v="255,255,255,255"/>
             <prop k="joinstyle" v="miter"/>
@@ -1551,28 +1724,28 @@
             <prop k="style" v="solid"/>
             <data_defined_properties>
               <Option type="Map">
-                <Option value="" name="name" type="QString"/>
+                <Option value="" type="QString" name="name"/>
                 <Option name="properties"/>
-                <Option value="collection" name="type" type="QString"/>
+                <Option value="collection" type="QString" name="type"/>
               </Option>
             </data_defined_properties>
           </layer>
         </symbol>
-        <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="210,297,mm" groupUuid="" referencePoint="0" blendMode="0" visibility="1" position="0,0,mm" background="true" uuid="{b106a0d7-118f-4008-b88e-e77fb72d8882}" zValue="0" positionLock="false" frame="false" opacity="1" positionOnPage="0,0,mm" type="65638" id="" outlineWidthM="0.3,mm" templateUuid="{b106a0d7-118f-4008-b88e-e77fb72d8882}">
-          <FrameColor blue="0" green="0" red="0" alpha="255"/>
-          <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+        <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="0,0,mm" groupUuid="" zValue="0" blendMode="0" id="" excludeFromExports="0" type="65638" size="210,297,mm" itemRotation="0" templateUuid="{b106a0d7-118f-4008-b88e-e77fb72d8882}" frameJoinStyle="miter" opacity="1" background="true" uuid="{b106a0d7-118f-4008-b88e-e77fb72d8882}" visibility="1" position="0,0,mm">
+          <FrameColor red="0" green="0" alpha="255" blue="0"/>
+          <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
           <LayoutObject>
             <dataDefinedProperties>
               <Option type="Map">
-                <Option value="" name="name" type="QString"/>
+                <Option value="" type="QString" name="name"/>
                 <Option name="properties"/>
-                <Option value="collection" name="type" type="QString"/>
+                <Option value="collection" type="QString" name="type"/>
               </Option>
             </dataDefinedProperties>
             <customproperties/>
           </LayoutObject>
-          <symbol name="" clip_to_extent="1" type="fill" force_rhr="0" alpha="1">
-            <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+          <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="fill" name="">
+            <layer locked="0" pass="0" class="SimpleFill" enabled="1">
               <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="color" v="255,255,255,255"/>
               <prop k="joinstyle" v="miter"/>
@@ -1586,259 +1759,259 @@
               <prop k="style" v="solid"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option value="" name="name" type="QString"/>
+                  <Option value="" type="QString" name="name"/>
                   <Option name="properties"/>
-                  <Option value="collection" name="type" type="QString"/>
+                  <Option value="collection" type="QString" name="type"/>
                 </Option>
               </data_defined_properties>
             </layer>
           </symbol>
         </LayoutItem>
         <GuideCollection visible="1">
-          <Guide position="30" page="0" orientation="2" units="mm"/>
-          <Guide position="85" page="0" orientation="1" units="mm"/>
-          <Guide position="180" page="0" orientation="2" units="mm"/>
-          <Guide position="170" page="0" orientation="1" units="mm"/>
-          <Guide position="255" page="0" orientation="1" units="mm"/>
+          <Guide orientation="2" position="30" units="mm" page="0"/>
+          <Guide orientation="1" position="85" units="mm" page="0"/>
+          <Guide orientation="2" position="180" units="mm" page="0"/>
+          <Guide orientation="1" position="170" units="mm" page="0"/>
+          <Guide orientation="1" position="255" units="mm" page="0"/>
         </GuideCollection>
       </PageCollection>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +150),'value_fr')%]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="118.273,241.234,mm" background="false" uuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" htmlState="0" zValue="36" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="118.273,241.234,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="118.273,241.234,mm" groupUuid="" zValue="36" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" marginX="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +150),'value_fr')%]" frameJoinStyle="miter" opacity="1" background="false" uuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" visibility="1" valign="128" position="118.273,241.234,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="126.203,189.611,mm" background="false" uuid="{434ca81b-d6d4-4f89-9f34-8660f4535de5}" zValue="26" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="126.203,189.611,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{434ca81b-d6d4-4f89-9f34-8660f4535de5}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="126.203,189.611,mm" groupUuid="" zValue="26" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{434ca81b-d6d4-4f89-9f34-8660f4535de5}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{434ca81b-d6d4-4f89-9f34-8660f4535de5}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="126.203,189.611,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 150), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 150), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="14.1392,241.234,mm" background="false" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" htmlState="0" zValue="25" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="14.1392,241.234,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="30,189.611,mm" groupUuid="" zValue="25" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="30,189.611,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 120), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+      </LayoutItem>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="14.1392,241.234,mm" groupUuid="" zValue="25" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" marginX="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" frameJoinStyle="miter" opacity="1" background="false" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" visibility="1" valign="128" position="14.1392,241.234,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="30,189.611,mm" background="false" uuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" zValue="25" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="30,189.611,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="126.203,107.464,mm" groupUuid="" zValue="17" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="126.203,107.464,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 120), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 90), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="126.203,107.464,mm" background="false" uuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" zValue="17" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="126.203,107.464,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="118.273,156.234,mm" groupUuid="" zValue="15" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{ca0f2c4e-f11d-49b2-b51d-191b3ea414dc}" marginX="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid + 90),'value_fr')%]" frameJoinStyle="miter" opacity="1" background="false" uuid="{ca0f2c4e-f11d-49b2-b51d-191b3ea414dc}" visibility="1" valign="128" position="118.273,156.234,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 90), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
-                </Option>
-              </Option>
-              <Option value="collection" name="type" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-      </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid + 90),'value_fr')%]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="118.273,156.234,mm" background="false" uuid="{ca0f2c4e-f11d-49b2-b51d-191b3ea414dc}" htmlState="0" zValue="15" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="118.273,156.234,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{ca0f2c4e-f11d-49b2-b51d-191b3ea414dc}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="30,107.464,mm" background="false" uuid="{09ff31f6-1236-45a2-8997-fbd8725f276c}" zValue="11" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="30,107.464,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{09ff31f6-1236-45a2-8997-fbd8725f276c}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="30,107.464,mm" groupUuid="" zValue="11" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{09ff31f6-1236-45a2-8997-fbd8725f276c}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{09ff31f6-1236-45a2-8997-fbd8725f276c}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="30,107.464,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 60), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 60), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid + 60),'value_fr')%]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="22.0696,156.234,mm" background="false" uuid="{2d8ed6e0-578d-4d22-afc5-cbe3e66b7984}" htmlState="0" zValue="8" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="22.0696,156.234,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{2d8ed6e0-578d-4d22-afc5-cbe3e66b7984}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="22.0696,156.234,mm" groupUuid="" zValue="8" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{2d8ed6e0-578d-4d22-afc5-cbe3e66b7984}" marginX="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid + 60),'value_fr')%]" frameJoinStyle="miter" opacity="1" background="false" uuid="{2d8ed6e0-578d-4d22-afc5-cbe3e66b7984}" visibility="1" valign="128" position="22.0696,156.234,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="126.203,21.6192,mm" background="false" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" zValue="6" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="126.203,21.6192,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="126.203,21.6192,mm" groupUuid="" zValue="6" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="126.203,21.6192,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 30), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 30), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +30),'value_fr')%]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="118.273,71.2341,mm" background="false" uuid="{f4f88a37-506c-42d0-a3ae-6e91cc03c251}" htmlState="0" zValue="4" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="118.273,71.2341,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{f4f88a37-506c-42d0-a3ae-6e91cc03c251}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="118.273,71.2341,mm" groupUuid="" zValue="4" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{f4f88a37-506c-42d0-a3ae-6e91cc03c251}" marginX="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +30),'value_fr')%]" frameJoinStyle="miter" opacity="1" background="false" uuid="{f4f88a37-506c-42d0-a3ae-6e91cc03c251}" visibility="1" valign="128" position="118.273,71.2341,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" excludeFromExports="0" frameJoinStyle="miter" size="69.6574,13.7659,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="22.0696,71.2341,mm" background="false" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" htmlState="0" zValue="2" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="22.0696,71.2341,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="30,21.6192,mm" groupUuid="" zValue="2" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="53.7966,48.77,mm" svgBorderWidth="0.2" pictureHeight="48.77" itemRotation="0" pictureWidth="48.4726" pictureRotation="0" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" visibility="1" northMode="0" anchorPoint="0" mode="0" position="30,21.6192,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid ), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+      </LayoutItem>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="22.0696,71.2341,mm" groupUuid="" zValue="2" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="69.6574,13.7659,mm" itemRotation="0" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" marginX="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" frameJoinStyle="miter" opacity="1" background="false" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" visibility="1" valign="128" position="22.0696,71.2341,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
-      </LayoutItem>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="53.7966,48.77,mm" pictureHeight="48.77" northMode="0" groupUuid="" referencePoint="0" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="30,21.6192,mm" background="false" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" zValue="2" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="0" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="30,21.6192,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" pictureWidth="48.4726">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid ), 'img_fr') END" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
-                </Option>
-              </Option>
-              <Option value="collection" name="type" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
       </LayoutItem>
       <customproperties>
-        <property key="atlasRasterFormat" value="png"/>
-        <property key="forceVector" value="0"/>
-        <property key="pdfAppendGeoreference" value="1"/>
-        <property key="pdfCreateGeoPdf" value="0"/>
-        <property key="pdfDisableRasterTiles" value="0"/>
-        <property key="pdfExportThemes" value=""/>
-        <property key="pdfIncludeMetadata" value="1"/>
-        <property key="pdfLayerOrder" value=""/>
-        <property key="pdfOgcBestPracticeFormat" value="0"/>
-        <property key="pdfSimplify" value="1"/>
-        <property key="pdfTextFormat" value="0"/>
+        <property value="png" key="atlasRasterFormat"/>
+        <property value="0" key="forceVector"/>
+        <property value="1" key="pdfAppendGeoreference"/>
+        <property value="0" key="pdfCreateGeoPdf"/>
+        <property value="0" key="pdfDisableRasterTiles"/>
+        <property value="" key="pdfExportThemes"/>
+        <property value="1" key="pdfIncludeMetadata"/>
+        <property value="" key="pdfLayerOrder"/>
+        <property value="0" key="pdfOgcBestPracticeFormat"/>
+        <property value="1" key="pdfSimplify"/>
+        <property value="0" key="pdfTextFormat"/>
       </customproperties>
-      <Atlas filterFeatures="1" filenamePattern="'output_'||@atlas_featurenumber" enabled="0" coverageLayer="" pageNameExpression="&quot;id&quot;" featureFilter=" @atlas_featureid &lt; 46" sortFeatures="1" hideCoverage="0" sortAscending="1" sortKey="id"/>
+      <Atlas sortAscending="1" pageNameExpression="&quot;id&quot;" sortKey="id" sortFeatures="1" coverageLayer="" featureFilter=" @atlas_featureid &lt; 46" filenamePattern="'output_'||@atlas_featurenumber" filterFeatures="1" hideCoverage="0" enabled="0"/>
     </Layout>
-    <Layout printResolution="300" name="atlas2" worldFileMap="" units="mm">
+    <Layout units="mm" worldFileMap="" printResolution="300" name="official sign">
       <Snapper snapToGrid="0" snapToItems="1" snapToGuides="1" tolerance="5"/>
-      <Grid offsetX="0" offsetUnits="mm" resolution="10" resUnits="mm" offsetY="0"/>
+      <Grid resolution="10" offsetY="0" resUnits="mm" offsetX="0" offsetUnits="mm"/>
       <PageCollection>
-        <symbol name="" clip_to_extent="1" type="fill" force_rhr="0" alpha="1">
-          <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+        <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="fill" name="">
+          <layer locked="0" pass="0" class="SimpleFill" enabled="1">
             <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
             <prop k="color" v="255,255,255,255"/>
             <prop k="joinstyle" v="miter"/>
@@ -1852,28 +2025,28 @@
             <prop k="style" v="solid"/>
             <data_defined_properties>
               <Option type="Map">
-                <Option value="" name="name" type="QString"/>
+                <Option value="" type="QString" name="name"/>
                 <Option name="properties"/>
-                <Option value="collection" name="type" type="QString"/>
+                <Option value="collection" type="QString" name="type"/>
               </Option>
             </data_defined_properties>
           </layer>
         </symbol>
-        <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="297,210,mm" groupUuid="" referencePoint="0" blendMode="0" visibility="1" position="0,0,mm" background="true" uuid="{f110d39e-7417-49a2-9c9d-8ef146a52635}" zValue="0" positionLock="false" frame="false" opacity="1" positionOnPage="0,0,mm" type="65638" id="" outlineWidthM="0.3,mm" templateUuid="{f110d39e-7417-49a2-9c9d-8ef146a52635}">
-          <FrameColor blue="0" green="0" red="0" alpha="255"/>
-          <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+        <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="0,0,mm" groupUuid="" zValue="0" blendMode="0" id="" excludeFromExports="0" type="65638" size="297,210,mm" itemRotation="0" templateUuid="{f110d39e-7417-49a2-9c9d-8ef146a52635}" frameJoinStyle="miter" opacity="1" background="true" uuid="{f110d39e-7417-49a2-9c9d-8ef146a52635}" visibility="1" position="0,0,mm">
+          <FrameColor red="0" green="0" alpha="255" blue="0"/>
+          <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
           <LayoutObject>
             <dataDefinedProperties>
               <Option type="Map">
-                <Option value="" name="name" type="QString"/>
+                <Option value="" type="QString" name="name"/>
                 <Option name="properties"/>
-                <Option value="collection" name="type" type="QString"/>
+                <Option value="collection" type="QString" name="type"/>
               </Option>
             </dataDefinedProperties>
             <customproperties/>
           </LayoutObject>
-          <symbol name="" clip_to_extent="1" type="fill" force_rhr="0" alpha="1">
-            <layer class="SimpleFill" enabled="1" locked="0" pass="0">
+          <symbol clip_to_extent="1" force_rhr="0" alpha="1" type="fill" name="">
+            <layer locked="0" pass="0" class="SimpleFill" enabled="1">
               <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
               <prop k="color" v="255,255,255,255"/>
               <prop k="joinstyle" v="miter"/>
@@ -1887,9 +2060,9 @@
               <prop k="style" v="solid"/>
               <data_defined_properties>
                 <Option type="Map">
-                  <Option value="" name="name" type="QString"/>
+                  <Option value="" type="QString" name="name"/>
                   <Option name="properties"/>
-                  <Option value="collection" name="type" type="QString"/>
+                  <Option value="collection" type="QString" name="type"/>
                 </Option>
               </data_defined_properties>
             </layer>
@@ -1897,74 +2070,74 @@
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem itemRotation="0" excludeFromExports="0" frameJoinStyle="miter" size="130.768,148.068,mm" pictureHeight="131.57" northMode="0" groupUuid="" referencePoint="7" svgFillColor="255,255,255,255" svgBorderColor="0,0,0,255" northOffset="0" blendMode="0" pictureRotation="0" visibility="1" position="148.5,160.814,mm" background="false" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" zValue="2" mapUuid="" resizeMode="0" mode="0" positionLock="false" anchorPoint="7" svgBorderWidth="0.2" file="101.svg" frame="false" opacity="1" positionOnPage="148.5,160.814,mm" type="65640" id="" outlineWidthM="0.3,mm" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" pictureWidth="130.768">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+      <LayoutItem positionLock="false" referencePoint="0" frame="false" outlineWidthM="0.3,mm" positionOnPage="24.986,156.228,mm" groupUuid="" zValue="2" blendMode="0" id="" excludeFromExports="0" htmlState="0" type="65641" marginY="0" halign="4" size="247.028,53.7715,mm" itemRotation="0" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" marginX="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" frameJoinStyle="miter" opacity="1" background="false" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" valign="128" position="24.986,156.228,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
         <LayoutObject>
           <dataDefinedProperties>
             <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option value="true" name="active" type="bool"/>
-                  <Option value="left(@project_path,strpos( @project_path, 'atlas_signs.qgz')-9)||'images/official/' ||   attribute(get_feature_by_id( 'official_sign_699051fb_cfb7_41bd_adec_29758644a878', @atlas_featureid ), 'img_fr')" name="expression" type="QString"/>
-                  <Option value="3" name="type" type="int"/>
-                </Option>
-              </Option>
-              <Option value="collection" name="type" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-      </LayoutItem>
-      <LayoutItem itemRotation="0" marginY="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" excludeFromExports="0" frameJoinStyle="miter" size="247.028,53.7715,mm" groupUuid="" referencePoint="0" blendMode="0" marginX="0" visibility="1" position="24.986,156.228,mm" background="false" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" htmlState="0" zValue="2" valign="128" positionLock="false" halign="4" frame="false" opacity="1" positionOnPage="24.986,156.228,mm" type="65641" id="" outlineWidthM="0.3,mm" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" name="name" type="QString"/>
+              <Option value="" type="QString" name="name"/>
               <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
+              <Option value="collection" type="QString" name="type"/>
             </Option>
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
         <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor blue="0" green="0" red="0" alpha="255"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
+      </LayoutItem>
+      <LayoutItem resizeMode="0" positionLock="false" referencePoint="7" frame="false" outlineWidthM="0.3,mm" northOffset="0" positionOnPage="148.5,160.814,mm" groupUuid="" zValue="2" blendMode="0" id="" svgBorderColor="0,0,0,255" excludeFromExports="0" type="65640" svgFillColor="255,255,255,255" mapUuid="" size="130.768,148.068,mm" svgBorderWidth="0.2" pictureHeight="114.557" itemRotation="0" pictureWidth="130.768" pictureRotation="0" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" file="101.svg" frameJoinStyle="miter" opacity="1" background="false" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" northMode="0" anchorPoint="7" mode="0" position="148.5,160.814,mm">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="left(@project_path,strpos( @project_path, 'atlas_signs.qgs')-9)||'images/official/' ||   attribute(get_feature_by_id( 'official_sign_699051fb_cfb7_41bd_adec_29758644a878', @atlas_featureid ), 'img_fr')" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
       </LayoutItem>
       <customproperties>
-        <property key="atlasRasterFormat" value="png"/>
-        <property key="forceVector" value="0"/>
-        <property key="pdfAppendGeoreference" value="1"/>
-        <property key="pdfCreateGeoPdf" value="0"/>
-        <property key="pdfDisableRasterTiles" value="0"/>
-        <property key="pdfExportThemes" value=""/>
-        <property key="pdfIncludeMetadata" value="1"/>
-        <property key="pdfLayerOrder" value=""/>
-        <property key="pdfOgcBestPracticeFormat" value="0"/>
-        <property key="pdfSimplify" value="1"/>
-        <property key="pdfTextFormat" value="0"/>
+        <property value="png" key="atlasRasterFormat"/>
+        <property value="0" key="forceVector"/>
+        <property value="1" key="pdfAppendGeoreference"/>
+        <property value="0" key="pdfCreateGeoPdf"/>
+        <property value="0" key="pdfDisableRasterTiles"/>
+        <property value="" key="pdfExportThemes"/>
+        <property value="1" key="pdfIncludeMetadata"/>
+        <property value="" key="pdfLayerOrder"/>
+        <property value="0" key="pdfOgcBestPracticeFormat"/>
+        <property value="1" key="pdfSimplify"/>
+        <property value="0" key="pdfTextFormat"/>
       </customproperties>
-      <Atlas filterFeatures="0" coverageLayerSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" filenamePattern="'output_'||@atlas_featurenumber" enabled="1" coverageLayer="official_sign_699051fb_cfb7_41bd_adec_29758644a878" pageNameExpression="&quot;id&quot;" coverageLayerProvider="postgres" sortFeatures="1" hideCoverage="0" sortAscending="1" coverageLayerName="official_sign" sortKey="id"/>
+      <Atlas sortAscending="1" coverageLayerName="official_sign" pageNameExpression="&quot;id&quot;" sortKey="id" sortFeatures="1" coverageLayer="official_sign_699051fb_cfb7_41bd_adec_29758644a878" coverageLayerProvider="postgres" filenamePattern="'output_'||@atlas_featurenumber" filterFeatures="0" coverageLayerSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" hideCoverage="0" enabled="1"/>
     </Layout>
   </Layouts>
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
   </ProjectViewSettings>
-  <ProjectTimeSettings timeStepUnit="h" timeStep="1" frameRate="1" cumulativeTemporalRange="0"/>
+  <ProjectTimeSettings timeStep="1" timeStepUnit="h" cumulativeTemporalRange="0" frameRate="1"/>
   <ProjectDisplaySettings>
     <BearingFormat id="bearing">
       <Option type="Map">
-        <Option value="" name="decimal_separator" type="QChar"/>
-        <Option value="6" name="decimals" type="int"/>
-        <Option value="0" name="direction_format" type="int"/>
-        <Option value="0" name="rounding_type" type="int"/>
-        <Option value="false" name="show_plus" type="bool"/>
-        <Option value="true" name="show_thousand_separator" type="bool"/>
-        <Option value="false" name="show_trailing_zeros" type="bool"/>
-        <Option value="" name="thousand_separator" type="QChar"/>
+        <Option value="" type="QChar" name="decimal_separator"/>
+        <Option value="6" type="int" name="decimals"/>
+        <Option value="0" type="int" name="direction_format"/>
+        <Option value="0" type="int" name="rounding_type"/>
+        <Option value="false" type="bool" name="show_plus"/>
+        <Option value="true" type="bool" name="show_thousand_separator"/>
+        <Option value="false" type="bool" name="show_trailing_zeros"/>
+        <Option value="" type="QChar" name="thousand_separator"/>
       </Option>
     </BearingFormat>
   </ProjectDisplaySettings>
