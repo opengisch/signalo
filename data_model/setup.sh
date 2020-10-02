@@ -84,4 +84,4 @@ if [[ $demo_data == True ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/demo_data.sql
 fi
 
-${DIR}/views/create_views.py --pg_service ${PGSERVICE}
+${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}

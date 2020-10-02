@@ -2,3 +2,4 @@
 .DS_Store
 *.orig
 .schemalintrc.js
+__pycache__

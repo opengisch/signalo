@@ -1,4 +1,4 @@
-ARG POSTGIS_VERSION=11-2.5
+ARG POSTGIS_VERSION=11-3.0
 FROM postgis/postgis:${POSTGIS_VERSION}
 
 ARG AUTO_INIT=True
@@ -7,7 +7,7 @@ ARG AUTO_INIT=True
 RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev wget && apt-get clean
 
 # Python deps
-RUN pip3 install pytest psycopg2
+RUN pip3 install pytest psycopg2 pirogue
 
 # Add source
 ADD . /src
@@ -17,9 +17,9 @@ RUN mkdir /downloads
 RUN chown postgres /downloads
 
 # Configure the postgres connections
-RUN printf '[siro_release]\ndbname=siro_release\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
-RUN printf '[siro_build]\ndbname=siro_build\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
-RUN printf '[siro_build_pum]\ndbname=siro_build_pum\nuser=postgres\n' >> /etc/postgresql-common/pg_service.conf
+RUN printf '[siro_release]\ndbname=siro_release\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro_build]\ndbname=siro_build\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro_build_pum]\ndbname=siro_build_pum\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
 
 RUN chmod +x /src/.docker/init_db.sh
 ENV PATH="/src/.docker:${PATH}"
@@ -29,3 +29,5 @@ RUN if [ "x${AUTO_INIT}" = "xTrue" ]; then ln -s /src/.docker/init_db.sh /docker
 
 # Some defaults
 ENV POSTGRES_PASSWORD=postgres
+# otherwise psycopg2 cannot connect
+ENV PGSERVICEFILE=/etc/postgresql-common/pg_service.conf

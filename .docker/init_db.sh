@@ -11,6 +11,7 @@ if [ ! "$#" == "0" ]; then
   fi
 fi
 
+
 printf "waiting for postgres…"
 until psql -U postgres -c '\q' > /dev/null 2>&1; do
   printf " 🐘"
