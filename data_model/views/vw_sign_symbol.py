@@ -33,7 +33,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , {sign_columns}
                 , {vl_official_sign_columns}
                 , ROW_NUMBER () OVER (
-                    PARTITION BY azimut_group
+                    PARTITION BY fk_support, azimut_group ORDER BY frame.rank, sign.rank
                     ) AS final_rank
                 , frame.id AS frame_id
                 , support.id AS support_id
@@ -45,24 +45,54 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             LEFT JOIN generate_series(-5,355,10) az_group (azimut_group)
                 ON sign.azimut >= az_group.azimut_group
                 AND sign.azimut < az_group.azimut_group + 10
-            ORDER BY azimut_group, final_rank
+            ORDER BY fk_support, azimut_group, final_rank
         ),
         ordered_shifted_signs AS (
             SELECT
-              ordered_signs.id,
-              SUM( vl_official_sign_img_height ) OVER rolling_window AS shift
+                ordered_signs.*,
+                SUM( vl_official_sign_img_height ) OVER rolling_window AS shift
             FROM
-              ordered_signs
-              WINDOW rolling_window AS ( PARTITION BY support_id, azimut_group ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
+                ordered_signs
+                WINDOW rolling_window AS ( PARTITION BY support_id, azimut_group ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
+            ORDER BY support_id, azimut_group, final_rank
+        ),
+        previous_sign AS (
+            SELECT
+                ordered_signs.id,
+                FIRST_VALUE(frame_id) OVER rolling_window AS frame_id,
+                FIRST_VALUE(id) OVER rolling_window AS previous_sign
+            FROM   
+                ordered_signs
+                WINDOW rolling_window AS ( PARTITION BY support_id ROWS 1 PRECEDING )
+            ORDER BY support_id, azimut_group, final_rank
+        ),
+        next_sign AS (
+            SELECT
+                ordered_signs.id,
+                LAST_VALUE(frame_id) OVER rolling_window AS frame_id,
+                LAST_VALUE(id) OVER rolling_window AS next_sign
+            FROM   
+                ordered_signs
+                WINDOW rolling_window AS ( PARTITION BY support_id ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING )
+            ORDER BY support_id ASC, azimut_group ASC , final_rank DESC
         )
         SELECT
-          ordered_signs.*,
-          FIRST_VALUE(id) OVER rolling_window AS previous_sign_in_frame,
-          LAST_VALUE(id) OVER rolling_window AS next_sign_in_frame
-        FROM   
-          ordered_signs
-          WINDOW rolling_window AS ( PARTITION BY support_id, frame_id ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING )
-          ;
+            ordered_shifted_signs.*,
+            previous_sign.previous_sign,
+            previous_sign_in_frame.previous_sign AS previous_sign_in_frame,
+            next_sign.next_sign,
+            next_sign_in_frame.next_sign AS next_sign_in_frame
+        FROM
+            ordered_shifted_signs
+            LEFT JOIN previous_sign ON previous_sign.id = ordered_shifted_signs.id
+            LEFT JOIN previous_sign previous_sign_in_frame ON previous_sign_in_frame.id = ordered_shifted_signs.id AND previous_sign_in_frame.frame_id = ordered_shifted_signs.frame_id
+            LEFT JOIN next_sign ON next_sign.id = ordered_shifted_signs.id
+            LEFT JOIN next_sign next_sign_in_frame ON next_sign_in_frame.id = ordered_shifted_signs.id AND next_sign_in_frame.frame_id = ordered_shifted_signs.frame_id
+        ORDER BY support_id, azimut_group, final_rank
+            
+         
+        
+        ;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
