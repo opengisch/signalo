@@ -35,6 +35,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , ROW_NUMBER () OVER (
                     PARTITION BY azimut_group
                     ) AS final_rank
+                , frame.id AS frame_id
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
             FROM siro_od.sign
@@ -45,15 +46,23 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 ON sign.azimut >= az_group.azimut_group
                 AND sign.azimut < az_group.azimut_group + 10
             ORDER BY azimut_group, final_rank
-        )     
+        ),
+        ordered_shifted_signs AS (
+            SELECT
+              ordered_signs.id,
+              SUM( vl_official_sign_img_height ) OVER rolling_window AS shift
+            FROM
+              ordered_signs
+              WINDOW rolling_window AS ( PARTITION BY support_id, azimut_group ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
+        )
         SELECT
           ordered_signs.*,
-          SUM( vl_official_sign_img_height ) OVER rolling_window AS shift,
-          COUNT (*) OVER ( PARTITION BY fk_frame ) AS nr_sign_per_frame
-        FROM
+          FIRST_VALUE(id) OVER rolling_window AS previous_sign_in_frame,
+          LAST_VALUE(id) OVER rolling_window AS next_sign_in_frame
+        FROM   
           ordered_signs
-          WINDOW rolling_window AS ( PARTITION BY support_id, azimut_group ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW )
-  ;
+          WINDOW rolling_window AS ( PARTITION BY support_id, frame_id ROWS BETWEEN 1 PRECEDING AND 1 FOLLOWING )
+          ;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
