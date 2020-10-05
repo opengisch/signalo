@@ -76,6 +76,7 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/official_si
 
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/owner.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/support.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/azimut.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/frame.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/sign.sql
 

@@ -12,11 +12,11 @@ class DbTestBase:
         count = cur.fetchone()[0]
         assert count == expected, "Relation {}.{} : expected {} rows, got {} rows".format(schema, table, expected, count)
 
-    def select(self, table, obj_id, schema='siro_od'):
+    def select(self, table, id, schema='siro_od'):
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-        cur.execute("SELECT * FROM {schema}.{table} WHERE obj_id=%(obj_id)s"
+        cur.execute("SELECT * FROM {schema}.{table} WHERE id=%(id)s"
                     .format(table=table, schema=schema),
-                    {'obj_id': obj_id})
+                    {'id': id})
         return cur.fetchone()
 
     def execute(self, sql: str, params=[]):
@@ -31,44 +31,44 @@ class DbTestBase:
         cur = self.conn.cursor()
         cols = ', '.join(row.keys())
         values = ', '.join(["%({key})s".format(key=key) for key in row.keys()])
-        cur.execute("INSERT INTO {schema}.{table} ({cols}) VALUES ({values}) RETURNING obj_id"
+        cur.execute("INSERT INTO {schema}.{table} ({cols}) VALUES ({values}) RETURNING id"
                     .format(table=table, schema=schema, cols=cols, values=values),
                     row)
         return cur.fetchone()[0]
 
-    def update(self, table, row, obj_id, schema='siro_od'):
+    def update(self, table, row, id, schema='siro_od'):
         cur = self.conn.cursor()
         cols = ','.join(['{key}=%({key})s'.format(key=key) for key in row.keys()])
-        row['obj_id'] = obj_id
-        cur.execute("UPDATE {schema}.{table} SET {cols} WHERE obj_id=%(obj_id)s"
+        row['id'] = id
+        cur.execute("UPDATE {schema}.{table} SET {cols} WHERE id=%(id)s"
                     .format(table=table, schema=schema, cols=cols),
                     row)
 
-    def delete(self, table, obj_id, schema='siro_od'):
+    def delete(self, table, id, schema='siro_od'):
         cur = self.conn.cursor()
-        cur.execute("DELETE FROM {schema}.{table} WHERE obj_id=%s"
-                    .format(table=table, schema=schema), [obj_id])
+        cur.execute("DELETE FROM {schema}.{table} WHERE id=%s"
+                    .format(table=table, schema=schema), [id])
 
     def insert_check(self, table, row, expected_row=None, schema='siro_od'):
-        obj_id = self.insert(table, row, schema)
-        result = self.select(table, obj_id, schema)
+        id = self.insert(table, row, schema)
+        result = self.select(table, id, schema)
 
-        assert result, obj_id
+        assert result, id
 
         if expected_row:
             row = expected_row
 
         self.check_result(row, result, table, 'insert', schema)
 
-        return obj_id
+        return id
 
-    def update_check(self, table, row, obj_id, schema='siro_od'):
-        self.update(table, row, obj_id, schema)
-        result = self.select(table, obj_id, schema)
+    def update_check(self, table, row, id, schema='siro_od'):
+        self.update(table, row, id, schema)
+        result = self.select(table, id, schema)
         self.check_result(row, result, table, 'update', schema)
 
-    def check(self, expected, table, obj_id, schema='siro_od'):
-        result = self.select(table, obj_id, schema)
+    def check(self, expected, table, id, schema='siro_od'):
+        result = self.select(table, id, schema)
         self.check_result(expected, result, table, 'update', schema)
 
     def check_result(self, expected, result, table, test_name, schema='siro_od'):
