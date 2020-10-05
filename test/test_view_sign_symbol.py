@@ -3,8 +3,6 @@ import os
 
 import psycopg2
 import psycopg2.extras
-import decimal
-import copy
 
 from .utils import DbTestBase
 
@@ -17,8 +15,8 @@ class TestViews(unittest.TestCase, DbTestBase):
 
     @classmethod
     def setUpClass(cls):
-        pgservice=os.environ.get('PGSERVICE') or 'siro_build'
-        cls.conn = psycopg2.connect("service={service}".format(service=pgservice))
+        pg_service = os.environ.get('PGSERVICE') or 'siro_build'
+        cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
     def test_view(self):
         data = [
