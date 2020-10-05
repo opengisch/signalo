@@ -26,36 +26,50 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     view_sql = """
         CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS
         
-        WITH ordered_signs AS (      
+        WITH joined_tables AS (      
             SELECT
                 sign.id
                 , azimut.azimut
                 , {sign_columns}
-                , {vl_official_sign_columns}
-                , ROW_NUMBER () OVER ( PARTITION BY fk_support, azimut ORDER BY frame.rank, sign.rank ) AS final_rank
+                , sign.rank AS sign_rank
                 , frame.id AS frame_id
                 , frame.rank AS frame_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
+                , {vl_official_sign_columns}
             FROM siro_od.sign
-            LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
-            LEFT JOIN siro_od.azimut ON azimut.id = frame.fk_azimut
-            LEFT JOIN siro_od.support ON support.id = azimut.fk_support
-            LEFT JOIN siro_vl.official_sign ON official_sign.id = sign.fk_official_sign
-            ORDER BY fk_support, azimut, final_rank
-        )
-        SELECT
-            ordered_signs.*
-            , SUM( vl_official_sign_img_height ) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS shift
-            , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS previous_sign_in_frame
-            , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS next_sign_in_frame
-            , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS previous_frame
-            , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS next_frame
-        FROM
-            ordered_signs
+                LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
+                LEFT JOIN siro_od.azimut ON azimut.id = frame.fk_azimut
+                LEFT JOIN siro_od.support ON support.id = azimut.fk_support
+                LEFT JOIN siro_vl.official_sign ON official_sign.id = sign.fk_official_sign
+        ),
+        ordered_recto_signs AS (
+            SELECT
+                joined_tables.*
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS final_rank
+            FROM joined_tables
             WHERE verso IS FALSE
-        ORDER BY 
-            support_id, azimut, final_rank
+            ORDER BY support_id, azimut, final_rank
+        ),
+        ordered_shifted_recto_signs AS (
+            SELECT
+                ordered_recto_signs.*
+                , SUM( vl_official_sign_img_height ) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS shift
+                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS previous_sign_in_frame
+                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS next_sign_in_frame
+                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS previous_frame
+                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS next_frame
+            FROM
+                ordered_recto_signs
+            ORDER BY 
+                support_id, azimut, final_rank
+        )
+            SELECT * FROM ordered_shifted_recto_signs
+        UNION 
+            SELECT jt.*, osrs.final_rank, osrs.shift, NULL::uuid AS previous_sign_in_frame, NULL::uuid AS next_sign_in_frame, NULL::uuid AS previous_frame, NULL::uuid AS next_frame
+            FROM joined_tables jt
+            LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank = osrs.sign_rank 
+            WHERE jt.verso IS TRUE   
         ;
     """.format(
         sign_columns=select_columns(

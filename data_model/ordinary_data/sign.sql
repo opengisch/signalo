@@ -4,7 +4,7 @@ CREATE TABLE siro_od.sign
     id uuid PRIMARY KEY default uuid_generate_v1(),
     fk_frame uuid not null,
     rank int default 1,
-    verso boolean default false,
+    verso boolean not null default false,
     fk_sign_type int NOT NULL,
     fk_official_sign text,
     fk_parent uuid, --self-reference
@@ -30,5 +30,5 @@ CREATE TABLE siro_od.sign
     CONSTRAINT fkey_vl_coating FOREIGN KEY (fk_coating) REFERENCES siro_vl.coating (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_lighting FOREIGN KEY (fk_lighting) REFERENCES siro_vl.lighting (id) MATCH SIMPLE,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH SIMPLE,
-    unique(fk_frame, rank)
+    unique(fk_frame, rank, verso)
 );
