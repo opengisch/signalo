@@ -28,12 +28,10 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         
         WITH joined_tables AS (      
             SELECT
-                sign.id
+                {sign_columns}
                 , azimut.azimut
-                , {sign_columns}
+                , {frame_columns}
                 , sign.rank AS sign_rank
-                , frame.id AS frame_id
-                , frame.rank AS frame_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
                 , {vl_official_sign_columns}
@@ -74,7 +72,12 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
-            remove_pkey=True, indent=4, skip_columns=['rank']
+            remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame']
+        ),
+        frame_columns=select_columns(
+            pg_cur=cursor, table_schema='siro_od', table_name='frame',
+            remove_pkey=False, indent=4, skip_columns=['fk_azimut'],
+            prefix='frame_'
         ),
         vl_official_sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_vl', table_name='official_sign',
