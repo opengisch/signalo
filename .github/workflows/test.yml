@@ -35,6 +35,9 @@ jobs:
       - run: npm install
 
       - name: "test images"
+        run: docker exec siro pytest
+
+      - name: "test images"
         run: docker exec siro sh -c "PGSERVICE=siro_build /src/test/official_sign_images.sh"
         
       - name: "schema lint"
