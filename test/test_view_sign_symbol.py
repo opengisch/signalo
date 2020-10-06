@@ -63,6 +63,14 @@ class TestViews(unittest.TestCase, DbTestBase):
         row = {'fk_azimut': azimut_id}
         self.update_check('frame', row, frame_id)
 
+    def test_update(self):
+        row = {
+            'fk_sign_type': 2,
+            'frame_fk_frame_type': 2,
+        }
+
+        self.update_check('vw_sign_symbol', row, '00000000-0000-0000-eeee-000002010101')
+
 
 if __name__ == '__main__':
     unittest.main()

@@ -87,8 +87,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ),
     )
 
-    cursor.execute(view_sql, variables)
-
     trigger_insert_sql = """
     CREATE OR REPLACE FUNCTION siro_od.ft_vw_sign_symbol_INSERT()
       RETURNS trigger AS
@@ -118,8 +116,36 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
         )
     )
+    
+    trigger_update_sql = """
+    CREATE OR REPLACE FUNCTION siro_od.ft_vw_siro_sign_symbol_UPDATE()
+      RETURNS trigger AS
+    $BODY$
+    DECLARE
+    BEGIN
+      {update_sign}
+      {update_frame}
+      RETURN NEW;
+    END;
+    $BODY$
+    LANGUAGE plpgsql;
 
-    for sql in (view_sql, trigger_insert_sql):
+    DROP TRIGGER IF EXISTS ft_vw_siro_sign_symbol_UPDATE ON siro_od.vw_sign_symbol;
+
+    CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON siro_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_siro_sign_symbol_UPDATE();
+    """.format(
+        update_sign=update_command(
+            pg_cur=cursor, table_schema='siro_od', table_name='sign',
+            indent=4, skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
+        ),
+        update_frame=update_command(
+            pg_cur=cursor, table_schema='siro_od', table_name='frame', prefix='frame_',
+            indent=4, skip_columns=[], remap_columns={}
+        )
+    )
+
+    for sql in (view_sql, trigger_insert_sql, trigger_update_sql):
         try:
             cursor.execute(sql, variables)
         except psycopg2.Error as e:
