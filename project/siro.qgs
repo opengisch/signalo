@@ -3124,7 +3124,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="name">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_de&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_fr&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_it&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;vl_official_sign_img_ro&quot; is not null THEN '../images/official/' ||  &quot;vl_official_sign_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" name="expression"/>
+                      <Option type="QString" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN '../images/official/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN '../images/official/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN '../images/official/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN '../images/official/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="offset">
@@ -3717,28 +3717,28 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_de">
+        <field name="_img_de">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_fr">
+        <field name="_img_fr">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_it">
+        <field name="_img_it">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_ro">
+        <field name="_img_ro">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -3842,10 +3842,10 @@ def my_form_open(dialog, layer, feature):
         <alias field="vl_official_sign_description_fr" index="36" name=""/>
         <alias field="vl_official_sign_description_it" index="37" name=""/>
         <alias field="vl_official_sign_description_ro" index="38" name=""/>
-        <alias field="vl_official_sign_img_de" index="39" name=""/>
-        <alias field="vl_official_sign_img_fr" index="40" name=""/>
-        <alias field="vl_official_sign_img_it" index="41" name=""/>
-        <alias field="vl_official_sign_img_ro" index="42" name=""/>
+        <alias field="_img_de" index="39" name=""/>
+        <alias field="_img_fr" index="40" name=""/>
+        <alias field="_img_it" index="41" name=""/>
+        <alias field="_img_ro" index="42" name=""/>
         <alias field="_symbol_height" index="43" name=""/>
         <alias field="_symbol_width" index="44" name=""/>
         <alias field="_final_rank" index="45" name=""/>
@@ -3897,10 +3897,10 @@ def my_form_open(dialog, layer, feature):
         <default expression="" applyOnUpdate="0" field="vl_official_sign_description_fr"/>
         <default expression="" applyOnUpdate="0" field="vl_official_sign_description_it"/>
         <default expression="" applyOnUpdate="0" field="vl_official_sign_description_ro"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_de"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_fr"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_it"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_ro"/>
+        <default expression="" applyOnUpdate="0" field="_img_de"/>
+        <default expression="" applyOnUpdate="0" field="_img_fr"/>
+        <default expression="" applyOnUpdate="0" field="_img_it"/>
+        <default expression="" applyOnUpdate="0" field="_img_ro"/>
         <default expression="" applyOnUpdate="0" field="_symbol_height"/>
         <default expression="" applyOnUpdate="0" field="_symbol_width"/>
         <default expression="" applyOnUpdate="0" field="_final_rank"/>
@@ -3950,10 +3950,10 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_description_fr" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_description_it" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_description_ro" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_de" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_fr" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_it" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_ro" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_img_de" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_img_fr" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_img_it" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_img_ro" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_symbol_height" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_symbol_width" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_final_rank" exp_strength="0"/>
@@ -4003,10 +4003,10 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="vl_official_sign_description_fr" desc=""/>
         <constraint exp="" field="vl_official_sign_description_it" desc=""/>
         <constraint exp="" field="vl_official_sign_description_ro" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_de" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_fr" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_it" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_ro" desc=""/>
+        <constraint exp="" field="_img_de" desc=""/>
+        <constraint exp="" field="_img_fr" desc=""/>
+        <constraint exp="" field="_img_it" desc=""/>
+        <constraint exp="" field="_img_ro" desc=""/>
         <constraint exp="" field="_symbol_height" desc=""/>
         <constraint exp="" field="_symbol_width" desc=""/>
         <constraint exp="" field="_final_rank" desc=""/>
@@ -4049,10 +4049,10 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="vl_official_sign_description_fr"/>
           <column hidden="0" width="-1" type="field" name="vl_official_sign_description_it"/>
           <column hidden="0" width="-1" type="field" name="vl_official_sign_description_ro"/>
-          <column hidden="0" width="185" type="field" name="vl_official_sign_img_de"/>
-          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_fr"/>
-          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_it"/>
-          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_ro"/>
+          <column hidden="0" width="185" type="field" name="_img_de"/>
+          <column hidden="0" width="-1" type="field" name="_img_fr"/>
+          <column hidden="0" width="-1" type="field" name="_img_it"/>
+          <column hidden="0" width="-1" type="field" name="_img_ro"/>
           <column hidden="0" width="-1" type="field" name="_symbol_height"/>
           <column hidden="0" width="-1" type="field" name="_final_rank"/>
           <column hidden="0" width="-1" type="field" name="support_id"/>
@@ -4179,11 +4179,11 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="vl_official_sign_description_it"/>
         <field editable="1" name="vl_official_sign_description_ro"/>
         <field editable="1" name="vl_official_sign_id"/>
-        <field editable="1" name="vl_official_sign_img_de"/>
-        <field editable="1" name="vl_official_sign_img_fr"/>
+        <field editable="1" name="_img_de"/>
+        <field editable="1" name="_img_fr"/>
         <field editable="1" name="_symbol_height"/>
-        <field editable="1" name="vl_official_sign_img_it"/>
-        <field editable="1" name="vl_official_sign_img_ro"/>
+        <field editable="1" name="_img_it"/>
+        <field editable="1" name="_img_ro"/>
         <field editable="1" name="_symbol_width"/>
         <field editable="1" name="vl_official_sign_value_de"/>
         <field editable="1" name="vl_official_sign_value_fr"/>
@@ -4234,11 +4234,11 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="vl_official_sign_description_it"/>
         <field labelOnTop="0" name="vl_official_sign_description_ro"/>
         <field labelOnTop="0" name="vl_official_sign_id"/>
-        <field labelOnTop="0" name="vl_official_sign_img_de"/>
-        <field labelOnTop="0" name="vl_official_sign_img_fr"/>
+        <field labelOnTop="0" name="_img_de"/>
+        <field labelOnTop="0" name="_img_fr"/>
         <field labelOnTop="0" name="_symbol_height"/>
-        <field labelOnTop="0" name="vl_official_sign_img_it"/>
-        <field labelOnTop="0" name="vl_official_sign_img_ro"/>
+        <field labelOnTop="0" name="_img_it"/>
+        <field labelOnTop="0" name="_img_ro"/>
         <field labelOnTop="0" name="_symbol_width"/>
         <field labelOnTop="0" name="vl_official_sign_value_de"/>
         <field labelOnTop="0" name="vl_official_sign_value_fr"/>
