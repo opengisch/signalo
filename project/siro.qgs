@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" version="3.14.0-Pi" saveDateTime="2020-10-06T14:20:00">
+<qgis projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" version="3.14.0-Pi" saveDateTime="2020-10-06T14:24:21">
   <homePath path=""/>
   <title></title>
   <autotransaction active="0"/>
@@ -29,13 +29,10 @@
     <layer-tree-layer legend_exp="" expanded="1" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" checked="Qt::Checked" source="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" providerKey="postgres" patch_size="-1,-1" name="vw_sign_symbol" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer legend_exp="" expanded="1" id="official_sign_699051fb_cfb7_41bd_adec_29758644a878" checked="Qt::Checked" source="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" providerKey="postgres" patch_size="-1,-1" name="official_sign" legend_split_behavior="0">
-      <customproperties/>
-    </layer-tree-layer>
     <layer-tree-layer legend_exp="" expanded="1" id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997" checked="Qt::Checked" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.osm.ch/osm-swiss-style/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0" providerKey="wms" patch_size="-1,-1" name="OSM.ch Swiss-Style" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-group expanded="0" checked="Qt::Checked" name="vl">
+    <layer-tree-group expanded="1" checked="Qt::Checked" name="vl">
       <customproperties/>
       <layer-tree-layer legend_exp="" expanded="1" id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" checked="Qt::Checked" source="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" providerKey="postgres" patch_size="-1,-1" name="owner" legend_split_behavior="0">
         <customproperties/>
@@ -79,13 +76,16 @@
   </layer-tree-group>
   <snapping-settings self-snapping="0" minScale="0" intersection-snapping="0" enabled="0" type="1" tolerance="12" mode="2" unit="1" scaleDependencyMode="0" maxScale="0">
     <individual-layer-settings>
-      <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" minScale="0" enabled="0" type="1" tolerance="12" units="1" maxScale="0"/>
       <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" minScale="0" enabled="0" type="1" tolerance="12" units="1" maxScale="0"/>
+      <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" minScale="0" enabled="0" type="1" tolerance="12" units="1" maxScale="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
-    <relation id="sign_azimut" strength="Association" referencingLayer="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="sign_azimut" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
-      <fieldRef referencingField="azimut_id" referencedField="id"/>
+    <relation id="official_sign-sign" strength="Association" referencingLayer="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="official_sign-sign" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae">
+      <fieldRef referencingField="fk_official_sign" referencedField="id"/>
+    </relation>
+    <relation id="official_sign-sign_1" strength="Association" referencingLayer="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="official_sign-sign" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae">
+      <fieldRef referencingField="fk_official_sign" referencedField="id"/>
     </relation>
     <relation id="support_azimut" strength="Association" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="support_azimut" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0">
       <fieldRef referencingField="fk_support" referencedField="id"/>
@@ -94,10 +94,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537911.39531214255839586</xmin>
-      <ymin>1152499.3825757501181215</ymin>
-      <xmax>2537987.05932443123310804</xmax>
-      <ymax>1152540.98548608203418553</ymax>
+      <xmin>2537951.50318507198244333</xmin>
+      <ymin>1152522.0375630718190223</ymin>
+      <xmax>2537954.63727014977484941</xmax>
+      <ymax>1152523.76080053369514644</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -219,17 +219,12 @@
         <legendlayerfile layerid="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendlayer checked="Qt::Checked" open="true" drawingOrder="-1" name="official_sign" showFeatureCount="0">
-      <filegroup hidden="false" open="true">
-        <legendlayerfile layerid="official_sign_699051fb_cfb7_41bd_adec_29758644a878" isInOverview="0" visible="1"/>
-      </filegroup>
-    </legendlayer>
     <legendlayer checked="Qt::Checked" open="true" drawingOrder="-1" name="OSM.ch Swiss-Style" showFeatureCount="0">
       <filegroup hidden="false" open="true">
         <legendlayerfile layerid="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
-    <legendgroup checked="Qt::Checked" open="false" name="vl">
+    <legendgroup checked="Qt::Checked" open="true" name="vl">
       <legendlayer checked="Qt::Checked" open="true" drawingOrder="-1" name="owner" showFeatureCount="0">
         <filegroup hidden="false" open="true">
           <legendlayerfile layerid="owner_4e532508_fa34_406c_8846_8f8306ca74ee" isInOverview="0" visible="1"/>
@@ -448,7 +443,10 @@
         </fixedRange>
       </temporal>
       <customproperties>
-        <property value="&quot;id&quot;" key="dualview/previewExpressions"/>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+          <value>"id"</value>
+        </property>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
         <activeChecks type="StringList">
@@ -461,11 +459,7 @@
           <fieldPair referencing="fk_support" referenced="id"/>
         </relation>
       </referencedLayers>
-      <referencingLayers>
-        <relation id="sign_azimut" strength="0" providerKey="postgres" layerId="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="sign_azimut" layerName="vw_sign_symbol" dataSource="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)">
-          <fieldPair referencing="azimut_id" referenced="id"/>
-        </relation>
-      </referencingLayers>
+      <referencingLayers/>
       <fieldConfiguration>
         <field name="id">
           <editWidget type="">
@@ -539,7 +533,7 @@
       <labelOnTop/>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression>"id"</previewExpression>
+      <previewExpression>COALESCE( "azimut", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" wkbType="NoGeometry" minScale="1e+08" autoRefreshEnabled="0" type="vector" geometry="No geometry" readOnly="0" autoRefreshTime="0" refreshOnNotifyMessage="" maxScale="0">
@@ -1448,294 +1442,14 @@
         <checkConfiguration/>
       </geometryOptions>
       <referencedLayers/>
-      <referencingLayers/>
-      <fieldConfiguration>
-        <field name="id">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="active">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="value_de">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="value_fr">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="value_it">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="value_ro">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="description_de">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="description_fr">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="description_it">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="description_ro">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_de">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_fr">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_it">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_ro">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_height">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="img_width">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-      </fieldConfiguration>
-      <aliases>
-        <alias field="id" index="0" name=""/>
-        <alias field="active" index="1" name=""/>
-        <alias field="value_de" index="2" name=""/>
-        <alias field="value_fr" index="3" name=""/>
-        <alias field="value_it" index="4" name=""/>
-        <alias field="value_ro" index="5" name=""/>
-        <alias field="description_de" index="6" name=""/>
-        <alias field="description_fr" index="7" name=""/>
-        <alias field="description_it" index="8" name=""/>
-        <alias field="description_ro" index="9" name=""/>
-        <alias field="img_de" index="10" name=""/>
-        <alias field="img_fr" index="11" name=""/>
-        <alias field="img_it" index="12" name=""/>
-        <alias field="img_ro" index="13" name=""/>
-        <alias field="img_height" index="14" name=""/>
-        <alias field="img_width" index="15" name=""/>
-      </aliases>
-      <excludeAttributesWMS/>
-      <excludeAttributesWFS/>
-      <defaults>
-        <default expression="" applyOnUpdate="0" field="id"/>
-        <default expression="" applyOnUpdate="0" field="active"/>
-        <default expression="" applyOnUpdate="0" field="value_de"/>
-        <default expression="" applyOnUpdate="0" field="value_fr"/>
-        <default expression="" applyOnUpdate="0" field="value_it"/>
-        <default expression="" applyOnUpdate="0" field="value_ro"/>
-        <default expression="" applyOnUpdate="0" field="description_de"/>
-        <default expression="" applyOnUpdate="0" field="description_fr"/>
-        <default expression="" applyOnUpdate="0" field="description_it"/>
-        <default expression="" applyOnUpdate="0" field="description_ro"/>
-        <default expression="" applyOnUpdate="0" field="img_de"/>
-        <default expression="" applyOnUpdate="0" field="img_fr"/>
-        <default expression="" applyOnUpdate="0" field="img_it"/>
-        <default expression="" applyOnUpdate="0" field="img_ro"/>
-        <default expression="" applyOnUpdate="0" field="img_height"/>
-        <default expression="" applyOnUpdate="0" field="img_width"/>
-      </defaults>
-      <constraints>
-        <constraint constraints="3" unique_strength="1" notnull_strength="1" field="id" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="active" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="value_de" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="value_fr" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="value_it" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="value_ro" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="description_de" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="description_fr" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="description_it" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="description_ro" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_de" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_fr" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_it" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_ro" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_height" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="img_width" exp_strength="0"/>
-      </constraints>
-      <constraintExpressions>
-        <constraint exp="" field="id" desc=""/>
-        <constraint exp="" field="active" desc=""/>
-        <constraint exp="" field="value_de" desc=""/>
-        <constraint exp="" field="value_fr" desc=""/>
-        <constraint exp="" field="value_it" desc=""/>
-        <constraint exp="" field="value_ro" desc=""/>
-        <constraint exp="" field="description_de" desc=""/>
-        <constraint exp="" field="description_fr" desc=""/>
-        <constraint exp="" field="description_it" desc=""/>
-        <constraint exp="" field="description_ro" desc=""/>
-        <constraint exp="" field="img_de" desc=""/>
-        <constraint exp="" field="img_fr" desc=""/>
-        <constraint exp="" field="img_it" desc=""/>
-        <constraint exp="" field="img_ro" desc=""/>
-        <constraint exp="" field="img_height" desc=""/>
-        <constraint exp="" field="img_width" desc=""/>
-      </constraintExpressions>
-      <expressionfields/>
-      <attributeactions/>
-      <attributetableconfig sortExpression="" actionWidgetStyle="dropDown" sortOrder="0">
-        <columns/>
-      </attributetableconfig>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <storedexpressions/>
-      <editform tolerant="1"></editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
-      <dataDefinedFieldProperties/>
-      <widgets/>
-      <previewExpression></previewExpression>
-      <mapTip></mapTip>
-    </maplayer>
-    <maplayer refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" wkbType="NoGeometry" minScale="1e+08" autoRefreshEnabled="0" type="vector" geometry="No geometry" readOnly="0" autoRefreshTime="0" refreshOnNotifyMessage="" maxScale="0">
-      <id>official_sign_699051fb_cfb7_41bd_adec_29758644a878</id>
-      <datasource>service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."official_sign"</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>official_sign</layername>
-      <srs>
-        <spatialrefsys>
-          <wkt></wkt>
-          <proj4></proj4>
-          <srsid>0</srsid>
-          <srid>0</srid>
-          <authid></authid>
-          <description></description>
-          <projectionacronym></projectionacronym>
-          <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <resourceMetadata>
-        <identifier></identifier>
-        <parentidentifier></parentidentifier>
-        <language></language>
-        <type>dataset</type>
-        <title></title>
-        <abstract></abstract>
-        <links/>
-        <fees></fees>
-        <encoding></encoding>
-        <crs>
-          <spatialrefsys>
-            <wkt></wkt>
-            <proj4></proj4>
-            <srsid>0</srsid>
-            <srid>0</srid>
-            <authid></authid>
-            <description></description>
-            <projectionacronym></projectionacronym>
-            <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
-          </spatialrefsys>
-        </crs>
-        <extent/>
-      </resourceMetadata>
-      <provider encoding="">postgres</provider>
-      <vectorjoins/>
-      <layerDependencies/>
-      <dataDependencies/>
-      <legend type="default-vector"/>
-      <expressionfields/>
-      <map-layer-style-manager current="default">
-        <map-layer-style name="default"/>
-      </map-layer-style-manager>
-      <auxiliaryLayer/>
-      <flags>
-        <Identifiable>1</Identifiable>
-        <Removable>1</Removable>
-        <Searchable>1</Searchable>
-      </flags>
-      <temporal durationField="" accumulate="0" startField="" endField="" enabled="0" durationUnit="min" startExpression="" mode="0" endExpression="" fixedDuration="0">
-        <fixedRange>
-          <start></start>
-          <end></end>
-        </fixedRange>
-      </temporal>
-      <customproperties/>
-      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
-        <activeChecks type="StringList">
-          <Option type="QString" value=""/>
-        </activeChecks>
-        <checkConfiguration/>
-      </geometryOptions>
-      <referencedLayers/>
-      <referencingLayers/>
+      <referencingLayers>
+        <relation id="official_sign-sign" strength="0" providerKey="postgres" layerId="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="official_sign-sign" layerName="vw_sign_symbol" dataSource="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)">
+          <fieldPair referencing="fk_official_sign" referenced="id"/>
+        </relation>
+        <relation id="official_sign-sign_1" strength="0" providerKey="postgres" layerId="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" name="official_sign-sign" layerName="vw_sign_symbol" dataSource="service='siro_build' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)">
+          <fieldPair referencing="fk_official_sign" referenced="id"/>
+        </relation>
+      </referencingLayers>
       <fieldConfiguration>
         <field name="id">
           <editWidget type="">
@@ -1947,7 +1661,7 @@
       <labelOnTop/>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression></previewExpression>
+      <previewExpression>description_de</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" wkbType="NoGeometry" minScale="1e+08" autoRefreshEnabled="0" type="vector" geometry="No geometry" readOnly="0" autoRefreshTime="0" refreshOnNotifyMessage="" maxScale="0">
@@ -3348,9 +3062,7 @@ def my_form_open(dialog, layer, feature):
         </extent>
       </resourceMetadata>
       <provider encoding="">postgres</provider>
-      <vectorjoins>
-        <join joinFieldName="fk_support" editable="0" memoryCache="1" targetFieldName="support_id" joinLayerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" upsertOnEdit="0" cascadedDelete="0" dynamicForm="0"/>
-      </vectorjoins>
+      <vectorjoins/>
       <layerDependencies/>
       <dataDependencies/>
       <legend type="default-vector"/>
@@ -3443,7 +3155,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property value="offline" key="QFieldSync/action"/>
         <property value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" key="QFieldSync/photo_naming"/>
-        <property value="&quot;vl_official_sign_description_de&quot;" key="dualview/previewExpressions"/>
+        <property value=" concat(&quot;vl_official_sign_id&quot;,' ', &quot;vl_official_sign_value_fr&quot;)" key="dualview/previewExpressions"/>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -3500,8 +3212,11 @@ def my_form_open(dialog, layer, feature):
         <checkConfiguration/>
       </geometryOptions>
       <referencedLayers>
-        <relation id="sign_azimut" strength="0" providerKey="postgres" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="sign_azimut" layerName="azimut" dataSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;">
-          <fieldPair referencing="azimut_id" referenced="id"/>
+        <relation id="official_sign-sign" strength="0" providerKey="postgres" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="official_sign-sign" layerName="official_sign" dataSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;">
+          <fieldPair referencing="fk_official_sign" referenced="id"/>
+        </relation>
+        <relation id="official_sign-sign_1" strength="0" providerKey="postgres" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="official_sign-sign" layerName="official_sign" dataSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;">
+          <fieldPair referencing="fk_official_sign" referenced="id"/>
         </relation>
       </referencedLayers>
       <referencingLayers/>
@@ -3548,22 +3263,21 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="fk_official_sign">
-          <editWidget type="ValueRelation">
+          <editWidget type="RelationReference">
             <config>
               <Option type="Map">
-                <Option type="bool" value="false" name="AllowMulti"/>
-                <Option type="bool" value="false" name="AllowNull"/>
-                <Option type="QString" value="&quot;description_fr&quot;" name="Description"/>
-                <Option type="QString" value="" name="FilterExpression"/>
-                <Option type="QString" value="id" name="Key"/>
-                <Option type="QString" value="official_sign_699051fb_cfb7_41bd_adec_29758644a878" name="Layer"/>
-                <Option type="QString" value="official_sign" name="LayerName"/>
-                <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" name="LayerSource"/>
-                <Option type="int" value="1" name="NofColumns"/>
+                <Option type="bool" value="false" name="AllowAddFeatures"/>
+                <Option type="bool" value="true" name="AllowNULL"/>
+                <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
-                <Option type="bool" value="false" name="UseCompleter"/>
-                <Option type="QString" value="value_fr" name="Value"/>
+                <Option type="bool" value="false" name="ReadOnly"/>
+                <Option type="QString" value="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="ReferencedLayerId"/>
+                <Option type="QString" value="official_sign" name="ReferencedLayerName"/>
+                <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
+                <Option type="QString" value="official_sign-sign" name="Relation"/>
+                <Option type="bool" value="false" name="ShowForm"/>
+                <Option type="bool" value="true" name="ShowOpenFormButton"/>
               </Option>
             </config>
           </editWidget>
@@ -3799,7 +3513,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="frame_fk_azimut">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -4039,7 +3753,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="vl_official_sign_img_width">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
               <Option/>
             </config>
@@ -4084,30 +3798,6 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field name="azimut_id">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="bool" value="false" name="IsMultiline"/>
-                <Option type="bool" value="false" name="UseHtml"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field name="azimut_azimut">
-          <editWidget type="Range">
-            <config>
-              <Option type="Map">
-                <Option type="bool" value="true" name="AllowNull"/>
-                <Option type="int" value="2147483647" name="Max"/>
-                <Option type="int" value="-2147483648" name="Min"/>
-                <Option type="int" value="0" name="Precision"/>
-                <Option type="int" value="1" name="Step"/>
-                <Option type="QString" value="SpinBox" name="Style"/>
-              </Option>
             </config>
           </editWidget>
         </field>
@@ -4164,8 +3854,6 @@ def my_form_open(dialog, layer, feature):
         <alias field="next_sign_in_frame" index="48" name=""/>
         <alias field="previous_frame" index="49" name=""/>
         <alias field="next_frame" index="50" name=""/>
-        <alias field="azimut_id" index="51" name=""/>
-        <alias field="azimut_azimut" index="52" name=""/>
       </aliases>
       <excludeAttributesWMS/>
       <excludeAttributesWFS/>
@@ -4221,8 +3909,6 @@ def my_form_open(dialog, layer, feature):
         <default expression="" applyOnUpdate="0" field="next_sign_in_frame"/>
         <default expression="" applyOnUpdate="0" field="previous_frame"/>
         <default expression="" applyOnUpdate="0" field="next_frame"/>
-        <default expression="" applyOnUpdate="0" field="azimut_id"/>
-        <default expression="" applyOnUpdate="0" field="azimut_azimut"/>
       </defaults>
       <constraints>
         <constraint constraints="3" unique_strength="1" notnull_strength="1" field="id" exp_strength="0"/>
@@ -4276,8 +3962,6 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="next_sign_in_frame" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="previous_frame" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="next_frame" exp_strength="0"/>
-        <constraint constraints="3" unique_strength="1" notnull_strength="1" field="azimut_id" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="azimut_azimut" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint exp="" field="id" desc=""/>
@@ -4331,8 +4015,6 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="next_sign_in_frame" desc=""/>
         <constraint exp="" field="previous_frame" desc=""/>
         <constraint exp="" field="next_frame" desc=""/>
-        <constraint exp="" field="azimut_id" desc=""/>
-        <constraint exp="" field="azimut_azimut" desc=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -4390,8 +4072,8 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="next_sign_in_frame"/>
           <column hidden="0" width="-1" type="field" name="previous_frame"/>
           <column hidden="0" width="-1" type="field" name="next_frame"/>
-          <column hidden="0" width="-1" type="field" name="azimut_id"/>
-          <column hidden="0" width="-1" type="field" name="azimut_azimut"/>
+          <column hidden="0" width="-1" type="field" name="frame_fk_azimut"/>
+          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_width"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4472,6 +4154,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="fk_status"/>
         <field editable="1" name="frame_comment"/>
         <field editable="1" name="frame_double_sided"/>
+        <field editable="1" name="frame_fk_azimut"/>
         <field editable="1" name="frame_fk_frame_fixing_type"/>
         <field editable="1" name="frame_fk_frame_type"/>
         <field editable="1" name="frame_fk_status"/>
@@ -4501,6 +4184,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="vl_official_sign_img_height"/>
         <field editable="1" name="vl_official_sign_img_it"/>
         <field editable="1" name="vl_official_sign_img_ro"/>
+        <field editable="1" name="vl_official_sign_img_width"/>
         <field editable="1" name="vl_official_sign_value_de"/>
         <field editable="1" name="vl_official_sign_value_fr"/>
         <field editable="1" name="vl_official_sign_value_it"/>
@@ -4525,6 +4209,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="fk_status"/>
         <field labelOnTop="0" name="frame_comment"/>
         <field labelOnTop="0" name="frame_double_sided"/>
+        <field labelOnTop="0" name="frame_fk_azimut"/>
         <field labelOnTop="0" name="frame_fk_frame_fixing_type"/>
         <field labelOnTop="0" name="frame_fk_frame_type"/>
         <field labelOnTop="0" name="frame_fk_status"/>
@@ -4554,6 +4239,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="vl_official_sign_img_height"/>
         <field labelOnTop="0" name="vl_official_sign_img_it"/>
         <field labelOnTop="0" name="vl_official_sign_img_ro"/>
+        <field labelOnTop="0" name="vl_official_sign_img_width"/>
         <field labelOnTop="0" name="vl_official_sign_value_de"/>
         <field labelOnTop="0" name="vl_official_sign_value_fr"/>
         <field labelOnTop="0" name="vl_official_sign_value_it"/>
@@ -4561,7 +4247,7 @@ def my_form_open(dialog, layer, feature):
       </labelOnTop>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression>"vl_official_sign_description_de"</previewExpression>
+      <previewExpression> concat("vl_official_sign_id",' ', "vl_official_sign_value_fr")</previewExpression>
       <mapTip></mapTip>
     </maplayer>
   </projectlayers>
@@ -4601,7 +4287,7 @@ def my_form_open(dialog, layer, feature):
       <pythonCode type="QString"></pythonCode>
     </Macros>
     <Measure>
-      <Ellipsoid type="QString">EPSG:7004</Ellipsoid>
+      <Ellipsoid type="QString">NONE</Ellipsoid>
     </Measure>
     <Measurement>
       <AreaUnits type="QString">m2</AreaUnits>
@@ -5133,7 +4819,7 @@ def my_form_open(dialog, layer, feature):
         <property value="1" key="pdfSimplify"/>
         <property value="0" key="pdfTextFormat"/>
       </customproperties>
-      <Atlas coverageLayer="official_sign_699051fb_cfb7_41bd_adec_29758644a878" filenamePattern="'output_'||@atlas_featurenumber" coverageLayerProvider="postgres" sortFeatures="1" filterFeatures="0" sortAscending="1" enabled="1" coverageLayerName="official_sign" coverageLayerSource="service='siro_build' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" hideCoverage="0" pageNameExpression="&quot;id&quot;" sortKey="id"/>
+      <Atlas coverageLayer="" filenamePattern="'output_'||@atlas_featurenumber" sortFeatures="1" filterFeatures="0" sortAscending="1" enabled="0" hideCoverage="0" pageNameExpression="&quot;id&quot;" sortKey="id"/>
     </Layout>
   </Layouts>
   <Bookmarks/>
