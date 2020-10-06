@@ -34,7 +34,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , sign.rank AS sign_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
-                , {vl_official_sign_columns}
+                , official_sign.img_height as _symbol_height
+                , official_sign.img_width as _symbol_width
             FROM siro_od.sign
                 LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
                 LEFT JOIN siro_od.azimut ON azimut.id = frame.fk_azimut
@@ -44,27 +45,27 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ordered_recto_signs AS (
             SELECT
                 joined_tables.*
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS final_rank
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _final_rank
             FROM joined_tables
             WHERE verso IS FALSE
-            ORDER BY support_id, azimut, final_rank
+            ORDER BY support_id, azimut, _final_rank
         ),
         ordered_shifted_recto_signs AS (
             SELECT
                 ordered_recto_signs.*
-                , SUM( vl_official_sign_img_height ) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS shift
-                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS previous_sign_in_frame
-                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS next_sign_in_frame
-                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS previous_frame
-                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS next_frame
+                , SUM( _symbol_height ) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN UNBOUNDED PRECEDING AND CURRENT ROW ) AS _symbol_shift
+                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS _previous_sign_in_frame
+                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, azimut, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS _next_sign_in_frame
+                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS _previous_frame
+                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
             FROM
                 ordered_recto_signs
             ORDER BY 
-                support_id, azimut, final_rank
+                support_id, azimut, _final_rank
         )
             SELECT * FROM ordered_shifted_recto_signs
         UNION 
-            SELECT jt.*, osrs.final_rank, osrs.shift, NULL::uuid AS previous_sign_in_frame, NULL::uuid AS next_sign_in_frame, NULL::uuid AS previous_frame, NULL::uuid AS next_frame
+            SELECT jt.*, osrs._final_rank, osrs._symbol_shift, NULL::uuid AS previous_sign_in_frame, NULL::uuid AS next_sign_in_frame, NULL::uuid AS previous_frame, NULL::uuid AS next_frame
             FROM joined_tables jt
             LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank = osrs.sign_rank 
             WHERE jt.verso IS TRUE   

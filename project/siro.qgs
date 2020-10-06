@@ -3119,7 +3119,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="height">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="@siro_img_size*&quot;vl_official_sign_img_height&quot;/100" name="expression"/>
+                      <Option type="QString" value="@siro_img_size*&quot;_symbol_height&quot;/100" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="name">
@@ -3129,7 +3129,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="offset">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="'0,' ||  to_string( 8+ &quot;final_rank&quot;*5 + @siro_img_size*&quot;shift&quot;/100 )" name="expression"/>
+                      <Option type="QString" value="'0,' ||  to_string( 8+ &quot;_final_rank&quot;*5 + @siro_img_size*&quot;_symbol_shift&quot;/100 )" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="vAnchor">
@@ -3139,7 +3139,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="width">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="@siro_img_size*&quot;vl_official_sign_img_width&quot;/100" name="expression"/>
+                      <Option type="QString" value="@siro_img_size*&quot;_symbol_width&quot;/100" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                   </Option>
@@ -3745,28 +3745,28 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_height">
+        <field name="_symbol_height">
           <editWidget type="Range">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="vl_official_sign_img_width">
+        <field name="_symbol_width">
           <editWidget type="Range">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="final_rank">
+        <field name="_final_rank">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="shift">
+        <field name="_symbol_shift">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -3846,10 +3846,10 @@ def my_form_open(dialog, layer, feature):
         <alias field="vl_official_sign_img_fr" index="40" name=""/>
         <alias field="vl_official_sign_img_it" index="41" name=""/>
         <alias field="vl_official_sign_img_ro" index="42" name=""/>
-        <alias field="vl_official_sign_img_height" index="43" name=""/>
-        <alias field="vl_official_sign_img_width" index="44" name=""/>
-        <alias field="final_rank" index="45" name=""/>
-        <alias field="shift" index="46" name=""/>
+        <alias field="_symbol_height" index="43" name=""/>
+        <alias field="_symbol_width" index="44" name=""/>
+        <alias field="_final_rank" index="45" name=""/>
+        <alias field="_symbol_shift" index="46" name=""/>
         <alias field="previous_sign_in_frame" index="47" name=""/>
         <alias field="next_sign_in_frame" index="48" name=""/>
         <alias field="previous_frame" index="49" name=""/>
@@ -3901,10 +3901,10 @@ def my_form_open(dialog, layer, feature):
         <default expression="" applyOnUpdate="0" field="vl_official_sign_img_fr"/>
         <default expression="" applyOnUpdate="0" field="vl_official_sign_img_it"/>
         <default expression="" applyOnUpdate="0" field="vl_official_sign_img_ro"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_height"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_width"/>
-        <default expression="" applyOnUpdate="0" field="final_rank"/>
-        <default expression="" applyOnUpdate="0" field="shift"/>
+        <default expression="" applyOnUpdate="0" field="_symbol_height"/>
+        <default expression="" applyOnUpdate="0" field="_symbol_width"/>
+        <default expression="" applyOnUpdate="0" field="_final_rank"/>
+        <default expression="" applyOnUpdate="0" field="_symbol_shift"/>
         <default expression="" applyOnUpdate="0" field="previous_sign_in_frame"/>
         <default expression="" applyOnUpdate="0" field="next_sign_in_frame"/>
         <default expression="" applyOnUpdate="0" field="previous_frame"/>
@@ -3954,10 +3954,10 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_fr" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_it" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_ro" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_height" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="vl_official_sign_img_width" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="final_rank" exp_strength="0"/>
-        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="shift" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_symbol_height" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_symbol_width" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_final_rank" exp_strength="0"/>
+        <constraint constraints="0" unique_strength="0" notnull_strength="0" field="_symbol_shift" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="previous_sign_in_frame" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="next_sign_in_frame" exp_strength="0"/>
         <constraint constraints="0" unique_strength="0" notnull_strength="0" field="previous_frame" exp_strength="0"/>
@@ -4007,10 +4007,10 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="vl_official_sign_img_fr" desc=""/>
         <constraint exp="" field="vl_official_sign_img_it" desc=""/>
         <constraint exp="" field="vl_official_sign_img_ro" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_height" desc=""/>
-        <constraint exp="" field="vl_official_sign_img_width" desc=""/>
-        <constraint exp="" field="final_rank" desc=""/>
-        <constraint exp="" field="shift" desc=""/>
+        <constraint exp="" field="_symbol_height" desc=""/>
+        <constraint exp="" field="_symbol_width" desc=""/>
+        <constraint exp="" field="_final_rank" desc=""/>
+        <constraint exp="" field="_symbol_shift" desc=""/>
         <constraint exp="" field="previous_sign_in_frame" desc=""/>
         <constraint exp="" field="next_sign_in_frame" desc=""/>
         <constraint exp="" field="previous_frame" desc=""/>
@@ -4053,10 +4053,10 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="vl_official_sign_img_fr"/>
           <column hidden="0" width="-1" type="field" name="vl_official_sign_img_it"/>
           <column hidden="0" width="-1" type="field" name="vl_official_sign_img_ro"/>
-          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_height"/>
-          <column hidden="0" width="-1" type="field" name="final_rank"/>
+          <column hidden="0" width="-1" type="field" name="_symbol_height"/>
+          <column hidden="0" width="-1" type="field" name="_final_rank"/>
           <column hidden="0" width="-1" type="field" name="support_id"/>
-          <column hidden="0" width="-1" type="field" name="shift"/>
+          <column hidden="0" width="-1" type="field" name="_symbol_shift"/>
           <column hidden="1" width="-1" type="actions"/>
           <column hidden="0" width="-1" type="field" name="verso"/>
           <column hidden="0" width="-1" type="field" name="frame_id"/>
@@ -4073,7 +4073,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="previous_frame"/>
           <column hidden="0" width="-1" type="field" name="next_frame"/>
           <column hidden="0" width="-1" type="field" name="frame_fk_azimut"/>
-          <column hidden="0" width="-1" type="field" name="vl_official_sign_img_width"/>
+          <column hidden="0" width="-1" type="field" name="_symbol_width"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4143,7 +4143,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="case_id"/>
         <field editable="1" name="comment"/>
         <field editable="1" name="destination"/>
-        <field editable="1" name="final_rank"/>
+        <field editable="1" name="_final_rank"/>
         <field editable="1" name="fk_coating"/>
         <field editable="1" name="fk_durability"/>
         <field editable="1" name="fk_lighting"/>
@@ -4169,7 +4169,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="photo"/>
         <field editable="1" name="previous_frame"/>
         <field editable="1" name="previous_sign_in_frame"/>
-        <field editable="1" name="shift"/>
+        <field editable="1" name="_symbol_shift"/>
         <field editable="1" name="sign_rank"/>
         <field editable="1" name="support_id"/>
         <field editable="1" name="verso"/>
@@ -4181,10 +4181,10 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="vl_official_sign_id"/>
         <field editable="1" name="vl_official_sign_img_de"/>
         <field editable="1" name="vl_official_sign_img_fr"/>
-        <field editable="1" name="vl_official_sign_img_height"/>
+        <field editable="1" name="_symbol_height"/>
         <field editable="1" name="vl_official_sign_img_it"/>
         <field editable="1" name="vl_official_sign_img_ro"/>
-        <field editable="1" name="vl_official_sign_img_width"/>
+        <field editable="1" name="_symbol_width"/>
         <field editable="1" name="vl_official_sign_value_de"/>
         <field editable="1" name="vl_official_sign_value_fr"/>
         <field editable="1" name="vl_official_sign_value_it"/>
@@ -4198,7 +4198,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="case_id"/>
         <field labelOnTop="0" name="comment"/>
         <field labelOnTop="0" name="destination"/>
-        <field labelOnTop="0" name="final_rank"/>
+        <field labelOnTop="0" name="_final_rank"/>
         <field labelOnTop="0" name="fk_coating"/>
         <field labelOnTop="0" name="fk_durability"/>
         <field labelOnTop="0" name="fk_lighting"/>
@@ -4224,7 +4224,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="photo"/>
         <field labelOnTop="0" name="previous_frame"/>
         <field labelOnTop="0" name="previous_sign_in_frame"/>
-        <field labelOnTop="0" name="shift"/>
+        <field labelOnTop="0" name="_symbol_shift"/>
         <field labelOnTop="0" name="sign_rank"/>
         <field labelOnTop="0" name="support_id"/>
         <field labelOnTop="0" name="verso"/>
@@ -4236,10 +4236,10 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="vl_official_sign_id"/>
         <field labelOnTop="0" name="vl_official_sign_img_de"/>
         <field labelOnTop="0" name="vl_official_sign_img_fr"/>
-        <field labelOnTop="0" name="vl_official_sign_img_height"/>
+        <field labelOnTop="0" name="_symbol_height"/>
         <field labelOnTop="0" name="vl_official_sign_img_it"/>
         <field labelOnTop="0" name="vl_official_sign_img_ro"/>
-        <field labelOnTop="0" name="vl_official_sign_img_width"/>
+        <field labelOnTop="0" name="_symbol_width"/>
         <field labelOnTop="0" name="vl_official_sign_value_de"/>
         <field labelOnTop="0" name="vl_official_sign_value_fr"/>
         <field labelOnTop="0" name="vl_official_sign_value_it"/>
