@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 #
-# -- View: vw_qgep_wastewater_structure
+# -- View: vw_sign_symbol
 
 import argparse
 import os
@@ -10,7 +10,7 @@ from pirogue.utils import select_columns, insert_command, update_command, table_
 
 def vw_sign_symbol(srid: int, pg_service: str = None):
     """
-    Creates qgep_wastewater_structure view
+    Creates sign_symbol view
     :param srid: EPSG code for geometries
     :param pg_service: the PostgreSQL service name
     """
@@ -69,6 +69,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank = osrs.sign_rank 
             WHERE jt.verso IS TRUE   
         ;
+        
+        ALTER VIEW siro_od.vw_sign_symbol ALTER verso SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
@@ -76,7 +78,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ),
         frame_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='frame',
-            remove_pkey=False, indent=4, skip_columns=['fk_azimut'],
+            remove_pkey=False, indent=4,
             prefix='frame_'
         ),
         vl_official_sign_columns=select_columns(
@@ -86,6 +88,43 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
 
     cursor.execute(view_sql, variables)
+
+    trigger_insert_sql = """
+    CREATE OR REPLACE FUNCTION siro_od.ft_vw_sign_symbol_INSERT()
+      RETURNS trigger AS
+    $BODY$
+    BEGIN
+    
+    IF NEW.frame_id IS NULL THEN
+        {insert_frame}
+    END IF;
+
+    {insert_sign}
+
+      RETURN NEW;
+    END; $BODY$ LANGUAGE plpgsql VOLATILE;
+
+    DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON siro_od.vw_sign_symbol;
+
+    CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON siro_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_sign_symbol_INSERT();
+    """.format(
+        insert_frame=insert_command(
+            pg_cur=cursor, table_schema='siro_od', table_name='frame', remove_pkey=True, indent=4,
+            skip_columns=[], returning='id INTO NEW.frame_id', prefix='frame_'
+        ),
+        insert_sign=insert_command(
+            pg_cur=cursor, table_schema='siro_od', table_name='sign', remove_pkey=True, indent=4,
+            skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
+        )
+    )
+
+    for sql in (view_sql, trigger_insert_sql):
+        try:
+            cursor.execute(sql, variables)
+        except psycopg2.Error as e:
+            print("*** Failing:\n{}\n***".format(sql))
+            raise e
     conn.commit()
     conn.close()
 

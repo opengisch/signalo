@@ -18,7 +18,7 @@ class TestViews(unittest.TestCase, DbTestBase):
         pg_service = os.environ.get('PGSERVICE') or 'siro_build'
         cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
-    def test_view(self):
+    def test_view_values(self):
         data = [
             {'id': '00000000-0000-0000-eeee-000001010101', 'row': {'azimut': 15, 'final_rank': 1,  'previous_sign_in_frame': None,                                   'next_sign_in_frame': '00000000-0000-0000-eeee-000001010102', 'previous_frame': None,                                   'next_frame': None}},
             {'id': '00000000-0000-0000-eeee-000001010102', 'row': {'azimut': 15, 'final_rank': 2,  'previous_sign_in_frame': '00000000-0000-0000-eeee-000001010101', 'next_sign_in_frame': None,                                   'previous_frame': None,                                   'next_frame': '00000000-0000-0000-ffff-000000010102'}},
@@ -39,6 +39,29 @@ class TestViews(unittest.TestCase, DbTestBase):
         ]
         for row in data:
             self.check(row['row'], 'vw_sign_symbol', row['id'])
+
+    def test_insert(self):
+        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
+
+        row = {
+            'frame_fk_azimut': azimut_id,
+            'frame_rank': 1,
+            'frame_fk_frame_type': 1,
+            'frame_fk_frame_fixing_type': 1,
+            'frame_fk_status': 1,
+            'sign_rank': 1,
+            'fk_sign_type': 1,
+            'fk_official_sign': '1.01',
+            'fk_durability': 1,
+            'fk_status': 1
+        }
+
+        sign_id = self.insert('vw_sign_symbol', row)
+        frame_id = self.select('sign', sign_id)['fk_frame']
+
+        row = {'fk_azimut': azimut_id}
+        self.update_check('frame', row, frame_id)
 
 
 if __name__ == '__main__':
