@@ -44,7 +44,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             self.check(row['row'], 'vw_sign_symbol', row['id'])
 
     def test_insert(self):
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
 
         row = {
@@ -67,6 +67,9 @@ class TestViews(unittest.TestCase, DbTestBase):
         self.update_check('frame', row, frame_id)
 
     def test_update(self):
+
+        self.execute(open('test/test_data.sql').read())
+
         row = {
             'fk_sign_type': 2,
             'frame_fk_frame_type': 2,
@@ -79,7 +82,7 @@ class TestViews(unittest.TestCase, DbTestBase):
         frame_count = self.count('frame')
         sign_count = self.count('sign')
 
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
 
         row = {

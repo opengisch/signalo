@@ -17,10 +17,13 @@ class DbTestBase:
                     {'id': id})
         return cur.fetchone()
 
+    def execute_select(self, sql: str, params=[]):
+        return self.execute('SELECT {};'.format(sql), params=params).fetchone()[0]
+
     def execute(self, sql: str, params=[]):
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-        cur.execute("SELECT {}".format(sql), params)
-        return cur.fetchone()[0]
+        cur.execute(sql, params)
+        return cur
 
     def cursor(self):
         return self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
@@ -106,22 +109,22 @@ class DbTestBase:
         """
         Helper to make 3D line geometries
         """
-        return self.execute('ST_ForceCurve(ST_SetSrid(ST_MakeLine(ST_MakePoint(%s, %s, %s), ST_MakePoint(%s, %s, %s)), %s))', [x1, y1, z1, x2, y2, z2, srid])
+        return self.execute_select('ST_ForceCurve(ST_SetSrid(ST_MakeLine(ST_MakePoint(%s, %s, %s), ST_MakePoint(%s, %s, %s)), %s))', [x1, y1, z1, x2, y2, z2, srid])
 
     def make_line_2d(self, x1, y1, x2, y2, srid=2056):
         """
         Helper to make 2D line geometries
         """
-        return self.execute('ST_ForceCurve(ST_SetSrid(ST_MakeLine(ST_MakePoint(%s, %s), ST_MakePoint(%s, %s)), %s))', [x1, y1, x2, y2, srid])
+        return self.execute_select('ST_ForceCurve(ST_SetSrid(ST_MakeLine(ST_MakePoint(%s, %s), ST_MakePoint(%s, %s)), %s))', [x1, y1, x2, y2, srid])
 
     def make_point(self, x, y, z, srid=2056):
         """
         Helper to make 3D point geometries
         """
-        return self.execute('ST_SetSrid(ST_MakePoint(%s, %s, %s), %s)', [x, y, z, srid])
+        return self.execute_select('ST_SetSrid(ST_MakePoint(%s, %s, %s), %s)', [x, y, z, srid])
 
     def make_point_2d(self, x, y, z=None, srid=2056):
         """
         Helper to make 2D point geometries
         """
-        return self.execute('ST_SetSrid(ST_MakePoint(%s, %s), %s)', [x, y, srid])
+        return self.execute_select('ST_SetSrid(ST_MakePoint(%s, %s), %s)', [x, y, srid])
