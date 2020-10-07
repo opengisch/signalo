@@ -1,0 +1,51 @@
+name: Release
+
+on:
+  release:
+    types: [published]
+
+jobs:
+  build:
+    name: Upload Release Asset
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: "build dockerfile"
+        run: docker build -f .docker/Dockerfile --tag opengisch/siro:${{ github.event.release.tag_name }} .
+
+      - name: "initialize container"
+        run: |
+          docker run -d -p 5432:5432 --name siro opengisch/siro:unstable
+          docker exec siro init_db.sh wait
+          docker exec siro init_db.sh build -v ${{ github.event.release.tag_name }}
+          docker exec -e PGSERVICE=pg_siro_demo siro init_db.sh build -d -v ${{ github.event.release.tag_name }}
+
+      - name: "create archive"
+        run: |
+          zip -r project-release.zip project README.md
+
+      - name: Login to DockerHub
+        if: github.event_name != 'pull_request'
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_USERNAME }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: "push to dockerhub"
+        if: github.event_name != 'pull_request'
+        run: |
+          docker push opengisch/siro:${{ github.event.release.tag_name }}
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.tag_name }}
+          asset_path: ./project-release.zip
+          asset_name: siro-${{ github.event.release.tag_name }}.zip
+          asset_content_type: application/zip

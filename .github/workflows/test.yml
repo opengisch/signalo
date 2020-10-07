@@ -4,8 +4,6 @@ on:
   push:
     branches:
       - master
-    tags:
-      - '*'
   pull_request:
     branches:
       - master
@@ -57,14 +55,6 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           docker push opengisch/siro:unstable
-
-      - name: "push release to dockerhub"
-        if: github.event_name != 'pull_request' && github.ref != 'refs/heads/master'
-        run: |
-          docker tag opengisch/siro:unstable opengisch/siro:${GITHUB_REF##*/}
-          docker push opengisch/siro:${GITHUB_REF##*/}
-          docker tag opengisch/siro:unstable opengisch/siro:latest
-          docker push opengisch/siro:latest
 
       - name: "failure logs"
         if: failure()
