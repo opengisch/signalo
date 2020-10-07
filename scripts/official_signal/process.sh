@@ -9,7 +9,7 @@ DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 #gsed -i -r 's/§([0-9])\.([0-9]+a?)(\.[0-9])?§/\x27\1\2\3.svg\x27/g' ${DIR}/insert.sql
 #gsed -i -r 's/\.([0-9])\.svg/-\1.svg/g' ${DIR}/insert.sql
 
-export PGSERVICE=siro_build
+export PGSERVICE=pg_siro
 cat ${DIR}/list_de.dat | \
 gsed -r 's/(«|»)/\x27\x27/g' | \
 gsed -r 's/([0-9.]+) (.*?) \([Aa]rt\.? .*\) *$/UPDATE siro_vl.official_sign SET  value_de = \x27\2\x27 WHERE id LIKE \x27\1%\x27;/' | \

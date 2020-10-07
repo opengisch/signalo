@@ -13,7 +13,7 @@ fi
 
 
 printf "waiting for postgres…"
-until psql -U postgres -c '\q' > /dev/null 2>&1; do
+until PGSERVICE=postgres psql -c '\q' > /dev/null 2>&1; do
   printf " 🐘"
   sleep 3
 done
@@ -30,7 +30,7 @@ recreate_db(){
 if [ "$1" == "wait" ]; then
   COUNT=0
   printf "initializing DB…"
-  until [[ -f ${PGDATA}/entrypoint-done-flag ]] || [[ $(( COUNT++ )) -eq 10 ]]; do
+  until [[ -f ${PGDATA}/entrypoint-done-flag ]] && [[ $(( COUNT++ )) -ne 10 ]]; do
     printf " 🐘"
     sleep 3
   done
@@ -41,14 +41,14 @@ fi
 
 if [ "$#" == "0" ] || [ "$1" == "build" ]; then
 
-  # we expect the service to have the same name than the DB
-  recreate_db "${PGSERVICE}"
+  # we expect the service be named as pg_[DB_NAME]
+  recreate_db "${PGSERVICE/pg_/}"
   echo '----------------------------------------'
   echo "Building database normally (passing argument: ${@:2})"
 
   ./data_model/setup.sh ${@:2}
 
-  echo "Done ! Database ${PGSERVICE}_build can now be used."
+  echo "Done ! Database ${PGSERVICE} can now be used."
   echo '----------------------------------------'
 
 fi

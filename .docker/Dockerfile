@@ -7,7 +7,7 @@ ARG AUTO_INIT=True
 RUN apt-get update && apt-get install -y python3 python3-pip libpq-dev wget && apt-get clean
 
 # Python deps
-RUN pip3 install pytest psycopg2 pirogue
+RUN pip3 install pytest psycopg2 pirogue pum
 
 # Add source
 ADD . /src
@@ -17,8 +17,9 @@ RUN mkdir /downloads
 RUN chown postgres /downloads
 
 # Configure the postgres connections
-RUN printf '[siro]\ndbname=siro\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
-RUN printf '[siro_demo]\ndbname=siro_demo\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[postgres]\ndbname=postgres\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[pg_siro]\ndbname=siro\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[pg_siro_demo]\ndbname=siro_demo\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
 
 RUN chmod +x /src/.docker/init_db.sh
 ENV PATH="/src/.docker:${PATH}"
@@ -31,5 +32,4 @@ ENV POSTGRES_PASSWORD=postgres
 # otherwise psycopg2 cannot connect
 ENV PGSERVICEFILE=/etc/postgresql-common/pg_service.conf
 
-ENV PGSERVICE=siro
-ENV SIRO_DB=siro
+ENV PGSERVICE=pg_siro
