@@ -10,7 +10,11 @@ from .utils import DbTestBase
 class TestViews(unittest.TestCase, DbTestBase):
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(cls) -> None:
+        cls.conn.close()
+
+    @classmethod
+    def tearDown(cls) -> None:
         cls.conn.rollback()
 
     @classmethod
