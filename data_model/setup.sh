@@ -18,7 +18,6 @@
 set -e
 
 SRID=2056
-BASELINE=0.0.0 # pum base line
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
@@ -27,7 +26,7 @@ if [[ -z ${PGSERVICE} ]]; then
 fi
 
 
-while getopts ":drfs:p:b:" opt; do
+while getopts ":drfs:p:" opt; do
   case $opt in
     f)
       force=True
@@ -37,10 +36,6 @@ while getopts ":drfs:p:b:" opt; do
       ;;
     d)
       demo_data=True
-      ;;
-    b)
-      BASELINE=$OPTARG
-      echo "-b was triggered, pum will set base line as ${BASELINE}" >&2
       ;;
     s)
       SRID=$OPTARG
@@ -96,4 +91,5 @@ fi
 
 ${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}
 
-pum baseline -p ${PGSERVICE} -t siro_sys.pum_info -d ${DIR}/delta/ -b ${BASELINE}
+VERSION=$(cat ${DIR}/../CURRENT_VERSION.txt)
+pum baseline -p ${PGSERVICE} -t siro_sys.pum_info -d ${DIR}/delta/ -b ${VERSION}

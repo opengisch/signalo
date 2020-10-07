@@ -13,15 +13,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v2
 
+      - name: Set version
+        run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
+
       - name: "build dockerfile"
         run: docker build -f .docker/Dockerfile --tag opengisch/siro:latest .
-
-      - name: "initialize container"
-        run: |
-          docker run -d -p 5432:5432 --name siro opengisch/siro:latest
-          docker exec siro init_db.sh wait
-          docker exec siro init_db.sh build -b ${{ github.event.release.tag_name }}
-          docker exec -e PGSERVICE=pg_siro_demo siro init_db.sh build -d -b ${{ github.event.release.tag_name }}
 
       - name: "create archive"
         run: |
