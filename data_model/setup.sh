@@ -89,3 +89,6 @@ if [[ $demo_data == True ]]; then
 fi
 
 ${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}
+
+VERSION=$(cat ${DIR}/CURRENT_VERSION.txt)
+pum baseline -p ${PGSERVICE} -t qgep_sys.pum_info -d ${DIR}/delta/ -b ${VERSION}

@@ -1,5 +1,4 @@
 -- Insert supports
-
 INSERT INTO siro_od.support(fk_support_type,fk_support_base_type,fk_status,geometry) VALUES (1,1,1,ST_GeomFromText('POINT(2538388.0 1152589.8)',2056));
 INSERT INTO siro_od.support(id,fk_support_type,fk_support_base_type,fk_status,geometry) VALUES ('00000000-0000-0000-0000-000000000001',1,1,1,ST_GeomFromText('POINT(2537954.42 1152523.14)',2056));
 INSERT INTO siro_od.support(id,fk_support_type,fk_support_base_type,fk_status,geometry) VALUES ('00000000-0000-0000-0000-000000000002',3,2,1,ST_GeomFromText('POINT(2538449.48 1152512.22)',2056));

@@ -27,18 +27,18 @@ jobs:
         run: |
           docker run -d -p 5432:5432 --name siro opengisch/siro:unstable
           docker exec siro init_db.sh wait
-          docker exec siro init_db.sh build -d
+          docker exec -e PGSERVICE=siro_demo siro init_db.sh build -d
 
       - uses: actions/setup-node@v1
         with:
           node-version: '12'
       - run: npm install
 
-      - name: "test images"
+      - name: "test data model"
         run: docker exec siro pytest
 
       - name: "test images"
-        run: docker exec siro sh -c "PGSERVICE=siro_build /src/test/official_sign_images.sh"
+        run: docker exec siro /src/test/official_sign_images.sh
         
       - name: "schema lint"
         run: |

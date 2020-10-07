@@ -17,9 +17,8 @@ RUN mkdir /downloads
 RUN chown postgres /downloads
 
 # Configure the postgres connections
-RUN printf '[siro_release]\ndbname=siro_release\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
-RUN printf '[siro_build]\ndbname=siro_build\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
-RUN printf '[siro_build_pum]\ndbname=siro_build_pum\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro]\ndbname=siro\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
+RUN printf '[siro_demo]\ndbname=siro_demo\nuser=postgres\n' >> $(pg_config --sysconfdir)/pg_service.conf
 
 RUN chmod +x /src/.docker/init_db.sh
 ENV PATH="/src/.docker:${PATH}"
@@ -31,3 +30,6 @@ RUN if [ "x${AUTO_INIT}" = "xTrue" ]; then ln -s /src/.docker/init_db.sh /docker
 ENV POSTGRES_PASSWORD=postgres
 # otherwise psycopg2 cannot connect
 ENV PGSERVICEFILE=/etc/postgresql-common/pg_service.conf
+
+ENV PGSERVICE=siro
+ENV SIRO_DB=siro

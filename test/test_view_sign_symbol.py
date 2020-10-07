@@ -19,6 +19,9 @@ class TestViews(unittest.TestCase, DbTestBase):
         cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
     def test_view_values(self):
+
+        self.execute(open('test/test_data.sql').read())
+
         data = [
             {'id': '00000000-0000-0000-eeee-000001010101', 'row': {'azimut': 15,  '_final_rank': 1, '_previous_sign_in_frame': None,                                   '_next_sign_in_frame': '00000000-0000-0000-eeee-000001010102', '_previous_frame': None,                                   '_next_frame': None}},
             {'id': '00000000-0000-0000-eeee-000001010102', 'row': {'azimut': 15,  '_final_rank': 2, '_previous_sign_in_frame': '00000000-0000-0000-eeee-000001010101', '_next_sign_in_frame': None,                                   '_previous_frame': None,                                   '_next_frame': '00000000-0000-0000-ffff-000000010102'}},
