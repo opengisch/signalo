@@ -28,8 +28,9 @@ recreate_db(){
 }
 
 if [ "$1" == "wait" ]; then
+  COUNT=0
   printf "initializing DB…"
-  until [ -f ${PGDATA}/entrypoint-done-flag ]; do
+  until [[ -f ${PGDATA}/entrypoint-done-flag ]] || [[ $(( COUNT++ )) -eq 10 ]]; do
     printf " 🐘"
     sleep 3
   done
