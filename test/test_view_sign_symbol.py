@@ -10,15 +10,22 @@ from .utils import DbTestBase
 class TestViews(unittest.TestCase, DbTestBase):
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(cls) -> None:
+        cls.conn.close()
+
+    @classmethod
+    def tearDown(cls) -> None:
         cls.conn.rollback()
 
     @classmethod
     def setUpClass(cls):
-        pg_service = os.environ.get('PGSERVICE') or 'siro_build'
+        pg_service = os.environ.get('PGSERVICE') or 'siro'
         cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
     def test_view_values(self):
+
+        self.execute(open('test/test_data.sql').read())
+
         data = [
             {'id': '00000000-0000-0000-eeee-000001010101', 'row': {'azimut': 15,  '_final_rank': 1, '_previous_sign_in_frame': None,                                   '_next_sign_in_frame': '00000000-0000-0000-eeee-000001010102', '_previous_frame': None,                                   '_next_frame': None}},
             {'id': '00000000-0000-0000-eeee-000001010102', 'row': {'azimut': 15,  '_final_rank': 2, '_previous_sign_in_frame': '00000000-0000-0000-eeee-000001010101', '_next_sign_in_frame': None,                                   '_previous_frame': None,                                   '_next_frame': '00000000-0000-0000-ffff-000000010102'}},
@@ -41,7 +48,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             self.check(row['row'], 'vw_sign_symbol', row['id'])
 
     def test_insert(self):
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
 
         row = {
@@ -64,6 +71,9 @@ class TestViews(unittest.TestCase, DbTestBase):
         self.update_check('frame', row, frame_id)
 
     def test_update(self):
+
+        self.execute(open('test/test_data.sql').read())
+
         row = {
             'fk_sign_type': 2,
             'frame_fk_frame_type': 2,
@@ -76,7 +86,7 @@ class TestViews(unittest.TestCase, DbTestBase):
         frame_count = self.count('frame')
         sign_count = self.count('sign')
 
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
 
         row = {

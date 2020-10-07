@@ -10,12 +10,16 @@ from .utils import DbTestBase
 class TestViews(unittest.TestCase, DbTestBase):
 
     @classmethod
-    def tearDownClass(cls):
+    def tearDownClass(cls) -> None:
+        cls.conn.close()
+
+    @classmethod
+    def tearDown(cls) -> None:
         cls.conn.rollback()
 
     @classmethod
     def setUpClass(cls):
-        pg_service = os.environ.get('PGSERVICE') or 'siro_build'
+        pg_service = os.environ.get('PGSERVICE') or 'siro'
         cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
     def test_reorder_signs_in_rank(self):
@@ -23,7 +27,7 @@ class TestViews(unittest.TestCase, DbTestBase):
         frame_count = self.count('frame')
         sign_count = self.count('sign')
 
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
 
         row = {
@@ -63,7 +67,7 @@ class TestViews(unittest.TestCase, DbTestBase):
 
         frame_count = self.count('frame')
 
-        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
         azimut_ids = {100: self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id}),
                       200: self.insert_check('azimut', {'azimut': 200, 'fk_support': support_id})}
 

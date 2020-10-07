@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     user: 'postgres',
     password: 'postgres',
-    database: 'siro_build',
+    database: 'siro',
     charset: 'utf8',
   },
 
@@ -24,5 +24,7 @@ module.exports = {
 
   ignores: [
     { identifierPattern: 'siro_vl\\.status', rulePattern: 'name-inflection' },
+    { identifierPattern: 'siro_sys\\.pum*', rulePattern: 'prefer-text-to-varchar' },
+    { identifierPattern: 'siro_sys\\.pum*', rulePattern: 'prefer-identity-to-serial' },
   ]
 };

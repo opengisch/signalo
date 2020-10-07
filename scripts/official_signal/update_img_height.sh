@@ -15,4 +15,4 @@ for img in /src/images/official/*.svg; do
     rm img.png
 done
 
-PGSERVICE=siro_build psql -v ON_ERROR_STOP=on -f update.sql
+PGSERVICE=pg_siro psql -v ON_ERROR_STOP=on -f update.sql

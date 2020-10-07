@@ -5,15 +5,15 @@ DB_BASE_NAME=siro
 set -e
 
 if [ ! "$#" == "0" ]; then
-  if [ ! "$1" == "wait" ] && [ ! "$1" == "release" ] && [ ! "$1" == "release_struct" ] && [ ! "$1" == "build" ] && [ ! "$1" == "build_pum" ]; then
-    echo "arg must be one of : 'wait' 'release' 'release_struct' 'build' 'build_pum'"
+  if [ ! "$1" == "wait" ] && [ ! "$1" == "build" ] && [ ! "$1" == "build_demo" ]; then
+    echo "arg must be one of : 'wait' 'build' 'build_demo'"
     exit 1
   fi
 fi
 
 
 printf "waiting for postgres…"
-until psql -U postgres -c '\q' > /dev/null 2>&1; do
+until PGSERVICE=postgres psql -c '\q' > /dev/null 2>&1; do
   printf " 🐘"
   sleep 3
 done
@@ -28,55 +28,32 @@ recreate_db(){
 }
 
 if [ "$1" == "wait" ]; then
+  COUNT=0
   printf "initializing DB…"
-  until [ -f ${PGDATA}/entrypoint-done-flag ]; do
+  until [[ -f ${PGDATA}/entrypoint-done-flag ]] && [[ $(( COUNT++ )) -ne 10 ]]; do
     printf " 🐘"
     sleep 3
   done
   echo ""
   echo "Initialization complete !"
-  # Let some time for postgres to restart...
-  sleep 3
   exit 0
-fi
-
-if [ "$1" == "release" ]; then
-  if [ "$2" == "" ]; then
-    echo 'you must provide the release version as second argument'
-    exit 1
-  fi
-
-  echo '----------------------------------------'
-  echo "Installing demo data from release"
-
-  FILE="/downloads/${2}.backup"
-
-  if [ ! -f "$FILE" ]; then
-    wget -nv https://github.com/opengisch/signalisation_verticale/releases/download/${2}/qgep_v${2}_structure_and_demo_data.backup -O $FILE
-  fi
-
-  recreate_db "${DB_BASE_NAME}_release"
-  pg_restore -U postgres --dbname ${DB_BASE_NAME}_release --verbose --exit-on-error "$FILE"
-
-  echo "Done ! Database can now be used."
-  echo '----------------------------------------'
-
 fi
 
 if [ "$#" == "0" ] || [ "$1" == "build" ]; then
 
-  recreate_db "${DB_BASE_NAME}_build"
+  # we expect the service be named as pg_[DB_NAME]
+  recreate_db "${PGSERVICE/pg_/}"
   echo '----------------------------------------'
   echo "Building database normally (passing argument: ${@:2})"
 
-  PGSERVICE=${DB_BASE_NAME}_build ./data_model/setup.sh ${@:2}
+  ./data_model/setup.sh ${@:2}
 
-  echo "Done ! Database ${DB_BASE_NAME}_build can now be used."
+  echo "Done ! Database ${PGSERVICE} can now be used."
   echo '----------------------------------------'
 
 fi
 
-if [ "$1" == "build_pum" ]; then
+if [ "$1" == "build_demo" ]; then
 
   recreate_db "${DB_BASE_NAME}_build_pum"
   echo '----------------------------------------'

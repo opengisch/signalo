@@ -13,4 +13,4 @@ docker rm -f siro || true
 # --rm delete the container when it stops (the data won't be persisted !)
 docker run -d -p 5432:5432 --name siro opengisch/siro
 
-docker exec -e PGSERVICE=siro_build siro sh -c "init_db.sh wait"
+docker exec -e PGSERVICE=pg_siro siro sh -c "init_db.sh wait"
