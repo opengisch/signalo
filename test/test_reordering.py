@@ -59,6 +59,45 @@ class TestViews(unittest.TestCase, DbTestBase):
         self.check({'rank': 3, 'comment': '4'}, 'sign', sign_ids[3])
         self.check({'rank': 4, 'comment': '5'}, 'sign', sign_ids[4])
 
+    def test_reorder_frames_on_support(self):
+
+        frame_count = self.count('frame')
+
+        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        azimut_ids = {100: self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id}),
+                      200: self.insert_check('azimut', {'azimut': 200, 'fk_support': support_id})}
+
+        frame_ids = {}
+        for az in (100, 200):
+            frame_ids[az] = {}
+            row = {
+                'fk_azimut': azimut_ids[az],
+                'fk_frame_type': 1,
+                'fk_frame_fixing_type': 1,
+                'fk_status': 1,
+            }
+            for i in range(1, 6):
+                row['rank'] = i
+                row['comment'] = '{az} {rank}'.format(az=az, rank=i)
+                frame_ids[az][i] = self.insert('frame', row)
+
+        self.assertEqual(self.count('frame'), frame_count+10)
+
+        self.delete('frame', frame_ids[100][2])
+        self.update('frame', {'fk_azimut': azimut_ids[200]}, frame_ids[100][3])
+
+        self.assertEqual(self.count('frame'), frame_count+9)
+
+        self.check({'rank': 1, 'comment': '100 1'}, 'frame', frame_ids[100][1])
+        self.check({'rank': 2, 'comment': '100 4'}, 'frame', frame_ids[100][4])
+        self.check({'rank': 3, 'comment': '100 5'}, 'frame', frame_ids[100][5])
+        self.check({'rank': 1, 'comment': '200 1'}, 'frame', frame_ids[200][1])
+        self.check({'rank': 2, 'comment': '200 2'}, 'frame', frame_ids[200][2])
+        self.check({'rank': 3, 'comment': '200 3'}, 'frame', frame_ids[200][3])
+        self.check({'rank': 4, 'comment': '200 4'}, 'frame', frame_ids[200][4])
+        self.check({'rank': 5, 'comment': '200 5'}, 'frame', frame_ids[200][5])
+        self.check({'rank': 6, 'comment': '100 3'}, 'frame', frame_ids[100][3])
+
 
 if __name__ == '__main__':
     unittest.main()
