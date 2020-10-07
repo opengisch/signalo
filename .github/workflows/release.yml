@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    name: Upload Release Asset
+    name: Create release
     runs-on: ubuntu-latest
 
     steps:
