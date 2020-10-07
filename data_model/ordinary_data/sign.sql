@@ -32,3 +32,40 @@ CREATE TABLE siro_od.sign
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,
     unique(fk_frame, rank, verso)
 );
+
+-- reorder sign after deletion
+CREATE OR REPLACE FUNCTION siro_od.ft_reorder_signs_in_frame() RETURNS TRIGGER AS
+	$BODY$
+	DECLARE
+	    _rank integer := 1;
+	    _sign record;
+	BEGIN
+        FOR _sign IN (SELECT * FROM siro_od.sign WHERE fk_frame = OLD.fk_frame ORDER BY rank ASC)
+        LOOP
+            UPDATE siro_od.sign SET rank = _rank WHERE id = _sign.id;
+            _rank = _rank + 1;
+        END LOOP;
+		RETURN OLD;
+	END;
+	$BODY$
+	LANGUAGE plpgsql;
+
+CREATE TRIGGER tr_sign_on_delete_reorder
+	AFTER DELETE ON siro_od.sign
+	FOR EACH ROW
+	EXECUTE PROCEDURE siro_od.ft_reorder_signs_in_frame();
+COMMENT ON TRIGGER tr_sign_on_delete_reorder ON siro_od.sign IS 'Trigger: update signs order after deleting one.';
+
+-- prevent reassigning to different frame
+CREATE OR REPLACE FUNCTION siro_od.ft_sign_prevent_fk_frame_update() RETURNS TRIGGER AS
+    $BODY$
+    BEGIN
+      RAISE EXCEPTION 'A sign cannot be reassigned to another frame.';
+    END;
+    $BODY$ LANGUAGE PLPGSQL;
+
+CREATE TRIGGER tr_sign_on_update_prevent_fk_frame
+    BEFORE UPDATE OF fk_frame ON siro_od.sign
+    FOR EACH ROW
+    WHEN (NEW.fk_frame <> OLD.fk_frame)
+    EXECUTE PROCEDURE siro_od.ft_sign_prevent_fk_frame_update();
