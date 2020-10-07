@@ -27,7 +27,7 @@ if [[ -z ${PGSERVICE} ]]; then
 fi
 
 
-while getopts ":drfs:p:" opt; do
+while getopts ":drfs:p:b:" opt; do
   case $opt in
     f)
       force=True
@@ -52,6 +52,7 @@ while getopts ":drfs:p:" opt; do
       ;;
     \?)
       echo "Invalid option: -$OPTARG" >&2
+      exit 1
       ;;
     :)
       echo "Option -$OPTARG requires an argument." >&2

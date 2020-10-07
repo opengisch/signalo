@@ -20,8 +20,8 @@ jobs:
         run: |
           docker run -d -p 5432:5432 --name siro opengisch/siro:latest
           docker exec siro init_db.sh wait
-          docker exec siro init_db.sh build -v ${{ github.event.release.tag_name }}
-          docker exec -e PGSERVICE=pg_siro_demo siro init_db.sh build -d -v ${{ github.event.release.tag_name }}
+          docker exec siro init_db.sh build -b ${{ github.event.release.tag_name }}
+          docker exec -e PGSERVICE=pg_siro_demo siro init_db.sh build -d -b ${{ github.event.release.tag_name }}
 
       - name: "create archive"
         run: |

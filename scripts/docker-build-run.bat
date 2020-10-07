@@ -1,8 +1,3 @@
-#!/usr/bin/env bash
-
-
-set -e
-
 
 docker build -f .docker/Dockerfile --tag opengisch/siro .
 
