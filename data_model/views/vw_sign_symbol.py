@@ -149,8 +149,29 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             indent=4, skip_columns=[], remap_columns={}
         )
     )
+    
+    trigger_delete_sql = """
+    CREATE OR REPLACE FUNCTION siro_od.ft_vw_sign_symbol_DELETE()
+      RETURNS trigger AS
+    $BODY$
+    DECLARE
+      _sign_count integer;
+    BEGIN
+      DELETE FROM siro_od.sign WHERE id = OLD.id;
+      SELECT count(id) INTO _sign_count FROM siro_od.sign WHERE fk_frame = OLD.frame_id;
+      IF _sign_count = 0 THEN
+        DELETE FROM siro_od.frame WHERE id = OLD.frame_id;
+      END IF;   
+    RETURN OLD;
+    END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
-    for sql in (view_sql, trigger_insert_sql, trigger_update_sql):
+    DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON siro_od.vw_sign_symbol;
+
+    CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON siro_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_sign_symbol_DELETE();
+    """
+
+    for sql in (view_sql, trigger_insert_sql, trigger_update_sql, trigger_delete_sql):
         try:
             cursor.execute(sql, variables)
         except psycopg2.Error as e:

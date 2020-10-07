@@ -71,6 +71,47 @@ class TestViews(unittest.TestCase, DbTestBase):
 
         self.update_check('vw_sign_symbol', row, '00000000-0000-0000-eeee-000002010101')
 
+    def test_delete(self):
+
+        frame_count = self.count('frame')
+        sign_count = self.count('sign')
+
+        support_id = self.insert_check('support', {'geometry': self.execute("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
+        azimut_id = self.insert_check('azimut', {'azimut': 100, 'fk_support': support_id})
+
+        row = {
+            'frame_fk_azimut': azimut_id,
+            'frame_rank': 1,
+            'frame_fk_frame_type': 1,
+            'frame_fk_frame_fixing_type': 1,
+            'frame_fk_status': 1,
+            'sign_rank': 1,
+            'fk_sign_type': 1,
+            'fk_official_sign': '1.01',
+            'fk_durability': 1,
+            'fk_status': 1
+        }
+        sign_id_1 = self.insert('vw_sign_symbol', row)
+        frame_id = self.select('sign', sign_id_1)['fk_frame']
+
+        row['sign_rank'] = 2
+        row['frame_id'] = frame_id
+
+        sign_id_2 = self.insert('vw_sign_symbol', row)
+
+        self.assertEqual(self.count('sign'), sign_count+2)
+        self.assertEqual(self.count('frame'), frame_count+1)
+
+        self.delete('vw_sign_symbol', sign_id_2)
+
+        self.assertEqual(self.count('sign'), sign_count+1)
+        self.assertEqual(self.count('frame'), frame_count+1)
+
+        self.delete('vw_sign_symbol', sign_id_1)
+
+        self.assertEqual(self.count('sign'), sign_count)
+        self.assertEqual(self.count('frame'), frame_count)
+
 
 if __name__ == '__main__':
     unittest.main()

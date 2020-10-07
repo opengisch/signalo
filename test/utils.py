@@ -3,14 +3,12 @@ import unittest
 import psycopg2
 import psycopg2.extras
 
-
 class DbTestBase:
 
-    def assert_count(self, table, schema, expected):
+    def count(self, table, schema='siro_od') -> int:
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute("SELECT COUNT(*) FROM {schema}.{table}".format(table=table, schema=schema))
-        count = cur.fetchone()[0]
-        assert count == expected, "Relation {}.{} : expected {} rows, got {} rows".format(schema, table, expected, count)
+        return cur.fetchone()[0]
 
     def select(self, table, id, schema='siro_od'):
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
