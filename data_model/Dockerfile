@@ -5,6 +5,6 @@ ADD migrate.sh /migrate.sh
 RUN chmod +x /migrate.sh
 
 ADD ./infrastructure.sql /infrastructure.sql
-ADD ./datamodel /datamodel
+ONBUILD ADD ./datamodel /datamodel
 
 CMD /migrate.sh
