@@ -34,6 +34,10 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , sign.rank AS sign_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
+                , official_sign.value_de as _symbol_value_de
+                , official_sign.value_fr as _symbol_value_fr
+                , official_sign.value_it as _symbol_value_it
+                , official_sign.value_ro as _symbol_value_ro
                 , official_sign.img_de as _img_de
                 , official_sign.img_fr as _img_fr
                 , official_sign.img_it as _img_it
