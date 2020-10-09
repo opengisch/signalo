@@ -121,7 +121,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             skip_columns=[], returning='id INTO NEW.frame_id', prefix='frame_'
         ),
         insert_sign=insert_command(
-            pg_cur=cursor, table_schema='siro_od', table_name='sign', remove_pkey=True, indent=4,
+            pg_cur=cursor, table_schema='siro_od', table_name='sign', remove_pkey=False, indent=4,
             skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
         )
     )
