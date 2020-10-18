@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Denis Rouzaud" saveUser="denis" projectname="" version="3.15.0-Master" saveDateTime="2020-10-18T13:42:26">
+<qgis saveUserFull="Denis Rouzaud" saveUser="denis" projectname="" version="3.15.0-Master" saveDateTime="2020-10-18T15:03:40">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -36,9 +36,6 @@
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer legend_split_behavior="0" id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" checked="Qt::Checked" patch_size="-1,-1" legend_exp="" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" providerKey="postgres" name="Cadre" expanded="1">
-      <customproperties/>
-    </layer-tree-layer>
-    <layer-tree-layer legend_split_behavior="0" id="sign_e7eba664_5f5e_4919_892f_5904c11cfee3" checked="Qt::Checked" patch_size="-1,-1" legend_exp="" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;sign&quot;" providerKey="postgres" name="sign" expanded="1">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer legend_split_behavior="0" id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997" checked="Qt::Checked" patch_size="-1,-1" legend_exp="" source="crs=EPSG:3857&amp;format&amp;type=xyz&amp;url=http://tile.osm.ch/osm-swiss-style/%7Bz%7D/%7Bx%7D/%7By%7D.png&amp;zmax=18&amp;zmin=0" providerKey="wms" name="OSM.ch Swiss-Style" expanded="1">
@@ -95,8 +92,14 @@
     </individual-layer-settings>
   </snapping-settings>
   <relations>
+    <relation strength="Association" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="azimut-cadre" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="azimut-cadre">
+      <fieldRef referencedField="id" referencingField="fk_azimut"/>
+    </relation>
     <relation strength="Association" referencingLayer="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" id="azimut_sign_1" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="azimut_sign">
       <fieldRef referencedField="id" referencingField="frame_fk_azimut"/>
+    </relation>
+    <relation strength="Association" referencingLayer="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" id="frame-sign" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="frame-sign">
+      <fieldRef referencedField="id" referencingField="fk_frame"/>
     </relation>
     <relation strength="Association" referencingLayer="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" id="official_sign-sign" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="official_sign-sign">
       <fieldRef referencedField="id" referencingField="fk_official_sign"/>
@@ -108,10 +111,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2538285.17888532066717744</xmin>
-      <ymin>1152234.92314064688980579</ymin>
-      <xmax>2538697.9583101631142199</xmax>
-      <ymax>1152681.77633876632899046</ymax>
+      <xmin>2537942.04350000014528632</xmin>
+      <ymin>1152510.28049999987706542</ymin>
+      <xmax>2538461.85650000022724271</xmax>
+      <ymax>1152591.73950000014156103</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -156,11 +159,6 @@
     <legendlayer open="true" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0" name="Cadre">
       <filegroup open="true" hidden="false">
         <legendlayerfile layerid="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" isInOverview="0" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer open="true" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0" name="sign">
-      <filegroup open="true" hidden="false">
-        <legendlayerfile layerid="sign_e7eba664_5f5e_4919_892f_5904c11cfee3" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
     <legendlayer open="true" checked="Qt::Checked" drawingOrder="-1" showFeatureCount="0" name="OSM.ch Swiss-Style">
@@ -455,7 +453,12 @@
         </fixedRange>
       </temporal>
       <customproperties>
-        <property value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" key="dualview/previewExpressions"/>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -575,7 +578,13 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorField index="0" showLabel="1" name="id"/>
+        <attributeEditorField index="1" showLabel="1" name="fk_support"/>
+        <attributeEditorField index="2" showLabel="1" name="azimut"/>
+        <attributeEditorRelation relation="azimut-cadre" buttons="AllButtons" forceSuppressFormPopup="0" label="Cadres" showLabel="1" nmRelationId="" name="azimut-cadre"/>
+      </attributeEditorForm>
       <editable>
         <field editable="1" name="azimut"/>
         <field editable="1" name="fk_support"/>
@@ -588,6 +597,12 @@ def my_form_open(dialog, layer, feature):
       </labelOnTop>
       <dataDefinedFieldProperties/>
       <widgets>
+        <widget name="azimut-cadre">
+          <config type="Map">
+            <Option type="bool" value="false" name="force-suppress-popup"/>
+            <Option type="invalid" name="nm-rel"/>
+          </config>
+        </widget>
         <widget name="azimut_sign_1">
           <config type="Map">
             <Option type="bool" value="false" name="force-suppress-popup"/>
@@ -1044,6 +1059,11 @@ def my_form_open(dialog, layer, feature):
         </fixedRange>
       </temporal>
       <customproperties>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "rank", '&lt;NULL>' )</value>
+          <value>"id"</value>
+          <value>COALESCE( "rank", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -1053,7 +1073,11 @@ def my_form_open(dialog, layer, feature):
         <checkConfiguration/>
       </geometryOptions>
       <legend type="default-vector"/>
-      <referencedLayers/>
+      <referencedLayers>
+        <relation strength="Association" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="azimut-cadre" layerName="Azimut" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" providerKey="postgres" name="azimut-cadre">
+          <fieldRef referencedField="id" referencingField="fk_azimut"/>
+        </relation>
+      </referencedLayers>
       <fieldConfiguration>
         <field configurationFlags="None" name="id">
           <editWidget type="TextEdit">
@@ -1063,11 +1087,21 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="fk_azimut">
-          <editWidget type="TextEdit">
+          <editWidget type="RelationReference">
             <config>
               <Option type="Map">
-                <Option type="bool" value="false" name="IsMultiline"/>
-                <Option type="bool" value="false" name="UseHtml"/>
+                <Option type="bool" value="false" name="AllowAddFeatures"/>
+                <Option type="bool" value="false" name="AllowNULL"/>
+                <Option type="bool" value="false" name="MapIdentification"/>
+                <Option type="bool" value="false" name="OrderByValue"/>
+                <Option type="bool" value="false" name="ReadOnly"/>
+                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="ReferencedLayerId"/>
+                <Option type="QString" value="Azimut" name="ReferencedLayerName"/>
+                <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
+                <Option type="QString" value="azimut-cadre" name="Relation"/>
+                <Option type="bool" value="false" name="ShowForm"/>
+                <Option type="bool" value="true" name="ShowOpenFormButton"/>
               </Option>
             </config>
           </editWidget>
@@ -1269,7 +1303,19 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorField index="0" showLabel="1" name="id"/>
+        <attributeEditorField index="1" showLabel="1" name="fk_azimut"/>
+        <attributeEditorField index="2" showLabel="1" name="rank"/>
+        <attributeEditorField index="3" showLabel="1" name="fk_frame_type"/>
+        <attributeEditorField index="4" showLabel="1" name="fk_frame_fixing_type"/>
+        <attributeEditorField index="5" showLabel="1" name="double_sided"/>
+        <attributeEditorField index="6" showLabel="1" name="fk_status"/>
+        <attributeEditorField index="7" showLabel="1" name="comment"/>
+        <attributeEditorField index="8" showLabel="1" name="picture"/>
+        <attributeEditorRelation relation="frame-sign" buttons="AllButtons" forceSuppressFormPopup="0" label="Signal" showLabel="1" nmRelationId="" name="frame-sign"/>
+      </attributeEditorForm>
       <editable>
         <field editable="1" name="comment"/>
         <field editable="1" name="double_sided"/>
@@ -1293,8 +1339,15 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="rank"/>
       </labelOnTop>
       <dataDefinedFieldProperties/>
-      <widgets/>
-      <previewExpression>"id"</previewExpression>
+      <widgets>
+        <widget name="frame-sign">
+          <config type="Map">
+            <Option type="bool" value="false" name="force-suppress-popup"/>
+            <Option type="invalid" name="nm-rel"/>
+          </config>
+        </widget>
+      </widgets>
+      <previewExpression>COALESCE( "rank", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer autoRefreshTime="0" refreshOnNotifyEnabled="0" type="vector" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" readOnly="0" geometry="No geometry" styleCategories="AllStyleCategories" maxScale="0" wkbType="NoGeometry" minScale="1e+08">
@@ -2406,7 +2459,11 @@ def my_form_open(dialog, layer, feature):
         <sizescale/>
       </renderer-v2>
       <customproperties>
-        <property value="&quot;id&quot;" key="dualview/previewExpressions"/>
+        <property key="dualview/previewExpressions">
+          <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
+          <value>"id"</value>
+          <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
+        </property>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -2474,7 +2531,11 @@ def my_form_open(dialog, layer, feature):
         </checkConfiguration>
       </geometryOptions>
       <legend type="default-vector"/>
-      <referencedLayers/>
+      <referencedLayers>
+        <relation strength="Association" referencingLayer="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" id="frame-sign" layerName="Cadre" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" providerKey="postgres" name="frame-sign">
+          <fieldRef referencedField="id" referencingField="fk_frame"/>
+        </relation>
+      </referencedLayers>
       <fieldConfiguration>
         <field configurationFlags="None" name="id">
           <editWidget type="TextEdit">
@@ -2484,9 +2545,22 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="fk_frame">
-          <editWidget type="TextEdit">
+          <editWidget type="RelationReference">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option type="bool" value="false" name="AllowAddFeatures"/>
+                <Option type="bool" value="false" name="AllowNULL"/>
+                <Option type="bool" value="false" name="MapIdentification"/>
+                <Option type="bool" value="false" name="OrderByValue"/>
+                <Option type="bool" value="false" name="ReadOnly"/>
+                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="ReferencedLayerId"/>
+                <Option type="QString" value="Cadre" name="ReferencedLayerName"/>
+                <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
+                <Option type="QString" value="frame-sign" name="Relation"/>
+                <Option type="bool" value="false" name="ShowForm"/>
+                <Option type="bool" value="true" name="ShowOpenFormButton"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -2563,7 +2637,10 @@ def my_form_open(dialog, layer, feature):
         <field configurationFlags="None" name="case_id">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option type="bool" value="false" name="IsMultiline"/>
+                <Option type="bool" value="false" name="UseHtml"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -3154,9 +3231,9 @@ def my_form_open(dialog, layer, feature):
       <attributeactions>
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
-      <attributetableconfig sortExpression="&quot;id&quot;" actionWidgetStyle="dropDown" sortOrder="0">
+      <attributetableconfig sortExpression=" &quot;rank&quot;" actionWidgetStyle="dropDown" sortOrder="0">
         <columns>
-          <column type="field" hidden="0" width="376" name="id"/>
+          <column type="field" hidden="0" width="-1" name="id"/>
           <column type="field" hidden="0" width="-1" name="fk_frame"/>
           <column type="field" hidden="0" width="-1" name="rank"/>
           <column type="field" hidden="0" width="-1" name="verso"/>
@@ -3175,9 +3252,6 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="destination"/>
           <column type="field" hidden="0" width="-1" name="comment"/>
           <column type="field" hidden="0" width="-1" name="photo"/>
-          <column type="field" hidden="0" width="-1" name="_final_rank"/>
-          <column type="field" hidden="0" width="-1" name="_symbol_shift"/>
-          <column type="actions" hidden="1" width="-1"/>
           <column type="field" hidden="0" width="-1" name="frame_fk_azimut"/>
           <column type="field" hidden="0" width="-1" name="frame_rank"/>
           <column type="field" hidden="0" width="-1" name="frame_fk_frame_type"/>
@@ -3214,8 +3288,11 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="support_fk_status"/>
           <column type="field" hidden="0" width="-1" name="support_comment"/>
           <column type="field" hidden="0" width="-1" name="support_picture"/>
-          <column type="field" hidden="0" width="129" name="support_geometry_x"/>
+          <column type="field" hidden="0" width="-1" name="support_geometry_x"/>
           <column type="field" hidden="0" width="-1" name="support_geometry_y"/>
+          <column type="field" hidden="0" width="-1" name="_final_rank"/>
+          <column type="field" hidden="0" width="-1" name="_symbol_shift"/>
+          <column type="actions" hidden="1" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3245,7 +3322,28 @@ def my_form_open(dialog, layer, feature):
 	control = dialog.findChild(QWidget, "MyLineEdit")
 ]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
+      <editorlayout>tablayout</editorlayout>
+      <attributeEditorForm>
+        <attributeEditorField index="0" showLabel="1" name="id"/>
+        <attributeEditorField index="1" showLabel="1" name="fk_frame"/>
+        <attributeEditorField index="2" showLabel="1" name="rank"/>
+        <attributeEditorField index="3" showLabel="1" name="verso"/>
+        <attributeEditorField index="4" showLabel="1" name="fk_sign_type"/>
+        <attributeEditorField index="5" showLabel="1" name="fk_official_sign"/>
+        <attributeEditorField index="6" showLabel="1" name="fk_parent"/>
+        <attributeEditorField index="7" showLabel="1" name="fk_owner"/>
+        <attributeEditorField index="8" showLabel="1" name="fk_durability"/>
+        <attributeEditorField index="9" showLabel="1" name="fk_status"/>
+        <attributeEditorField index="10" showLabel="1" name="installation_date"/>
+        <attributeEditorField index="11" showLabel="1" name="manufacturing_date"/>
+        <attributeEditorField index="12" showLabel="1" name="case_id"/>
+        <attributeEditorField index="13" showLabel="1" name="case_decision"/>
+        <attributeEditorField index="14" showLabel="1" name="fk_coating"/>
+        <attributeEditorField index="15" showLabel="1" name="fk_lighting"/>
+        <attributeEditorField index="16" showLabel="1" name="destination"/>
+        <attributeEditorField index="17" showLabel="1" name="comment"/>
+        <attributeEditorField index="18" showLabel="1" name="photo"/>
+      </attributeEditorForm>
       <editable>
         <field editable="0" name="_final_rank"/>
         <field editable="0" name="_symbol_shift"/>
@@ -3370,798 +3468,7 @@ def my_form_open(dialog, layer, feature):
       </labelOnTop>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression>"id"</previewExpression>
-      <mapTip></mapTip>
-    </maplayer>
-    <maplayer autoRefreshTime="0" refreshOnNotifyEnabled="0" type="vector" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" readOnly="0" geometry="No geometry" styleCategories="AllStyleCategories" maxScale="0" wkbType="NoGeometry" minScale="1e+08">
-      <id>sign_e7eba664_5f5e_4919_892f_5904c11cfee3</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_od"."sign"</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>sign</layername>
-      <srs>
-        <spatialrefsys>
-          <wkt></wkt>
-          <proj4></proj4>
-          <srsid>0</srsid>
-          <srid>0</srid>
-          <authid></authid>
-          <description></description>
-          <projectionacronym></projectionacronym>
-          <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <resourceMetadata>
-        <identifier></identifier>
-        <parentidentifier></parentidentifier>
-        <language></language>
-        <type>dataset</type>
-        <title></title>
-        <abstract></abstract>
-        <contact>
-          <name></name>
-          <organization></organization>
-          <position></position>
-          <voice></voice>
-          <fax></fax>
-          <email></email>
-          <role></role>
-        </contact>
-        <links/>
-        <fees></fees>
-        <encoding></encoding>
-        <crs>
-          <spatialrefsys>
-            <wkt></wkt>
-            <proj4></proj4>
-            <srsid>0</srsid>
-            <srid>0</srid>
-            <authid></authid>
-            <description></description>
-            <projectionacronym></projectionacronym>
-            <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
-          </spatialrefsys>
-        </crs>
-        <extent>
-          <spatial minz="0" maxy="0" maxz="0" dimensions="2" crs="" minx="0" miny="0" maxx="0"/>
-          <temporal>
-            <period>
-              <start></start>
-              <end></end>
-            </period>
-          </temporal>
-        </extent>
-      </resourceMetadata>
-      <provider encoding="">postgres</provider>
-      <vectorjoins>
-        <join memoryCache="1" hasCustomPrefix="1" dynamicForm="0" editable="0" joinFieldName="id" cascadedDelete="0" targetFieldName="fk_frame" customPrefix="frame_" upsertOnEdit="0" joinLayerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4"/>
-        <join memoryCache="1" hasCustomPrefix="1" dynamicForm="0" editable="0" joinFieldName="id" cascadedDelete="0" targetFieldName="fk_official_sign" customPrefix="vl_official_sign_" upsertOnEdit="0" joinLayerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae"/>
-      </vectorjoins>
-      <layerDependencies/>
-      <dataDependencies/>
-      <expressionfields>
-        <field subType="0" expression=" &quot;frame_rank&quot; *100 +  &quot;rank&quot; " type="2" precision="0" length="0" typeName="integer" comment="" name="_final_rank"/>
-        <field subType="0" expression="with_variable('fk_az', &quot;frame_fk_azimut&quot;,&#xa;with_variable('sign_rank', &quot;rank&quot;,&#xa;with_variable('frame_rank', &quot;frame_rank&quot;,&#xa;sum(&#xa;&#x9;&quot;vl_official_sign_img_height&quot;,&#xa;&#x9;filter:=frame_fk_azimut=@fk_az AND (frame_rank &lt; @frame_rank OR (frame_rank = @frame_rank AND rank &lt; @sign_rank))&#xa;)&#xa;)&#xa;)&#xa;)&#xa;" type="2" precision="0" length="0" typeName="integer" comment="" name="_symbol_shift"/>
-      </expressionfields>
-      <map-layer-style-manager current="default">
-        <map-layer-style name="default"/>
-      </map-layer-style-manager>
-      <auxiliaryLayer/>
-      <flags>
-        <Identifiable>1</Identifiable>
-        <Removable>1</Removable>
-        <Searchable>1</Searchable>
-      </flags>
-      <temporal endExpression="" fixedDuration="0" accumulate="0" durationField="" endField="" startField="" durationUnit="min" startExpression="" enabled="0" mode="0">
-        <fixedRange>
-          <start></start>
-          <end></end>
-        </fixedRange>
-      </temporal>
-      <customproperties>
-        <property value="&quot;id&quot;" key="dualview/previewExpressions"/>
-        <property value="0" key="embeddedWidgets/count"/>
-        <property key="variableNames"/>
-        <property key="variableValues"/>
-      </customproperties>
-      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
-        <activeChecks/>
-        <checkConfiguration/>
-      </geometryOptions>
-      <legend type="default-vector"/>
-      <referencedLayers/>
-      <fieldConfiguration>
-        <field configurationFlags="None" name="id">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_frame">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="rank">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="verso">
-          <editWidget type="CheckBox">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_sign_type">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_official_sign">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_parent">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_owner">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_durability">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_status">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="installation_date">
-          <editWidget type="DateTime">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="manufacturing_date">
-          <editWidget type="DateTime">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="case_id">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="case_decision">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_coating">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="fk_lighting">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="destination">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="comment">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="photo">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="geometry">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_fk_azimut">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_rank">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_fk_frame_type">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_fk_frame_fixing_type">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_double_sided">
-          <editWidget type="CheckBox">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_fk_status">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_comment">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="frame_picture">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_active">
-          <editWidget type="CheckBox">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_value_de">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_value_fr">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_value_it">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_value_ro">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_description_de">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_description_fr">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_description_it">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_description_ro">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_de">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_fr">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_it">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_ro">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_height">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="vl_official_sign_img_width">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="_final_rank">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="_symbol_shift">
-          <editWidget type="Range">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-      </fieldConfiguration>
-      <aliases>
-        <alias field="id" index="0" name=""/>
-        <alias field="fk_frame" index="1" name=""/>
-        <alias field="rank" index="2" name=""/>
-        <alias field="verso" index="3" name=""/>
-        <alias field="fk_sign_type" index="4" name=""/>
-        <alias field="fk_official_sign" index="5" name=""/>
-        <alias field="fk_parent" index="6" name=""/>
-        <alias field="fk_owner" index="7" name=""/>
-        <alias field="fk_durability" index="8" name=""/>
-        <alias field="fk_status" index="9" name=""/>
-        <alias field="installation_date" index="10" name=""/>
-        <alias field="manufacturing_date" index="11" name=""/>
-        <alias field="case_id" index="12" name=""/>
-        <alias field="case_decision" index="13" name=""/>
-        <alias field="fk_coating" index="14" name=""/>
-        <alias field="fk_lighting" index="15" name=""/>
-        <alias field="destination" index="16" name=""/>
-        <alias field="comment" index="17" name=""/>
-        <alias field="photo" index="18" name=""/>
-        <alias field="geometry" index="19" name=""/>
-        <alias field="frame_fk_azimut" index="20" name="Azimut"/>
-        <alias field="frame_rank" index="21" name="Rang"/>
-        <alias field="frame_fk_frame_type" index="22" name="Type cadre"/>
-        <alias field="frame_fk_frame_fixing_type" index="23" name="Type fixation cadre"/>
-        <alias field="frame_double_sided" index="24" name="Recto verso"/>
-        <alias field="frame_fk_status" index="25" name="Status"/>
-        <alias field="frame_comment" index="26" name="Commentaire"/>
-        <alias field="frame_picture" index="27" name="Image"/>
-        <alias field="vl_official_sign_active" index="28" name=""/>
-        <alias field="vl_official_sign_value_de" index="29" name=""/>
-        <alias field="vl_official_sign_value_fr" index="30" name=""/>
-        <alias field="vl_official_sign_value_it" index="31" name=""/>
-        <alias field="vl_official_sign_value_ro" index="32" name=""/>
-        <alias field="vl_official_sign_description_de" index="33" name=""/>
-        <alias field="vl_official_sign_description_fr" index="34" name=""/>
-        <alias field="vl_official_sign_description_it" index="35" name=""/>
-        <alias field="vl_official_sign_description_ro" index="36" name=""/>
-        <alias field="vl_official_sign_img_de" index="37" name=""/>
-        <alias field="vl_official_sign_img_fr" index="38" name=""/>
-        <alias field="vl_official_sign_img_it" index="39" name=""/>
-        <alias field="vl_official_sign_img_ro" index="40" name=""/>
-        <alias field="vl_official_sign_img_height" index="41" name=""/>
-        <alias field="vl_official_sign_img_width" index="42" name=""/>
-        <alias field="_final_rank" index="43" name=""/>
-        <alias field="_symbol_shift" index="44" name=""/>
-      </aliases>
-      <defaults>
-        <default expression="" applyOnUpdate="0" field="id"/>
-        <default expression="" applyOnUpdate="0" field="fk_frame"/>
-        <default expression="" applyOnUpdate="0" field="rank"/>
-        <default expression="" applyOnUpdate="0" field="verso"/>
-        <default expression="" applyOnUpdate="0" field="fk_sign_type"/>
-        <default expression="" applyOnUpdate="0" field="fk_official_sign"/>
-        <default expression="" applyOnUpdate="0" field="fk_parent"/>
-        <default expression="" applyOnUpdate="0" field="fk_owner"/>
-        <default expression="" applyOnUpdate="0" field="fk_durability"/>
-        <default expression="" applyOnUpdate="0" field="fk_status"/>
-        <default expression="" applyOnUpdate="0" field="installation_date"/>
-        <default expression="" applyOnUpdate="0" field="manufacturing_date"/>
-        <default expression="" applyOnUpdate="0" field="case_id"/>
-        <default expression="" applyOnUpdate="0" field="case_decision"/>
-        <default expression="" applyOnUpdate="0" field="fk_coating"/>
-        <default expression="" applyOnUpdate="0" field="fk_lighting"/>
-        <default expression="" applyOnUpdate="0" field="destination"/>
-        <default expression="" applyOnUpdate="0" field="comment"/>
-        <default expression="" applyOnUpdate="0" field="photo"/>
-        <default expression="" applyOnUpdate="0" field="geometry"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_fk_azimut"/>
-        <default expression="1" applyOnUpdate="0" field="frame_rank"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_fk_frame_type"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_fk_frame_fixing_type"/>
-        <default expression="TRUE" applyOnUpdate="0" field="frame_double_sided"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_fk_status"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_comment"/>
-        <default expression="NULL" applyOnUpdate="0" field="frame_picture"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_active"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_value_de"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_value_fr"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_value_it"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_value_ro"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_description_de"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_description_fr"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_description_it"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_description_ro"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_de"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_fr"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_it"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_ro"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_height"/>
-        <default expression="" applyOnUpdate="0" field="vl_official_sign_img_width"/>
-        <default expression="" applyOnUpdate="0" field="_final_rank"/>
-        <default expression="" applyOnUpdate="0" field="_symbol_shift"/>
-      </defaults>
-      <constraints>
-        <constraint constraints="3" exp_strength="0" unique_strength="1" field="id" notnull_strength="1"/>
-        <constraint constraints="1" exp_strength="0" unique_strength="0" field="fk_frame" notnull_strength="1"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="rank" notnull_strength="0"/>
-        <constraint constraints="1" exp_strength="0" unique_strength="0" field="verso" notnull_strength="1"/>
-        <constraint constraints="1" exp_strength="0" unique_strength="0" field="fk_sign_type" notnull_strength="1"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_official_sign" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_parent" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_owner" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_durability" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_status" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="installation_date" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="manufacturing_date" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="case_id" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="case_decision" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_coating" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="fk_lighting" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="destination" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="comment" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="photo" notnull_strength="0"/>
-        <constraint constraints="1" exp_strength="0" unique_strength="0" field="geometry" notnull_strength="1"/>
-        <constraint constraints="1" exp_strength="0" unique_strength="0" field="frame_fk_azimut" notnull_strength="1"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_rank" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_fk_frame_type" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_fk_frame_fixing_type" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_double_sided" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_fk_status" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_comment" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="frame_picture" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_active" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_value_de" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_value_fr" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_value_it" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_value_ro" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_description_de" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_description_fr" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_description_it" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_description_ro" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_de" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_fr" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_it" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_ro" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_height" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="vl_official_sign_img_width" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="_final_rank" notnull_strength="0"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" field="_symbol_shift" notnull_strength="0"/>
-      </constraints>
-      <constraintExpressions>
-        <constraint exp="" desc="" field="id"/>
-        <constraint exp="" desc="" field="fk_frame"/>
-        <constraint exp="" desc="" field="rank"/>
-        <constraint exp="" desc="" field="verso"/>
-        <constraint exp="" desc="" field="fk_sign_type"/>
-        <constraint exp="" desc="" field="fk_official_sign"/>
-        <constraint exp="" desc="" field="fk_parent"/>
-        <constraint exp="" desc="" field="fk_owner"/>
-        <constraint exp="" desc="" field="fk_durability"/>
-        <constraint exp="" desc="" field="fk_status"/>
-        <constraint exp="" desc="" field="installation_date"/>
-        <constraint exp="" desc="" field="manufacturing_date"/>
-        <constraint exp="" desc="" field="case_id"/>
-        <constraint exp="" desc="" field="case_decision"/>
-        <constraint exp="" desc="" field="fk_coating"/>
-        <constraint exp="" desc="" field="fk_lighting"/>
-        <constraint exp="" desc="" field="destination"/>
-        <constraint exp="" desc="" field="comment"/>
-        <constraint exp="" desc="" field="photo"/>
-        <constraint exp="" desc="" field="geometry"/>
-        <constraint exp="" desc="" field="frame_fk_azimut"/>
-        <constraint exp="" desc="" field="frame_rank"/>
-        <constraint exp="" desc="" field="frame_fk_frame_type"/>
-        <constraint exp="" desc="" field="frame_fk_frame_fixing_type"/>
-        <constraint exp="" desc="" field="frame_double_sided"/>
-        <constraint exp="" desc="" field="frame_fk_status"/>
-        <constraint exp="" desc="" field="frame_comment"/>
-        <constraint exp="" desc="" field="frame_picture"/>
-        <constraint exp="" desc="" field="vl_official_sign_active"/>
-        <constraint exp="" desc="" field="vl_official_sign_value_de"/>
-        <constraint exp="" desc="" field="vl_official_sign_value_fr"/>
-        <constraint exp="" desc="" field="vl_official_sign_value_it"/>
-        <constraint exp="" desc="" field="vl_official_sign_value_ro"/>
-        <constraint exp="" desc="" field="vl_official_sign_description_de"/>
-        <constraint exp="" desc="" field="vl_official_sign_description_fr"/>
-        <constraint exp="" desc="" field="vl_official_sign_description_it"/>
-        <constraint exp="" desc="" field="vl_official_sign_description_ro"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_de"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_fr"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_it"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_ro"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_height"/>
-        <constraint exp="" desc="" field="vl_official_sign_img_width"/>
-        <constraint exp="" desc="" field="_final_rank"/>
-        <constraint exp="" desc="" field="_symbol_shift"/>
-      </constraintExpressions>
-      <expressionfields>
-        <field subType="0" expression=" &quot;frame_rank&quot; *100 +  &quot;rank&quot; " type="2" precision="0" length="0" typeName="integer" comment="" name="_final_rank"/>
-        <field subType="0" expression="with_variable('fk_az', &quot;frame_fk_azimut&quot;,&#xa;with_variable('sign_rank', &quot;rank&quot;,&#xa;with_variable('frame_rank', &quot;frame_rank&quot;,&#xa;sum(&#xa;&#x9;&quot;vl_official_sign_img_height&quot;,&#xa;&#x9;filter:=frame_fk_azimut=@fk_az AND (frame_rank &lt; @frame_rank OR (frame_rank = @frame_rank AND rank &lt; @sign_rank))&#xa;)&#xa;)&#xa;)&#xa;)&#xa;" type="2" precision="0" length="0" typeName="integer" comment="" name="_symbol_shift"/>
-      </expressionfields>
-      <attributeactions>
-        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
-      </attributeactions>
-      <attributetableconfig sortExpression="&quot;test&quot;" actionWidgetStyle="dropDown" sortOrder="0">
-        <columns>
-          <column type="field" hidden="0" width="-1" name="id"/>
-          <column type="field" hidden="0" width="-1" name="fk_frame"/>
-          <column type="field" hidden="0" width="-1" name="rank"/>
-          <column type="field" hidden="0" width="-1" name="verso"/>
-          <column type="field" hidden="0" width="-1" name="fk_sign_type"/>
-          <column type="field" hidden="0" width="-1" name="fk_official_sign"/>
-          <column type="field" hidden="0" width="-1" name="fk_parent"/>
-          <column type="field" hidden="0" width="-1" name="fk_owner"/>
-          <column type="field" hidden="0" width="-1" name="fk_durability"/>
-          <column type="field" hidden="0" width="-1" name="fk_status"/>
-          <column type="field" hidden="0" width="-1" name="installation_date"/>
-          <column type="field" hidden="0" width="-1" name="manufacturing_date"/>
-          <column type="field" hidden="0" width="-1" name="case_id"/>
-          <column type="field" hidden="0" width="-1" name="case_decision"/>
-          <column type="field" hidden="0" width="-1" name="fk_coating"/>
-          <column type="field" hidden="0" width="-1" name="fk_lighting"/>
-          <column type="field" hidden="0" width="-1" name="destination"/>
-          <column type="field" hidden="0" width="-1" name="comment"/>
-          <column type="field" hidden="0" width="-1" name="photo"/>
-          <column type="field" hidden="0" width="-1" name="frame_fk_azimut"/>
-          <column type="field" hidden="0" width="-1" name="frame_rank"/>
-          <column type="field" hidden="0" width="-1" name="frame_fk_frame_type"/>
-          <column type="field" hidden="0" width="-1" name="frame_fk_frame_fixing_type"/>
-          <column type="field" hidden="0" width="-1" name="frame_double_sided"/>
-          <column type="field" hidden="0" width="-1" name="frame_fk_status"/>
-          <column type="field" hidden="0" width="-1" name="frame_comment"/>
-          <column type="field" hidden="0" width="-1" name="frame_picture"/>
-          <column type="actions" hidden="1" width="-1"/>
-          <column type="field" hidden="0" width="-1" name="_final_rank"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_active"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_value_de"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_value_fr"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_value_it"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_value_ro"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_description_de"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_description_fr"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_description_it"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_description_ro"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_img_de"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_img_fr"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_img_it"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_img_ro"/>
-          <column type="field" hidden="0" width="-1" name="vl_official_sign_img_height"/>
-          <column type="field" hidden="0" width="15" name="vl_official_sign_img_width"/>
-          <column type="field" hidden="0" width="91" name="_symbol_shift"/>
-          <column type="field" hidden="0" width="-1" name="geometry"/>
-        </columns>
-      </attributetableconfig>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <storedexpressions/>
-      <editform tolerant="1"></editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
-"""
-QGIS forms can have a Python function that is called when the form is
-opened.
-
-Use this function to add extra logic to your forms.
-
-Enter the name of the function in the "Python Init function"
-field.
-An example follows:
-"""
-from qgis.PyQt.QtWidgets import QWidget
-
-def my_form_open(dialog, layer, feature):
-	geom = feature.geometry()
-	control = dialog.findChild(QWidget, "MyLineEdit")
-]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <editable>
-        <field editable="0" name="_final_rank"/>
-        <field editable="0" name="_symbol_shift"/>
-        <field editable="1" name="case_decision"/>
-        <field editable="1" name="case_id"/>
-        <field editable="1" name="comment"/>
-        <field editable="1" name="destination"/>
-        <field editable="1" name="fk_coating"/>
-        <field editable="1" name="fk_durability"/>
-        <field editable="1" name="fk_frame"/>
-        <field editable="1" name="fk_lighting"/>
-        <field editable="1" name="fk_official_sign"/>
-        <field editable="1" name="fk_owner"/>
-        <field editable="1" name="fk_parent"/>
-        <field editable="1" name="fk_sign_type"/>
-        <field editable="1" name="fk_status"/>
-        <field editable="0" name="frame_comment"/>
-        <field editable="0" name="frame_double_sided"/>
-        <field editable="0" name="frame_fk_azimut"/>
-        <field editable="0" name="frame_fk_frame_fixing_type"/>
-        <field editable="0" name="frame_fk_frame_type"/>
-        <field editable="0" name="frame_fk_status"/>
-        <field editable="0" name="frame_picture"/>
-        <field editable="0" name="frame_rank"/>
-        <field editable="1" name="geometry"/>
-        <field editable="1" name="id"/>
-        <field editable="1" name="installation_date"/>
-        <field editable="1" name="manufacturing_date"/>
-        <field editable="1" name="photo"/>
-        <field editable="1" name="rank"/>
-        <field editable="0" name="test"/>
-        <field editable="1" name="verso"/>
-        <field editable="0" name="vl_official_sign_active"/>
-        <field editable="0" name="vl_official_sign_description_de"/>
-        <field editable="0" name="vl_official_sign_description_fr"/>
-        <field editable="0" name="vl_official_sign_description_it"/>
-        <field editable="0" name="vl_official_sign_description_ro"/>
-        <field editable="0" name="vl_official_sign_img_de"/>
-        <field editable="0" name="vl_official_sign_img_fr"/>
-        <field editable="0" name="vl_official_sign_img_height"/>
-        <field editable="0" name="vl_official_sign_img_it"/>
-        <field editable="0" name="vl_official_sign_img_ro"/>
-        <field editable="0" name="vl_official_sign_img_width"/>
-        <field editable="0" name="vl_official_sign_value_de"/>
-        <field editable="0" name="vl_official_sign_value_fr"/>
-        <field editable="0" name="vl_official_sign_value_it"/>
-        <field editable="0" name="vl_official_sign_value_ro"/>
-      </editable>
-      <labelOnTop>
-        <field labelOnTop="0" name="_final_rank"/>
-        <field labelOnTop="0" name="_symbol_shift"/>
-        <field labelOnTop="0" name="case_decision"/>
-        <field labelOnTop="0" name="case_id"/>
-        <field labelOnTop="0" name="comment"/>
-        <field labelOnTop="0" name="destination"/>
-        <field labelOnTop="0" name="fk_coating"/>
-        <field labelOnTop="0" name="fk_durability"/>
-        <field labelOnTop="0" name="fk_frame"/>
-        <field labelOnTop="0" name="fk_lighting"/>
-        <field labelOnTop="0" name="fk_official_sign"/>
-        <field labelOnTop="0" name="fk_owner"/>
-        <field labelOnTop="0" name="fk_parent"/>
-        <field labelOnTop="0" name="fk_sign_type"/>
-        <field labelOnTop="0" name="fk_status"/>
-        <field labelOnTop="0" name="frame_comment"/>
-        <field labelOnTop="0" name="frame_double_sided"/>
-        <field labelOnTop="0" name="frame_fk_azimut"/>
-        <field labelOnTop="0" name="frame_fk_frame_fixing_type"/>
-        <field labelOnTop="0" name="frame_fk_frame_type"/>
-        <field labelOnTop="0" name="frame_fk_status"/>
-        <field labelOnTop="0" name="frame_picture"/>
-        <field labelOnTop="0" name="frame_rank"/>
-        <field labelOnTop="0" name="geometry"/>
-        <field labelOnTop="0" name="id"/>
-        <field labelOnTop="0" name="installation_date"/>
-        <field labelOnTop="0" name="manufacturing_date"/>
-        <field labelOnTop="0" name="photo"/>
-        <field labelOnTop="0" name="rank"/>
-        <field labelOnTop="0" name="test"/>
-        <field labelOnTop="0" name="verso"/>
-        <field labelOnTop="0" name="vl_official_sign_active"/>
-        <field labelOnTop="0" name="vl_official_sign_description_de"/>
-        <field labelOnTop="0" name="vl_official_sign_description_fr"/>
-        <field labelOnTop="0" name="vl_official_sign_description_it"/>
-        <field labelOnTop="0" name="vl_official_sign_description_ro"/>
-        <field labelOnTop="0" name="vl_official_sign_img_de"/>
-        <field labelOnTop="0" name="vl_official_sign_img_fr"/>
-        <field labelOnTop="0" name="vl_official_sign_img_height"/>
-        <field labelOnTop="0" name="vl_official_sign_img_it"/>
-        <field labelOnTop="0" name="vl_official_sign_img_ro"/>
-        <field labelOnTop="0" name="vl_official_sign_img_width"/>
-        <field labelOnTop="0" name="vl_official_sign_value_de"/>
-        <field labelOnTop="0" name="vl_official_sign_value_fr"/>
-        <field labelOnTop="0" name="vl_official_sign_value_it"/>
-        <field labelOnTop="0" name="vl_official_sign_value_ro"/>
-      </labelOnTop>
-      <dataDefinedFieldProperties/>
-      <widgets/>
-      <previewExpression>"id"</previewExpression>
+      <previewExpression>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer autoRefreshTime="0" refreshOnNotifyEnabled="0" type="vector" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" readOnly="0" geometry="No geometry" styleCategories="AllStyleCategories" maxScale="0" wkbType="NoGeometry" minScale="1e+08">
