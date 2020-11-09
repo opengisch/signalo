@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveUserFull="Denis Rouzaud" version="3.17.0-Master" saveUser="denis" saveDateTime="2020-11-09T06:58:04">
+<qgis projectname="" saveUserFull="Denis Rouzaud" version="3.17.0-Master" saveUser="denis" saveDateTime="2020-11-09T07:52:45">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -86,9 +86,9 @@
   </layer-tree-group>
   <snapping-settings maxScale="0" self-snapping="0" unit="1" mode="2" minScale="0" tolerance="12" type="1" intersection-snapping="0" enabled="1" scaleDependencyMode="0">
     <individual-layer-settings>
-      <layer-setting maxScale="0" units="1" minScale="0" id="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" tolerance="12" type="1" enabled="0"/>
       <layer-setting maxScale="0" units="1" minScale="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" tolerance="12" type="1" enabled="0"/>
       <layer-setting maxScale="0" units="1" minScale="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" tolerance="12" type="1" enabled="0"/>
+      <layer-setting maxScale="0" units="1" minScale="0" id="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" tolerance="12" type="1" enabled="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -111,10 +111,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537878.78344513336196542</xmin>
-      <ymin>1152504.84459730493836105</ymin>
-      <xmax>2538023.78949258523061872</xmax>
-      <ymax>1152527.56824526912532747</ymax>
+      <xmin>2537927.74213545583188534</xmin>
+      <ymin>1152500.04319131979718804</ymin>
+      <xmax>2537968.02412105910480022</xmax>
+      <ymax>1152534.10065873106941581</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -454,9 +454,6 @@
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
-          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
-          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
-          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
@@ -1064,9 +1061,6 @@ def my_form_open(dialog, layer, feature):
         <property key="dualview/previewExpressions">
           <value>COALESCE( "rank", '&lt;NULL>' )</value>
           <value>COALESCE( "rank", '&lt;NULL>' )</value>
-          <value>"id"</value>
-          <value>COALESCE( "rank", '&lt;NULL>' )</value>
-          <value>COALESCE( "rank", '&lt;NULL>' )</value>
         </property>
         <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
@@ -1232,7 +1226,7 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default field="id" expression="'3e2b668c-0a2a-11eb-a249-0242ac110002'" applyOnUpdate="0"/>
         <default field="fk_azimut" expression="NULL" applyOnUpdate="0"/>
-        <default field="rank" expression="1" applyOnUpdate="0"/>
+        <default field="rank" expression=" with_variable( 'fk_az', attribute($currentfeature, 'fk_azimut'),&#xa;aggregate(&#xa;&#x9;layer:='frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:= rank,&#xa;&#x9;filter:=fk_azimut=@fk_az&#xa;)+1)" applyOnUpdate="0"/>
         <default field="fk_frame_type" expression="NULL" applyOnUpdate="0"/>
         <default field="fk_frame_fixing_type" expression="NULL" applyOnUpdate="0"/>
         <default field="double_sided" expression="TRUE" applyOnUpdate="0"/>
@@ -1347,7 +1341,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="frame-sign">
           <config type="Map">
             <Option name="force-suppress-popup" value="false" type="bool"/>
-            <Option name="nm-rel" type="invalid"/>
+            <Option name="nm-rel" value="" type="QString"/>
           </config>
         </widget>
       </widgets>
@@ -2466,9 +2460,6 @@ def my_form_open(dialog, layer, feature):
         <property key="dualview/previewExpressions">
           <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
           <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
-          <value>"id"</value>
-          <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
-          <value>COALESCE( "vl_official_sign_value_fr", '&lt;NULL>' )</value>
         </property>
         <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
@@ -2573,7 +2564,10 @@ def my_form_open(dialog, layer, feature):
         <field name="rank" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -2664,7 +2658,13 @@ def my_form_open(dialog, layer, feature):
         <field name="manufacturing_date" configurationFlags="None">
           <editWidget type="DateTime">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="allow_null" value="true" type="bool"/>
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="yyyy-MM-dd" type="QString"/>
+                <Option name="field_format" value="yyyy-MM-dd" type="QString"/>
+                <Option name="field_iso_format" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -2682,6 +2682,16 @@ def my_form_open(dialog, layer, feature):
           <editWidget type="TextEdit">
             <config>
               <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="inscription" configurationFlags="None">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -3029,56 +3039,57 @@ def my_form_open(dialog, layer, feature):
         <alias field="manufacturing_date" index="11" name=""/>
         <alias field="case_id" index="12" name=""/>
         <alias field="case_decision" index="13" name=""/>
-        <alias field="fk_coating" index="14" name=""/>
-        <alias field="fk_lighting" index="15" name=""/>
-        <alias field="destination" index="16" name=""/>
-        <alias field="comment" index="17" name=""/>
-        <alias field="photo" index="18" name=""/>
-        <alias field="frame_fk_azimut" index="19" name="Azimut (rel)"/>
-        <alias field="frame_rank" index="20" name="Rang"/>
-        <alias field="frame_fk_frame_type" index="21" name="Type cadre"/>
-        <alias field="frame_fk_frame_fixing_type" index="22" name="Type fixation cadre"/>
-        <alias field="frame_double_sided" index="23" name="Recto verso"/>
-        <alias field="frame_fk_status" index="24" name="Status"/>
-        <alias field="frame_comment" index="25" name="Commentaire"/>
-        <alias field="frame_picture" index="26" name="Image"/>
-        <alias field="azimut_fk_support" index="27" name="Support"/>
-        <alias field="azimut_azimut" index="28" name="Azimut"/>
-        <alias field="vl_official_sign_active" index="29" name=""/>
-        <alias field="vl_official_sign_value_de" index="30" name=""/>
-        <alias field="vl_official_sign_value_fr" index="31" name=""/>
-        <alias field="vl_official_sign_value_it" index="32" name=""/>
-        <alias field="vl_official_sign_value_ro" index="33" name=""/>
-        <alias field="vl_official_sign_description_de" index="34" name=""/>
-        <alias field="vl_official_sign_description_fr" index="35" name=""/>
-        <alias field="vl_official_sign_description_it" index="36" name=""/>
-        <alias field="vl_official_sign_description_ro" index="37" name=""/>
-        <alias field="vl_official_sign_img_de" index="38" name=""/>
-        <alias field="vl_official_sign_img_fr" index="39" name=""/>
-        <alias field="vl_official_sign_img_it" index="40" name=""/>
-        <alias field="vl_official_sign_img_ro" index="41" name=""/>
-        <alias field="vl_official_sign_img_height" index="42" name=""/>
-        <alias field="vl_official_sign_img_width" index="43" name=""/>
-        <alias field="support_adress" index="44" name="Adresse"/>
-        <alias field="support_fk_support_type" index="45" name="Type support"/>
-        <alias field="support_fk_owner" index="46" name="Propriétaire"/>
-        <alias field="support_fk_support_base_type" index="47" name="Type base support"/>
-        <alias field="support_height" index="48" name="Hauteur"/>
-        <alias field="support_height_free_under_signal" index="49" name="Hauteur libre sous signal"/>
-        <alias field="support_date_install" index="50" name="Date installation"/>
-        <alias field="support_date_last_stability_check" index="51" name="Date dernier contrôle stabilité"/>
-        <alias field="support_fk_status" index="52" name="Status"/>
-        <alias field="support_comment" index="53" name="Commentaire"/>
-        <alias field="support_picture" index="54" name="Image"/>
-        <alias field="support_geometry_x" index="55" name=""/>
-        <alias field="support_geometry_y" index="56" name=""/>
-        <alias field="_final_rank" index="57" name=""/>
-        <alias field="_symbol_shift" index="58" name=""/>
+        <alias field="inscription" index="14" name=""/>
+        <alias field="fk_coating" index="15" name=""/>
+        <alias field="fk_lighting" index="16" name=""/>
+        <alias field="destination" index="17" name=""/>
+        <alias field="comment" index="18" name=""/>
+        <alias field="photo" index="19" name=""/>
+        <alias field="frame_fk_azimut" index="20" name="Azimut (rel)"/>
+        <alias field="frame_rank" index="21" name="Rang"/>
+        <alias field="frame_fk_frame_type" index="22" name="Type cadre"/>
+        <alias field="frame_fk_frame_fixing_type" index="23" name="Type fixation cadre"/>
+        <alias field="frame_double_sided" index="24" name="Recto verso"/>
+        <alias field="frame_fk_status" index="25" name="Status"/>
+        <alias field="frame_comment" index="26" name="Commentaire"/>
+        <alias field="frame_picture" index="27" name="Image"/>
+        <alias field="azimut_fk_support" index="28" name="Support"/>
+        <alias field="azimut_azimut" index="29" name="Azimut"/>
+        <alias field="vl_official_sign_active" index="30" name=""/>
+        <alias field="vl_official_sign_value_de" index="31" name=""/>
+        <alias field="vl_official_sign_value_fr" index="32" name=""/>
+        <alias field="vl_official_sign_value_it" index="33" name=""/>
+        <alias field="vl_official_sign_value_ro" index="34" name=""/>
+        <alias field="vl_official_sign_description_de" index="35" name=""/>
+        <alias field="vl_official_sign_description_fr" index="36" name=""/>
+        <alias field="vl_official_sign_description_it" index="37" name=""/>
+        <alias field="vl_official_sign_description_ro" index="38" name=""/>
+        <alias field="vl_official_sign_img_de" index="39" name=""/>
+        <alias field="vl_official_sign_img_fr" index="40" name=""/>
+        <alias field="vl_official_sign_img_it" index="41" name=""/>
+        <alias field="vl_official_sign_img_ro" index="42" name=""/>
+        <alias field="vl_official_sign_img_height" index="43" name=""/>
+        <alias field="vl_official_sign_img_width" index="44" name=""/>
+        <alias field="support_adress" index="45" name="Adresse"/>
+        <alias field="support_fk_support_type" index="46" name="Type support"/>
+        <alias field="support_fk_owner" index="47" name="Propriétaire"/>
+        <alias field="support_fk_support_base_type" index="48" name="Type base support"/>
+        <alias field="support_height" index="49" name="Hauteur"/>
+        <alias field="support_height_free_under_signal" index="50" name="Hauteur libre sous signal"/>
+        <alias field="support_date_install" index="51" name="Date installation"/>
+        <alias field="support_date_last_stability_check" index="52" name="Date dernier contrôle stabilité"/>
+        <alias field="support_fk_status" index="53" name="Status"/>
+        <alias field="support_comment" index="54" name="Commentaire"/>
+        <alias field="support_picture" index="55" name="Image"/>
+        <alias field="support_geometry_x" index="56" name=""/>
+        <alias field="support_geometry_y" index="57" name=""/>
+        <alias field="_final_rank" index="58" name=""/>
+        <alias field="_symbol_shift" index="59" name=""/>
       </aliases>
       <defaults>
         <default field="id" expression="" applyOnUpdate="0"/>
         <default field="fk_frame" expression="" applyOnUpdate="0"/>
-        <default field="rank" expression="" applyOnUpdate="0"/>
+        <default field="rank" expression=" with_variable( 'fk_fr', attribute($currentfeature, 'fk_frame'),&#xa;aggregate(&#xa;&#x9;layer:='sign_e61aa58a_a61b_41a2_9078_46a2b1eff786', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:= rank,&#xa;&#x9;filter:=fk_frame=@fk_fr&#xa;)+1)" applyOnUpdate="0"/>
         <default field="verso" expression="" applyOnUpdate="0"/>
         <default field="fk_sign_type" expression="" applyOnUpdate="0"/>
         <default field="fk_official_sign" expression="" applyOnUpdate="0"/>
@@ -3090,6 +3101,7 @@ def my_form_open(dialog, layer, feature):
         <default field="manufacturing_date" expression="" applyOnUpdate="0"/>
         <default field="case_id" expression="" applyOnUpdate="0"/>
         <default field="case_decision" expression="" applyOnUpdate="0"/>
+        <default field="inscription" expression="" applyOnUpdate="0"/>
         <default field="fk_coating" expression="" applyOnUpdate="0"/>
         <default field="fk_lighting" expression="" applyOnUpdate="0"/>
         <default field="destination" expression="" applyOnUpdate="0"/>
@@ -3151,6 +3163,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="manufacturing_date" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="case_id" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="case_decision" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
+        <constraint field="inscription" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="fk_coating" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="fk_lighting" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="destination" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
@@ -3212,6 +3225,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="manufacturing_date" exp="" desc=""/>
         <constraint field="case_id" exp="" desc=""/>
         <constraint field="case_decision" exp="" desc=""/>
+        <constraint field="inscription" exp="" desc=""/>
         <constraint field="fk_coating" exp="" desc=""/>
         <constraint field="fk_lighting" exp="" desc=""/>
         <constraint field="destination" exp="" desc=""/>
@@ -3327,6 +3341,7 @@ def my_form_open(dialog, layer, feature):
           <column name="_final_rank" hidden="0" type="field" width="-1"/>
           <column name="_symbol_shift" hidden="0" type="field" width="-1"/>
           <column hidden="1" type="actions" width="-1"/>
+          <column name="inscription" hidden="0" type="field" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3370,13 +3385,14 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField index="9" name="fk_status" showLabel="1"/>
         <attributeEditorField index="10" name="installation_date" showLabel="1"/>
         <attributeEditorField index="11" name="manufacturing_date" showLabel="1"/>
+        <attributeEditorField index="14" name="inscription" showLabel="1"/>
         <attributeEditorField index="12" name="case_id" showLabel="1"/>
         <attributeEditorField index="13" name="case_decision" showLabel="1"/>
-        <attributeEditorField index="14" name="fk_coating" showLabel="1"/>
-        <attributeEditorField index="15" name="fk_lighting" showLabel="1"/>
-        <attributeEditorField index="16" name="destination" showLabel="1"/>
-        <attributeEditorField index="17" name="comment" showLabel="1"/>
-        <attributeEditorField index="18" name="photo" showLabel="1"/>
+        <attributeEditorField index="15" name="fk_coating" showLabel="1"/>
+        <attributeEditorField index="16" name="fk_lighting" showLabel="1"/>
+        <attributeEditorField index="17" name="destination" showLabel="1"/>
+        <attributeEditorField index="18" name="comment" showLabel="1"/>
+        <attributeEditorField index="19" name="photo" showLabel="1"/>
       </attributeEditorForm>
       <editable>
         <field name="_final_rank" editable="0"/>
@@ -3405,6 +3421,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_picture" editable="0"/>
         <field name="frame_rank" editable="0"/>
         <field name="id" editable="1"/>
+        <field name="inscription" editable="1"/>
         <field name="installation_date" editable="1"/>
         <field name="manufacturing_date" editable="1"/>
         <field name="photo" editable="1"/>
@@ -3466,6 +3483,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_picture" labelOnTop="0"/>
         <field name="frame_rank" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="inscription" labelOnTop="0"/>
         <field name="installation_date" labelOnTop="0"/>
         <field name="manufacturing_date" labelOnTop="0"/>
         <field name="photo" labelOnTop="0"/>
@@ -3840,7 +3858,7 @@ def my_form_open(dialog, layer, feature):
         <xmin>2537954.41999999992549419</xmin>
         <ymin>1152512.21999999997206032</ymin>
         <xmax>2538449.47999999998137355</xmax>
-        <ymax>1152973.13999999989755452</ymax>
+        <ymax>1152589.80000000004656613</ymax>
       </extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
       <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."support" (geometry)</datasource>
@@ -4728,7 +4746,7 @@ def my_form_open(dialog, layer, feature):
         <xmin>2537954.41999999992549419</xmin>
         <ymin>1152512.21999999997206032</ymin>
         <xmax>2538449.47999999998137355</xmax>
-        <ymax>1152973.13999999989755452</ymax>
+        <ymax>1152523.13999999989755452</ymax>
       </extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
       <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."vw_sign_symbol" (support_geometry)</datasource>
@@ -4869,6 +4887,49 @@ def my_form_open(dialog, layer, feature):
                     <Option name="width" type="Map">
                       <Option name="active" value="true" type="bool"/>
                       <Option name="expression" value="@siro_img_size*&quot;_symbol_width&quot;/100" type="QString"/>
+                      <Option name="type" value="3" type="int"/>
+                    </Option>
+                  </Option>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+            <layer locked="0" pass="0" class="FontMarker" enabled="1">
+              <prop k="angle" v="0"/>
+              <prop k="chr" v="jfkdsjfkjdkfjdksfkjsd"/>
+              <prop k="color" v="247,252,245,255"/>
+              <prop k="font" v="Arial"/>
+              <prop k="font_style" v="Bold"/>
+              <prop k="horizontal_anchor_point" v="1"/>
+              <prop k="joinstyle" v="bevel"/>
+              <prop k="offset" v="0,0"/>
+              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="offset_unit" v="Point"/>
+              <prop k="outline_color" v="35,35,35,255"/>
+              <prop k="outline_width" v="0"/>
+              <prop k="outline_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="outline_width_unit" v="MM"/>
+              <prop k="size" v="8"/>
+              <prop k="size_map_unit_scale" v="3x:0,0,0,0,0,0"/>
+              <prop k="size_unit" v="Point"/>
+              <prop k="vertical_anchor_point" v="0"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties" type="Map">
+                    <Option name="angle" type="Map">
+                      <Option name="active" value="true" type="bool"/>
+                      <Option name="expression" value="&quot;azimut&quot;  -180" type="QString"/>
+                      <Option name="type" value="3" type="int"/>
+                    </Option>
+                    <Option name="char" type="Map">
+                      <Option name="active" value="true" type="bool"/>
+                      <Option name="expression" value="&quot;inscription&quot;" type="QString"/>
+                      <Option name="type" value="3" type="int"/>
+                    </Option>
+                    <Option name="offset" type="Map">
+                      <Option name="active" value="true" type="bool"/>
+                      <Option name="expression" value="array(0,(&quot;_final_rank&quot;-1)*2 + @siro_img_size*(.5+coalesce( &quot;_symbol_shift&quot;,0)/100) )" type="QString"/>
                       <Option name="type" value="3" type="int"/>
                     </Option>
                   </Option>
@@ -5146,6 +5207,16 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field name="inscription" configurationFlags="None">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
         <field name="fk_coating" configurationFlags="None">
           <editWidget type="ValueRelation">
             <config>
@@ -5230,7 +5301,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="geometry" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -5539,40 +5610,41 @@ def my_form_open(dialog, layer, feature):
         <alias field="manufacturing_date" index="9" name="Date manifacture"/>
         <alias field="case_id" index="10" name=""/>
         <alias field="case_decision" index="11" name="Cas decision"/>
-        <alias field="fk_coating" index="12" name="Revêtement"/>
-        <alias field="fk_lighting" index="13" name="Eclairage"/>
-        <alias field="destination" index="14" name="Destination"/>
-        <alias field="comment" index="15" name="Commentaire"/>
-        <alias field="photo" index="16" name="Photo"/>
-        <alias field="geometry" index="17" name=""/>
-        <alias field="azimut" index="18" name="Azimut"/>
-        <alias field="frame_id" index="19" name="Cadre"/>
-        <alias field="frame_fk_azimut" index="20" name="Azimut cadre"/>
-        <alias field="frame_rank" index="21" name="Position cadre dans l'azimut"/>
-        <alias field="frame_fk_frame_type" index="22" name="Type cadre"/>
-        <alias field="frame_fk_frame_fixing_type" index="23" name="Type fixation cadre"/>
-        <alias field="frame_double_sided" index="24" name="Cadre recto verso"/>
-        <alias field="frame_fk_status" index="25" name="Status cadre"/>
-        <alias field="frame_comment" index="26" name="Commentaire cadre"/>
-        <alias field="frame_picture" index="27" name="Image cadre"/>
-        <alias field="sign_rank" index="28" name="Rang signal"/>
-        <alias field="support_id" index="29" name="Id support"/>
-        <alias field="_symbol_value_de" index="30" name=""/>
-        <alias field="_symbol_value_fr" index="31" name=""/>
-        <alias field="_symbol_value_it" index="32" name=""/>
-        <alias field="_symbol_value_ro" index="33" name=""/>
-        <alias field="_img_de" index="34" name=""/>
-        <alias field="_img_fr" index="35" name=""/>
-        <alias field="_img_it" index="36" name=""/>
-        <alias field="_img_ro" index="37" name=""/>
-        <alias field="_symbol_height" index="38" name=""/>
-        <alias field="_symbol_width" index="39" name=""/>
-        <alias field="_final_rank" index="40" name=""/>
-        <alias field="_symbol_shift" index="41" name=""/>
-        <alias field="_previous_sign_in_frame" index="42" name=""/>
-        <alias field="_next_sign_in_frame" index="43" name=""/>
-        <alias field="_previous_frame" index="44" name=""/>
-        <alias field="_next_frame" index="45" name=""/>
+        <alias field="inscription" index="12" name=""/>
+        <alias field="fk_coating" index="13" name="Revêtement"/>
+        <alias field="fk_lighting" index="14" name="Eclairage"/>
+        <alias field="destination" index="15" name="Destination"/>
+        <alias field="comment" index="16" name="Commentaire"/>
+        <alias field="photo" index="17" name="Photo"/>
+        <alias field="geometry" index="18" name=""/>
+        <alias field="azimut" index="19" name="Azimut"/>
+        <alias field="frame_id" index="20" name="Cadre"/>
+        <alias field="frame_fk_azimut" index="21" name="Azimut cadre"/>
+        <alias field="frame_rank" index="22" name="Position cadre dans l'azimut"/>
+        <alias field="frame_fk_frame_type" index="23" name="Type cadre"/>
+        <alias field="frame_fk_frame_fixing_type" index="24" name="Type fixation cadre"/>
+        <alias field="frame_double_sided" index="25" name="Cadre recto verso"/>
+        <alias field="frame_fk_status" index="26" name="Status cadre"/>
+        <alias field="frame_comment" index="27" name="Commentaire cadre"/>
+        <alias field="frame_picture" index="28" name="Image cadre"/>
+        <alias field="sign_rank" index="29" name="Rang signal"/>
+        <alias field="support_id" index="30" name="Id support"/>
+        <alias field="_symbol_value_de" index="31" name=""/>
+        <alias field="_symbol_value_fr" index="32" name=""/>
+        <alias field="_symbol_value_it" index="33" name=""/>
+        <alias field="_symbol_value_ro" index="34" name=""/>
+        <alias field="_img_de" index="35" name=""/>
+        <alias field="_img_fr" index="36" name=""/>
+        <alias field="_img_it" index="37" name=""/>
+        <alias field="_img_ro" index="38" name=""/>
+        <alias field="_symbol_height" index="39" name=""/>
+        <alias field="_symbol_width" index="40" name=""/>
+        <alias field="_final_rank" index="41" name=""/>
+        <alias field="_symbol_shift" index="42" name=""/>
+        <alias field="_previous_sign_in_frame" index="43" name=""/>
+        <alias field="_next_sign_in_frame" index="44" name=""/>
+        <alias field="_previous_frame" index="45" name=""/>
+        <alias field="_next_frame" index="46" name=""/>
       </aliases>
       <defaults>
         <default field="id" expression="" applyOnUpdate="0"/>
@@ -5587,6 +5659,7 @@ def my_form_open(dialog, layer, feature):
         <default field="manufacturing_date" expression="NULL" applyOnUpdate="0"/>
         <default field="case_id" expression="" applyOnUpdate="0"/>
         <default field="case_decision" expression="NULL" applyOnUpdate="0"/>
+        <default field="inscription" expression="" applyOnUpdate="0"/>
         <default field="fk_coating" expression="NULL" applyOnUpdate="0"/>
         <default field="fk_lighting" expression="NULL" applyOnUpdate="0"/>
         <default field="destination" expression="NULL" applyOnUpdate="0"/>
@@ -5635,6 +5708,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="manufacturing_date" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="case_id" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="case_decision" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
+        <constraint field="inscription" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="fk_coating" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="fk_lighting" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
         <constraint field="destination" exp_strength="0" unique_strength="0" constraints="0" notnull_strength="0"/>
@@ -5683,6 +5757,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="manufacturing_date" exp="" desc=""/>
         <constraint field="case_id" exp="" desc=""/>
         <constraint field="case_decision" exp="" desc=""/>
+        <constraint field="inscription" exp="" desc=""/>
         <constraint field="fk_coating" exp="" desc=""/>
         <constraint field="fk_lighting" exp="" desc=""/>
         <constraint field="destination" exp="" desc=""/>
@@ -5692,7 +5767,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="azimut" exp="" desc=""/>
         <constraint field="frame_id" exp="" desc=""/>
         <constraint field="frame_fk_azimut" exp="" desc=""/>
-        <constraint field="frame_rank" exp=" with_variable( 'fk_az', attribute( $currentfeature ,'frame_fk_azimut'),&#xa;aggregate(&#xa;&#x9;layer:='vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:=  &quot;frame_rank&quot; ,&#xa;&#x9;filter:=frame_fk_azimut=@fk_az&#xa;)+1)" desc=""/>
+        <constraint field="frame_rank" exp=" with_variable( 'fk_az', 'frame_fk_azimut',&#xa;aggregate(&#xa;&#x9;layer:='vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:=  &quot;frame_rank&quot; ,&#xa;&#x9;filter:=frame_fk_azimut=@fk_az&#xa;)+1)" desc=""/>
         <constraint field="frame_fk_frame_type" exp="" desc=""/>
         <constraint field="frame_fk_frame_fixing_type" exp="" desc=""/>
         <constraint field="frame_double_sided" exp="" desc=""/>
@@ -5771,6 +5846,7 @@ def my_form_open(dialog, layer, feature):
           <column name="_symbol_value_it" hidden="0" type="field" width="-1"/>
           <column name="_symbol_value_ro" hidden="0" type="field" width="-1"/>
           <column name="geometry" hidden="0" type="field" width="-1"/>
+          <column name="inscription" hidden="0" type="field" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -5803,19 +5879,19 @@ def my_form_open(dialog, layer, feature):
       <editorlayout>tablayout</editorlayout>
       <attributeEditorForm>
         <attributeEditorContainer visibilityExpression="" name="Azimut" showLabel="1" groupBox="1" columnCount="2" visibilityExpressionEnabled="0">
-          <attributeEditorField index="20" name="frame_fk_azimut" showLabel="1"/>
+          <attributeEditorField index="21" name="frame_fk_azimut" showLabel="1"/>
         </attributeEditorContainer>
         <attributeEditorContainer visibilityExpression="" name="Cadre" showLabel="1" groupBox="1" columnCount="2" visibilityExpressionEnabled="0">
-          <attributeEditorField index="22" name="frame_fk_frame_type" showLabel="1"/>
-          <attributeEditorField index="23" name="frame_fk_frame_fixing_type" showLabel="1"/>
-          <attributeEditorField index="24" name="frame_double_sided" showLabel="1"/>
-          <attributeEditorField index="25" name="frame_fk_status" showLabel="1"/>
-          <attributeEditorField index="26" name="frame_comment" showLabel="1"/>
-          <attributeEditorField index="27" name="frame_picture" showLabel="1"/>
+          <attributeEditorField index="23" name="frame_fk_frame_type" showLabel="1"/>
+          <attributeEditorField index="24" name="frame_fk_frame_fixing_type" showLabel="1"/>
+          <attributeEditorField index="25" name="frame_double_sided" showLabel="1"/>
+          <attributeEditorField index="26" name="frame_fk_status" showLabel="1"/>
+          <attributeEditorField index="27" name="frame_comment" showLabel="1"/>
+          <attributeEditorField index="28" name="frame_picture" showLabel="1"/>
         </attributeEditorContainer>
         <attributeEditorContainer visibilityExpression="" name="Signal" showLabel="1" groupBox="1" columnCount="2" visibilityExpressionEnabled="0">
-          <attributeEditorField index="28" name="sign_rank" showLabel="1"/>
-          <attributeEditorField index="21" name="frame_rank" showLabel="1"/>
+          <attributeEditorField index="29" name="sign_rank" showLabel="1"/>
+          <attributeEditorField index="22" name="frame_rank" showLabel="1"/>
           <attributeEditorField index="2" name="fk_sign_type" showLabel="1"/>
           <attributeEditorField index="1" name="verso" showLabel="1"/>
           <attributeEditorField index="3" name="fk_official_sign" showLabel="1"/>
@@ -5824,12 +5900,13 @@ def my_form_open(dialog, layer, feature):
           <attributeEditorField index="7" name="fk_status" showLabel="1"/>
           <attributeEditorField index="8" name="installation_date" showLabel="1"/>
           <attributeEditorField index="9" name="manufacturing_date" showLabel="1"/>
+          <attributeEditorField index="12" name="inscription" showLabel="1"/>
           <attributeEditorField index="11" name="case_decision" showLabel="1"/>
-          <attributeEditorField index="12" name="fk_coating" showLabel="1"/>
-          <attributeEditorField index="13" name="fk_lighting" showLabel="1"/>
-          <attributeEditorField index="14" name="destination" showLabel="1"/>
-          <attributeEditorField index="15" name="comment" showLabel="1"/>
-          <attributeEditorField index="16" name="photo" showLabel="1"/>
+          <attributeEditorField index="13" name="fk_coating" showLabel="1"/>
+          <attributeEditorField index="14" name="fk_lighting" showLabel="1"/>
+          <attributeEditorField index="15" name="destination" showLabel="1"/>
+          <attributeEditorField index="16" name="comment" showLabel="1"/>
+          <attributeEditorField index="17" name="photo" showLabel="1"/>
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
@@ -5873,7 +5950,9 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_id" editable="1"/>
         <field name="frame_picture" editable="1"/>
         <field name="frame_rank" editable="0"/>
+        <field name="geometry" editable="1"/>
         <field name="id" editable="1"/>
+        <field name="inscription" editable="1"/>
         <field name="installation_date" editable="1"/>
         <field name="manufacturing_date" editable="1"/>
         <field name="next_frame" editable="1"/>
@@ -5937,7 +6016,9 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_id" labelOnTop="0"/>
         <field name="frame_picture" labelOnTop="0"/>
         <field name="frame_rank" labelOnTop="0"/>
+        <field name="geometry" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="inscription" labelOnTop="0"/>
         <field name="installation_date" labelOnTop="0"/>
         <field name="manufacturing_date" labelOnTop="0"/>
         <field name="next_frame" labelOnTop="0"/>
