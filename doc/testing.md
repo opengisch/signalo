@@ -14,3 +14,5 @@ user=postgres
 password=postgres
 host=localhost
 ```
+4. [Download the sources of the project](https://github.com/opengisch/signalisation_verticale/archive/master.zip)
+5. Open the QGIS project (located in the sources, under project)
