@@ -23,7 +23,7 @@ CREATE TABLE siro_od.sign
     comment text,
     photo text,
     geometry geometry(Polygon,:SRID) DEFAULT :PROJECT_EXTENT,
-    CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES siro_od.frame (id) MATCH FULL,
+    CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES siro_od.frame (id) MATCH FULL  DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_sign_type) REFERENCES siro_vl.sign_type (id) MATCH FULL,
     CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES siro_vl.official_sign (id) MATCH FULL,
     CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES siro_od.sign (id)  MATCH FULL ON DELETE SET NULL,
