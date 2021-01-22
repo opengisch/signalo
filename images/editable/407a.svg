@@ -1,0 +1,40 @@
+<svg width="438" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="602" width="440" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <metadata transform="matrix(4,0,0,4,0,0) " id="svg_47">image/svg+xml</metadata>
+
+  <g id="svg_49">
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_46" d="m77.26561,498.42967l283.46876,0l0,-396.85936l-283.46876,0l0,396.85936zm0,0"/>
+   <path fill="none" stroke="#211e1e" stroke-width="0.2835" stroke-miterlimit="4" id="svg_45" d="m77.26561,498.42967l0,-396.85936l283.46876,0l0,396.85936l-283.46876,0"/>
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_44" d="m82.93749,492.74219l272.10936,0l0,-385.5l-272.10936,0l0,385.5zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_43" d="m119.79685,342.50779l198.40624,0l0,-198.40624l-198.40624,0l0,198.40624zm0,0"/>
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_42" d="m172.29685,434.88279c1.28124,4.09376 3.67188,6.14064 7,6.14064c3.31252,0 5.70312,-2.04688 7.06252,-6.14064c1.28124,-4 1.95312,-9.79688 1.95312,-17.21876c0,-7.5156 -0.67188,-13.29684 -1.95312,-17.40624c-1.28128,-4 -3.65628,-6.04688 -7.06252,-6.04688c-3.32812,0 -5.71876,2.04688 -7,6.14064c-1.28124,4.09376 -1.96876,9.875 -1.96876,17.31248c0,7.42188 0.68752,13.21876 1.96876,17.21876"/>
+   <path fill="#211e1e" fill-rule="nonzero" id="svg_41" d="m148.12497,297.16403l141.7344,0l0,-82.5l-35.81252,-36.56248l-68.60936,0l-37.31252,37.17188l0,81.8906"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_40" d="m152.60937,292.33591l24.07812,0l0,-14.18748l-24.07812,0l0,14.18748zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_39" d="m152.60937,272.99219l24.07812,0l0,-14.20316l-24.07812,0l0,14.20316zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_38" d="m261.56249,292.33591l24.07812,0l0,-14.18748l-24.07812,0l0,14.18748zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_37" d="m261.56249,272.99219l24.07812,0l0,-14.20316l-24.07812,0l0,14.20316zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_36" d="m261.56249,254.27343l24.07812,0l0,-14.5l-24.07812,0l0,14.5zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_35" d="m152.60937,254.27343l24.07812,0l0,-14.5l-24.07812,0l0,14.5zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_34" d="m178.01561,234.91403c0.25,-0.84372 0.53124,-1.70312 0.78124,-2.53124l-26.18748,-11.375l0,13.90624l25.40624,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_33" d="m180.73437,227.77343c1.42184,-2.90624 3.1406,-5.625 5.125,-8.14064l-17.89064,-17.95312l-15.35936,14.48436l28.125,11.6094"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_32" d="m189.29685,215.86719c2.07812,-2.06252 4.35936,-3.90628 6.82812,-5.46876l-10.98436,-25.625l-13.8594,13.57812l18.01564,17.51564"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_31" d="m200.26561,208.02343c2.65624,-1.29688 5.46876,-2.3594 8.3906,-3.07812l-3.09372,-22.28128l-16.25,0l10.95312,25.3594"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_30" d="m213.81249,203.97655c1.75,-0.23436 3.5156,-0.34376 5.32812,-0.34376c2.18748,0 4.375,0.15624 6.46876,0.5l2.875,-21.46876l-17.78128,0l3.1094,21.31252"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_29" d="m230.15621,205.07031c2.71876,0.7656 5.34376,1.71872 7.81252,2.95312l10.35936,-25.3594l-15.375,0l-2.79688,22.40628"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_28" d="m259.28121,231.89843c0.35936,0.98436 0.67188,2 0.96876,3.0156l25.375,0l0,-14.81248l-26.34376,11.79688"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_27" d="m252.26561,219.46091c1.96876,2.45312 3.67188,5.1094 5.07812,7.92188l28.28124,-11.5156l-15.31248,-14.4844l-18.04688,18.07812"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_26" d="m241.93749,210.25779c2.53124,1.6094 4.90624,3.46876 7,5.56252l18.0156,-18.09376l-14.125,-15.07812l-10.8906,27.60936"/>
+  </g>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="70" id="svg_50" y="443" x="121.71875" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
+ </g>
+</svg>
