@@ -86,7 +86,11 @@ psql "service=${PGSERVICE}" -v SRID=${SRID} -v PROJECT_EXTENT="ST_Polygon('LINES
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
   # for now demo data is the test data
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/demo_data.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/owner_content.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/support_content.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/azimut_content.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/frame_content.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/sign_content.sql
 fi
 
 ${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}
