@@ -1,9 +1,9 @@
-<svg width="800" height="600" xmlns="http://www.w3.org/2000/svg">
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
 
  <g>
   <title>background</title>
-  <rect fill="#fff" id="canvas_background" height="602" width="802" y="-1" x="-1"/>
+  <rect fill="#fff" id="canvas_background" height="602" width="602" y="-1" x="-1"/>
   <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
    <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
   </g>
@@ -13,9 +13,9 @@
   <metadata transform="matrix(5.284713788460294,0,0,5.284713788460294,0,0) " id="svg_9">image/svg+xml</metadata>
 
   <g id="svg_11">
-   <path fill="#ee2b2e" fill-rule="nonzero" id="svg_8" d="m399.99999,75.29643c-124.10817,0 -224.70355,100.61604 -224.70355,224.7036c0,124.10817 100.59537,224.70355 224.70355,224.70355c124.10823,0 224.70355,-100.59537 224.70355,-224.70355c0,-124.08756 -100.59532,-224.7036 -224.70355,-224.7036"/>
-   <path fill="#ffffff" fill-rule="nonzero" id="svg_7" d="m399.99999,150.21142c-82.71814,0 -149.80922,67.07042 -149.80922,149.78861c0,82.71814 67.09108,149.80922 149.80922,149.80922c82.71819,0 149.78861,-67.09108 149.78861,-149.80922c0,-82.71819 -67.07042,-149.78861 -149.78861,-149.78861"/>
+   <path fill="#ee2b2e" fill-rule="nonzero" id="svg_8" d="m299.99999,75.29643c-124.10817,0 -224.70355,100.61604 -224.70355,224.7036c0,124.10817 100.59537,224.70355 224.70355,224.70355c124.10823,0 224.70355,-100.59537 224.70355,-224.70355c0,-124.08756 -100.59532,-224.7036 -224.70355,-224.7036"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_7" d="m299.99999,150.21142c-82.71814,0 -149.80922,67.07042 -149.80922,149.78861c0,82.71814 67.09108,149.80922 149.80922,149.80922c82.71819,0 149.78861,-67.09108 149.78861,-149.80922c0,-82.71819 -67.07042,-149.78861 -149.78861,-149.78861"/>
   </g>
-  <text stroke="#000" transform="matrix(7.200771810935521,0,0,7.961079654864989,-2041.4042060838237,-1744.9449102797107) " xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="24" id="svg_12" y="265.0791" x="325.81427" stroke-width="0" fill="#000000">param(text1)</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="188" id="svg_12" y="365" x="195.4375" stroke-width="0" stroke="#000" fill="#000000">param(text1)</text>
  </g>
 </svg>
