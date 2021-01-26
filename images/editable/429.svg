@@ -1,0 +1,22 @@
+<svg width="838" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#FFFFFF" opacity="0" id="canvas_background" height="602" width="840" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <metadata transform="matrix(4.404805083413578,0,0,4.404805083413578,0,0) " id="svg_11">image/svg+xml</metadata>
+
+  <g id="svg_13">
+   <path fill="#211e1e" fill-rule="nonzero" id="svg_10" d="m244.19288,424.85728l349.61422,0l0,-249.71457l-349.61422,0l0,249.71457zm0,0"/>
+   <path fill="none" stroke="#ffffff" stroke-miterlimit="4" id="svg_9" d="m244.19288,424.85728l349.61422,0l0,-249.71457l-349.61422,0l0,249.71457"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_8" d="m249.19991,419.86748l339.61734,0l0,-239.73495l-339.61734,0l0,239.73495zm0,0"/>
+  </g>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="40" id="svg_14" y="315" x="419" stroke-width="0" stroke="#000" fill="#000000">param(text1)</text>
+ </g>
+</svg>

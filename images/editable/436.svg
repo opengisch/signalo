@@ -1,0 +1,26 @@
+<svg width="711" height="600.0000000000001" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#FFFFFF" opacity="0" id="canvas_background" height="602" width="713" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <metadata transform="matrix(3.0384605282670805,0,0,3.0384605282670805,0,0) " id="svg_17">image/svg+xml</metadata>
+
+  <g id="svg_19">
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_16" d="m191.85041,437.80487l327.29917,0l0,-275.60973l-327.29917,0l0,275.60973zm0,0"/>
+   <path fill="none" stroke="#211e1e" stroke-width="0.2835" stroke-miterlimit="4" id="svg_15" d="m191.85041,437.80487l327.29917,0l0,-275.60973l-327.29917,0l0,275.60973"/>
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_14" d="m195.31617,434.33911l320.36768,0l0,-268.69009l-320.36768,0l0,268.69009zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_13" d="m436.38714,355.39851c-0.46288,1.31745 -2.24323,1.22249 -2.61116,0l-3.65566,-12.34375l-7.47744,4.30842l-67.14287,38.81159l0,34.42008l-17.19817,0l0,-34.42008l-97.44437,-97.44437l-6.7297,10.84825c-0.65281,1.21064 -2.43314,0.74777 -2.52809,-0.56971l-1.6854,-31.97506c0,-0.84269 0.65278,-1.49547 1.4955,-1.4124l31.89196,1.6854c1.40055,0 1.78036,1.78036 0.65278,2.52809l-10.9432,6.63475l6.07692,6.18375l11.03815,11.0263l77.33833,77.24335l66.57313,-38.43179l7.47747,-4.29657l-8.87799,-9.35275c-0.93767,-0.93767 0,-2.52812 1.30557,-2.24327l31.33412,6.63478c0.74777,0.1899 1.21064,0.93764 1.02074,1.78036l-9.91061,30.38461"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_12" d="m208.21775,249.17107l137.83454,0l0,-70.62048l-137.83454,0l0,70.62048zm0,0"/>
+   <path fill="#007d45" fill-rule="nonzero" id="svg_11" d="m211.68351,245.70531l130.91493,0l0,-63.68896l-130.91493,0l0,63.68896zm0,0"/>
+  </g>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" id="svg_20" y="222.10521" x="275" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="24" id="svg_21" y="294.73684" x="440" stroke-width="0" stroke="#000" fill="#ffffff">param(text2)</text>
+ </g>
+</svg>

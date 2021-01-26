@@ -1,0 +1,29 @@
+<svg width="507" height="600" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#FFFFFF" opacity="0" id="canvas_background" height="602" width="509" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <metadata transform="matrix(1.4593842568719992,0,0,1.4593842568719992,0,0) " id="svg_19">image/svg+xml</metadata>
+
+  <g stroke="null" id="svg_21">
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_18" d="m118.04624,486.44746l283.12974,0l0,-378.45052l-283.12974,0l0,378.45052zm0,0"/>
+   <path stroke="#211e1e" fill="none" stroke-width="0.2835" stroke-miterlimit="4" id="svg_17" d="m118.04624,486.44746l283.12974,0l0,-378.45052l-283.12974,0l0,378.45052"/>
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_16" d="m120.61781,483.52897l277.9866,0l0,-372.62358l-277.9866,0l0,372.62358zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_15" d="m134.05204,181.49066l126.17536,0l0,-59.70363l-126.17536,0l0,59.70363zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_14" d="m204.29135,259.07628c0.66506,0.86249 0,2.15626 -1.04637,1.93561l-9.24878,-2.58752l0,210.56232l-12.95538,0l0,-210.56232l-9.24878,2.58752c-1.04637,0.22065 -1.71141,-1.07312 -1.04637,-1.93561l16.00582,-20.04832c0.39016,-0.54156 1.14389,-0.54156 1.5252,0l16.01467,20.04832"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_13" d="m258.51599,351.42483c-0.09755,1.07312 -1.42767,1.50436 -1.90652,0.53154l-5.05446,-9.25692l-4.56675,5.16502l-27.25862,30.81961l0,90.30261l-12.86671,0l0,-96.22984l31.07165,-35.23247l4.56675,-5.06471l-8.19356,-5.71662c-0.86013,-0.53157 -0.56752,-2.04596 0.47885,-2.15629l23.82693,-1.39406c0.66504,0 1.14389,0.53154 1.14389,1.18345l-1.24144,27.04867"/>
+   <path fill="#007d45" fill-rule="nonzero" id="svg_12" d="m136.63248,178.58219l121.02335,0l0,-53.8867l-121.02335,0l0,53.8867zm0,0"/>
+  </g>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="20" id="svg_22" y="157.77732" x="195" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="20" id="svg_23" y="221.11086" x="195" stroke-width="0" stroke="#000" fill="#ffffff">param(text2)</text>
+  <text xml:space="default" text-anchor="start" font-family="sans-serif" font-size="20" id="svg_24" y="305.55558" x="268.50005" stroke-width="0" stroke="#000" fill="#ffffff">param(text3)</text>
+  <text xml:space="default" text-anchor="start" font-family="sans-serif" font-size="20" id="svg_25" y="341.11125" x="269.61117" stroke-width="0" stroke="#000" fill="#ffffff">param(text4)</text>
+ </g>
+</svg>
