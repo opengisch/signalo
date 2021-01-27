@@ -15,7 +15,9 @@ CREATE TABLE siro_od.sign
     manufacturing_date date, -- to manage the the guarantee
     case_id text,
     case_decision text,
-    inscription text,
+    inscription_1 text,
+    inscription_2 text,
+    inscription_3 text,
     -- date_repose
     fk_coating int,
     fk_lighting int,
