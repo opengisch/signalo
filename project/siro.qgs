@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" saveDateTime="2021-01-27T11:28:22" version="3.17.0-Master">
+<qgis projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" saveDateTime="2021-01-27T11:39:20" version="3.17.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -32,10 +32,10 @@
     <layer-tree-layer legend_exp="" providerKey="postgres" source="service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" name="Support" expanded="1" checked="Qt::Checked" patch_size="-1,-1" id="support_347aa750_1661_498f_a7e8_017adc616ba0" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer legend_exp="" providerKey="postgres" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" name="Azimut" expanded="1" checked="Qt::Checked" patch_size="-1,-1" id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" providerKey="postgres" source="dbname='siro' service='pg_siro' key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;sign&quot;" name="Signal" expanded="1" checked="Qt::Checked" patch_size="-1,-1" id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
-    <layer-tree-layer legend_exp="" providerKey="postgres" source="service='pg_siro' sslmode=disable key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;sign&quot; (geometry)" name="Signal" expanded="1" checked="Qt::Unchecked" patch_size="-1,-1" id="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294" legend_split_behavior="0">
+    <layer-tree-layer legend_exp="" providerKey="postgres" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" name="Azimut" expanded="1" checked="Qt::Checked" patch_size="-1,-1" id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" legend_split_behavior="0">
       <customproperties/>
     </layer-tree-layer>
     <layer-tree-layer legend_exp="" providerKey="postgres" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" name="Cadre" expanded="1" checked="Qt::Checked" patch_size="-1,-1" id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" legend_split_behavior="0">
@@ -85,22 +85,20 @@
       <item>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</item>
       <item>OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997</item>
       <item>sign_e61aa58a_a61b_41a2_9078_46a2b1eff786</item>
-      <item>sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings type="1" intersection-snapping="0" tolerance="12" self-snapping="0" scaleDependencyMode="0" minScale="0" enabled="1" unit="1" mode="2" maxScale="0">
     <individual-layer-settings>
-      <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" maxScale="0"/>
-      <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294" maxScale="0"/>
-      <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" maxScale="0"/>
       <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" maxScale="0"/>
+      <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" maxScale="0"/>
+      <layer-setting type="1" tolerance="12" units="1" minScale="0" enabled="0" id="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786" maxScale="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
     <relation strength="Composition" name="azimut-cadre" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" id="azimut-cadre" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4">
       <fieldRef referencedField="id" referencingField="fk_azimut"/>
     </relation>
-    <relation strength="Composition" name="cadre-signal" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="cadre-signal" referencingLayer="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294">
+    <relation strength="Composition" name="cadre-signal" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="frame-sign" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
       <fieldRef referencedField="id" referencingField="fk_frame"/>
     </relation>
     <relation strength="Composition" name="support_azimut" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" id="support_azimut" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
@@ -238,14 +236,14 @@
         <legendlayerfile layerid="support_347aa750_1661_498f_a7e8_017adc616ba0" isInOverview="0" visible="1"/>
       </filegroup>
     </legendlayer>
+    <legendlayer showFeatureCount="0" name="Signal" checked="Qt::Checked" open="true" drawingOrder="-1">
+      <filegroup hidden="false" open="true">
+        <legendlayerfile layerid="sign_2499f9bd_24a2_4384_b329_dc522a94c545" isInOverview="0" visible="1"/>
+      </filegroup>
+    </legendlayer>
     <legendlayer showFeatureCount="0" name="Azimut" checked="Qt::Checked" open="true" drawingOrder="-1">
       <filegroup hidden="false" open="true">
         <legendlayerfile layerid="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" isInOverview="0" visible="1"/>
-      </filegroup>
-    </legendlayer>
-    <legendlayer showFeatureCount="0" name="Signal" checked="Qt::Unchecked" open="true" drawingOrder="-1">
-      <filegroup hidden="false" open="true">
-        <legendlayerfile layerid="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294" isInOverview="0" visible="0"/>
       </filegroup>
     </legendlayer>
     <legendlayer showFeatureCount="0" name="Cadre" checked="Qt::Checked" open="true" drawingOrder="-1">
@@ -359,7 +357,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>false</geographicflag>
+        <geographicflag>true</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -382,7 +380,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -439,7 +437,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -505,7 +503,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -537,7 +535,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -573,6 +571,7 @@
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
@@ -757,7 +756,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -780,7 +779,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -956,7 +955,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -979,7 +978,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1122,7 +1121,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1154,7 +1153,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1190,6 +1189,7 @@ def my_form_open(dialog, layer, feature):
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "rank", '&lt;NULL>' )</value>
           <value>COALESCE( "rank", '&lt;NULL>' )</value>
           <value>COALESCE( "rank", '&lt;NULL>' )</value>
           <value>COALESCE( "rank", '&lt;NULL>' )</value>
@@ -1453,7 +1453,7 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField index="6" name="fk_status" showLabel="1"/>
         <attributeEditorField index="7" name="comment" showLabel="1"/>
         <attributeEditorField index="8" name="picture" showLabel="1"/>
-        <attributeEditorRelation label="" relationWidgetTypeId="ordered_relation_editor" nmRelationId="" name="cadre-signal" showLabel="1" relation="cadre-signal" forceSuppressFormPopup="0">
+        <attributeEditorRelation label="" relationWidgetTypeId="ordered_relation_editor" nmRelationId="" name="frame-sign" showLabel="1" relation="frame-sign" forceSuppressFormPopup="0">
           <editor_configuration type="Map">
             <Option type="QString" name="image_path" value="official_sign_img_fr"/>
             <Option type="QString" name="ordering_field" value="rank"/>
@@ -1517,7 +1517,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1540,7 +1540,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1683,7 +1683,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1706,7 +1706,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1849,7 +1849,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1872,7 +1872,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2015,7 +2015,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2038,7 +2038,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2322,7 +2322,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2345,7 +2345,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2438,30 +2438,24 @@ def my_form_open(dialog, layer, feature):
       <previewExpression></previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer autoRefreshEnabled="0" wkbType="Polygon" refreshOnNotifyMessage="" simplifyLocal="1" maxScale="0" geometry="Polygon" simplifyDrawingHints="1" refreshOnNotifyEnabled="0" simplifyMaxScale="1" simplifyAlgorithm="0" type="vector" styleCategories="AllStyleCategories" minScale="100000000" readOnly="0" labelsEnabled="0" hasScaleBasedVisibilityFlag="0" autoRefreshTime="0" simplifyDrawingTol="1">
-      <extent>
-        <xmin>2474690</xmin>
-        <ymin>1045122</ymin>
-        <xmax>2827252</xmax>
-        <ymax>1290547</ymax>
-      </extent>
-      <id>sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Polygon checkPrimaryKeyUnicity='0' table="siro_od"."sign" (geometry)</datasource>
+    <maplayer geometry="No geometry" refreshOnNotifyEnabled="0" type="vector" wkbType="NoGeometry" styleCategories="AllStyleCategories" autoRefreshEnabled="0" minScale="1e+08" refreshOnNotifyMessage="" autoRefreshTime="0" hasScaleBasedVisibilityFlag="0" readOnly="0" maxScale="0">
+      <id>sign_2499f9bd_24a2_4384_b329_dc522a94c545</id>
+      <datasource>dbname='siro' service='pg_siro' key='id' checkPrimaryKeyUnicity='1' table="siro_od"."sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
       <layername>Signal</layername>
       <srs>
         <spatialrefsys>
-          <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-          <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
-          <srsid>47</srsid>
-          <srid>2056</srid>
-          <authid>EPSG:2056</authid>
-          <description>CH1903+ / LV95</description>
-          <projectionacronym>somerc</projectionacronym>
-          <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2485,19 +2479,19 @@ def my_form_open(dialog, layer, feature):
         <encoding></encoding>
         <crs>
           <spatialrefsys>
-            <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
-            <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
-            <srsid>47</srsid>
-            <srid>2056</srid>
-            <authid>EPSG:2056</authid>
-            <description>CH1903+ / LV95</description>
-            <projectionacronym>somerc</projectionacronym>
-            <ellipsoidacronym>EPSG:7004</ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
-          <spatial miny="0" maxy="0" minz="0" minx="0" maxx="0" crs="EPSG:2056" maxz="0" dimensions="2"/>
+          <spatial miny="0" maxy="0" minz="0" minx="0" maxx="0" crs="" maxz="0" dimensions="2"/>
           <temporal>
             <period>
               <start></start>
@@ -2529,154 +2523,18 @@ def my_form_open(dialog, layer, feature):
           <end></end>
         </fixedRange>
       </temporal>
-      <renderer-v2 type="singleSymbol" symbollevels="0" enableorderby="0" forceraster="0">
-        <symbols>
-          <symbol type="fill" clip_to_extent="1" force_rhr="0" name="0" alpha="1">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option type="QString" name="name" value=""/>
-                <Option name="properties"/>
-                <Option type="QString" name="type" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer pass="0" class="SimpleFill" enabled="1" locked="0">
-              <Option type="Map">
-                <Option type="QString" name="border_width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                <Option type="QString" name="color" value="141,90,153,255"/>
-                <Option type="QString" name="joinstyle" value="bevel"/>
-                <Option type="QString" name="offset" value="0,0"/>
-                <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                <Option type="QString" name="offset_unit" value="MM"/>
-                <Option type="QString" name="outline_color" value="35,35,35,255"/>
-                <Option type="QString" name="outline_style" value="solid"/>
-                <Option type="QString" name="outline_width" value="0.26"/>
-                <Option type="QString" name="outline_width_unit" value="MM"/>
-                <Option type="QString" name="style" value="solid"/>
-              </Option>
-              <prop k="border_width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="color" v="141,90,153,255"/>
-              <prop k="joinstyle" v="bevel"/>
-              <prop k="offset" v="0,0"/>
-              <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-              <prop k="offset_unit" v="MM"/>
-              <prop k="outline_color" v="35,35,35,255"/>
-              <prop k="outline_style" v="solid"/>
-              <prop k="outline_width" v="0.26"/>
-              <prop k="outline_width_unit" v="MM"/>
-              <prop k="style" v="solid"/>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option type="QString" name="name" value=""/>
-                  <Option name="properties"/>
-                  <Option type="QString" name="type" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-        </symbols>
-        <rotation/>
-        <sizescale/>
-      </renderer-v2>
       <customproperties>
         <property key="embeddedWidgets/count" value="0"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
       </customproperties>
-      <blendMode>0</blendMode>
-      <featureBlendMode>0</featureBlendMode>
-      <layerOpacity>1</layerOpacity>
-      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
-        <DiagramCategory labelPlacementMethod="XHeight" opacity="1" sizeType="MM" direction="0" penWidth="0" penAlpha="255" diagramOrientation="Up" minScaleDenominator="0" penColor="#000000" barWidth="5" minimumSize="0" spacing="5" rotationOffset="270" spacingUnit="MM" scaleBasedVisibility="0" backgroundAlpha="255" scaleDependency="Area" width="15" height="15" enabled="0" sizeScale="3x:0,0,0,0,0,0" spacingUnitScale="3x:0,0,0,0,0,0" maxScaleDenominator="1e+08" lineSizeType="MM" lineSizeScale="3x:0,0,0,0,0,0" showAxis="1" backgroundColor="#ffffff">
-          <fontProperties description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style=""/>
-          <attribute label="" color="#000000" field=""/>
-          <axisSymbol>
-            <symbol type="line" clip_to_extent="1" force_rhr="0" name="" alpha="1">
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option type="QString" name="name" value=""/>
-                  <Option name="properties"/>
-                  <Option type="QString" name="type" value="collection"/>
-                </Option>
-              </data_defined_properties>
-              <layer pass="0" class="SimpleLine" enabled="1" locked="0">
-                <Option type="Map">
-                  <Option type="QString" name="align_dash_pattern" value="0"/>
-                  <Option type="QString" name="capstyle" value="square"/>
-                  <Option type="QString" name="customdash" value="5;2"/>
-                  <Option type="QString" name="customdash_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                  <Option type="QString" name="customdash_unit" value="MM"/>
-                  <Option type="QString" name="dash_pattern_offset" value="0"/>
-                  <Option type="QString" name="dash_pattern_offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                  <Option type="QString" name="dash_pattern_offset_unit" value="MM"/>
-                  <Option type="QString" name="draw_inside_polygon" value="0"/>
-                  <Option type="QString" name="joinstyle" value="bevel"/>
-                  <Option type="QString" name="line_color" value="35,35,35,255"/>
-                  <Option type="QString" name="line_style" value="solid"/>
-                  <Option type="QString" name="line_width" value="0.26"/>
-                  <Option type="QString" name="line_width_unit" value="MM"/>
-                  <Option type="QString" name="offset" value="0"/>
-                  <Option type="QString" name="offset_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                  <Option type="QString" name="offset_unit" value="MM"/>
-                  <Option type="QString" name="ring_filter" value="0"/>
-                  <Option type="QString" name="tweak_dash_pattern_on_corners" value="0"/>
-                  <Option type="QString" name="use_custom_dash" value="0"/>
-                  <Option type="QString" name="width_map_unit_scale" value="3x:0,0,0,0,0,0"/>
-                </Option>
-                <prop k="align_dash_pattern" v="0"/>
-                <prop k="capstyle" v="square"/>
-                <prop k="customdash" v="5;2"/>
-                <prop k="customdash_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="customdash_unit" v="MM"/>
-                <prop k="dash_pattern_offset" v="0"/>
-                <prop k="dash_pattern_offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="dash_pattern_offset_unit" v="MM"/>
-                <prop k="draw_inside_polygon" v="0"/>
-                <prop k="joinstyle" v="bevel"/>
-                <prop k="line_color" v="35,35,35,255"/>
-                <prop k="line_style" v="solid"/>
-                <prop k="line_width" v="0.26"/>
-                <prop k="line_width_unit" v="MM"/>
-                <prop k="offset" v="0"/>
-                <prop k="offset_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <prop k="offset_unit" v="MM"/>
-                <prop k="ring_filter" v="0"/>
-                <prop k="tweak_dash_pattern_on_corners" v="0"/>
-                <prop k="use_custom_dash" v="0"/>
-                <prop k="width_map_unit_scale" v="3x:0,0,0,0,0,0"/>
-                <data_defined_properties>
-                  <Option type="Map">
-                    <Option type="QString" name="name" value=""/>
-                    <Option name="properties"/>
-                    <Option type="QString" name="type" value="collection"/>
-                  </Option>
-                </data_defined_properties>
-              </layer>
-            </symbol>
-          </axisSymbol>
-        </DiagramCategory>
-      </SingleCategoryDiagramRenderer>
-      <DiagramLayerSettings linePlacementFlags="18" priority="0" showAll="1" zIndex="0" obstacle="0" placement="1" dist="0">
-        <properties>
-          <Option type="Map">
-            <Option type="QString" name="name" value=""/>
-            <Option name="properties"/>
-            <Option type="QString" name="type" value="collection"/>
-          </Option>
-        </properties>
-      </DiagramLayerSettings>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
         <activeChecks/>
-        <checkConfiguration type="Map">
-          <Option type="Map" name="QgsGeometryGapCheck">
-            <Option type="double" name="allowedGapsBuffer" value="0"/>
-            <Option type="bool" name="allowedGapsEnabled" value="false"/>
-            <Option type="QString" name="allowedGapsLayer" value=""/>
-          </Option>
-        </checkConfiguration>
+        <checkConfiguration/>
       </geometryOptions>
       <legend type="default-vector"/>
       <referencedLayers>
-        <relation strength="Composition" providerKey="postgres" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="cadre-signal" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" id="cadre-signal" referencingLayer="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294">
+        <relation strength="Composition" providerKey="postgres" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="cadre-signal" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" id="frame-sign" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
           <fieldRef referencedField="id" referencingField="fk_frame"/>
         </relation>
       </referencedLayers>
@@ -2703,26 +2561,16 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="verso">
-          <editWidget type="CheckBox">
+          <editWidget type="TextEdit">
             <config>
-              <Option type="Map">
-                <Option type="QString" name="CheckedState" value=""/>
-                <Option type="QString" name="UncheckedState" value=""/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="fk_sign_type">
           <editWidget type="Range">
             <config>
-              <Option type="Map">
-                <Option type="bool" name="AllowNull" value="true"/>
-                <Option type="int" name="Max" value="2147483647"/>
-                <Option type="int" name="Min" value="-2147483648"/>
-                <Option type="int" name="Precision" value="0"/>
-                <Option type="int" name="Step" value="1"/>
-                <Option type="QString" name="Style" value="SpinBox"/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
@@ -2839,6 +2687,13 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="photo">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="geometry">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -2985,21 +2840,22 @@ def my_form_open(dialog, layer, feature):
         <alias index="17" name="" field="destination"/>
         <alias index="18" name="" field="comment"/>
         <alias index="19" name="" field="photo"/>
-        <alias index="20" name="" field="official_sign_active"/>
-        <alias index="21" name="" field="official_sign_value_de"/>
-        <alias index="22" name="" field="official_sign_value_fr"/>
-        <alias index="23" name="" field="official_sign_value_it"/>
-        <alias index="24" name="" field="official_sign_value_ro"/>
-        <alias index="25" name="" field="official_sign_description_de"/>
-        <alias index="26" name="" field="official_sign_description_fr"/>
-        <alias index="27" name="" field="official_sign_description_it"/>
-        <alias index="28" name="" field="official_sign_description_ro"/>
-        <alias index="29" name="" field="official_sign_img_de"/>
-        <alias index="30" name="" field="official_sign_img_fr"/>
-        <alias index="31" name="" field="official_sign_img_it"/>
-        <alias index="32" name="" field="official_sign_img_ro"/>
-        <alias index="33" name="" field="official_sign_img_height"/>
-        <alias index="34" name="" field="official_sign_img_width"/>
+        <alias index="20" name="" field="geometry"/>
+        <alias index="21" name="" field="official_sign_active"/>
+        <alias index="22" name="" field="official_sign_value_de"/>
+        <alias index="23" name="" field="official_sign_value_fr"/>
+        <alias index="24" name="" field="official_sign_value_it"/>
+        <alias index="25" name="" field="official_sign_value_ro"/>
+        <alias index="26" name="" field="official_sign_description_de"/>
+        <alias index="27" name="" field="official_sign_description_fr"/>
+        <alias index="28" name="" field="official_sign_description_it"/>
+        <alias index="29" name="" field="official_sign_description_ro"/>
+        <alias index="30" name="" field="official_sign_img_de"/>
+        <alias index="31" name="" field="official_sign_img_fr"/>
+        <alias index="32" name="" field="official_sign_img_it"/>
+        <alias index="33" name="" field="official_sign_img_ro"/>
+        <alias index="34" name="" field="official_sign_img_height"/>
+        <alias index="35" name="" field="official_sign_img_width"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" expression="" field="id"/>
@@ -3022,6 +2878,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="destination"/>
         <default applyOnUpdate="0" expression="" field="comment"/>
         <default applyOnUpdate="0" expression="" field="photo"/>
+        <default applyOnUpdate="0" expression="" field="geometry"/>
         <default applyOnUpdate="0" expression="" field="official_sign_active"/>
         <default applyOnUpdate="0" expression="" field="official_sign_value_de"/>
         <default applyOnUpdate="0" expression="" field="official_sign_value_fr"/>
@@ -3059,6 +2916,7 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="destination" constraints="0"/>
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="comment" constraints="0"/>
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="photo" constraints="0"/>
+        <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="geometry" constraints="0"/>
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="official_sign_active" constraints="0"/>
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="official_sign_value_de" constraints="0"/>
         <constraint unique_strength="0" notnull_strength="0" exp_strength="0" field="official_sign_value_fr" constraints="0"/>
@@ -3096,6 +2954,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="destination" desc=""/>
         <constraint exp="" field="comment" desc=""/>
         <constraint exp="" field="photo" desc=""/>
+        <constraint exp="" field="geometry" desc=""/>
         <constraint exp="" field="official_sign_active" desc=""/>
         <constraint exp="" field="official_sign_value_de" desc=""/>
         <constraint exp="" field="official_sign_value_fr" desc=""/>
@@ -3138,7 +2997,7 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="destination"/>
           <column type="field" hidden="0" width="-1" name="comment"/>
           <column type="field" hidden="0" width="-1" name="photo"/>
-          <column type="actions" hidden="1" width="-1"/>
+          <column type="field" hidden="0" width="-1" name="geometry"/>
           <column type="field" hidden="0" width="-1" name="official_sign_active"/>
           <column type="field" hidden="0" width="-1" name="official_sign_value_de"/>
           <column type="field" hidden="0" width="-1" name="official_sign_value_fr"/>
@@ -3154,6 +3013,7 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="official_sign_img_ro"/>
           <column type="field" hidden="0" width="-1" name="official_sign_img_height"/>
           <column type="field" hidden="0" width="-1" name="official_sign_img_width"/>
+          <column type="actions" hidden="1" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3205,24 +3065,9 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField index="17" name="destination" showLabel="1"/>
         <attributeEditorField index="18" name="comment" showLabel="1"/>
         <attributeEditorField index="19" name="photo" showLabel="1"/>
-        <attributeEditorField index="-1" name="geometry" showLabel="1"/>
+        <attributeEditorField index="20" name="geometry" showLabel="1"/>
       </attributeEditorForm>
       <editable>
-        <field editable="0" name="Signal officiel_active"/>
-        <field editable="0" name="Signal officiel_description_de"/>
-        <field editable="0" name="Signal officiel_description_fr"/>
-        <field editable="0" name="Signal officiel_description_it"/>
-        <field editable="0" name="Signal officiel_description_ro"/>
-        <field editable="0" name="Signal officiel_img_de"/>
-        <field editable="0" name="Signal officiel_img_fr"/>
-        <field editable="0" name="Signal officiel_img_height"/>
-        <field editable="0" name="Signal officiel_img_it"/>
-        <field editable="0" name="Signal officiel_img_ro"/>
-        <field editable="0" name="Signal officiel_img_width"/>
-        <field editable="0" name="Signal officiel_value_de"/>
-        <field editable="0" name="Signal officiel_value_fr"/>
-        <field editable="0" name="Signal officiel_value_it"/>
-        <field editable="0" name="Signal officiel_value_ro"/>
         <field editable="1" name="case_decision"/>
         <field editable="1" name="case_id"/>
         <field editable="1" name="comment"/>
@@ -3261,21 +3106,6 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="verso"/>
       </editable>
       <labelOnTop>
-        <field name="Signal officiel_active" labelOnTop="0"/>
-        <field name="Signal officiel_description_de" labelOnTop="0"/>
-        <field name="Signal officiel_description_fr" labelOnTop="0"/>
-        <field name="Signal officiel_description_it" labelOnTop="0"/>
-        <field name="Signal officiel_description_ro" labelOnTop="0"/>
-        <field name="Signal officiel_img_de" labelOnTop="0"/>
-        <field name="Signal officiel_img_fr" labelOnTop="0"/>
-        <field name="Signal officiel_img_height" labelOnTop="0"/>
-        <field name="Signal officiel_img_it" labelOnTop="0"/>
-        <field name="Signal officiel_img_ro" labelOnTop="0"/>
-        <field name="Signal officiel_img_width" labelOnTop="0"/>
-        <field name="Signal officiel_value_de" labelOnTop="0"/>
-        <field name="Signal officiel_value_fr" labelOnTop="0"/>
-        <field name="Signal officiel_value_it" labelOnTop="0"/>
-        <field name="Signal officiel_value_ro" labelOnTop="0"/>
         <field name="case_decision" labelOnTop="0"/>
         <field name="case_id" labelOnTop="0"/>
         <field name="comment" labelOnTop="0"/>
@@ -4649,7 +4479,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4672,7 +4502,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4815,7 +4645,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4838,7 +4668,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5616,7 +5446,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5639,7 +5469,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5771,7 +5601,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5794,7 +5624,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -7418,7 +7248,6 @@ def my_form_open(dialog, layer, feature):
     <layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
     <layer id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997"/>
     <layer id="sign_e61aa58a_a61b_41a2_9078_46a2b1eff786"/>
-    <layer id="sign_e3bc5fc8_a5c2_46ae_ab9a_8de7af730294"/>
   </layerorder>
   <properties>
     <DefaultStyles>
@@ -7722,22 +7551,6 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" type="65641" positionLock="false" size="69.6574,13.7659,mm" id="" background="false" referencePoint="0" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" visibility="1" positionOnPage="14.1392,241.234,mm" blendMode="0" position="14.1392,241.234,mm" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" marginX="0" zValue="25">
-        <FrameColor green="0" red="0" blue="0" alpha="255"/>
-        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor green="0" red="0" blue="0" alpha="255"/>
-      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" svgBorderColor="0,0,0,255" northMode="0" opacity="1" resizeMode="0" mapUuid="" northOffset="0" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" anchorPoint="0" type="65640" positionLock="false" file="101.svg" svgFillColor="255,255,255,255" pictureRotation="0" size="53.7966,48.77,mm" id="" background="false" referencePoint="0" uuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" visibility="1" positionOnPage="30,189.611,mm" blendMode="0" pictureHeight="48.77" mode="0" position="30,189.611,mm" pictureWidth="48.4726" templateUuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" zValue="25" svgBorderWidth="0.2">
         <FrameColor green="0" red="0" blue="0" alpha="255"/>
         <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
@@ -7757,6 +7570,22 @@ def my_form_open(dialog, layer, feature):
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
+      </LayoutItem>
+      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" type="65641" positionLock="false" size="69.6574,13.7659,mm" id="" background="false" referencePoint="0" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" visibility="1" positionOnPage="14.1392,241.234,mm" blendMode="0" position="14.1392,241.234,mm" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" marginX="0" zValue="25">
+        <FrameColor green="0" red="0" blue="0" alpha="255"/>
+        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+        <FontColor green="0" red="0" blue="0" alpha="255"/>
       </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" svgBorderColor="0,0,0,255" northMode="0" opacity="1" resizeMode="0" mapUuid="" northOffset="0" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" anchorPoint="0" type="65640" positionLock="false" file="101.svg" svgFillColor="255,255,255,255" pictureRotation="0" size="53.7966,48.77,mm" id="" background="false" referencePoint="0" uuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" visibility="1" positionOnPage="126.203,107.464,mm" blendMode="0" pictureHeight="48.77" mode="0" position="126.203,107.464,mm" pictureWidth="48.4726" templateUuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" zValue="17" svgBorderWidth="0.2">
         <FrameColor green="0" red="0" blue="0" alpha="255"/>
@@ -7866,22 +7695,6 @@ def my_form_open(dialog, layer, feature):
         <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
         <FontColor green="0" red="0" blue="0" alpha="255"/>
       </LayoutItem>
-      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" type="65641" positionLock="false" size="69.6574,13.7659,mm" id="" background="false" referencePoint="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" visibility="1" positionOnPage="22.0696,71.2341,mm" blendMode="0" position="22.0696,71.2341,mm" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" marginX="0" zValue="2">
-        <FrameColor green="0" red="0" blue="0" alpha="255"/>
-        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
-        <FontColor green="0" red="0" blue="0" alpha="255"/>
-      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" svgBorderColor="0,0,0,255" northMode="0" opacity="1" resizeMode="0" mapUuid="" northOffset="0" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" anchorPoint="0" type="65640" positionLock="false" file="101.svg" svgFillColor="255,255,255,255" pictureRotation="0" size="53.7966,48.77,mm" id="" background="false" referencePoint="0" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" visibility="1" positionOnPage="30,21.6192,mm" blendMode="0" pictureHeight="48.77" mode="0" position="30,21.6192,mm" pictureWidth="48.4726" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" zValue="2" svgBorderWidth="0.2">
         <FrameColor green="0" red="0" blue="0" alpha="255"/>
         <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
@@ -7901,6 +7714,22 @@ def my_form_open(dialog, layer, feature):
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
+      </LayoutItem>
+      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" type="65641" positionLock="false" size="69.6574,13.7659,mm" id="" background="false" referencePoint="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" visibility="1" positionOnPage="22.0696,71.2341,mm" blendMode="0" position="22.0696,71.2341,mm" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" marginX="0" zValue="2">
+        <FrameColor green="0" red="0" blue="0" alpha="255"/>
+        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0" style=""/>
+        <FontColor green="0" red="0" blue="0" alpha="255"/>
       </LayoutItem>
       <customproperties>
         <property key="atlasRasterFormat" value="png"/>
@@ -8021,6 +7850,22 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" type="65641" positionLock="false" size="247.028,53.7715,mm" id="" background="false" referencePoint="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" positionOnPage="24.986,156.228,mm" blendMode="0" position="24.986,156.228,mm" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" marginX="0" zValue="2">
+        <FrameColor green="0" red="0" blue="0" alpha="255"/>
+        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
+        <FontColor green="0" red="0" blue="0" alpha="255"/>
+      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" svgBorderColor="0,0,0,255" northMode="0" opacity="1" resizeMode="0" mapUuid="" northOffset="0" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" anchorPoint="7" type="65640" positionLock="false" file="101.svg" svgFillColor="255,255,255,255" pictureRotation="0" size="130.768,148.068,mm" id="" background="false" referencePoint="7" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" positionOnPage="148.5,160.814,mm" blendMode="0" pictureHeight="131.57" mode="0" position="148.5,160.814,mm" pictureWidth="130.768" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" zValue="2" svgBorderWidth="0.2">
         <FrameColor green="0" red="0" blue="0" alpha="255"/>
         <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
@@ -8040,22 +7885,6 @@ def my_form_open(dialog, layer, feature):
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem outlineWidthM="0.3,mm" halign="4" opacity="1" htmlState="0" valign="128" groupUuid="" frameJoinStyle="miter" itemRotation="0" frame="false" excludeFromExports="0" marginY="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" type="65641" positionLock="false" size="247.028,53.7715,mm" id="" background="false" referencePoint="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" positionOnPage="24.986,156.228,mm" blendMode="0" position="24.986,156.228,mm" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" marginX="0" zValue="2">
-        <FrameColor green="0" red="0" blue="0" alpha="255"/>
-        <BackgroundColor green="255" red="255" blue="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor green="0" red="0" blue="0" alpha="255"/>
       </LayoutItem>
       <customproperties>
         <property key="atlasRasterFormat" value="png"/>
