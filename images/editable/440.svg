@@ -160,8 +160,9 @@
        stroke="#000000"
        fill="#ffffff">param(text2)</text>
     <text
-       xml:space="preserve"
-       text-anchor="start"
+       xml:space="default" 
+       dominant-baseline="middle" 
+       text-anchor="middle"
        font-family="sans-serif"
        font-size="18px"
        id="svg_28"
