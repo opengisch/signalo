@@ -11,7 +11,7 @@ for _LANGUAGE in "${_LANGUAGES[@]}"; do
   IMAGES=$(psql -t -c "SELECT img_${_LANGUAGE} FROM siro_vl.official_sign")
   for IMAGE in ${IMAGES}; do
     if [[ ! -f ${DIR}/${IMAGE} ]]; then
-      FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${LANG} = '${IMAGE}'")
+      FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${_LANGUAGE} = '${IMAGE}'")
       echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official/editable"
       return_code=1
     fi
