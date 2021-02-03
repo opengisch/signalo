@@ -3260,7 +3260,7 @@ def my_form_open(dialog, layer, feature):
                         </Option>
                         <Option name="name" type="Map">
                           <Option name="active" value="true" type="bool"/>
-                          <Option name="expression" value="'../images/editable/' ||  &quot;vl_official_sign_img_fr&quot;" type="QString"/>
+                          <Option name="expression" value="'../images/official/' ||  &quot;vl_official_sign_img_fr&quot;" type="QString"/>
                           <Option name="type" value="3" type="int"/>
                         </Option>
                         <Option name="offset" type="Map">
@@ -5880,7 +5880,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option name="name" type="Map">
                       <Option name="active" value="true" type="bool"/>
-                      <Option name="expression" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN '../images/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN '../images/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN '../images/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN '../images/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" type="QString"/>
+                      <Option name="expression" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN '../images/official/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN '../images/official/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN '../images/official/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN '../images/official/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" type="QString"/>
                       <Option name="type" value="3" type="int"/>
                     </Option>
                     <Option name="offset" type="Map">
@@ -7487,7 +7487,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 150), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 150), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
@@ -7507,7 +7507,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 120), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 120), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
@@ -7543,7 +7543,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 90), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 90), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
@@ -7579,7 +7579,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 60), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 60), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
@@ -7615,7 +7615,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 30), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 30), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
@@ -7651,7 +7651,7 @@ def my_form_open(dialog, layer, feature):
               <Option name="properties" type="Map">
                 <Option name="dataDefinedSource" type="Map">
                   <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid ), 'img_fr') END" type="QString"/>
+                  <Option name="expression" value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid ), 'img_fr') END" type="QString"/>
                   <Option name="type" value="3" type="int"/>
                 </Option>
               </Option>
