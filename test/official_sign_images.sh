@@ -2,7 +2,7 @@
 
 set -e
 
-DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../images/official
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../images/official/editable
 
 return_code=0
 
@@ -12,7 +12,7 @@ for LANGUAGE in "${LANGUAGES[@]}"; do
   for IMAGE in ${IMAGES}; do
     if [[ ! -f ${DIR}/${IMAGE} ]]; then
       FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${LANG} = '${IMAGE}'")
-      echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official"
+      echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official/editable"
       return_code=1
     fi
   done
