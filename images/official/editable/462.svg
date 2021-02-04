@@ -1,0 +1,24 @@
+<svg width="129" height="96" xmlns="http://www.w3.org/2000/svg">
+ <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+
+ <g>
+  <title>background</title>
+  <rect fill="#fff" id="canvas_background" height="98" width="131" y="-1" x="-1"/>
+  <g display="none" overflow="visible" y="0" x="0" height="100%" width="100%" id="canvasGrid">
+   <rect fill="url(#gridpattern)" stroke-width="0" y="0" x="0" height="100%" width="100%"/>
+  </g>
+ </g>
+ <g>
+  <title>Layer 1</title>
+  <metadata id="svg_13">image/svg+xml</metadata>
+
+  <g id="svg_15">
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_12" d="m1.0241,94.97732l127.18109,0l0,-94.1812l-127.18109,0l0,94.1812zm0,0"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_11" d="m126.511,7.52114c0,-2.78504 -2.2784,-5.04473 -5.09036,-5.04473l-113.61199,0c-2.81196,0 -5.09036,2.25969 -5.09036,5.04473l0,80.72729c0,2.78889 2.2784,5.0486 5.08646,5.0486l113.61589,0c2.81196,0.00386 5.09036,-2.2597 5.09036,-5.04474l0,-80.73115"/>
+   <path fill="#1966ba" fill-rule="nonzero" id="svg_10" d="m124.81291,7.52114l0,80.73115c0,1.85798 -1.51893,3.36445 -3.39227,3.36058l-113.61589,0c-1.86945,0.00387 -3.39227,-1.5026 -3.38837,-3.36444l0,-80.72729c-0.0039,-1.85798 1.51892,-3.36444 3.39227,-3.36058l113.61199,0c1.87334,-0.00387 3.39617,1.5026 3.39227,3.36058"/>
+   <path fill="#ffffff" fill-rule="nonzero" id="svg_9" d="m78.78547,66.09951c0.25316,-0.51374 -0.09737,-1.11633 -0.67378,-1.15882l-16.29149,-1.1511c-0.74388,-0.05408 -1.16062,0.83435 -0.64262,1.36742l4.66584,4.78592l-15.81244,8.3551l3.05344,5.24173l15.20097,-9.40189l1.84608,6.40055c0.20642,0.71074 1.18788,0.79573 1.51503,0.13134l7.13897,-14.57024"/>
+  </g>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_16" y="24.59096" x="28.22923" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_17" y="47.77273" x="28.22923" stroke-width="0" stroke="#000" fill="#ffffff">param(text2)</text>
+ </g>
+</svg>
