@@ -3,7 +3,7 @@ CREATE TABLE siro_od.sign
 (
     id uuid PRIMARY KEY default uuid_generate_v1(),
     fk_frame uuid not null,
-    rank int default 1,
+    rank int default 1 not null,
     verso boolean not null default false,
     fk_sign_type int NOT NULL,
     fk_official_sign text,

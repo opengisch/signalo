@@ -6,7 +6,7 @@ CREATE TABLE siro_od.frame
 (
     id uuid PRIMARY KEY default uuid_generate_v1(),
     fk_azimut uuid not null,
-    rank int default 1, -- TODO: get default
+    rank int default 1 not null, -- TODO: get default
     fk_frame_type int,
     fk_frame_fixing_type int,
     double_sided boolean default true,
