@@ -21,7 +21,6 @@ CREATE TABLE siro_od.sign
     -- date_repose
     fk_coating int,
     fk_lighting int,
-    destination text,
     comment text,
     photo text,
     geometry geometry(Polygon,:SRID) DEFAULT :PROJECT_EXTENT,
