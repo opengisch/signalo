@@ -33,7 +33,7 @@ CREATE TABLE siro_od.sign
     CONSTRAINT fkey_vl_coating FOREIGN KEY (fk_coating) REFERENCES siro_vl.coating (id) MATCH FULL,
     CONSTRAINT fkey_vl_lighting FOREIGN KEY (fk_lighting) REFERENCES siro_vl.lighting (id) MATCH FULL,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,
-    unique(fk_frame, rank, verso)
+    unique(fk_frame, rank, verso) DEFERRABLE INITIALLY DEFERRED
 );
 
 -- reorder sign after deletion
