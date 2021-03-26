@@ -14,7 +14,7 @@ INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUE
 INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (2, 'TBD', 'autre', 'TBD', 'TBD');
 INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (3, 'to be determined', 'à déterminer', 'to be determined', 'TBD');
 
-INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (11, 'TBD', 'verticale', 'TBD', 'TBD');
+INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (11, 'TBD', 'official', 'TBD', 'TBD');
 INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (12, 'TBD', 'balise', 'TBD', 'TBD');
 INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (13, 'TBD', 'miroir', 'TBD', 'TBD');
-INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (14, 'TBD', 'plaque_rue', 'TBD', 'TBD');
+INSERT INTO siro_vl.sign_type (id, value_de, value_fr, value_it, value_ro) VALUES (14, 'TBD', 'plaque de rue', 'TBD', 'TBD');
