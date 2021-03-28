@@ -38,12 +38,42 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , official_sign.value_fr as _symbol_value_fr
                 , official_sign.value_it as _symbol_value_it
                 , official_sign.value_ro as _symbol_value_ro
-                , official_sign.img_de as _img_de
-                , official_sign.img_fr as _img_fr
-                , official_sign.img_it as _img_it
-                , official_sign.img_ro as _img_ro
-                , official_sign.img_height as _symbol_height
-                , official_sign.img_width as _symbol_width
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_de 
+                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
+                  WHEN fk_sign_type = 13 THEN 'mirror.svg' 
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                END as _img_de
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_fr
+                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
+                  WHEN fk_sign_type = 13 THEN 'mirror.svg' 
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                END as _img_fr
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_it
+                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
+                  WHEN fk_sign_type = 13 THEN 'mirror.svg' 
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                END as _img_it
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_ro
+                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
+                  WHEN fk_sign_type = 13 THEN 'mirror.svg' 
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                END as _img_ro
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_height
+                  WHEN fk_sign_type = 12 THEN 130
+                  WHEN fk_sign_type = 13 THEN 70
+                  WHEN fk_sign_type = 14 THEN 70
+                END as _symbol_height
+                , CASE 
+                  WHEN fk_sign_type = 11 THEN official_sign.img_width
+                  WHEN fk_sign_type = 12 THEN 70
+                  WHEN fk_sign_type = 13 THEN 130
+                  WHEN fk_sign_type = 14 THEN 130
+                END as _symbol_width
             FROM siro_od.sign
                 LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
                 LEFT JOIN siro_od.azimut ON azimut.id = frame.fk_azimut
