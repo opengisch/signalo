@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Denis Rouzaud" version="3.19.0-Master" saveDateTime="2021-03-29T09:35:35" projectname="" saveUser="denis">
+<qgis saveUserFull="Denis Rouzaud" version="3.19.0-Master" saveDateTime="2021-03-29T09:44:27" projectname="" saveUser="denis">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -681,6 +681,7 @@
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
@@ -3157,7 +3158,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="AllowMulti" value="false"/>
                 <Option type="bool" name="AllowNull" value="true"/>
                 <Option type="QString" name="Description" value=""/>
-                <Option type="QString" name="FilterExpression" value=""/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
                 <Option type="QString" name="Key" value="id"/>
                 <Option type="QString" name="Layer" value="sign_type_922b284e_5fef_4464_826e_755cf776cac5"/>
                 <Option type="QString" name="LayerName" value="Type de signal"/>
@@ -3177,6 +3178,9 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map">
                 <Option type="bool" name="AllowAddFeatures" value="false"/>
                 <Option type="bool" name="AllowNULL" value="true"/>
+                <Option type="bool" name="ChainFilters" value="false"/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
+                <Option name="FilterFields"/>
                 <Option type="bool" name="MapIdentification" value="false"/>
                 <Option type="bool" name="OrderByValue" value="false"/>
                 <Option type="bool" name="ReadOnly" value="false"/>
@@ -3219,7 +3223,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="AllowMulti" value="false"/>
                 <Option type="bool" name="AllowNull" value="true"/>
                 <Option type="QString" name="Description" value=""/>
-                <Option type="QString" name="FilterExpression" value=""/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
                 <Option type="QString" name="Key" value="id"/>
                 <Option type="QString" name="Layer" value="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc"/>
                 <Option type="QString" name="LayerName" value="Forme de mirroir"/>
@@ -3271,7 +3275,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="AllowMulti" value="false"/>
                 <Option type="bool" name="AllowNull" value="true"/>
                 <Option type="QString" name="Description" value=""/>
-                <Option type="QString" name="FilterExpression" value=""/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
                 <Option type="QString" name="Key" value="id"/>
                 <Option type="QString" name="Layer" value="durability_a4cef524_85b2_4913_84a1_926afcce6000"/>
                 <Option type="QString" name="LayerName" value="Durabilité"/>
@@ -3389,7 +3393,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="AllowMulti" value="false"/>
                 <Option type="bool" name="AllowNull" value="true"/>
                 <Option type="QString" name="Description" value=""/>
-                <Option type="QString" name="FilterExpression" value=""/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
                 <Option type="QString" name="Key" value="id"/>
                 <Option type="QString" name="Layer" value="coating_7ea56753_207f_4981_84ef_635958fc4808"/>
                 <Option type="QString" name="LayerName" value="Revêtement"/>
@@ -3410,7 +3414,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" name="AllowMulti" value="false"/>
                 <Option type="bool" name="AllowNull" value="false"/>
                 <Option type="QString" name="Description" value=""/>
-                <Option type="QString" name="FilterExpression" value=""/>
+                <Option type="QString" name="FilterExpression" value="active is true"/>
                 <Option type="QString" name="Key" value="id"/>
                 <Option type="QString" name="Layer" value="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c"/>
                 <Option type="QString" name="LayerName" value="Eclairage"/>
@@ -3435,11 +3439,24 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="photo">
-          <editWidget type="TextEdit">
+          <editWidget type="ExternalResource">
             <config>
               <Option type="Map">
-                <Option type="bool" name="IsMultiline" value="false"/>
-                <Option type="bool" name="UseHtml" value="false"/>
+                <Option type="int" name="DocumentViewer" value="1"/>
+                <Option type="int" name="DocumentViewerHeight" value="0"/>
+                <Option type="int" name="DocumentViewerWidth" value="0"/>
+                <Option type="bool" name="FileWidget" value="true"/>
+                <Option type="bool" name="FileWidgetButton" value="true"/>
+                <Option type="QString" name="FileWidgetFilter" value=""/>
+                <Option type="bool" name="FullUrl" value="true"/>
+                <Option type="Map" name="PropertyCollection">
+                  <Option type="QString" name="name" value=""/>
+                  <Option name="properties"/>
+                  <Option type="QString" name="type" value="collection"/>
+                </Option>
+                <Option type="int" name="RelativeStorage" value="0"/>
+                <Option type="int" name="StorageMode" value="0"/>
+                <Option type="bool" name="UseLink" value="true"/>
               </Option>
             </config>
           </editWidget>
