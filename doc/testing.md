@@ -18,7 +18,8 @@ password=postgres
 host=localhost
 ```
 6. [Download the sources of the project](https://github.com/opengisch/signalisation_verticale/archive/master.zip)
-7. Open the QGIS project (located in the sources, under project)
+7. Install the experimental plugin [ordered relation editor](https://plugins.qgis.org/plugins/ordered_relation_editor/)
+8. Open the QGIS project (located in the sources, under project)
 
 
 ### Update datamodel
