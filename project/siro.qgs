@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-04-26T09:58:12" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.19.0-Master" projectname="">
+<qgis saveDateTime="2021-04-26T10:02:26" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.19.0-Master" projectname="">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -682,6 +682,7 @@
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
@@ -2102,7 +2103,14 @@ def my_form_open(dialog, layer, feature):
         <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
       </attributeactions>
       <attributetableconfig actionWidgetStyle="dropDown" sortOrder="0" sortExpression="">
-        <columns/>
+        <columns>
+          <column name="id" type="field" hidden="0" width="-1"/>
+          <column name="active" type="field" hidden="0" width="-1"/>
+          <column name="value_en" type="field" hidden="0" width="-1"/>
+          <column name="value_fr" type="field" hidden="0" width="-1"/>
+          <column name="value_de" type="field" hidden="0" width="-1"/>
+          <column type="actions" hidden="1" width="-1"/>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles/>
@@ -2121,7 +2129,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue/>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression></previewExpression>
+      <previewExpression>"value_en"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer autoRefreshTime="0" geometry="No geometry" minScale="1e+08" type="vector" maxScale="0" hasScaleBasedVisibilityFlag="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories">
@@ -3677,7 +3685,7 @@ def my_form_open(dialog, layer, feature):
         <default field="inscription_2" expression="" applyOnUpdate="0"/>
         <default field="inscription_3" expression="" applyOnUpdate="0"/>
         <default field="fk_coating" expression="" applyOnUpdate="0"/>
-        <default field="fk_lighting" expression="" applyOnUpdate="0"/>
+        <default field="fk_lighting" expression="10" applyOnUpdate="0"/>
         <default field="comment" expression="" applyOnUpdate="0"/>
         <default field="photo" expression="" applyOnUpdate="0"/>
         <default field="mirror_protruding" expression="" applyOnUpdate="0"/>
@@ -9025,7 +9033,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="1152564.76725266547873616" xmax="2538103.12695204140618443" xmin="2537805.11457490874454379" ymin="1152362.15108282072469592">
+    <DefaultViewExtent ymax="1152564.76725266547873616" xmax="2538189.1639981591142714" xmin="2537719.07752879103645682" ymin="1152362.15108282072469592">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
