@@ -11,6 +11,7 @@ CREATE TABLE siro_od.sign
     fk_mirror_shape int,
     fk_parent uuid, --self-reference
     fk_owner uuid,
+    fk_provider uuid,
     fk_durability int,
     fk_status int,
     installation_date date,
@@ -35,6 +36,7 @@ CREATE TABLE siro_od.sign
     CONSTRAINT fkey_vl_mirror_shape FOREIGN KEY (fk_mirror_shape) REFERENCES siro_vl.mirror_shape (id) MATCH FULL,
     CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES siro_od.sign (id)  MATCH FULL ON DELETE SET NULL,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH FULL,
+    CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES siro_od.provider (id) MATCH FULL,
     CONSTRAINT fkey_vl_durability FOREIGN KEY (fk_durability) REFERENCES siro_vl.durability (id) MATCH FULL,
     CONSTRAINT fkey_vl_coating FOREIGN KEY (fk_coating) REFERENCES siro_vl.coating (id) MATCH FULL,
     CONSTRAINT fkey_vl_lighting FOREIGN KEY (fk_lighting) REFERENCES siro_vl.lighting (id) MATCH FULL,

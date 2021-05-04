@@ -11,12 +11,14 @@ CREATE TABLE siro_od.frame
     fk_frame_fixing_type int,
     double_sided boolean default true,
     fk_status int,
+    fk_provider uuid,
     comment text,
     picture text,
     CONSTRAINT fkey_od_azimut FOREIGN KEY (fk_azimut) REFERENCES siro_od.azimut (id) MATCH FULL  DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fkey_vl_frame_type FOREIGN KEY (fk_frame_type) REFERENCES siro_vl.frame_type (id) MATCH FULL,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,
     CONSTRAINT fkey_vl_frame_fixing_type FOREIGN KEY (fk_frame_fixing_type) REFERENCES siro_vl.frame_fixing_type (id) MATCH FULL,
+    CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES siro_od.provider (id) MATCH FULL,
     UNIQUE (fk_azimut, rank) DEFERRABLE INITIALLY DEFERRED
 );
 

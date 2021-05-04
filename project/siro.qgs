@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="3.19.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud" saveDateTime="2021-05-04T11:16:16" projectname="">
+<qgis version="3.19.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud" saveDateTime="2021-05-04T11:46:25" projectname="">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -46,13 +46,16 @@
     </layer-tree-layer>
     <layer-tree-group expanded="1" checked="Qt::Checked" name="vl">
       <customproperties/>
+      <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" checked="Qt::Checked" id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Fournisseur" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
+        <customproperties/>
+      </layer-tree-layer>
+      <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" checked="Qt::Checked" id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Propriétaire" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
+        <customproperties/>
+      </layer-tree-layer>
       <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;mirror_shape&quot;" checked="Qt::Checked" id="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" name="Forme de miroir" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;marker_type&quot;" checked="Qt::Checked" id="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" name="Type de balise" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
-        <customproperties/>
-      </layer-tree-layer>
-      <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" checked="Qt::Checked" id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Propriétaire" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
         <customproperties/>
       </layer-tree-layer>
       <layer-tree-layer providerKey="postgres" expanded="1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;coating&quot;" checked="Qt::Checked" id="coating_7ea56753_207f_4981_84ef_635958fc4808" name="Revêtement" legend_split_behavior="0" legend_exp="" patch_size="-1,-1">
@@ -91,12 +94,14 @@
       <item>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</item>
       <item>OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997</item>
       <item>Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b</item>
+      <item>owner_4e532508_fa34_406c_8846_8f8306ca74ee</item>
+      <item>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings mode="2" scaleDependencyMode="0" minScale="0" type="1" unit="1" self-snapping="0" intersection-snapping="0" maxScale="0" enabled="1" tolerance="12">
     <individual-layer-settings>
-      <layer-setting minScale="0" type="1" units="1" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" maxScale="0" enabled="0" tolerance="12"/>
       <layer-setting minScale="0" type="1" units="1" id="support_347aa750_1661_498f_a7e8_017adc616ba0" maxScale="0" enabled="0" tolerance="12"/>
+      <layer-setting minScale="0" type="1" units="1" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" maxScale="0" enabled="0" tolerance="12"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -117,10 +122,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537816.23646530229598284</xmin>
-      <ymin>1152422.32760887825861573</ymin>
-      <xmax>2538055.19758760742843151</xmax>
-      <ymax>1152591.70618215901777148</ymax>
+      <xmin>2537808.21424159547314048</xmin>
+      <ymin>1152397.83990957238711417</ymin>
+      <xmax>2538072.16048615286126733</xmax>
+      <ymax>1152584.92824383755214512</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -266,6 +271,16 @@
       </filegroup>
     </legendlayer>
     <legendgroup checked="Qt::Checked" open="true" name="vl">
+      <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Fournisseur" showFeatureCount="0">
+        <filegroup hidden="false" open="true">
+          <legendlayerfile visible="1" layerid="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" isInOverview="0"/>
+        </filegroup>
+      </legendlayer>
+      <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Propriétaire" showFeatureCount="0">
+        <filegroup hidden="false" open="true">
+          <legendlayerfile visible="1" layerid="owner_4e532508_fa34_406c_8846_8f8306ca74ee" isInOverview="0"/>
+        </filegroup>
+      </legendlayer>
       <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Forme de miroir" showFeatureCount="0">
         <filegroup hidden="false" open="true">
           <legendlayerfile visible="1" layerid="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" isInOverview="0"/>
@@ -274,11 +289,6 @@
       <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Type de balise" showFeatureCount="0">
         <filegroup hidden="false" open="true">
           <legendlayerfile visible="1" layerid="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" isInOverview="0"/>
-        </filegroup>
-      </legendlayer>
-      <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Propriétaire" showFeatureCount="0">
-        <filegroup hidden="false" open="true">
-          <legendlayerfile visible="1" layerid="owner_4e532508_fa34_406c_8846_8f8306ca74ee" isInOverview="0"/>
         </filegroup>
       </legendlayer>
       <legendlayer drawingOrder="-1" checked="Qt::Checked" open="true" name="Revêtement" showFeatureCount="0">
@@ -334,6 +344,31 @@
     </legendgroup>
   </legend>
   <mapViewDocks/>
+  <mapcanvas annotationsVisible="1" name="mAreaCanvas">
+    <units>degrees</units>
+    <extent>
+      <xmin>0</xmin>
+      <ymin>0</ymin>
+      <xmax>0</xmax>
+      <ymax>0</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys>
+        <wkt>GEOGCRS["WGS 84",DATUM["World Geodetic System 1984",ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["unknown"],AREA["World"],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
+        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+        <srsid>3452</srsid>
+        <srid>4326</srid>
+        <authid>EPSG:4326</authid>
+        <description>WGS 84</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+        <geographicflag>true</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
   <main-annotation-layer refreshOnNotifyEnabled="0" autoRefreshTime="0" autoRefreshEnabled="0" type="annotation" refreshOnNotifyMessage="">
     <id>Annotations_12d93f67_97ee_4956_a1a1_ce69a09e6c74</id>
     <datasource></datasource>
@@ -351,7 +386,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>true</geographicflag>
+        <geographicflag>false</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -374,7 +409,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -436,7 +471,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -538,7 +573,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -604,7 +639,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -636,7 +671,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -672,6 +707,8 @@
       </temporal>
       <customproperties>
         <property key="dualview/previewExpressions">
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
+          <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
           <value>COALESCE( "azimut", '&lt;NULL>' )</value>
@@ -805,6 +842,7 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField showLabel="1" name="azimut" index="2"/>
         <attributeEditorRelation showLabel="1" forceSuppressFormPopup="0" label="Cadres" relationWidgetTypeId="ordered_relation_editor" name="azimut-cadre" nmRelationId="" relation="azimut-cadre">
           <editor_configuration type="Map">
+            <Option value="AllButtons" type="QString" name="buttons"/>
             <Option value="'cadre ' || to_string(rank)" type="QString" name="description"/>
             <Option value="" type="QString" name="image_path"/>
             <Option value="rank" type="QString" name="ordering_field"/>
@@ -861,7 +899,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -884,7 +922,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1061,7 +1099,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1084,7 +1122,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1228,7 +1266,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1260,7 +1298,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1434,6 +1472,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field configurationFlags="None" name="fk_provider">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="true" type="bool" name="AllowNull"/>
+                <Option value="" type="QString" name="Description"/>
+                <Option value="" type="QString" name="FilterExpression"/>
+                <Option value="id" type="QString" name="Key"/>
+                <Option value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" type="QString" name="Layer"/>
+                <Option value="Fournisseur" type="QString" name="LayerName"/>
+                <Option value="postgres" type="QString" name="LayerProviderName"/>
+                <Option value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" type="QString" name="LayerSource"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
+                <Option value="name" type="QString" name="Value"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
         <field configurationFlags="None" name="comment">
           <editWidget type="TextEdit">
             <config>
@@ -1463,8 +1522,9 @@ def my_form_open(dialog, layer, feature):
         <alias name="type de fixation" index="4" field="fk_frame_fixing_type"/>
         <alias name="recto verso" index="5" field="double_sided"/>
         <alias name="état" index="6" field="fk_status"/>
-        <alias name="commentaire" index="7" field="comment"/>
-        <alias name="photo" index="8" field="picture"/>
+        <alias name="Fournisseur" index="7" field="fk_provider"/>
+        <alias name="commentaire" index="8" field="comment"/>
+        <alias name="photo" index="9" field="picture"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -1474,6 +1534,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_frame_fixing_type" expression="NULL"/>
         <default applyOnUpdate="0" field="double_sided" expression="false"/>
         <default applyOnUpdate="0" field="fk_status" expression="NULL"/>
+        <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="comment" expression="NULL"/>
         <default applyOnUpdate="0" field="picture" expression="NULL"/>
       </defaults>
@@ -1485,6 +1546,7 @@ def my_form_open(dialog, layer, feature):
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_frame_fixing_type" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="double_sided" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_status" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_provider" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="comment" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="picture" exp_strength="0"/>
       </constraints>
@@ -1496,6 +1558,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="fk_frame_fixing_type" desc=""/>
         <constraint exp="" field="double_sided" desc=""/>
         <constraint exp="" field="fk_status" desc=""/>
+        <constraint exp="" field="fk_provider" desc=""/>
         <constraint exp="" field="comment" desc=""/>
         <constraint exp="" field="picture" desc=""/>
       </constraintExpressions>
@@ -1515,6 +1578,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="comment"/>
           <column hidden="0" width="-1" type="field" name="picture"/>
           <column hidden="1" width="-1" type="actions"/>
+          <column hidden="0" width="-1" type="field" name="fk_provider"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -1553,10 +1617,12 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField showLabel="1" name="fk_frame_fixing_type" index="4"/>
         <attributeEditorField showLabel="1" name="double_sided" index="5"/>
         <attributeEditorField showLabel="1" name="fk_status" index="6"/>
-        <attributeEditorField showLabel="1" name="comment" index="7"/>
-        <attributeEditorField showLabel="1" name="picture" index="8"/>
+        <attributeEditorField showLabel="1" name="fk_provider" index="7"/>
+        <attributeEditorField showLabel="1" name="comment" index="8"/>
+        <attributeEditorField showLabel="1" name="picture" index="9"/>
         <attributeEditorRelation showLabel="1" forceSuppressFormPopup="0" label="Signal" relationWidgetTypeId="ordered_relation_editor" name="frame-sign" nmRelationId="" relation="frame-sign">
           <editor_configuration type="Map">
+            <Option value="AllButtons" type="QString" name="buttons"/>
             <Option value="CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_value_fr&#xa;  WHEN fk_sign_type = 12 THEN 'balise'&#xa;  WHEN fk_sign_type = 13 THEN 'mirroir' &#xa;  WHEN fk_sign_type = 14 THEN 'plaque de rue'&#xa;  ELSE '?'&#xa;END" type="QString" name="description"/>
             <Option value="  'file:///' || replace(file_path( @project_path),'\\', '/') ||'/../images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END" type="QString" name="image_path"/>
             <Option value="rank" type="QString" name="ordering_field"/>
@@ -1569,6 +1635,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="fk_azimut"/>
         <field editable="1" name="fk_frame_fixing_type"/>
         <field editable="1" name="fk_frame_type"/>
+        <field editable="1" name="fk_provider"/>
         <field editable="1" name="fk_status"/>
         <field editable="1" name="id"/>
         <field editable="1" name="picture"/>
@@ -1580,6 +1647,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="fk_azimut"/>
         <field labelOnTop="0" name="fk_frame_fixing_type"/>
         <field labelOnTop="0" name="fk_frame_type"/>
+        <field labelOnTop="0" name="fk_provider"/>
         <field labelOnTop="0" name="fk_status"/>
         <field labelOnTop="0" name="id"/>
         <field labelOnTop="0" name="picture"/>
@@ -1591,6 +1659,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_azimut" reuseLastValue="0"/>
         <field name="fk_frame_fixing_type" reuseLastValue="0"/>
         <field name="fk_frame_type" reuseLastValue="0"/>
+        <field name="fk_provider" reuseLastValue="0"/>
         <field name="fk_status" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
         <field name="picture" reuseLastValue="0"/>
@@ -1607,7 +1676,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="frame-sign">
           <config type="Map">
             <Option value="false" type="bool" name="force-suppress-popup"/>
-            <Option type="invalid" name="nm-rel"/>
+            <Option value="" type="QString" name="nm-rel"/>
           </config>
         </widget>
       </widgets>
@@ -1631,7 +1700,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1654,7 +1723,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1798,7 +1867,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1821,7 +1890,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1965,7 +2034,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1988,7 +2057,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2139,7 +2208,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2171,7 +2240,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -2386,7 +2455,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2409,7 +2478,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2564,7 +2633,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2587,7 +2656,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2614,9 +2683,7 @@ def my_form_open(dialog, layer, feature):
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="dualview/previewExpressions">
-          <value>"id" || ' ' ||"value_fr"</value>
-        </property>
+        <property value="&quot;id&quot; || ' ' ||&quot;value_fr&quot;" key="dualview/previewExpressions"/>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
         <activeChecks type="StringList">
@@ -2874,7 +2941,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2897,7 +2964,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2995,6 +3062,140 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer wkbType="NoGeometry" readOnly="0" refreshOnNotifyEnabled="0" minScale="1e+08" geometry="No geometry" autoRefreshTime="0" autoRefreshEnabled="0" type="vector" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories">
+      <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
+      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_od"."provider"</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Fournisseur</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>false</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>false</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent/>
+      </resourceMetadata>
+      <provider encoding="">postgres</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+        <Private>0</Private>
+      </flags>
+      <temporal mode="0" endField="" durationField="" durationUnit="min" startExpression="" startField="" fixedDuration="0" enabled="0" endExpression="" accumulate="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties/>
+      <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
+        <activeChecks type="StringList">
+          <Option value="" type="QString"/>
+        </activeChecks>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="id">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="name">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias name="" index="0" field="id"/>
+        <alias name="" index="1" field="name"/>
+      </aliases>
+      <defaults>
+        <default applyOnUpdate="0" field="id" expression=""/>
+        <default applyOnUpdate="0" field="name" expression=""/>
+      </defaults>
+      <constraints>
+        <constraint notnull_strength="1" unique_strength="1" constraints="3" field="id" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="name" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint exp="" field="id" desc=""/>
+        <constraint exp="" field="name" desc=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction value="{00000000-0000-0000-0000-000000000000}" key="Canvas"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns/>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable/>
+      <labelOnTop/>
+      <reuseLastValue/>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression></previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer wkbType="NoGeometry" readOnly="0" refreshOnNotifyEnabled="0" minScale="1e+08" geometry="No geometry" autoRefreshTime="0" autoRefreshEnabled="0" type="vector" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories">
       <id>sign_2499f9bd_24a2_4384_b329_dc522a94c545</id>
       <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_od"."sign"</datasource>
       <keywordList>
@@ -3011,7 +3212,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3043,7 +3244,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -3082,9 +3283,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property value="offline" key="QFieldSync/action"/>
         <property value="{&quot;photo&quot;: &quot;'DCIM/signal_'||now()||'.jpg'&quot;}" key="QFieldSync/photo_naming"/>
-        <property key="dualview/previewExpressions">
-          <value>"id"</value>
-        </property>
+        <property value="&quot;id&quot;" key="dualview/previewExpressions"/>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -3265,6 +3464,27 @@ def my_form_open(dialog, layer, feature):
                 <Option value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" type="QString" name="LayerSource"/>
                 <Option value="1" type="int" name="NofColumns"/>
                 <Option value="false" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
+                <Option value="name" type="QString" name="Value"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="fk_provider">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="true" type="bool" name="AllowNull"/>
+                <Option value="" type="QString" name="Description"/>
+                <Option value="" type="QString" name="FilterExpression"/>
+                <Option value="id" type="QString" name="Key"/>
+                <Option value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" type="QString" name="Layer"/>
+                <Option value="Fournisseur" type="QString" name="LayerName"/>
+                <Option value="postgres" type="QString" name="LayerProviderName"/>
+                <Option value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" type="QString" name="LayerSource"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
                 <Option value="false" type="bool" name="UseCompleter"/>
                 <Option value="name" type="QString" name="Value"/>
               </Option>
@@ -3626,37 +3846,38 @@ def my_form_open(dialog, layer, feature):
         <alias name="forme de miroir" index="7" field="fk_mirror_shape"/>
         <alias name="signal principal" index="8" field="fk_parent"/>
         <alias name="propriétaire" index="9" field="fk_owner"/>
-        <alias name="durabilité" index="10" field="fk_durability"/>
-        <alias name="état" index="11" field="fk_status"/>
-        <alias name="date de pose" index="12" field="installation_date"/>
-        <alias name="date de fabrication" index="13" field="manufacturing_date"/>
-        <alias name="numéro d'identification" index="14" field="case_id"/>
-        <alias name="décision administrative" index="15" field="case_decision"/>
-        <alias name="inscription 1" index="16" field="inscription_1"/>
-        <alias name="inscription 2" index="17" field="inscription_2"/>
-        <alias name="inscription 3" index="18" field="inscription_3"/>
-        <alias name="revêtement" index="19" field="fk_coating"/>
-        <alias name="éclairage" index="20" field="fk_lighting"/>
-        <alias name="commentaire" index="21" field="comment"/>
-        <alias name="" index="22" field="photo"/>
-        <alias name="miroir bombé" index="23" field="mirror_protruding"/>
-        <alias name="cadre rouge et blanc" index="24" field="mirror_red_frame"/>
-        <alias name="" index="25" field="geometry"/>
-        <alias name="" index="26" field="official_sign_active"/>
-        <alias name="" index="27" field="official_sign_value_de"/>
-        <alias name="" index="28" field="official_sign_value_fr"/>
-        <alias name="" index="29" field="official_sign_value_it"/>
-        <alias name="" index="30" field="official_sign_value_ro"/>
-        <alias name="" index="31" field="official_sign_description_de"/>
-        <alias name="" index="32" field="official_sign_description_fr"/>
-        <alias name="" index="33" field="official_sign_description_it"/>
-        <alias name="" index="34" field="official_sign_description_ro"/>
-        <alias name="" index="35" field="official_sign_img_de"/>
-        <alias name="" index="36" field="official_sign_img_fr"/>
-        <alias name="" index="37" field="official_sign_img_it"/>
-        <alias name="" index="38" field="official_sign_img_ro"/>
-        <alias name="" index="39" field="official_sign_img_height"/>
-        <alias name="" index="40" field="official_sign_img_width"/>
+        <alias name="Fournisseur" index="10" field="fk_provider"/>
+        <alias name="durabilité" index="11" field="fk_durability"/>
+        <alias name="état" index="12" field="fk_status"/>
+        <alias name="date de pose" index="13" field="installation_date"/>
+        <alias name="date de fabrication" index="14" field="manufacturing_date"/>
+        <alias name="numéro d'identification" index="15" field="case_id"/>
+        <alias name="décision administrative" index="16" field="case_decision"/>
+        <alias name="inscription 1" index="17" field="inscription_1"/>
+        <alias name="inscription 2" index="18" field="inscription_2"/>
+        <alias name="inscription 3" index="19" field="inscription_3"/>
+        <alias name="revêtement" index="20" field="fk_coating"/>
+        <alias name="éclairage" index="21" field="fk_lighting"/>
+        <alias name="commentaire" index="22" field="comment"/>
+        <alias name="" index="23" field="photo"/>
+        <alias name="miroir bombé" index="24" field="mirror_protruding"/>
+        <alias name="cadre rouge et blanc" index="25" field="mirror_red_frame"/>
+        <alias name="" index="26" field="geometry"/>
+        <alias name="" index="27" field="official_sign_active"/>
+        <alias name="" index="28" field="official_sign_value_de"/>
+        <alias name="" index="29" field="official_sign_value_fr"/>
+        <alias name="" index="30" field="official_sign_value_it"/>
+        <alias name="" index="31" field="official_sign_value_ro"/>
+        <alias name="" index="32" field="official_sign_description_de"/>
+        <alias name="" index="33" field="official_sign_description_fr"/>
+        <alias name="" index="34" field="official_sign_description_it"/>
+        <alias name="" index="35" field="official_sign_description_ro"/>
+        <alias name="" index="36" field="official_sign_img_de"/>
+        <alias name="" index="37" field="official_sign_img_fr"/>
+        <alias name="" index="38" field="official_sign_img_it"/>
+        <alias name="" index="39" field="official_sign_img_ro"/>
+        <alias name="" index="40" field="official_sign_img_height"/>
+        <alias name="" index="41" field="official_sign_img_width"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression=""/>
@@ -3669,6 +3890,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_mirror_shape" expression=""/>
         <default applyOnUpdate="0" field="fk_parent" expression=""/>
         <default applyOnUpdate="0" field="fk_owner" expression=""/>
+        <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="fk_durability" expression=""/>
         <default applyOnUpdate="0" field="fk_status" expression=""/>
         <default applyOnUpdate="0" field="installation_date" expression=""/>
@@ -3712,6 +3934,7 @@ def my_form_open(dialog, layer, feature):
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_mirror_shape" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_parent" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_owner" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_provider" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_durability" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_status" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="installation_date" exp_strength="0"/>
@@ -3755,6 +3978,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="fk_mirror_shape" desc=""/>
         <constraint exp="" field="fk_parent" desc=""/>
         <constraint exp="" field="fk_owner" desc=""/>
+        <constraint exp="" field="fk_provider" desc=""/>
         <constraint exp="" field="fk_durability" desc=""/>
         <constraint exp="" field="fk_status" desc=""/>
         <constraint exp="" field="installation_date" desc=""/>
@@ -3835,6 +4059,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="fk_mirror_shape"/>
           <column hidden="0" width="-1" type="field" name="mirror_protruding"/>
           <column hidden="0" width="-1" type="field" name="mirror_red_frame"/>
+          <column hidden="0" width="-1" type="field" name="fk_provider"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3869,39 +4094,40 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="1" name="Général" groupBox="1">
           <attributeEditorField showLabel="1" name="id" index="0"/>
           <attributeEditorField showLabel="1" name="fk_frame" index="1"/>
+          <attributeEditorField showLabel="1" name="fk_provider" index="10"/>
           <attributeEditorField showLabel="1" name="verso" index="3"/>
           <attributeEditorField showLabel="1" name="rank" index="2"/>
           <attributeEditorField showLabel="1" name="fk_owner" index="9"/>
-          <attributeEditorField showLabel="1" name="fk_status" index="11"/>
+          <attributeEditorField showLabel="1" name="fk_status" index="12"/>
           <attributeEditorField showLabel="1" name="fk_parent" index="8"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="1" name="Signal" groupBox="1">
           <attributeEditorField showLabel="1" name="fk_sign_type" index="4"/>
-          <attributeEditorField showLabel="1" name="fk_durability" index="10"/>
-          <attributeEditorField showLabel="1" name="fk_lighting" index="20"/>
-          <attributeEditorField showLabel="1" name="installation_date" index="12"/>
-          <attributeEditorField showLabel="1" name="case_decision" index="15"/>
-          <attributeEditorField showLabel="1" name="case_id" index="14"/>
-          <attributeEditorField showLabel="1" name="manufacturing_date" index="13"/>
+          <attributeEditorField showLabel="1" name="fk_durability" index="11"/>
+          <attributeEditorField showLabel="1" name="fk_lighting" index="21"/>
+          <attributeEditorField showLabel="1" name="installation_date" index="13"/>
+          <attributeEditorField showLabel="1" name="case_decision" index="16"/>
+          <attributeEditorField showLabel="1" name="case_id" index="15"/>
+          <attributeEditorField showLabel="1" name="manufacturing_date" index="14"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="1" visibilityExpression="fk_sign_type = 11" columnCount="1" name="Signal officiel" groupBox="1">
           <attributeEditorField showLabel="1" name="fk_official_sign" index="5"/>
-          <attributeEditorField showLabel="1" name="fk_coating" index="19"/>
-          <attributeEditorField showLabel="1" name="inscription_1" index="16"/>
-          <attributeEditorField showLabel="1" name="inscription_2" index="17"/>
-          <attributeEditorField showLabel="1" name="inscription_3" index="18"/>
+          <attributeEditorField showLabel="1" name="fk_coating" index="20"/>
+          <attributeEditorField showLabel="1" name="inscription_1" index="17"/>
+          <attributeEditorField showLabel="1" name="inscription_2" index="18"/>
+          <attributeEditorField showLabel="1" name="inscription_3" index="19"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="1" visibilityExpression="fk_sign_type = 13" columnCount="1" name="Miroir" groupBox="1">
-          <attributeEditorField showLabel="1" name="mirror_protruding" index="23"/>
-          <attributeEditorField showLabel="1" name="mirror_red_frame" index="24"/>
+          <attributeEditorField showLabel="1" name="mirror_protruding" index="24"/>
+          <attributeEditorField showLabel="1" name="mirror_red_frame" index="25"/>
           <attributeEditorField showLabel="1" name="fk_mirror_shape" index="7"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="1" visibilityExpression="fk_sign_type = 12" columnCount="1" name="Balise" groupBox="1">
           <attributeEditorField showLabel="1" name="fk_marker_type" index="6"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="1" name="Description" groupBox="1">
-          <attributeEditorField showLabel="1" name="comment" index="21"/>
-          <attributeEditorField showLabel="1" name="photo" index="22"/>
+          <attributeEditorField showLabel="1" name="comment" index="22"/>
+          <attributeEditorField showLabel="1" name="photo" index="23"/>
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
@@ -3918,6 +4144,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="fk_official_sign"/>
         <field editable="1" name="fk_owner"/>
         <field editable="1" name="fk_parent"/>
+        <field editable="1" name="fk_provider"/>
         <field editable="1" name="fk_sign_type"/>
         <field editable="1" name="fk_status"/>
         <field editable="1" name="geometry"/>
@@ -3963,6 +4190,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="fk_official_sign"/>
         <field labelOnTop="0" name="fk_owner"/>
         <field labelOnTop="0" name="fk_parent"/>
+        <field labelOnTop="0" name="fk_provider"/>
         <field labelOnTop="0" name="fk_sign_type"/>
         <field labelOnTop="0" name="fk_status"/>
         <field labelOnTop="0" name="geometry"/>
@@ -4007,6 +4235,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_official_sign" reuseLastValue="0"/>
         <field name="fk_owner" reuseLastValue="0"/>
         <field name="fk_parent" reuseLastValue="0"/>
+        <field name="fk_provider" reuseLastValue="0"/>
         <field name="fk_sign_type" reuseLastValue="0"/>
         <field name="fk_status" reuseLastValue="0"/>
         <field name="geometry" reuseLastValue="0"/>
@@ -4059,7 +4288,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4082,7 +4311,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4247,7 +4476,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4270,7 +4499,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4399,16 +4628,16 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer refreshOnNotifyEnabled="0" simplifyDrawingHints="0" simplifyMaxScale="1" styleCategories="AllStyleCategories" type="vector" geometry="Point" wkbType="Point" simplifyAlgorithm="0" hasScaleBasedVisibilityFlag="0" autoRefreshEnabled="0" autoRefreshTime="0" simplifyDrawingTol="1" labelsEnabled="0" minScale="100000000" simplifyLocal="1" refreshOnNotifyMessage="" readOnly="0" maxScale="0">
       <extent>
-        <xmin>2537421.28515252703800797</xmin>
-        <ymin>1152455.01010819314979017</ymin>
+        <xmin>2537421.2851525298319757</xmin>
+        <ymin>1152455.01010818989016116</ymin>
         <xmax>2538449.47999999998137355</xmax>
-        <ymax>1152830.11123771546408534</ymax>
+        <ymax>1152830.11123771988786757</ymax>
       </extent>
       <wgs84extent>
-        <xmin>6.62307361719564902</xmin>
+        <xmin>6.62307361719568366</xmin>
         <ymin>46.5204608573317131</ymin>
-        <xmax>6.63652284548480331</xmax>
-        <ymax>46.52393046604046845</ymax>
+        <xmax>6.63652284548484062</xmax>
+        <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
       <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."support" (geometry)</datasource>
@@ -4562,9 +4791,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <property value="offline" key="QFieldSync/action"/>
         <property value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" key="QFieldSync/photo_naming"/>
-        <property key="dualview/previewExpressions">
-          <value>"id"</value>
-        </property>
+        <property value="&quot;id&quot;" key="dualview/previewExpressions"/>
         <property value="0" key="embeddedWidgets/count"/>
         <property key="variableNames"/>
         <property key="variableValues"/>
@@ -4732,6 +4959,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field configurationFlags="None" name="fk_provider">
+          <editWidget type="ValueRelation">
+            <config>
+              <Option type="Map">
+                <Option value="false" type="bool" name="AllowMulti"/>
+                <Option value="true" type="bool" name="AllowNull"/>
+                <Option value="" type="QString" name="Description"/>
+                <Option value="" type="QString" name="FilterExpression"/>
+                <Option value="id" type="QString" name="Key"/>
+                <Option value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" type="QString" name="Layer"/>
+                <Option value="Fournisseur" type="QString" name="LayerName"/>
+                <Option value="postgres" type="QString" name="LayerProviderName"/>
+                <Option value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" type="QString" name="LayerSource"/>
+                <Option value="1" type="int" name="NofColumns"/>
+                <Option value="true" type="bool" name="OrderByValue"/>
+                <Option value="false" type="bool" name="UseCompleter"/>
+                <Option value="name" type="QString" name="Value"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
         <field configurationFlags="None" name="fk_support_base_type">
           <editWidget type="ValueRelation">
             <config>
@@ -4871,22 +5119,24 @@ def my_form_open(dialog, layer, feature):
         <alias name="Adresse" index="1" field="adress"/>
         <alias name="Type support" index="2" field="fk_support_type"/>
         <alias name="Propriétaire" index="3" field="fk_owner"/>
-        <alias name="Type base support" index="4" field="fk_support_base_type"/>
-        <alias name="Hauteur" index="5" field="height"/>
-        <alias name="Hauteur libre sous signal" index="6" field="height_free_under_signal"/>
-        <alias name="Date installation" index="7" field="date_install"/>
-        <alias name="Date dernier contrôle stabilité" index="8" field="date_last_stability_check"/>
-        <alias name="Status" index="9" field="fk_status"/>
-        <alias name="Commentaire" index="10" field="comment"/>
-        <alias name="Image" index="11" field="picture"/>
-        <alias name="" index="12" field="geometry_x"/>
-        <alias name="" index="13" field="geometry_y"/>
+        <alias name="Fournisseur" index="4" field="fk_provider"/>
+        <alias name="Type base support" index="5" field="fk_support_base_type"/>
+        <alias name="Hauteur" index="6" field="height"/>
+        <alias name="Hauteur libre sous signal" index="7" field="height_free_under_signal"/>
+        <alias name="Date installation" index="8" field="date_install"/>
+        <alias name="Date dernier contrôle stabilité" index="9" field="date_last_stability_check"/>
+        <alias name="Status" index="10" field="fk_status"/>
+        <alias name="Commentaire" index="11" field="comment"/>
+        <alias name="Image" index="12" field="picture"/>
+        <alias name="" index="13" field="geometry_x"/>
+        <alias name="" index="14" field="geometry_y"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
         <default applyOnUpdate="0" field="adress" expression="NULL"/>
         <default applyOnUpdate="0" field="fk_support_type" expression="1"/>
         <default applyOnUpdate="0" field="fk_owner" expression="NULL"/>
+        <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="fk_support_base_type" expression="1"/>
         <default applyOnUpdate="0" field="height" expression=""/>
         <default applyOnUpdate="0" field="height_free_under_signal" expression=""/>
@@ -4903,6 +5153,7 @@ def my_form_open(dialog, layer, feature):
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="adress" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_support_type" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_owner" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_provider" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_support_base_type" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="height" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="height_free_under_signal" exp_strength="0"/>
@@ -4919,6 +5170,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="adress" desc=""/>
         <constraint exp="" field="fk_support_type" desc=""/>
         <constraint exp="" field="fk_owner" desc=""/>
+        <constraint exp="" field="fk_provider" desc=""/>
         <constraint exp="" field="fk_support_base_type" desc=""/>
         <constraint exp="" field="height" desc=""/>
         <constraint exp="" field="height_free_under_signal" desc=""/>
@@ -4954,6 +5206,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="1" width="-1" type="actions"/>
           <column hidden="0" width="-1" type="field" name="geometry_x"/>
           <column hidden="0" width="-1" type="field" name="geometry_y"/>
+          <column hidden="0" width="-1" type="field" name="fk_provider"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4989,14 +5242,15 @@ def my_form_open(dialog, layer, feature):
           <attributeEditorField showLabel="1" name="adress" index="1"/>
           <attributeEditorField showLabel="1" name="fk_support_type" index="2"/>
           <attributeEditorField showLabel="1" name="fk_owner" index="3"/>
-          <attributeEditorField showLabel="1" name="fk_support_base_type" index="4"/>
-          <attributeEditorField showLabel="1" name="height" index="5"/>
-          <attributeEditorField showLabel="1" name="height_free_under_signal" index="6"/>
-          <attributeEditorField showLabel="1" name="date_install" index="7"/>
-          <attributeEditorField showLabel="1" name="date_last_stability_check" index="8"/>
-          <attributeEditorField showLabel="1" name="fk_status" index="9"/>
-          <attributeEditorField showLabel="1" name="comment" index="10"/>
-          <attributeEditorField showLabel="1" name="picture" index="11"/>
+          <attributeEditorField showLabel="1" name="fk_provider" index="4"/>
+          <attributeEditorField showLabel="1" name="fk_support_base_type" index="5"/>
+          <attributeEditorField showLabel="1" name="height" index="6"/>
+          <attributeEditorField showLabel="1" name="height_free_under_signal" index="7"/>
+          <attributeEditorField showLabel="1" name="date_install" index="8"/>
+          <attributeEditorField showLabel="1" name="date_last_stability_check" index="9"/>
+          <attributeEditorField showLabel="1" name="fk_status" index="10"/>
+          <attributeEditorField showLabel="1" name="comment" index="11"/>
+          <attributeEditorField showLabel="1" name="picture" index="12"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="2" name="Azimut" groupBox="0">
           <attributeEditorRelation showLabel="1" forceSuppressFormPopup="0" label="" relationWidgetTypeId="" name="support_azimut" nmRelationId="" relation="support_azimut">
@@ -5014,6 +5268,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="date_install"/>
         <field editable="1" name="date_last_stability_check"/>
         <field editable="1" name="fk_owner"/>
+        <field editable="1" name="fk_provider"/>
         <field editable="1" name="fk_status"/>
         <field editable="1" name="fk_support_base_type"/>
         <field editable="1" name="fk_support_type"/>
@@ -5032,6 +5287,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="date_install"/>
         <field labelOnTop="0" name="date_last_stability_check"/>
         <field labelOnTop="0" name="fk_owner"/>
+        <field labelOnTop="0" name="fk_provider"/>
         <field labelOnTop="0" name="fk_status"/>
         <field labelOnTop="0" name="fk_support_base_type"/>
         <field labelOnTop="0" name="fk_support_type"/>
@@ -5042,7 +5298,23 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="id"/>
         <field labelOnTop="0" name="picture"/>
       </labelOnTop>
-      <reuseLastValue/>
+      <reuseLastValue>
+        <field name="adress" reuseLastValue="0"/>
+        <field name="comment" reuseLastValue="0"/>
+        <field name="date_install" reuseLastValue="0"/>
+        <field name="date_last_stability_check" reuseLastValue="0"/>
+        <field name="fk_owner" reuseLastValue="0"/>
+        <field name="fk_provider" reuseLastValue="0"/>
+        <field name="fk_status" reuseLastValue="0"/>
+        <field name="fk_support_base_type" reuseLastValue="0"/>
+        <field name="fk_support_type" reuseLastValue="0"/>
+        <field name="geometry_x" reuseLastValue="0"/>
+        <field name="geometry_y" reuseLastValue="0"/>
+        <field name="height" reuseLastValue="0"/>
+        <field name="height_free_under_signal" reuseLastValue="0"/>
+        <field name="id" reuseLastValue="0"/>
+        <field name="picture" reuseLastValue="0"/>
+      </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets>
         <widget name="support_azimut">
@@ -5072,7 +5344,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5095,7 +5367,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5228,7 +5500,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5251,7 +5523,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5278,9 +5550,7 @@ def my_form_open(dialog, layer, feature):
         </fixedRange>
       </temporal>
       <customproperties>
-        <property key="dualview/previewExpressions">
-          <value>"value_en"</value>
-        </property>
+        <property value="&quot;value_en&quot;" key="dualview/previewExpressions"/>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
         <activeChecks type="StringList">
@@ -5925,6 +6195,13 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field configurationFlags="None" name="fk_provider">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
         <field configurationFlags="None" name="fk_durability">
           <editWidget type="ValueRelation">
             <config>
@@ -6264,6 +6541,13 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field configurationFlags="None" name="frame_fk_provider">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
         <field configurationFlags="None" name="frame_comment">
           <editWidget type="TextEdit">
             <config>
@@ -6436,50 +6720,52 @@ def my_form_open(dialog, layer, feature):
         <alias name="" index="5" field="fk_mirror_shape"/>
         <alias name="" index="6" field="fk_parent"/>
         <alias name="Propriétaire" index="7" field="fk_owner"/>
-        <alias name="Durabilité" index="8" field="fk_durability"/>
-        <alias name="Status" index="9" field="fk_status"/>
-        <alias name="Date installation" index="10" field="installation_date"/>
-        <alias name="Date manifacture" index="11" field="manufacturing_date"/>
-        <alias name="" index="12" field="case_id"/>
-        <alias name="Cas decision" index="13" field="case_decision"/>
-        <alias name="" index="14" field="inscription_1"/>
-        <alias name="" index="15" field="inscription_2"/>
-        <alias name="" index="16" field="inscription_3"/>
-        <alias name="Revêtement" index="17" field="fk_coating"/>
-        <alias name="Eclairage" index="18" field="fk_lighting"/>
-        <alias name="Commentaire" index="19" field="comment"/>
-        <alias name="Photo" index="20" field="photo"/>
-        <alias name="" index="21" field="mirror_protruding"/>
-        <alias name="" index="22" field="mirror_red_frame"/>
-        <alias name="" index="23" field="geometry"/>
-        <alias name="Azimut" index="24" field="azimut"/>
-        <alias name="Cadre" index="25" field="frame_id"/>
-        <alias name="Azimut cadre" index="26" field="frame_fk_azimut"/>
-        <alias name="Position cadre dans l'azimut" index="27" field="frame_rank"/>
-        <alias name="Type cadre" index="28" field="frame_fk_frame_type"/>
-        <alias name="Type fixation cadre" index="29" field="frame_fk_frame_fixing_type"/>
-        <alias name="Cadre recto verso" index="30" field="frame_double_sided"/>
-        <alias name="Status cadre" index="31" field="frame_fk_status"/>
-        <alias name="Commentaire cadre" index="32" field="frame_comment"/>
-        <alias name="Image cadre" index="33" field="frame_picture"/>
-        <alias name="Rang signal" index="34" field="sign_rank"/>
-        <alias name="Id support" index="35" field="support_id"/>
-        <alias name="" index="36" field="_symbol_value_de"/>
-        <alias name="" index="37" field="_symbol_value_fr"/>
-        <alias name="" index="38" field="_symbol_value_it"/>
-        <alias name="" index="39" field="_symbol_value_ro"/>
-        <alias name="" index="40" field="_img_de"/>
-        <alias name="" index="41" field="_img_fr"/>
-        <alias name="" index="42" field="_img_it"/>
-        <alias name="" index="43" field="_img_ro"/>
-        <alias name="" index="44" field="_symbol_height"/>
-        <alias name="" index="45" field="_symbol_width"/>
-        <alias name="" index="46" field="_final_rank"/>
-        <alias name="" index="47" field="_symbol_shift"/>
-        <alias name="" index="48" field="_previous_sign_in_frame"/>
-        <alias name="" index="49" field="_next_sign_in_frame"/>
-        <alias name="" index="50" field="_previous_frame"/>
-        <alias name="" index="51" field="_next_frame"/>
+        <alias name="" index="8" field="fk_provider"/>
+        <alias name="Durabilité" index="9" field="fk_durability"/>
+        <alias name="Status" index="10" field="fk_status"/>
+        <alias name="Date installation" index="11" field="installation_date"/>
+        <alias name="Date manifacture" index="12" field="manufacturing_date"/>
+        <alias name="" index="13" field="case_id"/>
+        <alias name="Cas decision" index="14" field="case_decision"/>
+        <alias name="" index="15" field="inscription_1"/>
+        <alias name="" index="16" field="inscription_2"/>
+        <alias name="" index="17" field="inscription_3"/>
+        <alias name="Revêtement" index="18" field="fk_coating"/>
+        <alias name="Eclairage" index="19" field="fk_lighting"/>
+        <alias name="Commentaire" index="20" field="comment"/>
+        <alias name="Photo" index="21" field="photo"/>
+        <alias name="" index="22" field="mirror_protruding"/>
+        <alias name="" index="23" field="mirror_red_frame"/>
+        <alias name="" index="24" field="geometry"/>
+        <alias name="Azimut" index="25" field="azimut"/>
+        <alias name="Cadre" index="26" field="frame_id"/>
+        <alias name="Azimut cadre" index="27" field="frame_fk_azimut"/>
+        <alias name="Position cadre dans l'azimut" index="28" field="frame_rank"/>
+        <alias name="Type cadre" index="29" field="frame_fk_frame_type"/>
+        <alias name="Type fixation cadre" index="30" field="frame_fk_frame_fixing_type"/>
+        <alias name="Cadre recto verso" index="31" field="frame_double_sided"/>
+        <alias name="Status cadre" index="32" field="frame_fk_status"/>
+        <alias name="" index="33" field="frame_fk_provider"/>
+        <alias name="Commentaire cadre" index="34" field="frame_comment"/>
+        <alias name="Image cadre" index="35" field="frame_picture"/>
+        <alias name="Rang signal" index="36" field="sign_rank"/>
+        <alias name="Id support" index="37" field="support_id"/>
+        <alias name="" index="38" field="_symbol_value_de"/>
+        <alias name="" index="39" field="_symbol_value_fr"/>
+        <alias name="" index="40" field="_symbol_value_it"/>
+        <alias name="" index="41" field="_symbol_value_ro"/>
+        <alias name="" index="42" field="_img_de"/>
+        <alias name="" index="43" field="_img_fr"/>
+        <alias name="" index="44" field="_img_it"/>
+        <alias name="" index="45" field="_img_ro"/>
+        <alias name="" index="46" field="_symbol_height"/>
+        <alias name="" index="47" field="_symbol_width"/>
+        <alias name="" index="48" field="_final_rank"/>
+        <alias name="" index="49" field="_symbol_shift"/>
+        <alias name="" index="50" field="_previous_sign_in_frame"/>
+        <alias name="" index="51" field="_next_sign_in_frame"/>
+        <alias name="" index="52" field="_previous_frame"/>
+        <alias name="" index="53" field="_next_frame"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -6490,6 +6776,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_mirror_shape" expression=""/>
         <default applyOnUpdate="0" field="fk_parent" expression="NULL"/>
         <default applyOnUpdate="0" field="fk_owner" expression="'811a5b2a-0894-11eb-adef-0242ac110002'"/>
+        <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="fk_durability" expression="NULL"/>
         <default applyOnUpdate="0" field="fk_status" expression="NULL"/>
         <default applyOnUpdate="0" field="installation_date" expression="NULL"/>
@@ -6514,6 +6801,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="frame_fk_frame_fixing_type" expression="NULL"/>
         <default applyOnUpdate="0" field="frame_double_sided" expression=""/>
         <default applyOnUpdate="0" field="frame_fk_status" expression="NULL"/>
+        <default applyOnUpdate="0" field="frame_fk_provider" expression=""/>
         <default applyOnUpdate="0" field="frame_comment" expression="NULL"/>
         <default applyOnUpdate="0" field="frame_picture" expression="NULL"/>
         <default applyOnUpdate="0" field="sign_rank" expression="1"/>
@@ -6544,6 +6832,7 @@ def my_form_open(dialog, layer, feature):
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_mirror_shape" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_parent" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_owner" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_provider" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_durability" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="fk_status" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="installation_date" exp_strength="0"/>
@@ -6568,6 +6857,7 @@ def my_form_open(dialog, layer, feature):
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_fk_frame_fixing_type" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_double_sided" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_fk_status" exp_strength="0"/>
+        <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_fk_provider" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_comment" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="frame_picture" exp_strength="0"/>
         <constraint notnull_strength="0" unique_strength="0" constraints="0" field="sign_rank" exp_strength="0"/>
@@ -6598,6 +6888,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="fk_mirror_shape" desc=""/>
         <constraint exp="" field="fk_parent" desc=""/>
         <constraint exp="" field="fk_owner" desc=""/>
+        <constraint exp="" field="fk_provider" desc=""/>
         <constraint exp="" field="fk_durability" desc=""/>
         <constraint exp="" field="fk_status" desc=""/>
         <constraint exp="" field="installation_date" desc=""/>
@@ -6622,6 +6913,7 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="frame_fk_frame_fixing_type" desc=""/>
         <constraint exp="" field="frame_double_sided" desc=""/>
         <constraint exp="" field="frame_fk_status" desc=""/>
+        <constraint exp="" field="frame_fk_provider" desc=""/>
         <constraint exp="" field="frame_comment" desc=""/>
         <constraint exp="" field="frame_picture" desc=""/>
         <constraint exp="" field="sign_rank" desc=""/>
@@ -6734,36 +7026,36 @@ def my_form_open(dialog, layer, feature):
       <editorlayout>tablayout</editorlayout>
       <attributeEditorForm>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="2" name="Azimut" groupBox="1">
-          <attributeEditorField showLabel="1" name="frame_fk_azimut" index="26"/>
+          <attributeEditorField showLabel="1" name="frame_fk_azimut" index="27"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="2" name="Cadre" groupBox="1">
-          <attributeEditorField showLabel="1" name="frame_fk_frame_type" index="28"/>
-          <attributeEditorField showLabel="1" name="frame_fk_frame_fixing_type" index="29"/>
-          <attributeEditorField showLabel="1" name="frame_double_sided" index="30"/>
-          <attributeEditorField showLabel="1" name="frame_fk_status" index="31"/>
-          <attributeEditorField showLabel="1" name="frame_comment" index="32"/>
-          <attributeEditorField showLabel="1" name="frame_picture" index="33"/>
+          <attributeEditorField showLabel="1" name="frame_fk_frame_type" index="29"/>
+          <attributeEditorField showLabel="1" name="frame_fk_frame_fixing_type" index="30"/>
+          <attributeEditorField showLabel="1" name="frame_double_sided" index="31"/>
+          <attributeEditorField showLabel="1" name="frame_fk_status" index="32"/>
+          <attributeEditorField showLabel="1" name="frame_comment" index="34"/>
+          <attributeEditorField showLabel="1" name="frame_picture" index="35"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" visibilityExpressionEnabled="0" visibilityExpression="" columnCount="2" name="Signal" groupBox="1">
-          <attributeEditorField showLabel="1" name="sign_rank" index="34"/>
-          <attributeEditorField showLabel="1" name="frame_rank" index="27"/>
+          <attributeEditorField showLabel="1" name="sign_rank" index="36"/>
+          <attributeEditorField showLabel="1" name="frame_rank" index="28"/>
           <attributeEditorField showLabel="1" name="fk_sign_type" index="2"/>
           <attributeEditorField showLabel="1" name="verso" index="1"/>
           <attributeEditorField showLabel="1" name="fk_official_sign" index="3"/>
           <attributeEditorField showLabel="1" name="fk_owner" index="7"/>
-          <attributeEditorField showLabel="1" name="fk_durability" index="8"/>
-          <attributeEditorField showLabel="1" name="fk_status" index="9"/>
-          <attributeEditorField showLabel="1" name="installation_date" index="10"/>
-          <attributeEditorField showLabel="1" name="manufacturing_date" index="11"/>
-          <attributeEditorField showLabel="1" name="case_decision" index="13"/>
-          <attributeEditorField showLabel="1" name="inscription_1" index="14"/>
-          <attributeEditorField showLabel="1" name="inscription_2" index="15"/>
-          <attributeEditorField showLabel="1" name="inscription_3" index="16"/>
-          <attributeEditorField showLabel="1" name="fk_coating" index="17"/>
-          <attributeEditorField showLabel="1" name="fk_lighting" index="18"/>
+          <attributeEditorField showLabel="1" name="fk_durability" index="9"/>
+          <attributeEditorField showLabel="1" name="fk_status" index="10"/>
+          <attributeEditorField showLabel="1" name="installation_date" index="11"/>
+          <attributeEditorField showLabel="1" name="manufacturing_date" index="12"/>
+          <attributeEditorField showLabel="1" name="case_decision" index="14"/>
+          <attributeEditorField showLabel="1" name="inscription_1" index="15"/>
+          <attributeEditorField showLabel="1" name="inscription_2" index="16"/>
+          <attributeEditorField showLabel="1" name="inscription_3" index="17"/>
+          <attributeEditorField showLabel="1" name="fk_coating" index="18"/>
+          <attributeEditorField showLabel="1" name="fk_lighting" index="19"/>
           <attributeEditorField showLabel="1" name="destination" index="-1"/>
-          <attributeEditorField showLabel="1" name="comment" index="19"/>
-          <attributeEditorField showLabel="1" name="photo" index="20"/>
+          <attributeEditorField showLabel="1" name="comment" index="20"/>
+          <attributeEditorField showLabel="1" name="photo" index="21"/>
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
@@ -6984,6 +7276,8 @@ def my_form_open(dialog, layer, feature):
     <layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
     <layer id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997"/>
     <layer id="Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b"/>
+    <layer id="owner_4e532508_fa34_406c_8846_8f8306ca74ee"/>
+    <layer id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a"/>
   </layerorder>
   <properties>
     <DefaultStyles>
@@ -7299,6 +7593,22 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
+      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="14.1392,241.234,mm" visibility="1" positionOnPage="14.1392,241.234,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="25" excludeFromExports="0" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" frame="false" positionLock="false" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" groupUuid="" blendMode="0" halign="4" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
+        <FrameColor green="0" blue="0" alpha="255" red="0"/>
+        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+        <FontColor green="0" blue="0" alpha="255" red="0"/>
+      </LayoutItem>
       <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="30,189.611,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="30,189.611,mm" itemRotation="0" type="65640" zValue="25" excludeFromExports="0" uuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
@@ -7318,22 +7628,6 @@ def my_form_open(dialog, layer, feature):
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="14.1392,241.234,mm" visibility="1" positionOnPage="14.1392,241.234,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="25" excludeFromExports="0" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" frame="false" positionLock="false" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" groupUuid="" blendMode="0" halign="4" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
-        <FrameColor green="0" blue="0" alpha="255" red="0"/>
-        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" type="QString" name="name"/>
-              <Option name="properties"/>
-              <Option value="collection" type="QString" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
-        <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
       <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="126.203,107.464,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="126.203,107.464,mm" itemRotation="0" type="65640" zValue="17" excludeFromExports="0" uuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
@@ -7407,7 +7701,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
         <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
-      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="126.203,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="126.203,21.6192,mm" itemRotation="0" type="65640" zValue="6" excludeFromExports="0" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" frame="false" pictureWidth="48.77" positionLock="false" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
+      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="126.203,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="126.203,21.6192,mm" itemRotation="0" type="65640" zValue="6" excludeFromExports="0" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7443,7 +7737,23 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
         <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
-      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="47.1276" position="30,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="30,21.6192,mm" itemRotation="0" type="65640" zValue="2" excludeFromExports="0" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" frame="false" pictureWidth="53.7966" positionLock="false" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
+      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="22.0688,71.2341,mm" visibility="1" positionOnPage="22.0688,71.2341,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" positionLock="false" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" groupUuid="" blendMode="0" halign="4" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
+        <FrameColor green="0" blue="0" alpha="255" red="0"/>
+        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+        <FontColor green="0" blue="0" alpha="255" red="0"/>
+      </LayoutItem>
+      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="30,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="30,21.6192,mm" itemRotation="0" type="65640" zValue="2" excludeFromExports="0" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7462,22 +7772,6 @@ def my_form_open(dialog, layer, feature):
           </dataDefinedProperties>
           <customproperties/>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="22.0688,71.2341,mm" visibility="1" positionOnPage="22.0688,71.2341,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" positionLock="false" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" groupUuid="" blendMode="0" halign="4" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
-        <FrameColor green="0" blue="0" alpha="255" red="0"/>
-        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" type="QString" name="name"/>
-              <Option name="properties"/>
-              <Option value="collection" type="QString" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
-        <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
       <customproperties>
         <property value="png" key="atlasRasterFormat"/>
@@ -7598,22 +7892,6 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="24.986,156.228,mm" visibility="1" positionOnPage="24.986,156.228,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" positionLock="false" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" groupUuid="" blendMode="0" halign="4" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" marginX="0" referencePoint="0" size="247.028,53.7715,mm" opacity="1" id="" outlineWidthM="0.3,mm">
-        <FrameColor green="0" blue="0" alpha="255" red="0"/>
-        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" type="QString" name="name"/>
-              <Option name="properties"/>
-              <Option value="collection" type="QString" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties/>
-        </LayoutObject>
-        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
-        <FontColor green="0" blue="0" alpha="255" red="0"/>
-      </LayoutItem>
       <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="131.57" position="148.5,160.814,mm" northOffset="0" file="101.svg" anchorPoint="7" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="148.5,160.814,mm" itemRotation="0" type="65640" zValue="2" excludeFromExports="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" frame="false" pictureWidth="130.768" positionLock="false" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="7" size="130.768,148.068,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
@@ -7634,6 +7912,22 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
+      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="24.986,156.228,mm" visibility="1" positionOnPage="24.986,156.228,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" positionLock="false" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" groupUuid="" blendMode="0" halign="4" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" marginX="0" referencePoint="0" size="247.028,53.7715,mm" opacity="1" id="" outlineWidthM="0.3,mm">
+        <FrameColor green="0" blue="0" alpha="255" red="0"/>
+        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties/>
+        </LayoutObject>
+        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
+        <FontColor green="0" blue="0" alpha="255" red="0"/>
+      </LayoutItem>
       <customproperties>
         <property value="png" key="atlasRasterFormat"/>
         <property value="0" key="forceVector"/>
@@ -7653,7 +7947,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537816.23646530229598284" ymin="1152181.26889794855378568" ymax="1152832.76489308872260153" xmax="2538055.19758760742843151">
+    <DefaultViewExtent xmin="2537808.21424159547314048" ymin="1152384.32075914950110018" ymax="1152598.44739426043815911" xmax="2538072.16048615286126733">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
