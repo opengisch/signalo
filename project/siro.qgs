@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="3.19.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud" saveDateTime="2021-05-03T10:08:33" projectname="">
+<qgis version="3.19.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud" saveDateTime="2021-05-04T11:16:16" projectname="">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -2821,7 +2821,7 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" width="-1" type="field" name="id"/>
           <column hidden="0" width="-1" type="field" name="active"/>
           <column hidden="0" width="-1" type="field" name="value_de"/>
-          <column hidden="0" width="1603" type="field" name="value_fr"/>
+          <column hidden="0" width="461" type="field" name="value_fr"/>
           <column hidden="0" width="-1" type="field" name="value_it"/>
           <column hidden="0" width="-1" type="field" name="value_ro"/>
           <column hidden="0" width="-1" type="field" name="description_de"/>
@@ -7263,7 +7263,7 @@ def my_form_open(dialog, layer, feature):
           <Guide orientation="1" page="0" units="mm" position="255"/>
         </GuideCollection>
       </PageCollection>
-      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="118.273,241.234,mm" visibility="1" positionOnPage="118.273,241.234,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="36" excludeFromExports="0" uuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" frame="false" positionLock="false" templateUuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" groupUuid="" blendMode="0" halign="4" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +150),'value_fr')%]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
+      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="118.273,241.234,mm" visibility="1" positionOnPage="118.273,241.234,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="36" excludeFromExports="0" uuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" frame="false" positionLock="false" templateUuid="{e1ec8a40-f0fd-4989-8fbc-2764d3dc291a}" groupUuid="" blendMode="0" halign="4" labelText="[%attribute(get_feature_by_id('official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae',@atlas_featureid +150),'value_fr')%]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7407,7 +7407,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
         <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
-      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="126.203,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="126.203,21.6192,mm" itemRotation="0" type="65640" zValue="6" excludeFromExports="0" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
+      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="126.203,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="126.203,21.6192,mm" itemRotation="0" type="65640" zValue="6" excludeFromExports="0" uuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" frame="false" pictureWidth="48.77" positionLock="false" templateUuid="{02093ed3-26a0-411e-bc88-8c50e084aff6}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7417,7 +7417,7 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map" name="properties">
                 <Option type="Map" name="dataDefinedSource">
                   <Option value="true" type="bool" name="active"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid + 30), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="file_path(@project_path) ||'/../images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid+30,1) ), 'img_fr')" type="QString" name="expression"/>
                   <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
@@ -7443,7 +7443,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
         <FontColor green="0" blue="0" alpha="255" red="0"/>
       </LayoutItem>
-      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="48.77" position="30,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="30,21.6192,mm" itemRotation="0" type="65640" zValue="2" excludeFromExports="0" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" frame="false" pictureWidth="48.4726" positionLock="false" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
+      <LayoutItem mode="0" background="false" pictureRotation="0" frameJoinStyle="miter" pictureHeight="47.1276" position="30,21.6192,mm" northOffset="0" file="101.svg" anchorPoint="0" svgFillColor="255,255,255,255" visibility="1" svgBorderColor="0,0,0,255" positionOnPage="30,21.6192,mm" itemRotation="0" type="65640" zValue="2" excludeFromExports="0" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" frame="false" pictureWidth="53.7966" positionLock="false" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" svgBorderWidth="0.2" groupUuid="" blendMode="0" referencePoint="0" size="53.7966,48.77,mm" resizeMode="0" opacity="1" mapUuid="" northMode="0" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7453,7 +7453,7 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map" name="properties">
                 <Option type="Map" name="dataDefinedSource">
                   <Option value="true" type="bool" name="active"/>
-                  <Option value="CASE WHEN  @atlas_featureid &lt;90 THEN 'C:/Users/lunic/Documents/01_opengis/dev/signalisation_verticale/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f', @atlas_featureid ), 'img_fr') END" type="QString" name="expression"/>
+                  <Option value="file_path(@project_path) ||'/../images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString" name="expression"/>
                   <Option value="3" type="int" name="type"/>
                 </Option>
               </Option>
@@ -7463,7 +7463,7 @@ def my_form_open(dialog, layer, feature):
           <customproperties/>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="22.0696,71.2341,mm" visibility="1" positionOnPage="22.0696,71.2341,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" positionLock="false" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" groupUuid="" blendMode="0" halign="4" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
+      <LayoutItem background="false" frameJoinStyle="miter" htmlState="0" position="22.0688,71.2341,mm" visibility="1" positionOnPage="22.0688,71.2341,mm" itemRotation="0" marginY="0" valign="128" type="65641" zValue="2" excludeFromExports="0" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" positionLock="false" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" groupUuid="" blendMode="0" halign="4" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" marginX="0" referencePoint="0" size="69.6574,13.7659,mm" opacity="1" id="" outlineWidthM="0.3,mm">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -7492,7 +7492,7 @@ def my_form_open(dialog, layer, feature):
         <property value="1" key="pdfSimplify"/>
         <property value="0" key="pdfTextFormat"/>
       </customproperties>
-      <Atlas sortAscending="1" filterFeatures="1" coverageLayer="" hideCoverage="0" sortFeatures="1" sortKey="id" filenamePattern="'output_'||@atlas_featurenumber" pageNameExpression="&quot;id&quot;" featureFilter=" @atlas_featureid &lt; 46" enabled="0"/>
+      <Atlas sortAscending="1" filterFeatures="0" coverageLayerName="Signal officiel" coverageLayerSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" hideCoverage="0" sortFeatures="1" sortKey="id" coverageLayerProvider="postgres" filenamePattern="'output_'||@atlas_featurenumber" pageNameExpression="&quot;id&quot;" enabled="1"/>
     </Layout>
     <Layout worldFileMap="" printResolution="300" units="mm" name="official sign">
       <Snapper snapToGuides="1" snapToItems="1" snapToGrid="0" tolerance="5"/>
@@ -7653,7 +7653,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537816.23646530229598284" ymin="1152418.81810699286870658" ymax="1152595.21568404440768063" xmax="2538055.19758760742843151">
+    <DefaultViewExtent xmin="2537816.23646530229598284" ymin="1152181.26889794855378568" ymax="1152832.76489308872260153" xmax="2538055.19758760742843151">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>

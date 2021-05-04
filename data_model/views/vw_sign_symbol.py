@@ -65,13 +65,13 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , CASE 
                   WHEN fk_sign_type = 11 THEN official_sign.img_height
                   WHEN fk_sign_type = 12 THEN 130
-                  WHEN fk_sign_type = 13 THEN 70
-                  WHEN fk_sign_type = 14 THEN 70
+                  WHEN fk_sign_type = 13 THEN 100
+                  WHEN fk_sign_type = 14 THEN 100
                 END as _symbol_height
                 , CASE 
                   WHEN fk_sign_type = 11 THEN official_sign.img_width
                   WHEN fk_sign_type = 12 THEN 70
-                  WHEN fk_sign_type = 13 THEN 130
+                  WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 130
                 END as _symbol_width
             FROM siro_od.sign
