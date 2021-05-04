@@ -29,6 +29,8 @@ CREATE TABLE siro_od.sign
     mirror_protruding boolean default false,
     mirror_red_frame boolean default false,
     geometry geometry(Polygon,:SRID) DEFAULT :PROJECT_EXTENT,
+    _inserted timestamp default now(),
+    _last_modified timestamp default now(),
     CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES siro_od.frame (id) MATCH FULL  DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_sign_type) REFERENCES siro_vl.sign_type (id) MATCH FULL,
     CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES siro_vl.official_sign (id) MATCH FULL,

@@ -18,6 +18,8 @@ CREATE TABLE siro_od.support
     comment text,
     picture text,
     geometry geometry(Point,:SRID) NOT NULL,
+    _inserted timestamp default now(),
+    _last_modified timestamp default now(),
     CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES siro_vl.support_type (id) MATCH FULL,
     CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH FULL,
     CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES siro_od.provider (id) MATCH FULL,
