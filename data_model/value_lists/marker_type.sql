@@ -15,5 +15,9 @@ INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VAL
 INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (2, 'TBD', 'autre', 'TBD', 'TBD');
 INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (3, 'to be determined', 'à déterminer', 'to be determined', 'TBD');
 
-INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (11, 'TBD', 'balise 1', 'TBD', 'TBD');
-INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (12, 'TBD', 'balise 2', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (11, 'Leitpfosten', 'balise', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (12, 'Leitfeile', 'flèche de guidage', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (13, 'Leitmarken', 'bande de marquage', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (14, 'Leitbaken', 'balise de guidage', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (15, 'Inselpfosten', 'borne d''îlots', 'TBD', 'TBD');
+INSERT INTO siro_vl.marker_type (id, value_de, value_fr, value_it, value_ro) VALUES (16, 'Verkhersteiler', 'séparateur de trafic', 'TBD', 'TBD');
