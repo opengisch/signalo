@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-05-10T15:43:16" projectname="" saveUser="denis" version="3.19.0-Master" saveUserFull="Denis Rouzaud">
+<qgis saveDateTime="2021-05-10T16:21:51" projectname="" saveUser="denis" version="3.19.0-Master" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -407,7 +407,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>true</geographicflag>
+        <geographicflag>false</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -430,7 +430,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -492,7 +492,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -596,7 +596,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -664,7 +664,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -696,7 +696,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -739,8 +739,8 @@
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" name="embeddedWidgets/count" value="0"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -798,7 +798,7 @@
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="_inserted_date">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -808,7 +808,27 @@
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -823,29 +843,37 @@
         <alias index="0" field="id" name=""/>
         <alias index="1" field="fk_support" name="Support"/>
         <alias index="2" field="azimut" name="Azimut"/>
-        <alias index="3" field="_inserted" name=""/>
-        <alias index="4" field="_last_modified" name=""/>
+        <alias index="3" field="_inserted_date" name=""/>
+        <alias index="4" field="_inserted_user" name=""/>
+        <alias index="5" field="_last_modified_date" name=""/>
+        <alias index="6" field="_last_modified_user" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
         <default applyOnUpdate="0" field="fk_support" expression=""/>
         <default applyOnUpdate="0" field="azimut" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" notnull_strength="1" constraints="3" exp_strength="0"/>
         <constraint unique_strength="0" field="fk_support" notnull_strength="1" constraints="1" exp_strength="0"/>
         <constraint unique_strength="0" field="azimut" notnull_strength="2" constraints="1" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint desc="" field="id" exp=""/>
         <constraint desc="" field="fk_support" exp=""/>
         <constraint desc="" field="azimut" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -857,8 +885,10 @@
           <column type="field" name="fk_support" hidden="0" width="395"/>
           <column type="field" name="azimut" hidden="0" width="-1"/>
           <column type="actions" hidden="1" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -903,22 +933,28 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorRelation>
       </attributeEditorForm>
       <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
         <field editable="1" name="azimut"/>
         <field editable="1" name="fk_support"/>
         <field editable="1" name="id"/>
       </editable>
       <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="azimut"/>
         <field labelOnTop="0" name="fk_support"/>
         <field labelOnTop="0" name="id"/>
       </labelOnTop>
       <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="azimut"/>
         <field reuseLastValue="0" name="fk_support"/>
         <field reuseLastValue="0" name="id"/>
@@ -958,7 +994,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -981,7 +1017,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1160,7 +1196,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1183,7 +1219,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1329,7 +1365,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1361,7 +1397,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1404,8 +1440,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" name="embeddedWidgets/count" value="0"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -1578,7 +1614,21 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="dimnension_1">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="dimnension_2">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_date">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -1588,7 +1638,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -1610,8 +1680,12 @@ def my_form_open(dialog, layer, feature):
         <alias index="7" field="fk_provider" name="Fournisseur"/>
         <alias index="8" field="comment" name="commentaire"/>
         <alias index="9" field="picture" name="photo"/>
-        <alias index="10" field="_inserted" name=""/>
-        <alias index="11" field="_last_modified" name=""/>
+        <alias index="10" field="dimnension_1" name=""/>
+        <alias index="11" field="dimnension_2" name=""/>
+        <alias index="12" field="_inserted_date" name=""/>
+        <alias index="13" field="_inserted_user" name=""/>
+        <alias index="14" field="_last_modified_date" name=""/>
+        <alias index="15" field="_last_modified_user" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -1624,8 +1698,12 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="comment" expression="NULL"/>
         <default applyOnUpdate="0" field="picture" expression="NULL"/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
+        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name"/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" notnull_strength="1" constraints="3" exp_strength="0"/>
@@ -1638,8 +1716,12 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="fk_provider" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="comment" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="picture" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_1" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_2" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint desc="" field="id" exp=""/>
@@ -1652,8 +1734,12 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="fk_provider" exp=""/>
         <constraint desc="" field="comment" exp=""/>
         <constraint desc="" field="picture" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="dimnension_1" exp=""/>
+        <constraint desc="" field="dimnension_2" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -1672,8 +1758,12 @@ def my_form_open(dialog, layer, feature):
           <column type="field" name="picture" hidden="0" width="-1"/>
           <column type="actions" hidden="1" width="-1"/>
           <column type="field" name="fk_provider" hidden="0" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
+          <column type="field" name="dimnension_1" hidden="0" width="-1"/>
+          <column type="field" name="dimnension_2" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -1725,9 +1815,13 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorRelation>
       </attributeEditorForm>
       <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
         <field editable="1" name="comment"/>
+        <field editable="1" name="dimnension_1"/>
+        <field editable="1" name="dimnension_2"/>
         <field editable="1" name="double_sided"/>
         <field editable="1" name="fk_azimut"/>
         <field editable="1" name="fk_frame_fixing_type"/>
@@ -1739,9 +1833,13 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="rank"/>
       </editable>
       <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="comment"/>
+        <field labelOnTop="0" name="dimnension_1"/>
+        <field labelOnTop="0" name="dimnension_2"/>
         <field labelOnTop="0" name="double_sided"/>
         <field labelOnTop="0" name="fk_azimut"/>
         <field labelOnTop="0" name="fk_frame_fixing_type"/>
@@ -1753,9 +1851,13 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="rank"/>
       </labelOnTop>
       <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="comment"/>
+        <field reuseLastValue="0" name="dimnension_1"/>
+        <field reuseLastValue="0" name="dimnension_2"/>
         <field reuseLastValue="0" name="double_sided"/>
         <field reuseLastValue="0" name="fk_azimut"/>
         <field reuseLastValue="0" name="fk_frame_fixing_type"/>
@@ -1801,7 +1903,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1824,7 +1926,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1970,7 +2072,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1993,7 +2095,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2139,7 +2241,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2162,7 +2264,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2315,7 +2417,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2347,7 +2449,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -2564,7 +2666,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2587,7 +2689,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2744,7 +2846,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2767,7 +2869,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3054,6 +3156,264 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
+          <geographicflag>true</geographicflag>
+        </spatialrefsys>
+      </srs>
+      <resourceMetadata>
+        <identifier></identifier>
+        <parentidentifier></parentidentifier>
+        <language></language>
+        <type>dataset</type>
+        <title></title>
+        <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
+        <links/>
+        <fees></fees>
+        <encoding></encoding>
+        <crs>
+          <spatialrefsys>
+            <wkt></wkt>
+            <proj4></proj4>
+            <srsid>0</srsid>
+            <srid>0</srid>
+            <authid></authid>
+            <description></description>
+            <projectionacronym></projectionacronym>
+            <ellipsoidacronym></ellipsoidacronym>
+            <geographicflag>true</geographicflag>
+          </spatialrefsys>
+        </crs>
+        <extent>
+          <spatial maxx="0" miny="0" maxy="0" dimensions="2" minz="0" crs="" maxz="0" minx="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
+      </resourceMetadata>
+      <provider encoding="">postgres</provider>
+      <vectorjoins/>
+      <layerDependencies/>
+      <dataDependencies/>
+      <expressionfields/>
+      <map-layer-style-manager current="default">
+        <map-layer-style name="default"/>
+      </map-layer-style-manager>
+      <auxiliaryLayer/>
+      <flags>
+        <Identifiable>1</Identifiable>
+        <Removable>1</Removable>
+        <Searchable>1</Searchable>
+        <Private>0</Private>
+      </flags>
+      <temporal accumulate="0" durationField="" startExpression="" endExpression="" mode="0" endField="" durationUnit="min" enabled="0" startField="" fixedDuration="0">
+        <fixedRange>
+          <start></start>
+          <end></end>
+        </fixedRange>
+      </temporal>
+      <customproperties>
+        <Option type="Map">
+          <Option type="QString" name="QFieldSync/action" value="remove"/>
+          <Option type="QString" name="QFieldSync/photo_naming" value="{}"/>
+          <Option type="QString" name="embeddedWidgets/count" value="0"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
+        </Option>
+      </customproperties>
+      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
+        <activeChecks/>
+        <checkConfiguration/>
+      </geometryOptions>
+      <legend type="default-vector"/>
+      <referencedLayers/>
+      <fieldConfiguration>
+        <field configurationFlags="None" name="id">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="name">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+      </fieldConfiguration>
+      <aliases>
+        <alias index="0" field="id" name=""/>
+        <alias index="1" field="name" name=""/>
+        <alias index="2" field="_inserted_date" name=""/>
+        <alias index="3" field="_inserted_user" name=""/>
+        <alias index="4" field="_last_modified_date" name=""/>
+        <alias index="5" field="_last_modified_user" name=""/>
+      </aliases>
+      <defaults>
+        <default applyOnUpdate="0" field="id" expression=""/>
+        <default applyOnUpdate="0" field="name" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
+      </defaults>
+      <constraints>
+        <constraint unique_strength="1" field="id" notnull_strength="1" constraints="3" exp_strength="0"/>
+        <constraint unique_strength="0" field="name" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+      </constraints>
+      <constraintExpressions>
+        <constraint desc="" field="id" exp=""/>
+        <constraint desc="" field="name" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
+      </constraintExpressions>
+      <expressionfields/>
+      <attributeactions>
+        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
+      </attributeactions>
+      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
+        <columns>
+          <column type="field" name="id" hidden="0" width="-1"/>
+          <column type="field" name="name" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
+          <column type="actions" hidden="1" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
+        </columns>
+      </attributetableconfig>
+      <conditionalstyles>
+        <rowstyles/>
+        <fieldstyles/>
+      </conditionalstyles>
+      <storedexpressions/>
+      <editform tolerant="1"></editform>
+      <editforminit/>
+      <editforminitcodesource>0</editforminitcodesource>
+      <editforminitfilepath></editforminitfilepath>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
+      <featformsuppress>0</featformsuppress>
+      <editorlayout>generatedlayout</editorlayout>
+      <editable>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
+        <field editable="1" name="id"/>
+        <field editable="1" name="name"/>
+      </editable>
+      <labelOnTop>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
+        <field labelOnTop="0" name="id"/>
+        <field labelOnTop="0" name="name"/>
+      </labelOnTop>
+      <reuseLastValue>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
+        <field reuseLastValue="0" name="id"/>
+        <field reuseLastValue="0" name="name"/>
+      </reuseLastValue>
+      <dataDefinedFieldProperties/>
+      <widgets/>
+      <previewExpression>"name"</previewExpression>
+      <mapTip></mapTip>
+    </maplayer>
+    <maplayer refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" minScale="1e+08" type="vector" maxScale="0" readOnly="0" autoRefreshTime="0" refreshOnNotifyMessage="" wkbType="NoGeometry" geometry="No geometry" autoRefreshEnabled="0">
+      <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
+      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_od"."provider"</datasource>
+      <keywordList>
+        <value></value>
+      </keywordList>
+      <layername>Fournisseur</layername>
+      <srs>
+        <spatialrefsys>
+          <wkt></wkt>
+          <proj4></proj4>
+          <srsid>0</srsid>
+          <srid>0</srid>
+          <authid></authid>
+          <description></description>
+          <projectionacronym></projectionacronym>
+          <ellipsoidacronym></ellipsoidacronym>
           <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
@@ -3122,11 +3482,9 @@ def my_form_open(dialog, layer, feature):
       </temporal>
       <customproperties>
         <Option type="Map">
-          <Option type="QString" name="QFieldSync/action" value="remove"/>
-          <Option type="QString" name="QFieldSync/photo_naming" value="{}"/>
           <Option type="QString" name="embeddedWidgets/count" value="0"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -3150,7 +3508,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="_inserted_date">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -3160,7 +3518,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -3174,26 +3552,34 @@ def my_form_open(dialog, layer, feature):
       <aliases>
         <alias index="0" field="id" name=""/>
         <alias index="1" field="name" name=""/>
-        <alias index="2" field="_inserted" name=""/>
-        <alias index="3" field="_last_modified" name=""/>
+        <alias index="2" field="_inserted_date" name=""/>
+        <alias index="3" field="_inserted_user" name=""/>
+        <alias index="4" field="_last_modified_date" name=""/>
+        <alias index="5" field="_last_modified_user" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression=""/>
         <default applyOnUpdate="0" field="name" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" notnull_strength="1" constraints="3" exp_strength="0"/>
         <constraint unique_strength="0" field="name" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint desc="" field="id" exp=""/>
         <constraint desc="" field="name" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -3203,9 +3589,11 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column type="field" name="id" hidden="0" width="-1"/>
           <column type="field" name="name" hidden="0" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
           <column type="actions" hidden="1" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3237,240 +3625,26 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
         <field editable="1" name="id"/>
         <field editable="1" name="name"/>
       </editable>
       <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="id"/>
         <field labelOnTop="0" name="name"/>
       </labelOnTop>
       <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
-        <field reuseLastValue="0" name="id"/>
-        <field reuseLastValue="0" name="name"/>
-      </reuseLastValue>
-      <dataDefinedFieldProperties/>
-      <widgets/>
-      <previewExpression>"name"</previewExpression>
-      <mapTip></mapTip>
-    </maplayer>
-    <maplayer refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" hasScaleBasedVisibilityFlag="0" minScale="1e+08" type="vector" maxScale="0" readOnly="0" autoRefreshTime="0" refreshOnNotifyMessage="" wkbType="NoGeometry" geometry="No geometry" autoRefreshEnabled="0">
-      <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_od"."provider"</datasource>
-      <keywordList>
-        <value></value>
-      </keywordList>
-      <layername>Fournisseur</layername>
-      <srs>
-        <spatialrefsys>
-          <wkt></wkt>
-          <proj4></proj4>
-          <srsid>0</srsid>
-          <srid>0</srid>
-          <authid></authid>
-          <description></description>
-          <projectionacronym></projectionacronym>
-          <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
-        </spatialrefsys>
-      </srs>
-      <resourceMetadata>
-        <identifier></identifier>
-        <parentidentifier></parentidentifier>
-        <language></language>
-        <type>dataset</type>
-        <title></title>
-        <abstract></abstract>
-        <contact>
-          <name></name>
-          <organization></organization>
-          <position></position>
-          <voice></voice>
-          <fax></fax>
-          <email></email>
-          <role></role>
-        </contact>
-        <links/>
-        <fees></fees>
-        <encoding></encoding>
-        <crs>
-          <spatialrefsys>
-            <wkt></wkt>
-            <proj4></proj4>
-            <srsid>0</srsid>
-            <srid>0</srid>
-            <authid></authid>
-            <description></description>
-            <projectionacronym></projectionacronym>
-            <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
-          </spatialrefsys>
-        </crs>
-        <extent>
-          <spatial maxx="0" miny="0" maxy="0" dimensions="2" minz="0" crs="" maxz="0" minx="0"/>
-          <temporal>
-            <period>
-              <start></start>
-              <end></end>
-            </period>
-          </temporal>
-        </extent>
-      </resourceMetadata>
-      <provider encoding="">postgres</provider>
-      <vectorjoins/>
-      <layerDependencies/>
-      <dataDependencies/>
-      <expressionfields/>
-      <map-layer-style-manager current="default">
-        <map-layer-style name="default"/>
-      </map-layer-style-manager>
-      <auxiliaryLayer/>
-      <flags>
-        <Identifiable>1</Identifiable>
-        <Removable>1</Removable>
-        <Searchable>1</Searchable>
-        <Private>0</Private>
-      </flags>
-      <temporal accumulate="0" durationField="" startExpression="" endExpression="" mode="0" endField="" durationUnit="min" enabled="0" startField="" fixedDuration="0">
-        <fixedRange>
-          <start></start>
-          <end></end>
-        </fixedRange>
-      </temporal>
-      <customproperties>
-        <Option type="Map">
-          <Option type="QString" name="embeddedWidgets/count" value="0"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
-        </Option>
-      </customproperties>
-      <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
-        <activeChecks/>
-        <checkConfiguration/>
-      </geometryOptions>
-      <legend type="default-vector"/>
-      <referencedLayers/>
-      <fieldConfiguration>
-        <field configurationFlags="None" name="id">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="name">
-          <editWidget type="TextEdit">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="_inserted">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="bool" name="IsMultiline" value="false"/>
-                <Option type="bool" name="UseHtml" value="false"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="None" name="_last_modified">
-          <editWidget type="TextEdit">
-            <config>
-              <Option type="Map">
-                <Option type="bool" name="IsMultiline" value="false"/>
-                <Option type="bool" name="UseHtml" value="false"/>
-              </Option>
-            </config>
-          </editWidget>
-        </field>
-      </fieldConfiguration>
-      <aliases>
-        <alias index="0" field="id" name=""/>
-        <alias index="1" field="name" name=""/>
-        <alias index="2" field="_inserted" name=""/>
-        <alias index="3" field="_last_modified" name=""/>
-      </aliases>
-      <defaults>
-        <default applyOnUpdate="0" field="id" expression=""/>
-        <default applyOnUpdate="0" field="name" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
-      </defaults>
-      <constraints>
-        <constraint unique_strength="1" field="id" notnull_strength="1" constraints="3" exp_strength="0"/>
-        <constraint unique_strength="0" field="name" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
-      </constraints>
-      <constraintExpressions>
-        <constraint desc="" field="id" exp=""/>
-        <constraint desc="" field="name" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
-      </constraintExpressions>
-      <expressionfields/>
-      <attributeactions>
-        <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
-      </attributeactions>
-      <attributetableconfig actionWidgetStyle="dropDown" sortExpression="" sortOrder="0">
-        <columns>
-          <column type="field" name="id" hidden="0" width="-1"/>
-          <column type="field" name="name" hidden="0" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
-          <column type="actions" hidden="1" width="-1"/>
-        </columns>
-      </attributetableconfig>
-      <conditionalstyles>
-        <rowstyles/>
-        <fieldstyles/>
-      </conditionalstyles>
-      <storedexpressions/>
-      <editform tolerant="1"></editform>
-      <editforminit/>
-      <editforminitcodesource>0</editforminitcodesource>
-      <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
-"""
-QGIS forms can have a Python function that is called when the form is
-opened.
-
-Use this function to add extra logic to your forms.
-
-Enter the name of the function in the "Python Init function"
-field.
-An example follows:
-"""
-from qgis.PyQt.QtWidgets import QWidget
-
-def my_form_open(dialog, layer, feature):
-	geom = feature.geometry()
-	control = dialog.findChild(QWidget, "MyLineEdit")
-]]></editforminitcode>
-      <featformsuppress>0</featformsuppress>
-      <editorlayout>generatedlayout</editorlayout>
-      <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
-        <field editable="1" name="id"/>
-        <field editable="1" name="name"/>
-      </editable>
-      <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
-        <field labelOnTop="0" name="id"/>
-        <field labelOnTop="0" name="name"/>
-      </labelOnTop>
-      <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="id"/>
         <field reuseLastValue="0" name="name"/>
       </reuseLastValue>
@@ -3496,7 +3670,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3528,7 +3702,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -3570,8 +3744,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" name="QFieldSync/photo_naming" value="{&quot;photo&quot;: &quot;'DCIM/signal_'||now()||'.jpg'&quot;}"/>
           <Option type="QString" name="dualview/previewExpressions" value="&quot;id&quot;"/>
           <Option type="QString" name="embeddedWidgets/count" value="0"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -4002,7 +4176,21 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="dimnension_1">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="dimnension_2">
+          <editWidget type="TextEdit">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_date">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -4012,7 +4200,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -4170,23 +4378,27 @@ def my_form_open(dialog, layer, feature):
         <alias index="24" field="mirror_protruding" name="miroir bombé"/>
         <alias index="25" field="mirror_red_frame" name="cadre rouge et blanc"/>
         <alias index="26" field="geometry" name=""/>
-        <alias index="27" field="_inserted" name=""/>
-        <alias index="28" field="_last_modified" name=""/>
-        <alias index="29" field="official_sign_active" name=""/>
-        <alias index="30" field="official_sign_value_de" name=""/>
-        <alias index="31" field="official_sign_value_fr" name=""/>
-        <alias index="32" field="official_sign_value_it" name=""/>
-        <alias index="33" field="official_sign_value_ro" name=""/>
-        <alias index="34" field="official_sign_description_de" name=""/>
-        <alias index="35" field="official_sign_description_fr" name=""/>
-        <alias index="36" field="official_sign_description_it" name=""/>
-        <alias index="37" field="official_sign_description_ro" name=""/>
-        <alias index="38" field="official_sign_img_de" name=""/>
-        <alias index="39" field="official_sign_img_fr" name=""/>
-        <alias index="40" field="official_sign_img_it" name=""/>
-        <alias index="41" field="official_sign_img_ro" name=""/>
-        <alias index="42" field="official_sign_img_height" name=""/>
-        <alias index="43" field="official_sign_img_width" name=""/>
+        <alias index="27" field="dimnension_1" name=""/>
+        <alias index="28" field="dimnension_2" name=""/>
+        <alias index="29" field="_inserted_date" name=""/>
+        <alias index="30" field="_inserted_user" name=""/>
+        <alias index="31" field="_last_modified_date" name=""/>
+        <alias index="32" field="_last_modified_user" name=""/>
+        <alias index="33" field="official_sign_active" name=""/>
+        <alias index="34" field="official_sign_value_de" name=""/>
+        <alias index="35" field="official_sign_value_fr" name=""/>
+        <alias index="36" field="official_sign_value_it" name=""/>
+        <alias index="37" field="official_sign_value_ro" name=""/>
+        <alias index="38" field="official_sign_description_de" name=""/>
+        <alias index="39" field="official_sign_description_fr" name=""/>
+        <alias index="40" field="official_sign_description_it" name=""/>
+        <alias index="41" field="official_sign_description_ro" name=""/>
+        <alias index="42" field="official_sign_img_de" name=""/>
+        <alias index="43" field="official_sign_img_fr" name=""/>
+        <alias index="44" field="official_sign_img_it" name=""/>
+        <alias index="45" field="official_sign_img_ro" name=""/>
+        <alias index="46" field="official_sign_img_height" name=""/>
+        <alias index="47" field="official_sign_img_width" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression=""/>
@@ -4216,8 +4428,12 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="mirror_protruding" expression=""/>
         <default applyOnUpdate="0" field="mirror_red_frame" expression=""/>
         <default applyOnUpdate="0" field="geometry" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
+        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="official_sign_active" expression=""/>
         <default applyOnUpdate="0" field="official_sign_value_de" expression=""/>
         <default applyOnUpdate="0" field="official_sign_value_fr" expression=""/>
@@ -4262,8 +4478,12 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="mirror_protruding" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="mirror_red_frame" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="geometry" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_1" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_2" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="official_sign_active" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="official_sign_value_de" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="official_sign_value_fr" notnull_strength="0" constraints="0" exp_strength="0"/>
@@ -4308,8 +4528,12 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="mirror_protruding" exp=""/>
         <constraint desc="" field="mirror_red_frame" exp=""/>
         <constraint desc="" field="geometry" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="dimnension_1" exp=""/>
+        <constraint desc="" field="dimnension_2" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
         <constraint desc="" field="official_sign_active" exp=""/>
         <constraint desc="" field="official_sign_value_de" exp=""/>
         <constraint desc="" field="official_sign_value_fr" exp=""/>
@@ -4375,8 +4599,12 @@ def my_form_open(dialog, layer, feature):
           <column type="field" name="mirror_protruding" hidden="0" width="-1"/>
           <column type="field" name="mirror_red_frame" hidden="0" width="-1"/>
           <column type="field" name="fk_provider" hidden="0" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
+          <column type="field" name="dimnension_1" hidden="0" width="-1"/>
+          <column type="field" name="dimnension_2" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4448,12 +4676,16 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
         <field editable="1" name="case_decision"/>
         <field editable="1" name="case_id"/>
         <field editable="1" name="comment"/>
         <field editable="1" name="destination"/>
+        <field editable="1" name="dimnension_1"/>
+        <field editable="1" name="dimnension_2"/>
         <field editable="1" name="fk_coating"/>
         <field editable="1" name="fk_durability"/>
         <field editable="1" name="fk_frame"/>
@@ -4496,12 +4728,16 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="verso"/>
       </editable>
       <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="case_decision"/>
         <field labelOnTop="0" name="case_id"/>
         <field labelOnTop="0" name="comment"/>
         <field labelOnTop="0" name="destination"/>
+        <field labelOnTop="0" name="dimnension_1"/>
+        <field labelOnTop="0" name="dimnension_2"/>
         <field labelOnTop="0" name="fk_coating"/>
         <field labelOnTop="0" name="fk_durability"/>
         <field labelOnTop="0" name="fk_frame"/>
@@ -4544,11 +4780,15 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="verso"/>
       </labelOnTop>
       <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="case_decision"/>
         <field reuseLastValue="0" name="case_id"/>
         <field reuseLastValue="0" name="comment"/>
+        <field reuseLastValue="0" name="dimnension_1"/>
+        <field reuseLastValue="0" name="dimnension_2"/>
         <field reuseLastValue="0" name="fk_coating"/>
         <field reuseLastValue="0" name="fk_durability"/>
         <field reuseLastValue="0" name="fk_frame"/>
@@ -4611,7 +4851,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4634,7 +4874,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4801,7 +5041,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4824,7 +5064,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5118,7 +5358,7 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <Option type="Map">
           <Option type="QString" name="QFieldSync/action" value="offline"/>
-          <Option type="QString" name="QFieldSync/photo_naming" value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"/>
+          <Option type="QString" name="QFieldSync/photo_naming" value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;photo&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"/>
           <Option type="QString" name="dualview/previewExpressions" value="&quot;id&quot;"/>
           <Option type="QString" name="embeddedWidgets/count" value="0"/>
           <Option name="variableNames"/>
@@ -5419,7 +5659,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" name="FileWidgetFilter" value=""/>
                 <Option type="Map" name="PropertyCollection">
                   <Option type="QString" name="name" value=""/>
-                  <Option name="properties"/>
+                  <Option type="invalid" name="properties"/>
                   <Option type="QString" name="type" value="collection"/>
                 </Option>
                 <Option type="int" name="RelativeStorage" value="0"/>
@@ -5428,7 +5668,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="_inserted_date">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -5438,7 +5678,27 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option type="bool" name="IsMultiline" value="false"/>
+                <Option type="bool" name="UseHtml" value="false"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -5480,10 +5740,12 @@ def my_form_open(dialog, layer, feature):
         <alias index="10" field="fk_status" name="Status"/>
         <alias index="11" field="comment" name="Commentaire"/>
         <alias index="12" field="photo" name=""/>
-        <alias index="13" field="_inserted" name=""/>
-        <alias index="14" field="_last_modified" name=""/>
-        <alias index="15" field="geometry_x" name=""/>
-        <alias index="16" field="geometry_y" name=""/>
+        <alias index="13" field="_inserted_date" name=""/>
+        <alias index="14" field="_inserted_user" name=""/>
+        <alias index="15" field="_last_modified_date" name=""/>
+        <alias index="16" field="_last_modified_user" name=""/>
+        <alias index="17" field="geometry_x" name=""/>
+        <alias index="18" field="geometry_y" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -5499,8 +5761,10 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_status" expression="NULL"/>
         <default applyOnUpdate="0" field="comment" expression="NULL"/>
         <default applyOnUpdate="0" field="photo" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression="now()"/>
-        <default applyOnUpdate="1" field="_last_modified" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
+        <default applyOnUpdate="1" field="_last_modified_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="geometry_x" expression=""/>
         <default applyOnUpdate="0" field="geometry_y" expression=""/>
       </defaults>
@@ -5518,8 +5782,10 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="fk_status" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="comment" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="photo" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="geometry_x" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="geometry_y" notnull_strength="0" constraints="0" exp_strength="0"/>
       </constraints>
@@ -5537,8 +5803,10 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="fk_status" exp=""/>
         <constraint desc="" field="comment" exp=""/>
         <constraint desc="" field="photo" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
         <constraint desc="" field="geometry_x" exp=""/>
         <constraint desc="" field="geometry_y" exp=""/>
       </constraintExpressions>
@@ -5566,9 +5834,11 @@ def my_form_open(dialog, layer, feature):
           <column type="field" name="geometry_x" hidden="0" width="-1"/>
           <column type="field" name="geometry_y" hidden="0" width="-1"/>
           <column type="field" name="fk_provider" hidden="0" width="-1"/>
-          <column type="field" name="_inserted" hidden="0" width="-1"/>
-          <column type="field" name="_last_modified" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_date" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_date" hidden="0" width="-1"/>
           <column type="field" name="photo" hidden="0" width="-1"/>
+          <column type="field" name="_inserted_user" hidden="0" width="-1"/>
+          <column type="field" name="_last_modified_user" hidden="0" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -5623,8 +5893,10 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
-        <field editable="0" name="_inserted"/>
-        <field editable="0" name="_last_modified"/>
+        <field editable="0" name="_inserted_date"/>
+        <field editable="1" name="_inserted_user"/>
+        <field editable="0" name="_last_modified_date"/>
+        <field editable="1" name="_last_modified_user"/>
         <field editable="1" name="adress"/>
         <field editable="0" name="azimut_azimut"/>
         <field editable="0" name="azimut_id"/>
@@ -5645,8 +5917,10 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="picture"/>
       </editable>
       <labelOnTop>
-        <field labelOnTop="0" name="_inserted"/>
-        <field labelOnTop="0" name="_last_modified"/>
+        <field labelOnTop="0" name="_inserted_date"/>
+        <field labelOnTop="0" name="_inserted_user"/>
+        <field labelOnTop="0" name="_last_modified_date"/>
+        <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="adress"/>
         <field labelOnTop="0" name="azimut_azimut"/>
         <field labelOnTop="0" name="azimut_id"/>
@@ -5667,8 +5941,10 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="picture"/>
       </labelOnTop>
       <reuseLastValue>
-        <field reuseLastValue="0" name="_inserted"/>
-        <field reuseLastValue="0" name="_last_modified"/>
+        <field reuseLastValue="0" name="_inserted_date"/>
+        <field reuseLastValue="0" name="_inserted_user"/>
+        <field reuseLastValue="0" name="_last_modified_date"/>
+        <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="adress"/>
         <field reuseLastValue="0" name="comment"/>
         <field reuseLastValue="0" name="date_install"/>
@@ -5715,7 +5991,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5738,7 +6014,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5873,7 +6149,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5905,7 +6181,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -6846,14 +7122,42 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_inserted">
+        <field configurationFlags="None" name="dimnension_1">
           <editWidget type="">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="_last_modified">
+        <field configurationFlags="None" name="dimnension_2">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_date">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_inserted_user">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_date">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="_last_modified_user">
           <editWidget type="">
             <config>
               <Option/>
@@ -7014,14 +7318,42 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="frame__inserted">
+        <field configurationFlags="None" name="frame_dimnension_1">
           <editWidget type="">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="frame__last_modified">
+        <field configurationFlags="None" name="frame_dimnension_2">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="frame__inserted_date">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="frame__inserted_user">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="frame__last_modified_date">
+          <editWidget type="">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field configurationFlags="None" name="frame__last_modified_user">
           <editWidget type="">
             <config>
               <Option/>
@@ -7197,39 +7529,47 @@ def my_form_open(dialog, layer, feature):
         <alias index="22" field="mirror_protruding" name=""/>
         <alias index="23" field="mirror_red_frame" name=""/>
         <alias index="24" field="geometry" name=""/>
-        <alias index="25" field="_inserted" name=""/>
-        <alias index="26" field="_last_modified" name=""/>
-        <alias index="27" field="azimut" name="Azimut"/>
-        <alias index="28" field="frame_id" name="Cadre"/>
-        <alias index="29" field="frame_fk_azimut" name="Azimut cadre"/>
-        <alias index="30" field="frame_rank" name="Position cadre dans l'azimut"/>
-        <alias index="31" field="frame_fk_frame_type" name="Type cadre"/>
-        <alias index="32" field="frame_fk_frame_fixing_type" name="Type fixation cadre"/>
-        <alias index="33" field="frame_double_sided" name="Cadre recto verso"/>
-        <alias index="34" field="frame_fk_status" name="Status cadre"/>
-        <alias index="35" field="frame_fk_provider" name=""/>
-        <alias index="36" field="frame_comment" name="Commentaire cadre"/>
-        <alias index="37" field="frame_picture" name="Image cadre"/>
-        <alias index="38" field="frame__inserted" name=""/>
-        <alias index="39" field="frame__last_modified" name=""/>
-        <alias index="40" field="sign_rank" name="Rang signal"/>
-        <alias index="41" field="support_id" name="Id support"/>
-        <alias index="42" field="_symbol_value_de" name=""/>
-        <alias index="43" field="_symbol_value_fr" name=""/>
-        <alias index="44" field="_symbol_value_it" name=""/>
-        <alias index="45" field="_symbol_value_ro" name=""/>
-        <alias index="46" field="_img_de" name=""/>
-        <alias index="47" field="_img_fr" name=""/>
-        <alias index="48" field="_img_it" name=""/>
-        <alias index="49" field="_img_ro" name=""/>
-        <alias index="50" field="_symbol_height" name=""/>
-        <alias index="51" field="_symbol_width" name=""/>
-        <alias index="52" field="_final_rank" name=""/>
-        <alias index="53" field="_symbol_shift" name=""/>
-        <alias index="54" field="_previous_sign_in_frame" name=""/>
-        <alias index="55" field="_next_sign_in_frame" name=""/>
-        <alias index="56" field="_previous_frame" name=""/>
-        <alias index="57" field="_next_frame" name=""/>
+        <alias index="25" field="dimnension_1" name=""/>
+        <alias index="26" field="dimnension_2" name=""/>
+        <alias index="27" field="_inserted_date" name=""/>
+        <alias index="28" field="_inserted_user" name=""/>
+        <alias index="29" field="_last_modified_date" name=""/>
+        <alias index="30" field="_last_modified_user" name=""/>
+        <alias index="31" field="azimut" name="Azimut"/>
+        <alias index="32" field="frame_id" name="Cadre"/>
+        <alias index="33" field="frame_fk_azimut" name="Azimut cadre"/>
+        <alias index="34" field="frame_rank" name="Position cadre dans l'azimut"/>
+        <alias index="35" field="frame_fk_frame_type" name="Type cadre"/>
+        <alias index="36" field="frame_fk_frame_fixing_type" name="Type fixation cadre"/>
+        <alias index="37" field="frame_double_sided" name="Cadre recto verso"/>
+        <alias index="38" field="frame_fk_status" name="Status cadre"/>
+        <alias index="39" field="frame_fk_provider" name=""/>
+        <alias index="40" field="frame_comment" name="Commentaire cadre"/>
+        <alias index="41" field="frame_picture" name="Image cadre"/>
+        <alias index="42" field="frame_dimnension_1" name=""/>
+        <alias index="43" field="frame_dimnension_2" name=""/>
+        <alias index="44" field="frame__inserted_date" name=""/>
+        <alias index="45" field="frame__inserted_user" name=""/>
+        <alias index="46" field="frame__last_modified_date" name=""/>
+        <alias index="47" field="frame__last_modified_user" name=""/>
+        <alias index="48" field="sign_rank" name="Rang signal"/>
+        <alias index="49" field="support_id" name="Id support"/>
+        <alias index="50" field="_symbol_value_de" name=""/>
+        <alias index="51" field="_symbol_value_fr" name=""/>
+        <alias index="52" field="_symbol_value_it" name=""/>
+        <alias index="53" field="_symbol_value_ro" name=""/>
+        <alias index="54" field="_img_de" name=""/>
+        <alias index="55" field="_img_fr" name=""/>
+        <alias index="56" field="_img_it" name=""/>
+        <alias index="57" field="_img_ro" name=""/>
+        <alias index="58" field="_symbol_height" name=""/>
+        <alias index="59" field="_symbol_width" name=""/>
+        <alias index="60" field="_final_rank" name=""/>
+        <alias index="61" field="_symbol_shift" name=""/>
+        <alias index="62" field="_previous_sign_in_frame" name=""/>
+        <alias index="63" field="_next_sign_in_frame" name=""/>
+        <alias index="64" field="_previous_frame" name=""/>
+        <alias index="65" field="_next_frame" name=""/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -7257,8 +7597,12 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="mirror_protruding" expression=""/>
         <default applyOnUpdate="0" field="mirror_red_frame" expression=""/>
         <default applyOnUpdate="0" field="geometry" expression=""/>
-        <default applyOnUpdate="0" field="_inserted" expression=""/>
-        <default applyOnUpdate="0" field="_last_modified" expression=""/>
+        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_date" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=""/>
+        <default applyOnUpdate="0" field="_last_modified_date" expression=""/>
+        <default applyOnUpdate="0" field="_last_modified_user" expression=""/>
         <default applyOnUpdate="0" field="azimut" expression=""/>
         <default applyOnUpdate="0" field="frame_id" expression=""/>
         <default applyOnUpdate="0" field="frame_fk_azimut" expression="'00000000-0000-0000-aaaa-000000000101'"/>
@@ -7270,8 +7614,12 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="frame_fk_provider" expression=""/>
         <default applyOnUpdate="0" field="frame_comment" expression="NULL"/>
         <default applyOnUpdate="0" field="frame_picture" expression="NULL"/>
-        <default applyOnUpdate="0" field="frame__inserted" expression=""/>
-        <default applyOnUpdate="0" field="frame__last_modified" expression=""/>
+        <default applyOnUpdate="0" field="frame_dimnension_1" expression=""/>
+        <default applyOnUpdate="0" field="frame_dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="frame__inserted_date" expression=""/>
+        <default applyOnUpdate="0" field="frame__inserted_user" expression=""/>
+        <default applyOnUpdate="0" field="frame__last_modified_date" expression=""/>
+        <default applyOnUpdate="0" field="frame__last_modified_user" expression=""/>
         <default applyOnUpdate="0" field="sign_rank" expression="1"/>
         <default applyOnUpdate="0" field="support_id" expression=""/>
         <default applyOnUpdate="0" field="_symbol_value_de" expression=""/>
@@ -7317,8 +7665,12 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="mirror_protruding" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="mirror_red_frame" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="geometry" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_1" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="dimnension_2" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="azimut" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_id" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_fk_azimut" notnull_strength="0" constraints="0" exp_strength="0"/>
@@ -7330,8 +7682,12 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="frame_fk_provider" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_comment" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_picture" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="frame__inserted" notnull_strength="0" constraints="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="frame__last_modified" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame_dimnension_1" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame_dimnension_2" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__inserted_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__inserted_user" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__last_modified_date" notnull_strength="0" constraints="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__last_modified_user" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="sign_rank" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="support_id" notnull_strength="0" constraints="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_symbol_value_de" notnull_strength="0" constraints="0" exp_strength="0"/>
@@ -7377,8 +7733,12 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="mirror_protruding" exp=""/>
         <constraint desc="" field="mirror_red_frame" exp=""/>
         <constraint desc="" field="geometry" exp=""/>
-        <constraint desc="" field="_inserted" exp=""/>
-        <constraint desc="" field="_last_modified" exp=""/>
+        <constraint desc="" field="dimnension_1" exp=""/>
+        <constraint desc="" field="dimnension_2" exp=""/>
+        <constraint desc="" field="_inserted_date" exp=""/>
+        <constraint desc="" field="_inserted_user" exp=""/>
+        <constraint desc="" field="_last_modified_date" exp=""/>
+        <constraint desc="" field="_last_modified_user" exp=""/>
         <constraint desc="" field="azimut" exp=""/>
         <constraint desc="" field="frame_id" exp=""/>
         <constraint desc="" field="frame_fk_azimut" exp=""/>
@@ -7390,8 +7750,12 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="frame_fk_provider" exp=""/>
         <constraint desc="" field="frame_comment" exp=""/>
         <constraint desc="" field="frame_picture" exp=""/>
-        <constraint desc="" field="frame__inserted" exp=""/>
-        <constraint desc="" field="frame__last_modified" exp=""/>
+        <constraint desc="" field="frame_dimnension_1" exp=""/>
+        <constraint desc="" field="frame_dimnension_2" exp=""/>
+        <constraint desc="" field="frame__inserted_date" exp=""/>
+        <constraint desc="" field="frame__inserted_user" exp=""/>
+        <constraint desc="" field="frame__last_modified_date" exp=""/>
+        <constraint desc="" field="frame__last_modified_user" exp=""/>
         <constraint desc="" field="sign_rank" exp=""/>
         <constraint desc="" field="support_id" exp=""/>
         <constraint desc="" field="_symbol_value_de" exp=""/>
@@ -7502,19 +7866,19 @@ def my_form_open(dialog, layer, feature):
       <editorlayout>tablayout</editorlayout>
       <attributeEditorForm>
         <attributeEditorContainer showLabel="1" name="Azimut" visibilityExpression="" columnCount="2" visibilityExpressionEnabled="0" groupBox="1">
-          <attributeEditorField showLabel="1" index="29" name="frame_fk_azimut"/>
+          <attributeEditorField showLabel="1" index="33" name="frame_fk_azimut"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" name="Cadre" visibilityExpression="" columnCount="2" visibilityExpressionEnabled="0" groupBox="1">
-          <attributeEditorField showLabel="1" index="31" name="frame_fk_frame_type"/>
-          <attributeEditorField showLabel="1" index="32" name="frame_fk_frame_fixing_type"/>
-          <attributeEditorField showLabel="1" index="33" name="frame_double_sided"/>
-          <attributeEditorField showLabel="1" index="34" name="frame_fk_status"/>
-          <attributeEditorField showLabel="1" index="36" name="frame_comment"/>
-          <attributeEditorField showLabel="1" index="37" name="frame_picture"/>
+          <attributeEditorField showLabel="1" index="35" name="frame_fk_frame_type"/>
+          <attributeEditorField showLabel="1" index="36" name="frame_fk_frame_fixing_type"/>
+          <attributeEditorField showLabel="1" index="37" name="frame_double_sided"/>
+          <attributeEditorField showLabel="1" index="38" name="frame_fk_status"/>
+          <attributeEditorField showLabel="1" index="40" name="frame_comment"/>
+          <attributeEditorField showLabel="1" index="41" name="frame_picture"/>
         </attributeEditorContainer>
         <attributeEditorContainer showLabel="1" name="Signal" visibilityExpression="" columnCount="2" visibilityExpressionEnabled="0" groupBox="1">
-          <attributeEditorField showLabel="1" index="40" name="sign_rank"/>
-          <attributeEditorField showLabel="1" index="30" name="frame_rank"/>
+          <attributeEditorField showLabel="1" index="48" name="sign_rank"/>
+          <attributeEditorField showLabel="1" index="34" name="frame_rank"/>
           <attributeEditorField showLabel="1" index="2" name="fk_sign_type"/>
           <attributeEditorField showLabel="1" index="1" name="verso"/>
           <attributeEditorField showLabel="1" index="3" name="fk_official_sign"/>
@@ -8073,6 +8437,24 @@ def my_form_open(dialog, layer, feature):
           </customproperties>
         </LayoutObject>
       </LayoutItem>
+      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="14.1392,241.234,mm" blendMode="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" position="14.1392,241.234,mm" zValue="25" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" valign="128" type="65641" size="69.6574,13.7659,mm">
+        <FrameColor alpha="255" red="0" green="0" blue="0"/>
+        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+        <FontColor alpha="255" red="0" green="0" blue="0"/>
+      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" id="" pictureWidth="48.4726" northMode="0" mapUuid="" positionOnPage="30,189.611,mm" blendMode="0" position="30,189.611,mm" zValue="25" positionLock="false" background="false" opacity="1" mode="0" northOffset="0" frameJoinStyle="miter" templateUuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" file="101.svg" anchorPoint="0" frame="false" referencePoint="0" svgFillColor="255,255,255,255" visibility="1" pictureHeight="48.77" itemRotation="0" excludeFromExports="0" pictureRotation="0" svgBorderWidth="0.2" groupUuid="" uuid="{1b57b817-6088-44e8-abe0-134dab9f78bf}" svgBorderColor="0,0,0,255" type="65640" size="53.7966,48.77,mm" resizeMode="0">
         <FrameColor alpha="255" red="0" green="0" blue="0"/>
         <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
@@ -8094,24 +8476,6 @@ def my_form_open(dialog, layer, feature):
             <Option/>
           </customproperties>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="14.1392,241.234,mm" blendMode="0" labelText="[%attribute(get_feature_by_id('official_sign_876a8fb7_78c6_4ca9_ac85_21ccaf59e62f',@atlas_featureid +120),'value_fr')%]" position="14.1392,241.234,mm" zValue="25" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{bddc6192-ea5c-452e-8399-afad72dfa490}" valign="128" type="65641" size="69.6574,13.7659,mm">
-        <FrameColor alpha="255" red="0" green="0" blue="0"/>
-        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
-        <FontColor alpha="255" red="0" green="0" blue="0"/>
       </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" id="" pictureWidth="48.4726" northMode="0" mapUuid="" positionOnPage="126.203,107.464,mm" blendMode="0" position="126.203,107.464,mm" zValue="17" positionLock="false" background="false" opacity="1" mode="0" northOffset="0" frameJoinStyle="miter" templateUuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" file="101.svg" anchorPoint="0" frame="false" referencePoint="0" svgFillColor="255,255,255,255" visibility="1" pictureHeight="48.77" itemRotation="0" excludeFromExports="0" pictureRotation="0" svgBorderWidth="0.2" groupUuid="" uuid="{23422415-a7e5-4a3b-b2a9-f7a9e5fe31f8}" svgBorderColor="0,0,0,255" type="65640" size="53.7966,48.77,mm" resizeMode="0">
         <FrameColor alpha="255" red="0" green="0" blue="0"/>
@@ -8233,6 +8597,24 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
         <FontColor alpha="255" red="0" green="0" blue="0"/>
       </LayoutItem>
+      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="22.0688,71.2341,mm" blendMode="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" position="22.0688,71.2341,mm" zValue="2" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" valign="128" type="65641" size="69.6574,13.7659,mm">
+        <FrameColor alpha="255" red="0" green="0" blue="0"/>
+        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
+        <FontColor alpha="255" red="0" green="0" blue="0"/>
+      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" id="" pictureWidth="48.4726" northMode="0" mapUuid="" positionOnPage="30,21.6192,mm" blendMode="0" position="30,21.6192,mm" zValue="2" positionLock="false" background="false" opacity="1" mode="0" northOffset="0" frameJoinStyle="miter" templateUuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" file="" anchorPoint="0" frame="false" referencePoint="0" svgFillColor="255,255,255,255" visibility="1" pictureHeight="48.77" itemRotation="0" excludeFromExports="0" pictureRotation="0" svgBorderWidth="0.2" groupUuid="" uuid="{0c2bbda5-cdf3-4cae-b8d5-b516e3cf9633}" svgBorderColor="0,0,0,255" type="65640" size="53.7966,48.77,mm" resizeMode="0">
         <FrameColor alpha="255" red="0" green="0" blue="0"/>
         <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
@@ -8262,24 +8644,6 @@ def my_form_open(dialog, layer, feature):
             </Option>
           </customproperties>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="22.0688,71.2341,mm" blendMode="0" labelText="[%CASE WHEN   @atlas_featureid &lt;90 THEN &quot;value_fr&quot;  END %]" position="22.0688,71.2341,mm" zValue="2" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{1a9071a7-1e9e-4ce3-9246-4d77427526d9}" valign="128" type="65641" size="69.6574,13.7659,mm">
-        <FrameColor alpha="255" red="0" green="0" blue="0"/>
-        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont style="" description="MS Shell Dlg 2,10,-1,5,50,0,0,0,0,0"/>
-        <FontColor alpha="255" red="0" green="0" blue="0"/>
       </LayoutItem>
       <customproperties>
         <Option type="Map">
@@ -8404,24 +8768,6 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="24.986,156.228,mm" blendMode="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" position="24.986,156.228,mm" zValue="2" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" valign="128" type="65641" size="247.028,53.7715,mm">
-        <FrameColor alpha="255" red="0" green="0" blue="0"/>
-        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
-        <FontColor alpha="255" red="0" green="0" blue="0"/>
-      </LayoutItem>
       <LayoutItem outlineWidthM="0.3,mm" id="" pictureWidth="130.768" northMode="0" mapUuid="" positionOnPage="148.5,160.814,mm" blendMode="0" position="148.5,160.814,mm" zValue="2" positionLock="false" background="false" opacity="1" mode="0" northOffset="0" frameJoinStyle="miter" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" file="101.svg" anchorPoint="7" frame="false" referencePoint="7" svgFillColor="255,255,255,255" visibility="1" pictureHeight="131.57" itemRotation="0" excludeFromExports="0" pictureRotation="0" svgBorderWidth="0.2" groupUuid="" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgBorderColor="0,0,0,255" type="65640" size="130.768,148.068,mm" resizeMode="0">
         <FrameColor alpha="255" red="0" green="0" blue="0"/>
         <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
@@ -8443,6 +8789,24 @@ def my_form_open(dialog, layer, feature):
             <Option/>
           </customproperties>
         </LayoutObject>
+      </LayoutItem>
+      <LayoutItem marginY="0" outlineWidthM="0.3,mm" id="" marginX="0" positionOnPage="24.986,156.228,mm" blendMode="0" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]" position="24.986,156.228,mm" zValue="2" positionLock="false" background="false" opacity="1" frameJoinStyle="miter" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" referencePoint="0" visibility="1" htmlState="0" itemRotation="0" excludeFromExports="0" halign="4" groupUuid="" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" valign="128" type="65641" size="247.028,53.7715,mm">
+        <FrameColor alpha="255" red="0" green="0" blue="0"/>
+        <BackgroundColor alpha="255" red="255" green="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
+        <FontColor alpha="255" red="0" green="0" blue="0"/>
       </LayoutItem>
       <customproperties>
         <Option type="Map">
