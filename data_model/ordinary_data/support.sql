@@ -16,7 +16,7 @@ CREATE TABLE siro_od.support
     date_last_stability_check date,
     fk_status int,
     comment text,
-    picture text,
+    photo text,
     geometry geometry(Point,:SRID) NOT NULL,
     _inserted timestamp default now(),
     _last_modified timestamp default now(),
