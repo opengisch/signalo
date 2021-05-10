@@ -16,6 +16,6 @@
    <path fill="#ffffff" fill-rule="nonzero" stroke="#211e1e" stroke-width="0.2835" stroke-linejoin="round" stroke-miterlimit="4" id="svg_8" d="m104.39262,10.72481c0,-5.38758 -4.40921,-9.75372 -9.84516,-9.75372l-83.63923,0c-5.43595,0 -9.84128,4.36613 -9.84128,9.75372l0,39.011c0,5.39526 4.40145,9.76523 9.84128,9.75372l83.64311,0c5.43595,0 9.84128,-4.36613 9.84128,-9.75372l0,-39.011"/>
    <path fill="#ee2b2e" fill-rule="nonzero" id="svg_7" d="m52.69491,3.2636l-42.58871,6.66632c-2.39833,0.36864 -4.15348,2.41155 -4.15348,4.81542l0,30.67811c0,2.40003 1.75516,4.44293 4.15348,4.81542l42.58871,6.66632l42.58484,-6.66632c2.39445,-0.37249 4.15348,-2.41539 4.15348,-4.81542l0,-30.67811c0,-2.40003 -1.75903,-4.44293 -4.14962,-4.81542l-42.58871,-6.66632"/>
   </g>
-  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="30" id="svg_12" y="40.34483" x="44.15709" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="30" id="svg_12" y="40.34483" x="44.15709" fill="#ffffff">param(text1)</text>
  </g>
 </svg>

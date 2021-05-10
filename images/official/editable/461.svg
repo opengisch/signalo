@@ -26,8 +26,8 @@
    <path fill="#1966ba" fill-rule="nonzero" id="svg_18" d="m121.86418,107.48241c-0.25665,-0.79999 -0.38886,-1.95897 -0.38886,-3.43796c0,-1.48289 0.13221,-2.63798 0.38886,-3.45356c0.25277,-0.81949 0.73108,-1.22923 1.39604,-1.22923c0.67662,0 1.15493,0.40975 1.4077,1.20972c0.25665,0.81949 0.39276,1.97458 0.39276,3.47307c0,1.47898 -0.13611,2.63797 -0.39276,3.43796c-0.27221,0.81558 -0.74663,1.22533 -1.4077,1.22533c-0.66497,0 -1.14327,-0.40975 -1.39604,-1.22533"/>
    <path fill="#ffffff" fill-rule="nonzero" id="svg_17" d="m26.43211,10.24807l9.53115,11.11774c0.50942,0.60486 -0.02722,1.51411 -0.81662,1.3268l-7.11239,-1.79117l0.81662,11.81625l-6.08967,0l0.81274,-11.81625l-7.08907,1.79117c-0.76607,0.18731 -1.34937,-0.72193 -0.81273,-1.3268l9.52726,-11.11774c0.30332,-0.37072 0.90607,-0.37072 1.23271,0"/>
   </g>
-  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_32" y="26.41177" x="47" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
-  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_33" y="60.29412" x="47" stroke-width="0" stroke="#000" fill="#ffffff">param(text2)</text>
-  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_34" y="85.47059" x="47" stroke-width="0" stroke="#000" fill="#ffffff">param(text3)</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_32" y="26.41177" x="47" fill="#ffffff">param(text1)</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_33" y="60.29412" x="47" fill="#ffffff">param(text2)</text>
+  <text xml:space="preserve" text-anchor="start" font-family="sans-serif" font-size="15" id="svg_34" y="85.47059" x="47" fill="#ffffff">param(text3)</text>
  </g>
 </svg>

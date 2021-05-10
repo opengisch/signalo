@@ -159,8 +159,6 @@
        id="svg_32"
        y="371.11121"
        x="366.12228"
-       stroke-width="0"
-       stroke="#000000"
        fill="#000000">param(text3)</text>
     <text
        font-weight="normal"
@@ -171,8 +169,6 @@
        id="svg_33"
        y="312.22223"
        x="365.01117"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text2)</text>
     <text
        font-weight="normal"
@@ -183,8 +179,6 @@
        id="svg_34"
        y="251.11102"
        x="363.90005"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text1)</text>
   </g>
 </svg>
