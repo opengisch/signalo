@@ -23,5 +23,8 @@ CREATE TABLE siro_vl.official_sign
   img_ro text,
   img_height int default 100,
   img_width int default 100,
-  no_dynamic_inscription int default 0
+  no_dynamic_inscription int default 0,
+  default_inscription1 text,
+  default_inscription2 text,
+  default_inscription3 text
 );
