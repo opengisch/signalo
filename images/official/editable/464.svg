@@ -22,9 +22,9 @@
    <path fill="#ffffff" fill-rule="nonzero" id="svg_14" d="m33.25811,90.5557l-17.90969,-1.26618c-0.29806,-0.02553 -0.56529,-0.1889 -0.70919,-0.44419c-0.14903,-0.25528 -0.16445,-0.56671 -0.03084,-0.83221l7.84738,-16.04681c0.16445,-0.33187 0.5139,-0.53098 0.88392,-0.49525c0.37001,0.03064 0.6835,0.28591 0.78114,0.63821l2.02994,7.05079l16.71229,-10.35921l3.35582,5.77439l-17.38037,9.20535l5.12881,5.27406c0.25695,0.26039 0.32376,0.65862 0.16445,0.99048c-0.15418,0.33696 -0.50364,0.53609 -0.87365,0.51056"/>
    <path fill="#ffffff" fill-rule="nonzero" id="svg_13" d="m199.72319,90.56591l17.90969,-1.26618c0.29808,-0.02553 0.56017,-0.1889 0.71433,-0.44418c0.1439,-0.25529 0.15932,-0.56673 0.02565,-0.83221l-7.84737,-16.04682c-0.16445,-0.33185 -0.5139,-0.53098 -0.88392,-0.49523c-0.37001,0.03064 -0.67837,0.2808 -0.78114,0.6382l-2.02994,7.05079l-16.71743,-10.35921l-3.35583,5.7744l17.39065,9.20535l-5.13394,5.26895c-0.25695,0.26548 -0.32376,0.66372 -0.16959,0.99558c0.15932,0.33698 0.50877,0.5412 0.87878,0.51056"/>
   </g>
-  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_24" y="30" x="50" stroke-width="0" stroke="#000" fill="#ffffff">param(text1)</text>
-  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_25" y="50" x="50" stroke-width="0" stroke="#000" fill="#ffffff">param(text2)</text>
-  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_26" y="30" x="164" stroke-width="0" stroke="#000" fill="#ffffff">param(text3)</text>
-  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_27" y="50" x="164" stroke-width="0" stroke="#000" fill="#ffffff">param(text4)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_24" y="30" x="50" fill="#ffffff">param(text1)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_25" y="50" x="50" fill="#ffffff">param(text2)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_26" y="30" x="164" fill="#ffffff">param(text3)</text>
+  <text xml:space="default" dominant-baseline="middle" text-anchor="middle" font-family="sans-serif" font-size="15" id="svg_27" y="50" x="164" fill="#ffffff">param(text4)</text>
  </g>
 </svg>
