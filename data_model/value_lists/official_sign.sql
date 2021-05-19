@@ -26,5 +26,6 @@ CREATE TABLE siro_vl.official_sign
   no_dynamic_inscription int default 0,
   default_inscription1 text,
   default_inscription2 text,
-  default_inscription3 text
+  default_inscription3 text,
+  default_inscription4 text
 );

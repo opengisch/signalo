@@ -136,8 +136,6 @@
        id="svg_22"
        y="157.77731"
        x="195"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text1)</text>
     <text
        xml:space="default"
@@ -148,8 +146,6 @@
        id="svg_23"
        y="221.11086"
        x="195"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text2)</text>
     <text
        xml:space="default"
@@ -159,8 +155,6 @@
        id="svg_24"
        y="305.55557"
        x="268.50006"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text3)</text>
     <text
        xml:space="default"
@@ -170,8 +164,6 @@
        id="svg_25"
        y="341.11124"
        x="269.61118"
-       stroke-width="0"
-       stroke="#000000"
        fill="#ffffff">param(text4)</text>
   </g>
 </svg>
