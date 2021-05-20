@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="3.19.0-Master" saveDateTime="2021-05-20T19:52:47" saveUser="denis" saveUserFull="Denis Rouzaud">
+<qgis projectname="" version="3.19.0-Master" saveDateTime="2021-05-20T20:10:57" saveUser="denis" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -8303,7 +8303,7 @@ def my_form_open(dialog, layer, feature):
       <SelectionColorRedPart type="int">255</SelectionColorRedPart>
     </Gui>
     <Layouts>
-      <lastLayoutExportDir type="QString">/Users/denis/Documents/signalisation_verticale/doc/dynamic-official-sign-fr.pdf</lastLayoutExportDir>
+      <lastLayoutExportDir type="QString">/Users/denis/Documents/signalisation_verticale/doc</lastLayoutExportDir>
     </Layouts>
     <Legend>
       <filterByMap type="bool">false</filterByMap>
@@ -8555,7 +8555,7 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem position="24.986,142.228,mm" id="" valign="128" itemRotation="0" excludeFromExports="0" htmlState="0" halign="4" blendMode="0" referencePoint="0" groupUuid="" marginX="0" zValue="2" size="247.028,53.7715,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" type="65641" outlineWidthM="0.3,mm" marginY="0" positionLock="false" background="false" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" opacity="1" positionOnPage="24.986,142.228,mm" frameJoinStyle="miter" labelText="[% &quot;id&quot;  || ' '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]">
+      <LayoutItem position="24.986,142.228,mm" id="" valign="128" itemRotation="0" excludeFromExports="0" htmlState="0" halign="4" blendMode="0" referencePoint="0" groupUuid="" marginX="0" zValue="2" size="247.028,53.7715,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" type="65641" outlineWidthM="0.3,mm" marginY="0" positionLock="false" background="false" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" frame="false" opacity="1" positionOnPage="24.986,142.228,mm" frameJoinStyle="miter" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]">
         <FrameColor green="0" alpha="255" red="0" blue="0"/>
         <BackgroundColor green="255" alpha="255" red="255" blue="255"/>
         <LayoutObject>
@@ -8573,7 +8573,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
         <FontColor green="0" alpha="255" red="0" blue="0"/>
       </LayoutItem>
-      <LayoutItem pictureWidth="130.768" position="148.5,150.814,mm" id="" mode="0" itemRotation="0" excludeFromExports="0" blendMode="0" anchorPoint="7" pictureHeight="131.57" svgBorderWidth="0.2" referencePoint="7" file="101.svg" groupUuid="" pictureRotation="0" northMode="0" zValue="2" size="130.768,148.068,mm" resizeMode="0" svgBorderColor="0,0,0,255" mapUuid="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" svgFillColor="255,255,255,255" type="65640" outlineWidthM="0.3,mm" positionLock="false" background="false" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" frame="false" opacity="1" positionOnPage="148.5,150.814,mm" frameJoinStyle="miter">
+      <LayoutItem pictureWidth="130.768" position="148.5,150.814,mm" id="" mode="0" itemRotation="0" excludeFromExports="0" blendMode="0" anchorPoint="7" pictureHeight="44.3541" svgBorderWidth="0.2" referencePoint="7" file="101.svg" groupUuid="" pictureRotation="0" northMode="0" zValue="2" size="130.768,148.068,mm" resizeMode="0" svgBorderColor="0,0,0,255" mapUuid="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" svgFillColor="255,255,255,255" type="65640" outlineWidthM="0.3,mm" positionLock="false" background="false" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" frame="false" opacity="1" positionOnPage="148.5,150.814,mm" frameJoinStyle="miter">
         <FrameColor green="0" alpha="255" red="0" blue="0"/>
         <BackgroundColor green="255" alpha="255" red="255" blue="255"/>
         <LayoutObject>
