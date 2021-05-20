@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" version="3.19.0-Master" saveDateTime="2021-05-20T20:10:57" saveUser="denis" saveUserFull="Denis Rouzaud">
+<qgis projectname="" version="3.19.0-Master" saveDateTime="2021-05-20T20:14:33" saveUser="denis" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -733,6 +733,7 @@
       <customproperties>
         <Option type="Map">
           <Option type="List" name="dualview/previewExpressions">
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
@@ -3810,8 +3811,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{&quot;photo&quot;: &quot;'DCIM/signal_'||now()||'.jpg'&quot;}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="&quot;id&quot;" name="dualview/previewExpressions"/>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -4416,35 +4417,35 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="official_sign_no_dynamic_inscription">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="official_sign_default_inscription1">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="official_sign_default_inscription2">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="official_sign_default_inscription3">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="official_sign_default_inscription4">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -4509,7 +4510,7 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default expression="" field="id" applyOnUpdate="0"/>
         <default expression="" field="fk_frame" applyOnUpdate="0"/>
-        <default expression=" with_variable( 'fk_fr', attribute($currentfeature, 'fk_frame'),&#xa;aggregate(&#xa;&#x9;layer:='sign_2499f9bd_24a2_4384_b329_dc522a94c545', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:= rank,&#xa;&#x9;filter:=fk_frame=@fk_fr&#xa;)+1)" field="rank" applyOnUpdate="0"/>
+        <default expression="coalesce( with_variable( 'fk_fr', attribute($currentfeature, 'fk_frame'),&#xa;aggregate(&#xa;&#x9;layer:='sign_2499f9bd_24a2_4384_b329_dc522a94c545', &#xa;&#x9;aggregate:='max', &#xa;&#x9;expression:= rank,&#xa;&#x9;filter:=fk_frame=@fk_fr&#xa;)+1),&#xa;1)" field="rank" applyOnUpdate="0"/>
         <default expression="" field="verso" applyOnUpdate="0"/>
         <default expression="" field="fk_sign_type" applyOnUpdate="0"/>
         <default expression="" field="fk_official_sign" applyOnUpdate="0"/>
@@ -4726,6 +4727,11 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="dimnension_2"/>
           <column type="field" hidden="0" width="-1" name="_inserted_user"/>
           <column type="field" hidden="0" width="-1" name="_last_modified_user"/>
+          <column type="field" hidden="0" width="-1" name="official_sign_no_dynamic_inscription"/>
+          <column type="field" hidden="0" width="-1" name="official_sign_default_inscription1"/>
+          <column type="field" hidden="0" width="-1" name="official_sign_default_inscription2"/>
+          <column type="field" hidden="0" width="-1" name="official_sign_default_inscription3"/>
+          <column type="field" hidden="0" width="-1" name="official_sign_default_inscription4"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4830,6 +4836,10 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="mirror_protruding"/>
         <field editable="1" name="mirror_red_frame"/>
         <field editable="0" name="official_sign_active"/>
+        <field editable="0" name="official_sign_default_inscription1"/>
+        <field editable="0" name="official_sign_default_inscription2"/>
+        <field editable="0" name="official_sign_default_inscription3"/>
+        <field editable="0" name="official_sign_default_inscription4"/>
         <field editable="0" name="official_sign_description_de"/>
         <field editable="0" name="official_sign_description_fr"/>
         <field editable="0" name="official_sign_description_it"/>
@@ -4840,6 +4850,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="0" name="official_sign_img_it"/>
         <field editable="0" name="official_sign_img_ro"/>
         <field editable="0" name="official_sign_img_width"/>
+        <field editable="0" name="official_sign_no_dynamic_inscription"/>
         <field editable="0" name="official_sign_value_de"/>
         <field editable="0" name="official_sign_value_fr"/>
         <field editable="0" name="official_sign_value_it"/>
@@ -4882,6 +4893,10 @@ def my_form_open(dialog, layer, feature):
         <field name="mirror_protruding" labelOnTop="0"/>
         <field name="mirror_red_frame" labelOnTop="0"/>
         <field name="official_sign_active" labelOnTop="0"/>
+        <field name="official_sign_default_inscription1" labelOnTop="0"/>
+        <field name="official_sign_default_inscription2" labelOnTop="0"/>
+        <field name="official_sign_default_inscription3" labelOnTop="0"/>
+        <field name="official_sign_default_inscription4" labelOnTop="0"/>
         <field name="official_sign_description_de" labelOnTop="0"/>
         <field name="official_sign_description_fr" labelOnTop="0"/>
         <field name="official_sign_description_it" labelOnTop="0"/>
@@ -4892,6 +4907,7 @@ def my_form_open(dialog, layer, feature):
         <field name="official_sign_img_it" labelOnTop="0"/>
         <field name="official_sign_img_ro" labelOnTop="0"/>
         <field name="official_sign_img_width" labelOnTop="0"/>
+        <field name="official_sign_no_dynamic_inscription" labelOnTop="0"/>
         <field name="official_sign_value_de" labelOnTop="0"/>
         <field name="official_sign_value_fr" labelOnTop="0"/>
         <field name="official_sign_value_it" labelOnTop="0"/>
@@ -4932,6 +4948,10 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="mirror_protruding"/>
         <field reuseLastValue="0" name="mirror_red_frame"/>
         <field reuseLastValue="0" name="official_sign_active"/>
+        <field reuseLastValue="0" name="official_sign_default_inscription1"/>
+        <field reuseLastValue="0" name="official_sign_default_inscription2"/>
+        <field reuseLastValue="0" name="official_sign_default_inscription3"/>
+        <field reuseLastValue="0" name="official_sign_default_inscription4"/>
         <field reuseLastValue="0" name="official_sign_description_de"/>
         <field reuseLastValue="0" name="official_sign_description_fr"/>
         <field reuseLastValue="0" name="official_sign_description_it"/>
@@ -4942,6 +4962,7 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="official_sign_img_it"/>
         <field reuseLastValue="0" name="official_sign_img_ro"/>
         <field reuseLastValue="0" name="official_sign_img_width"/>
+        <field reuseLastValue="0" name="official_sign_no_dynamic_inscription"/>
         <field reuseLastValue="0" name="official_sign_value_de"/>
         <field reuseLastValue="0" name="official_sign_value_fr"/>
         <field reuseLastValue="0" name="official_sign_value_it"/>
@@ -8573,7 +8594,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
         <FontColor green="0" alpha="255" red="0" blue="0"/>
       </LayoutItem>
-      <LayoutItem pictureWidth="130.768" position="148.5,150.814,mm" id="" mode="0" itemRotation="0" excludeFromExports="0" blendMode="0" anchorPoint="7" pictureHeight="44.3541" svgBorderWidth="0.2" referencePoint="7" file="101.svg" groupUuid="" pictureRotation="0" northMode="0" zValue="2" size="130.768,148.068,mm" resizeMode="0" svgBorderColor="0,0,0,255" mapUuid="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" svgFillColor="255,255,255,255" type="65640" outlineWidthM="0.3,mm" positionLock="false" background="false" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" frame="false" opacity="1" positionOnPage="148.5,150.814,mm" frameJoinStyle="miter">
+      <LayoutItem pictureWidth="130.768" position="148.5,150.814,mm" id="" mode="0" itemRotation="0" excludeFromExports="0" blendMode="0" anchorPoint="7" pictureHeight="25.4467" svgBorderWidth="0.2" referencePoint="7" file="101.svg" groupUuid="" pictureRotation="0" northMode="0" zValue="2" size="130.768,148.068,mm" resizeMode="0" svgBorderColor="0,0,0,255" mapUuid="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" svgFillColor="255,255,255,255" type="65640" outlineWidthM="0.3,mm" positionLock="false" background="false" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" frame="false" opacity="1" positionOnPage="148.5,150.814,mm" frameJoinStyle="miter">
         <FrameColor green="0" alpha="255" red="0" blue="0"/>
         <BackgroundColor green="255" alpha="255" red="255" blue="255"/>
         <LayoutObject>
