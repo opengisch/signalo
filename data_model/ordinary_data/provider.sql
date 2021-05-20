@@ -11,4 +11,6 @@ CREATE TABLE siro_od.provider
     _last_modified_user text
 );
 
-INSERT INTO siro_od.owner (name) VALUES ('signal');
+INSERT INTO siro_od.provider (name) VALUES ('L. Ellgass SA');
+INSERT INTO siro_od.provider (name) VALUES ('Signal SA');
+INSERT INTO siro_od.provider (name) VALUES ('BO-Plastiline SA');
