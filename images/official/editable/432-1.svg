@@ -10,11 +10,11 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg807"
-   sodipodi:docname="433.svg"
+   id="svg676"
+   sodipodi:docname="432-1.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata813">
+     id="metadata682">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs811" />
+     id="defs680" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,20 +38,21 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview809"
+     id="namedview678"
      showgrid="false"
-     inkscape:zoom="4.6068007"
-     inkscape:cx="95.257924"
-     inkscape:cy="45.427045"
-     inkscape:window-x="3832"
+     inkscape:zoom="6.515"
+     inkscape:cx="90.602223"
+     inkscape:cy="25.895696"
+     inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg807" />
+     inkscape:current-layer="svg676"
+     inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g797">
+     id="g666">
     <title
-       id="title791">background</title>
+       id="title660">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
@@ -75,39 +76,37 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect794" />
+         id="rect663" />
     </g>
   </g>
   <g
-     id="g805"
-     transform="matrix(0.52414982,0,0,0.52414982,-32.508541,-34.028356)">
-    <title
-       id="title799">Layer 1</title>
-    <g
-       stroke="null"
-       id="svg_65">
-      <path
-         fill="#211e1e"
-         fill-rule="nonzero"
-         id="svg_62"
-         d="M 63.51747,132.85521 H 279.31524 L 338.65648,99.80083 279.31524,66.71001 H 63.51747 v 66.1452" />
-      <path
-         fill="#ffffff"
-         fill-rule="nonzero"
-         id="svg_61"
-         d="M 67.56177,128.88109 H 278.24468 L 308.98586,99.79354 278.24468,70.67682 H 67.56177 v 58.20427" />
-    </g>
-    <text
-       xml:space="default"
-       dominant-baseline="middle"
-       text-anchor="middle"
-       font-family="sans-serif"
-       font-size="25px"
-       id="svg_12"
-       y="110"
-       x="180"
-       stroke-width="0"
-       stroke="#000000"
-       fill="#000000">param(text1)</text>
+     stroke="null"
+     id="svg_54"
+     transform="matrix(0.52395685,0,0,0.54343481,-32.431845,-35.783758)">
+    <path
+       stroke="#211e1e"
+       fill="#ffffff"
+       fill-rule="nonzero"
+       stroke-width="0.2835"
+       stroke-linejoin="round"
+       stroke-miterlimit="4"
+       id="svg_51"
+       d="m 62.6479,133.28999 h 216.13876 l 59.435,-33.27166 L 278.78666,66.71 H 62.6479 v 66.57999" />
+    <path
+       fill="#1966ba"
+       fill-rule="nonzero"
+       id="svg_50"
+       d="M 66.6986,129.28975 H 277.71443 L 308.50418,100.011 277.71443,70.70288 H 66.6986 v 58.58686" />
   </g>
+  <text
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="left"
+     font-family="sans-serif"
+     font-size="15.7187px"
+     id="svg_12"
+     y="22"
+     x="10"
+     fill="#ffffff"
+     style="stroke-width:0.523957">param(text1)</text>
 </svg>
