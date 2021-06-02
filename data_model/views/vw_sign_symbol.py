@@ -105,7 +105,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         UNION 
             SELECT jt.*, osrs._final_rank, osrs._symbol_shift, NULL::uuid AS previous_sign_in_frame, NULL::uuid AS next_sign_in_frame, NULL::uuid AS previous_frame, NULL::uuid AS next_frame
             FROM joined_tables jt
-            LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank = osrs.sign_rank 
+            -- the sign on verso, has rank+1
+            LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank-1 = osrs.sign_rank 
             WHERE jt.verso IS TRUE   
         ;
         
