@@ -5,6 +5,7 @@ CREATE TABLE siro_od.sign
     fk_frame uuid not null,
     rank int default 1 not null,
     verso boolean not null default false,
+    complex boolean not null default false,
     fk_sign_type int NOT NULL,
     fk_official_sign text,
     fk_marker_type int,

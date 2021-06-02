@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveDateTime="2021-06-02T08:51:01" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.19.0-Master">
+<qgis projectname="" saveDateTime="2021-06-02T09:11:09" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.19.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -168,10 +168,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537903.45638838782906532</xmin>
-      <ymin>1152420.73372628958895802</ymin>
-      <xmax>2538116.21803655382245779</xmax>
-      <ymax>1152571.54179108282551169</ymax>
+      <xmin>2537861.46838558278977871</xmin>
+      <ymin>1152398.58982118126004934</ymin>
+      <xmax>2538124.88006727676838636</xmax>
+      <ymax>1152585.29925073636695743</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -3836,8 +3836,8 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/photo_naming" value="{&quot;photo&quot;: &quot;'DCIM/signal_'||now()||'.jpg'&quot;}" type="QString"/>
           <Option name="dualview/previewExpressions" value="&quot;id&quot;" type="QString"/>
           <Option name="embeddedWidgets/count" value="0" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -3906,9 +3906,13 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="complex">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -4489,7 +4493,7 @@ def my_form_open(dialog, layer, feature):
         <alias field="fk_frame" name="cadre" index="1"/>
         <alias field="rank" name="ordre" index="2"/>
         <alias field="verso" name="" index="3"/>
-        <alias field="complex" name="" index="4"/>
+        <alias field="complex" name="complexe" index="4"/>
         <alias field="fk_sign_type" name="type de signal" index="5"/>
         <alias field="fk_official_sign" name="signal officiel" index="6"/>
         <alias field="fk_marker_type" name="type de balise" index="7"/>
@@ -4768,6 +4772,7 @@ def my_form_open(dialog, layer, feature):
           <column name="official_sign_default_inscription2" hidden="0" width="-1" type="field"/>
           <column name="official_sign_default_inscription3" hidden="0" width="-1" type="field"/>
           <column name="official_sign_default_inscription4" hidden="0" width="-1" type="field"/>
+          <column name="complex" hidden="0" width="-1" type="field"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -4803,6 +4808,7 @@ def my_form_open(dialog, layer, feature):
           <attributeEditorField name="id" index="0" showLabel="1"/>
           <attributeEditorField name="fk_frame" index="1" showLabel="1"/>
           <attributeEditorField name="fk_provider" index="11" showLabel="1"/>
+          <attributeEditorField name="complex" index="4" showLabel="1"/>
           <attributeEditorField name="verso" index="3" showLabel="1"/>
           <attributeEditorField name="rank" index="2" showLabel="1"/>
           <attributeEditorField name="fk_owner" index="10" showLabel="1"/>
@@ -4846,6 +4852,7 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="case_decision"/>
         <field editable="1" name="case_id"/>
         <field editable="1" name="comment"/>
+        <field editable="1" name="complex"/>
         <field editable="1" name="destination"/>
         <field editable="1" name="dimnension_1"/>
         <field editable="1" name="dimnension_2"/>
@@ -4903,6 +4910,7 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="case_decision"/>
         <field labelOnTop="0" name="case_id"/>
         <field labelOnTop="0" name="comment"/>
+        <field labelOnTop="0" name="complex"/>
         <field labelOnTop="0" name="destination"/>
         <field labelOnTop="0" name="dimnension_1"/>
         <field labelOnTop="0" name="dimnension_2"/>
@@ -4960,6 +4968,7 @@ def my_form_open(dialog, layer, feature):
         <field name="case_decision" reuseLastValue="0"/>
         <field name="case_id" reuseLastValue="0"/>
         <field name="comment" reuseLastValue="0"/>
+        <field name="complex" reuseLastValue="0"/>
         <field name="dimnension_1" reuseLastValue="0"/>
         <field name="dimnension_2" reuseLastValue="0"/>
         <field name="fk_coating" reuseLastValue="0"/>
@@ -6651,14 +6660,14 @@ def my_form_open(dialog, layer, feature):
             <layer pass="0" class="SvgMarker" enabled="1" locked="0">
               <Option type="Map">
                 <Option name="angle" value="0" type="QString"/>
-                <Option name="color" value="225,89,137,255" type="QString"/>
+                <Option name="color" value="0,0,0,255" type="QString"/>
                 <Option name="fixedAspectRatio" value="0" type="QString"/>
                 <Option name="horizontal_anchor_point" value="1" type="QString"/>
-                <Option name="name" value="opt/QGIS/images/svg/accommodation/accommodation_hotel.svg" type="QString"/>
+                <Option name="name" value="gpsicons/question.svg" type="QString"/>
                 <Option name="offset" value="0,0" type="QString"/>
                 <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="offset_unit" value="Point" type="QString"/>
-                <Option name="outline_color" value="35,35,35,255" type="QString"/>
+                <Option name="outline_color" value="255,255,255,255" type="QString"/>
                 <Option name="outline_width" value="0" type="QString"/>
                 <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="outline_width_unit" value="Pixel" type="QString"/>
@@ -6686,14 +6695,14 @@ def my_form_open(dialog, layer, feature):
                 <Option name="vertical_anchor_point" value="1" type="QString"/>
               </Option>
               <prop v="0" k="angle"/>
-              <prop v="225,89,137,255" k="color"/>
+              <prop v="0,0,0,255" k="color"/>
               <prop v="0" k="fixedAspectRatio"/>
               <prop v="1" k="horizontal_anchor_point"/>
-              <prop v="opt/QGIS/images/svg/accommodation/accommodation_hotel.svg" k="name"/>
+              <prop v="gpsicons/question.svg" k="name"/>
               <prop v="0,0" k="offset"/>
               <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
               <prop v="Point" k="offset_unit"/>
-              <prop v="35,35,35,255" k="outline_color"/>
+              <prop v="255,255,255,255" k="outline_color"/>
               <prop v="0" k="outline_width"/>
               <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
               <prop v="Pixel" k="outline_width_unit"/>
@@ -8708,7 +8717,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="1152571.54179108282551169" xmin="2537872.78528872271999717" ymin="1152420.73372628958895802" xmax="2538146.88913621893152595">
+    <DefaultViewExtent ymax="1152585.29925073636695743" xmin="2537846.62414489826187491" ymin="1152398.58982118126004934" xmax="2538139.72430796129629016">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>

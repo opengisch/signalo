@@ -39,36 +39,42 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , official_sign.value_it as _symbol_value_it
                 , official_sign.value_ro as _symbol_value_ro
                 , CASE 
+                  WHEN complex IS TRUE THEN 'no-image.svg'
                   WHEN fk_sign_type = 11 THEN official_sign.img_de 
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_de
                 , CASE 
+                  WHEN complex IS TRUE THEN 'no-image.svg'
                   WHEN fk_sign_type = 11 THEN official_sign.img_fr
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_fr
                 , CASE 
+                  WHEN complex IS TRUE THEN 'no-image.svg'
                   WHEN fk_sign_type = 11 THEN official_sign.img_it
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_it
                 , CASE 
+                  WHEN complex IS TRUE THEN 'no-image.svg'
                   WHEN fk_sign_type = 11 THEN official_sign.img_ro
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_ro
                 , CASE 
+                  WHEN complex IS TRUE THEN 106
                   WHEN fk_sign_type = 11 THEN official_sign.img_height
                   WHEN fk_sign_type = 12 THEN 130
                   WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 100
                 END as _symbol_height
                 , CASE 
+                  WHEN complex IS TRUE THEN 121
                   WHEN fk_sign_type = 11 THEN official_sign.img_width
                   WHEN fk_sign_type = 12 THEN 70
                   WHEN fk_sign_type = 13 THEN 100
