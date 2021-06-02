@@ -1,6 +1,6 @@
 
 
-## Environment setup
+## Docker Environment setup
 
 ### Initial setup
 
@@ -43,3 +43,9 @@ After any upstream change in the QGIS project file, you need to redownload the p
 ### Automatic start
 
 To start SIRO virtual environement automatically with Docker, use: `docker update --restart always siro`
+
+
+## Setup on an existing DB server
+
+Run bash script to init the data model: `data_model/setup.sh -p _PG_SERVICE_`
+
