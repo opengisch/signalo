@@ -7,7 +7,7 @@ INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('1193f576-089a-11eb-
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('1e183f64-0930-11eb-b1e2-0242ac110002', 'be315096-092e-11eb-b1e2-0242ac110002', 185);
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('38870144-092d-11eb-b1e2-0242ac110002', '2aa9d090-092a-11eb-8ade-0242ac110002', 45);
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('3891ceb8-092c-11eb-b1e2-0242ac110002', '2aa9d090-092a-11eb-8ade-0242ac110002', 180);
-INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('7be11b92-092c-11eb-b1e2-0242ac110002', '2aa9d090-092a-11eb-8ade-0242ac110002', 90);
+INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('7be11b92-092c-11eb-b1e2-0242ac110002', '2aa9d090-092a-11eb-8ade-0242ac110002', 270);
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('82ab5086-092d-11eb-b1e2-0242ac110002', '154d0f28-092a-11eb-8ade-0242ac110002', 225);
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('83fb8a3a-0899-11eb-8b8b-0242ac110002', '814da66a-0894-11eb-99f5-0242ac110002', 20);
 INSERT INTO siro_od.azimut (id, fk_support, azimut) VALUES ('cda084de-092e-11eb-b1e2-0242ac110002', 'be315096-092e-11eb-b1e2-0242ac110002', 140);
