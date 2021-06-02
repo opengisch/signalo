@@ -15,7 +15,7 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
     for IMAGE in ${IMAGES}; do
       if [[ ! -f ${DIR}/${IMAGE} ]]; then
         FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${_LANGUAGE} = '${IMAGE}'")
-        echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official/editable"
+        echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official/${_IMG_DIR}"
         return_code=1
       fi
     done
