@@ -5,7 +5,8 @@ set -e
 
 return_code=0
 
-for _IMG_DIR in (editable original); do
+_IMG_DIRS=(editable original)
+for _IMG_DIR in "${_IMG_DIRS[@]}"; do
   DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../images/official/${_IMG_DIR}
 
   _LANGUAGES=(de fr it ro)
