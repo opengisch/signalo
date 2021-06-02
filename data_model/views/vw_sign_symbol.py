@@ -117,6 +117,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ;
         
         ALTER VIEW siro_od.vw_sign_symbol ALTER verso SET DEFAULT false;
+        ALTER VIEW siro_od.vw_sign_symbol ALTER complex SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='siro_od', table_name='sign',
