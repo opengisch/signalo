@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveUser="denis" version="3.19.0-Master" saveUserFull="Denis Rouzaud" saveDateTime="2021-06-04T14:56:18">
+<qgis projectname="" saveUser="denis" version="3.19.0-Master" saveUserFull="Denis Rouzaud" saveDateTime="2021-06-07T15:49:45">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -146,8 +146,8 @@
   </layer-tree-group>
   <snapping-settings type="1" enabled="1" maxScale="0" scaleDependencyMode="0" mode="2" minScale="0" self-snapping="0" unit="1" tolerance="12" intersection-snapping="0">
     <individual-layer-settings>
-      <layer-setting type="1" enabled="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" units="1" maxScale="0" minScale="0" tolerance="12"/>
       <layer-setting type="1" enabled="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" units="1" maxScale="0" minScale="0" tolerance="12"/>
+      <layer-setting type="1" enabled="0" id="support_347aa750_1661_498f_a7e8_017adc616ba0" units="1" maxScale="0" minScale="0" tolerance="12"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -407,7 +407,7 @@
         <description></description>
         <projectionacronym></projectionacronym>
         <ellipsoidacronym></ellipsoidacronym>
-        <geographicflag>true</geographicflag>
+        <geographicflag>false</geographicflag>
       </spatialrefsys>
     </srs>
     <resourceMetadata>
@@ -430,7 +430,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </crs>
       <extent/>
@@ -492,7 +492,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -596,7 +596,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -664,7 +664,7 @@
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -696,7 +696,7 @@
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -733,6 +733,7 @@
       <customproperties>
         <Option type="Map">
           <Option type="List" name="dualview/previewExpressions">
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
@@ -998,7 +999,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1021,7 +1022,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1200,7 +1201,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1223,7 +1224,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -1369,7 +1370,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1401,7 +1402,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -1826,7 +1827,7 @@ def my_form_open(dialog, layer, feature):
           <editor_configuration type="Map">
             <Option type="QString" name="buttons" value="AllButtons"/>
             <Option type="QString" name="description" value="CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_value_fr&#xa;  WHEN fk_sign_type = 12 THEN 'balise'&#xa;  WHEN fk_sign_type = 13 THEN 'mirroir' &#xa;  WHEN fk_sign_type = 14 THEN 'plaque de rue'&#xa;  ELSE '?'&#xa;END"/>
-            <Option type="QString" name="image_path" value="replace(regexp_replace(file_path(@project_path), '^(\\w):', 'file:///\\1'),'\\', '/') ||'/../images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END"/>
+            <Option type="QString" name="image_path" value="replace(regexp_replace(file_path(@project_path), '^(\\w):', 'file:///\\1'),'\\', '/') ||'/images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END"/>
             <Option type="QString" name="ordering_field" value="rank"/>
           </editor_configuration>
         </attributeEditorRelation>
@@ -1920,7 +1921,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1943,7 +1944,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2089,7 +2090,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2112,7 +2113,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2258,7 +2259,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2281,7 +2282,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2434,7 +2435,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2466,7 +2467,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -2683,7 +2684,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2706,7 +2707,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2863,7 +2864,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -2886,7 +2887,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3228,7 +3229,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3260,7 +3261,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -3486,7 +3487,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3518,7 +3519,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -3742,7 +3743,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3774,7 +3775,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -5018,7 +5019,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5041,7 +5042,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5208,7 +5209,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -5231,7 +5232,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -6158,7 +6159,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -6181,7 +6182,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -6316,7 +6317,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>false</geographicflag>
+          <geographicflag>true</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -6348,7 +6349,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>false</geographicflag>
+            <geographicflag>true</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -6713,7 +6714,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="name">
                       <Option type="bool" name="active" value="true"/>
-                      <Option type="QString" name="expression" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN '../images/official/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN '../images/official/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN '../images/official/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN '../images/official/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END"/>
+                      <Option type="QString" name="expression" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END"/>
                       <Option type="int" name="type" value="3"/>
                     </Option>
                     <Option type="Map" name="offset">
@@ -8612,24 +8613,6 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" itemRotation="0" valign="128" id="" referencePoint="0" frame="false" halign="4" opacity="1" visibility="1" positionOnPage="24.986,142.228,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" excludeFromExports="0" outlineWidthM="0.3,mm" position="24.986,142.228,mm" marginY="0" groupUuid="" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" htmlState="0" positionLock="false" type="65641" marginX="0" size="247.028,53.7715,mm" zValue="2" background="false" frameJoinStyle="miter" blendMode="0">
-        <FrameColor red="0" green="0" alpha="255" blue="0"/>
-        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" name="name" value=""/>
-              <Option name="properties"/>
-              <Option type="QString" name="type" value="collection"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor red="0" green="0" alpha="255" blue="0"/>
-      </LayoutItem>
       <LayoutItem templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" itemRotation="0" svgFillColor="255,255,255,255" id="" referencePoint="7" frame="false" anchorPoint="7" mode="0" svgBorderColor="0,0,0,255" opacity="1" visibility="1" northMode="0" positionOnPage="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgBorderWidth="0.2" northOffset="0" excludeFromExports="0" mapUuid="" pictureHeight="131.57" outlineWidthM="0.3,mm" position="148.5,150.814,mm" groupUuid="" resizeMode="0" file="101.svg" pictureWidth="130.768" positionLock="false" type="65640" pictureRotation="0" size="130.768,148.068,mm" zValue="2" background="false" frameJoinStyle="miter" blendMode="0">
         <FrameColor red="0" green="0" alpha="255" blue="0"/>
         <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
@@ -8640,7 +8623,7 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map" name="properties">
                 <Option type="Map" name="dataDefinedSource">
                   <Option type="bool" name="active" value="true"/>
-                  <Option type="QString" name="expression" value="file_path(@project_path) ||'/../images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')"/>
+                  <Option type="QString" name="expression" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')"/>
                   <Option type="int" name="type" value="3"/>
                 </Option>
               </Option>
@@ -8675,6 +8658,24 @@ def my_form_open(dialog, layer, feature):
           </customproperties>
         </LayoutObject>
       </LayoutItem>
+      <LayoutItem templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" itemRotation="0" valign="128" id="" referencePoint="0" frame="false" halign="4" opacity="1" visibility="1" positionOnPage="24.986,142.228,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" excludeFromExports="0" outlineWidthM="0.3,mm" position="24.986,142.228,mm" marginY="0" groupUuid="" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" htmlState="0" positionLock="false" type="65641" marginX="0" size="247.028,53.7715,mm" zValue="2" background="false" frameJoinStyle="miter" blendMode="0">
+        <FrameColor red="0" green="0" alpha="255" blue="0"/>
+        <BackgroundColor red="255" green="255" alpha="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" name="name" value=""/>
+              <Option name="properties"/>
+              <Option type="QString" name="type" value="collection"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
+        <FontColor red="0" green="0" alpha="255" blue="0"/>
+      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option type="QString" name="atlasRasterFormat" value="png"/>
@@ -8697,7 +8698,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537861.46838558278977871" ymax="1152586.69035370112396777" xmax="2538124.88006727676838636" ymin="1152397.198718216503039">
+    <DefaultViewExtent xmin="2537861.46838558278977871" ymax="1152608.45775284082628787" xmax="2538124.88006727676838636" ymin="1152375.4313190768007189">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>

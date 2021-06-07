@@ -7,7 +7,7 @@ return_code=0
 
 _IMG_DIRS=(editable original)
 for _IMG_DIR in "${_IMG_DIRS[@]}"; do
-  DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../images/official/${_IMG_DIR}
+  DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )/../project/images/official/${_IMG_DIR}
 
   _LANGUAGES=(de fr it ro)
   for _LANGUAGE in "${_LANGUAGES[@]}"; do
@@ -15,7 +15,7 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
     for IMAGE in ${IMAGES}; do
       if [[ ! -f ${DIR}/${IMAGE} ]]; then
         FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${_LANGUAGE} = '${IMAGE}'")
-        echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./images/official/${_IMG_DIR}"
+        echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./project/images/official/${_IMG_DIR}"
         return_code=1
       fi
     done
