@@ -10,6 +10,7 @@ CREATE TABLE siro_od.azimut
     _inserted_user text,
     _last_modified_date timestamp default now(),
     _last_modified_user text,
+    _edited boolean default false,
     CONSTRAINT fkey_od_support FOREIGN KEY (fk_support) REFERENCES siro_od.support (id) MATCH FULL DEFERRABLE INITIALLY DEFERRED,
     UNIQUE (fk_support, azimut) DEFERRABLE INITIALLY DEFERRED
 );

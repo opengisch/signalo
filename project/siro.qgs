@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="denis" saveDateTime="2021-06-15T21:01:28" projectname="" saveUserFull="Denis Rouzaud" version="3.19.0-Master">
+<qgis saveUser="denis" saveDateTime="2021-06-15T23:08:27" projectname="" saveUserFull="Denis Rouzaud" version="3.19.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -8423,7 +8423,7 @@ def my_form_open(dialog, layer, feature):
       <SelectionColorRedPart type="int">255</SelectionColorRedPart>
     </Gui>
     <Layouts>
-      <lastLayoutExportDir type="QString">/Users/denis/Documents/signalisation_verticale/doc</lastLayoutExportDir>
+      <lastLayoutExportDir type="QString">/Users/denis/Documents/signalisation_verticale/doc/official-sign-fr.pdf</lastLayoutExportDir>
     </Layouts>
     <Legend>
       <filterByMap type="bool">false</filterByMap>
@@ -8693,7 +8693,7 @@ def my_form_open(dialog, layer, feature):
         <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
         <FontColor blue="0" green="0" alpha="255" red="0"/>
       </LayoutItem>
-      <LayoutItem positionOnPage="148.5,150.814,mm" background="false" opacity="1" frame="false" size="130.768,148.068,mm" mapUuid="" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" blendMode="0" svgFillColor="255,255,255,255" mode="0" visibility="1" zValue="2" outlineWidthM="0.3,mm" id="" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" pictureHeight="131.57" svgBorderColor="0,0,0,255" type="65640" frameJoinStyle="miter" itemRotation="0" file="101.svg" excludeFromExports="0" position="148.5,150.814,mm" anchorPoint="7" referencePoint="7" resizeMode="0" pictureRotation="0" pictureWidth="130.768" northOffset="0" groupUuid="" positionLock="false" northMode="0" svgBorderWidth="0.2">
+      <LayoutItem positionOnPage="148.5,150.814,mm" background="false" opacity="1" frame="false" size="130.768,148.068,mm" mapUuid="" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" blendMode="0" svgFillColor="255,255,255,255" mode="0" visibility="1" zValue="2" outlineWidthM="0.3,mm" id="" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" pictureHeight="25.4467" svgBorderColor="0,0,0,255" type="65640" frameJoinStyle="miter" itemRotation="0" file="101.svg" excludeFromExports="0" position="148.5,150.814,mm" anchorPoint="7" referencePoint="7" resizeMode="0" pictureRotation="0" pictureWidth="130.768" northOffset="0" groupUuid="" positionLock="false" northMode="0" svgBorderWidth="0.2">
         <FrameColor blue="0" green="0" alpha="255" red="0"/>
         <BackgroundColor blue="255" green="255" alpha="255" red="255"/>
         <LayoutObject>
@@ -8754,7 +8754,7 @@ def my_form_open(dialog, layer, feature):
           <Option name="pdfTextFormat" value="0" type="int"/>
         </Option>
       </customproperties>
-      <Atlas enabled="1" filenamePattern="'output_'||@atlas_featurenumber" coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" sortKey="id" sortAscending="1" pageNameExpression="&quot;id&quot;" coverageLayerProvider="postgres" featureFilter="default_inscription1 is not null" coverageLayerName="Signal officiel" sortFeatures="1" hideCoverage="0" filterFeatures="1" coverageLayerSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;"/>
+      <Atlas enabled="1" filenamePattern="'output_'||@atlas_featurenumber" coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" sortKey="id" sortAscending="1" pageNameExpression="&quot;id&quot;" coverageLayerProvider="postgres" coverageLayerName="Signal officiel" sortFeatures="1" hideCoverage="0" filterFeatures="0" coverageLayerSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;"/>
     </Layout>
   </Layouts>
   <Bookmarks/>

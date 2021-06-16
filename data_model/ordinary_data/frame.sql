@@ -20,6 +20,7 @@ CREATE TABLE siro_od.frame
     _inserted_user text,
     _last_modified_date timestamp default now(),
     _last_modified_user text,
+    _edited boolean default false,
     CONSTRAINT fkey_od_azimut FOREIGN KEY (fk_azimut) REFERENCES siro_od.azimut (id) MATCH FULL  DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fkey_vl_frame_type FOREIGN KEY (fk_frame_type) REFERENCES siro_vl.frame_type (id) MATCH FULL,
     CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,

@@ -36,6 +36,7 @@ CREATE TABLE siro_od.sign
     _inserted_user text,
     _last_modified_date timestamp default now(),
     _last_modified_user text,
+    _edited boolean default false,
     CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES siro_od.frame (id) MATCH FULL  DEFERRABLE INITIALLY DEFERRED,
     CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_sign_type) REFERENCES siro_vl.sign_type (id) MATCH FULL,
     CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES siro_vl.official_sign (id) MATCH FULL,
