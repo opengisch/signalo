@@ -4,6 +4,7 @@
 CREATE TABLE siro_od.provider
 (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v1(),
+    active boolean default true,
     name text,
     _inserted_date timestamp default now(),
     _inserted_user text,
