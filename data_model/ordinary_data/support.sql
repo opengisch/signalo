@@ -10,6 +10,7 @@ CREATE TABLE siro_od.support
     fk_owner uuid,
     fk_provider uuid,
     fk_support_base_type int,
+    road_segment text,
     height numeric(8,3),
     height_free_under_signal numeric(8,3),
     date_install date,
