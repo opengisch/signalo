@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveDateTime="2021-06-30T07:53:44" version="3.21.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud">
+<qgis projectname="" saveDateTime="2021-06-30T08:15:29" version="3.21.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -1479,8 +1479,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option value="0" name="embeddedWidgets/count" type="QString"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -1888,6 +1888,7 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField name="picture" showLabel="1" index="9"/>
         <attributeEditorRelation name="frame-sign" relation="frame-sign" showLabel="1" label="Signal" relationWidgetTypeId="ordered_relation_editor" forceSuppressFormPopup="0" nmRelationId="">
           <editor_configuration type="Map">
+            <Option value="AllButtons" name="buttons" type="QString"/>
             <Option value="CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_value_fr&#xa;  WHEN fk_sign_type = 12 THEN 'balise'&#xa;  WHEN fk_sign_type = 13 THEN 'mirroir' &#xa;  WHEN fk_sign_type = 14 THEN 'plaque de rue'&#xa;  ELSE '?'&#xa;END" name="description" type="QString"/>
             <Option value="replace(regexp_replace(file_path(@project_path), '^(\\w:)', 'file:///\\1'),'\\', '/') ||'/images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END" name="image_path" type="QString"/>
             <Option value="rank" name="ordering_field" type="QString"/>
@@ -5503,6 +5504,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip></mapTip>
     </maplayer>
     <maplayer autoRefreshTime="0" readOnly="0" minScale="100000000" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyAlgorithm="0" simplifyDrawingTol="1" type="vector" geometry="Point" simplifyDrawingHints="0" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0" labelsEnabled="0" refreshOnNotifyMessage="" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" wkbType="Point">
+      <extent>
+        <xmin>2537421.2851525298319757</xmin>
+        <ymin>1152455.01010818989016116</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771988786757</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.62307361719568366</xmin>
+        <ymin>46.5204608573317131</ymin>
+        <xmax>6.63652284548484062</xmax>
+        <ymax>46.52393046604051818</ymax>
+      </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
       <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."support" (geometry)</datasource>
       <keywordList>
@@ -5659,8 +5672,8 @@ def my_form_open(dialog, layer, feature):
           <Option value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;photo&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" name="QFieldSync/photo_naming" type="QString"/>
           <Option value="&quot;id&quot;" name="dualview/previewExpressions" type="QString"/>
           <Option value="0" name="embeddedWidgets/count" type="QString"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -6718,7 +6731,19 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>"value_en"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer autoRefreshTime="0" readOnly="1" minScale="100000000" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyAlgorithm="0" simplifyDrawingTol="1" type="vector" geometry="Point" simplifyDrawingHints="0" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0" labelsEnabled="1" refreshOnNotifyMessage="" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" wkbType="Point">
+    <maplayer autoRefreshTime="0" readOnly="1" minScale="100000000" styleCategories="AllStyleCategories" simplifyLocal="1" simplifyAlgorithm="0" simplifyDrawingTol="1" type="vector" geometry="Point" simplifyDrawingHints="0" autoRefreshEnabled="0" refreshOnNotifyEnabled="0" maxScale="0" labelsEnabled="0" refreshOnNotifyMessage="" simplifyMaxScale="1" hasScaleBasedVisibilityFlag="0" wkbType="Point">
+      <extent>
+        <xmin>2537421.2851525298319757</xmin>
+        <ymin>1152455.01010818989016116</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771988786757</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.62307361719568366</xmin>
+        <ymin>46.5204608573317131</ymin>
+        <xmax>6.63652284548484062</xmax>
+        <ymax>46.52393046604051818</ymax>
+      </wgs84extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
       <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
@@ -8874,7 +8899,25 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem blendMode="0" zValue="2" svgBorderColor="0,0,0,255" positionLock="false" itemRotation="0" svgBorderWidth="0.2" mode="0" referencePoint="7" id="" northMode="0" background="false" excludeFromExports="0" pictureRotation="0" positionOnPage="148.5,150.814,mm" pictureHeight="25.4467" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" type="65640" resizeMode="0" outlineWidthM="0.3,mm" svgFillColor="255,255,255,255" file="101.svg" pictureWidth="130.768" anchorPoint="7" frame="false" size="130.768,148.068,mm" frameJoinStyle="miter" opacity="1" northOffset="0" visibility="1" groupUuid="" mapUuid="" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
+      <LayoutItem blendMode="0" zValue="2" valign="128" positionLock="false" itemRotation="0" referencePoint="0" id="" marginY="0" background="false" excludeFromExports="0" positionOnPage="24.986,142.228,mm" halign="4" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" type="65641" marginX="0" htmlState="0" outlineWidthM="0.3,mm" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" frame="false" size="247.028,53.7715,mm" frameJoinStyle="miter" opacity="1" visibility="1" groupUuid="" position="24.986,142.228,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}">
+        <FrameColor red="0" alpha="255" green="0" blue="0"/>
+        <BackgroundColor red="255" alpha="255" green="255" blue="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" name="name" type="QString"/>
+              <Option name="properties"/>
+              <Option value="collection" name="type" type="QString"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
+        <FontColor red="0" alpha="255" green="0" blue="0"/>
+      </LayoutItem>
+      <LayoutItem blendMode="0" zValue="2" svgBorderColor="0,0,0,255" positionLock="false" itemRotation="0" svgBorderWidth="0.2" mode="0" referencePoint="7" id="" northMode="0" background="false" excludeFromExports="0" pictureRotation="0" positionOnPage="148.5,150.814,mm" pictureHeight="131.57" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" type="65640" resizeMode="0" outlineWidthM="0.3,mm" svgFillColor="255,255,255,255" file="101.svg" pictureWidth="130.768" anchorPoint="7" frame="false" size="130.768,148.068,mm" frameJoinStyle="miter" opacity="1" northOffset="0" visibility="1" groupUuid="" mapUuid="" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
         <FrameColor red="0" alpha="255" green="0" blue="0"/>
         <BackgroundColor red="255" alpha="255" green="255" blue="255"/>
         <LayoutObject>
@@ -8919,24 +8962,6 @@ def my_form_open(dialog, layer, feature):
           </customproperties>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem blendMode="0" zValue="2" valign="128" positionLock="false" itemRotation="0" referencePoint="0" id="" marginY="0" background="false" excludeFromExports="0" positionOnPage="24.986,142.228,mm" halign="4" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" type="65641" marginX="0" htmlState="0" outlineWidthM="0.3,mm" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" frame="false" size="247.028,53.7715,mm" frameJoinStyle="miter" opacity="1" visibility="1" groupUuid="" position="24.986,142.228,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}">
-        <FrameColor red="0" alpha="255" green="0" blue="0"/>
-        <BackgroundColor red="255" alpha="255" green="255" blue="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" name="name" type="QString"/>
-              <Option name="properties"/>
-              <Option value="collection" name="type" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor red="0" alpha="255" green="0" blue="0"/>
-      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option value="png" name="atlasRasterFormat" type="QString"/>
@@ -8959,7 +8984,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152394.08177668950520456" ymax="1152574.81936346995644271" xmax="2538233.4496675287373364" xmin="2537824.30112626822665334">
+    <DefaultViewExtent ymin="1152169.96716908318921924" ymax="1152798.93397107627242804" xmax="2538156.36866757273674011" xmin="2537901.38212622422724962">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
