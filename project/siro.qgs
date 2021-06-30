@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="" saveDateTime="2021-06-30T07:20:11" version="3.21.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud">
+<qgis projectname="" saveDateTime="2021-06-30T07:53:44" version="3.21.0-Master" saveUser="denis" saveUserFull="Denis Rouzaud">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -1479,8 +1479,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option value="0" name="embeddedWidgets/count" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -1888,9 +1888,8 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField name="picture" showLabel="1" index="9"/>
         <attributeEditorRelation name="frame-sign" relation="frame-sign" showLabel="1" label="Signal" relationWidgetTypeId="ordered_relation_editor" forceSuppressFormPopup="0" nmRelationId="">
           <editor_configuration type="Map">
-            <Option value="AllButtons" name="buttons" type="QString"/>
             <Option value="CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_value_fr&#xa;  WHEN fk_sign_type = 12 THEN 'balise'&#xa;  WHEN fk_sign_type = 13 THEN 'mirroir' &#xa;  WHEN fk_sign_type = 14 THEN 'plaque de rue'&#xa;  ELSE '?'&#xa;END" name="description" type="QString"/>
-            <Option value="replace(regexp_replace(file_path(@project_path), '^(\\w):', 'file:///\\1'),'\\', '/') ||'/images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END" name="image_path" type="QString"/>
+            <Option value="replace(regexp_replace(file_path(@project_path), '^(\\w:)', 'file:///\\1'),'\\', '/') ||'/images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END" name="image_path" type="QString"/>
             <Option value="rank" name="ordering_field" type="QString"/>
           </editor_configuration>
         </attributeEditorRelation>
@@ -1963,7 +1962,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="frame-sign">
           <config type="Map">
             <Option value="false" name="force-suppress-popup" type="bool"/>
-            <Option value="" name="nm-rel" type="QString"/>
+            <Option name="nm-rel" type="invalid"/>
           </config>
         </widget>
       </widgets>
@@ -8875,7 +8874,7 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem blendMode="0" zValue="2" svgBorderColor="0,0,0,255" positionLock="false" itemRotation="0" svgBorderWidth="0.2" mode="0" referencePoint="7" id="" northMode="0" background="false" excludeFromExports="0" pictureRotation="0" positionOnPage="148.5,150.814,mm" pictureHeight="131.57" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" type="65640" resizeMode="0" outlineWidthM="0.3,mm" svgFillColor="255,255,255,255" file="101.svg" pictureWidth="130.768" anchorPoint="7" frame="false" size="130.768,148.068,mm" frameJoinStyle="miter" opacity="1" northOffset="0" visibility="1" groupUuid="" mapUuid="" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
+      <LayoutItem blendMode="0" zValue="2" svgBorderColor="0,0,0,255" positionLock="false" itemRotation="0" svgBorderWidth="0.2" mode="0" referencePoint="7" id="" northMode="0" background="false" excludeFromExports="0" pictureRotation="0" positionOnPage="148.5,150.814,mm" pictureHeight="25.4467" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" type="65640" resizeMode="0" outlineWidthM="0.3,mm" svgFillColor="255,255,255,255" file="101.svg" pictureWidth="130.768" anchorPoint="7" frame="false" size="130.768,148.068,mm" frameJoinStyle="miter" opacity="1" northOffset="0" visibility="1" groupUuid="" mapUuid="" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
         <FrameColor red="0" alpha="255" green="0" blue="0"/>
         <BackgroundColor red="255" alpha="255" green="255" blue="255"/>
         <LayoutObject>
