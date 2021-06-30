@@ -5787,7 +5787,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="adress" configurationFlags="None">
+        <field name="address" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -6059,7 +6059,7 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias name="" field="id" index="0"/>
-        <alias name="Adresse" field="adress" index="1"/>
+        <alias name="Adresse" field="address" index="1"/>
         <alias name="Type support" field="fk_support_type" index="2"/>
         <alias name="Propriétaire" field="fk_owner" index="3"/>
         <alias name="Fournisseur" field="fk_provider" index="4"/>
@@ -6082,7 +6082,7 @@ def my_form_open(dialog, layer, feature):
       </aliases>
       <defaults>
         <default field="id" applyOnUpdate="0" expression="substr(uuid(),2,36)"/>
-        <default field="adress" applyOnUpdate="0" expression="NULL"/>
+        <default field="address" applyOnUpdate="0" expression="NULL"/>
         <default field="fk_support_type" applyOnUpdate="0" expression="1"/>
         <default field="fk_owner" applyOnUpdate="0" expression="NULL"/>
         <default field="fk_provider" applyOnUpdate="0" expression=""/>
@@ -6105,7 +6105,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" exp_strength="0" constraints="3" notnull_strength="1"/>
-        <constraint unique_strength="0" field="adress" exp_strength="0" constraints="0" notnull_strength="0"/>
+        <constraint unique_strength="0" field="address" exp_strength="0" constraints="0" notnull_strength="0"/>
         <constraint unique_strength="0" field="fk_support_type" exp_strength="0" constraints="0" notnull_strength="0"/>
         <constraint unique_strength="0" field="fk_owner" exp_strength="0" constraints="0" notnull_strength="0"/>
         <constraint unique_strength="0" field="fk_provider" exp_strength="0" constraints="0" notnull_strength="0"/>
@@ -6128,7 +6128,7 @@ def my_form_open(dialog, layer, feature):
       </constraints>
       <constraintExpressions>
         <constraint exp="" field="id" desc=""/>
-        <constraint exp="" field="adress" desc=""/>
+        <constraint exp="" field="address" desc=""/>
         <constraint exp="" field="fk_support_type" desc=""/>
         <constraint exp="" field="fk_owner" desc=""/>
         <constraint exp="" field="fk_provider" desc=""/>
@@ -6159,7 +6159,7 @@ def my_form_open(dialog, layer, feature):
       <attributetableconfig sortExpression="&quot;_edited&quot;" sortOrder="0" actionWidgetStyle="dropDown">
         <columns>
           <column name="id" hidden="0" width="550" type="field"/>
-          <column name="adress" hidden="0" width="-1" type="field"/>
+          <column name="address" hidden="0" width="-1" type="field"/>
           <column name="fk_support_type" hidden="0" width="-1" type="field"/>
           <column name="fk_owner" hidden="0" width="-1" type="field"/>
           <column name="fk_support_base_type" hidden="0" width="-1" type="field"/>
@@ -6212,7 +6212,7 @@ def my_form_open(dialog, layer, feature):
       <editorlayout>tablayout</editorlayout>
       <attributeEditorForm>
         <attributeEditorContainer name="Général" showLabel="1" groupBox="0" visibilityExpression="" columnCount="2" visibilityExpressionEnabled="0">
-          <attributeEditorField name="adress" showLabel="1" index="1"/>
+          <attributeEditorField name="address" showLabel="1" index="1"/>
           <attributeEditorField name="fk_support_type" showLabel="1" index="2"/>
           <attributeEditorField name="fk_owner" showLabel="1" index="3"/>
           <attributeEditorField name="fk_provider" showLabel="1" index="4"/>
@@ -6240,7 +6240,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" editable="1"/>
         <field name="_last_modified_date" editable="0"/>
         <field name="_last_modified_user" editable="1"/>
-        <field name="adress" editable="1"/>
+        <field name="address" editable="1"/>
         <field name="azimut_azimut" editable="0"/>
         <field name="azimut_id" editable="0"/>
         <field name="comment" editable="1"/>
@@ -6266,7 +6266,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modified_date" labelOnTop="0"/>
         <field name="_last_modified_user" labelOnTop="0"/>
-        <field name="adress" labelOnTop="0"/>
+        <field name="address" labelOnTop="0"/>
         <field name="azimut_azimut" labelOnTop="0"/>
         <field name="azimut_id" labelOnTop="0"/>
         <field name="comment" labelOnTop="0"/>
@@ -6292,7 +6292,7 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="_inserted_user"/>
         <field reuseLastValue="0" name="_last_modified_date"/>
         <field reuseLastValue="0" name="_last_modified_user"/>
-        <field reuseLastValue="0" name="adress"/>
+        <field reuseLastValue="0" name="address"/>
         <field reuseLastValue="0" name="comment"/>
         <field reuseLastValue="0" name="date_install"/>
         <field reuseLastValue="0" name="date_last_stability_check"/>
