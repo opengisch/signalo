@@ -22,7 +22,7 @@ SRID=2056
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
 if [[ -z ${PGSERVICE} ]]; then
-  PGSERVICE=pg_siro
+  PGSERVICE=pg_signalo
 fi
 
 
@@ -58,9 +58,9 @@ done
 
 
 if [[ $force == True ]]; then
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_od CASCADE";
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_vl CASCADE";
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS siro_sys CASCADE";
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_od CASCADE";
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_vl CASCADE";
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_sys CASCADE";
 fi
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/schema.sql
 
@@ -99,4 +99,4 @@ fi
 ${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}
 
 VERSION=$(cat ${DIR}/../CURRENT_VERSION.txt)
-pum baseline -p ${PGSERVICE} -t siro_sys.pum_info -d ${DIR}/delta/ -b ${VERSION}
+pum baseline -p ${PGSERVICE} -t signalo_sys.pum_info -d ${DIR}/delta/ -b ${VERSION}

@@ -19,7 +19,7 @@ class TestViews(unittest.TestCase, DbTestBase):
 
     @classmethod
     def setUpClass(cls):
-        pg_service = os.environ.get('PGSERVICE') or 'siro'
+        pg_service = os.environ.get('PGSERVICE') or 'signalo'
         cls.conn = psycopg2.connect("service={service}".format(service=pg_service))
 
     def test_reorder_signs_in_rank(self):

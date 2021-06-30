@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE siro_od.owner
+CREATE TABLE signalo_od.owner
 (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v1(),
     active boolean default true,
@@ -12,7 +12,7 @@ CREATE TABLE siro_od.owner
     _last_modified_user text
 );
 
-INSERT INTO siro_od.owner (name) VALUES ('Commune');
-INSERT INTO siro_od.owner (name) VALUES ('Canton');
-INSERT INTO siro_od.owner (name) VALUES ('Confédération');
-INSERT INTO siro_od.owner (name) VALUES ('Privé');
+INSERT INTO signalo_od.owner (name) VALUES ('Commune');
+INSERT INTO signalo_od.owner (name) VALUES ('Canton');
+INSERT INTO signalo_od.owner (name) VALUES ('Confédération');
+INSERT INTO signalo_od.owner (name) VALUES ('Privé');

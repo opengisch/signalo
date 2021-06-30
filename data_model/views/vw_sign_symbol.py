@@ -24,7 +24,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     cursor = conn.cursor()
 
     view_sql = """
-        CREATE OR REPLACE VIEW siro_od.vw_sign_symbol AS
+        CREATE OR REPLACE VIEW signalo_od.vw_sign_symbol AS
         
         WITH joined_tables AS (      
             SELECT
@@ -80,11 +80,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                   WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 130
                 END as _symbol_width
-            FROM siro_od.sign
-                LEFT JOIN siro_od.frame ON frame.id = sign.fk_frame
-                LEFT JOIN siro_od.azimut ON azimut.id = frame.fk_azimut
-                LEFT JOIN siro_od.support ON support.id = azimut.fk_support
-                LEFT JOIN siro_vl.official_sign ON official_sign.id = sign.fk_official_sign
+            FROM signalo_od.sign
+                LEFT JOIN signalo_od.frame ON frame.id = sign.fk_frame
+                LEFT JOIN signalo_od.azimut ON azimut.id = frame.fk_azimut
+                LEFT JOIN signalo_od.support ON support.id = azimut.fk_support
+                LEFT JOIN signalo_vl.official_sign ON official_sign.id = sign.fk_official_sign
         ),
         ordered_recto_signs AS (
             SELECT
@@ -116,26 +116,26 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             WHERE jt.verso IS TRUE   
         ;
         
-        ALTER VIEW siro_od.vw_sign_symbol ALTER verso SET DEFAULT false;
-        ALTER VIEW siro_od.vw_sign_symbol ALTER complex SET DEFAULT false;
+        ALTER VIEW signalo_od.vw_sign_symbol ALTER verso SET DEFAULT false;
+        ALTER VIEW signalo_od.vw_sign_symbol ALTER complex SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
-            pg_cur=cursor, table_schema='siro_od', table_name='sign',
+            pg_cur=cursor, table_schema='signalo_od', table_name='sign',
             remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame']
         ),
         frame_columns=select_columns(
-            pg_cur=cursor, table_schema='siro_od', table_name='frame',
+            pg_cur=cursor, table_schema='signalo_od', table_name='frame',
             remove_pkey=False, indent=4,
             prefix='frame_'
         ),
         vl_official_sign_columns=select_columns(
-            pg_cur=cursor, table_schema='siro_vl', table_name='official_sign',
+            pg_cur=cursor, table_schema='signalo_vl', table_name='official_sign',
             remove_pkey=False, indent=4, prefix='vl_official_sign_'
         ),
     )
 
     trigger_insert_sql = """
-    CREATE OR REPLACE FUNCTION siro_od.ft_vw_sign_symbol_INSERT()
+    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_sign_symbol_INSERT()
       RETURNS trigger AS
     $BODY$
     BEGIN
@@ -149,23 +149,23 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       RETURN NEW;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
-    DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON siro_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON signalo_od.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON siro_od.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_sign_symbol_INSERT();
+    CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON signalo_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_INSERT();
     """.format(
         insert_frame=insert_command(
-            pg_cur=cursor, table_schema='siro_od', table_name='frame', remove_pkey=True, indent=4,
+            pg_cur=cursor, table_schema='signalo_od', table_name='frame', remove_pkey=True, indent=4,
             skip_columns=[], returning='id INTO NEW.frame_id', prefix='frame_'
         ),
         insert_sign=insert_command(
-            pg_cur=cursor, table_schema='siro_od', table_name='sign', remove_pkey=True, indent=4,
+            pg_cur=cursor, table_schema='signalo_od', table_name='sign', remove_pkey=True, indent=4,
             skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
         )
     )
     
     trigger_update_sql = """
-    CREATE OR REPLACE FUNCTION siro_od.ft_vw_siro_sign_symbol_UPDATE()
+    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_signalo_sign_symbol_UPDATE()
       RETURNS trigger AS
     $BODY$
     DECLARE
@@ -177,40 +177,40 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     $BODY$
     LANGUAGE plpgsql;
 
-    DROP TRIGGER IF EXISTS ft_vw_siro_sign_symbol_UPDATE ON siro_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS ft_vw_signalo_sign_symbol_UPDATE ON signalo_od.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON siro_od.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_siro_sign_symbol_UPDATE();
+    CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON signalo_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_signalo_sign_symbol_UPDATE();
     """.format(
         update_sign=update_command(
-            pg_cur=cursor, table_schema='siro_od', table_name='sign',
+            pg_cur=cursor, table_schema='signalo_od', table_name='sign',
             indent=4, skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
         ),
         update_frame=update_command(
-            pg_cur=cursor, table_schema='siro_od', table_name='frame', prefix='frame_',
+            pg_cur=cursor, table_schema='signalo_od', table_name='frame', prefix='frame_',
             indent=4, skip_columns=[], remap_columns={}
         )
     )
     
     trigger_delete_sql = """
-    CREATE OR REPLACE FUNCTION siro_od.ft_vw_sign_symbol_DELETE()
+    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_sign_symbol_DELETE()
       RETURNS trigger AS
     $BODY$
     DECLARE
       _sign_count integer;
     BEGIN
-      DELETE FROM siro_od.sign WHERE id = OLD.id;
-      SELECT count(id) INTO _sign_count FROM siro_od.sign WHERE fk_frame = OLD.frame_id;
+      DELETE FROM signalo_od.sign WHERE id = OLD.id;
+      SELECT count(id) INTO _sign_count FROM signalo_od.sign WHERE fk_frame = OLD.frame_id;
       IF _sign_count = 0 THEN
-        DELETE FROM siro_od.frame WHERE id = OLD.frame_id;
+        DELETE FROM signalo_od.frame WHERE id = OLD.frame_id;
       END IF;   
     RETURN OLD;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
-    DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON siro_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON signalo_od.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON siro_od.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE siro_od.ft_vw_sign_symbol_DELETE();
+    CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON signalo_od.vw_sign_symbol
+      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_DELETE();
     """
 
     for sql in (view_sql, trigger_insert_sql, trigger_update_sql, trigger_delete_sql):

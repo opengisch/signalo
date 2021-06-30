@@ -3,9 +3,9 @@
 -- https://fr.wikipedia.org/wiki/Repr%C3%A9sentation_de_la_signalisation_routi%C3%A8re_en_Suisse_et_au_Liechtenstein
 --https://www.astra.admin.ch/astra/fr/home/documentation/regles-de-la-circulation/signaux.html
 
--- to create inserts statment: pg_dump --data-only -t siro_vl.official_sign --column-inserts | gsort | gsed '/^INSERT/!d' > data_model/value_lists/offical_sign_content.sql
+-- to create inserts statment: pg_dump --data-only -t signalo_vl.official_sign --column-inserts | gsort | gsed '/^INSERT/!d' > data_model/value_lists/offical_sign_content.sql
 
-CREATE TABLE siro_vl.official_sign
+CREATE TABLE signalo_vl.official_sign
 (
   id text primary key,
   active boolean default true,

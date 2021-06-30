@@ -3,7 +3,7 @@ module.exports = {
     host: 'localhost',
     user: 'postgres',
     password: 'postgres',
-    database: 'siro',
+    database: 'signalo',
     charset: 'utf8',
   },
 
@@ -17,14 +17,14 @@ module.exports = {
   },
 
   schemas: [
-    { name: 'siro_od' },
-    { name: 'siro_vl' },
-    { name: 'siro_sys' },
+    { name: 'signalo_od' },
+    { name: 'signalo_vl' },
+    { name: 'signalo_sys' },
   ],
 
   ignores: [
-    { identifierPattern: 'siro_vl\\.status', rulePattern: 'name-inflection' },
-    { identifierPattern: 'siro_sys\\.pum*', rulePattern: 'prefer-text-to-varchar' },
-    { identifierPattern: 'siro_sys\\.pum*', rulePattern: 'prefer-identity-to-serial' },
+    { identifierPattern: 'signalo_vl\\.status', rulePattern: 'name-inflection' },
+    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-text-to-varchar' },
+    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-identity-to-serial' },
   ]
 };

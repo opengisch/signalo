@@ -3,6 +3,6 @@ CREATE EXTENSION IF NOT EXISTS hstore;
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 
-CREATE SCHEMA siro_od;
-CREATE SCHEMA siro_vl;
-CREATE SCHEMA siro_sys;
+CREATE SCHEMA signalo_od;
+CREATE SCHEMA signalo_vl;
+CREATE SCHEMA signalo_sys;

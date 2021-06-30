@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-DB_BASE_NAME=siro
+DB_BASE_NAME=signalo
 
 set -e
 

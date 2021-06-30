@@ -1,8 +1,8 @@
--- Table: siro_od.support
+-- Table: signalo_od.support
 
--- DROP TABLE siro_od.support;
+-- DROP TABLE signalo_od.support;
 
-CREATE TABLE siro_od.support
+CREATE TABLE signalo_od.support
 (
     id uuid PRIMARY KEY default uuid_generate_v1(),
     address text,
@@ -24,9 +24,9 @@ CREATE TABLE siro_od.support
     _last_modified_date timestamp default now(),
     _last_modified_user text,
     _edited boolean default false,
-    CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES siro_vl.support_type (id) MATCH FULL,
-    CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES siro_od.owner (id) MATCH FULL,
-    CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES siro_od.provider (id) MATCH FULL,
-    CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES siro_vl.status (id) MATCH FULL,
-    CONSTRAINT fkey_vl_support_base_type FOREIGN KEY (fk_support_base_type) REFERENCES siro_vl.support_base_type (id) MATCH FULL
+    CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES signalo_vl.support_type (id) MATCH FULL,
+    CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES signalo_od.owner (id) MATCH FULL,
+    CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_od.provider (id) MATCH FULL,
+    CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES signalo_vl.status (id) MATCH FULL,
+    CONSTRAINT fkey_vl_support_base_type FOREIGN KEY (fk_support_base_type) REFERENCES signalo_vl.support_base_type (id) MATCH FULL
 );

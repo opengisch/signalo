@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE siro_od.provider
+CREATE TABLE signalo_od.provider
 (
     id uuid PRIMARY KEY DEFAULT uuid_generate_v1(),
     active boolean default true,
@@ -12,6 +12,6 @@ CREATE TABLE siro_od.provider
     _last_modified_user text
 );
 
-INSERT INTO siro_od.provider (name) VALUES ('L. Ellgass SA');
-INSERT INTO siro_od.provider (name) VALUES ('Signal SA');
-INSERT INTO siro_od.provider (name) VALUES ('BO-Plastiline SA');
+INSERT INTO signalo_od.provider (name) VALUES ('L. Ellgass SA');
+INSERT INTO signalo_od.provider (name) VALUES ('Signal SA');
+INSERT INTO signalo_od.provider (name) VALUES ('BO-Plastiline SA');

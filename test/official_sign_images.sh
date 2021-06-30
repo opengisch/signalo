@@ -11,10 +11,10 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
 
   _LANGUAGES=(de fr it ro)
   for _LANGUAGE in "${_LANGUAGES[@]}"; do
-    IMAGES=$(psql -t -c "SELECT img_${_LANGUAGE} FROM siro_vl.official_sign")
+    IMAGES=$(psql -t -c "SELECT img_${_LANGUAGE} FROM signalo_vl.official_sign")
     for IMAGE in ${IMAGES}; do
       if [[ ! -f ${DIR}/${IMAGE} ]]; then
-        FID=$(psql -t -c "SELECT id FROM siro_vl.official_sign WHERE img_${_LANGUAGE} = '${IMAGE}'")
+        FID=$(psql -t -c "SELECT id FROM signalo_vl.official_sign WHERE img_${_LANGUAGE} = '${IMAGE}'")
         echo "*** Image ${IMAGE} (id:${FID}) does not exist in ./project/images/official/${_IMG_DIR}"
         return_code=1
       fi
@@ -22,9 +22,9 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
   done
 
   for IMAGE in ${DIR}/*.svg; do
-    COUNT=$(psql -t -c "SELECT COUNT(id) FROM siro_vl.official_sign WHERE img_de='${IMAGE}' OR  img_fr='${IMAGE}' OR  img_it='${IMAGE}' OR  img_ro='${IMAGE}'")
+    COUNT=$(psql -t -c "SELECT COUNT(id) FROM signalo_vl.official_sign WHERE img_de='${IMAGE}' OR  img_fr='${IMAGE}' OR  img_it='${IMAGE}' OR  img_ro='${IMAGE}'")
     if [[ ${COUNT} -ne "0" ]]; then
-      echo "*** Image ${IMAGE} is not used once in siro_vl.official_sign"
+      echo "*** Image ${IMAGE} is not used once in signalo_vl.official_sign"
       return_code=1
     fi
   done

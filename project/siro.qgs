@@ -26,28 +26,28 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Vue signal (symbologie)">
+      <layer-tree-layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Vue signal (symbologie)">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer id="support_347aa750_1661_498f_a7e8_017adc616ba0" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Support">
+    <layer-tree-layer id="support_347aa750_1661_498f_a7e8_017adc616ba0" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Support">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Azimut">
+    <layer-tree-layer id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Azimut">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Cadre">
+    <layer-tree-layer id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Cadre">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;sign&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Signal">
+    <layer-tree-layer id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;sign&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Signal">
       <customproperties>
         <Option/>
       </customproperties>
@@ -66,72 +66,72 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Fournisseur">
+      <layer-tree-layer id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Fournisseur">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Propriétaire">
+      <layer-tree-layer id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Propriétaire">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;mirror_shape&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Forme de miroir">
+      <layer-tree-layer id="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_vl&quot;.&quot;mirror_shape&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Forme de miroir">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;marker_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type de balise">
+      <layer-tree-layer id="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_vl&quot;.&quot;marker_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type de balise">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="coating_7ea56753_207f_4981_84ef_635958fc4808" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;coating&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Revêtement">
+      <layer-tree-layer id="coating_7ea56753_207f_4981_84ef_635958fc4808" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;coating&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Revêtement">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="durability_a4cef524_85b2_4913_84a1_926afcce6000" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;durability&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Durabilité">
+      <layer-tree-layer id="durability_a4cef524_85b2_4913_84a1_926afcce6000" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;durability&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Durabilité">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_fixing_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type fixation cadre">
+      <layer-tree-layer id="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_fixing_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type fixation cadre">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type cadre">
+      <layer-tree-layer id="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type cadre">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;lighting&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Eclairage">
+      <layer-tree-layer id="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;lighting&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Eclairage">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Signal officiel">
+      <layer-tree-layer id="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Signal officiel">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="sign_type_922b284e_5fef_4464_826e_755cf776cac5" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;sign_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type de signal">
+      <layer-tree-layer id="sign_type_922b284e_5fef_4464_826e_755cf776cac5" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;sign_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type de signal">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="État">
+      <layer-tree-layer id="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="État">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;support_base_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type base support">
+      <layer-tree-layer id="support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;support_base_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type base support">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf" providerKey="postgres" patch_size="-1,-1" source="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;support_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type support">
+      <layer-tree-layer id="support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;support_type&quot;" expanded="1" legend_split_behavior="0" checked="Qt::Checked" legend_exp="" name="Type support">
         <customproperties>
           <Option/>
         </customproperties>
@@ -654,7 +654,7 @@
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_od"."azimut"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."azimut"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -757,7 +757,7 @@
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="support_azimut" dataSource="service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" providerKey="postgres" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" layerName="Support" strength="Composition" name="support_azimut">
+        <relation id="support_azimut" dataSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" providerKey="postgres" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" layerName="Support" strength="Composition" name="support_azimut">
           <fieldRef referencingField="fk_support" referencedField="id"/>
         </relation>
       </referencedLayers>
@@ -781,7 +781,7 @@
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;support&quot; (geometry)" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="support_347aa750_1661_498f_a7e8_017adc616ba0" name="ReferencedLayerId"/>
                 <Option type="QString" value="Support" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -1005,7 +1005,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>coating_7ea56753_207f_4981_84ef_635958fc4808</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."coating"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."coating"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1211,7 +1211,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>durability_a4cef524_85b2_4913_84a1_926afcce6000</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."durability"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."durability"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1384,7 +1384,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_od"."frame"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."frame"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1489,7 +1489,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="azimut-cadre" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" providerKey="postgres" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" strength="Composition" name="azimut-cadre">
+        <relation id="azimut-cadre" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" providerKey="postgres" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" strength="Composition" name="azimut-cadre">
           <fieldRef referencingField="fk_azimut" referencedField="id"/>
         </relation>
       </referencedLayers>
@@ -1513,7 +1513,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="ReferencedLayerId"/>
                 <Option type="QString" value="Azimut" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -1550,7 +1550,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" name="Layer"/>
                 <Option type="QString" value="Type cadre" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -1571,7 +1571,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" name="Layer"/>
                 <Option type="QString" value="Type fixation cadre" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_fixing_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_fixing_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -1603,7 +1603,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" name="Layer"/>
                 <Option type="QString" value="État" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -1624,7 +1624,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -1972,7 +1972,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."frame_fixing_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."frame_fixing_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2145,7 +2145,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."frame_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."frame_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2318,7 +2318,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."lighting"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."lighting"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2498,7 +2498,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_vl"."marker_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_vl"."marker_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2750,7 +2750,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_vl"."mirror_shape"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_vl"."mirror_shape"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2934,7 +2934,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."official_sign"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."official_sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3302,7 +3302,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>owner_4e532508_fa34_406c_8846_8f8306ca74ee</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_od"."owner"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."owner"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3572,7 +3572,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="siro_od"."provider"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_od"."provider"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3842,7 +3842,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>sign_2499f9bd_24a2_4384_b329_dc522a94c545</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_od"."sign"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3944,10 +3944,10 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="frame-sign" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" strength="Composition" name="cadre-signal">
+        <relation id="frame-sign" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" strength="Composition" name="cadre-signal">
           <fieldRef referencingField="fk_frame" referencedField="id"/>
         </relation>
-        <relation id="sign-official-sign" dataSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" layerName="Signal officiel" strength="Association" name="Signe officiel">
+        <relation id="sign-official-sign" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" layerName="Signal officiel" strength="Association" name="Signe officiel">
           <fieldRef referencingField="fk_official_sign" referencedField="id"/>
         </relation>
       </referencedLayers>
@@ -3971,7 +3971,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;frame&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="ReferencedLayerId"/>
                 <Option type="QString" value="Cadre" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -4026,7 +4026,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="sign_type_922b284e_5fef_4464_826e_755cf776cac5" name="Layer"/>
                 <Option type="QString" value="Type de signal" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;sign_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;sign_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4047,7 +4047,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="ReferencedLayerId"/>
                 <Option type="QString" value="Signal officiel" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -4070,7 +4070,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" name="Layer"/>
                 <Option type="QString" value="Type de balise" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;marker_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_vl&quot;.&quot;marker_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4091,7 +4091,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" name="Layer"/>
                 <Option type="QString" value="Forme de mirroir" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_vl&quot;.&quot;mirror_shape&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_vl&quot;.&quot;mirror_shape&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4122,7 +4122,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="Propriétaire" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4143,7 +4143,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4164,7 +4164,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="durability_a4cef524_85b2_4913_84a1_926afcce6000" name="Layer"/>
                 <Option type="QString" value="Durabilité" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;durability&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;durability&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4185,7 +4185,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" name="Layer"/>
                 <Option type="QString" value="État" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4282,7 +4282,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="coating_7ea56753_207f_4981_84ef_635958fc4808" name="Layer"/>
                 <Option type="QString" value="Revêtement" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;coating&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;coating&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4303,7 +4303,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" name="Layer"/>
                 <Option type="QString" value="Eclairage" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;lighting&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;lighting&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5139,7 +5139,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>sign_type_922b284e_5fef_4464_826e_755cf776cac5</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."sign_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."sign_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5332,7 +5332,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>status_5f245030_6519_4c89_8eb9_987e8fac9a4d</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."status"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."status"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5517,7 +5517,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."support" (geometry)</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_od"."support" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5806,7 +5806,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf" name="Layer"/>
                 <Option type="QString" value="Type support" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;support_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;support_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5827,7 +5827,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="Propriétaire" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5848,7 +5848,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;siro_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5869,7 +5869,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c" name="Layer"/>
                 <Option type="QString" value="Type base support" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;support_base_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;support_base_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5946,7 +5946,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" name="Layer"/>
                 <Option type="QString" value="status" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -6324,7 +6324,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."support_base_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."support_base_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6497,7 +6497,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer type="vector" minScale="1e+08" refreshOnNotifyMessage="" maxScale="0" styleCategories="AllStyleCategories" autoRefreshEnabled="0" wkbType="NoGeometry" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0">
       <id>support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="siro_vl"."support_type"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_vl"."support_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6745,7 +6745,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
-      <datasource>service='pg_siro' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="siro_od"."vw_sign_symbol" (support_geometry)</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_od"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6910,7 +6910,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="height">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="@siro_img_size*&quot;_symbol_height&quot;/100" name="expression"/>
+                      <Option type="QString" value="@signalo_img_size*&quot;_symbol_height&quot;/100" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="name">
@@ -6920,7 +6920,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="offset">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="array(0,(&quot;_final_rank&quot;-1)*2 + @siro_img_size*(.5+coalesce( &quot;_symbol_shift&quot;,0)/100) )" name="expression"/>
+                      <Option type="QString" value="array(0,(&quot;_final_rank&quot;-1)*2 + @signalo_img_size*(.5+coalesce( &quot;_symbol_shift&quot;,0)/100) )" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                     <Option type="Map" name="vAnchor">
@@ -6930,7 +6930,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="width">
                       <Option type="bool" value="true" name="active"/>
-                      <Option type="QString" value="@siro_img_size*&quot;_symbol_width&quot;/100" name="expression"/>
+                      <Option type="QString" value="@signalo_img_size*&quot;_symbol_width&quot;/100" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
                   </Option>
@@ -7316,7 +7316,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="coating_7ea56753_207f_4981_84ef_635958fc4808" name="Layer"/>
                 <Option type="QString" value="coating" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;coating&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;coating&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7337,7 +7337,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="durability_a4cef524_85b2_4913_84a1_926afcce6000" name="Layer"/>
                 <Option type="QString" value="Durabilité" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;durability&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;durability&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7358,7 +7358,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" name="Layer"/>
                 <Option type="QString" value="lighting" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;lighting&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;lighting&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7390,7 +7390,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="ReferencedLayerId"/>
                 <Option type="QString" value="official_sign" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -7413,7 +7413,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="owner" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7451,7 +7451,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="sign_type_922b284e_5fef_4464_826e_755cf776cac5" name="Layer"/>
                 <Option type="QString" value="sign_type" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;sign_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;sign_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7472,7 +7472,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" name="Layer"/>
                 <Option type="QString" value="status" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7687,7 +7687,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="ReferencedLayerId"/>
                 <Option type="QString" value="Azimut" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -7710,7 +7710,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" name="Layer"/>
                 <Option type="QString" value="frame_fixing_type" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_fixing_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_fixing_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7731,7 +7731,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" name="Layer"/>
                 <Option type="QString" value="frame_type" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;frame_type&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;frame_type&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -7759,7 +7759,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" name="Layer"/>
                 <Option type="QString" value="status" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;status&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;status&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -8680,7 +8680,7 @@ def my_form_open(dialog, layer, feature):
       <DegreeFormat type="QString">MU</DegreeFormat>
     </PositionPrecision>
     <QFieldSync>
-      <exportDirectoryProject type="QString">/Users/denis/Documents/siro/QField</exportDirectoryProject>
+      <exportDirectoryProject type="QString">/Users/denis/Documents/signalo/QField</exportDirectoryProject>
     </QFieldSync>
     <RenderMapTile type="bool">false</RenderMapTile>
     <SpatialRefSys>
@@ -8688,7 +8688,7 @@ def my_form_open(dialog, layer, feature):
     </SpatialRefSys>
     <Variables>
       <variableNames type="QStringList">
-        <value>siro_img_size</value>
+        <value>signalo_img_size</value>
       </variableNames>
       <variableValues type="QStringList">
         <value>30</value>
@@ -8978,7 +8978,7 @@ def my_form_open(dialog, layer, feature):
           <Option type="int" value="0" name="pdfTextFormat"/>
         </Option>
       </customproperties>
-      <Atlas coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" sortKey="id" sortFeatures="1" sortAscending="1" coverageLayerName="Signal officiel" coverageLayerProvider="postgres" coverageLayerSource="service='pg_siro' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;siro_vl&quot;.&quot;official_sign&quot;" pageNameExpression="&quot;id&quot;" filterFeatures="0" enabled="1" hideCoverage="0" filenamePattern="'output_'||@atlas_featurenumber"/>
+      <Atlas coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" sortKey="id" sortFeatures="1" sortAscending="1" coverageLayerName="Signal officiel" coverageLayerProvider="postgres" coverageLayerSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" pageNameExpression="&quot;id&quot;" filterFeatures="0" enabled="1" hideCoverage="0" filenamePattern="'output_'||@atlas_featurenumber"/>
     </Layout>
   </Layouts>
   <Bookmarks/>

@@ -17,7 +17,7 @@ jobs:
         run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
 
       - name: "build dockerfile"
-        run: docker build -f .docker/Dockerfile --tag opengisch/siro:latest .
+        run: docker build -f .docker/Dockerfile --tag opengisch/signalo:latest .
 
       - name: "create archive"
         run: |
@@ -33,9 +33,9 @@ jobs:
       - name: "push to dockerhub"
         if: github.event_name != 'pull_request'
         run: |
-          docker push opengisch/siro:latest
-          docker tag opengisch/siro:latest opengisch/siro:${{ github.event.release.tag_name }}
-          docker push opengisch/siro:${{ github.event.release.tag_name }}
+          docker push opengisch/signalo:latest
+          docker tag opengisch/signalo:latest opengisch/signalo:${{ github.event.release.tag_name }}
+          docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
       - name: Upload Release Asset
         id: upload-release-asset
@@ -45,5 +45,5 @@ jobs:
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./project-release.zip
-          asset_name: siro-${{ github.event.release.tag_name }}.zip
+          asset_name: signalo-${{ github.event.release.tag_name }}.zip
           asset_content_type: application/zip

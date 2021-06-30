@@ -1,7 +1,7 @@
 
 
 
-CREATE TABLE siro_od.azimut
+CREATE TABLE signalo_od.azimut
 (
     id uuid PRIMARY KEY default uuid_generate_v1(),
     fk_support uuid not null,
@@ -11,6 +11,6 @@ CREATE TABLE siro_od.azimut
     _last_modified_date timestamp default now(),
     _last_modified_user text,
     _edited boolean default false,
-    CONSTRAINT fkey_od_support FOREIGN KEY (fk_support) REFERENCES siro_od.support (id) MATCH FULL DEFERRABLE INITIALLY DEFERRED,
+    CONSTRAINT fkey_od_support FOREIGN KEY (fk_support) REFERENCES signalo_od.support (id) MATCH FULL DEFERRABLE INITIALLY DEFERRED,
     UNIQUE (fk_support, azimut) DEFERRABLE INITIALLY DEFERRED
 );
