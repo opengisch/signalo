@@ -99,10 +99,10 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="25px"
+     font-size="13px"
      id="svg_12"
      y="22"
      x="36"
      fill="#ffffff"
-     style="stroke-width:0.523957">param(text1)</text>
+     >param(text1)</text>
 </svg>
