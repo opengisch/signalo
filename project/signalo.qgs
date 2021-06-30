@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-06-30T09:07:32" projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" version="3.21.0-Master">
+<qgis saveDateTime="2021-06-30T09:48:46" projectname="" saveUserFull="Denis Rouzaud" saveUser="denis" version="3.21.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -1479,8 +1479,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -3934,8 +3934,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="&quot;id&quot;"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -4043,7 +4043,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="true" name="AllowNULL"/>
                 <Option type="bool" value="false" name="ChainFilters"/>
                 <Option type="QString" value="active is true" name="FilterExpression"/>
-                <Option name="FilterFields"/>
+                <Option type="invalid" name="FilterFields"/>
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
@@ -5672,8 +5672,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="QString" value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;photo&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" name="QFieldSync/photo_naming"/>
           <Option type="QString" value="&quot;id&quot;" name="dualview/previewExpressions"/>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -5787,8 +5787,8 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="adress">
-          <editWidget type="TextEdit">
+        <field configurationFlags="None" name="address">
+          <editWidget type="">
             <config>
               <Option/>
             </config>
@@ -6056,7 +6056,7 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias field="id" index="0" name=""/>
-        <alias field="adress" index="1" name=""/>
+        <alias field="address" index="1" name=""/>
         <alias field="fk_support_type" index="2" name="Type support"/>
         <alias field="fk_owner" index="3" name="Propriétaire"/>
         <alias field="fk_provider" index="4" name="Fournisseur"/>
@@ -6079,7 +6079,7 @@ def my_form_open(dialog, layer, feature):
       </aliases>
       <defaults>
         <default field="id" expression="substr(uuid(),2,36)" applyOnUpdate="0"/>
-        <default field="adress" expression="" applyOnUpdate="0"/>
+        <default field="address" expression="" applyOnUpdate="0"/>
         <default field="fk_support_type" expression="1" applyOnUpdate="0"/>
         <default field="fk_owner" expression="NULL" applyOnUpdate="0"/>
         <default field="fk_provider" expression="" applyOnUpdate="0"/>
@@ -6102,7 +6102,7 @@ def my_form_open(dialog, layer, feature):
       </defaults>
       <constraints>
         <constraint field="id" constraints="3" exp_strength="0" unique_strength="1" notnull_strength="1"/>
-        <constraint field="adress" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
+        <constraint field="address" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
         <constraint field="fk_support_type" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
         <constraint field="fk_owner" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
         <constraint field="fk_provider" constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0"/>
@@ -6125,7 +6125,7 @@ def my_form_open(dialog, layer, feature):
       </constraints>
       <constraintExpressions>
         <constraint desc="" field="id" exp=""/>
-        <constraint desc="" field="adress" exp=""/>
+        <constraint desc="" field="address" exp=""/>
         <constraint desc="" field="fk_support_type" exp=""/>
         <constraint desc="" field="fk_owner" exp=""/>
         <constraint desc="" field="fk_provider" exp=""/>
@@ -6209,7 +6209,7 @@ def my_form_open(dialog, layer, feature):
       <editorlayout>tablayout</editorlayout>
       <attributeEditorForm>
         <attributeEditorContainer visibilityExpressionEnabled="0" groupBox="0" columnCount="2" visibilityExpression="" showLabel="1" name="Général">
-          <attributeEditorField showLabel="1" index="-1" name="address"/>
+          <attributeEditorField showLabel="1" index="1" name="address"/>
           <attributeEditorField showLabel="1" index="2" name="fk_support_type"/>
           <attributeEditorField showLabel="1" index="3" name="fk_owner"/>
           <attributeEditorField showLabel="1" index="4" name="fk_provider"/>
@@ -8899,6 +8899,24 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem size="247.028,53.7715,mm" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" positionLock="false" outlineWidthM="0.3,mm" halign="4" frameJoinStyle="miter" valign="128" id="" type="65641" position="24.986,142.228,mm" excludeFromExports="0" htmlState="0" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" itemRotation="0" background="false" marginY="0" opacity="1" frame="false" positionOnPage="24.986,142.228,mm" zValue="2" visibility="1" marginX="0" blendMode="0" groupUuid="" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" referencePoint="0">
+        <FrameColor blue="0" alpha="255" red="0" green="0"/>
+        <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" value="" name="name"/>
+              <Option name="properties"/>
+              <Option type="QString" value="collection" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
+        <FontColor blue="0" alpha="255" red="0" green="0"/>
+      </LayoutItem>
       <LayoutItem size="130.768,148.068,mm" pictureWidth="130.768" positionLock="false" outlineWidthM="0.3,mm" frameJoinStyle="miter" svgBorderColor="0,0,0,255" northMode="0" id="" type="65640" mapUuid="" position="148.5,150.814,mm" mode="0" excludeFromExports="0" resizeMode="0" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgFillColor="255,255,255,255" itemRotation="0" northOffset="0" background="false" opacity="1" pictureHeight="131.57" frame="false" positionOnPage="148.5,150.814,mm" svgBorderWidth="0.2" pictureRotation="0" zValue="2" visibility="1" anchorPoint="7" blendMode="0" file="101.svg" groupUuid="" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" referencePoint="7">
         <FrameColor blue="0" alpha="255" red="0" green="0"/>
         <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
@@ -8943,24 +8961,6 @@ def my_form_open(dialog, layer, feature):
             </Option>
           </customproperties>
         </LayoutObject>
-      </LayoutItem>
-      <LayoutItem size="247.028,53.7715,mm" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" positionLock="false" outlineWidthM="0.3,mm" halign="4" frameJoinStyle="miter" valign="128" id="" type="65641" position="24.986,142.228,mm" excludeFromExports="0" htmlState="0" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" itemRotation="0" background="false" marginY="0" opacity="1" frame="false" positionOnPage="24.986,142.228,mm" zValue="2" visibility="1" marginX="0" blendMode="0" groupUuid="" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" referencePoint="0">
-        <FrameColor blue="0" alpha="255" red="0" green="0"/>
-        <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" value="" name="name"/>
-              <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor blue="0" alpha="255" red="0" green="0"/>
       </LayoutItem>
       <customproperties>
         <Option type="Map">
