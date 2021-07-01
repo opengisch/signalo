@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-06-30T17:00:19" saveUserFull="Denis Rouzaud" projectname="" saveUser="denis" version="3.21.0-Master">
+<qgis saveDateTime="2021-07-01T09:18:16" saveUserFull="Denis Rouzaud" projectname="" saveUser="denis" version="3.21.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -1479,8 +1479,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option value="0" type="QString" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -3934,8 +3934,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="&quot;id&quot;" type="QString"/>
           </Option>
           <Option value="0" type="QString" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -6943,7 +6943,7 @@ def my_form_open(dialog, layer, feature):
       </renderer-v2>
       <labeling type="simple">
         <settings calloutType="simple">
-          <text-style capitalization="0" previewBkgrdColor="255,255,255,255" fontWordSpacing="0" fontLetterSpacing="0" fontSizeUnit="Point" fontWeight="50" fontFamily=".AppleSystemUIFont" fontUnderline="0" fontItalic="0" multilineHeight="1" fontStrikeout="0" allowHtml="0" namedStyle="Regular" fontKerning="1" textOrientation="horizontal" blendMode="0" useSubstitutions="0" textOpacity="1" legendString="Aa" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontSize="10" textColor="0,0,0,255" fieldName="" isExpression="1">
+          <text-style capitalization="0" previewBkgrdColor="255,255,255,255" fontWordSpacing="0" fontLetterSpacing="0" fontSizeUnit="Point" fontWeight="50" fontFamily="Arial" fontUnderline="0" fontItalic="0" multilineHeight="1" fontStrikeout="0" allowHtml="0" namedStyle="Regular" fontKerning="1" textOrientation="horizontal" blendMode="0" useSubstitutions="0" textOpacity="1" legendString="Aa" fontSizeMapUnitScale="3x:0,0,0,0,0,0" fontSize="10" textColor="0,0,0,255" fieldName="" isExpression="1">
             <families/>
             <text-buffer bufferJoinStyle="128" bufferNoFill="1" bufferOpacity="1" bufferSizeMapUnitScale="3x:0,0,0,0,0,0" bufferDraw="0" bufferSize="1" bufferSizeUnits="MM" bufferColor="255,255,255,255" bufferBlendMode="0"/>
             <text-mask maskType="0" maskSizeMapUnitScale="3x:0,0,0,0,0,0" maskedSymbolLayers="" maskOpacity="1" maskSize="1.5" maskJoinStyle="128" maskSizeUnits="MM" maskEnabled="0"/>
@@ -8899,6 +8899,24 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem marginX="0" opacity="1" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" valign="128" referencePoint="0" excludeFromExports="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" zValue="2" outlineWidthM="0.3,mm" htmlState="0" size="247.028,53.7715,mm" positionOnPage="24.986,142.228,mm" frameJoinStyle="miter" type="65641" id="" blendMode="0" background="false" position="24.986,142.228,mm" marginY="0" itemRotation="0" halign="4" frame="false" visibility="1" groupUuid="" positionLock="false">
+        <FrameColor green="0" blue="0" red="0" alpha="255"/>
+        <BackgroundColor green="255" blue="255" red="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option name="properties"/>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
+        <FontColor green="0" blue="0" red="0" alpha="255"/>
+      </LayoutItem>
       <LayoutItem pictureRotation="0" opacity="1" mode="0" referencePoint="7" excludeFromExports="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" file="101.svg" svgBorderWidth="0.2" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" zValue="2" pictureWidth="130.768" pictureHeight="131.57" outlineWidthM="0.3,mm" size="130.768,148.068,mm" northMode="0" positionOnPage="148.5,150.814,mm" anchorPoint="7" frameJoinStyle="miter" svgFillColor="255,255,255,255" resizeMode="0" type="65640" id="" blendMode="0" background="false" position="148.5,150.814,mm" itemRotation="0" frame="false" svgBorderColor="0,0,0,255" northOffset="0" visibility="1" mapUuid="" groupUuid="" positionLock="false">
         <FrameColor green="0" blue="0" red="0" alpha="255"/>
         <BackgroundColor green="255" blue="255" red="255" alpha="255"/>
@@ -8944,24 +8962,6 @@ def my_form_open(dialog, layer, feature):
           </customproperties>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem marginX="0" opacity="1" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" valign="128" referencePoint="0" excludeFromExports="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" zValue="2" outlineWidthM="0.3,mm" htmlState="0" size="247.028,53.7715,mm" positionOnPage="24.986,142.228,mm" frameJoinStyle="miter" type="65641" id="" blendMode="0" background="false" position="24.986,142.228,mm" marginY="0" itemRotation="0" halign="4" frame="false" visibility="1" groupUuid="" positionLock="false">
-        <FrameColor green="0" blue="0" red="0" alpha="255"/>
-        <BackgroundColor green="255" blue="255" red="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" type="QString" name="name"/>
-              <Option name="properties"/>
-              <Option value="collection" type="QString" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal" style="Normal"/>
-        <FontColor green="0" blue="0" red="0" alpha="255"/>
-      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option value="png" type="QString" name="atlasRasterFormat"/>
@@ -8984,7 +8984,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="1152596.83718389342539012" xmax="2538292.70632336381822824" xmin="2537883.55778210330754519" ymin="1152416.09959711297415197">
+    <DefaultViewExtent ymax="1152596.83718389342539012" xmax="2538236.70447576511651278" xmin="2537939.55962970200926065" ymin="1152416.09959711297415197">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
