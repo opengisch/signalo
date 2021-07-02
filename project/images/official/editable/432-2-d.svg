@@ -8,10 +8,10 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="145"
-   height="74"
+   height="37"
    version="1.1"
    id="svg676"
-   sodipodi:docname="432-2.svg"
+   sodipodi:docname="432-2-d.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata682">
@@ -82,7 +82,7 @@
   <g
      stroke="null"
      id="svg_54"
-     transform="matrix(0.52395685,0,0,1.0882349,-32.431845,-72.127372)">
+     transform="matrix(0.52395685,0,0,0.54343481,-32.393891,-35.783758)">
     <path
        stroke="#211e1e"
        fill="#ffffff"
@@ -103,21 +103,23 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
-     id="svg_12"
-     y="30"
-     x="10"
-     fill="#ffffff"
-     style="stroke-width:0.523957">param(text1)</text>
+     font-size="13.1037px"
+     id="svg_12-5"
+     y="16"
+     x="7"
+     stroke-width="0"
+     stroke="#ffffff"
+     fill="#ffffff">param(text1)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
-     id="svg_12-5"
-     y="50"
-     x="10"
-     fill="#ffffff"
-     style="stroke-width:0.523957">param(text2)</text>
+     font-size="13.1037px"
+     id="svg_12-5-3"
+     y="30"
+     x="7"
+     stroke-width="0"
+     stroke="#ffffff"
+     fill="#ffffff">param(text2)</text>
 </svg>

@@ -8,10 +8,10 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="145"
-   height="85"
+   height="37"
    version="1.1"
    id="svg676"
-   sodipodi:docname="432-3.svg"
+   sodipodi:docname="432-3-d.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata682">
@@ -42,7 +42,7 @@
      showgrid="false"
      inkscape:zoom="6.515"
      inkscape:cx="90.602223"
-     inkscape:cy="50.454407"
+     inkscape:cy="25.895696"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -82,7 +82,7 @@
   <g
      stroke="null"
      id="svg_54"
-     transform="matrix(0.52395685,0,0,1.2664675,-32.431845,-84.324253)">
+     transform="matrix(0.52395685,0,0,0.54343481,-32.393891,-35.783758)">
     <path
        stroke="#211e1e"
        fill="#ffffff"
@@ -103,32 +103,38 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
-     id="svg_12"
-     y="25"
-     x="10"
+     font-size="13.1037px"
+     id="svg_12-5"
+     y="12"
+     x="7"
+     stroke-width="0"
+     stroke="#ffffff"
      fill="#ffffff"
-     style="stroke-width:0.523957">param(text1)</text>
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
-     id="svg_12-5"
-     y="45"
-     x="10"
+     font-size="13.1037px"
+     id="svg_12-5-3"
+     y="22"
+     x="7"
+     stroke-width="0"
+     stroke="#ffffff"
      fill="#ffffff"
-     style="stroke-width:0.523957">param(text2)</text>
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text2)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
-     id="svg_12-5"
-     y="65"
-     x="10"
+     font-size="13.1037px"
+     id="svg_12-5-3-7"
+     y="32"
+     x="7"
+     stroke-width="0"
+     stroke="#ffffff"
      fill="#ffffff"
-     style="stroke-width:0.523957">param(text3)</text>
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text3)</text>
 </svg>

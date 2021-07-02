@@ -10,23 +10,23 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg676"
+   id="svg807"
    sodipodi:docname="433-1-g.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata682">
+     id="metadata813">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs680" />
+     id="defs811" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,21 +38,21 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview678"
+     id="namedview809"
      showgrid="false"
-     inkscape:zoom="6.515"
-     inkscape:cx="90.602223"
-     inkscape:cy="25.895696"
+     inkscape:zoom="4.6068007"
+     inkscape:cx="95.257924"
+     inkscape:cy="45.427045"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg676"
+     inkscape:current-layer="svg807"
      inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g666">
+     id="g797">
     <title
-       id="title660">background</title>
+       id="title791">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
@@ -76,34 +76,34 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect663" />
+         id="rect794" />
     </g>
   </g>
-  <path
-     stroke="#211e1e"
-     fill="#ffffff"
-     fill-rule="nonzero"
-     stroke-width="0.151278"
-     stroke-linejoin="round"
-     stroke-miterlimit="4"
-     id="svg_51"
-     d="M 144.7817,36.650662 H 31.53432 L 0.39294442,18.569684 31.53432,0.46877818 H 144.7817 V 36.650662"
-     style="fill:#00000f;fill-opacity:1" />
-  <path
-     fill="#1966ba"
-     fill-rule="nonzero"
-     id="svg_50"
-     d="M 142.65931,34.476793 H 32.096122 L 15.963622,18.565701 32.096122,2.6386482 H 142.65931 V 34.476787"
-     style="stroke-width:0.533607;fill:#ffffff;fill-opacity:1" />
+  <g
+     stroke="null"
+     id="svg_65"
+     transform="matrix(-0.52414982,0,0,0.52414982,178.29086,-34.028356)">
+    <path
+       fill="#211e1e"
+       fill-rule="nonzero"
+       id="svg_62"
+       d="M 63.51747,132.85521 H 279.31524 L 338.65648,99.80083 279.31524,66.71001 H 63.51747 v 66.1452" />
+    <path
+       fill="#ffffff"
+       fill-rule="nonzero"
+       id="svg_61"
+       d="M 67.56177,128.88109 H 278.24468 L 308.98586,99.79354 278.24468,70.67682 H 67.56177 v 58.20427" />
+  </g>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="15.7187px"
+     font-size="13.1037px"
      id="svg_12"
      y="22"
-     x="36"
-     fill="#ffffff"
-     style="stroke-width:0.523957;fill:#00000a;fill-opacity:1;">param(text1)</text>
+     x="35"
+     stroke-width="0"
+     stroke="#000000"
+     fill="#000000">param(text1)</text>
 </svg>
