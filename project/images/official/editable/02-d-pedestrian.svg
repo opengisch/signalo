@@ -11,7 +11,7 @@
    height="37"
    version="1.1"
    id="svg986"
-   sodipodi:docname="touristic.svg"
+   sodipodi:docname="02-d-pedestrian.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata992">
@@ -41,21 +41,17 @@
      id="namedview988"
      showgrid="false"
      inkscape:zoom="3.7352438"
-     inkscape:cx="111.15352"
+     inkscape:cx="120.31442"
      inkscape:cy="43.676986"
-     inkscape:window-x="3832"
-     inkscape:window-y="-3"
+     inkscape:window-x="5752"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="svg986"
      inkscape:document-rotation="0" />
   <path
-     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:#211e1e;stroke-width:0.220504;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
-     d="M 119.95545,32.001328 144.20678,18.225889 119.95545,4.4413353 H 0.8984736 V 32.001328 H 119.95545"
+     style="fill:#fbbb00;fill-opacity:1;fill-rule:nonzero;stroke:#211e1e;stroke-width:0.221669;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:4;stroke-opacity:1"
+     d="M 120.58527,32.14757 144.96478,18.299326 120.58527,4.4419181 H 0.89905635 V 32.14757 H 120.58527"
      id="path947" />
-  <path
-     style="fill:#7a2017;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.777793"
-     d="M 119.51491,30.34548 132.08112,18.225889 119.51491,6.0941448 H 2.548245 V 30.34548 H 119.51491"
-     id="path949" />
   <text
      xml:space="default"
      dominant-baseline="middle"
@@ -64,9 +60,8 @@
      font-size="13.1037px"
      id="svg_12"
      y="20"
-     x="9"
+     x="6"
      stroke-width="0"
-     stroke="#ffffff"
-     fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.1037px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#fffff;stroke-width:0;">param(text1)</text>
+     stroke="#000000"
+     fill="#000000">param(text1)</text>
 </svg>

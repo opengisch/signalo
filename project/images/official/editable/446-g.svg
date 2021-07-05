@@ -8,13 +8,13 @@
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="145"
-   height="37"
+   height="36"
    version="1.1"
-   id="svg332"
-   sodipodi:docname="431-2-g.svg"
+   id="svg1476"
+   sodipodi:docname="446-g.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata338">
+     id="metadata1482">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs336" />
+     id="defs1480" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,27 +38,28 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview334"
+     id="namedview1478"
      showgrid="false"
-     inkscape:zoom="6.515"
-     inkscape:cx="86.989669"
-     inkscape:cy="44.575981"
+     inkscape:zoom="4.700817"
+     inkscape:cx="55.453071"
+     inkscape:cy="23.043572"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg332"
+     inkscape:current-layer="svg1476"
      inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g321">
+     id="g1462"
+     transform="matrix(-0.17275883,0,0,0.17275883,141.00229,0.94669825)">
     <title
-       id="title315">background</title>
+       id="title1456">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
        id="canvas_background"
        height="202"
-       width="402"
+       width="786"
        y="-1"
        x="-1" />
     <g
@@ -76,46 +77,53 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect318" />
+         id="rect1459" />
     </g>
   </g>
   <path
+     fill="#211e1e"
+     fill-rule="nonzero"
+     id="svg_14"
+     d="M 140.87545,35.638639 H 34.994034 L 5.8781937,18.328099 34.994034,0.9984758 H 140.87545 V 35.638639"
+     style="stroke-width:0.172759" />
+  <path
      fill="#ffffff"
      fill-rule="nonzero"
-     stroke="#211e1e"
-     stroke-width="0.147141"
-     stroke-linejoin="round"
-     stroke-miterlimit="4"
-     id="svg_8"
-     d="M 143.61196,35.826243 H 31.65067 L 0.86295,18.341806 31.65067,0.8380929 H 143.61196 V 35.826243" />
-  <path
-     fill="#007d45"
-     fill-rule="nonzero"
-     id="svg_7"
-     d="M 141.51367,33.724099 H 32.2061 L 16.25681,18.337955 32.2061,2.9363806 H 141.51367 V 33.724099"
-     style="stroke-width:0.519017" />
+     id="svg_13"
+     d="M 138.8911,33.557401 H 35.519304 L 20.436114,18.324288 35.519304,3.0758938 H 138.8911 V 33.557401"
+     style="stroke-width:0.172759" />
+  <g
+     id="g10054"
+     transform="translate(107.64086,-55.422042)">
+    <path
+       fill="#1966ba"
+       fill-rule="nonzero"
+       id="svg_12"
+       d="M 5.8992036,61.154042 H 29.729543 V 86.09832 H 5.8992036 V 61.154042"
+       style="stroke-width:0.172759" />
+    <path
+       fill="#ffffff"
+       fill-rule="nonzero"
+       id="svg_11"
+       d="M 15.813621,82.98983 H 12.81522 V 65.297417 h 8.448049 c 0.696705,0 1.451772,0.28641 1.907741,0.92033 0.60916,0.828679 0.576327,1.619163 0.576327,1.619163 v 5.926747 c 0,0.412432 -0.120368,1.29839 -0.729538,1.932301 -0.543505,0.57282 -1.119842,0.794307 -1.754532,0.794307 h -5.449646 v 6.499567"
+       style="stroke-width:0.172759" />
+    <path
+       fill="#1966ba"
+       fill-rule="nonzero"
+       id="svg_10"
+       d="m 15.788091,73.775114 v -5.674709 h 4.300615 c 0.182392,0 0.390303,0 0.514332,0.126024 0.120368,0.126014 0.149549,0.252038 0.149549,0.538446 v 4.345769 c 0,0.217675 -0.05836,0.408611 -0.182382,0.504085 -0.120376,0.126013 -0.240744,0.160385 -0.452317,0.160385 h -4.329796"
+       style="stroke-width:0.172759" />
+  </g>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
      font-size="13.1037px"
-     id="svg_12-5"
-     y="16"
-     x="35"
+     id="svg_12-1"
+     y="22"
+     x="26.479456"
      stroke-width="0"
-     stroke="#ffffff"
-     fill="#ffffff">param(text1)</text>
-  <text
-     xml:space="default"
-     dominant-baseline="middle"
-     text-anchor="left"
-     font-family="sans-serif"
-     font-size="13.1037px"
-     id="svg_12-5-2"
-     y="30"
-     x="35"
-     stroke-width="0"
-     stroke="#ffffff"
-     fill="#ffffff">param(text2)</text>
+     stroke="#000000"
+     fill="#000000">param(text1)</text>
 </svg>

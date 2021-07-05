@@ -11,7 +11,7 @@
    height="36"
    version="1.1"
    id="svg323"
-   sodipodi:docname="450-3.svg"
+   sodipodi:docname="450-3-d.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata329">
@@ -21,7 +21,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -160,9 +160,9 @@
      font-family="sans-serif"
      font-size="13.1037px"
      id="svg_12"
-     y="19.119944"
+     y="23"
      x="41.80024"
      stroke-width="0"
-     stroke="#000000"
-     fill="#000000">param(text1)</text>
+     stroke="#ffffff"
+     fill="#ffffff">param(text1)</text>
 </svg>

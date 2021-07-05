@@ -10,11 +10,11 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg332"
-   sodipodi:docname="431-2-g.svg"
+   id="svg1635"
+   sodipodi:docname="449-g.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata338">
+     id="metadata1641">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +26,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs336" />
+     id="defs1639" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,27 +38,27 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview334"
+     id="namedview1637"
      showgrid="false"
-     inkscape:zoom="6.515"
-     inkscape:cx="86.989669"
-     inkscape:cy="44.575981"
+     inkscape:zoom="3.5850589"
+     inkscape:cx="104.61867"
+     inkscape:cy="14.188335"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg332"
+     inkscape:current-layer="svg1635"
      inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g321">
+     id="g1622">
     <title
-       id="title315">background</title>
+       id="title1616">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
        id="canvas_background"
        height="202"
-       width="402"
+       width="1030"
        y="-1"
        x="-1" />
     <g
@@ -76,46 +76,45 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect318" />
+         id="rect1619" />
     </g>
   </g>
-  <path
-     fill="#ffffff"
-     fill-rule="nonzero"
-     stroke="#211e1e"
-     stroke-width="0.147141"
-     stroke-linejoin="round"
-     stroke-miterlimit="4"
-     id="svg_8"
-     d="M 143.61196,35.826243 H 31.65067 L 0.86295,18.341806 31.65067,0.8380929 H 143.61196 V 35.826243" />
-  <path
-     fill="#007d45"
-     fill-rule="nonzero"
-     id="svg_7"
-     d="M 141.51367,33.724099 H 32.2061 L 16.25681,18.337955 32.2061,2.9363806 H 141.51367 V 33.724099"
-     style="stroke-width:0.519017" />
+  <g
+     stroke="null"
+     id="svg_15"
+     transform="matrix(-0.14033135,0,0,0.14033135,144.73239,5.0641471)">
+    <path
+       fill="#211e1e"
+       fill-rule="nonzero"
+       id="svg_12"
+       d="M 852.51997,198.30067 1025.9631,99.55442 852.51997,0.69932 H 1.03654 v 197.60135 h 851.48343" />
+    <path
+       fill="#d1d1d1"
+       fill-rule="nonzero"
+       id="svg_11"
+       d="M 849.36926,186.42845 1002.0174,99.55442 849.36926,12.54973 H 12.83557 v 173.87871 h 836.53369" />
+    <path
+       fill="#211e1e"
+       fill-rule="nonzero"
+       id="svg_10"
+       d="m 852.54172,59.9514 c 21.75103,0 39.43862,17.73207 39.43862,39.53772 0,21.8056 -17.68759,39.53767 -39.43862,39.53767 -21.75103,0 -39.43862,-17.73207 -39.43862,-39.53767 0,-21.80566 17.68759,-39.53772 39.43862,-39.53772" />
+    <path
+       fill="#ee2b2e"
+       fill-rule="nonzero"
+       id="svg_9"
+       d="m 852.54172,63.91607 c 19.55632,0 35.48393,15.96756 35.48393,35.57305 0,19.60544 -15.92761,35.57299 -35.48393,35.57299 -19.57807,0 -35.48393,-15.96756 -35.48393,-35.57299 0,-19.60549 15.90586,-35.57305 35.48393,-35.57305" />
+  </g>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
      font-size="13.1037px"
-     id="svg_12-5"
-     y="16"
-     x="35"
+     id="svg_12-0"
+     y="24"
+     x="36"
      stroke-width="0"
-     stroke="#ffffff"
-     fill="#ffffff">param(text1)</text>
-  <text
-     xml:space="default"
-     dominant-baseline="middle"
-     text-anchor="left"
-     font-family="sans-serif"
-     font-size="13.1037px"
-     id="svg_12-5-2"
-     y="30"
-     x="35"
-     stroke-width="0"
-     stroke="#ffffff"
-     fill="#ffffff">param(text2)</text>
+     stroke="#000000"
+     fill="#000000"
+     style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:11.3333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#000000;stroke:#000000;stroke-width:0">param(text1)</text>
 </svg>
