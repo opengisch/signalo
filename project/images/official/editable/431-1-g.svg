@@ -10,23 +10,23 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg676"
+   id="svg332"
    sodipodi:docname="431-1-g.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata682">
+     id="metadata338">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs680" />
+     id="defs336" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,21 +38,21 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview678"
+     id="namedview334"
      showgrid="false"
      inkscape:zoom="6.515"
-     inkscape:cx="90.602223"
-     inkscape:cy="25.895696"
+     inkscape:cx="86.989669"
+     inkscape:cy="44.575981"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg676"
+     inkscape:current-layer="svg332"
      inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g666">
+     id="g321">
     <title
-       id="title660">background</title>
+       id="title315">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
@@ -76,33 +76,34 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect663" />
+         id="rect318" />
     </g>
   </g>
   <path
-     stroke="#211e1e"
      fill="#ffffff"
      fill-rule="nonzero"
-     stroke-width="0.151278"
+     stroke="#211e1e"
+     stroke-width="0.147141"
      stroke-linejoin="round"
      stroke-miterlimit="4"
-     id="svg_51"
-     d="M 144.7817,36.650662 H 31.53432 L 0.39294442,18.569684 31.53432,0.46877818 H 144.7817 V 36.650662" />
+     id="svg_8"
+     d="M 143.61196,35.826243 H 31.65067 L 0.86295,18.341806 31.65067,0.8380929 H 143.61196 V 35.826243" />
   <path
-     fill="#1966ba"
+     fill="#007d45"
      fill-rule="nonzero"
-     id="svg_50"
-     d="M 142.65931,34.476793 H 32.096122 L 15.963622,18.565701 32.096122,2.6386482 H 142.65931 V 34.476787"
-     style="stroke-width:0.533607;fill:#007d45;fill-opacity:1" />
+     id="svg_7"
+     d="M 141.51367,33.724099 H 32.2061 L 16.25681,18.337955 32.2061,2.9363806 H 141.51367 V 33.724099"
+     style="stroke-width:0.519017" />
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13px"
-     id="svg_12"
+     font-size="13.1037px"
+     id="svg_12-5"
      y="22"
-     x="36"
-     fill="#ffffff"
-     >param(text1)</text>
+     x="35"
+     stroke-width="0"
+     stroke="#ffffff"
+     fill="#ffffff">param(text1)</text>
 </svg>
