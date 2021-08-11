@@ -1701,7 +1701,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_1">
+        <field configurationFlags="None" name="dimension_1">
           <editWidget type="Range">
             <config>
               <Option type="Map">
@@ -1715,7 +1715,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_2">
+        <field configurationFlags="None" name="dimension_2">
           <editWidget type="Range">
             <config>
               <Option type="Map">
@@ -1791,8 +1791,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="fk_provider" index="7" name="Fournisseur"/>
         <alias field="comment" index="8" name="commentaire"/>
         <alias field="picture" index="9" name="photo"/>
-        <alias field="dimnension_1" index="10" name=""/>
-        <alias field="dimnension_2" index="11" name=""/>
+        <alias field="dimension_1" index="10" name=""/>
+        <alias field="dimension_2" index="11" name=""/>
         <alias field="_inserted_date" index="12" name=""/>
         <alias field="_inserted_user" index="13" name=""/>
         <alias field="_last_modified_date" index="14" name=""/>
@@ -1810,8 +1810,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="fk_provider" expression=""/>
         <default applyOnUpdate="0" field="comment" expression="NULL"/>
         <default applyOnUpdate="0" field="picture" expression="NULL"/>
-        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
-        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="dimension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimension_2" expression=""/>
         <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
         <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name"/>
         <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
@@ -1829,8 +1829,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="fk_provider" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="comment" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="picture" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_inserted_date" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_inserted_user" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_last_modified_date" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
@@ -1848,8 +1848,8 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="fk_provider" desc=""/>
         <constraint exp="" field="comment" desc=""/>
         <constraint exp="" field="picture" desc=""/>
-        <constraint exp="" field="dimnension_1" desc=""/>
-        <constraint exp="" field="dimnension_2" desc=""/>
+        <constraint exp="" field="dimension_1" desc=""/>
+        <constraint exp="" field="dimension_2" desc=""/>
         <constraint exp="" field="_inserted_date" desc=""/>
         <constraint exp="" field="_inserted_user" desc=""/>
         <constraint exp="" field="_last_modified_date" desc=""/>
@@ -1875,8 +1875,8 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" type="field" name="fk_provider" width="-1"/>
           <column hidden="0" type="field" name="_inserted_date" width="-1"/>
           <column hidden="0" type="field" name="_last_modified_date" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_1" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_2" width="-1"/>
+          <column hidden="0" type="field" name="dimension_1" width="-1"/>
+          <column hidden="0" type="field" name="dimension_2" width="-1"/>
           <column hidden="0" type="field" name="_inserted_user" width="-1"/>
           <column hidden="0" type="field" name="_last_modified_user" width="-1"/>
           <column hidden="0" type="field" name="_edited" width="-1"/>
@@ -1917,8 +1917,8 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField index="3" name="fk_frame_type" showLabel="1"/>
         <attributeEditorField index="4" name="fk_frame_fixing_type" showLabel="1"/>
         <attributeEditorField index="5" name="double_sided" showLabel="1"/>
-        <attributeEditorField index="10" name="dimnension_1" showLabel="1"/>
-        <attributeEditorField index="11" name="dimnension_2" showLabel="1"/>
+        <attributeEditorField index="10" name="dimension_1" showLabel="1"/>
+        <attributeEditorField index="11" name="dimension_2" showLabel="1"/>
         <attributeEditorField index="6" name="fk_status" showLabel="1"/>
         <attributeEditorField index="7" name="fk_provider" showLabel="1"/>
         <attributeEditorField index="8" name="comment" showLabel="1"/>
@@ -1939,8 +1939,8 @@ def my_form_open(dialog, layer, feature):
         <field name="_last_modified_date" editable="0"/>
         <field name="_last_modified_user" editable="1"/>
         <field name="comment" editable="1"/>
-        <field name="dimnension_1" editable="1"/>
-        <field name="dimnension_2" editable="1"/>
+        <field name="dimension_1" editable="1"/>
+        <field name="dimension_2" editable="1"/>
         <field name="double_sided" editable="1"/>
         <field name="fk_azimut" editable="1"/>
         <field name="fk_frame_fixing_type" editable="1"/>
@@ -1958,8 +1958,8 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="_last_modified_date"/>
         <field labelOnTop="0" name="_last_modified_user"/>
         <field labelOnTop="0" name="comment"/>
-        <field labelOnTop="0" name="dimnension_1"/>
-        <field labelOnTop="0" name="dimnension_2"/>
+        <field labelOnTop="0" name="dimension_1"/>
+        <field labelOnTop="0" name="dimension_2"/>
         <field labelOnTop="0" name="double_sided"/>
         <field labelOnTop="0" name="fk_azimut"/>
         <field labelOnTop="0" name="fk_frame_fixing_type"/>
@@ -1977,8 +1977,8 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="_last_modified_date"/>
         <field reuseLastValue="0" name="_last_modified_user"/>
         <field reuseLastValue="0" name="comment"/>
-        <field reuseLastValue="0" name="dimnension_1"/>
-        <field reuseLastValue="0" name="dimnension_2"/>
+        <field reuseLastValue="0" name="dimension_1"/>
+        <field reuseLastValue="0" name="dimension_2"/>
         <field reuseLastValue="0" name="double_sided"/>
         <field reuseLastValue="0" name="fk_azimut"/>
         <field reuseLastValue="0" name="fk_frame_fixing_type"/>
@@ -4414,14 +4414,14 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_1">
+        <field configurationFlags="None" name="dimension_1">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_2">
+        <field configurationFlags="None" name="dimension_2">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -4662,8 +4662,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="mirror_protruding" index="25" name="miroir bombé"/>
         <alias field="mirror_red_frame" index="26" name="cadre rouge et blanc"/>
         <alias field="geometry" index="27" name=""/>
-        <alias field="dimnension_1" index="28" name=""/>
-        <alias field="dimnension_2" index="29" name=""/>
+        <alias field="dimension_1" index="28" name=""/>
+        <alias field="dimension_2" index="29" name=""/>
         <alias field="_inserted_date" index="30" name=""/>
         <alias field="_inserted_user" index="31" name=""/>
         <alias field="_last_modified_date" index="32" name=""/>
@@ -4719,8 +4719,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="mirror_protruding" expression=""/>
         <default applyOnUpdate="0" field="mirror_red_frame" expression=""/>
         <default applyOnUpdate="0" field="geometry" expression=""/>
-        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
-        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="dimension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimension_2" expression=""/>
         <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
         <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
         <default applyOnUpdate="1" field="_last_modified_date" expression="now()"/>
@@ -4776,8 +4776,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="mirror_protruding" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="mirror_red_frame" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="geometry" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_inserted_date" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_inserted_user" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="_last_modified_date" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
@@ -4833,8 +4833,8 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="mirror_protruding" desc=""/>
         <constraint exp="" field="mirror_red_frame" desc=""/>
         <constraint exp="" field="geometry" desc=""/>
-        <constraint exp="" field="dimnension_1" desc=""/>
-        <constraint exp="" field="dimnension_2" desc=""/>
+        <constraint exp="" field="dimension_1" desc=""/>
+        <constraint exp="" field="dimension_2" desc=""/>
         <constraint exp="" field="_inserted_date" desc=""/>
         <constraint exp="" field="_inserted_user" desc=""/>
         <constraint exp="" field="_last_modified_date" desc=""/>
@@ -4912,8 +4912,8 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" type="field" name="fk_provider" width="-1"/>
           <column hidden="0" type="field" name="_inserted_date" width="-1"/>
           <column hidden="0" type="field" name="_last_modified_date" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_1" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_2" width="-1"/>
+          <column hidden="0" type="field" name="dimension_1" width="-1"/>
+          <column hidden="0" type="field" name="dimension_2" width="-1"/>
           <column hidden="0" type="field" name="_inserted_user" width="-1"/>
           <column hidden="0" type="field" name="_last_modified_user" width="-1"/>
           <column hidden="0" type="field" name="official_sign_no_dynamic_inscription" width="-1"/>
@@ -5005,8 +5005,8 @@ def my_form_open(dialog, layer, feature):
         <field name="comment" editable="1"/>
         <field name="complex" editable="1"/>
         <field name="destination" editable="1"/>
-        <field name="dimnension_1" editable="1"/>
-        <field name="dimnension_2" editable="1"/>
+        <field name="dimension_1" editable="1"/>
+        <field name="dimension_2" editable="1"/>
         <field name="fk_coating" editable="1"/>
         <field name="fk_durability" editable="1"/>
         <field name="fk_frame" editable="1"/>
@@ -5064,8 +5064,8 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="comment"/>
         <field labelOnTop="0" name="complex"/>
         <field labelOnTop="0" name="destination"/>
-        <field labelOnTop="0" name="dimnension_1"/>
-        <field labelOnTop="0" name="dimnension_2"/>
+        <field labelOnTop="0" name="dimension_1"/>
+        <field labelOnTop="0" name="dimension_2"/>
         <field labelOnTop="0" name="fk_coating"/>
         <field labelOnTop="0" name="fk_durability"/>
         <field labelOnTop="0" name="fk_frame"/>
@@ -5122,8 +5122,8 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="case_id"/>
         <field reuseLastValue="0" name="comment"/>
         <field reuseLastValue="0" name="complex"/>
-        <field reuseLastValue="0" name="dimnension_1"/>
-        <field reuseLastValue="0" name="dimnension_2"/>
+        <field reuseLastValue="0" name="dimension_1"/>
+        <field reuseLastValue="0" name="dimension_2"/>
         <field reuseLastValue="0" name="fk_coating"/>
         <field reuseLastValue="0" name="fk_durability"/>
         <field reuseLastValue="0" name="fk_frame"/>
@@ -7610,14 +7610,14 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_1">
+        <field configurationFlags="None" name="dimension_1">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="dimnension_2">
+        <field configurationFlags="None" name="dimension_2">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -7974,14 +7974,14 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="frame_dimnension_1">
+        <field configurationFlags="None" name="frame_dimension_1">
           <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field configurationFlags="None" name="frame_dimnension_2">
+        <field configurationFlags="None" name="frame_dimension_2">
           <editWidget type="TextEdit">
             <config>
               <Option/>
@@ -8266,8 +8266,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="case_id" index="7" name=""/>
         <alias field="comment" index="8" name="Commentaire"/>
         <alias field="complex" index="9" name=""/>
-        <alias field="dimnension_1" index="10" name=""/>
-        <alias field="dimnension_2" index="11" name=""/>
+        <alias field="dimension_1" index="10" name=""/>
+        <alias field="dimension_2" index="11" name=""/>
         <alias field="fk_coating" index="12" name="Revêtement"/>
         <alias field="fk_durability" index="13" name="Durabilité"/>
         <alias field="fk_lighting" index="14" name="Eclairage"/>
@@ -8297,8 +8297,8 @@ def my_form_open(dialog, layer, feature):
         <alias field="frame__last_modified_date" index="38" name=""/>
         <alias field="frame__last_modified_user" index="39" name=""/>
         <alias field="frame_comment" index="40" name="Commentaire cadre"/>
-        <alias field="frame_dimnension_1" index="41" name=""/>
-        <alias field="frame_dimnension_2" index="42" name=""/>
+        <alias field="frame_dimension_1" index="41" name=""/>
+        <alias field="frame_dimension_2" index="42" name=""/>
         <alias field="frame_double_sided" index="43" name="Cadre recto verso"/>
         <alias field="frame_fk_azimut" index="44" name="Azimut cadre"/>
         <alias field="frame_fk_frame_fixing_type" index="45" name="Type fixation cadre"/>
@@ -8337,8 +8337,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="case_id" expression=""/>
         <default applyOnUpdate="0" field="comment" expression="NULL"/>
         <default applyOnUpdate="0" field="complex" expression=""/>
-        <default applyOnUpdate="0" field="dimnension_1" expression=""/>
-        <default applyOnUpdate="0" field="dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="dimension_1" expression=""/>
+        <default applyOnUpdate="0" field="dimension_2" expression=""/>
         <default applyOnUpdate="0" field="fk_coating" expression="NULL"/>
         <default applyOnUpdate="0" field="fk_durability" expression="NULL"/>
         <default applyOnUpdate="0" field="fk_lighting" expression="NULL"/>
@@ -8368,8 +8368,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="frame__last_modified_date" expression=""/>
         <default applyOnUpdate="0" field="frame__last_modified_user" expression=""/>
         <default applyOnUpdate="0" field="frame_comment" expression="NULL"/>
-        <default applyOnUpdate="0" field="frame_dimnension_1" expression=""/>
-        <default applyOnUpdate="0" field="frame_dimnension_2" expression=""/>
+        <default applyOnUpdate="0" field="frame_dimension_1" expression=""/>
+        <default applyOnUpdate="0" field="frame_dimension_2" expression=""/>
         <default applyOnUpdate="0" field="frame_double_sided" expression=""/>
         <default applyOnUpdate="0" field="frame_fk_azimut" expression="'00000000-0000-0000-aaaa-000000000101'"/>
         <default applyOnUpdate="0" field="frame_fk_frame_fixing_type" expression="NULL"/>
@@ -8408,8 +8408,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="case_id" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="comment" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="complex" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="dimnension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="dimension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="fk_coating" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="fk_durability" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="fk_lighting" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
@@ -8439,8 +8439,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="frame__last_modified_date" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="frame__last_modified_user" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="frame_comment" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="frame_dimnension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
-        <constraint field="frame_dimnension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="frame_dimension_1" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
+        <constraint field="frame_dimension_2" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="frame_double_sided" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="frame_fk_azimut" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
         <constraint field="frame_fk_frame_fixing_type" notnull_strength="0" exp_strength="0" unique_strength="0" constraints="0"/>
@@ -8479,8 +8479,8 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="case_id" desc=""/>
         <constraint exp="" field="comment" desc=""/>
         <constraint exp="" field="complex" desc=""/>
-        <constraint exp="" field="dimnension_1" desc=""/>
-        <constraint exp="" field="dimnension_2" desc=""/>
+        <constraint exp="" field="dimension_1" desc=""/>
+        <constraint exp="" field="dimension_2" desc=""/>
         <constraint exp="" field="fk_coating" desc=""/>
         <constraint exp="" field="fk_durability" desc=""/>
         <constraint exp="" field="fk_lighting" desc=""/>
@@ -8510,8 +8510,8 @@ def my_form_open(dialog, layer, feature):
         <constraint exp="" field="frame__last_modified_date" desc=""/>
         <constraint exp="" field="frame__last_modified_user" desc=""/>
         <constraint exp="" field="frame_comment" desc=""/>
-        <constraint exp="" field="frame_dimnension_1" desc=""/>
-        <constraint exp="" field="frame_dimnension_2" desc=""/>
+        <constraint exp="" field="frame_dimension_1" desc=""/>
+        <constraint exp="" field="frame_dimension_2" desc=""/>
         <constraint exp="" field="frame_double_sided" desc=""/>
         <constraint exp="" field="frame_fk_azimut" desc=""/>
         <constraint exp="" field="frame_fk_frame_fixing_type" desc=""/>
@@ -8603,15 +8603,15 @@ def my_form_open(dialog, layer, feature):
           <column hidden="0" type="field" name="_last_modified_date" width="-1"/>
           <column hidden="0" type="field" name="_last_modified_user" width="-1"/>
           <column hidden="0" type="field" name="complex" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_1" width="-1"/>
-          <column hidden="0" type="field" name="dimnension_2" width="-1"/>
+          <column hidden="0" type="field" name="dimension_1" width="-1"/>
+          <column hidden="0" type="field" name="dimension_2" width="-1"/>
           <column hidden="0" type="field" name="fk_provider" width="-1"/>
           <column hidden="0" type="field" name="frame__inserted_date" width="-1"/>
           <column hidden="0" type="field" name="frame__inserted_user" width="-1"/>
           <column hidden="0" type="field" name="frame__last_modified_date" width="-1"/>
           <column hidden="0" type="field" name="frame__last_modified_user" width="-1"/>
-          <column hidden="0" type="field" name="frame_dimnension_1" width="-1"/>
-          <column hidden="0" type="field" name="frame_dimnension_2" width="-1"/>
+          <column hidden="0" type="field" name="frame_dimension_1" width="-1"/>
+          <column hidden="0" type="field" name="frame_dimension_2" width="-1"/>
           <column hidden="0" type="field" name="frame_fk_provider" width="-1"/>
         </columns>
       </attributetableconfig>
@@ -8706,8 +8706,8 @@ def my_form_open(dialog, layer, feature):
         <field name="comment" editable="1"/>
         <field name="complex" editable="1"/>
         <field name="destination" editable="1"/>
-        <field name="dimnension_1" editable="1"/>
-        <field name="dimnension_2" editable="1"/>
+        <field name="dimension_1" editable="1"/>
+        <field name="dimension_2" editable="1"/>
         <field name="fk_coating" editable="1"/>
         <field name="fk_durability" editable="1"/>
         <field name="fk_lighting" editable="1"/>
@@ -8724,8 +8724,8 @@ def my_form_open(dialog, layer, feature):
         <field name="frame__last_modified_date" editable="1"/>
         <field name="frame__last_modified_user" editable="1"/>
         <field name="frame_comment" editable="1"/>
-        <field name="frame_dimnension_1" editable="1"/>
-        <field name="frame_dimnension_2" editable="1"/>
+        <field name="frame_dimension_1" editable="1"/>
+        <field name="frame_dimension_2" editable="1"/>
         <field name="frame_double_sided" editable="1"/>
         <field name="frame_fk_azimut" editable="1"/>
         <field name="frame_fk_frame_fixing_type" editable="1"/>
@@ -8794,8 +8794,8 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="comment"/>
         <field labelOnTop="0" name="complex"/>
         <field labelOnTop="0" name="destination"/>
-        <field labelOnTop="0" name="dimnension_1"/>
-        <field labelOnTop="0" name="dimnension_2"/>
+        <field labelOnTop="0" name="dimension_1"/>
+        <field labelOnTop="0" name="dimension_2"/>
         <field labelOnTop="0" name="fk_coating"/>
         <field labelOnTop="0" name="fk_durability"/>
         <field labelOnTop="0" name="fk_lighting"/>
@@ -8812,8 +8812,8 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="frame__last_modified_date"/>
         <field labelOnTop="0" name="frame__last_modified_user"/>
         <field labelOnTop="0" name="frame_comment"/>
-        <field labelOnTop="0" name="frame_dimnension_1"/>
-        <field labelOnTop="0" name="frame_dimnension_2"/>
+        <field labelOnTop="0" name="frame_dimension_1"/>
+        <field labelOnTop="0" name="frame_dimension_2"/>
         <field labelOnTop="0" name="frame_double_sided"/>
         <field labelOnTop="0" name="frame_fk_azimut"/>
         <field labelOnTop="0" name="frame_fk_frame_fixing_type"/>
@@ -8879,8 +8879,8 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="case_id"/>
         <field reuseLastValue="0" name="comment"/>
         <field reuseLastValue="0" name="complex"/>
-        <field reuseLastValue="0" name="dimnension_1"/>
-        <field reuseLastValue="0" name="dimnension_2"/>
+        <field reuseLastValue="0" name="dimension_1"/>
+        <field reuseLastValue="0" name="dimension_2"/>
         <field reuseLastValue="0" name="fk_coating"/>
         <field reuseLastValue="0" name="fk_durability"/>
         <field reuseLastValue="0" name="fk_lighting"/>
@@ -8897,8 +8897,8 @@ def my_form_open(dialog, layer, feature):
         <field reuseLastValue="0" name="frame__last_modified_date"/>
         <field reuseLastValue="0" name="frame__last_modified_user"/>
         <field reuseLastValue="0" name="frame_comment"/>
-        <field reuseLastValue="0" name="frame_dimnension_1"/>
-        <field reuseLastValue="0" name="frame_dimnension_2"/>
+        <field reuseLastValue="0" name="frame_dimension_1"/>
+        <field reuseLastValue="0" name="frame_dimension_2"/>
         <field reuseLastValue="0" name="frame_double_sided"/>
         <field reuseLastValue="0" name="frame_fk_azimut"/>
         <field reuseLastValue="0" name="frame_fk_frame_fixing_type"/>
