@@ -29,7 +29,6 @@ CREATE TABLE signalo_od.sign
     photo text,
     mirror_protruding boolean default false,
     mirror_red_frame boolean default false,
-    geometry geometry(Polygon,:SRID) DEFAULT :PROJECT_EXTENT,
     dimension_1 decimal(7,2),
     dimension_2 decimal(7,2),
     usr_sign_1 text,
