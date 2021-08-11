@@ -19,9 +19,15 @@ jobs:
       - name: "build dockerfile"
         run: docker build -f .docker/Dockerfile --tag opengisch/signalo:latest .
 
+      - name: "create dumps"
+        run: |
+          docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump.backup signalo
+          docker exec signalo init_db.sh build -d
+          docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump-with-demo.backup signalo
+
       - name: "create archive"
         run: |
-          zip -r project-release.zip project README.md
+          zip -r project.zip project README.md
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -37,13 +43,35 @@ jobs:
           docker tag opengisch/signalo:latest opengisch/signalo:${{ github.event.release.tag_name }}
           docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
-      - name: Upload Release Asset
+      - name: Upload Release Asset - project
         id: upload-release-asset
-        uses: actions/upload-release-asset@v1
+        uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./project-release.zip
-          asset_name: signalo-${{ github.event.release.tag_name }}.zip
+          asset_name: signalo-${{ github.event.release.tag_name }}-project.zip
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset - dump
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: db-dump.backup
+          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.backup
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset - dump with demo
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: db-dump-with-demo.backup
+          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
           asset_content_type: application/zip
