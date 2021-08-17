@@ -121,11 +121,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='signalo_od', table_name='sign',
-            remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame']
+            remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame', '_edited']
         ),
         frame_columns=select_columns(
             pg_cur=cursor, table_schema='signalo_od', table_name='frame',
-            remove_pkey=False, indent=4,
+            remove_pkey=False, indent=4, skip_columns=['_edited'],
             prefix='frame_'
         ),
         vl_official_sign_columns=select_columns(
