@@ -1909,9 +1909,12 @@ def my_form_open(dialog, layer, feature):
         <attributeEditorField name="fk_provider" showLabel="1" index="7"/>
         <attributeEditorField name="comment" showLabel="1" index="8"/>
         <attributeEditorField name="picture" showLabel="1" index="9"/>
-        <attributeEditorRelation label="signal" relation="frame-sign" nmRelationId="" name="frame-sign" forceSuppressFormPopup="0" relationWidgetTypeId="relation_editor" showLabel="1">
+        <attributeEditorRelation label="signal" relation="frame-sign" nmRelationId="" name="frame-sign" forceSuppressFormPopup="0" relationWidgetTypeId="ordered_relation_editor" showLabel="1">
           <editor_configuration type="Map">
             <Option value="AllButtons" name="buttons" type="QString"/>
+            <Option value="CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_value_fr&#xa;  WHEN fk_sign_type = 12 THEN 'balise'&#xa;  WHEN fk_sign_type = 13 THEN 'mirroir' &#xa;  WHEN fk_sign_type = 14 THEN 'plaque de rue'&#xa;  ELSE '?'&#xa;END" name="description" type="QString"/>
+            <Option value="replace(regexp_replace(file_path(@project_path), '^(\\w:)', 'file:///\\1'),'\\', '/') ||'/images/official/original/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN official_sign_img_fr&#xa;  WHEN fk_sign_type = 12 THEN 'marker.svg' &#xa;  WHEN fk_sign_type = 13 THEN 'mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'street-plate.svg'&#xa;  ELSE 'no-image.svg'&#xa;END" name="image_path" type="QString"/>
+            <Option value="rank" name="ordering_field" type="QString"/>
           </editor_configuration>
         </attributeEditorRelation>
       </attributeEditorForm>
