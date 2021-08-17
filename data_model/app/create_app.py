@@ -31,6 +31,8 @@ def create_views(srid: int,
 
     run_sql('data_model/app/drop_views.sql', pg_service, variables)
 
+    run_sql('data_model/app/create_schema.sql', pg_service, variables)
+
     run_sql('data_model/app/vw_edited_support.sql', pg_service, variables)
     vw_sign_symbol(pg_service=pg_service, srid=srid)
 
