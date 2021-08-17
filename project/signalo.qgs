@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Denis Rouzaud" saveDateTime="2021-08-17T15:05:34" projectname="" saveUser="denis" version="3.21.0-Master">
+<qgis saveUserFull="Denis Rouzaud" saveDateTime="2021-08-17T15:13:52" projectname="" saveUser="denis" version="3.21.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -67,7 +67,7 @@
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-group name="vl" checked="Qt::Checked" expanded="0">
+    <layer-tree-group name="vl" checked="Qt::Checked" expanded="1">
       <customproperties>
         <Option/>
       </customproperties>
@@ -240,7 +240,7 @@
         <legendlayerfile isInOverview="0" visible="0" layerid="Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b"/>
       </filegroup>
     </legendlayer>
-    <legendgroup open="false" name="vl" checked="Qt::Checked">
+    <legendgroup open="true" name="vl" checked="Qt::Checked">
       <legendlayer open="true" drawingOrder="-1" checked="Qt::Checked" name="Fournisseur" showFeatureCount="0">
         <filegroup open="true" hidden="false">
           <legendlayerfile isInOverview="0" visible="1" layerid="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a"/>
@@ -2804,6 +2804,15 @@ def my_form_open(dialog, layer, feature):
         <type>dataset</type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <fees></fees>
         <encoding></encoding>
@@ -2820,7 +2829,15 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial crs="" maxz="0" miny="0" dimensions="2" minz="0" maxx="0" minx="0" maxy="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="">postgres</provider>
       <vectorjoins/>
@@ -2848,54 +2865,64 @@ def my_form_open(dialog, layer, feature):
           <Option value="offline" name="QFieldSync/action" type="QString"/>
           <Option value="offline" name="QFieldSync/cloud_action" type="QString"/>
           <Option value="{}" name="QFieldSync/photo_naming" type="QString"/>
+          <Option value="0" name="embeddedWidgets/count" type="int"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
-        <activeChecks type="StringList">
-          <Option value="" type="QString"/>
-        </activeChecks>
+        <activeChecks/>
         <checkConfiguration/>
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers/>
       <fieldConfiguration>
         <field configurationFlags="None" name="id">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="active">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="value_de">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="value_fr">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="value_it">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="value_ro">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -2904,9 +2931,9 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias field="id" name="" index="0"/>
-        <alias field="active" name="" index="1"/>
+        <alias field="active" name="valeur active" index="1"/>
         <alias field="value_de" name="" index="2"/>
-        <alias field="value_fr" name="" index="3"/>
+        <alias field="value_fr" name="u" index="3"/>
         <alias field="value_it" name="" index="4"/>
         <alias field="value_ro" name="" index="5"/>
       </aliases>
@@ -2939,7 +2966,15 @@ def my_form_open(dialog, layer, feature):
         <defaultAction key="Canvas" value="{00000000-0000-0000-0000-000000000000}"/>
       </attributeactions>
       <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
-        <columns/>
+        <columns>
+          <column hidden="0" name="id" type="field" width="-1"/>
+          <column hidden="0" name="active" type="field" width="-1"/>
+          <column hidden="0" name="value_de" type="field" width="-1"/>
+          <column hidden="0" name="value_fr" type="field" width="-1"/>
+          <column hidden="0" name="value_it" type="field" width="-1"/>
+          <column hidden="0" name="value_ro" type="field" width="-1"/>
+          <column hidden="1" type="actions" width="-1"/>
+        </columns>
       </attributetableconfig>
       <conditionalstyles>
         <rowstyles/>
@@ -2950,15 +2985,52 @@ def my_form_open(dialog, layer, feature):
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+	geom = feature.geometry()
+	control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
-      <reuseLastValue/>
+      <editable>
+        <field name="active" editable="1"/>
+        <field name="id" editable="1"/>
+        <field name="value_de" editable="1"/>
+        <field name="value_fr" editable="1"/>
+        <field name="value_it" editable="1"/>
+        <field name="value_ro" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="active" labelOnTop="0"/>
+        <field name="id" labelOnTop="0"/>
+        <field name="value_de" labelOnTop="0"/>
+        <field name="value_fr" labelOnTop="0"/>
+        <field name="value_it" labelOnTop="0"/>
+        <field name="value_ro" labelOnTop="0"/>
+      </labelOnTop>
+      <reuseLastValue>
+        <field name="active" reuseLastValue="0"/>
+        <field name="id" reuseLastValue="0"/>
+        <field name="value_de" reuseLastValue="0"/>
+        <field name="value_fr" reuseLastValue="0"/>
+        <field name="value_it" reuseLastValue="0"/>
+        <field name="value_ro" reuseLastValue="0"/>
+      </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression></previewExpression>
+      <previewExpression>"value_de"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
     <maplayer autoRefreshTime="0" styleCategories="AllStyleCategories" maxScale="0" refreshOnNotifyMessage="" geometry="No geometry" legendPlaceholderImage="" type="vector" readOnly="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyEnabled="0" wkbType="NoGeometry" autoRefreshEnabled="0" minScale="1e+08">
@@ -3418,8 +3490,8 @@ def my_form_open(dialog, layer, feature):
           <Option value="offline" name="QFieldSync/cloud_action" type="QString"/>
           <Option value="{}" name="QFieldSync/photo_naming" type="QString"/>
           <Option value="0" name="embeddedWidgets/count" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -3432,40 +3504,49 @@ def my_form_open(dialog, layer, feature):
         <field configurationFlags="None" name="id">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="active">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="name">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_owner_1">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_owner_2">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_owner_3">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -3514,8 +3595,8 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias field="id" name="" index="0"/>
-        <alias field="active" name="" index="1"/>
-        <alias field="name" name="" index="2"/>
+        <alias field="active" name="valeur active" index="1"/>
+        <alias field="name" name="nom" index="2"/>
         <alias field="usr_owner_1" name="" index="3"/>
         <alias field="usr_owner_2" name="" index="4"/>
         <alias field="usr_owner_3" name="" index="5"/>
@@ -3573,6 +3654,10 @@ def my_form_open(dialog, layer, feature):
           <column hidden="1" type="actions" width="-1"/>
           <column hidden="0" name="_inserted_user" type="field" width="-1"/>
           <column hidden="0" name="_last_modified_user" type="field" width="-1"/>
+          <column hidden="0" name="active" type="field" width="-1"/>
+          <column hidden="0" name="usr_owner_1" type="field" width="-1"/>
+          <column hidden="0" name="usr_owner_2" type="field" width="-1"/>
+          <column hidden="0" name="usr_owner_3" type="field" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3608,24 +3693,36 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" editable="1"/>
         <field name="_last_modified_date" editable="0"/>
         <field name="_last_modified_user" editable="1"/>
+        <field name="active" editable="1"/>
         <field name="id" editable="1"/>
         <field name="name" editable="1"/>
+        <field name="usr_owner_1" editable="1"/>
+        <field name="usr_owner_2" editable="1"/>
+        <field name="usr_owner_3" editable="1"/>
       </editable>
       <labelOnTop>
         <field name="_inserted_date" labelOnTop="0"/>
         <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modified_date" labelOnTop="0"/>
         <field name="_last_modified_user" labelOnTop="0"/>
+        <field name="active" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
         <field name="name" labelOnTop="0"/>
+        <field name="usr_owner_1" labelOnTop="0"/>
+        <field name="usr_owner_2" labelOnTop="0"/>
+        <field name="usr_owner_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
         <field name="_inserted_date" reuseLastValue="0"/>
         <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modified_date" reuseLastValue="0"/>
         <field name="_last_modified_user" reuseLastValue="0"/>
+        <field name="active" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
         <field name="name" reuseLastValue="0"/>
+        <field name="usr_owner_1" reuseLastValue="0"/>
+        <field name="usr_owner_2" reuseLastValue="0"/>
+        <field name="usr_owner_3" reuseLastValue="0"/>
       </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
@@ -3721,8 +3818,8 @@ def my_form_open(dialog, layer, feature):
           <Option value="offline" name="QFieldSync/cloud_action" type="QString"/>
           <Option value="{}" name="QFieldSync/photo_naming" type="QString"/>
           <Option value="0" name="embeddedWidgets/count" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -3740,35 +3837,41 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field configurationFlags="None" name="active">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="name">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option value="false" name="IsMultiline" type="bool"/>
+                <Option value="false" name="UseHtml" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_provider_1">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_provider_2">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field configurationFlags="None" name="usr_provider_3">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
@@ -3817,8 +3920,8 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias field="id" name="" index="0"/>
-        <alias field="active" name="" index="1"/>
-        <alias field="name" name="" index="2"/>
+        <alias field="active" name="valeur active" index="1"/>
+        <alias field="name" name="nom" index="2"/>
         <alias field="usr_provider_1" name="" index="3"/>
         <alias field="usr_provider_2" name="" index="4"/>
         <alias field="usr_provider_3" name="" index="5"/>
@@ -3876,6 +3979,10 @@ def my_form_open(dialog, layer, feature):
           <column hidden="1" type="actions" width="-1"/>
           <column hidden="0" name="_inserted_user" type="field" width="-1"/>
           <column hidden="0" name="_last_modified_user" type="field" width="-1"/>
+          <column hidden="0" name="active" type="field" width="-1"/>
+          <column hidden="0" name="usr_provider_1" type="field" width="-1"/>
+          <column hidden="0" name="usr_provider_2" type="field" width="-1"/>
+          <column hidden="0" name="usr_provider_3" type="field" width="-1"/>
         </columns>
       </attributetableconfig>
       <conditionalstyles>
@@ -3911,24 +4018,36 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" editable="1"/>
         <field name="_last_modified_date" editable="0"/>
         <field name="_last_modified_user" editable="1"/>
+        <field name="active" editable="1"/>
         <field name="id" editable="1"/>
         <field name="name" editable="1"/>
+        <field name="usr_provider_1" editable="1"/>
+        <field name="usr_provider_2" editable="1"/>
+        <field name="usr_provider_3" editable="1"/>
       </editable>
       <labelOnTop>
         <field name="_inserted_date" labelOnTop="0"/>
         <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modified_date" labelOnTop="0"/>
         <field name="_last_modified_user" labelOnTop="0"/>
+        <field name="active" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
         <field name="name" labelOnTop="0"/>
+        <field name="usr_provider_1" labelOnTop="0"/>
+        <field name="usr_provider_2" labelOnTop="0"/>
+        <field name="usr_provider_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
         <field name="_inserted_date" reuseLastValue="0"/>
         <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modified_date" reuseLastValue="0"/>
         <field name="_last_modified_user" reuseLastValue="0"/>
+        <field name="active" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
         <field name="name" reuseLastValue="0"/>
+        <field name="usr_provider_1" reuseLastValue="0"/>
+        <field name="usr_provider_2" reuseLastValue="0"/>
+        <field name="usr_provider_3" reuseLastValue="0"/>
       </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>

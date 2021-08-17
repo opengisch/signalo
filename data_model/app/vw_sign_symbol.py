@@ -156,11 +156,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     """.format(
         insert_frame=insert_command(
             pg_cur=cursor, table_schema='signalo_od', table_name='frame', remove_pkey=True, indent=4,
-            skip_columns=[], returning='id INTO NEW.frame_id', prefix='frame_'
+            skip_columns=['_edited'], returning='id INTO NEW.frame_id', prefix='frame_'
         ),
         insert_sign=insert_command(
             pg_cur=cursor, table_schema='signalo_od', table_name='sign', remove_pkey=True, indent=4,
-            skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
+            skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
         )
     )
     
@@ -184,11 +184,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     """.format(
         update_sign=update_command(
             pg_cur=cursor, table_schema='signalo_od', table_name='sign',
-            indent=4, skip_columns=[], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
+            indent=4, skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
         ),
         update_frame=update_command(
             pg_cur=cursor, table_schema='signalo_od', table_name='frame', prefix='frame_',
-            indent=4, skip_columns=[], remap_columns={}
+            indent=4, skip_columns=['_edited'], remap_columns={}
         )
     )
     
