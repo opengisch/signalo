@@ -24,7 +24,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     cursor = conn.cursor()
 
     view_sql = """
-        CREATE OR REPLACE VIEW signalo_od.vw_sign_symbol AS
+        CREATE OR REPLACE VIEW signalo_app.vw_sign_symbol AS
         
         WITH joined_tables AS (      
             SELECT
@@ -116,8 +116,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             WHERE jt.verso IS TRUE   
         ;
         
-        ALTER VIEW signalo_od.vw_sign_symbol ALTER verso SET DEFAULT false;
-        ALTER VIEW signalo_od.vw_sign_symbol ALTER complex SET DEFAULT false;
+        ALTER VIEW signalo_app.vw_sign_symbol ALTER verso SET DEFAULT false;
+        ALTER VIEW signalo_app.vw_sign_symbol ALTER complex SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor, table_schema='signalo_od', table_name='sign',
@@ -149,9 +149,9 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       RETURN NEW;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
-    DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON signalo_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON signalo_app.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON signalo_od.vw_sign_symbol
+    CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON signalo_app.vw_sign_symbol
       FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_INSERT();
     """.format(
         insert_frame=insert_command(
@@ -177,9 +177,9 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     $BODY$
     LANGUAGE plpgsql;
 
-    DROP TRIGGER IF EXISTS ft_vw_signalo_sign_symbol_UPDATE ON signalo_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS ft_vw_signalo_sign_symbol_UPDATE ON signalo_app.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON signalo_od.vw_sign_symbol
+    CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON signalo_app.vw_sign_symbol
       FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_signalo_sign_symbol_UPDATE();
     """.format(
         update_sign=update_command(
@@ -207,9 +207,9 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     RETURN OLD;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
-    DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON signalo_od.vw_sign_symbol;
+    DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON signalo_app.vw_sign_symbol;
 
-    CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON signalo_od.vw_sign_symbol
+    CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON signalo_app.vw_sign_symbol
       FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_DELETE();
     """
 

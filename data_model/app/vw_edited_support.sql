@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW signalo_od.vw_edited_support AS
+CREATE OR REPLACE VIEW signalo_app.vw_edited_support AS
     SELECT su.id, su.geometry,
         greatest(su._last_modified_date, a._last_modified_date, f._last_modified_date, si._last_modified_date) AS _last_modified_date
     FROM signalo_od.support su

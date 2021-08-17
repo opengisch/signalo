@@ -60,31 +60,8 @@ done
 if [[ $force == True ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_od CASCADE";
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_vl CASCADE";
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_sys CASCADE";
 fi
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/schema.sql
-
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/durability.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/sign_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/frame_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/frame_fixing_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/support_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/support_base_type.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/status.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/lighting.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/coating.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/official_sign.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/mirror_shape.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/marker_type.sql
-
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/value_lists/official_sign_content.sql
-
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/owner.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/provider.sql
-psql "service=${PGSERVICE}" -v SRID=${SRID} -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/support.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/azimut.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/frame.sql
-psql "service=${PGSERVICE}" -v SRID=${SRID} -v ON_ERROR_STOP=1 -f ${DIR}/ordinary_data/sign.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0001/0001_1.sql
 
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
@@ -96,7 +73,5 @@ if [[ $demo_data == True ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/sign_content.sql
 fi
 
-${DIR}/views/create_views.py --pg_service ${PGSERVICE} --srid=${SRID}
+${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
 
-VERSION=$(cat ${DIR}/../CURRENT_VERSION.txt)
-pum baseline -p ${PGSERVICE} -t signalo_sys.pum_info -d ${DIR}/delta/ -b ${VERSION}
