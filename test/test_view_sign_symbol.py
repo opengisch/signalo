@@ -101,7 +101,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             'fk_durability': 1,
             'fk_status': 1
         }
-        sign_id_1 = self.insert('vw_sign_symbol', row, row, schema='signalo_app')
+        sign_id_1 = self.insert('vw_sign_symbol', row, schema='signalo_app')
         frame_id = self.select('sign', sign_id_1)['fk_frame']
 
         row['sign_rank'] = 2
