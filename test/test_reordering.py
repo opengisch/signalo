@@ -43,7 +43,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             'fk_status': 1,
             'comment': '1'
         }
-        sign_ids = [self.insert('vw_sign_symbol', row)]
+        sign_ids = [self.insert('vw_sign_symbol', row, schema='signalo_app')]
         frame_id = self.select('sign', sign_ids[0])['fk_frame']
 
         row['frame_id'] = frame_id
@@ -51,12 +51,12 @@ class TestViews(unittest.TestCase, DbTestBase):
         for i in range(2, 6):
             row['sign_rank'] = i
             row['comment'] = str(i)
-            sign_ids.append(self.insert('vw_sign_symbol', row))
+            sign_ids.append(self.insert('vw_sign_symbol', row, schema='signalo_app'))
 
         self.assertEqual(self.count('sign'), sign_count+5)
         self.assertEqual(self.count('frame'), frame_count+1)
 
-        self.delete('vw_sign_symbol', sign_ids[1])
+        self.delete('vw_sign_symbol', sign_ids[1], schema='signalo_app')
 
         self.check({'rank': 1, 'comment': '1'}, 'sign', sign_ids[0])
         self.check({'rank': 2, 'comment': '3'}, 'sign', sign_ids[2])
