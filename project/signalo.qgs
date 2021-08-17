@@ -6782,7 +6782,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="signalo_od"."vw_edited_support" (geometry)</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="signalo_app"."vw_edited_support" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7065,7 +7065,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_od"."vw_sign_symbol" (support_geometry)</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
