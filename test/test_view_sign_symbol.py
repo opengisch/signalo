@@ -45,7 +45,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             {'id': '00000000-0000-0000-eeee-000002020401', 'row': {'azimut': 165, '_final_rank': 6, '_previous_sign_in_frame': None,                                   '_next_sign_in_frame': None,                                   '_previous_frame': '00000000-0000-0000-ffff-000000020203', '_next_frame': None}},
         ]
         for row in data:
-            self.check(row['row'], 'vw_sign_symbol', row['id'])
+            self.check(row['row'], 'vw_sign_symbol', row['id'], schema='signalo_app')
 
     def test_insert(self):
         support_id = self.insert_check('support', {'geometry': self.execute_select("ST_SetSRID(ST_MakePoint(2600000, 1200000), 2056)")})
@@ -64,7 +64,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             'fk_status': 1
         }
 
-        sign_id = self.insert('vw_sign_symbol', row)
+        sign_id = self.insert('vw_sign_symbol', row, schema='signalo_app')
         frame_id = self.select('sign', sign_id)['fk_frame']
 
         row = {'fk_azimut': azimut_id}
@@ -79,7 +79,7 @@ class TestViews(unittest.TestCase, DbTestBase):
             'frame_fk_frame_type': 2,
         }
 
-        self.update_check('vw_sign_symbol', row, '00000000-0000-0000-eeee-000002010101')
+        self.update_check('vw_sign_symbol', row, '00000000-0000-0000-eeee-000002010101', schema='signalo_app')
 
     def test_delete(self):
 
@@ -101,23 +101,23 @@ class TestViews(unittest.TestCase, DbTestBase):
             'fk_durability': 1,
             'fk_status': 1
         }
-        sign_id_1 = self.insert('vw_sign_symbol', row)
+        sign_id_1 = self.insert('vw_sign_symbol', row, row, schema='signalo_app')
         frame_id = self.select('sign', sign_id_1)['fk_frame']
 
         row['sign_rank'] = 2
         row['frame_id'] = frame_id
 
-        sign_id_2 = self.insert('vw_sign_symbol', row)
+        sign_id_2 = self.insert('vw_sign_symbol', row, schema='signalo_app')
 
         self.assertEqual(self.count('sign'), sign_count+2)
         self.assertEqual(self.count('frame'), frame_count+1)
 
-        self.delete('vw_sign_symbol', sign_id_2)
+        self.delete('vw_sign_symbol', sign_id_2, schema='signalo_app')
 
         self.assertEqual(self.count('sign'), sign_count+1)
         self.assertEqual(self.count('frame'), frame_count+1)
 
-        self.delete('vw_sign_symbol', sign_id_1)
+        self.delete('vw_sign_symbol', sign_id_1, schema='signalo_app')
 
         self.assertEqual(self.count('sign'), sign_count)
         self.assertEqual(self.count('frame'), frame_count)
