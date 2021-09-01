@@ -51,7 +51,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./project-release.zip
+          asset_path: ./project.zip
           asset_name: signalo-${{ github.event.release.tag_name }}-project.zip
           asset_content_type: application/zip
 
