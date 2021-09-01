@@ -61,7 +61,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: db-dump.backup
+          asset_path: ./db-dump.backup
           asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.backup
           asset_content_type: application/zip
 
@@ -71,6 +71,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ github.event.release.upload_url }}
-          asset_path: db-dump-with-demo.backup
+          asset_path: ./db-dump-with-demo.backup
           asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
           asset_content_type: application/zip
