@@ -29,8 +29,8 @@ jobs:
 
       - name: "create project archive"
         run: |
-          sed 's/pg_signalo/pg_signal_dev/g' project/signalo.qgs > project/signalo_dev.qgs
-          sed 's/pg_signalo/pg_signal_prod/g' project/signalo.qgs > project/signalo_prod.qgs
+          sed 's/pg_signalo/pg_signalo_dev/g' project/signalo.qgs > project/signalo_dev.qgs
+          sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
           zip -r project.zip project README.md
 
       - name: Login to DockerHub
