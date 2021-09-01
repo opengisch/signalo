@@ -21,6 +21,8 @@ jobs:
 
       - name: "create dumps"
         run: |
+          docker run --name signalo opengisch/signalo:latest
+          docker exec signalo init_db.sh wait
           docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump.backup signalo
           docker exec signalo init_db.sh build -d
           docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump-with-demo.backup signalo
