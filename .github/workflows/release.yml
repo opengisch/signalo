@@ -44,7 +44,6 @@ jobs:
           docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
       - name: Upload Release Asset - project
-        id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -55,7 +54,6 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload Release Asset - dump
-        id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -66,7 +64,6 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload Release Asset - dump with demo
-        id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
