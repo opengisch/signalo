@@ -27,8 +27,10 @@ jobs:
           docker exec signalo init_db.sh build -d
           docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump-with-demo.backup signalo
 
-      - name: "create archive"
+      - name: "create project archive"
         run: |
+          sed 's/pg_signalo/pg_signal_dev/g' project/signalo.qgs > project/signalo_dev.qgs
+          sed 's/pg_signalo/pg_signal_prod/g' project/signalo.qgs > project/signalo_prod.qgs
           zip -r project.zip project README.md
 
       - name: Login to DockerHub
