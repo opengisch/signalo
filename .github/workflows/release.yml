@@ -24,8 +24,10 @@ jobs:
           docker run -d -p 5432:5432 -v $(pwd):/src  --name signalo opengisch/signalo:latest
           docker exec signalo init_db.sh wait
           docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump.backup signalo
+          docker exec signalo pg_dump --format plain --file db-dump.sql signalo
           docker exec signalo init_db.sh build -d
           docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump-with-demo.backup signalo
+          docker exec signalo pg_dump --format plain --file db-dump-with-demo.sql signalo
 
       - name: "create project archive"
         run: |
@@ -67,6 +69,16 @@ jobs:
           asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.backup
           asset_content_type: application/zip
 
+      - name: Upload Release Asset - plain dump
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./db-dump.sql
+          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.sql
+          asset_content_type: application/zip
+
       - name: Upload Release Asset - dump with demo
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -75,4 +87,14 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./db-dump-with-demo.backup
           asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset - plain dump with demo
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./db-dump-with-demo.sql
+          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
           asset_content_type: application/zip
