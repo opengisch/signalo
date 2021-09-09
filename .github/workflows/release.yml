@@ -23,11 +23,11 @@ jobs:
         run: |
           docker run -d -p 5432:5432 -v $(pwd):/src  --name signalo opengisch/signalo:latest
           docker exec signalo init_db.sh wait
-          docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump.backup signalo
-          docker exec signalo pg_dump --format plain --file db-dump.sql signalo
+          docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
+          docker exec signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
           docker exec signalo init_db.sh build -d
-          docker exec signalo pg_dump --format custom --blobs --compress 5 --file db-dump-with-demo.backup signalo
-          docker exec signalo pg_dump --format plain --file db-dump-with-demo.sql signalo
+          docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump-with-demo.backup signalo
+          docker exec signalo pg_dump --format plain --exclude-schema=public --file db-dump-with-demo.sql signalo
 
       - name: "create project archive"
         run: |
