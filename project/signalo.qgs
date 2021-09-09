@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2021-09-09T17:53:18" projectname="" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.21.0-Master">
+<qgis saveDateTime="2021-09-09T18:14:21" projectname="" saveUser="denis" saveUserFull="Denis Rouzaud" version="3.21.0-Master">
   <homePath path=""/>
   <title></title>
   <autotransaction active="1"/>
@@ -152,9 +152,9 @@
   </layer-tree-group>
   <snapping-settings maxScale="0" mode="2" type="1" unit="1" minScale="0" tolerance="12" self-snapping="0" enabled="1" scaleDependencyMode="0" intersection-snapping="0">
     <individual-layer-settings>
-      <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" maxScale="0" units="1" type="1" minScale="0" tolerance="12" enabled="0"/>
       <layer-setting id="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b" maxScale="0" units="1" type="1" minScale="0" tolerance="12" enabled="0"/>
       <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" maxScale="0" units="1" type="1" minScale="0" tolerance="12" enabled="0"/>
+      <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" maxScale="0" units="1" type="1" minScale="0" tolerance="12" enabled="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -175,10 +175,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537695.56469565909355879</xmin>
-      <ymin>1152178.52249110280536115</ymin>
-      <xmax>2538573.30509498622268438</xmax>
-      <ymax>1152800.67564771347679198</ymax>
+      <xmin>2537883.28990179672837257</xmin>
+      <ymin>1152399.55320231127552688</ymin>
+      <xmax>2538078.39852413814514875</xmax>
+      <ymax>1152537.84858596255071461</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -7536,6 +7536,7 @@ def my_form_open(dialog, layer, feature):
       <renderer-v2 referencescale="-1" type="RuleRenderer" symbollevels="0" enableorderby="0" forceraster="0">
         <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
           <rule key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" filter=" @qgis_platform = 'desktop' or &#xa; ( &#xa;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xa; )" symbol="0"/>
+          <rule key="{b6d63966-7f0e-44fd-93c0-07a2649b11cd}" label="édité" filter=" @qgis_platform = 'desktop' and &#xa; ( &#xa;&quot;support__edited&quot; is true or &quot;azimut__edited&quot; is true or &quot;sign__edited&quot; is true or  &quot;frame__edited&quot; is true&#xa; )" symbol="1"/>
         </rules>
         <symbols>
           <symbol type="marker" force_rhr="0" clip_to_extent="1" alpha="1" name="0">
@@ -7622,6 +7623,114 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option type="Map" name="name">
                       <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="offset">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="array(0,(&quot;_final_rank&quot;-1)*2 + @signalo_img_size*(.5+coalesce( &quot;_symbol_shift&quot;,0)/100) )" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="vAnchor">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="'top'" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="width">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="@signalo_img_size*&quot;_symbol_width&quot;/100" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                  </Option>
+                  <Option type="QString" value="collection" name="type"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+          <symbol type="marker" force_rhr="0" clip_to_extent="1" alpha="1" name="1">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option type="QString" value="" name="name"/>
+                <Option name="properties"/>
+                <Option type="QString" value="collection" name="type"/>
+              </Option>
+            </data_defined_properties>
+            <layer locked="0" pass="0" class="SvgMarker" enabled="1">
+              <Option type="Map">
+                <Option type="QString" value="0" name="angle"/>
+                <Option type="QString" value="0,0,0,255" name="color"/>
+                <Option type="QString" value="0" name="fixedAspectRatio"/>
+                <Option type="QString" value="1" name="horizontal_anchor_point"/>
+                <Option type="QString" value="./images/edited.svg" name="name"/>
+                <Option type="QString" value="0,0" name="offset"/>
+                <Option type="QString" value="3x:0,0,0,0,0,0" name="offset_map_unit_scale"/>
+                <Option type="QString" value="Point" name="offset_unit"/>
+                <Option type="QString" value="255,255,255,255" name="outline_color"/>
+                <Option type="QString" value="0" name="outline_width"/>
+                <Option type="QString" value="3x:0,0,0,0,0,0" name="outline_width_map_unit_scale"/>
+                <Option type="QString" value="Pixel" name="outline_width_unit"/>
+                <Option type="Map" name="parameters">
+                  <Option type="Map" name="text1">
+                    <Option type="bool" value="true" name="active"/>
+                    <Option type="QString" value="inscription_1" name="expression"/>
+                    <Option type="int" value="3" name="type"/>
+                  </Option>
+                  <Option type="Map" name="text2">
+                    <Option type="bool" value="true" name="active"/>
+                    <Option type="QString" value="inscription_2" name="expression"/>
+                    <Option type="int" value="3" name="type"/>
+                  </Option>
+                  <Option type="Map" name="text3">
+                    <Option type="bool" value="true" name="active"/>
+                    <Option type="QString" value="inscription_3" name="expression"/>
+                    <Option type="int" value="3" name="type"/>
+                  </Option>
+                </Option>
+                <Option type="QString" value="diameter" name="scale_method"/>
+                <Option type="QString" value="8.2" name="size"/>
+                <Option type="QString" value="3x:0,0,0,0,0,0" name="size_map_unit_scale"/>
+                <Option type="QString" value="Point" name="size_unit"/>
+                <Option type="QString" value="1" name="vertical_anchor_point"/>
+              </Option>
+              <prop v="0" k="angle"/>
+              <prop v="0,0,0,255" k="color"/>
+              <prop v="0" k="fixedAspectRatio"/>
+              <prop v="1" k="horizontal_anchor_point"/>
+              <prop v="./images/edited.svg" k="name"/>
+              <prop v="0,0" k="offset"/>
+              <prop v="3x:0,0,0,0,0,0" k="offset_map_unit_scale"/>
+              <prop v="Point" k="offset_unit"/>
+              <prop v="255,255,255,255" k="outline_color"/>
+              <prop v="0" k="outline_width"/>
+              <prop v="3x:0,0,0,0,0,0" k="outline_width_map_unit_scale"/>
+              <prop v="Pixel" k="outline_width_unit"/>
+              <prop v="" k="parameters"/>
+              <prop v="diameter" k="scale_method"/>
+              <prop v="8.2" k="size"/>
+              <prop v="3x:0,0,0,0,0,0" k="size_map_unit_scale"/>
+              <prop v="Point" k="size_unit"/>
+              <prop v="1" k="vertical_anchor_point"/>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option type="QString" value="" name="name"/>
+                  <Option type="Map" name="properties">
+                    <Option type="Map" name="angle">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="&quot;azimut&quot;  - if(verso, 0, 180)" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="hAnchor">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="'center'" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="height">
+                      <Option type="bool" value="true" name="active"/>
+                      <Option type="QString" value="@signalo_img_size*&quot;_symbol_height&quot;/100" name="expression"/>
+                      <Option type="int" value="3" name="type"/>
+                    </Option>
+                    <Option type="Map" name="name">
+                      <Option type="bool" value="false" name="active"/>
                       <Option type="QString" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END" name="expression"/>
                       <Option type="int" value="3" name="type"/>
                     </Option>
@@ -9717,6 +9826,24 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem size="247.028,53.7715,mm" marginX="0" valign="128" frameJoinStyle="miter" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" positionOnPage="24.986,142.228,mm" marginY="0" type="65641" itemRotation="0" position="24.986,142.228,mm" background="false" referencePoint="0" blendMode="0" groupUuid="" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" id="" opacity="1" visibility="1" frame="false" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" halign="4" zValue="2" htmlState="0" outlineWidthM="0.3,mm" positionLock="false" excludeFromExports="0">
+        <FrameColor green="0" blue="0" alpha="255" red="0"/>
+        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" value="" name="name"/>
+              <Option name="properties"/>
+              <Option type="QString" value="collection" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option/>
+          </customproperties>
+        </LayoutObject>
+        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
+        <FontColor green="0" blue="0" alpha="255" red="0"/>
+      </LayoutItem>
       <LayoutItem size="130.768,148.068,mm" anchorPoint="7" svgBorderWidth="0.2" frameJoinStyle="miter" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" positionOnPage="148.5,150.814,mm" type="65640" northMode="0" itemRotation="0" mapUuid="" pictureRotation="0" mode="0" svgBorderColor="0,0,0,255" position="148.5,150.814,mm" background="false" referencePoint="7" blendMode="0" groupUuid="" file="101.svg" svgFillColor="255,255,255,255" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" id="" resizeMode="0" opacity="1" visibility="1" frame="false" pictureHeight="131.57" pictureWidth="130.768" northOffset="0" zValue="2" outlineWidthM="0.3,mm" positionLock="false" excludeFromExports="0">
         <FrameColor green="0" blue="0" alpha="255" red="0"/>
         <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
@@ -9762,24 +9889,6 @@ def my_form_open(dialog, layer, feature):
           </customproperties>
         </LayoutObject>
       </LayoutItem>
-      <LayoutItem size="247.028,53.7715,mm" marginX="0" valign="128" frameJoinStyle="miter" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" positionOnPage="24.986,142.228,mm" marginY="0" type="65641" itemRotation="0" position="24.986,142.228,mm" background="false" referencePoint="0" blendMode="0" groupUuid="" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" id="" opacity="1" visibility="1" frame="false" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" halign="4" zValue="2" htmlState="0" outlineWidthM="0.3,mm" positionLock="false" excludeFromExports="0">
-        <FrameColor green="0" blue="0" alpha="255" red="0"/>
-        <BackgroundColor green="255" blue="255" alpha="255" red="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" value="" name="name"/>
-              <Option name="properties"/>
-              <Option type="QString" value="collection" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option/>
-          </customproperties>
-        </LayoutObject>
-        <LabelFont style="Normal" description="MS Shell Dlg 2,36,-1,5,50,0,0,0,0,0,Normal"/>
-        <FontColor green="0" blue="0" alpha="255" red="0"/>
-      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option type="QString" value="png" name="atlasRasterFormat"/>
@@ -9802,7 +9911,7 @@ def my_form_open(dialog, layer, feature):
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmax="2538573.30509498622268438" xmin="2537695.56469565909355879" ymin="1151980.67945456248708069" ymax="1152998.51868425379507244">
+    <DefaultViewExtent xmax="2538078.39852413814514875" xmin="2537883.28990179672837257" ymin="1152328.22854516888037324" ymax="1152609.17324310494586825">
       <spatialrefsys>
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["unknown"],AREA["Europe - Liechtenstein and Switzerland"],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
