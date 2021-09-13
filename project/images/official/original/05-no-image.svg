@@ -7,13 +7,13 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="121pt"
-   height="106pt"
+   width="121"
+   height="106"
    viewBox="0 0 121 106"
    version="1.1"
    id="svg891"
-   sodipodi:docname="no-image.svg"
-   inkscape:version="1.0.2 (e86c8708, 2021-01-15)">
+   sodipodi:docname="05-no-image.svg"
+   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata897">
     <rdf:RDF>
@@ -37,17 +37,19 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1386"
-     inkscape:window-height="1250"
+     inkscape:window-width="1707"
+     inkscape:window-height="897"
      id="namedview893"
      showgrid="false"
      inkscape:zoom="3.8305785"
      inkscape:cx="80.666667"
      inkscape:cy="70.666667"
-     inkscape:window-x="1764"
-     inkscape:window-y="57"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg891" />
+     inkscape:window-x="-8"
+     inkscape:window-y="715"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg891"
+     inkscape:document-rotation="0"
+     units="px" />
   <circle
      style="fill:#f3ffaa;fill-opacity:1;stroke:#000000;stroke-width:1.47366;stroke-linecap:round"
      id="path903"
