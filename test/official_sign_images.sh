@@ -45,6 +45,5 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
   done
 done
 
-exit 0
-# exit ${return_code}
+exit ${return_code}
 
