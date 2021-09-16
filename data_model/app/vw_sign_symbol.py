@@ -34,48 +34,48 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , sign.rank AS sign_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
-                , official_sign.value_de as _symbol_value_de
-                , official_sign.value_fr as _symbol_value_fr
-                , official_sign.value_it as _symbol_value_it
-                , official_sign.value_ro as _symbol_value_ro
+                , vl_official_sign.value_de as _symbol_value_de
+                , vl_official_sign.value_fr as _symbol_value_fr
+                , vl_official_sign.value_it as _symbol_value_it
+                , vl_official_sign.value_ro as _symbol_value_ro
                 , CASE 
                   WHEN complex IS TRUE THEN 'no-image.svg'
-                  WHEN fk_sign_type = 11 THEN official_sign.img_de 
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_de 
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_de
                 , CASE 
                   WHEN complex IS TRUE THEN 'no-image.svg'
-                  WHEN fk_sign_type = 11 THEN official_sign.img_fr
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_fr
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_fr
                 , CASE 
                   WHEN complex IS TRUE THEN 'no-image.svg'
-                  WHEN fk_sign_type = 11 THEN official_sign.img_it
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_it
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_it
                 , CASE 
                   WHEN complex IS TRUE THEN 'no-image.svg'
-                  WHEN fk_sign_type = 11 THEN official_sign.img_ro
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_ro
                   WHEN fk_sign_type = 12 THEN 'marker.svg' 
                   WHEN fk_sign_type = 13 THEN 'mirror.svg' 
                   WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
                 END as _img_ro
                 , CASE 
                   WHEN complex IS TRUE THEN 106
-                  WHEN fk_sign_type = 11 THEN official_sign.img_height
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_height
                   WHEN fk_sign_type = 12 THEN 130
                   WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 100
                 END as _symbol_height
                 , CASE 
                   WHEN complex IS TRUE THEN 121
-                  WHEN fk_sign_type = 11 THEN official_sign.img_width
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_width
                   WHEN fk_sign_type = 12 THEN 70
                   WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 130
@@ -84,7 +84,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
                 LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
                 LEFT JOIN signalo_db.support ON support.id = azimut.fk_support
-                LEFT JOIN signalo_vl.official_sign ON official_sign.id = sign.fk_official_sign
+                LEFT JOIN signalo_db.vl_official_sign ON vl_official_sign.id = sign.fk_official_sign
         ),
         ordered_recto_signs AS (
             SELECT
@@ -129,7 +129,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             prefix='frame_'
         ),
         vl_official_sign_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_vl', table_name='official_sign',
+            pg_cur=cursor, table_schema='signalo_db', table_name='vl_official_sign',
             remove_pkey=False, indent=4, prefix='vl_official_sign_'
         ),
     )
