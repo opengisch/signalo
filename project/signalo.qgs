@@ -32,22 +32,22 @@
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" checked="Qt::Checked" id="support_347aa750_1661_498f_a7e8_017adc616ba0" name="Support" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" checked="Qt::Checked" id="support_347aa750_1661_498f_a7e8_017adc616ba0" name="Support" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" checked="Qt::Checked" id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="Azimut" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" checked="Qt::Checked" id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="Azimut" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" checked="Qt::Checked" id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="Cadre" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" checked="Qt::Checked" id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="Cadre" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;sign&quot;" checked="Qt::Checked" id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" name="Signal" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+    <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;sign&quot;" checked="Qt::Checked" id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" name="Signal" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
       <customproperties>
         <Option/>
       </customproperties>
@@ -71,12 +71,12 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" checked="Qt::Checked" id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Fournisseur" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+      <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;" checked="Qt::Checked" id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Fournisseur" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" checked="Qt::Checked" id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Propriétaire" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
+      <layer-tree-layer expanded="1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;" checked="Qt::Checked" id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Propriétaire" providerKey="postgres" legend_exp="" legend_split_behavior="0" patch_size="-1,-1">
         <customproperties>
           <Option/>
         </customproperties>
@@ -681,7 +681,7 @@
     </maplayer>
     <maplayer geometry="No geometry" type="vector" styleCategories="AllStyleCategories" wkbType="NoGeometry" maxScale="0" readOnly="0" legendPlaceholderImage="" autoRefreshTime="0" refreshOnNotifyEnabled="0" minScale="1e+08" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="">
       <id>azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."azimut"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."azimut"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -785,7 +785,7 @@
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation layerName="Support" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" id="support_azimut" name="support_azimut" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" dataSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" strength="Composition" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0">
+        <relation layerName="Support" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" id="support_azimut" name="support_azimut" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" dataSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" strength="Composition" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0">
           <fieldRef referencingField="fk_support" referencedField="id"/>
         </relation>
       </referencedLayers>
@@ -809,7 +809,7 @@
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;support&quot; (geometry)" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="support_347aa750_1661_498f_a7e8_017adc616ba0" name="ReferencedLayerId"/>
                 <Option type="QString" value="Support" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -1460,7 +1460,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer geometry="No geometry" type="vector" styleCategories="AllStyleCategories" wkbType="NoGeometry" maxScale="0" readOnly="0" legendPlaceholderImage="" autoRefreshTime="0" refreshOnNotifyEnabled="0" minScale="1e+08" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="">
       <id>frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."frame"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."frame"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1565,7 +1565,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation layerName="Azimut" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="azimut-cadre" name="azimut-cadre" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" strength="Composition" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
+        <relation layerName="Azimut" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" id="azimut-cadre" name="azimut-cadre" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" strength="Composition" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
           <fieldRef referencingField="fk_azimut" referencedField="id"/>
         </relation>
       </referencedLayers>
@@ -1589,7 +1589,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="ReferencedLayerId"/>
                 <Option type="QString" value="Azimut" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -1700,7 +1700,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -3497,7 +3497,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer geometry="No geometry" type="vector" styleCategories="AllStyleCategories" wkbType="NoGeometry" maxScale="0" readOnly="0" legendPlaceholderImage="" autoRefreshTime="0" refreshOnNotifyEnabled="0" minScale="1e+08" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="">
       <id>owner_4e532508_fa34_406c_8846_8f8306ca74ee</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."owner"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_owner"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3825,7 +3825,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer geometry="No geometry" type="vector" styleCategories="AllStyleCategories" wkbType="NoGeometry" maxScale="0" readOnly="0" legendPlaceholderImage="" autoRefreshTime="0" refreshOnNotifyEnabled="0" minScale="1e+08" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="">
       <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_od"."provider"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_provider"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4150,7 +4150,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer geometry="No geometry" type="vector" styleCategories="AllStyleCategories" wkbType="NoGeometry" maxScale="0" readOnly="0" legendPlaceholderImage="" autoRefreshTime="0" refreshOnNotifyEnabled="0" minScale="1e+08" autoRefreshEnabled="0" hasScaleBasedVisibilityFlag="0" refreshOnNotifyMessage="">
       <id>sign_2499f9bd_24a2_4384_b329_dc522a94c545</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_od"."sign"</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4252,7 +4252,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation layerName="Cadre" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" id="frame-sign" name="cadre-signal" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" strength="Composition" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4">
+        <relation layerName="Cadre" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" id="frame-sign" name="cadre-signal" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" strength="Composition" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4">
           <fieldRef referencingField="fk_frame" referencedField="id"/>
         </relation>
         <relation layerName="Signal officiel" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" id="sign-official-sign" name="Signe officiel" providerKey="postgres" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_vl&quot;.&quot;official_sign&quot;" strength="Association" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae">
@@ -4279,7 +4279,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;frame&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" name="ReferencedLayerId"/>
                 <Option type="QString" value="Cadre" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -4430,7 +4430,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="Propriétaire" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -4451,7 +4451,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -5856,7 +5856,7 @@ def my_form_open(dialog, layer, feature):
         <ymax>46.52393046604051818</ymax>
       </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_od"."support" (geometry)</datasource>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_db"."support" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6169,7 +6169,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="Propriétaire" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -6190,7 +6190,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" name="Layer"/>
                 <Option type="QString" value="Fournisseur" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_od&quot;.&quot;provider&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="true" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -8222,7 +8222,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="QString" value="owner_4e532508_fa34_406c_8846_8f8306ca74ee" name="Layer"/>
                 <Option type="QString" value="owner" name="LayerName"/>
                 <Option type="QString" value="postgres" name="LayerProviderName"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;owner&quot;" name="LayerSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;" name="LayerSource"/>
                 <Option type="int" value="1" name="NofColumns"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="UseCompleter"/>
@@ -8489,7 +8489,7 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="MapIdentification"/>
                 <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_od&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" name="ReferencedLayerId"/>
                 <Option type="QString" value="Azimut" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>

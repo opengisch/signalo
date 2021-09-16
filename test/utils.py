@@ -5,12 +5,12 @@ import psycopg2.extras
 
 class DbTestBase:
 
-    def count(self, table, schema='signalo_od') -> int:
+    def count(self, table, schema='signalo_db') -> int:
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute("SELECT COUNT(*) FROM {schema}.{table}".format(table=table, schema=schema))
         return cur.fetchone()[0]
 
-    def select(self, table, id, schema='signalo_od'):
+    def select(self, table, id, schema='signalo_db'):
         cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute("SELECT * FROM {schema}.{table} WHERE id=%(id)s"
                     .format(table=table, schema=schema),
@@ -28,7 +28,7 @@ class DbTestBase:
     def cursor(self):
         return self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
 
-    def insert(self, table, row, schema='signalo_od'):
+    def insert(self, table, row, schema='signalo_db'):
         cur = self.conn.cursor()
         cols = ', '.join(row.keys())
         values = ', '.join(["%({key})s".format(key=key) for key in row.keys()])
@@ -37,7 +37,7 @@ class DbTestBase:
                     row)
         return cur.fetchone()[0]
 
-    def update(self, table, row, id, schema='signalo_od'):
+    def update(self, table, row, id, schema='signalo_db'):
         cur = self.conn.cursor()
         cols = ','.join(['{key}=%({key})s'.format(key=key) for key in row.keys()])
         row['id'] = id
@@ -45,12 +45,12 @@ class DbTestBase:
                     .format(table=table, schema=schema, cols=cols),
                     row)
 
-    def delete(self, table, id, schema='signalo_od'):
+    def delete(self, table, id, schema='signalo_db'):
         cur = self.conn.cursor()
         cur.execute("DELETE FROM {schema}.{table} WHERE id=%s"
                     .format(table=table, schema=schema), [id])
 
-    def insert_check(self, table, row, expected_row=None, schema='signalo_od'):
+    def insert_check(self, table, row, expected_row=None, schema='signalo_db'):
         id = self.insert(table, row, schema)
         result = self.select(table, id, schema)
 
@@ -63,16 +63,16 @@ class DbTestBase:
 
         return id
 
-    def update_check(self, table, row, id, schema='signalo_od'):
+    def update_check(self, table, row, id, schema='signalo_db'):
         self.update(table, row, id, schema)
         result = self.select(table, id, schema)
         self.check_result(row, result, table, 'update', schema)
 
-    def check(self, expected, table, id, schema='signalo_od'):
+    def check(self, expected, table, id, schema='signalo_db'):
         result = self.select(table, id, schema)
         self.check_result(expected, result, table, 'update', schema)
 
-    def check_result(self, expected, result, table, test_name, schema='signalo_od'):
+    def check_result(self, expected, result, table, test_name, schema='signalo_db'):
         # TODO: don't convert to unicode, type inference for smallint is
         # currently broken, that's the reason at the moment.
         self.assertTrue(result, "No result set received.")

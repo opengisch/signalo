@@ -1,39 +1,5 @@
---
--- PostgreSQL database dump
---
 
--- Dumped from database version 11.10 (Debian 11.10-1.pgdg90+1)
--- Dumped by pg_dump version 11.10 (Debian 11.10-1.pgdg90+1)
-
-SET statement_timeout = 0;
-SET lock_timeout = 0;
-SET idle_in_transaction_session_timeout = 0;
-SET client_encoding = 'UTF8';
-SET standard_conforming_strings = on;
-SELECT pg_catalog.set_config('search_path', '', false);
-SET check_function_bodies = false;
-SET xmloption = content;
-SET client_min_messages = warning;
-SET row_security = off;
-
---
--- Name: signalo_od; Type: SCHEMA; Schema: -; Owner: postgres
---
-
-CREATE SCHEMA signalo_od;
-
-
-ALTER SCHEMA signalo_od OWNER TO postgres;
-
---
--- Name: signalo_vl; Type: SCHEMA; Schema: -; Owner: postgres
---
-
-CREATE SCHEMA signalo_vl;
-
-
-ALTER SCHEMA signalo_vl OWNER TO postgres;
-
+CREATE SCHEMA signalo_db;
 
 --
 -- Name: postgis; Type: EXTENSION; Schema: -; Owner: 
@@ -64,58 +30,52 @@ COMMENT ON EXTENSION "uuid-ossp" IS 'generate universally unique identifiers (UU
 
 
 --
--- Name: ft_reorder_frames_on_support(); Type: FUNCTION; Schema: signalo_od; Owner: postgres
+-- Name: ft_reorder_frames_on_support(); Type: FUNCTION; Schema: signalo_db;
 --
 
-CREATE FUNCTION signalo_od.ft_reorder_frames_on_support() RETURNS trigger
+CREATE FUNCTION signalo_db.ft_reorder_frames_on_support() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 	DECLARE
 	    _rank integer := 1;
 	    _frame record;
 	BEGIN
-        FOR _frame IN (SELECT * FROM signalo_od.frame WHERE fk_azimut = OLD.fk_azimut ORDER BY rank ASC)
+        FOR _frame IN (SELECT * FROM signalo_db.frame WHERE fk_azimut = OLD.fk_azimut ORDER BY rank ASC)
         LOOP
-            UPDATE signalo_od.frame SET rank = _rank WHERE id = _frame.id;
+            UPDATE signalo_db.frame SET rank = _rank WHERE id = _frame.id;
             _rank = _rank + 1;
         END LOOP;
 		RETURN OLD;
 	END;
 	$$;
 
-
-ALTER FUNCTION signalo_od.ft_reorder_frames_on_support() OWNER TO postgres;
-
 --
--- Name: ft_reorder_frames_on_support_put_last(); Type: FUNCTION; Schema: signalo_od; Owner: postgres
+-- Name: ft_reorder_frames_on_support_put_last(); Type: FUNCTION; Schema: signalo_db;
 --
 
-CREATE FUNCTION signalo_od.ft_reorder_frames_on_support_put_last() RETURNS trigger
+CREATE FUNCTION signalo_db.ft_reorder_frames_on_support_put_last() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 	BEGIN
-	    NEW.rank := (SELECT MAX(rank)+1 FROM signalo_od.frame WHERE fk_azimut = NEW.fk_azimut);
+	    NEW.rank := (SELECT MAX(rank)+1 FROM signalo_db.frame WHERE fk_azimut = NEW.fk_azimut);
 		RETURN NEW;
 	END;
 	$$;
 
-
-ALTER FUNCTION signalo_od.ft_reorder_frames_on_support_put_last() OWNER TO postgres;
-
 --
--- Name: ft_reorder_signs_in_frame(); Type: FUNCTION; Schema: signalo_od; Owner: postgres
+-- Name: ft_reorder_signs_in_frame(); Type: FUNCTION; Schema: signalo_db;
 --
 
-CREATE FUNCTION signalo_od.ft_reorder_signs_in_frame() RETURNS trigger
+CREATE FUNCTION signalo_db.ft_reorder_signs_in_frame() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
 	DECLARE
 	    _rank integer := 1;
 	    _sign record;
 	BEGIN
-        FOR _sign IN (SELECT * FROM signalo_od.sign WHERE fk_frame = OLD.fk_frame ORDER BY rank ASC)
+        FOR _sign IN (SELECT * FROM signalo_db.sign WHERE fk_frame = OLD.fk_frame ORDER BY rank ASC)
         LOOP
-            UPDATE signalo_od.sign SET rank = _rank WHERE id = _sign.id;
+            UPDATE signalo_db.sign SET rank = _rank WHERE id = _sign.id;
             _rank = _rank + 1;
         END LOOP;
 		RETURN OLD;
@@ -123,13 +83,11 @@ CREATE FUNCTION signalo_od.ft_reorder_signs_in_frame() RETURNS trigger
 	$$;
 
 
-ALTER FUNCTION signalo_od.ft_reorder_signs_in_frame() OWNER TO postgres;
-
 --
--- Name: ft_sign_prevent_fk_frame_update(); Type: FUNCTION; Schema: signalo_od; Owner: postgres
+-- Name: ft_sign_prevent_fk_frame_update(); Type: FUNCTION; Schema: signalo_db;
 --
 
-CREATE FUNCTION signalo_od.ft_sign_prevent_fk_frame_update() RETURNS trigger
+CREATE FUNCTION signalo_db.ft_sign_prevent_fk_frame_update() RETURNS trigger
     LANGUAGE plpgsql
     AS $$
     BEGIN
@@ -138,17 +96,11 @@ CREATE FUNCTION signalo_od.ft_sign_prevent_fk_frame_update() RETURNS trigger
     $$;
 
 
-ALTER FUNCTION signalo_od.ft_sign_prevent_fk_frame_update() OWNER TO postgres;
-
-SET default_tablespace = '';
-
-SET default_with_oids = false;
-
 --
--- Name: azimut; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: azimut; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.azimut (
+CREATE TABLE signalo_db.azimut (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     fk_support uuid NOT NULL,
     azimut smallint DEFAULT 0,
@@ -163,13 +115,11 @@ CREATE TABLE signalo_od.azimut (
 );
 
 
-ALTER TABLE signalo_od.azimut OWNER TO postgres;
-
 --
--- Name: frame; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: frame; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.frame (
+CREATE TABLE signalo_db.frame (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     fk_azimut uuid NOT NULL,
     rank integer DEFAULT 1 NOT NULL,
@@ -192,14 +142,11 @@ CREATE TABLE signalo_od.frame (
     _edited boolean DEFAULT false
 );
 
-
-ALTER TABLE signalo_od.frame OWNER TO postgres;
-
 --
--- Name: owner; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: owner; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.owner (
+CREATE TABLE signalo_db.vl_owner (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     active boolean DEFAULT true,
     name text,
@@ -213,13 +160,11 @@ CREATE TABLE signalo_od.owner (
 );
 
 
-ALTER TABLE signalo_od.owner OWNER TO postgres;
-
 --
--- Name: provider; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: provider; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.provider (
+CREATE TABLE signalo_db.vl_provider (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     active boolean DEFAULT true,
     name text,
@@ -233,13 +178,11 @@ CREATE TABLE signalo_od.provider (
 );
 
 
-ALTER TABLE signalo_od.provider OWNER TO postgres;
-
 --
--- Name: sign; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: sign; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.sign (
+CREATE TABLE signalo_db.sign (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     fk_frame uuid NOT NULL,
     rank integer DEFAULT 1 NOT NULL,
@@ -279,14 +222,11 @@ CREATE TABLE signalo_od.sign (
     _edited boolean DEFAULT false
 );
 
-
-ALTER TABLE signalo_od.sign OWNER TO postgres;
-
 --
--- Name: support; Type: TABLE; Schema: signalo_od; Owner: postgres
+-- Name: support; Type: TABLE; Schema: signalo_db;
 --
 
-CREATE TABLE signalo_od.support (
+CREATE TABLE signalo_db.support (
     id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     address text,
     fk_support_type integer,
@@ -312,11 +252,8 @@ CREATE TABLE signalo_od.support (
     _edited boolean DEFAULT false
 );
 
-
-ALTER TABLE signalo_od.support OWNER TO postgres;
-
 --
--- Name: coating; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: coating; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.coating (
@@ -330,11 +267,8 @@ CREATE TABLE signalo_vl.coating (
     description_de text
 );
 
-
-ALTER TABLE signalo_vl.coating OWNER TO postgres;
-
 --
--- Name: coating_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: coating_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.coating ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -348,7 +282,7 @@ ALTER TABLE signalo_vl.coating ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENT
 
 
 --
--- Name: durability; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: durability; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.durability (
@@ -360,10 +294,8 @@ CREATE TABLE signalo_vl.durability (
 );
 
 
-ALTER TABLE signalo_vl.durability OWNER TO postgres;
-
 --
--- Name: durability_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: durability_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.durability ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -377,7 +309,7 @@ ALTER TABLE signalo_vl.durability ALTER COLUMN id ADD GENERATED BY DEFAULT AS ID
 
 
 --
--- Name: frame_fixing_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: frame_fixing_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.frame_fixing_type (
@@ -389,10 +321,8 @@ CREATE TABLE signalo_vl.frame_fixing_type (
 );
 
 
-ALTER TABLE signalo_vl.frame_fixing_type OWNER TO postgres;
-
 --
--- Name: frame_fixing_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: frame_fixing_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.frame_fixing_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -406,7 +336,7 @@ ALTER TABLE signalo_vl.frame_fixing_type ALTER COLUMN id ADD GENERATED BY DEFAUL
 
 
 --
--- Name: frame_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: frame_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.frame_type (
@@ -417,11 +347,8 @@ CREATE TABLE signalo_vl.frame_type (
     value_de text
 );
 
-
-ALTER TABLE signalo_vl.frame_type OWNER TO postgres;
-
 --
--- Name: frame_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: frame_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.frame_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -435,7 +362,7 @@ ALTER TABLE signalo_vl.frame_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS ID
 
 
 --
--- Name: lighting; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: lighting; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.lighting (
@@ -447,10 +374,8 @@ CREATE TABLE signalo_vl.lighting (
 );
 
 
-ALTER TABLE signalo_vl.lighting OWNER TO postgres;
-
 --
--- Name: lighting_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: lighting_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.lighting ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -464,7 +389,7 @@ ALTER TABLE signalo_vl.lighting ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDEN
 
 
 --
--- Name: marker_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: marker_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.marker_type (
@@ -477,10 +402,8 @@ CREATE TABLE signalo_vl.marker_type (
 );
 
 
-ALTER TABLE signalo_vl.marker_type OWNER TO postgres;
-
 --
--- Name: marker_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: marker_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.marker_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -494,7 +417,7 @@ ALTER TABLE signalo_vl.marker_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS I
 
 
 --
--- Name: mirror_shape; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: mirror_shape; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.mirror_shape (
@@ -506,11 +429,8 @@ CREATE TABLE signalo_vl.mirror_shape (
     value_ro text
 );
 
-
-ALTER TABLE signalo_vl.mirror_shape OWNER TO postgres;
-
 --
--- Name: mirror_shape_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: mirror_shape_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.mirror_shape ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -524,7 +444,7 @@ ALTER TABLE signalo_vl.mirror_shape ALTER COLUMN id ADD GENERATED BY DEFAULT AS 
 
 
 --
--- Name: official_sign; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: official_sign; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.official_sign (
@@ -552,10 +472,8 @@ CREATE TABLE signalo_vl.official_sign (
 );
 
 
-ALTER TABLE signalo_vl.official_sign OWNER TO postgres;
-
 --
--- Name: sign_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: sign_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.sign_type (
@@ -568,10 +486,8 @@ CREATE TABLE signalo_vl.sign_type (
 );
 
 
-ALTER TABLE signalo_vl.sign_type OWNER TO postgres;
-
 --
--- Name: sign_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: sign_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.sign_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -585,7 +501,7 @@ ALTER TABLE signalo_vl.sign_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDE
 
 
 --
--- Name: status; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: status; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.status (
@@ -597,10 +513,8 @@ CREATE TABLE signalo_vl.status (
 );
 
 
-ALTER TABLE signalo_vl.status OWNER TO postgres;
-
 --
--- Name: status_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: status_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.status ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -614,7 +528,7 @@ ALTER TABLE signalo_vl.status ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTI
 
 
 --
--- Name: support_base_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: support_base_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.support_base_type (
@@ -626,10 +540,8 @@ CREATE TABLE signalo_vl.support_base_type (
 );
 
 
-ALTER TABLE signalo_vl.support_base_type OWNER TO postgres;
-
 --
--- Name: support_base_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: support_base_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.support_base_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -643,7 +555,7 @@ ALTER TABLE signalo_vl.support_base_type ALTER COLUMN id ADD GENERATED BY DEFAUL
 
 
 --
--- Name: support_type; Type: TABLE; Schema: signalo_vl; Owner: postgres
+-- Name: support_type; Type: TABLE; Schema: signalo_vl;
 --
 
 CREATE TABLE signalo_vl.support_type (
@@ -654,11 +566,8 @@ CREATE TABLE signalo_vl.support_type (
     value_de text
 );
 
-
-ALTER TABLE signalo_vl.support_type OWNER TO postgres;
-
 --
--- Name: support_type_id_seq; Type: SEQUENCE; Schema: signalo_vl; Owner: postgres
+-- Name: support_type_id_seq; Type: SEQUENCE; Schema: signalo_vl;
 --
 
 ALTER TABLE signalo_vl.support_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS IDENTITY (
@@ -672,50 +581,38 @@ ALTER TABLE signalo_vl.support_type ALTER COLUMN id ADD GENERATED BY DEFAULT AS 
 
 
 --
--- Data for Name: azimut; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
+-- Data for Name: owner; Type: TABLE DATA; Schema: signalo_db;
+--
+
+INSERT INTO signalo_db.vl_owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5720bd2-ff36-11eb-9927-0242ac110002', true, 'Commune', NULL, NULL, NULL, '2021-08-17 08:41:47.612574', NULL, '2021-08-17 08:41:47.612574', NULL);
+INSERT INTO signalo_db.vl_owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5725a2e-ff36-11eb-9927-0242ac110002', true, 'Canton', NULL, NULL, NULL, '2021-08-17 08:41:47.615352', NULL, '2021-08-17 08:41:47.615352', NULL);
+INSERT INTO signalo_db.vl_owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5729f34-ff36-11eb-9927-0242ac110002', true, 'Confédération', NULL, NULL, NULL, '2021-08-17 08:41:47.617519', NULL, '2021-08-17 08:41:47.617519', NULL);
+INSERT INTO signalo_db.vl_owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f572dd14-ff36-11eb-9927-0242ac110002', true, 'Privé', NULL, NULL, NULL, '2021-08-17 08:41:47.619238', NULL, '2021-08-17 08:41:47.619238', NULL);
+
+
+--
+-- Data for Name: provider; Type: TABLE DATA; Schema: signalo_db;
+--
+
+INSERT INTO signalo_db.vl_provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58a8cca-ff36-11eb-99e5-0242ac110002', true, 'L. Ellgass SA', NULL, NULL, NULL, '2021-08-17 08:41:47.773303', NULL, '2021-08-17 08:41:47.773303', NULL);
+INSERT INTO signalo_db.vl_provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58ac1ea-ff36-11eb-99e5-0242ac110002', true, 'Signal SA', NULL, NULL, NULL, '2021-08-17 08:41:47.775707', NULL, '2021-08-17 08:41:47.775707', NULL);
+INSERT INTO signalo_db.vl_provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58afb74-ff36-11eb-99e5-0242ac110002', true, 'BO-Plastiline SA', NULL, NULL, NULL, '2021-08-17 08:41:47.777336', NULL, '2021-08-17 08:41:47.777336', NULL);
+
+
+--
+-- Data for Name: sign; Type: TABLE DATA; Schema: signalo_db;
 --
 
 
 
 --
--- Data for Name: frame; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
+-- Data for Name: support; Type: TABLE DATA; Schema: signalo_db;
 --
 
 
 
 --
--- Data for Name: owner; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
---
-
-INSERT INTO signalo_od.owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5720bd2-ff36-11eb-9927-0242ac110002', true, 'Commune', NULL, NULL, NULL, '2021-08-17 08:41:47.612574', NULL, '2021-08-17 08:41:47.612574', NULL);
-INSERT INTO signalo_od.owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5725a2e-ff36-11eb-9927-0242ac110002', true, 'Canton', NULL, NULL, NULL, '2021-08-17 08:41:47.615352', NULL, '2021-08-17 08:41:47.615352', NULL);
-INSERT INTO signalo_od.owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f5729f34-ff36-11eb-9927-0242ac110002', true, 'Confédération', NULL, NULL, NULL, '2021-08-17 08:41:47.617519', NULL, '2021-08-17 08:41:47.617519', NULL);
-INSERT INTO signalo_od.owner (id, active, name, usr_owner_1, usr_owner_2, usr_owner_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f572dd14-ff36-11eb-9927-0242ac110002', true, 'Privé', NULL, NULL, NULL, '2021-08-17 08:41:47.619238', NULL, '2021-08-17 08:41:47.619238', NULL);
-
-
---
--- Data for Name: provider; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
---
-
-INSERT INTO signalo_od.provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58a8cca-ff36-11eb-99e5-0242ac110002', true, 'L. Ellgass SA', NULL, NULL, NULL, '2021-08-17 08:41:47.773303', NULL, '2021-08-17 08:41:47.773303', NULL);
-INSERT INTO signalo_od.provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58ac1ea-ff36-11eb-99e5-0242ac110002', true, 'Signal SA', NULL, NULL, NULL, '2021-08-17 08:41:47.775707', NULL, '2021-08-17 08:41:47.775707', NULL);
-INSERT INTO signalo_od.provider (id, active, name, usr_provider_1, usr_provider_2, usr_provider_3, _inserted_date, _inserted_user, _last_modified_date, _last_modified_user) VALUES ('f58afb74-ff36-11eb-99e5-0242ac110002', true, 'BO-Plastiline SA', NULL, NULL, NULL, '2021-08-17 08:41:47.777336', NULL, '2021-08-17 08:41:47.777336', NULL);
-
-
---
--- Data for Name: sign; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
---
-
-
-
---
--- Data for Name: support; Type: TABLE DATA; Schema: signalo_od; Owner: postgres
---
-
-
-
---
--- Data for Name: coating; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: coating; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.coating (id, active, value_en, value_fr, value_de, description_en, description_fr, description_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown', NULL, NULL, NULL);
@@ -728,7 +625,7 @@ INSERT INTO signalo_vl.coating (id, active, value_en, value_fr, value_de, descri
 
 
 --
--- Data for Name: durability; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: durability; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.durability (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -740,7 +637,7 @@ INSERT INTO signalo_vl.durability (id, active, value_en, value_fr, value_de) VAL
 
 
 --
--- Data for Name: frame_fixing_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: frame_fixing_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.frame_fixing_type (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -753,7 +650,7 @@ INSERT INTO signalo_vl.frame_fixing_type (id, active, value_en, value_fr, value_
 
 
 --
--- Data for Name: frame_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: frame_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.frame_type (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -767,7 +664,7 @@ INSERT INTO signalo_vl.frame_type (id, active, value_en, value_fr, value_de) VAL
 
 
 --
--- Data for Name: lighting; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: lighting; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.lighting (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -780,7 +677,7 @@ INSERT INTO signalo_vl.lighting (id, active, value_en, value_fr, value_de) VALUE
 
 
 --
--- Data for Name: marker_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: marker_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.marker_type (id, active, value_de, value_fr, value_it, value_ro) VALUES (1, true, 'TBD', 'inconnu', 'TBD', 'TBD');
@@ -795,7 +692,7 @@ INSERT INTO signalo_vl.marker_type (id, active, value_de, value_fr, value_it, va
 
 
 --
--- Data for Name: mirror_shape; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: mirror_shape; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.mirror_shape (id, active, value_de, value_fr, value_it, value_ro) VALUES (2, true, 'TBD', 'autre', 'TBD', 'TBD');
@@ -804,7 +701,7 @@ INSERT INTO signalo_vl.mirror_shape (id, active, value_de, value_fr, value_it, v
 
 
 --
--- Data for Name: official_sign; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: official_sign; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.official_sign (id, active, value_de, value_fr, value_it, value_ro, description_de, description_fr, description_it, description_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription, default_inscription1, default_inscription2, default_inscription3, default_inscription4) VALUES ('0.1-r', true, 'Touristisch', 'Touristique', 'Turistico', 'Turistico', NULL, NULL, NULL, NULL, '01-touristic-r.svg', '01-touristic-r.svg', '01-touristic-r.svg', '01-touristic-r.svg', 37, 145, 0, 'Grand Tour', NULL, NULL, NULL);
@@ -1123,7 +1020,7 @@ INSERT INTO signalo_vl.official_sign (id, active, value_de, value_fr, value_it, 
 
 
 --
--- Data for Name: sign_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: sign_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.sign_type (id, active, value_de, value_fr, value_it, value_ro) VALUES (1, true, 'TBD', 'inconnu', 'TBD', 'TBD');
@@ -1136,7 +1033,7 @@ INSERT INTO signalo_vl.sign_type (id, active, value_de, value_fr, value_it, valu
 
 
 --
--- Data for Name: status; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: status; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.status (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -1148,7 +1045,7 @@ INSERT INTO signalo_vl.status (id, active, value_en, value_fr, value_de) VALUES 
 
 
 --
--- Data for Name: support_base_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: support_base_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.support_base_type (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -1179,7 +1076,7 @@ INSERT INTO signalo_vl.support_base_type (id, active, value_en, value_fr, value_
 
 
 --
--- Data for Name: support_type; Type: TABLE DATA; Schema: signalo_vl; Owner: postgres
+-- Data for Name: support_type; Type: TABLE DATA; Schema: signalo_vl;
 --
 
 INSERT INTO signalo_vl.support_type (id, active, value_en, value_fr, value_de) VALUES (1, true, 'unknown', 'inconnu', 'unknown');
@@ -1195,156 +1092,156 @@ INSERT INTO signalo_vl.support_type (id, active, value_en, value_fr, value_de) V
 
 
 --
--- Name: coating_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: coating_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.coating_id_seq', 1, false);
 
 
 --
--- Name: durability_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: durability_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.durability_id_seq', 1, false);
 
 
 --
--- Name: frame_fixing_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: frame_fixing_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.frame_fixing_type_id_seq', 1, false);
 
 
 --
--- Name: frame_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: frame_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.frame_type_id_seq', 1, false);
 
 
 --
--- Name: lighting_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: lighting_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.lighting_id_seq', 1, false);
 
 
 --
--- Name: marker_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: marker_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.marker_type_id_seq', 1, false);
 
 
 --
--- Name: mirror_shape_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: mirror_shape_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.mirror_shape_id_seq', 1, false);
 
 
 --
--- Name: sign_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: sign_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.sign_type_id_seq', 1, false);
 
 
 --
--- Name: status_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: status_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.status_id_seq', 1, false);
 
 
 --
--- Name: support_base_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: support_base_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.support_base_type_id_seq', 1, false);
 
 
 --
--- Name: support_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl; Owner: postgres
+-- Name: support_type_id_seq; Type: SEQUENCE SET; Schema: signalo_vl;
 --
 
 SELECT pg_catalog.setval('signalo_vl.support_type_id_seq', 1, false);
 
 
 --
--- Name: azimut azimut_fk_support_azimut_key; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: azimut azimut_fk_support_azimut_key; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.azimut
+ALTER TABLE ONLY signalo_db.azimut
     ADD CONSTRAINT azimut_fk_support_azimut_key UNIQUE (fk_support, azimut) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
--- Name: azimut azimut_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: azimut azimut_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.azimut
+ALTER TABLE ONLY signalo_db.azimut
     ADD CONSTRAINT azimut_pkey PRIMARY KEY (id);
 
 
 --
--- Name: frame frame_fk_azimut_rank_key; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame frame_fk_azimut_rank_key; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
+ALTER TABLE ONLY signalo_db.frame
     ADD CONSTRAINT frame_fk_azimut_rank_key UNIQUE (fk_azimut, rank) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
--- Name: frame frame_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame frame_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
+ALTER TABLE ONLY signalo_db.frame
     ADD CONSTRAINT frame_pkey PRIMARY KEY (id);
 
 
 --
--- Name: owner owner_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: owner owner_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.owner
+ALTER TABLE ONLY signalo_db.vl_owner
     ADD CONSTRAINT owner_pkey PRIMARY KEY (id);
 
 
 --
--- Name: provider provider_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: provider provider_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.provider
+ALTER TABLE ONLY signalo_db.vl_provider
     ADD CONSTRAINT provider_pkey PRIMARY KEY (id);
 
 
 --
--- Name: sign sign_fk_frame_rank_verso_key; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign sign_fk_frame_rank_verso_key; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT sign_fk_frame_rank_verso_key UNIQUE (fk_frame, rank, verso) DEFERRABLE INITIALLY DEFERRED;
 
 
 --
--- Name: sign sign_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign sign_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT sign_pkey PRIMARY KEY (id);
 
 
 --
--- Name: support support_pkey; Type: CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: support support_pkey; Type: CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.support
+ALTER TABLE ONLY signalo_db.support
     ADD CONSTRAINT support_pkey PRIMARY KEY (id);
 
 
 --
--- Name: coating coating_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: coating coating_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.coating
@@ -1352,7 +1249,7 @@ ALTER TABLE ONLY signalo_vl.coating
 
 
 --
--- Name: durability durability_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: durability durability_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.durability
@@ -1360,7 +1257,7 @@ ALTER TABLE ONLY signalo_vl.durability
 
 
 --
--- Name: frame_fixing_type frame_fixing_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: frame_fixing_type frame_fixing_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.frame_fixing_type
@@ -1368,7 +1265,7 @@ ALTER TABLE ONLY signalo_vl.frame_fixing_type
 
 
 --
--- Name: frame_type frame_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: frame_type frame_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.frame_type
@@ -1376,7 +1273,7 @@ ALTER TABLE ONLY signalo_vl.frame_type
 
 
 --
--- Name: lighting lighting_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: lighting lighting_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.lighting
@@ -1384,7 +1281,7 @@ ALTER TABLE ONLY signalo_vl.lighting
 
 
 --
--- Name: marker_type marker_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: marker_type marker_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.marker_type
@@ -1392,7 +1289,7 @@ ALTER TABLE ONLY signalo_vl.marker_type
 
 
 --
--- Name: mirror_shape mirror_shape_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: mirror_shape mirror_shape_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.mirror_shape
@@ -1400,7 +1297,7 @@ ALTER TABLE ONLY signalo_vl.mirror_shape
 
 
 --
--- Name: official_sign official_sign_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: official_sign official_sign_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.official_sign
@@ -1408,7 +1305,7 @@ ALTER TABLE ONLY signalo_vl.official_sign
 
 
 --
--- Name: sign_type sign_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: sign_type sign_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.sign_type
@@ -1416,7 +1313,7 @@ ALTER TABLE ONLY signalo_vl.sign_type
 
 
 --
--- Name: status status_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: status status_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.status
@@ -1424,7 +1321,7 @@ ALTER TABLE ONLY signalo_vl.status
 
 
 --
--- Name: support_base_type support_base_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: support_base_type support_base_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.support_base_type
@@ -1432,7 +1329,7 @@ ALTER TABLE ONLY signalo_vl.support_base_type
 
 
 --
--- Name: support_type support_type_pkey; Type: CONSTRAINT; Schema: signalo_vl; Owner: postgres
+-- Name: support_type support_type_pkey; Type: CONSTRAINT; Schema: signalo_vl;
 --
 
 ALTER TABLE ONLY signalo_vl.support_type
@@ -1440,249 +1337,249 @@ ALTER TABLE ONLY signalo_vl.support_type
 
 
 --
--- Name: frame tr_frame_on_delete_reorder; Type: TRIGGER; Schema: signalo_od; Owner: postgres
+-- Name: frame tr_frame_on_delete_reorder; Type: TRIGGER; Schema: signalo_db;
 --
 
-CREATE TRIGGER tr_frame_on_delete_reorder AFTER DELETE ON signalo_od.frame FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_reorder_frames_on_support();
-
-
---
--- Name: TRIGGER tr_frame_on_delete_reorder ON frame; Type: COMMENT; Schema: signalo_od; Owner: postgres
---
-
-COMMENT ON TRIGGER tr_frame_on_delete_reorder ON signalo_od.frame IS 'Trigger: update frames order after deleting one.';
+CREATE TRIGGER tr_frame_on_delete_reorder AFTER DELETE ON signalo_db.frame FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_reorder_frames_on_support();
 
 
 --
--- Name: frame tr_frame_on_update_azimut_reorder; Type: TRIGGER; Schema: signalo_od; Owner: postgres
+-- Name: TRIGGER tr_frame_on_delete_reorder ON frame; Type: COMMENT; Schema: signalo_db;
 --
 
-CREATE TRIGGER tr_frame_on_update_azimut_reorder AFTER UPDATE OF fk_azimut ON signalo_od.frame FOR EACH ROW WHEN ((old.fk_azimut <> new.fk_azimut)) EXECUTE PROCEDURE signalo_od.ft_reorder_frames_on_support();
-
-
---
--- Name: TRIGGER tr_frame_on_update_azimut_reorder ON frame; Type: COMMENT; Schema: signalo_od; Owner: postgres
---
-
-COMMENT ON TRIGGER tr_frame_on_update_azimut_reorder ON signalo_od.frame IS 'Trigger: update frames order after changing azimut.';
+COMMENT ON TRIGGER tr_frame_on_delete_reorder ON signalo_db.frame IS 'Trigger: update frames order after deleting one.';
 
 
 --
--- Name: frame tr_frame_on_update_azimut_reorder_prepare; Type: TRIGGER; Schema: signalo_od; Owner: postgres
+-- Name: frame tr_frame_on_update_azimut_reorder; Type: TRIGGER; Schema: signalo_db;
 --
 
-CREATE TRIGGER tr_frame_on_update_azimut_reorder_prepare BEFORE UPDATE OF fk_azimut ON signalo_od.frame FOR EACH ROW WHEN ((old.fk_azimut <> new.fk_azimut)) EXECUTE PROCEDURE signalo_od.ft_reorder_frames_on_support_put_last();
-
-
---
--- Name: TRIGGER tr_frame_on_update_azimut_reorder_prepare ON frame; Type: COMMENT; Schema: signalo_od; Owner: postgres
---
-
-COMMENT ON TRIGGER tr_frame_on_update_azimut_reorder_prepare ON signalo_od.frame IS 'Trigger: after changing azimut, adapt rank be last on new azimut';
+CREATE TRIGGER tr_frame_on_update_azimut_reorder AFTER UPDATE OF fk_azimut ON signalo_db.frame FOR EACH ROW WHEN ((old.fk_azimut <> new.fk_azimut)) EXECUTE PROCEDURE signalo_db.ft_reorder_frames_on_support();
 
 
 --
--- Name: sign tr_sign_on_delete_reorder; Type: TRIGGER; Schema: signalo_od; Owner: postgres
+-- Name: TRIGGER tr_frame_on_update_azimut_reorder ON frame; Type: COMMENT; Schema: signalo_db;
 --
 
-CREATE TRIGGER tr_sign_on_delete_reorder AFTER DELETE ON signalo_od.sign FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_reorder_signs_in_frame();
-
-
---
--- Name: TRIGGER tr_sign_on_delete_reorder ON sign; Type: COMMENT; Schema: signalo_od; Owner: postgres
---
-
-COMMENT ON TRIGGER tr_sign_on_delete_reorder ON signalo_od.sign IS 'Trigger: update signs order after deleting one.';
+COMMENT ON TRIGGER tr_frame_on_update_azimut_reorder ON signalo_db.frame IS 'Trigger: update frames order after changing azimut.';
 
 
 --
--- Name: sign tr_sign_on_update_prevent_fk_frame; Type: TRIGGER; Schema: signalo_od; Owner: postgres
+-- Name: frame tr_frame_on_update_azimut_reorder_prepare; Type: TRIGGER; Schema: signalo_db;
 --
 
-CREATE TRIGGER tr_sign_on_update_prevent_fk_frame BEFORE UPDATE OF fk_frame ON signalo_od.sign FOR EACH ROW WHEN ((new.fk_frame <> old.fk_frame)) EXECUTE PROCEDURE signalo_od.ft_sign_prevent_fk_frame_update();
-
-
---
--- Name: frame fkey_od_azimut; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
---
-
-ALTER TABLE ONLY signalo_od.frame
-    ADD CONSTRAINT fkey_od_azimut FOREIGN KEY (fk_azimut) REFERENCES signalo_od.azimut(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+CREATE TRIGGER tr_frame_on_update_azimut_reorder_prepare BEFORE UPDATE OF fk_azimut ON signalo_db.frame FOR EACH ROW WHEN ((old.fk_azimut <> new.fk_azimut)) EXECUTE PROCEDURE signalo_db.ft_reorder_frames_on_support_put_last();
 
 
 --
--- Name: sign fkey_od_frame; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: TRIGGER tr_frame_on_update_azimut_reorder_prepare ON frame; Type: COMMENT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
-    ADD CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES signalo_od.frame(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
-
-
---
--- Name: support fkey_od_owner; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
---
-
-ALTER TABLE ONLY signalo_od.support
-    ADD CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES signalo_od.owner(id) MATCH FULL;
+COMMENT ON TRIGGER tr_frame_on_update_azimut_reorder_prepare ON signalo_db.frame IS 'Trigger: after changing azimut, adapt rank be last on new azimut';
 
 
 --
--- Name: sign fkey_od_owner; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign tr_sign_on_delete_reorder; Type: TRIGGER; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
-    ADD CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES signalo_od.owner(id) MATCH FULL;
-
-
---
--- Name: support fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
---
-
-ALTER TABLE ONLY signalo_od.support
-    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_od.provider(id) MATCH FULL;
+CREATE TRIGGER tr_sign_on_delete_reorder AFTER DELETE ON signalo_db.sign FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_reorder_signs_in_frame();
 
 
 --
--- Name: frame fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: TRIGGER tr_sign_on_delete_reorder ON sign; Type: COMMENT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
-    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_od.provider(id) MATCH FULL;
-
-
---
--- Name: sign fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
---
-
-ALTER TABLE ONLY signalo_od.sign
-    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_od.provider(id) MATCH FULL;
+COMMENT ON TRIGGER tr_sign_on_delete_reorder ON signalo_db.sign IS 'Trigger: update signs order after deleting one.';
 
 
 --
--- Name: sign fkey_od_sign; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign tr_sign_on_update_prevent_fk_frame; Type: TRIGGER; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
-    ADD CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES signalo_od.sign(id) MATCH FULL ON DELETE SET NULL;
-
-
---
--- Name: azimut fkey_od_support; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
---
-
-ALTER TABLE ONLY signalo_od.azimut
-    ADD CONSTRAINT fkey_od_support FOREIGN KEY (fk_support) REFERENCES signalo_od.support(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+CREATE TRIGGER tr_sign_on_update_prevent_fk_frame BEFORE UPDATE OF fk_frame ON signalo_db.sign FOR EACH ROW WHEN ((new.fk_frame <> old.fk_frame)) EXECUTE PROCEDURE signalo_db.ft_sign_prevent_fk_frame_update();
 
 
 --
--- Name: sign fkey_vl_coating; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame fkey_od_azimut; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.frame
+    ADD CONSTRAINT fkey_od_azimut FOREIGN KEY (fk_azimut) REFERENCES signalo_db.azimut(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: sign fkey_od_frame; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.sign
+    ADD CONSTRAINT fkey_od_frame FOREIGN KEY (fk_frame) REFERENCES signalo_db.frame(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: support fkey_od_owner; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.support
+    ADD CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES signalo_db.vl_owner(id) MATCH FULL;
+
+
+--
+-- Name: sign fkey_od_owner; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.sign
+    ADD CONSTRAINT fkey_od_owner FOREIGN KEY (fk_owner) REFERENCES signalo_db.vl_owner(id) MATCH FULL;
+
+
+--
+-- Name: support fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.support
+    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_db.vl_provider(id) MATCH FULL;
+
+
+--
+-- Name: frame fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.frame
+    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_db.vl_provider(id) MATCH FULL;
+
+
+--
+-- Name: sign fkey_od_provider; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.sign
+    ADD CONSTRAINT fkey_od_provider FOREIGN KEY (fk_provider) REFERENCES signalo_db.vl_provider(id) MATCH FULL;
+
+
+--
+-- Name: sign fkey_od_sign; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.sign
+    ADD CONSTRAINT fkey_od_sign FOREIGN KEY (fk_parent) REFERENCES signalo_db.sign(id) MATCH FULL ON DELETE SET NULL;
+
+
+--
+-- Name: azimut fkey_od_support; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.azimut
+    ADD CONSTRAINT fkey_od_support FOREIGN KEY (fk_support) REFERENCES signalo_db.support(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: sign fkey_vl_coating; Type: FK CONSTRAINT; Schema: signalo_db;
+--
+
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_coating FOREIGN KEY (fk_coating) REFERENCES signalo_vl.coating(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_durability; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_durability; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_durability FOREIGN KEY (fk_durability) REFERENCES signalo_vl.durability(id) MATCH FULL;
 
 
 --
--- Name: frame fkey_vl_frame_fixing_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame fkey_vl_frame_fixing_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
+ALTER TABLE ONLY signalo_db.frame
     ADD CONSTRAINT fkey_vl_frame_fixing_type FOREIGN KEY (fk_frame_fixing_type) REFERENCES signalo_vl.frame_fixing_type(id) MATCH FULL;
 
 
 --
--- Name: frame fkey_vl_frame_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame fkey_vl_frame_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
+ALTER TABLE ONLY signalo_db.frame
     ADD CONSTRAINT fkey_vl_frame_type FOREIGN KEY (fk_frame_type) REFERENCES signalo_vl.frame_type(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_lighting; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_lighting; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_lighting FOREIGN KEY (fk_lighting) REFERENCES signalo_vl.lighting(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_marker_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_marker_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_marker_type FOREIGN KEY (fk_marker_type) REFERENCES signalo_vl.marker_type(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_mirror_shape; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_mirror_shape; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_mirror_shape FOREIGN KEY (fk_mirror_shape) REFERENCES signalo_vl.mirror_shape(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_official_sign; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_official_sign; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES signalo_vl.official_sign(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_sign_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_sign_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_sign_type FOREIGN KEY (fk_sign_type) REFERENCES signalo_vl.sign_type(id) MATCH FULL;
 
 
 --
--- Name: support fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: support fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.support
+ALTER TABLE ONLY signalo_db.support
     ADD CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES signalo_vl.status(id) MATCH FULL;
 
 
 --
--- Name: frame fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: frame fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.frame
+ALTER TABLE ONLY signalo_db.frame
     ADD CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES signalo_vl.status(id) MATCH FULL;
 
 
 --
--- Name: sign fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: sign fkey_vl_status; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.sign
+ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_status FOREIGN KEY (fk_status) REFERENCES signalo_vl.status(id) MATCH FULL;
 
 
 --
--- Name: support fkey_vl_support_base_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: support fkey_vl_support_base_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.support
+ALTER TABLE ONLY signalo_db.support
     ADD CONSTRAINT fkey_vl_support_base_type FOREIGN KEY (fk_support_base_type) REFERENCES signalo_vl.support_base_type(id) MATCH FULL;
 
 
 --
--- Name: support fkey_vl_support_type; Type: FK CONSTRAINT; Schema: signalo_od; Owner: postgres
+-- Name: support fkey_vl_support_type; Type: FK CONSTRAINT; Schema: signalo_db;
 --
 
-ALTER TABLE ONLY signalo_od.support
+ALTER TABLE ONLY signalo_db.support
     ADD CONSTRAINT fkey_vl_support_type FOREIGN KEY (fk_support_type) REFERENCES signalo_vl.support_type(id) MATCH FULL;
 
 

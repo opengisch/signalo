@@ -80,10 +80,10 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                   WHEN fk_sign_type = 13 THEN 100
                   WHEN fk_sign_type = 14 THEN 130
                 END as _symbol_width
-            FROM signalo_od.sign
-                LEFT JOIN signalo_od.frame ON frame.id = sign.fk_frame
-                LEFT JOIN signalo_od.azimut ON azimut.id = frame.fk_azimut
-                LEFT JOIN signalo_od.support ON support.id = azimut.fk_support
+            FROM signalo_db.sign
+                LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
+                LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
+                LEFT JOIN signalo_db.support ON support.id = azimut.fk_support
                 LEFT JOIN signalo_vl.official_sign ON official_sign.id = sign.fk_official_sign
         ),
         ordered_recto_signs AS (
@@ -120,11 +120,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ALTER VIEW signalo_app.vw_sign_symbol ALTER complex SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_od', table_name='sign',
+            pg_cur=cursor, table_schema='signalo_db', table_name='sign',
             remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame', '_edited']
         ),
         frame_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_od', table_name='frame',
+            pg_cur=cursor, table_schema='signalo_db', table_name='frame',
             remove_pkey=False, indent=4, skip_columns=['_edited'],
             prefix='frame_'
         ),
@@ -135,7 +135,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
 
     trigger_insert_sql = """
-    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_sign_symbol_INSERT()
+    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_sign_symbol_INSERT()
       RETURNS trigger AS
     $BODY$
     BEGIN
@@ -152,20 +152,20 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_INSERT();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_sign_symbol_INSERT();
     """.format(
         insert_frame=insert_command(
-            pg_cur=cursor, table_schema='signalo_od', table_name='frame', remove_pkey=True, indent=4,
+            pg_cur=cursor, table_schema='signalo_db', table_name='frame', remove_pkey=True, indent=4,
             skip_columns=['_edited'], returning='id INTO NEW.frame_id', prefix='frame_'
         ),
         insert_sign=insert_command(
-            pg_cur=cursor, table_schema='signalo_od', table_name='sign', remove_pkey=True, indent=4,
+            pg_cur=cursor, table_schema='signalo_db', table_name='sign', remove_pkey=True, indent=4,
             skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
         )
     )
     
     trigger_update_sql = """
-    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_signalo_sign_symbol_UPDATE()
+    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_signalo_sign_symbol_UPDATE()
       RETURNS trigger AS
     $BODY$
     DECLARE
@@ -180,29 +180,29 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS ft_vw_signalo_sign_symbol_UPDATE ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_signalo_sign_symbol_UPDATE();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_signalo_sign_symbol_UPDATE();
     """.format(
         update_sign=update_command(
-            pg_cur=cursor, table_schema='signalo_od', table_name='sign',
+            pg_cur=cursor, table_schema='signalo_db', table_name='sign',
             indent=4, skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
         ),
         update_frame=update_command(
-            pg_cur=cursor, table_schema='signalo_od', table_name='frame', prefix='frame_',
+            pg_cur=cursor, table_schema='signalo_db', table_name='frame', prefix='frame_',
             indent=4, skip_columns=['_edited'], remap_columns={}
         )
     )
     
     trigger_delete_sql = """
-    CREATE OR REPLACE FUNCTION signalo_od.ft_vw_sign_symbol_DELETE()
+    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_sign_symbol_DELETE()
       RETURNS trigger AS
     $BODY$
     DECLARE
       _sign_count integer;
     BEGIN
-      DELETE FROM signalo_od.sign WHERE id = OLD.id;
-      SELECT count(id) INTO _sign_count FROM signalo_od.sign WHERE fk_frame = OLD.frame_id;
+      DELETE FROM signalo_db.sign WHERE id = OLD.id;
+      SELECT count(id) INTO _sign_count FROM signalo_db.sign WHERE fk_frame = OLD.frame_id;
       IF _sign_count = 0 THEN
-        DELETE FROM signalo_od.frame WHERE id = OLD.frame_id;
+        DELETE FROM signalo_db.frame WHERE id = OLD.frame_id;
       END IF;   
     RETURN OLD;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
@@ -210,7 +210,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_od.ft_vw_sign_symbol_DELETE();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_sign_symbol_DELETE();
     """
 
     for sql in (view_sql, trigger_insert_sql, trigger_update_sql, trigger_delete_sql):

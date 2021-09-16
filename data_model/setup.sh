@@ -58,7 +58,7 @@ done
 
 
 if [[ $force == True ]]; then
-  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_od CASCADE";
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_db CASCADE";
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_vl CASCADE";
 fi
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0001/0001_1.sql
