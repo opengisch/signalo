@@ -35,6 +35,10 @@ jobs:
           sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
           zip -r project.zip project README.md
 
+      - name: "zip changelogs"
+        run: |
+          zip -r changelogs.zip data_model/changelogs
+
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v1
@@ -97,4 +101,14 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./db-dump-with-demo.sql
           asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset - changelogs
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./changelogs.zip
+          asset_name: signalo-${{ github.event.release.tag_name }}-changelogs.zip
           asset_content_type: application/zip
