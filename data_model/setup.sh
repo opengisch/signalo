@@ -72,5 +72,8 @@ if [[ $demo_data == True ]]; then
   psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/demo_data/sign_content.sql
 fi
 
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0002/0002_1_sign-5.00.sql
+
+
 ${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
 
