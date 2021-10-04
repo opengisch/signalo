@@ -6,4 +6,4 @@ INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_i
 
 UPDATE signalo_db.sign SET fk_official_sign = '5.00-1' WHERE fk_official_sign = '5.00';
 
-DELETE FROM signalo_db.vl_official_sign WHERE id '5.00';
+DELETE FROM signalo_db.vl_official_sign WHERE id = '5.00';
