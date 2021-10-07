@@ -12,7 +12,7 @@
    viewBox="0 0 86 22"
    version="1.1"
    id="svg6028"
-   sodipodi:docname="450-4-d.svg"
+   sodipodi:docname="450-4-r.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata6034">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -37,17 +37,28 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="942"
-     inkscape:window-height="480"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
      id="namedview6030"
      showgrid="false"
-     inkscape:zoom="11.363372"
-     inkscape:cx="57.333333"
-     inkscape:cy="14.666667"
-     inkscape:window-x="0"
-     inkscape:window-y="723"
-     inkscape:window-maximized="0"
-     inkscape:current-layer="svg6028" />
+     inkscape:zoom="5.681686"
+     inkscape:cx="74.230658"
+     inkscape:cy="10.294389"
+     inkscape:window-x="5752"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg6028"
+     inkscape:document-rotation="0" />
+  <path
+     stroke="#211e1e"
+     fill="#ffffff"
+     fill-rule="nonzero"
+     stroke-width="0.0248775"
+     stroke-linejoin="round"
+     stroke-miterlimit="4"
+     id="svg_20"
+     d="M 72.613281,21.328124 84.98697,10.843313 72.613281,0.351562 0.484375,0.496094 v 20.976562 l 72.128906,-0.144532"
+     sodipodi:nodetypes="cccccc" />
   <g
      id="surface1">
     <path
