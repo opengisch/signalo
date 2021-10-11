@@ -12,7 +12,7 @@
    viewBox="0 0 75 22"
    version="1.1"
    id="svg6731"
-   sodipodi:docname="451-1-g.svg"
+   sodipodi:docname="451-1-l.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
      id="metadata6737">
@@ -22,7 +22,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -41,13 +41,23 @@
      inkscape:window-height="1017"
      id="namedview6733"
      showgrid="false"
-     inkscape:zoom="4.6068007"
-     inkscape:cx="29.168746"
-     inkscape:cy="-14.762018"
-     inkscape:window-x="5752"
-     inkscape:window-y="-8"
+     inkscape:zoom="6.515"
+     inkscape:cx="30.670812"
+     inkscape:cy="10.324397"
+     inkscape:window-x="3832"
+     inkscape:window-y="-3"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg6731" />
+     inkscape:current-layer="svg6731"
+     inkscape:document-rotation="0" />
+  <path
+     stroke="#211e1e"
+     fill="#ffffff"
+     fill-rule="nonzero"
+     stroke-width="0.0248775"
+     stroke-linejoin="round"
+     stroke-miterlimit="4"
+     id="svg_20"
+     d="M 13.515625,21.660156 1.1419367,11.175345 13.515625,0.683594 H 74.261719 V 21.660156 H 13.515625" />
   <path
      style="fill:#211e1e;fill-opacity:1;fill-rule:nonzero;stroke:none"
      d="M 74.40625,0.542969 H 13.464844 L 0.703125,11.226562 13.464844,21.800781 H 74.40625 V 0.542969 M 74.261719,0.683594 V 21.660156 H 13.515625 L 0.925781,11.226562 13.515625,0.683594 h 60.746094"

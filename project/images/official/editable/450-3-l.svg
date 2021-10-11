@@ -7,14 +7,15 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="185"
-   height="36"
+   width="86pt"
+   height="22pt"
+   viewBox="0 0 86 22"
    version="1.1"
-   id="svg323"
-   sodipodi:docname="450-3-g.svg"
+   id="svg5103"
+   sodipodi:docname="450-3-l.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata329">
+     id="metadata5109">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -26,7 +27,7 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs327" />
+     id="defs5107" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,51 +39,120 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview325"
+     id="namedview5105"
      showgrid="false"
-     inkscape:zoom="3.2470343"
-     inkscape:cx="91.889544"
-     inkscape:cy="16.267036"
+     inkscape:zoom="5.6568543"
+     inkscape:cx="80.167501"
+     inkscape:cy="6.3808664"
      inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg323"
+     inkscape:current-layer="svg5103"
      inkscape:document-rotation="0" />
-  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-  <g
-     id="g300">
-    <title
-       id="title294">background</title>
-    <rect
-       fill="#ffffff"
-       opacity="0"
-       id="canvas_background"
-       height="202"
-       width="1002"
-       y="-1"
-       x="-1" />
-    <g
-       display="none"
-       overflow="visible"
-       y="0"
-       x="0"
-       height="100%"
-       width="100%"
-       id="canvasGrid">
-      <rect
-         fill="url(#gridpattern)"
-         stroke-width="0"
-         y="0"
-         x="0"
-         height="100%"
-         width="100%"
-         id="rect297" />
-    </g>
-  </g>
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5716"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5728"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5732"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5750"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5754"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5756"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5758"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5760"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5772"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5790"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5808"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5812"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.0115283"
+     d=""
+     id="path5824"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5840"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5846"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5858"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5868"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5878"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5880"
+     transform="scale(0.75)" />
+  <path
+     style="fill:#ae1e19;fill-opacity:1;stroke-width:0.00204687"
+     d=""
+     id="path5882"
+     transform="scale(0.75)" />
   <g
      stroke="null"
      id="svg_57"
-     transform="matrix(-0.17345093,0,0,0.17345093,180.97038,0.5657733)">
+     transform="matrix(-0.08554826,0,0,0.10700885,85.996017,0.28570541)">
     <path
        stroke="#211e1e"
        fill="#ffffff"
@@ -158,11 +228,12 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
-     id="svg_12"
-     y="23"
-     x="38.104561"
+     font-size="6px"
+     id="svg_12-4"
+     y="12.630588"
+     x="19.410696"
      stroke-width="0"
      stroke="#ffffff"
-     fill="#ffffff">param(text1)</text>
+     fill="#ffffff"
+     transform="scale(0.89411988,1.1184183)">param(text1)</text>
 </svg>
