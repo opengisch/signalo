@@ -56,6 +56,12 @@ jobs:
         run: |
           docker push opengisch/signalo:unstable
 
+      - name: "autodoc"
+        run: |
+          apt-get install -y postgresql-autodoc
+          postgresql_autodoc -d signalo -u postgres -s signalo_db
+          ls
+
       - name: "failure logs"
         if: failure()
         run: |
