@@ -58,7 +58,7 @@ jobs:
 
       - name: SchemaSpy
         run: |
-          sudo apt-get install -y openjdk-8-jdk
+          sudo apt-get install -y openjdk-8-jdk graphviz
           wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
           wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar -O postgresql.jar
           java -jar schemaspy-6.1.0.jar -t pgsql -hq -db signalo -u postgres -host localhost -o schemaspy -dp postgresql.jar -p postgres -schemas signalo_db,signalo_app -norows
