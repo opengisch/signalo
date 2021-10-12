@@ -135,7 +135,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
 
     trigger_insert_sql = """
-    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_sign_symbol_INSERT()
+    CREATE OR REPLACE FUNCTION signalo_app.ft_vw_sign_symbol_INSERT()
       RETURNS trigger AS
     $BODY$
     BEGIN
@@ -152,7 +152,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS vw_sign_symbol_INSERT ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_INSERT INSTEAD OF INSERT ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_sign_symbol_INSERT();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_app.ft_vw_sign_symbol_INSERT();
     """.format(
         insert_frame=insert_command(
             pg_cur=cursor, table_schema='signalo_db', table_name='frame', remove_pkey=True, indent=4,
@@ -165,7 +165,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
     
     trigger_update_sql = """
-    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_signalo_sign_symbol_UPDATE()
+    CREATE OR REPLACE FUNCTION signalo_app.ft_vw_signalo_sign_symbol_UPDATE()
       RETURNS trigger AS
     $BODY$
     DECLARE
@@ -180,7 +180,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS ft_vw_signalo_sign_symbol_UPDATE ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_UPDATE INSTEAD OF UPDATE ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_signalo_sign_symbol_UPDATE();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_app.ft_vw_signalo_sign_symbol_UPDATE();
     """.format(
         update_sign=update_command(
             pg_cur=cursor, table_schema='signalo_db', table_name='sign',
@@ -193,7 +193,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
     
     trigger_delete_sql = """
-    CREATE OR REPLACE FUNCTION signalo_db.ft_vw_sign_symbol_DELETE()
+    CREATE OR REPLACE FUNCTION signalo_app.ft_vw_sign_symbol_DELETE()
       RETURNS trigger AS
     $BODY$
     DECLARE
@@ -210,7 +210,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     DROP TRIGGER IF EXISTS vw_sign_symbol_DELETE ON signalo_app.vw_sign_symbol;
 
     CREATE TRIGGER vw_sign_symbol_DELETE INSTEAD OF DELETE ON signalo_app.vw_sign_symbol
-      FOR EACH ROW EXECUTE PROCEDURE signalo_db.ft_vw_sign_symbol_DELETE();
+      FOR EACH ROW EXECUTE PROCEDURE signalo_app.ft_vw_sign_symbol_DELETE();
     """
 
     for sql in (view_sql, trigger_insert_sql, trigger_update_sql, trigger_delete_sql):
