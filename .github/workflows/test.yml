@@ -56,13 +56,18 @@ jobs:
         run: |
           docker push opengisch/signalo:unstable
 
-      - name: "autodoc"
+      - name: SchemaSpy
         run: |
           apt-get install -y openjdk-8-jdk
           wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
           wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar -O postgresql.jar
           java -jar schemaspy-6.1.0.jar -t pgsql \-all -hq -db signalo -u postgres -host localhost -o schemaspy -dp postgresql.jar
 
+      - name: Deploy SchemaSpy 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: website
+          folder: schemaspy
 
       - name: "failure logs"
         if: failure()
