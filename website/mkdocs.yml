@@ -12,7 +12,7 @@ theme:
   #favicon: assets/images/favicon.ico
   palette:
     - scheme: default
-      primary: green
+      primary: orange
       toggle:
         icon: octicons/sun-24
         name: Switch to light mode
