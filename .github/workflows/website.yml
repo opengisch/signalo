@@ -14,12 +14,16 @@ jobs:
       - uses: actions/setup-python@v2
         with:
           python-version: 3.x
-      - run: pip install git+https://${{ secrets.GH_USER_INSIDER }}:${{ secrets.GH_TOKEN_INSIDER }}@github.com/opengisch/mkdocs-material-insiders#egg=mkdocs-material
-      - run: pip install mkdocs-material fancyboxmd
-      - run: mkdir -p build/en
-      - run: mkdocs build -d build/en
-      #- run: cp -r build/en build/it # This step will be done downloading the translated doc from Transifex
-      - run: cp index.html build/
+
+      - run: |
+             pip install git+https://${{ secrets.GH_USER_INSIDER }}:${{ secrets.GH_TOKEN_INSIDER }}@github.com/opengisch/mkdocs-material-insiders#egg=mkdocs-material
+             pip install mkdocs-material fancyboxmd
+             cd website
+             mkdir -p build/en
+             mkdocs build -d build/en
+             # cp -r build/en build/it # This step will be done downloading the translated doc from Transifex
+             cp index.html build/
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
