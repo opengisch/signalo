@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - master
+      - website-test
     paths:
       - 'website/**'
       - '.github/workflows/website.yml'
@@ -23,7 +24,7 @@ jobs:
              mkdir -p build/en
              mkdocs build -d build/en
              # cp -r build/en build/it # This step will be done downloading the translated doc from Transifex
-             cp index.html build/
+             # cp index.html build/
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
