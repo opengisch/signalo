@@ -1,10 +1,13 @@
 site_name: Signalo
 site_url: https://www.signalo.ch/
 
+# Copyright
+copyright: Copyright &copy; 2021 OPENGIS.ch
+
 # Configuration
 theme:
   name: material
-  #custom_dir: theme_overrides/
+  custom_dir: theme_overrides/
   features:
     - navigation.tabs
     - search.suggest
@@ -25,3 +28,8 @@ theme:
 nav:
     - Présentation: index.md
     - Documentation: about.md
+
+
+extra:
+  # Remove "Made with Material for MkDocs" from footer
+  generator: false
