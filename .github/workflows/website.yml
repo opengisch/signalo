@@ -1,10 +1,11 @@
-name: ci
+name: Webiste MkDocs
 on:
   push:
     branches:
       - master
     paths:
       - 'website/**'
+      - '.github/workflows/website.yml'
 
 jobs:
   deploy:
