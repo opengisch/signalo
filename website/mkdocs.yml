@@ -1,0 +1,27 @@
+site_name: Signalo
+site_url: https://www.signalo.ch/
+
+# Configuration
+theme:
+  name: material
+  #custom_dir: theme_overrides/
+  features:
+    - navigation.tabs
+    - search.suggest
+  logo: assets/images/signalo_logo.png
+  #favicon: assets/images/favicon.ico
+  palette:
+    - scheme: default
+      primary: green
+      toggle:
+        icon: octicons/sun-24
+        name: Switch to light mode
+    - scheme: slate
+      primary: blue
+      toggle:
+        icon: octicons/moon-24
+        name: Switch to dark mode
+
+nav:
+    - Présentation: index.md
+    - Documentation: about.md
