@@ -33,6 +33,7 @@ nav:
     - Présentation: index.md
     - Installation: installation.md
     - Documentation: documentation.md
+    - Marche à suivre: marche_suivre.md
 
 # Css
 extra_css:
@@ -47,3 +48,7 @@ extra_javascript:
 extra:
   # Remove "Made with Material for MkDocs" from footer
   generator: false
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
