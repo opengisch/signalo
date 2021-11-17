@@ -6,3 +6,4 @@ __pycache__
 *.qgs~
 local_test.sh
 *.backup
+.ghtoken
