@@ -31,7 +31,7 @@ theme:
 
 nav:
     - Présentation: index.md
-    - Documentation: about.md
+    - Documentation: documentation.md
 
 # Css
 extra_css:
