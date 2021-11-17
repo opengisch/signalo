@@ -10,23 +10,23 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg919"
-   sodipodi:docname="434.svg"
+   id="svg676"
+   sodipodi:docname="434-r.svg"
    inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
   <metadata
-     id="metadata925">
+     id="metadata682">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs923" />
+     id="defs680" />
   <sodipodi:namedview
      pagecolor="#ffffff"
      bordercolor="#666666"
@@ -38,20 +38,21 @@
      inkscape:pageshadow="2"
      inkscape:window-width="1920"
      inkscape:window-height="1017"
-     id="namedview921"
+     id="namedview678"
      showgrid="false"
-     inkscape:zoom="4.6068007"
-     inkscape:cx="87.716044"
-     inkscape:cy="45.166474"
-     inkscape:window-x="3832"
+     inkscape:zoom="6.515"
+     inkscape:cx="90.602223"
+     inkscape:cy="25.895696"
+     inkscape:window-x="5752"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg919" />
+     inkscape:current-layer="svg676"
+     inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g908">
+     id="g666">
     <title
-       id="title902">background</title>
+       id="title660">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
@@ -75,44 +76,36 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect905" />
+         id="rect663" />
     </g>
   </g>
-  <g
-     id="g917"
-     transform="matrix(0.52600622,0,0,0.52600622,-33.348485,-34.147874)">
-    <title
-       id="title910">Layer 1</title>
-    <g
-       stroke="null"
-       id="svg_78">
-      <path
-         fill="#211e1e"
-         fill-rule="nonzero"
-         id="svg_75"
-         d="M 64.38703,133.28999 H 279.16176 L 338.22168,100.23561 279.16176,67.14479 H 64.38703 v 66.1452" />
-      <path
-         fill="#f58228"
-         fill-rule="nonzero"
-         id="svg_74"
-         d="M 68.41216,129.31587 H 278.09629 L 308.69173,100.22832 278.09629,71.11159 H 68.41216 v 58.20427" />
-      <path
-         fill="#f58228"
-         fill-rule="nonzero"
-         id="svg_73"
-         d="m 153.09528,109.67138 c -0.92489,-1.5386 -1.40584,-3.98139 -1.40584,-7.3284 0,-3.12824 0.42915,-5.46166 1.29484,-7.10964 0.8065,-1.58966 2.20496,-2.38448 4.14352,-2.43551 1.8276,0 3.23342,0.78752 4.25452,2.38446 0.96929,1.58966 1.45763,3.97411 1.45763,7.10965 0,3.28867 -0.48834,5.73146 -1.40584,7.3211 -0.91748,1.64797 -2.41951,2.44281 -4.52088,2.44281 -1.62041,0 -2.90785,-0.79484 -3.81795,-2.38448" />
-    </g>
-    <text
-       xml:space="default"
-       dominant-baseline="middle"
-       text-anchor="middle"
-       font-family="sans-serif"
-       font-size="25px"
-       id="svg_12"
-       y="110"
-       x="180"
-       stroke-width="0"
-       stroke="#000000"
-       fill="#000000">param(text1)</text>
-  </g>
+  <path
+     stroke="#211e1e"
+     fill="#000000"
+     fill-rule="nonzero"
+     stroke-width="0.151278"
+     stroke-linejoin="round"
+     stroke-miterlimit="4"
+     id="svg_51"
+     d="M 0.43090534,36.650662 H 113.67829 L 144.81966,18.569684 113.67829,0.46877818 H 0.43090534 V 36.650662"
+     style="fill:#000000;fill-opacity:1" />
+  <path
+     fill="#f58228"
+     fill-rule="nonzero"
+     id="svg_50"
+     d="M 2.5532974,34.476793 H 113.11649 L 129.24899,18.565701 113.11649,2.6386482 H 2.5532974 V 34.476787"
+     style="stroke-width:0.533607;fill:#f58228;fill-opacity:1" />
+  <text
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="left"
+     font-family="sans-serif"
+     font-size="13.1037px"
+     id="svg_12-5"
+     y="22"
+     x="7"
+     stroke-width="0"
+     stroke="#000000"
+     fill="#000000"
+     style="fill:#000000;fill-opacity:1;">param(text1)</text>
 </svg>
