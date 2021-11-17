@@ -17,7 +17,8 @@ jobs:
         with:
           python-version: 3.x
 
-      - run: |
+      - name: MkDocs
+        run: |
              pip install git+https://${{ secrets.GH_USER_INSIDER }}:${{ secrets.GH_TOKEN_INSIDER }}@github.com/opengisch/mkdocs-material-insiders#egg=mkdocs-material
              pip install mkdocs-material fancyboxmd
              cd website
@@ -25,6 +26,13 @@ jobs:
              mkdocs build -d build/fr
              # cp -r build/en build/it # This step will be done downloading the translated doc from Transifex
              cp index.html build/
+
+      - name: model docs
+        run: |
+          LATEST_RELEASE=$(curl --silent "https://api.github.com/repos/opengisch/signalo/releases/latest" | jq -r .tag_name)
+          https://github.com/opengisch/signalo/releases/download/${LATEST_RELEASE}/signalo-${LATEST_RELEASE}-model-documentation.zip
+          unzip -q signalo-${LATEST_RELEASE}-model-documentation.zip
+          cp model-documentation build/model-documentation
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
