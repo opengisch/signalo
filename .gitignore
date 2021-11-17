@@ -7,3 +7,6 @@ __pycache__
 local_test.sh
 *.backup
 .ghtoken
+postgresql.jar
+schemaspy*.jar
+schemaspy/

@@ -17,11 +17,11 @@ jobs:
         run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
 
       - name: "build dockerfile"
-        run: docker build -f .docker/Dockerfile --tag opengisch/signalo:latest .
+        run: docker build -f .docker/Dockerfile --tag opengisch/signalo:stable .
 
       - name: "create dumps"
         run: |
-          docker run -d -p 5432:5432 -v $(pwd):/src  --name signalo opengisch/signalo:latest
+          docker run -d -p 5432:5432 -v $(pwd):/src  --name signalo opengisch/signalo:stable
           docker exec signalo init_db.sh wait
           docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
           docker exec signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
@@ -49,8 +49,9 @@ jobs:
       - name: "push to dockerhub"
         if: github.event_name != 'pull_request'
         run: |
-          docker push opengisch/signalo:latest
-          docker tag opengisch/signalo:latest opengisch/signalo:${{ github.event.release.tag_name }}
+          docker push opengisch/signalo:stable
+          docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
+          docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
           docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
       - name: Upload Release Asset - project
