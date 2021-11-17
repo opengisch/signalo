@@ -44,7 +44,10 @@ jobs:
           sudo apt-get install -y openjdk-8-jdk graphviz
           wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
           wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar -O postgresql.jar
-          java -jar schemaspy-6.1.0.jar -t pgsql -hq -db signalo -u postgres -host localhost -o model-documentation -dp postgresql.jar -p postgres -schemas signalo_db,signalo_app -norows
+          java -jar schemaspy-6.1.0.jar -t pgsql -db signalo -u postgres -host localhost -p postgres \
+               -schemas signalo_db,signalo_app -norows \
+               -hq -o model-documentation -dp postgresql.jar \
+               -desc "signalo data model documentation (version ${{ github.event.release.tag_name }})"
           zip -r model-documentation.zip model-documentation/*
 
       - name: Login to DockerHub
