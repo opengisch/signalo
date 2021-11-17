@@ -16,10 +16,10 @@ jobs:
       - name: Set version
         run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
 
-      - name: "build dockerfile"
+      - name: build dockerfile
         run: docker build -f .docker/Dockerfile --tag opengisch/signalo:stable .
 
-      - name: "create dumps"
+      - name: create dumps
         run: |
           docker run -d -p 5432:5432 -v $(pwd):/src  --name signalo opengisch/signalo:stable
           docker exec signalo init_db.sh wait
@@ -38,6 +38,14 @@ jobs:
       - name: "zip changelogs"
         run: |
           zip -r changelogs.zip data_model/changelogs
+
+      - name: SchemaSpy
+        run: |
+          sudo apt-get install -y openjdk-8-jdk graphviz
+          wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
+          wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar -O postgresql.jar
+          java -jar schemaspy-6.1.0.jar -t pgsql -hq -db signalo -u postgres -host localhost -o model-documentation -dp postgresql.jar -p postgres -schemas signalo_db,signalo_app -norows
+          zip -r model-documentation.zip model-documentation/*
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -111,4 +119,14 @@ jobs:
           upload_url: ${{ github.event.release.upload_url }}
           asset_path: ./changelogs.zip
           asset_name: signalo-${{ github.event.release.tag_name }}-changelogs.zip
+          asset_content_type: application/zip
+
+      - name: Upload Release Asset - model-documentation
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ github.event.release.upload_url }}
+          asset_path: ./model-documentation.zip
+          asset_name: signalo-${{ github.event.release.tag_name }}-model-documentation.zip
           asset_content_type: application/zip
