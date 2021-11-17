@@ -2,7 +2,7 @@
 ### Comment le projet s'est déroulé ?
 
 Le projet a été initié par les villes de Lausanne, Neuchâtel, la Chaux-de-Fonds et le Canton de Neuchâtel.
-Le développement a été fait par la société OPENGIS.ch
+Le développement a été fait par la société [OPENGIS.ch](https://www.opengis.ch/)
 
 Le cahier des charges et la feuille de route a été définie par un comité de pilotage composé par des représentants des initiateurs du projet.
 
