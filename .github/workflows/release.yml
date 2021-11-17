@@ -51,7 +51,6 @@ jobs:
         run: |
           docker push opengisch/signalo:stable
           docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
-          docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
           docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
       - name: Upload Release Asset - project
