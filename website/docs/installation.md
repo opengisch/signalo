@@ -1,6 +1,6 @@
 
 
-### Prérequis:
+### Prérequis
 * QGIS version 3.22 ou plus récente
 * Un serveur Postgresql version 10 ou plus récente
 
