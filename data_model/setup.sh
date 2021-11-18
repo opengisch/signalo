@@ -73,6 +73,7 @@ if [[ $demo_data == True ]]; then
 fi
 
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0002/0002_1_sign-5.00.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0003/0003_fix_img_size.sql
 
 
 ${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
