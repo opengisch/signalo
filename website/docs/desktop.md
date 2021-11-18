@@ -8,22 +8,22 @@
 * Le formulaire et composé de trois onglets "Général", "Azimut" et "Photo"
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support_form_general.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"  }
   <figcaption>Onglet général</figcaption>
 </figure>
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support_form_azimut.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"  }
   <figcaption>Onglet azimut</figcaption>
 </figure>
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support_form_photo.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"  }
   <figcaption>Onglet photo</figcaption>
 </figure>
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. 
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support_all.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"  }
   <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
 </figure>
 
