@@ -2,7 +2,7 @@ site_name: Signalo
 site_url: https://www.signalo.ch/
 site_author: OPENGIS.ch
 site_description: >-
-  Signalo est un module de gestion de la signalisation verticale selon l'Ordonnance sur la signalisation routière suisse (OSR).
+  Signalo est un module de gestion de la signalisation verticale.
 
 # Copyright
 copyright: Copyright &copy; 2021 OPENGIS.ch
@@ -14,25 +14,31 @@ theme:
   language: fr
   features:
     - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
     - search.suggest
   logo: assets/images/signalo_logo.png
   favicon: assets/images/favicon.ico
   palette:
     - scheme: default
-      primary: amber
+      primary: grey
       toggle:
         icon: octicons/sun-24
         name: Switch to light mode
     - scheme: slate
-      primary: blue
+      primary: grey
       toggle:
         icon: octicons/moon-24
         name: Switch to dark mode
 
 nav:
     - Présentation: index.md
+    - Participer: contribute.md
     - Installation: installation.md
-    - Documentation: documentation.md
+    - Modèle de données: data-model.md
+    - Desktop: desktop.md
+    - Mobile: mobile.md
+    - Feuille de route: roadmap.md
 
 # Css
 extra_css:
@@ -47,3 +53,9 @@ extra_javascript:
 extra:
   # Remove "Made with Material for MkDocs" from footer
   generator: false
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - fancyboxmd
+  - sane_lists
