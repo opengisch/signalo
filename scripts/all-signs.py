@@ -53,7 +53,7 @@ for row in rows:
         # create frame
         frame_id = insert('frame', {'fk_azimut': azimut_id, 'rank': 1})
 
-    print(support_id, azimut_id, frame_id, 1 + i % n_per_col)
+    # print(support_id, azimut_id, frame_id, 1 + i % n_per_col)
     # create sign
     rank = 1 + i % n_per_col
     insert('sign', {
