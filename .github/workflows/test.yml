@@ -29,6 +29,8 @@ jobs:
           docker run -d -p 5432:5432 --name signalo opengisch/signalo:unstable
           docker exec signalo init_db.sh wait
           docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build -d
+          docker exec -e PGSERVICE=pg_signalo_demo signalo /usr/scripts/all-signs.py
+
 
       - uses: actions/setup-node@v1
         with:
