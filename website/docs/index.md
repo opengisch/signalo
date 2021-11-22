@@ -8,7 +8,7 @@ SIGNALO est principalement destiné aux utilisateurs suisses en offrant par déf
 
 Il s’agit d’un modèle de données PostgreSQL et d’un environnement de travail sur les logiciels [QGIS](https://qgis.org/fr/site/) et [QField](https://qfield.org/).
 
-SIGNALO repose sur des composants open-source et est lui-même open-source. Le code source est accessible sur [Github](https://github.com/opengisch/signalo).
+SIGNALO repose sur des composants open-source et est lui-même en accès libre sur [Github](https://github.com/opengisch/signalo).
 
 
 SIGNALO vous offre:

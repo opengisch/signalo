@@ -4,11 +4,9 @@
 SIGNALO est un projet collaboratif initié par la ville de Lausanne, rejointe par les villes de Neuchâtel, la Chaux-de-Fonds et le Canton de Neuchâtel.
 Un premier mandat a été attribué à [OPENGIS.ch](https://www.opengis.ch/) 
 
-Suite au succès de cette première phase et à la nécessité de définir une structure afin de garantir la pérennité de la solution, une organisation a été mise en place.
-
 ### Organisation
 
-Afin de répondre aux exigences des utilisateurs, OPENGIS.ch propose l'organisation suivante:
+Afin de garantir l'évolution et la pérennité de la solution, une organisation a été mise en place composée des entités suivantes:
 
 * **OPENGIS.ch**
     * est le gestionnaire des ressources financières
