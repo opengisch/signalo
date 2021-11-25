@@ -1,0 +1,23 @@
+
+[general]
+name=Signalo
+qgisMinimumVersion=3.22
+description=SIGNALO plugin
+about=a custom symbol layer to properly render road signs
+version=dev
+author=Denis Rouzaud
+email=denis@opengis.ch
+
+# Tags are comma separated with spaces allowed
+tags=signalo
+
+tracker=https://github.com/opengisch/signalo/issues
+homepage=signalo.ch
+repository=https://github.com/opengisch/signalo/plugin
+
+category=Vector
+
+# experimental flag
+experimental=False
+
+icon=icons/signalo.png

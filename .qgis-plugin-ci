@@ -1,0 +1,11 @@
+plugin_path: plugin
+github_organization_slug: opengisch
+project_slug: signalo
+
+
+transifex_coordinator: geoninja
+transifex_project: signalo-qgis-plugin
+translation_languages:
+  - fr
+  - it
+  - de
