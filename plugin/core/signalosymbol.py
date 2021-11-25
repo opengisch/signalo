@@ -30,6 +30,8 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
         super(SignaloSymbol, self).__init__()
         debug_info("creating signalo symbol")
 
+        self.support_symbol = QgsSimpleMarkerSymbolLayer()  # Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
+
     # QgsSymbolLayer interface
     def layerType(self) -> str:
         return "SignaloMarker"
@@ -40,6 +42,12 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
     def properties(self) -> dict:
         return dict()
 
+    def startRender(self, context):
+        self.support_symbol.startRender(context)
+
+    def stopRender(self, context):
+        self.support_symbol.stopRender(context)
+
     # QgsMarkerSymbolLayer interface
     def renderPoint(self, point: QPointF, context: QgsSymbolRenderContext):
         support_feature = context.feature()
@@ -49,13 +57,13 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
 
         debug_info(f"entering signalo renderer for feature {support_feature['id']} at {support_feature.geometry().asWkt()}")
 
-        support_symbol = QgsSimpleMarkerSymbolLayer() #Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
-        support_symbol.renderPoint(point, context)
+        #support_symbol = QgsSimpleMarkerSymbolLayer() #Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
+        self.support_symbol.renderPoint(point, context)
 
     def bounds(self, point: QPointF, context: QgsSymbolRenderContext) -> QRectF:
         debug_info("bounds")
-        support_symbol = QgsSimpleMarkerSymbolLayer() #Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
-        debug_info(support_symbol.bounds())
-        return support_symbol.bounds()
+        #support_symbol = QgsSimpleMarkerSymbolLayer() #Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
+        debug_info(self.support_symbol.bounds())
+        return self.support_symbol.bounds()
         b = QRectF(4, 4)
         return b
