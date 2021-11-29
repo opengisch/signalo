@@ -19,7 +19,7 @@
 
 from qgis.PyQt.QtCore import Qt, QRectF, QPointF, QVariant
 from qgis.PyQt.QtGui import QColor
-from qgis.core import Qgis, QgsVectorLayer, QgsRenderContext, QgsExpressionContext, QgsExpressionContextUtils, QgsProperty, QgsMarkerSymbolLayer, QgsSymbolLayer, QgsSymbolRenderContext, QgsSimpleMarkerSymbolLayer, QgsSvgMarkerSymbolLayer, QgsFeature, QgsField, QgsFields, QgsUnitTypes
+from qgis.core import Qgis, QgsProject, QgsVectorLayer, QgsRenderContext, QgsExpressionContext, QgsExpressionContextUtils, QgsProperty, QgsMarkerSymbolLayer, QgsSymbolLayer, QgsSymbolRenderContext, QgsSimpleMarkerSymbolLayer, QgsSvgMarkerSymbolLayer, QgsFeature, QgsField, QgsFields, QgsUnitTypes
 from .utils import debug_info
 
 SUPPORT_COLOR = QColor('red')
@@ -32,11 +32,18 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
 
         self.support_symbol = QgsSimpleMarkerSymbolLayer()  # Qgis.MarkerShape.Circle, 4, 0, Qgis.ScaleMethod.ScaleDiameter, SUPPORT_COLOR, SUPPORT_COLOR, Qt.BevelJoin)
 
-        self.sign_symbol = QgsSvgMarkerSymbolLayer('')
+        self.sign_symbol = QgsSvgMarkerSymbolLayer('/Users/denis/Documents/signalo/QField/test.svg', 50)
         self.sign_symbol.setDataDefinedProperty(QgsSymbolLayer.PropertyName, QgsProperty.fromExpression('"path"'))
 
+        parameters = {
+            'texte': QgsProperty.fromExpression("'hello'"),
+            'texte2': QgsProperty.fromExpression('attributes()')
+        }
+        self.sign_symbol.setParameters(parameters)
+
         # a virtual layer with all the info to render the individual signs
-        self.sign_layer = QgsVectorLayer('Point?crs=epsg:2056&field=id:string&field=path:string','sign', 'memory')
+        self.sign_layer = QgsVectorLayer('Point?crs=epsg:2056&field=id:string&field=path:string', 'sign', 'memory')
+        # QgsProject.instance().addMapLayer(self.sign_layer, False)
 
     # QgsSymbolLayer interface
     def layerType(self) -> str:
@@ -49,8 +56,8 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
         return dict()
 
     def sign_symbol_render_context(self, support_symbol_render_context: QgsSymbolRenderContext) -> QgsSymbolRenderContext:
-        fields = QgsFields()
-        fields.append(QgsField("path", QVariant.String, 'text'), QgsFields.OriginExpression)
+        # fields = QgsFields()
+        # fields.append(QgsField("path", QVariant.String, 'text'), QgsFields.OriginExpression)
         f = QgsFeature()
         f.setFields(self.sign_layer.fields())
         f.setAttribute('path', ['/Users/denis/Documents/signalisation_verticale/project/images/official/original/111.svg'])
@@ -58,11 +65,12 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
         expression_context = QgsExpressionContext()
         expression_context.appendScopes(QgsExpressionContextUtils.globalProjectLayerScopes(self.sign_layer))
         expression_context.setFeature(f)
+        expression_context.setFields(self.sign_layer.fields())
 
         sign_render_context = QgsRenderContext(support_symbol_render_context.renderContext())
         sign_render_context.setExpressionContext(expression_context)
 
-        sign_context = QgsSymbolRenderContext(sign_render_context, QgsUnitTypes.RenderUnit.RenderMillimeters, 1, False, Qgis.SymbolRenderHints(), f, fields)
+        sign_context = QgsSymbolRenderContext(sign_render_context, QgsUnitTypes.RenderUnit.RenderMillimeters, 1, False, Qgis.SymbolRenderHints(), f, self.sign_layer.fields())
         return sign_context
 
     def startRender(self, context: QgsSymbolRenderContext):
@@ -70,13 +78,12 @@ class SignaloSymbol(QgsMarkerSymbolLayer):
         self.support_symbol.startRender(context)
 
         sign_context = self.sign_symbol_render_context(context)
-        # self.sign_symbol.startRender(sign_context)
+        #self.sign_symbol.startRender(sign_context)
 
     def stopRender(self, context: QgsSymbolRenderContext):
         self.support_symbol.stopRender(context)
         sign_context = self.sign_symbol_render_context(context)
         self.sign_symbol.stopRender(sign_context)
-
 
     # QgsMarkerSymbolLayer interface
     def renderPoint(self, point: QPointF, context: QgsSymbolRenderContext):

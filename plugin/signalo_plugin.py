@@ -21,7 +21,7 @@
 import os
 from PyQt5.QtCore import QCoreApplication, QLocale, QSettings, QTranslator
 from PyQt5.QtWidgets import QWidget
-from qgis.core import Qgis, QgsApplication
+from qgis.core import Qgis, QgsApplication, QgsVectorLayer, QgsProject
 from qgis.gui import QgisInterface, QgsMessageBarItem
 from .core.signalosymbollayermetadata import SignaloSymbolLayerMetadata
 
@@ -38,6 +38,10 @@ class SignaloPlugin:
         self.translator.load(qgis_locale, 'signalo-qgis-plugin', '_', locale_path)
         QCoreApplication.installTranslator(self.translator)
 
+        # a virtual layer with all the info to render the individual signs
+        #self.sign_layer = QgsVectorLayer('Point?crs=epsg:2056&field=id:string&field=path:string', 'sign', 'memory')
+        # QgsProject.instance().addMapLayer(self.sign_layer, False)
+
         self.symbol_metadata = SignaloSymbolLayerMetadata()
 
         self.registry = QgsApplication.instance().symbolLayerRegistry()
@@ -48,6 +52,7 @@ class SignaloPlugin:
 
     def unload(self):
         assert self.registry.removeSymbolLayerType(self.symbol_metadata)
+        # QgsProject.instance().removeMapLayer(self.sign_layer.id())
 
     def show_message(self, title: str, msg: str, level: Qgis.MessageLevel, widget: QWidget = None):
         if widget:
