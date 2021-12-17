@@ -7,8 +7,8 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="171"
-   height="122"
+   width="140"
+   height="100"
    version="1.1"
    id="svg4845"
    sodipodi:docname="461.svg"
@@ -40,46 +40,18 @@
      inkscape:window-height="1017"
      id="namedview4847"
      showgrid="false"
-     inkscape:zoom="2.4632818"
-     inkscape:cx="62.880514"
-     inkscape:cy="68.39075"
-     inkscape:window-x="3832"
-     inkscape:window-y="-3"
+     inkscape:zoom="4.9265636"
+     inkscape:cx="32.701421"
+     inkscape:cy="27.000979"
+     inkscape:window-x="5752"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg4845" />
+     inkscape:current-layer="svg4845"
+     inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g4822">
-    <title
-       id="title4816">background</title>
-    <rect
-       fill="#fff"
-       id="canvas_background"
-       height="124"
-       width="173"
-       y="-1"
-       x="-1" />
-    <g
-       display="none"
-       overflow="visible"
-       y="0"
-       x="0"
-       height="100%"
-       width="100%"
-       id="canvasGrid">
-      <rect
-         fill="url(#gridpattern)"
-         stroke-width="0"
-         y="0"
-         x="0"
-         height="100%"
-         width="100%"
-         id="rect4819" />
-    </g>
-  </g>
-  <g
      id="g4843"
-     transform="translate(1.72565,1.85164)">
+     transform="matrix(0.81761272,0,0,0.80029265,0.21361991,1.6881087)">
     <title
        id="title4824">Layer 1</title>
     <metadata

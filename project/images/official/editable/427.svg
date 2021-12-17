@@ -111,9 +111,9 @@
        dominant-baseline="middle"
        text-anchor="middle"
        font-family="sans-serif"
-       font-size="70px"
+       font-size="60px"
        id="svg_14"
-       y="180"
+       y="221.17261"
        x="417.5"
        fill="#ffffff">param(text1)</text>
     <text
@@ -121,9 +121,9 @@
        dominant-baseline="middle"
        text-anchor="middle"
        font-family="sans-serif"
-       font-size="70px"
+       font-size="60px"
        id="svg_15"
-       y="300"
+       y="330"
        x="417.5"
        fill="#ffffff">param(text2)</text>
     <text
@@ -131,9 +131,9 @@
        dominant-baseline="middle"
        text-anchor="middle"
        font-family="sans-serif"
-       font-size="70px"
+       font-size="35px"
        id="svg_16"
-       y="420"
+       y="400.00488"
        x="417.5"
        fill="#ffffff">param(text3)</text>
   </g>

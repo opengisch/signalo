@@ -171,12 +171,12 @@
        dominant-baseline="middle" 
        text-anchor="middle"
        font-family="sans-serif"
-       font-size="70px"
+       font-size="57px"
        id="svg_50"
        y="443"
-       x="300"
+       x="220"
        stroke-width="0"
-       stroke="#000000"
+       stroke="#ffffff"
        fill="#ffffff">param(text1)</text>
   </g>
 </svg>
