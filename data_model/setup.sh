@@ -76,6 +76,7 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changel
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0003/0003_fix_img_size.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0004/0004_fix_img_size_followup.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0005/0005_fix_img_size.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0005/0005_add_sign.sql
 
 ${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
 
