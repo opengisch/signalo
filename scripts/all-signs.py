@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-#2537994.790,1152561.910
+#all_signs.py
 
 import os
 import math
@@ -12,7 +12,7 @@ conn = psycopg2.connect("service={service}".format(service=pg_service))
 
 sign_per_support = 8
 step = 100  # in meters
-n_per_col = 20
+n_per_col = 7
 
 
 def insert(table, row, schema='signalo_db'):
@@ -26,21 +26,24 @@ def insert(table, row, schema='signalo_db'):
 
 
 cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
-cur.execute("SELECT * FROM signalo_db.vl_official_sign")
+cur.execute("SELECT * FROM signalo_db.vl_official_sign order by id")
 rows = cur.fetchall()
 
 i = 0
 
 frame_id = None
+x_shift = 0
+y_shift = 0
 
 for row in rows:
-    nth = math.floor(i/sign_per_support)
+    nth = math.floor(i / sign_per_support)
     if i%sign_per_support == 0:
-        x_shift = i % n_per_col
-        y_shift = math.floor(i/n_per_col)
+        x_shift = (i / sign_per_support) % n_per_col
+        if x_shift % n_per_col == 0:
+            y_shift += 1
 
         # create support + azimut + frame
-        sql = f'SELECT ST_SetSRID(ST_MakePoint({2700000+x_shift*step}, {1300000+y_shift*step}), 2056);'
+        sql = f'SELECT ST_SetSRID(ST_MakePoint({2706400+x_shift*step}, {1302000+y_shift*step}), 2056);'
         cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
         cur.execute(sql)
         geom = cur.fetchone()[0]
@@ -53,19 +56,20 @@ for row in rows:
         # create frame
         frame_id = insert('frame', {'fk_azimut': azimut_id, 'rank': 1})
 
-    # print(support_id, azimut_id, frame_id, 1 + i % n_per_col)
     # create sign
-    rank = 1 + i % n_per_col
+    rank = 1 + i % sign_per_support
     insert('sign', {
         'fk_frame': frame_id,
         'fk_sign_type': 11,
         'fk_official_sign': row['id'],
-        'inscription_1': 'texte 1',
+        'inscription_1': 'texte1',
+        'inscription_2': 'inscription2',
+        'inscription_3': 'destination3',
         'rank': rank
     })
 
     conn.commit()
-
+    print(i, rank, x_shift, y_shift)
     i += 1
 
 conn.close()
