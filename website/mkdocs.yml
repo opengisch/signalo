@@ -5,7 +5,7 @@ site_description: >-
   Signalo est un module de gestion de la signalisation verticale.
 
 repo_url: https://github.com/opengisch/signalo
-docs_dir: documentation  # because of a bug in transifex-client the repo dir name cannot contain the doc dir name (e.g. qfield-docs and docs)
+docs_dir: ./documentation  # because of a bug in transifex-client the repo dir name cannot contain the doc dir name (e.g. qfield-docs and docs)
 
 # Repository
 repo_name: opengisch/qfield
