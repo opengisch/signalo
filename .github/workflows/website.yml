@@ -43,7 +43,7 @@ jobs:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Build documentation
-        run: mkdocs build
+        run: mkdocs build -f website/mkdocs.yml
         env:
           DEFAULT_LANGUAGE_ONLY: false
 
