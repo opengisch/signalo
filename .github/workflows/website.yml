@@ -24,10 +24,10 @@ jobs:
           python-version: 3.9 # latest version we've tested with 0 issue
 
       - name: Install Python requirements
-        run: pip install -r requirements.txt
+        run: pip install -r website/requirements.txt
 
       - name: Install Python requirements insiders
-        run: pip install -r requirements-insiders.txt
+        run: pip install -r website/requirements-insiders.txt
         env:
           MKDOCS_INSIDERS_TOKEN: ${{ secrets.MKDOCS_INSIDERS_TOKEN }}
 
