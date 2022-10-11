@@ -11,33 +11,45 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    # Skip if this job was scheduled and the runner belongs to a fork (i.e. forks have no use for this action) 
+    if: (github.event_name == 'schedule' && github.repository == 'opengisch/QField-docs') || (github.event_name != 'schedule')
     steps:
       - uses: actions/checkout@v2
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+
       - uses: actions/setup-python@v2
         with:
-          python-version: 3.x
+          python-version: 3.9 # latest version we've tested with 0 issue
 
-      - name: MkDocs
-        run: |
-             pip install git+https://${{ secrets.GH_USER_INSIDER }}:${{ secrets.GH_TOKEN_INSIDER }}@github.com/opengisch/mkdocs-material-insiders#egg=mkdocs-material
-             pip install mkdocs-material fancyboxmd
-             cd website
-             mkdir -p build/fr
-             mkdocs build -d build/fr
-             # cp -r build/en build/it # This step will be done downloading the translated doc from Transifex
-             cp index.html build/
+      - name: Install Python requirements
+        run: pip install -r requirements.txt
 
-      - name: model docs
+      - name: Install Python requirements insiders
+        run: pip install -r requirements-insiders.txt
+        env:
+          MKDOCS_INSIDERS_TOKEN: ${{ secrets.MKDOCS_INSIDERS_TOKEN }}
+
+      - name: Install Transifex client
+        run: curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
+
+      - name: Pull translations
         run: |
-          LATEST_RELEASE=$(curl --silent "https://api.github.com/repos/opengisch/signalo/releases/latest" | jq -r .tag_name)
-          wget -q https://github.com/opengisch/signalo/releases/download/${LATEST_RELEASE}/signalo-${LATEST_RELEASE}-model-documentation.zip
-          unzip -q signalo-${LATEST_RELEASE}-model-documentation.zip
-          cp -r model-documentation website/build/
+          ./tx add --project qfield-documentation --file-filter 'documentation/<project_slug>.<resource_slug>/<lang>.<ext>' remote https://www.transifex.com/opengisch/signalo/dashboard/
+          ./tx pull
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
+
+      - name: Build documentation
+        run: mkdocs build
+        env:
+          DEFAULT_LANGUAGE_ONLY: false
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
-          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
-          BRANCH: gh-pages # The branch the action should deploy to.
-          FOLDER: website/build # The folder the action should deploy.
-          CLEAN: true # Automatically remove deleted files from the deploy branch
+          github_token: ${{ secrets.GH_TOKEN }}
+          branch: gh-pages # The branch the action should deploy to.
+          folder: website/build # The folder the action should deploy.
+          clean: true # Automatically remove deleted files from the deploy branch
