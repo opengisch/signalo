@@ -36,7 +36,7 @@ jobs:
 
       - name: Pull translations
         run: |
-          ./tx add --project qfield-documentation --file-filter 'documentation/<project_slug>.<resource_slug>/<lang>.<ext>' remote https://www.transifex.com/opengisch/signalo/dashboard/
+          ./tx add --project signalo-website --file-filter 'website/docs/<project_slug>.<resource_slug>/<lang>.<ext>' remote https://www.transifex.com/opengisch/signalo-website/dashboard/
           ./tx pull
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
