@@ -1,3 +1,7 @@
+---
+title: Installation
+tx_slug: documentation_installation
+---
 
 
 ### Prérequis

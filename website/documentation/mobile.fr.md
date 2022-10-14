@@ -1,4 +1,7 @@
-
+---
+title: Mobile
+tx_slug: documentation_mobile
+---
 
 
 * Utiliser le plugin “QFieldSync” pour créer un paquet projet pour QField

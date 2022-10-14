@@ -1,6 +1,7 @@
 ---
 template: home.html
 title: SIGNALO
+tx_slug: documentation_home
 ---
 
 

@@ -1,3 +1,7 @@
+---
+title: Data Model
+tx_slug: documentation_data-model
+---
 
 ## Structure
 
