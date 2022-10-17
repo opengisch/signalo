@@ -1,3 +1,7 @@
+---
+title: Contribute
+tx_slug: documentation_contribute
+---
 
 ### Historique
 
