@@ -33,12 +33,26 @@ jobs:
           GH_TOKEN_INSIDER: ${{ secrets.GH_TOKEN_INSIDER }}
 
       - name: Install Transifex client
-        run: curl -o- https://raw.githubusercontent.com/transifex/cli/master/install.sh | bash
-
-      - name: Pull translations
         run: |
-          ./tx add --project signalo-website --file-filter 'website/docs/<project_slug>.<resource_slug>/<lang>.<ext>' remote https://www.transifex.com/opengisch/signalo-website/dashboard/
-          ./tx pull
+          curl -OL https://github.com/transifex/cli/releases/download/v1.3.1/tx-linux-amd64.tar.gz
+          tar -xvzf tx-linux-amd64.tar.gz
+
+      - name: Configure Transifex
+        run: |
+          python website/utils/transifex_utils.py
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
+
+      - name: Push source files to Transifex
+        run: |
+          ./tx push
+        env:
+          TX_TOKEN: ${{ secrets.TX_TOKEN }}
+
+      - name: Pull translations from Transifex
+        run: |
+          ./tx pull --translations --all --minimum-perc 10
+          ./tx status
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
