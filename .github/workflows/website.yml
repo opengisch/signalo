@@ -59,7 +59,7 @@ jobs:
 
       - name: Build documentation
         run: |
-          mkdocs build -f ./website/mkdocs.yml -d build
+          mkdocs build -f ./website/mkdocs.yml
         env:
           DEFAULT_LANGUAGE_ONLY: true
 
@@ -68,5 +68,5 @@ jobs:
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           branch: gh-pages
-          folder: ./website/build
+          folder: ./website/site
           clean: true
