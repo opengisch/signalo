@@ -61,7 +61,7 @@ jobs:
         run: |
           mkdocs build -f ./website/mkdocs.yml -d build
         env:
-          DEFAULT_LANGUAGE_ONLY: false
+          DEFAULT_LANGUAGE_ONLY: true
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@3.7.1
