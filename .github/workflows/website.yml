@@ -40,25 +40,27 @@ jobs:
 
       - name: Configure Transifex
         run: |
-          python website/utils/transifex_utils.py
+          python ./website/utils/transifex_utils.py
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Push source files to Transifex
         run: |
-          ./tx --config website/.tx/config push
+          ./tx --config ./website/.tx/config push
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Pull translations from Transifex
         run: |
-          ./tx website/.tx/config pull --translations --all --minimum-perc 10
-          ./tx --config website/.tx/config status
+          ./tx --config ./website/.tx/config pull --translations --all --minimum-perc 10
+          ./tx --config ./website/.tx/config status
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Build documentation
-        run: mkdocs build -f website/mkdocs.yml -d build
+        run: |
+          ls ./website/documentation -a
+          mkdocs build -f ./website/mkdocs.yml -d build
         env:
           DEFAULT_LANGUAGE_ONLY: false
 
@@ -66,6 +68,6 @@ jobs:
         uses: JamesIves/github-pages-deploy-action@3.7.1
         with:
           github_token: ${{ secrets.GH_TOKEN }}
-          branch: gh-pages # The branch the action should deploy to.
-          folder: website/build # The folder the action should deploy.
-          clean: true # Automatically remove deleted files from the deploy branch
+          branch: gh-pages
+          folder: website/build
+          clean: true
