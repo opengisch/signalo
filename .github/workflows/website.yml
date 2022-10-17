@@ -46,14 +46,14 @@ jobs:
 
       - name: Push source files to Transifex
         run: |
-          ./tx push --config website/.tx/config
+          ./tx --config website/.tx/config push
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Pull translations from Transifex
         run: |
-          ./tx pull website/.tx/config --translations --all --minimum-perc 10
-          ./tx status --config website/.tx/config
+          ./tx website/.tx/config pull --translations --all --minimum-perc 10
+          ./tx --config website/.tx/config status
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
