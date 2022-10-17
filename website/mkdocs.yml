@@ -80,7 +80,7 @@ plugins:
           link: /fr/
         de:
           name: Deutsch
-          build: !ENV [BUILD_DE, false]
+          build: false
           link: /de/
         # it:
         #   name: Italiano
@@ -89,4 +89,4 @@ plugins:
         # en:
         #   name: English
         #   build: !ENV [BUILD_EN, false]
-        #   link: /en/
+        #   link: /en/git
