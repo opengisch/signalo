@@ -73,6 +73,7 @@ plugins:
   - i18n:
       default_language: fr
       default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
+      search_reconfigure: false
       languages:
         fr: Français
         de: Deutsch
