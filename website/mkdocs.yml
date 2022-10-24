@@ -71,10 +71,10 @@ markdown_extensions:
 plugins:
   - search
   - i18n:
-      default_language: fr_CH
+      default_language: fr
       default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
       languages:
-        fr_CH: Français
-        de_CH: Deutsch
+        fr: Français
+        de: Deutsch
         # it: Italiano
         # en: English
