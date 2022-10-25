@@ -9,6 +9,13 @@ on:
       - '.github/workflows/website.yml'
   workflow_dispatch: # useful for testing tx pushes
 
+permissions:
+  contents: write
+
+defaults:
+  run:
+    working-directory: website
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -25,10 +32,10 @@ jobs:
           python-version: '3.10'
 
       - name: Install Python requirements
-        run: pip install -r website/requirements.txt
+        run: pip install -r requirements.txt
 
       - name: Install Python requirements insiders
-        run: pip install -r website/requirements-insiders.txt
+        run: pip install -r requirements-insiders.txt
         env:
           GH_USER_INSIDER: ${{ secrets.GH_USER_INSIDER }}
           GH_TOKEN_INSIDER: ${{ secrets.GH_TOKEN_INSIDER }}
@@ -40,33 +47,31 @@ jobs:
 
       - name: Configure Transifex
         run: |
-          python ./website/utils/transifex_utils.py
+          python ./utils/transifex_utils.py
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Push source files to Transifex
         run: |
-          ./tx --config ./website/.tx/config push
+          ./tx push
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Pull translations from Transifex
         run: |
-          ./tx --config ./website/.tx/config pull --translations --all --minimum-perc 10
-          ./tx --config ./website/.tx/config status
+          ./tx pull --translations --all --minimum-perc 10
+          ./tx status
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
       - name: Build documentation
-        run: |
-          mkdocs build -f ./website/mkdocs.yml
+        run: mkdocs build
         env:
           DEFAULT_LANGUAGE_ONLY: false
 
-      - name: Deploy 🚀
-        uses: JamesIves/github-pages-deploy-action@3.7.1
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4.2.2
         with:
-          github_token: ${{ secrets.GH_TOKEN }}
-          branch: gh-pages
-          folder: ./website/site
-          clean: true
+            branch: gh-pages
+            clean: true
+            folder: ./website/site
