@@ -70,7 +70,7 @@ jobs:
           DEFAULT_LANGUAGE_ONLY: false
 
       - name: Deploy to GitHub Pages
-        uses: JamesIves/github-pages-deploy-action@v4.2.2
+        uses: JamesIves/github-pages-deploy-action@v4.4.1
         with:
             branch: gh-pages
             clean: true
