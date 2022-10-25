@@ -32,7 +32,7 @@ jobs:
           docker exec -e PGSERVICE=pg_signalo_demo signalo /src/scripts/all-signs.py
 
 
-      - uses: actions/setup-node@v1
+      - uses: actions/setup-node@v3
         with:
           node-version: '12'
       - run: npm install
