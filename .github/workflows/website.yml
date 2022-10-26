@@ -74,7 +74,7 @@ jobs:
           LATEST_RELEASE=$(curl --silent "https://api.github.com/repos/opengisch/signalo/releases/latest" | jq -r .tag_name)
           wget -q https://github.com/opengisch/signalo/releases/download/${LATEST_RELEASE}/signalo-${LATEST_RELEASE}-model-documentation.zip
           unzip -q signalo-${LATEST_RELEASE}-model-documentation.zip
-          cp -r model-documentation build/
+          cp -r model-documentation site/
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4.4.1
