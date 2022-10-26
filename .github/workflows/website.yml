@@ -9,9 +9,6 @@ on:
       - '.github/workflows/website.yml'
   workflow_dispatch: # useful for testing tx pushes
   workflow_call:
-    secrets:
-      token:
-        required: true
 
 permissions:
   contents: write
