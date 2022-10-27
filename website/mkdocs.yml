@@ -52,6 +52,7 @@ nav:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/jquery.fancybox.min.css
+  #- theme_overrides/stylesheets/hide-toc_nav-table.css
 
 # Extra javascript
 extra_javascript:

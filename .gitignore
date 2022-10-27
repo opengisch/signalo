@@ -13,6 +13,7 @@ schemaspy/
 website/local.html
 project/this-is-the-way.jpg
 website/tx
-website/Pipfile
-website/Pipfile.lock
-website/.env
+Pipfile
+Pipfile.lock
+.env
+Pipfile

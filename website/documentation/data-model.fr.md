@@ -1,6 +1,9 @@
 ---
 title: Data Model
 tx_slug: documentation_data-model
+hide:
+  - navigation
+  - toc
 ---
 
 ## Structure
