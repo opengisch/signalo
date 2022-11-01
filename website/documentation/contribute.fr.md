@@ -1,6 +1,9 @@
 ---
 title: Contribute
 tx_slug: documentation_contribute
+hide:
+  - navigation
+  - toc
 ---
 
 ### Historique

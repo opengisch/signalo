@@ -1,6 +1,9 @@
 ---
 title: Roadmap
 tx_slug: documentation_roadmap
+hide:
+  - navigation
+  - toc
 ---
 
 Voici une liste non-exhaustive des améliorations prévues pour SIGNALO
