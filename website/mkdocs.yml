@@ -79,3 +79,13 @@ plugins:
         de: Deutsch
         # it: Italiano
         # en: English
+      nav_translations:
+        de:
+          - Présentation: Präsentation
+          - Participer: Beitragen
+          - Installation: Installation
+          - Modèle de données: Datenmodelle
+          - Desktop: Desktop
+          - Mobile: Mobile
+          - Feuille de route: Fahrplan
+          - Documentation BD: DB Dokumentation
