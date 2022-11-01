@@ -4,13 +4,12 @@ site_author: OPENGIS.ch
 site_description: >-
   Signalo est un module de gestion de la signalisation verticale.
 
-repo_url: https://github.com/opengisch/signalo
 docs_dir: documentation
 
 # Repository
 repo_name: opengisch/signalo
 repo_url: https://github.com/opengisch/signalo
-edit_uri: https://github.com/opengisch/signalo/tree/master/documentation/
+edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
 
 # Copyright
 copyright: Copyright &copy; 2022 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
@@ -47,6 +46,7 @@ nav:
     - Desktop: desktop.md
     - Mobile: mobile.md
     - Feuille de route: roadmap.md
+    - Documentation BD: datamodel-doc.fr.md
 
 # Css
 extra_css:
