@@ -14,22 +14,22 @@ hide:
 * Le formulaire et composé de trois onglets "Général", "Azimut" et "Photo"
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
   <figcaption>Onglet général</figcaption>
 </figure>
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
   <figcaption>Onglet azimut</figcaption>
 </figure>
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
   <figcaption>Onglet photo</figcaption>
 </figure>
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. 
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
   <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
 </figure>
 
@@ -38,7 +38,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis.
 La taille des panneaux peut être ajustée dans les propriétés du projet, dans l'onglet `Variables`, en modifiant la variable `signalo_img_size`.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/set-image-size.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/set-image-size.png){ width="500"; loading=lazy }
   <figcaption>Réglage de la taille de l'image</figcaption>
 </figure>
 
@@ -63,7 +63,7 @@ Avec un clic-droit sur la couche, sélectionner "Filtrer…" dans le menu.
 Il faut alors construire une requête pour filtrer les éléments.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/filter.png){ width="500"  }
+  ![Projet QField](./assets/images/printscreen/filter.png){ width="500"; lazy-loading }
   <figcaption>Filtrage des signaux</figcaption>
 </figure>
 
