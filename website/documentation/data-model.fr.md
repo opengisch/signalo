@@ -24,3 +24,7 @@ Il existe par ailleurs un second schéma, `signalo_app` offrant quant à lui la 
 ## Documentation
 
 La description complète du modèle de données se trouve [ici](https://www.signalo.ch/model-documentation).
+
+<div class="doc">
+  <iframe src="[map.html](https://www.signalo.ch/model-documentation)"></iframe>
+</div>
