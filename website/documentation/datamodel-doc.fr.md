@@ -7,5 +7,5 @@ hide:
 ---
 
 <div class="doc">
-  <iframe src="[map.html](https://www.signalo.ch/model-documentation)"></iframe>
+  <iframe src="https://www.signalo.ch/model-documentation"></iframe>
 </div>
