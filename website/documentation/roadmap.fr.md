@@ -18,6 +18,6 @@ Voici une liste non-exhaustive des améliorations prévues pour SIGNALO
 
 * Inspection et validation des changements effectués sur le terrain
 
-* Amélioration du contrôle des mises à jour du modèle de données info de versionnement dans le modèle, contrôle dans la CI
+* Amélioration du contrôle des mises à jour du modèle de données, info de versionnement dans le modèle, contrôle dans la CI
 
 * Outil avancé pour l'analyse de la cohérence globale via un plugin
