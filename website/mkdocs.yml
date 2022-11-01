@@ -82,10 +82,10 @@ plugins:
       nav_translations:
         de:
           - Présentation: Präsentation
-          - Participer: Beitragen
+          - Participer: Mitmachen
           - Installation: Installation
           - Modèle de données: Datenmodelle
           - Desktop: Desktop
-          - Mobile: Mobile
-          - Feuille de route: Fahrplan
+          - Mobile: Mobil
+          - Feuille de route: Roadmap
           - Documentation BD: DB Dokumentation
