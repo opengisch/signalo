@@ -17,14 +17,11 @@ module.exports = {
   },
 
   schemas: [
-    { name: 'signalo_od' },
-    { name: 'signalo_vl' },
-    { name: 'signalo_sys' },
+    { name: 'signalo_db' },
+    { name: 'signalo_app' },
   ],
 
   ignores: [
-    { identifierPattern: 'signalo_vl\\.status', rulePattern: 'name-inflection' },
-    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-text-to-varchar' },
-    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-identity-to-serial' },
+    { identifierPattern: 'signalo_db\\.vl_status', rulePattern: 'name-inflection' },
   ]
 };
