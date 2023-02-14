@@ -81,11 +81,11 @@ plugins:
         # en: English
       nav_translations:
         de:
-          - Présentation: Präsentation
-          - Participer: Mitmachen
-          - Installation: Installation
-          - Modèle de données: Datenmodelle
-          - Desktop: Desktop
-          - Mobile: Mobil
-          - Feuille de route: Roadmap
-          - Documentation BD: DB Dokumentation
+          Présentation: Präsentation
+          Participer: Mitmachen
+          Installation: Installation
+          Modèle de données: Datenmodelle
+          Desktop: Desktop
+          Mobile: Mobil
+          Feuille de route: Roadmap
+          Documentation BD: DB Dokumentation
