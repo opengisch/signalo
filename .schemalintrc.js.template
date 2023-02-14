@@ -22,8 +22,6 @@ module.exports = {
   ],
 
   ignores: [
-    { identifierPattern: 'signalo_vl\\.status', rulePattern: 'name-inflection' },
-    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-text-to-varchar' },
-    { identifierPattern: 'signalo_sys\\.pum*', rulePattern: 'prefer-identity-to-serial' },
+    { identifierPattern: 'signalo_db\\.status', rulePattern: 'name-inflection' },
   ]
 };
