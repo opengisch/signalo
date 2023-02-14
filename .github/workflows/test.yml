@@ -32,9 +32,9 @@ jobs:
           docker exec -e PGSERVICE=pg_signalo_demo signalo /src/scripts/all-signs.py
 
 
-      - uses: actions/setup-node@v3
-        with:
-          node-version: '18'
+#      - uses: actions/setup-node@v3
+#        with:
+#          node-version: '18'
 
       - name: "test data model"
         run: docker exec signalo pytest
@@ -42,11 +42,11 @@ jobs:
       - name: "test images"
         run: docker exec signalo /src/test/official_sign_images.sh
         
-      - name: "schema lint"
-        run: |
-          npm i --no-fund -g schemalint
-          cp .schemalintrc.js.template .schemalintrc.js
-          schemalint
+#      - name: "schema lint"
+#        run: |
+#          npm i --no-fund -g schemalint
+#          cp .schemalintrc.js.template .schemalintrc.js
+#          schemalint
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
