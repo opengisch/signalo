@@ -39,14 +39,14 @@ theme:
         name: Switch to dark mode
 
 nav:
-    - Présentation: index.md
-    - Participer: contribute.md
-    - Installation: installation.md
-    - Modèle de données: data-model.md
-    - Desktop: desktop.md
-    - Mobile: mobile.md
-    - Feuille de route: roadmap.md
-    - Documentation BD: datamodel-doc.fr.md
+  - Présentation: index.md
+  - Participer: contribute.md
+  - Installation: installation.md
+  - Modèle de données: data-model.md
+  - Desktop: desktop.md
+  - Mobile: mobile.md
+  - Feuille de route: roadmap.md
+  - Documentation BD: datamodel-doc.fr.md
 
 # Css
 extra_css:
@@ -72,7 +72,7 @@ plugins:
   - search
   - i18n:
       default_language: fr
-      default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
+      # default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
       search_reconfigure: false
       languages:
         fr: Français
