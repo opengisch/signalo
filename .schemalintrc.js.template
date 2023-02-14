@@ -17,9 +17,8 @@ module.exports = {
   },
 
   schemas: [
-    { name: 'signalo_od' },
-    { name: 'signalo_vl' },
-    { name: 'signalo_sys' },
+    { name: 'signalo_db' },
+    { name: 'signalo_app' },
   ],
 
   ignores: [
