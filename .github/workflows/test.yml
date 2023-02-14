@@ -44,7 +44,7 @@ jobs:
         
       - name: "schema lint"
         run: |
-          npm i -g schemalint
+          npm i --no-fund -g schemalint
           cp .schemalintrc.js.template .schemalintrc.js
           schemalint
 
