@@ -22,6 +22,6 @@ module.exports = {
   ],
 
   ignores: [
-    { identifierPattern: 'signalo_db\\.status', rulePattern: 'name-inflection' },
+    { identifierPattern: 'signalo_db\\.vl_status', rulePattern: 'name-inflection' },
   ]
 };
