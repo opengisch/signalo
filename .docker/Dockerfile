@@ -25,7 +25,7 @@ RUN chmod +x /src/.docker/init_db.sh
 ENV PATH="/src/.docker:${PATH}"
 
 # Execute the main script on database initialization (zzz to be after postgis init)
-RUN if [ "x${AUTO_INIT}" = "xTrue" ]; then ln -s /src/.docker/init_db.sh /docker-entrypoint-initdb.d/zzz_init_db.sh; fi
+RUN if [ "${AUTO_INIT}" = "True" ]; then ln -s /src/.docker/init_db.sh /docker-entrypoint-initdb.d/zzz_init_db.sh; fi
 
 # Some defaults
 ENV POSTGRES_PASSWORD=postgres
