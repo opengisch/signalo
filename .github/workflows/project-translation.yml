@@ -26,7 +26,6 @@ jobs:
           tar -xvzf tx-linux-amd64.tar.gz
 
       - name: Update translations
-        env:
         run: |
           export SOURCE_DIR=$(pwd)
           docker-compose -f .docker/docker-compose.qgis.yml up --build -d
