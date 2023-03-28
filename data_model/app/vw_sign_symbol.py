@@ -71,14 +71,14 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_height
                   WHEN fk_sign_type = 12 THEN 130
                   WHEN fk_sign_type = 13 THEN 100
-                  WHEN fk_sign_type = 14 THEN 100
+                  WHEN fk_sign_type = 14 THEN 50
                 END as _symbol_height
                 , CASE 
                   WHEN complex IS TRUE THEN 121
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_width
                   WHEN fk_sign_type = 12 THEN 70
                   WHEN fk_sign_type = 13 THEN 100
-                  WHEN fk_sign_type = 14 THEN 130
+                  WHEN fk_sign_type = 14 THEN 100
                 END as _symbol_width
             FROM signalo_db.sign
                 LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
