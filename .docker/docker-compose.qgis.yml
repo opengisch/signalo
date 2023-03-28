@@ -1,0 +1,14 @@
+version: '3'
+services:
+  signalo:
+    build:
+      context: ..
+      dockerfile: ./.docker/Dockerfile
+
+  qgis:
+    image: opengisch/qgis
+    tty: true
+    volumes:
+      - ${SOURCE_DIR}:/usr/src
+    links:
+      - signalo
