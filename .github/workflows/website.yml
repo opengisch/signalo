@@ -20,7 +20,7 @@ defaults:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    # Skip if this job was scheduled and the runner belongs to a fork (i.e. forks have no use for this action) 
+    # Skip if this job was scheduled and the runner belongs to a fork (i.e. forks have no use for this action)
     if: (github.event_name == 'schedule' && github.repository == 'opengisch/QField-docs') || (github.event_name != 'schedule')
     steps:
       - uses: actions/checkout@v3
@@ -69,7 +69,7 @@ jobs:
         run: mkdocs build
         env:
           DEFAULT_LANGUAGE_ONLY: false
-          
+
       - name: Datamodel Documentation
         run: |
           LATEST_RELEASE=$(curl --silent "https://api.github.com/repos/opengisch/signalo/releases/latest" | jq -r .tag_name)

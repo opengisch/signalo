@@ -134,9 +134,8 @@ jobs:
           asset_path: ./model-documentation.zip
           asset_name: signalo-${{ github.event.release.tag_name }}-model-documentation.zip
           asset_content_type: application/zip
-          
+
   rebuild-website:
     uses: ./.github/workflows/website.yml
     secrets: inherit
     needs: release
-

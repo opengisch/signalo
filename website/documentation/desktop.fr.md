@@ -26,7 +26,7 @@ hide:
   <figcaption>Onglet photo</figcaption>
 </figure>
 
-Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. 
+Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis.
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
@@ -43,12 +43,12 @@ La taille des panneaux peut être ajustée dans les propriétés du projet, dans
 </figure>
 
 
-## Environnements de travail 
+## Environnements de travail
 
 Vous avez la possibilité d'avoir plusieurs environnements de travail: test, production, …
 Plusieurs fichiers projets sont disponibles avec chaque version:
 
-| Fichier projet | nom du service PG     | exemple d'utilisation | 
+| Fichier projet | nom du service PG     | exemple d'utilisation |
 | ------------- | ---------------------- | --------------------- |
 | `signalo.qgs` | `pg_signalo`           | demo                  |
 | `signalo_prod.qgs` | `pg_signalo_prod` | production            |
@@ -66,4 +66,3 @@ Il faut alors construire une requête pour filtrer les éléments.
   ![Projet QField](./assets/images/printscreen/filter.png){ width="500"; lazy-loading }
   <figcaption>Filtrage des signaux</figcaption>
 </figure>
-

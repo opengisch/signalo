@@ -18,5 +18,3 @@ SIGNALO vous offre:
 * un contenu dynamique avec le texte des signaux sur la carte
 * une solution complète: bureau, mobile et guichet cartographique
 * une analyse de la cohérence globale de la signalisation grâce au filtrage
-
-

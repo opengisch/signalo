@@ -44,14 +44,14 @@ UPDATE signalo_db.vl_marker_type SET value_de='zu bestimmen' WHERE id = 3;
 UPDATE signalo_db.vl_marker_type SET value_de='Leitpfeil' WHERE id = 12;
 UPDATE signalo_db.vl_marker_type SET value_de='Leitmarkierung' WHERE id = 13;
 UPDATE signalo_db.vl_marker_type SET value_de='Leitbake' WHERE id = 14;
-UPDATE signalo_db.vl_marker_type SET value_de='Verkehrsteiler' WHERE id = 16;   
+UPDATE signalo_db.vl_marker_type SET value_de='Verkehrsteiler' WHERE id = 16;
 
 UPDATE signalo_db.vl_mirror_shape SET value_de='andere' WHERE id = 2;
 UPDATE signalo_db.vl_mirror_shape SET value_de='rechteckig' WHERE id = 11;
-UPDATE signalo_db.vl_mirror_shape SET value_de='rund' WHERE id = 12;    
+UPDATE signalo_db.vl_mirror_shape SET value_de='rund' WHERE id = 12;
 
 
-UPDATE signalo_db.vl_official_sign SET value_de='Wegweiser zu Autobahnen oder Autostrassen (1 Linie, Pfeil links)' WHERE id = '4.31-1-l';	
+UPDATE signalo_db.vl_official_sign SET value_de='Wegweiser zu Autobahnen oder Autostrassen (1 Linie, Pfeil links)' WHERE id = '4.31-1-l';
 UPDATE signalo_db.vl_official_sign SET value_de='Wegweiser zu Autobahnen oder Autostrassen (1 Linie, Pfeil rechts)' WHERE id = '4.31-1-r';
 UPDATE signalo_db.vl_official_sign SET value_de='Wegweiser zu Autobahnen oder Autostrassen (2 Linien, Pfeil links)' WHERE id = '4.31-2-l';
 UPDATE signalo_db.vl_official_sign SET value_de='Wegweiser zu Autobahnen oder Autostrassen (2 Linien, Pfeil rechts)' WHERE id = '4.31-2-r';
@@ -78,7 +78,7 @@ UPDATE signalo_db.vl_sign_type SET value_de='zu bestimmen' WHERE id = 3;
 UPDATE signalo_db.vl_sign_type SET value_de='offiziell' WHERE id = 11;
 UPDATE signalo_db.vl_sign_type SET value_de='Markierung' WHERE id = 12;
 UPDATE signalo_db.vl_sign_type SET value_de='Spiegel' WHERE id = 13;
-UPDATE signalo_db.vl_sign_type SET value_de='Strassenschild' WHERE id = 14;    
+UPDATE signalo_db.vl_sign_type SET value_de='Strassenschild' WHERE id = 14;
 
 UPDATE signalo_db.vl_status SET value_de='unbekannt' WHERE id = 1;
 UPDATE signalo_db.vl_status SET value_de='andere' WHERE id = 2;
@@ -123,5 +123,3 @@ UPDATE signalo_db.vl_support_type SET value_de='Kandelaber' WHERE id = 13;
 UPDATE signalo_db.vl_support_type SET value_de='Galgen' WHERE id = 14;
 UPDATE signalo_db.vl_support_type SET value_de='Fassade' WHERE id = 15;
 UPDATE signalo_db.vl_support_type SET value_de='Mauer' WHERE id = 16;
-
-

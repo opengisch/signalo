@@ -26,8 +26,8 @@ jobs:
         run: |
           export SOURCE_DIR=$(pwd)
           docker-compose -f .docker/docker-compose.qgis.yml up --build -d
-          docker-compose -f .docker/docker-compose.qgis.yml exec -T 
-          docker-compose -f .docker/docker-compose.qgis.yml exec -T signalo init_db.sh wait 
+          docker-compose -f .docker/docker-compose.qgis.yml exec -T
+          docker-compose -f .docker/docker-compose.qgis.yml exec -T signalo init_db.sh wait
 
       - name: Translate
         run: |

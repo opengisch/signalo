@@ -47,20 +47,3 @@ INSERT INTO signalo_db.sign (id,rank,fk_sign_type,fk_official_sign,fk_durability
 INSERT INTO signalo_db.sign (id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,fk_frame,verso) VALUES ('00000000-0000-0000-eeee-000012020201',  1 ,   1        ,      '1.30'    ,        1    ,    1     ,'00000000-0000-0000-ffff-000000020202', true); -- support 2, azimut 2, frame 2, rank 1 VERSO
 INSERT INTO signalo_db.sign (id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,fk_frame,verso) VALUES ('00000000-0000-0000-eeee-000012020202',  2 ,   1        ,      '1.30'    ,        1    ,    1     ,'00000000-0000-0000-ffff-000000020202', true); -- support 2, azimut 2, frame 2, rank 2 VERSO
 INSERT INTO signalo_db.sign (id,rank,fk_sign_type,fk_official_sign,fk_durability,fk_status,fk_frame,verso) VALUES ('00000000-0000-0000-eeee-000012020203',  1 ,   1        ,      '1.30'    ,        1    ,    1     ,'00000000-0000-0000-ffff-000000020203', true); -- support 2, azimut 2, frame 3, rank 1 VERSO
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

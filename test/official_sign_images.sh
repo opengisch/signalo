@@ -46,4 +46,3 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
 done
 
 exit ${return_code}
-
