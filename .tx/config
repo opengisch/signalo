@@ -1,7 +1,7 @@
 [main]
 host = https://www.transifex.com
 
-[o:opengisch:p:signalo-project-1:r:signalo.ts]
+[o:opengisch:p:signalo-project-1:r:signalots]
 file_filter = project/signalo_<lang>.ts
 source_file = project/signalo.ts
 source_lang = fr
