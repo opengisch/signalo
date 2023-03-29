@@ -4,11 +4,15 @@ services:
     build:
       context: ..
       dockerfile: ./.docker/Dockerfile
+    ports:
+      # making the postgres database accessible for debugging
+      - 5432:5432
 
   qgis:
     image: opengisch/qgis
     tty: true
     volumes:
       - ${SOURCE_DIR}:/usr/src
+      - ./.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
     links:
       - signalo

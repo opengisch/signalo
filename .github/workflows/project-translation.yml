@@ -20,15 +20,20 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Install Python + Transifex v.3 dependencies
+      - name: Install Transifex
         run: |
           curl -OL https://github.com/transifex/cli/releases/download/v1.6.5/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
 
-      - name: Update translations
+      - name: Start Docker compose
         run: |
           export SOURCE_DIR=$(pwd)
           docker-compose -f .docker/docker-compose.qgis.yml up --build -d
+          docker-compose -f .docker/docker-compose.qgis.yml exec -T 
           docker-compose -f .docker/docker-compose.qgis.yml exec -T signalo init_db.sh wait 
-          docker-compose -f .docker/docker-compose.qgis.yml run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation.py'
-          ./tx push --source
+
+      - name: Translate
+        run: docker-compose -f .docker/docker-compose.qgis.yml run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation.py'
+
+      - name: Push to TX
+        run: ./tx push --source
