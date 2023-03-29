@@ -4,8 +4,9 @@
 
 import argparse
 import os
+
 import psycopg2
-from pirogue.utils import select_columns, insert_command, update_command, table_parts
+from pirogue.utils import insert_command, select_columns, table_parts, update_command
 
 
 def vw_sign_symbol(srid: int, pg_service: str = None):
@@ -15,18 +16,18 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     :param pg_service: the PostgreSQL service name
     """
     if not pg_service:
-        pg_service = os.getenv('PGSERVICE')
+        pg_service = os.getenv("PGSERVICE")
     assert pg_service
 
-    variables = {'SRID': int(srid)}
+    variables = {"SRID": int(srid)}
 
-    conn = psycopg2.connect("service={0}".format(pg_service))
+    conn = psycopg2.connect(f"service={pg_service}")
     cursor = conn.cursor()
 
     view_sql = """
         CREATE OR REPLACE VIEW signalo_app.vw_sign_symbol AS
-        
-        WITH joined_tables AS (      
+
+        WITH joined_tables AS (
             SELECT
                 {sign_columns}
                 , azimut.azimut
@@ -38,46 +39,46 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , vl_official_sign.value_fr as _symbol_value_fr
                 , vl_official_sign.value_it as _symbol_value_it
                 , vl_official_sign.value_ro as _symbol_value_ro
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 'complex.svg'
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_de 
-                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg' 
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_de
+                  WHEN fk_sign_type = 12 THEN 'marker.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
                 END as _img_de
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 'complex.svg'
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_fr
-                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg' 
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                  WHEN fk_sign_type = 12 THEN 'marker.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
                 END as _img_fr
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 'complex.svg'
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_it
-                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg' 
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                  WHEN fk_sign_type = 12 THEN 'marker.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
                 END as _img_it
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 'complex.svg'
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_ro
-                  WHEN fk_sign_type = 12 THEN 'marker.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg' 
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg' 
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg' 
+                  WHEN fk_sign_type = 12 THEN 'marker.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
+                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
+                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
                 END as _img_ro
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 106
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_height
                   WHEN fk_sign_type = 12 THEN 130
                   WHEN fk_sign_type = 13 THEN 80
                   WHEN fk_sign_type = 14 THEN 50
                 END as _symbol_height
-                , CASE 
+                , CASE
                   WHEN complex IS TRUE THEN 121
                   WHEN fk_sign_type = 11 THEN vl_official_sign.img_width
                   WHEN fk_sign_type = 12 THEN 70
@@ -108,33 +109,45 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, azimut ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
             FROM
                 ordered_recto_signs
-            ORDER BY 
+            ORDER BY
                 support_id, azimut, _final_rank
         )
             SELECT * FROM ordered_shifted_recto_signs
-        UNION 
+        UNION
             SELECT jt.*, osrs._final_rank, osrs._symbol_shift, NULL::uuid AS previous_sign_in_frame, NULL::uuid AS next_sign_in_frame, NULL::uuid AS previous_frame, NULL::uuid AS next_frame
             FROM joined_tables jt
             -- the sign on verso, has rank+1
-            LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank-1 = osrs.sign_rank 
-            WHERE jt.verso IS TRUE   
+            LEFT JOIN ordered_shifted_recto_signs osrs ON osrs.support_id = jt.support_id AND osrs.frame_id = jt.frame_id AND jt.sign_rank-1 = osrs.sign_rank
+            WHERE jt.verso IS TRUE
         ;
-        
+
         ALTER VIEW signalo_app.vw_sign_symbol ALTER verso SET DEFAULT false;
         ALTER VIEW signalo_app.vw_sign_symbol ALTER complex SET DEFAULT false;
     """.format(
         sign_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_db', table_name='sign',
-            remove_pkey=False, indent=4, skip_columns=['rank', 'fk_frame', '_edited']
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="sign",
+            remove_pkey=False,
+            indent=4,
+            skip_columns=["rank", "fk_frame", "_edited"],
         ),
         frame_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_db', table_name='frame',
-            remove_pkey=False, indent=4, skip_columns=['_edited'],
-            prefix='frame_'
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="frame",
+            remove_pkey=False,
+            indent=4,
+            skip_columns=["_edited"],
+            prefix="frame_",
         ),
         vl_official_sign_columns=select_columns(
-            pg_cur=cursor, table_schema='signalo_db', table_name='vl_official_sign',
-            remove_pkey=False, indent=4, prefix='vl_official_sign_'
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="vl_official_sign",
+            remove_pkey=False,
+            indent=4,
+            prefix="vl_official_sign_",
         ),
     )
 
@@ -143,7 +156,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       RETURNS trigger AS
     $BODY$
     BEGIN
-    
+
     IF NEW.frame_id IS NULL THEN
         {insert_frame}
     END IF;
@@ -159,15 +172,27 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       FOR EACH ROW EXECUTE PROCEDURE signalo_app.ft_vw_sign_symbol_INSERT();
     """.format(
         insert_frame=insert_command(
-            pg_cur=cursor, table_schema='signalo_db', table_name='frame', remove_pkey=True, indent=4,
-            skip_columns=['_edited'], returning='id INTO NEW.frame_id', prefix='frame_'
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="frame",
+            remove_pkey=True,
+            indent=4,
+            skip_columns=["_edited"],
+            returning="id INTO NEW.frame_id",
+            prefix="frame_",
         ),
         insert_sign=insert_command(
-            pg_cur=cursor, table_schema='signalo_db', table_name='sign', remove_pkey=True, indent=4,
-            skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}, returning='id INTO NEW.id'
-        )
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="sign",
+            remove_pkey=True,
+            indent=4,
+            skip_columns=["_edited"],
+            remap_columns={"fk_frame": "frame_id", "rank": "sign_rank"},
+            returning="id INTO NEW.id",
+        ),
     )
-    
+
     trigger_update_sql = """
     CREATE OR REPLACE FUNCTION signalo_app.ft_vw_signalo_sign_symbol_UPDATE()
       RETURNS trigger AS
@@ -187,15 +212,24 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       FOR EACH ROW EXECUTE PROCEDURE signalo_app.ft_vw_signalo_sign_symbol_UPDATE();
     """.format(
         update_sign=update_command(
-            pg_cur=cursor, table_schema='signalo_db', table_name='sign',
-            indent=4, skip_columns=['_edited'], remap_columns={'fk_frame': 'frame_id', 'rank': 'sign_rank'}
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="sign",
+            indent=4,
+            skip_columns=["_edited"],
+            remap_columns={"fk_frame": "frame_id", "rank": "sign_rank"},
         ),
         update_frame=update_command(
-            pg_cur=cursor, table_schema='signalo_db', table_name='frame', prefix='frame_',
-            indent=4, skip_columns=['_edited'], remap_columns={}
-        )
+            pg_cur=cursor,
+            table_schema="signalo_db",
+            table_name="frame",
+            prefix="frame_",
+            indent=4,
+            skip_columns=["_edited"],
+            remap_columns={},
+        ),
     )
-    
+
     trigger_delete_sql = """
     CREATE OR REPLACE FUNCTION signalo_app.ft_vw_sign_symbol_DELETE()
       RETURNS trigger AS
@@ -207,7 +241,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
       SELECT count(id) INTO _sign_count FROM signalo_db.sign WHERE fk_frame = OLD.frame_id;
       IF _sign_count = 0 THEN
         DELETE FROM signalo_db.frame WHERE id = OLD.frame_id;
-      END IF;   
+      END IF;
     RETURN OLD;
     END; $BODY$ LANGUAGE plpgsql VOLATILE;
 
@@ -221,7 +255,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         try:
             cursor.execute(sql, variables)
         except psycopg2.Error as e:
-            print("*** Failing:\n{}\n***".format(sql))
+            print(f"*** Failing:\n{sql}\n***")
             raise e
     conn.commit()
     conn.close()
@@ -230,9 +264,9 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
 if __name__ == "__main__":
     # create the top-level parser
     parser = argparse.ArgumentParser()
-    parser.add_argument('-s', '--srid', help='EPSG code for SRID')
-    parser.add_argument('-p', '--pg_service', help='the PostgreSQL service name')
+    parser.add_argument("-s", "--srid", help="EPSG code for SRID")
+    parser.add_argument("-p", "--pg_service", help="the PostgreSQL service name")
     args = parser.parse_args()
-    srid = args.srid or os.getenv('SRID')
-    pg_service = args.pg_service or os.getenv('PGSERVICE')
+    srid = args.srid or os.getenv("SRID")
+    pg_service = args.pg_service or os.getenv("PGSERVICE")
     vw_sign_symbol(srid=srid, pg_service=pg_service)

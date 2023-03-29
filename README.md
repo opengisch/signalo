@@ -12,5 +12,3 @@ Any change in the app (`signalo_app` schema) or in the QGIS demo project will re
 ### Requirements
 
   * PostgreSQL 10+
-  
- 

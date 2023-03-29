@@ -8,7 +8,7 @@
 2. Open the terminal (`cmd.exe`or powershell)
 3. Run the container: `docker run -d -p 5432:5432 --name signalo opengisch/signalo:unstable`
 4. The former command will run an empty model. You can install the demo data by running: `docker exec signalo init_db.sh build -d`
-5. You need to setup the Postgres service ([documentation](https://qgep.github.io/docs/en/installation-guide/workstation.html#windows-pg-service)) to connect to the database: 
+5. You need to setup the Postgres service ([documentation](https://qgep.github.io/docs/en/installation-guide/workstation.html#windows-pg-service)) to connect to the database:
 ```
 [pg_signalo]
 dbname=signalo
@@ -48,4 +48,3 @@ To start SIGNALO virtual environement automatically with Docker, use: `docker up
 ## Setup on an existing DB server
 
 Run bash script to init the data model: `data_model/setup.sh -p _PG_SERVICE_`
-

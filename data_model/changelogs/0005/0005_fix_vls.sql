@@ -45,4 +45,3 @@ ALTER TABLE signalo_db.vl_support_type ADD COLUMN description_de text;
 ALTER TABLE signalo_db.vl_support_base_type ADD COLUMN description_en text;
 ALTER TABLE signalo_db.vl_support_base_type ADD COLUMN description_fr text;
 ALTER TABLE signalo_db.vl_support_base_type ADD COLUMN description_de text;
-

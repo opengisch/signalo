@@ -78,4 +78,3 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changel
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0005/0005_fix_vls.sql
 
 ${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
-
