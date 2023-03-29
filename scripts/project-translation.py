@@ -15,5 +15,5 @@ app.messageLog().messageReceived.connect(print_message)
 
 project = QgsProject.instance()
 
-project.read('project/signalo.qgs')
+project.read('/usr/src/project/signalo.qgs')
 project.generateTsFile('en')

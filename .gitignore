@@ -12,6 +12,7 @@ schemaspy*.jar
 schemaspy/
 website/local.html
 project/this-is-the-way.jpg
+project/signalo.ts
 website/tx
 Pipfile
 Pipfile.lock
