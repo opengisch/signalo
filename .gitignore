@@ -7,6 +7,7 @@ __pycache__
 local_test.sh
 *.backup
 .ghtoken
+official-signs.json
 postgresql.jar
 schemaspy*.jar
 schemaspy/
