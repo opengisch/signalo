@@ -10,6 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      TX_TOKEN: ${{ secrets.TX_TOKEN }}
       DOCKER_TAG: stable
       COMPOSE_FILE: .docker/docker-compose.qgis.yml
 
