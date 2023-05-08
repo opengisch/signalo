@@ -26,13 +26,12 @@ jobs:
         run: |
           export SOURCE_DIR=$(pwd)
           docker-compose -f .docker/docker-compose.qgis.yml up --build -d
-          docker-compose -f .docker/docker-compose.qgis.yml exec -T
           docker-compose -f .docker/docker-compose.qgis.yml exec -T signalo init_db.sh wait
 
       - name: Translate
         run: |
           export SOURCE_DIR=$(pwd)
-          docker-compose -f .docker/docker-compose.qgis.yml run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation.py'
+          docker-compose -f .docker/docker-compose.qgis.yml run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-create-source.py'
 
       - name: Push to TX
         run: ./tx push --source
