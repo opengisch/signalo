@@ -35,11 +35,11 @@ jobs:
       - name: create dumps
         run: |
           export SOURCE_DIR=$(pwd)
-          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
-          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
-          docker compose exec signalo init_db.sh build -d
-          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump-with-demo.backup signalo
-          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file db-dump-with-demo.sql signalo
+          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
+          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
+          docker compose exec -T signalo init_db.sh build -d
+          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump-with-demo.backup signalo
+          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file db-dump-with-demo.sql signalo
 
       - name: translate project
         run: |
