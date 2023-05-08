@@ -44,6 +44,7 @@ jobs:
       - name: translate project
         run: |
           ./tx pull -a
+          export SOURCE_DIR=$(pwd)
           docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
 
       - name: create project archive
