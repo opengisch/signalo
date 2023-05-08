@@ -4,7 +4,7 @@ services:
     build:
       context: ..
       dockerfile: ./.docker/Dockerfile
-      image: opengisch/signalo:${DOCKER_TAG:-unstable}
+    image: opengisch/signalo:${DOCKER_TAG:-unstable}
     ports:
       # making the postgres database accessible for debugging
       - 5432:5432
