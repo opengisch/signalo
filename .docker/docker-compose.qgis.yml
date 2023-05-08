@@ -5,6 +5,9 @@ services:
       context: ..
       dockerfile: ./.docker/Dockerfile
     image: opengisch/signalo:${DOCKER_TAG:-unstable}
+    working_dir: /usr/src
+    volumes:
+      - ${SOURCE_DIR}:/usr/src
     ports:
       # making the postgres database accessible for debugging
       - 5432:5432
