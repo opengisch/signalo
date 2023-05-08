@@ -13,7 +13,6 @@ jobs:
       DOCKER_TAG: stable
       COMPOSE_FILE: .docker/docker-compose.qgis.yml
 
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
@@ -32,9 +31,9 @@ jobs:
           docker compose up --build -d
           docker compose exec -T signalo init_db.sh wait
 
-
       - name: create dumps
         run: |
+          export SOURCE_DIR=$(pwd)
           docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
           docker compose exec signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
           docker compose exec signalo init_db.sh build -d
@@ -44,7 +43,7 @@ jobs:
       - name: translate project
         run: |
           tx pull -a
-          docker-compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
+          docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
 
       - name: create project archive
         run: |

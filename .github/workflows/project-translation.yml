@@ -12,6 +12,7 @@ jobs:
 
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
+      COMPOSE_FILE: .docker/docker-compose.qgis.yml
 
     steps:
       - name: Checkout code
@@ -25,13 +26,13 @@ jobs:
       - name: Start Docker compose
         run: |
           export SOURCE_DIR=$(pwd)
-          docker-compose -f .docker/docker-compose.qgis.yml up --build -d
-          docker-compose -f .docker/docker-compose.qgis.yml exec -T signalo init_db.sh wait
+          docker compose up --build -d
+          docker compose exec -T signalo init_db.sh wait
 
       - name: Translate
         run: |
           export SOURCE_DIR=$(pwd)
-          docker-compose -f .docker/docker-compose.qgis.yml run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-create-source.py'
+          docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-create-source.py'
 
       - name: Push to TX
         run: ./tx push --source
