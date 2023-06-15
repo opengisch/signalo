@@ -19,3 +19,4 @@ Pipfile
 Pipfile.lock
 .env
 Pipfile
+project/images/_*

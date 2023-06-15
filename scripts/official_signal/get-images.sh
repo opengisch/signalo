@@ -4,21 +4,35 @@ set -e
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 
+# Download zips from https://www.astra.admin.ch/astra/fr/home/documentation/regles-de-la-circulation/signaux.html
+# Extract them and set location:
+NEW_IMAGE_PATH=${DIR}/../../project/images/_inbox
+TO_IMPORT_PATH=${DIR}/../../project/images/_to_import
 
-SIGN_RANGES=(101-132 201-265 301-325 401-495 501-558)
+mkdir -p ${TO_IMPORT_PATH}
 
-rm -rf ${DIR}/temp
+cd ${TO_IMPORT_PATH}
 
-for SIGN_RANGE in "${SIGN_RANGES[@]}"; do
-  wget https://www.astra.admin.ch/dam/astra/fr/dokumente/abteilung_strassenverkehrallgemein/verkehrsregeln/signale_${SIGN_RANGE}.zip.download.zip/signaux_${SIGN_RANGE}.zip
-  unzip signaux_${SIGN_RANGE}.zip -d signaux_${SIGN_RANGE}
-  for file in signaux_${SIGN_RANGE}/*.eps; do
-    file=$(basename $file)
-    echo $file
-    output_pdf=${file%.eps}.pdf
-    output_svg=${file%.eps}.svg
-    epstopdf signaux_${SIGN_RANGE}/${file}
-    pdf2svg signaux_${SIGN_RANGE}/${output_pdf} ${DIR}/../../images/official/${output_svg}
+for subdir in $(find ${NEW_IMAGE_PATH} -type d -maxdepth 1 -mindepth 1); do
+  echo "scanning $subdir..."
+  for file in ${subdir}/*.eps; do
+    bfile=$(basename $file)
+    output_pdf=${bfile%.eps}.pdf
+    output_svg=${bfile%.eps}.svg
+    output_svg_left=${bfile%.eps}-l.svg
+    output_svg_right=${bfile%.eps}-r.svg
+    output_svg_left_one=${bfile%.eps}-1-l.svg
+    if [[ ! -f ${DIR}/../../project/images/official/original/${output_svg} && \
+          ! -f ${DIR}/../../project/images/official/original/${output_svg_left} && \
+          ! -f ${DIR}/../../project/images/official/original/${output_svg_right} && \
+          ! -f ${DIR}/../../project/images/official/original/${output_svg_left_one} ]]; then
+      echo "new image: $output_svg"
+      cp ${file} .
+      epstopdf ${bfile}
+      pdf2svg ${output_pdf} ${output_svg}
+    fi
   done
-  rm -rf signaux_${SIGN_RANGE}
 done
+
+rm ${TO_IMPORT_PATH}/*.eps
+rm ${TO_IMPORT_PATH}/*.pdf
