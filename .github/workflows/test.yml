@@ -42,6 +42,9 @@ jobs:
       - name: "test images"
         run: docker exec signalo /src/test/official_sign_images.sh
 
+      - name: "test changelog"
+        run: docker exec signalo /src/test/test-changelog.sh
+
 #      - name: "schema lint"
 #        run: |
 #          npm i --no-fund -g schemalint
