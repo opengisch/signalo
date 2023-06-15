@@ -1,10 +1,10 @@
 #!/bin/bash
 
-apt-get install -y imagemagick
+#apt-get install -y imagemagick
 
 rm -f update.sql
 touch update.sql
-for img in /src/images/official/*.svg; do
+for img in /src/project/images/official/original/542.svg; do
     echo $img
     file=$(basename ${img})
     convert ${img} img.png
@@ -15,4 +15,4 @@ for img in /src/images/official/*.svg; do
     rm img.png
 done
 
-PGSERVICE=pg_signalo psql -v ON_ERROR_STOP=on -f update.sql
+#PGSERVICE=pg_signalo psql -v ON_ERROR_STOP=on -f update.sql
