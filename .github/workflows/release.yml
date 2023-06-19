@@ -35,11 +35,12 @@ jobs:
       - name: create dumps
         run: |
           export SOURCE_DIR=$(pwd)
-          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump.backup signalo
-          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file db-dump.sql signalo
+          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup signalo
+          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql signalo
+          docker compose exec -T signalo pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql signalo
           docker compose exec -T signalo init_db.sh build -d
-          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file db-dump-with-demo.backup signalo
-          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file db-dump-with-demo.sql signalo
+          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup signalo
+          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql signalo
 
       - name: translate project
         run: |
@@ -53,11 +54,11 @@ jobs:
           sed 's/pg_signalo/pg_signalo_dev/g' project/signalo.qgs > project/signalo_dev.qgs
           sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
           cp data_model/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
-          zip -r project.zip project README.md
+          zip -r signalo-${{ github.event.release.tag_name }}-project.zip project README.md
 
       - name: "zip changelogs"
         run: |
-          zip -r changelogs.zip data_model/changelogs
+          zip -r signalo-${{ github.event.release.tag_name }}-changelogs.zip data_model/changelogs
 
       - name: SchemaSpy
         run: |
@@ -68,7 +69,7 @@ jobs:
                -schemas signalo_db,signalo_app -norows \
                -hq -o model-documentation -dp postgresql.jar \
                -desc "signalo data model documentation (version ${{ github.event.release.tag_name }})"
-          zip -r model-documentation.zip model-documentation/*
+          zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip model-documentation/*
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
@@ -84,75 +85,18 @@ jobs:
           docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
           docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
-      - name: Upload Release Asset - project
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Upload Release Assets
+        uses: softprops/action-gh-release@v1
         with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./project.zip
-          asset_name: signalo-${{ github.event.release.tag_name }}-project.zip
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - dump
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./db-dump.backup
-          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.backup
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - plain dump
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./db-dump.sql
-          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump.sql
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - dump with demo
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./db-dump-with-demo.backup
-          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - plain dump with demo
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./db-dump-with-demo.sql
-          asset_name: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - changelogs
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./changelogs.zip
-          asset_name: signalo-${{ github.event.release.tag_name }}-changelogs.zip
-          asset_content_type: application/zip
-
-      - name: Upload Release Asset - model-documentation
-        uses: actions/upload-release-asset@v1.0.2
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ github.event.release.upload_url }}
-          asset_path: ./model-documentation.zip
-          asset_name: signalo-${{ github.event.release.tag_name }}-model-documentation.zip
-          asset_content_type: application/zip
+          files: |
+            signalo-${{ github.event.release.tag_name }}-project.zip
+            signalo-${{ github.event.release.tag_name }}-changelogs.zip
+            signalo-${{ github.event.release.tag_name }}-model-documentation.zip
+            signalo-${{ github.event.release.tag_name }}-db-dump.backup
+            signalo-${{ github.event.release.tag_name }}-db-dump.sql
+            signalo-${{ github.event.release.tag_name }}-db-app.sql
+            signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
+            signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
 
   rebuild-website:
     uses: ./.github/workflows/website.yml
