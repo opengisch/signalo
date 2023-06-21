@@ -35,61 +35,86 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , sign.rank AS sign_rank
                 , support.id AS support_id
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
-                , vl_official_sign.value_de as _symbol_value_de
-                , vl_official_sign.value_fr as _symbol_value_fr
-                , vl_official_sign.value_it as _symbol_value_it
-                , vl_official_sign.value_ro as _symbol_value_ro
                 , CASE
-                  WHEN complex IS TRUE THEN 'complex.svg'
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_de
-                  WHEN fk_sign_type = 12 THEN 'marker.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
-                END as _img_de
+                    WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_de
+                    ELSE vl_official_sign.value_de
+                  END AS _symbol_value_de
                 , CASE
-                  WHEN complex IS TRUE THEN 'complex.svg'
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_fr
-                  WHEN fk_sign_type = 12 THEN 'marker.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
-                END as _img_fr
+                    WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_fr
+                    ELSE vl_official_sign.value_fr
+                  END AS _symbol_value_fr
                 , CASE
-                  WHEN complex IS TRUE THEN 'complex.svg'
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_it
-                  WHEN fk_sign_type = 12 THEN 'marker.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
-                END as _img_it
+                    WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_it
+                    ELSE vl_official_sign.value_it
+                  END AS _symbol_value_it 
                 , CASE
-                  WHEN complex IS TRUE THEN 'complex.svg'
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_ro
-                  WHEN fk_sign_type = 12 THEN 'marker.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS TRUE THEN 'mirror.svg'
-                  WHEN fk_sign_type = 13 AND mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'
-                  WHEN fk_sign_type = 14 THEN 'street-plate.svg'
-                END as _img_ro
+                    WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_ro
+                    ELSE vl_official_sign.value_ro
+                  END AS _symbol_value_ro
                 , CASE
-                  WHEN complex IS TRUE THEN 106
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_height
-                  WHEN fk_sign_type = 12 THEN 130
-                  WHEN fk_sign_type = 13 THEN 80
-                  WHEN fk_sign_type = 14 THEN 50
-                END as _symbol_height
+                      WHEN sign.complex IS TRUE THEN 'complex.svg'::text
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_de
+                      WHEN sign.fk_sign_type = 12 THEN 'marker.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS TRUE THEN 'mirror.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'::text
+                      WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_de
+                      ELSE NULL::text
+                  END AS _img_de
                 , CASE
-                  WHEN complex IS TRUE THEN 121
-                  WHEN fk_sign_type = 11 THEN vl_official_sign.img_width
-                  WHEN fk_sign_type = 12 THEN 70
-                  WHEN fk_sign_type = 13 THEN 100
-                  WHEN fk_sign_type = 14 THEN 100
-                END as _symbol_width
-            FROM signalo_db.sign
-                LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
-                LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
-                LEFT JOIN signalo_db.support ON support.id = azimut.fk_support
-                LEFT JOIN signalo_db.vl_official_sign ON vl_official_sign.id = sign.fk_official_sign
+                      WHEN sign.complex IS TRUE THEN 'complex.svg'::text
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_fr
+                      WHEN sign.fk_sign_type = 12 THEN 'marker.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS TRUE THEN 'mirror.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'::text
+                      WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_fr
+                      ELSE NULL::text
+                  END AS _img_fr
+                , CASE
+                      WHEN sign.complex IS TRUE THEN 'complex.svg'::text
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_it
+                      WHEN sign.fk_sign_type = 12 THEN 'marker.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS TRUE THEN 'mirror.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'::text
+                      WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_it	 
+                      ELSE NULL::text
+                  END AS _img_it
+                , CASE
+                      WHEN sign.complex IS TRUE THEN 'complex.svg'::text
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_ro
+                      WHEN sign.fk_sign_type = 12 THEN 'marker.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS TRUE THEN 'mirror.svg'::text
+                      WHEN sign.fk_sign_type = 13 AND sign.mirror_red_frame IS FALSE THEN 'mirror-noframe.svg'::text
+                      WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_ro	 
+                      ELSE NULL::text
+                  END AS _img_ro
+                , CASE
+                      WHEN sign.complex IS TRUE THEN 106
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_height
+                      WHEN sign.fk_sign_type = 12 THEN 130
+                      WHEN sign.fk_sign_type = 13 THEN 80
+                      WHEN sign.fk_sign_type = 14 THEN 50
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_height
+                      ELSE NULL::integer
+                  END AS _symbol_height
+                , CASE
+                      WHEN sign.complex IS TRUE THEN 121
+                      WHEN sign.fk_sign_type = 11 THEN vl_official_sign.img_width
+                      WHEN sign.fk_sign_type = 12 THEN 70
+                      WHEN sign.fk_sign_type = 13 THEN 100
+                      WHEN sign.fk_sign_type = 14 THEN 100
+                      WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_width	 
+                      ELSE NULL::integer
+                  END AS _symbol_width
+           FROM signalo_db.sign
+             LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
+             LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
+             LEFT JOIN signalo_db.support ON support.id = azimut.fk_support
+             LEFT JOIN signalo_db.vl_official_sign ON vl_official_sign.id = sign.fk_official_sign
+	 		       LEFT JOIN signalo_db.vl_user_sign ON vl_user_sign.id = sign.fk_user_sign
         ),
         ordered_recto_signs AS (
             SELECT
