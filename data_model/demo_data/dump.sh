@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TABLES=( sign azimut frame support )
+TABLES=( sign azimut frame support vl_user_sign)
 
 export PGSERVICE=pg_signalo
 
