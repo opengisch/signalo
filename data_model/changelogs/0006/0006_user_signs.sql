@@ -1,14 +1,14 @@
 --Add to signalo_db.sign a field named fk_user_sign
-ALTER TABLE signalo_db.sign 
-    ADD column fk_user_sign text;
+ALTER TABLE signalo_db.sign
+    ADD column fk_user_sign uuid;
 ;
 
 -- Add the new sign type 'user defined' to the value list signalo_db.vl_sign_type
 INSERT INTO signalo_db.vl_sign_type (id, active, value_de, value_fr) VALUES (15, true, 'benutzerdefiniert', 'défini par l''utilisateur');
 
 -- Create the empty value list for user defined signs (same fields as vl_official_sign)
-CREATE TABLE signalo_db.vl_user_sign ( 
-    id text NOT NULL,
+CREATE TABLE signalo_db.vl_user_sign (
+    id uuid DEFAULT public.uuid_generate_v1() NOT NULL,
     active boolean DEFAULT true,
     value_de text,
     value_fr text,
@@ -38,4 +38,3 @@ ALTER TABLE ONLY signalo_db.vl_user_sign
 -- Set foreign key for user signs in signalo_db.sign
 ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_user_sign FOREIGN KEY (fk_user_sign) REFERENCES signalo_db.vl_user_sign(id) MATCH FULL;
-
