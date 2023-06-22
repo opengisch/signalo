@@ -49,9 +49,10 @@ jobs:
           docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
           rm project/signalo_*.qm  # do not package qm files
 
-      - name: create project archive
+      - name: set project version + create project archive
         run: |
-          sed -i 's|<title>Signalo - Demo</title>|<title>Signalo - ${{ github.event.release.tag_name }}</title>|' project/signalo.qgs
+          sed -i 's|<title>Signalo - Demo</title>|<title>Signalo - v${{ github.event.release.tag_name }}</title>|' project/signalo.qgs
+          sed -i 's|projectname="Signalo - Demo"|projectname="Signalo - v${{ github.event.release.tag_name }}"|' project/signalo.qgs
           sed 's/pg_signalo/pg_signalo_dev/g' project/signalo.qgs > project/signalo_dev.qgs
           sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
           cp data_model/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
