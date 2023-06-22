@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Denis Rouzaud" saveUser="denis" projectname="Signalo - Demo" version="3.30.0-'s-Hertogenbosch" saveDateTime="2023-06-22T13:57:39">
+<qgis saveUserFull="Denis Rouzaud" saveUser="denis" projectname="Signalo - Demo" version="3.30.0-'s-Hertogenbosch" saveDateTime="2023-06-22T14:02:25">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -190,10 +190,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537746.87119871750473976</xmin>
-      <ymin>1152391.6603786323685199</ymin>
-      <xmax>2538108.64280442520976067</xmax>
-      <ymax>1152589.61707388120703399</ymax>
+      <xmin>2537729.80600165901705623</xmin>
+      <ymin>1152388.49743071990087628</ymin>
+      <xmax>2538123.45849823532626033</xmax>
+      <ymax>1152603.89893285371363163</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -13601,7 +13601,7 @@ def my_form_open(dialog, layer, feature):
       <previewExpression>"id"</previewExpression>
       <mapTip></mapTip>
     </maplayer>
-    <maplayer labelsEnabled="0" hasScaleBasedVisibilityFlag="0" simplifyLocal="1" autoRefreshTime="0" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" maxScale="0" wkbType="Point" simplifyDrawingHints="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" readOnly="1" styleCategories="AllStyleCategories" minScale="100000000" autoRefreshEnabled="0" geometry="Point" legendPlaceholderImage="" refreshOnNotifyMessage="" type="vector" simplifyMaxScale="1">
+    <maplayer labelsEnabled="0" hasScaleBasedVisibilityFlag="1" simplifyLocal="1" autoRefreshTime="0" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" maxScale="0" wkbType="Point" simplifyDrawingHints="0" simplifyAlgorithm="0" symbologyReferenceScale="-1" readOnly="1" styleCategories="AllStyleCategories" minScale="2500" autoRefreshEnabled="0" geometry="Point" legendPlaceholderImage="" refreshOnNotifyMessage="" type="vector" simplifyMaxScale="1">
       <extent>
         <xmin>2537421.28515252703800797</xmin>
         <ymin>1152455.01010819314979017</ymin>
@@ -14175,8 +14175,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="CASE &#xa;WHEN &quot;fk_user_sign&quot; is not NULL&#xa;&#xa;THEN  &quot;fk_user_sign&quot;&#xa;ELSE&#xa; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xa;END" type="QString"/>
           </Option>
           <Option value="0" type="QString" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -16395,7 +16395,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="1152620.91171322693116963" ymin="1152360.36573928664438426" xmin="2537746.87119871750473976" xmax="2538108.64280442520976067">
+    <DefaultViewExtent ymax="1152637.95139223267324269" ymin="1152354.44497134094126523" xmin="2537729.80600165901705623" xmax="2538123.45849823532626033">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
