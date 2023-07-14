@@ -1,8 +1,6 @@
 site_name: Signalo
 site_url: https://www.signalo.ch/
 site_author: OPENGIS.ch
-site_description: >-
-  Signalo est un module de gestion de la signalisation verticale.
 
 docs_dir: documentation
 
@@ -75,8 +73,12 @@ plugins:
       # default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
       search_reconfigure: false
       languages:
-        fr: Français
-        de: Deutsch
+        fr:
+          name: Français
+          site_description: Signalo est un module de gestion de la signalisation verticale.
+        de:
+          name: Deutsch
+          site_description: Signalo ist ein Modul für vertikale Signalisierung
         # it: Italiano
         # en: English
       nav_translations:
