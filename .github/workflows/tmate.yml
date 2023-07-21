@@ -1,3 +1,5 @@
+name: tmate
+
 on:
   workflow_dispatch:
     inputs:
@@ -16,3 +18,6 @@ jobs:
         if: ${{ github.event_name == 'workflow_dispatch' && inputs.debug_enabled }}
         with:
           limit-access-to-actor: true
+        env:
+          GH_TOKEN_INSIDER: ${{ secrets.GH_TOKEN_INSIDER. }}
+          GH_USER_INSIDER: ${{ secrets.GH_USER_INSIDER }}
