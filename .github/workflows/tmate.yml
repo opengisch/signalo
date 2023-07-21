@@ -19,5 +19,5 @@ jobs:
         with:
           limit-access-to-actor: true
         env:
-          GH_TOKEN_INSIDER: ${{ secrets.GH_TOKEN_INSIDER. }}
+          GH_TOKEN_INSIDER: ${{ secrets.GH_TOKEN_INSIDER }}
           GH_USER_INSIDER: ${{ secrets.GH_USER_INSIDER }}
