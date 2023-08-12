@@ -1,7 +1,10 @@
 # Signalo
 
 Gestion de la signalisation verticale dans QGIS
+
 Verwaltung vertikaler Beschilderung in QGIS
+
+![Signalo Logo](./images/logo_full.svg)
 
 ### Release policy
 
