@@ -1,7 +1,10 @@
 # Signalo
 
-Gestion de la signalisation verticale dans QGIS
-Verwaltung vertikaler Beschilderung in QGIS
+[Gestion de la signalisation verticale dans QGIS](https://signalo.ch/fr)
+
+[Verwaltung vertikaler Beschilderung in QGIS](https://signalo.ch/de)
+
+![Signalo Logo](./images/logo_full.svg)
 
 ### Release policy
 
