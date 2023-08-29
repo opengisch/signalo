@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="isabelkiefer" saveUserFull="Isabel Kiefer" saveDateTime="2023-08-29T15:10:23" projectname="Signalo - Demo" version="3.28.6-Firenze">
+<qgis saveUser="isabelkiefer" saveUserFull="Isabel Kiefer" saveDateTime="2023-08-29T15:16:34" projectname="Signalo - Demo" version="3.28.6-Firenze">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -11283,7 +11283,7 @@ def my_form_open(dialog, layer, feature):
               <Option type="Map">
                 <Option value="0" type="QString" name="angle"/>
                 <Option value="square" type="QString" name="cap_style"/>
-                <Option value="113,113,113,255" type="QString" name="color"/>
+                <Option value="48,255,25,255" type="QString" name="color"/>
                 <Option value="1" type="QString" name="horizontal_anchor_point"/>
                 <Option value="bevel" type="QString" name="joinstyle"/>
                 <Option value="circle" type="QString" name="name"/>
@@ -11317,9 +11317,9 @@ def my_form_open(dialog, layer, feature):
       <customproperties>
         <Option type="Map">
           <Option value="offline" type="QString" name="QFieldSync/action"/>
-          <Option value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" type="QString" name="QFieldSync/attachment_naming"/>
+          <Option value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;picture_2&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.{extension}'&quot;}" type="QString" name="QFieldSync/attachment_naming"/>
           <Option value="offline" type="QString" name="QFieldSync/cloud_action"/>
-          <Option value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;photo&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}" type="QString" name="QFieldSync/photo_naming"/>
+          <Option value="{&quot;picture&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;photo&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;, &quot;picture_2&quot;: &quot;'DCIM/support_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.{extension}'&quot;}" type="QString" name="QFieldSync/photo_naming"/>
           <Option value="{&quot;support_azimut&quot;: 4}" type="QString" name="QFieldSync/relationship_maximum_visible"/>
           <Option type="List" name="dualview/previewExpressions">
             <Option value="&quot;id&quot;" type="QString"/>
