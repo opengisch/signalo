@@ -47,7 +47,7 @@ jobs:
           ./tx pull -a
           export SOURCE_DIR=$(pwd)
           docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
-          rm project/signalo_*.qm  # do not package qm files
+          rm project/signalo_*.ts  # do not package ts files
 
       - name: set project version + create project archive
         run: |
