@@ -1,7 +1,7 @@
 CREATE TYPE signalo_db.anchor_point AS ENUM ('LEFT', 'CENTER', 'RIGHT');
 CREATE TYPE signalo_db.sign_hanging AS ENUM ('RECTO', 'RECTO-VERSO', 'VERSO');
 
-ALTER TABLE signalo_db.support ADD COLUMN ordering_by_anchor_point boolean not null default false;
+ALTER TABLE signalo_db.support ADD COLUMN ordering_by_anchor_point BOOLEAN NOT NULL DEFAULT TRUE;
 ALTER TABLE signalo_db.frame ADD COLUMN anchor_point signalo_db.anchor_point  NOT NULL DEFAULT 'CENTER'::signalo_db.anchor_point;
 
 INSERT INTO signalo_db.vl_support_type (id, value_fr, value_de) VALUES (17, 'borne d''îlot', 'Inselpfosten');
@@ -41,6 +41,8 @@ WHERE s.fk_frame = f.id AND s.fk_sign_type = 11 AND s.fk_official_sign = o.id AN
 
 
 -- adjust offical list by regrouping left + right signs
+ALTER TABLE signalo_db.sign DROP CONSTRAINT fkey_vl_official_sign;
+
 UPDATE signalo_db.vl_official_sign s1 SET
   id = replace(s1.id, '-l', '')
   , directional_sign = TRUE
@@ -51,3 +53,13 @@ UPDATE signalo_db.vl_official_sign s1 SET
 FROM signalo_db.vl_official_sign s2
 WHERE s1.id LIKE '%-l' AND s2.id = replace(s1.id, '-l', '-r');
 DELETE FROM signalo_db.vl_official_sign WHERE id LIKE '%-r';
+
+UPDATE signalo_db.vl_official_sign SET
+    value_de = replace(value_de, ', Pfeil links', '')
+    , value_fr = replace(replace(value_fr, ', flèche à gauche', ''), ' (gauche)', '')
+    , value_it = replace(value_it, ', flèche à gauche', '');
+
+UPDATE signalo_db.sign SET fk_official_sign = replace(fk_official_sign, '-l', '') WHERE fk_official_sign LIKE '%-l';
+UPDATE signalo_db.sign SET fk_official_sign = replace(fk_official_sign, '-r', '') WHERE fk_official_sign LIKE '%-r';
+
+ALTER TABLE signalo_db.sign ADD CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES signalo_db.vl_official_sign (id);
