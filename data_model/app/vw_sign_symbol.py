@@ -256,12 +256,12 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                   END AS _max_symbol_width_in_column
                 , CASE
                     WHEN directional_sign IS TRUE AND (frame_anchor_point, natural_direction_or_left, _verso) IN (
-                        ('LEFT', TRUE, FALSE),
-                        ('LEFT', FALSE, TRUE),
+                        ('LEFT', TRUE, TRUE),
+                        ('LEFT', FALSE, FALSE),
                         ('CENTER', TRUE, TRUE),
                         ('CENTER', FALSE, FALSE),
-                        ('RIGHT', TRUE, TRUE),
-                        ('RIGHT', FALSE, FALSE)
+                        ('RIGHT', TRUE, FALSE),
+                        ('RIGHT', FALSE, TRUE)
                     ) THEN '_right'
                     ELSE ''
                   END AS _img_direction
