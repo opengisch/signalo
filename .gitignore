@@ -4,6 +4,7 @@
 .schemalintrc.js
 __pycache__
 *.qgs~
+~view.sql
 local_test.sh
 *.backup
 .ghtoken
