@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis projectname="Signalo - Demo" saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" version="3.28.11-Firenze" saveDateTime="2023-11-14T06:11:15">
+<qgis projectname="Signalo - Demo" saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" version="3.28.11-Firenze" saveDateTime="2023-11-14T07:29:15">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -45,7 +45,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer name="Vue signal (symbologie)" source="service='pg_signalo' sslmode=disable key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" expanded="1" checked="Qt::Checked" patch_size="-1,-1" providerKey="postgres" legend_split_behavior="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" legend_exp="">
+      <layer-tree-layer name="Vue signal (symbologie)" source="service='pg_signalo' sslmode=disable key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_sign_symbol&quot; (support_geometry)" expanded="0" checked="Qt::Checked" patch_size="-1,-1" providerKey="postgres" legend_split_behavior="0" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" legend_exp="">
         <customproperties>
           <Option/>
         </customproperties>
@@ -167,9 +167,9 @@
   </layer-tree-group>
   <snapping-settings enabled="1" self-snapping="0" unit="1" minScale="0" maxScale="0" mode="2" scaleDependencyMode="0" type="1" tolerance="12" intersection-snapping="0">
     <individual-layer-settings>
+      <layer-setting enabled="0" units="1" minScale="0" maxScale="0" type="1" tolerance="12" id="support_347aa750_1661_498f_a7e8_017adc616ba0"/>
       <layer-setting enabled="0" units="1" minScale="0" maxScale="0" type="1" tolerance="12" id="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b"/>
       <layer-setting enabled="0" units="1" minScale="0" maxScale="0" type="1" tolerance="12" id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
-      <layer-setting enabled="0" units="1" minScale="0" maxScale="0" type="1" tolerance="12" id="support_347aa750_1661_498f_a7e8_017adc616ba0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -193,10 +193,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537304.00361342262476683</xmin>
-      <ymin>1152441.88962285686284304</ymin>
-      <xmax>2537477.78117603529244661</xmax>
-      <ymax>1152542.2165346615947783</ymax>
+      <xmin>2537350.39567877491936088</xmin>
+      <ymin>1152502.9676882557105273</ymin>
+      <xmax>2537429.36997763486579061</xmax>
+      <ymax>1152548.56188003229908645</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -238,8 +238,8 @@
       </filegroup>
     </legendlayer>
     <legendgroup name="symbologie" checked="Qt::Checked" open="true">
-      <legendlayer name="Vue signal (symbologie)" checked="Qt::Checked" drawingOrder="-1" open="true" showFeatureCount="0">
-        <filegroup open="true" hidden="false">
+      <legendlayer name="Vue signal (symbologie)" checked="Qt::Checked" drawingOrder="-1" open="false" showFeatureCount="0">
+        <filegroup open="false" hidden="false">
           <legendlayerfile layerid="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" isInOverview="0" visible="1"/>
         </filegroup>
       </legendlayer>
@@ -12460,12 +12460,10 @@ def my_form_open(dialog, layer, feature):
           <Option name="QFieldSync/relationship_maximum_visible" value="{}" type="QString"/>
           <Option name="dualview/previewExpressions" type="List">
             <Option value="CASE&#xa;WHEN &quot;fk_user_sign&quot; is not NULL&#xa;&#xa;THEN  &quot;fk_user_sign&quot;&#xa;ELSE&#xa; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xa;END" type="QString"/>
-            <Option value="CASE &#xa;WHEN &quot;fk_user_sign&quot; is not NULL&#xa;&#xa;THEN  &quot;fk_user_sign&quot;&#xa;ELSE&#xa; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xa;END" type="QString"/>
-            <Option value="CASE&#xa;WHEN &quot;fk_user_sign&quot; is not NULL&#xa;&#xa;THEN  &quot;fk_user_sign&quot;&#xa;ELSE&#xa; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xa;END" type="QString"/>
           </Option>
           <Option name="embeddedWidgets/count" value="0" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -12543,9 +12541,12 @@ def my_form_open(dialog, layer, feature):
       <referencedLayers/>
       <fieldConfiguration>
         <field name="pk" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12562,28 +12563,46 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_date" configurationFlags="None">
           <editWidget type="DateTime">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="allow_null" value="true" type="bool"/>
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_iso_format" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_inserted_user" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_last_modified_date" configurationFlags="None">
           <editWidget type="DateTime">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="allow_null" value="true" type="bool"/>
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_iso_format" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_last_modified_user" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12620,21 +12639,30 @@ def my_form_open(dialog, layer, feature):
         <field name="complex" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="dimension_1" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="dimension_2" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12648,7 +12676,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="coating_7ea56753_207f_4981_84ef_635958fc4808" type="QString"/>
-                <Option name="LayerName" value="coating" type="QString"/>
+                <Option name="LayerName" value="Revêtement" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_coating&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -12690,7 +12718,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" type="QString"/>
-                <Option name="LayerName" value="lighting" type="QString"/>
+                <Option name="LayerName" value="Eclairage" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_lighting&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -12704,14 +12732,28 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_marker_type" configurationFlags="None">
           <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="fk_mirror_shape" configurationFlags="None">
           <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12765,7 +12807,10 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12779,7 +12824,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="sign_type_922b284e_5fef_4464_826e_755cf776cac5" type="QString"/>
-                <Option name="LayerName" value="sign_type" type="QString"/>
+                <Option name="LayerName" value="Type de signal" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_sign_type&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -12800,7 +12845,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" type="QString"/>
-                <Option name="LayerName" value="status" type="QString"/>
+                <Option name="LayerName" value="État" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_status&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -12828,7 +12873,7 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="hanging_mode" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Enumeration">
             <config>
               <Option/>
             </config>
@@ -12893,49 +12938,73 @@ def my_form_open(dialog, layer, feature):
         <field name="mirror_protruding" configurationFlags="None">
           <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="mirror_red_frame" configurationFlags="None">
           <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="natural_direction_or_left" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="picture" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="usr_sign_1" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="usr_sign_2" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="usr_sign_3" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12962,33 +13031,51 @@ def my_form_open(dialog, layer, feature):
         <field name="frame__inserted_date" configurationFlags="None">
           <editWidget type="DateTime">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="allow_null" value="true" type="bool"/>
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_iso_format" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame__inserted_user" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame__last_modified_date" configurationFlags="None">
           <editWidget type="DateTime">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="allow_null" value="true" type="bool"/>
+                <Option name="calendar_popup" value="true" type="bool"/>
+                <Option name="display_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_format" value="dd.MM.yy HH:mm:ss" type="QString"/>
+                <Option name="field_iso_format" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame__last_modified_user" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame_anchor_point" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Enumeration">
             <config>
               <Option/>
             </config>
@@ -13007,14 +13094,20 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_dimension_1" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame_dimension_2" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13023,6 +13116,7 @@ def my_form_open(dialog, layer, feature):
             <config>
               <Option type="Map">
                 <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
                 <Option name="UncheckedState" value="" type="QString"/>
               </Option>
             </config>
@@ -13037,11 +13131,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="MapIdentification" value="false" type="bool"/>
                 <Option name="OrderByValue" value="false" type="bool"/>
                 <Option name="ReadOnly" value="false" type="bool"/>
-                <Option name="ReferencedLayerDataSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" type="QString"/>
-                <Option name="ReferencedLayerId" value="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" type="QString"/>
-                <Option name="ReferencedLayerName" value="Azimut" type="QString"/>
-                <Option name="ReferencedLayerProviderKey" value="postgres" type="QString"/>
-                <Option name="Relation" value="azimut_sign_1" type="QString"/>
+                <Option name="Relation" type="invalid"/>
                 <Option name="ShowForm" value="false" type="bool"/>
                 <Option name="ShowOpenFormButton" value="true" type="bool"/>
               </Option>
@@ -13058,7 +13148,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" type="QString"/>
-                <Option name="LayerName" value="frame_fixing_type" type="QString"/>
+                <Option name="LayerName" value="Type fixation cadre" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_fixing_type&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -13079,7 +13169,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" type="QString"/>
-                <Option name="LayerName" value="frame_type" type="QString"/>
+                <Option name="LayerName" value="Type cadre" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_type&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -13093,7 +13183,10 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_fk_provider" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13107,7 +13200,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="FilterExpression" value="" type="QString"/>
                 <Option name="Key" value="id" type="QString"/>
                 <Option name="Layer" value="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" type="QString"/>
-                <Option name="LayerName" value="status" type="QString"/>
+                <Option name="LayerName" value="État" type="QString"/>
                 <Option name="LayerProviderName" value="postgres" type="QString"/>
                 <Option name="LayerSource" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_status&quot;" type="QString"/>
                 <Option name="NofColumns" value="1" type="int"/>
@@ -13145,21 +13238,30 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_1" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame_usr_frame_2" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="frame_usr_frame_3" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13188,51 +13290,78 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="group_by_anchor_point" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="fk_support_type" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="directional_sign" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_value_de" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_value_fr" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_value_it" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_value_ro" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13249,140 +13378,214 @@ def my_form_open(dialog, layer, feature):
         <field name="_img_fr" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_it" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_ro" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_de_right" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_fr_right" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_it_right" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_img_ro_right" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_height" configurationFlags="None">
           <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_width" configurationFlags="None">
           <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_azimut_rectified" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_frame_anchor_point_rectified" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Enumeration">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
         <field name="_verso" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_rank" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_final_rank" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_symbol_shift" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_group_height" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_group_width" configurationFlags="None">
-          <editWidget type="">
+          <editWidget type="Range">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="2147483647" type="int"/>
+                <Option name="Min" value="-2147483648" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_previous_sign_in_frame" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_next_sign_in_frame" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_previous_frame" configurationFlags="None">
           <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13396,10 +13599,23 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_img_direction" configurationFlags="None">
-          <editWidget type="">
+        <field name="_group_info" configurationFlags="None">
+          <editWidget type="List">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="EmptyIsEmptyArray" value="false" type="bool"/>
+                <Option name="EmptyIsNull" value="true" type="bool"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
+        <field name="_img_direction" configurationFlags="None">
+          <editWidget type="TextEdit">
+            <config>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -13522,11 +13738,12 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="_next_sign_in_frame" index="86"/>
         <alias name="" field="_previous_frame" index="87"/>
         <alias name="" field="_next_frame" index="88"/>
-        <alias name="" field="_img_direction" index="89"/>
-        <alias name="" field="support__edited" index="90"/>
-        <alias name="" field="azimut__edited" index="91"/>
-        <alias name="" field="sign__edited" index="92"/>
-        <alias name="" field="frame__edited" index="93"/>
+        <alias name="" field="_group_info" index="89"/>
+        <alias name="" field="_img_direction" index="90"/>
+        <alias name="" field="support__edited" index="91"/>
+        <alias name="" field="azimut__edited" index="92"/>
+        <alias name="" field="sign__edited" index="93"/>
+        <alias name="" field="frame__edited" index="94"/>
       </aliases>
       <defaults>
         <default field="pk" expression="" applyOnUpdate="0"/>
@@ -13618,6 +13835,7 @@ def my_form_open(dialog, layer, feature):
         <default field="_next_sign_in_frame" expression="" applyOnUpdate="0"/>
         <default field="_previous_frame" expression="" applyOnUpdate="0"/>
         <default field="_next_frame" expression="" applyOnUpdate="0"/>
+        <default field="_group_info" expression="" applyOnUpdate="0"/>
         <default field="_img_direction" expression="" applyOnUpdate="0"/>
         <default field="support__edited" expression="true" applyOnUpdate="1"/>
         <default field="azimut__edited" expression="true" applyOnUpdate="1"/>
@@ -13714,6 +13932,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="_next_sign_in_frame" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_previous_frame" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_next_frame" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="_group_info" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_img_direction" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="support__edited" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="azimut__edited" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -13810,6 +14029,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="_next_sign_in_frame" exp="" desc=""/>
         <constraint field="_previous_frame" exp="" desc=""/>
         <constraint field="_next_frame" exp="" desc=""/>
+        <constraint field="_group_info" exp="" desc=""/>
         <constraint field="_img_direction" exp="" desc=""/>
         <constraint field="support__edited" exp="" desc=""/>
         <constraint field="azimut__edited" exp="" desc=""/>
@@ -13910,11 +14130,13 @@ def my_form_open(dialog, layer, feature):
           <column name="_img_it_right" hidden="0" width="-1" type="field"/>
           <column name="_img_ro_right" hidden="0" width="-1" type="field"/>
           <column name="_verso" hidden="0" width="-1" type="field"/>
-          <column name="_max_shift_for_azimut" hidden="0" width="-1" type="field"/>
-          <column name="_max_symbol_width_in_column" hidden="0" width="-1" type="field"/>
           <column name="_img_direction" hidden="0" width="-1" type="field"/>
           <column name="_azimut_rectified" hidden="0" width="-1" type="field"/>
           <column name="_rank" hidden="0" width="-1" type="field"/>
+          <column name="_frame_anchor_point_rectified" hidden="0" width="-1" type="field"/>
+          <column name="_group_height" hidden="0" width="-1" type="field"/>
+          <column name="_group_width" hidden="0" width="-1" type="field"/>
+          <column name="_group_info" hidden="0" width="-1" type="field"/>
           <column name="picture" hidden="0" width="-1" type="field"/>
         </columns>
       </attributetableconfig>
@@ -13950,164 +14172,479 @@ def my_form_open(dialog, layer, feature):
         <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
           <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
         </labelStyle>
-        <attributeEditorContainer name="Azimut" visibilityExpression="" columnCount="2" collapsedExpression="" collapsedExpressionEnabled="0" showLabel="1" collapsed="0" groupBox="1" visibilityExpressionEnabled="0">
+        <attributeEditorField name="_inserted_date" index="2" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
           </labelStyle>
-          <attributeEditorField name="frame_fk_azimut" index="48" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-        </attributeEditorContainer>
-        <attributeEditorContainer name="Cadre" visibilityExpression="" columnCount="2" collapsedExpression="" collapsedExpressionEnabled="0" showLabel="1" collapsed="0" groupBox="1" visibilityExpressionEnabled="0">
+        </attributeEditorField>
+        <attributeEditorField name="id" index="1" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
           </labelStyle>
-          <attributeEditorField name="frame_fk_frame_type" index="50" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_fk_frame_fixing_type" index="49" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_double_sided" index="47" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_fk_status" index="52" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_comment" index="44" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_picture" index="53" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-        </attributeEditorContainer>
-        <attributeEditorContainer name="Signal" visibilityExpression="" columnCount="2" collapsedExpression="" collapsedExpressionEnabled="0" showLabel="1" collapsed="0" groupBox="1" visibilityExpressionEnabled="0">
+        </attributeEditorField>
+        <attributeEditorField name="pk" index="0" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
           </labelStyle>
-          <attributeEditorField name="sign_rank" index="58" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="frame_rank" index="54" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_sign_type" index="21" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="verso" index="-1" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_official_sign" index="17" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_user_sign" index="23" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_owner" index="18" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_durability" index="13" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_status" index="22" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="installation_date" index="28" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="manufacturing_date" index="29" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="case_decision" index="6" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="inscription_1" index="25" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="inscription_2" index="26" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="inscription_3" index="27" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_coating" index="12" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="fk_lighting" index="14" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="destination" index="-1" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="comment" index="8" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-          <attributeEditorField name="photo" index="-1" showLabel="1">
-            <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-              <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
-            </labelStyle>
-          </attributeEditorField>
-        </attributeEditorContainer>
+        </attributeEditorField>
+        <attributeEditorField name="case_id" index="7" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_inserted_user" index="3" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_last_modified_date" index="4" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_last_modified_user" index="5" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="case_decision" index="6" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="comment" index="8" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="complex" index="9" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="dimension_1" index="10" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="dimension_2" index="11" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_coating" index="12" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_durability" index="13" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_lighting" index="14" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_marker_type" index="15" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_mirror_shape" index="16" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_official_sign" index="17" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_owner" index="18" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_parent" index="19" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_provider" index="20" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_sign_type" index="21" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_status" index="22" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_user_sign" index="23" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="usr_sign_1" index="34" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_fk_frame_type" index="50" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_id" index="38" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="inscription_3" index="27" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_dimension_2" index="46" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="mirror_red_frame" index="31" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_anchor_point" index="43" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="natural_direction_or_left" index="32" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_fk_azimut" index="48" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_comment" index="44" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_fk_provider" index="51" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="azimut" index="37" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="inscription_2" index="26" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_double_sided" index="47" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_dimension_1" index="45" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="usr_sign_3" index="36" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame__inserted_date" index="39" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="mirror_protruding" index="30" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="installation_date" index="28" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="usr_sign_2" index="35" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_fk_status" index="52" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame__last_modified_user" index="42" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_fk_frame_fixing_type" index="49" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="picture" index="33" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame__last_modified_date" index="41" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame__inserted_user" index="40" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="manufacturing_date" index="29" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="hanging_mode" index="24" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="inscription_1" index="25" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_azimut_rectified" index="77" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_it" index="69" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_verso" index="79" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_it_right" index="73" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_de_right" index="71" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_de" index="67" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_next_frame" index="88" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_shift" index="82" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_group_width" index="84" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_ro_right" index="74" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_height" index="75" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_fr_right" index="72" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_group_height" index="83" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_fr" index="68" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_final_rank" index="81" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_frame_anchor_point_rectified" index="78" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_next_sign_in_frame" index="86" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_rank" index="80" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_previous_frame" index="87" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_previous_sign_in_frame" index="85" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_ro" index="70" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_width" index="76" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_img_direction" index="90" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_group_info" index="89" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_value_it" index="65" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="directional_sign" index="62" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="sign_rank" index="58" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_value_fr" index="64" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="fk_support_type" index="61" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="group_by_anchor_point" index="60" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_value_de" index="63" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="_symbol_value_ro" index="66" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="support_id" index="59" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_usr_frame_1" index="55" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_usr_frame_3" index="57" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_usr_frame_2" index="56" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_rank" index="54" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="frame_picture" index="53" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
+          </labelStyle>
+        </attributeEditorField>
       </attributeEditorForm>
       <editable>
+        <field name="_azimut_rectified" editable="1"/>
         <field name="_edited" editable="1"/>
         <field name="_final_rank" editable="1"/>
+        <field name="_frame_anchor_point_rectified" editable="1"/>
+        <field name="_group_height" editable="1"/>
+        <field name="_group_info" editable="1"/>
+        <field name="_group_width" editable="1"/>
         <field name="_img_de" editable="1"/>
+        <field name="_img_de_right" editable="1"/>
+        <field name="_img_direction" editable="1"/>
         <field name="_img_fr" editable="1"/>
+        <field name="_img_fr_right" editable="1"/>
         <field name="_img_it" editable="1"/>
+        <field name="_img_it_right" editable="1"/>
         <field name="_img_ro" editable="1"/>
+        <field name="_img_ro_right" editable="1"/>
         <field name="_inserted_date" editable="1"/>
         <field name="_inserted_user" editable="1"/>
         <field name="_last_modified_date" editable="1"/>
@@ -14116,6 +14653,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_next_sign_in_frame" editable="1"/>
         <field name="_previous_frame" editable="1"/>
         <field name="_previous_sign_in_frame" editable="1"/>
+        <field name="_rank" editable="1"/>
         <field name="_symbol_height" editable="1"/>
         <field name="_symbol_shift" editable="1"/>
         <field name="_symbol_value_de" editable="1"/>
@@ -14123,6 +14661,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_symbol_value_it" editable="1"/>
         <field name="_symbol_value_ro" editable="1"/>
         <field name="_symbol_width" editable="1"/>
+        <field name="_verso" editable="1"/>
         <field name="azimut" editable="1"/>
         <field name="azimut__edited" editable="0"/>
         <field name="azimut_azimut" editable="0"/>
@@ -14134,6 +14673,7 @@ def my_form_open(dialog, layer, feature):
         <field name="destination" editable="1"/>
         <field name="dimension_1" editable="1"/>
         <field name="dimension_2" editable="1"/>
+        <field name="directional_sign" editable="1"/>
         <field name="fk_coating" editable="1"/>
         <field name="fk_durability" editable="1"/>
         <field name="fk_lighting" editable="1"/>
@@ -14145,12 +14685,14 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" editable="1"/>
         <field name="fk_sign_type" editable="1"/>
         <field name="fk_status" editable="1"/>
+        <field name="fk_support_type" editable="1"/>
         <field name="fk_user_sign" editable="1"/>
         <field name="frame__edited" editable="0"/>
         <field name="frame__inserted_date" editable="1"/>
         <field name="frame__inserted_user" editable="1"/>
         <field name="frame__last_modified_date" editable="1"/>
         <field name="frame__last_modified_user" editable="1"/>
+        <field name="frame_anchor_point" editable="1"/>
         <field name="frame_comment" editable="1"/>
         <field name="frame_dimension_1" editable="1"/>
         <field name="frame_dimension_2" editable="1"/>
@@ -14167,6 +14709,8 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" editable="1"/>
         <field name="frame_usr_frame_3" editable="1"/>
         <field name="geometry" editable="1"/>
+        <field name="group_by_anchor_point" editable="1"/>
+        <field name="hanging_mode" editable="1"/>
         <field name="id" editable="1"/>
         <field name="inscription" editable="1"/>
         <field name="inscription_1" editable="1"/>
@@ -14176,10 +14720,12 @@ def my_form_open(dialog, layer, feature):
         <field name="manufacturing_date" editable="1"/>
         <field name="mirror_protruding" editable="1"/>
         <field name="mirror_red_frame" editable="1"/>
+        <field name="natural_direction_or_left" editable="1"/>
         <field name="next_frame" editable="1"/>
         <field name="next_sign_in_frame" editable="1"/>
         <field name="photo" editable="1"/>
         <field name="picture" editable="1"/>
+        <field name="pk" editable="1"/>
         <field name="previous_frame" editable="1"/>
         <field name="previous_sign_in_frame" editable="1"/>
         <field name="rank" editable="0"/>
@@ -14203,12 +14749,22 @@ def my_form_open(dialog, layer, feature):
         <field name="vl_official_sign_value_ro" editable="1"/>
       </editable>
       <labelOnTop>
+        <field name="_azimut_rectified" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
         <field name="_final_rank" labelOnTop="0"/>
+        <field name="_frame_anchor_point_rectified" labelOnTop="0"/>
+        <field name="_group_height" labelOnTop="0"/>
+        <field name="_group_info" labelOnTop="0"/>
+        <field name="_group_width" labelOnTop="0"/>
         <field name="_img_de" labelOnTop="0"/>
+        <field name="_img_de_right" labelOnTop="0"/>
+        <field name="_img_direction" labelOnTop="0"/>
         <field name="_img_fr" labelOnTop="0"/>
+        <field name="_img_fr_right" labelOnTop="0"/>
         <field name="_img_it" labelOnTop="0"/>
+        <field name="_img_it_right" labelOnTop="0"/>
         <field name="_img_ro" labelOnTop="0"/>
+        <field name="_img_ro_right" labelOnTop="0"/>
         <field name="_inserted_date" labelOnTop="0"/>
         <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modified_date" labelOnTop="0"/>
@@ -14217,6 +14773,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_next_sign_in_frame" labelOnTop="0"/>
         <field name="_previous_frame" labelOnTop="0"/>
         <field name="_previous_sign_in_frame" labelOnTop="0"/>
+        <field name="_rank" labelOnTop="0"/>
         <field name="_symbol_height" labelOnTop="0"/>
         <field name="_symbol_shift" labelOnTop="0"/>
         <field name="_symbol_value_de" labelOnTop="0"/>
@@ -14224,6 +14781,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_symbol_value_it" labelOnTop="0"/>
         <field name="_symbol_value_ro" labelOnTop="0"/>
         <field name="_symbol_width" labelOnTop="0"/>
+        <field name="_verso" labelOnTop="0"/>
         <field name="azimut" labelOnTop="0"/>
         <field name="azimut__edited" labelOnTop="0"/>
         <field name="azimut_azimut" labelOnTop="0"/>
@@ -14235,6 +14793,7 @@ def my_form_open(dialog, layer, feature):
         <field name="destination" labelOnTop="0"/>
         <field name="dimension_1" labelOnTop="0"/>
         <field name="dimension_2" labelOnTop="0"/>
+        <field name="directional_sign" labelOnTop="0"/>
         <field name="fk_coating" labelOnTop="0"/>
         <field name="fk_durability" labelOnTop="0"/>
         <field name="fk_lighting" labelOnTop="0"/>
@@ -14246,12 +14805,14 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" labelOnTop="0"/>
         <field name="fk_sign_type" labelOnTop="0"/>
         <field name="fk_status" labelOnTop="0"/>
+        <field name="fk_support_type" labelOnTop="0"/>
         <field name="fk_user_sign" labelOnTop="0"/>
         <field name="frame__edited" labelOnTop="0"/>
         <field name="frame__inserted_date" labelOnTop="0"/>
         <field name="frame__inserted_user" labelOnTop="0"/>
         <field name="frame__last_modified_date" labelOnTop="0"/>
         <field name="frame__last_modified_user" labelOnTop="0"/>
+        <field name="frame_anchor_point" labelOnTop="0"/>
         <field name="frame_comment" labelOnTop="0"/>
         <field name="frame_dimension_1" labelOnTop="0"/>
         <field name="frame_dimension_2" labelOnTop="0"/>
@@ -14268,6 +14829,8 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" labelOnTop="0"/>
         <field name="frame_usr_frame_3" labelOnTop="0"/>
         <field name="geometry" labelOnTop="0"/>
+        <field name="group_by_anchor_point" labelOnTop="0"/>
+        <field name="hanging_mode" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
         <field name="inscription" labelOnTop="0"/>
         <field name="inscription_1" labelOnTop="0"/>
@@ -14277,10 +14840,12 @@ def my_form_open(dialog, layer, feature):
         <field name="manufacturing_date" labelOnTop="0"/>
         <field name="mirror_protruding" labelOnTop="0"/>
         <field name="mirror_red_frame" labelOnTop="0"/>
+        <field name="natural_direction_or_left" labelOnTop="0"/>
         <field name="next_frame" labelOnTop="0"/>
         <field name="next_sign_in_frame" labelOnTop="0"/>
         <field name="photo" labelOnTop="0"/>
         <field name="picture" labelOnTop="0"/>
+        <field name="pk" labelOnTop="0"/>
         <field name="previous_frame" labelOnTop="0"/>
         <field name="previous_sign_in_frame" labelOnTop="0"/>
         <field name="rank" labelOnTop="0"/>
@@ -14304,12 +14869,22 @@ def my_form_open(dialog, layer, feature):
         <field name="vl_official_sign_value_ro" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="_azimut_rectified" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
         <field name="_final_rank" reuseLastValue="0"/>
+        <field name="_frame_anchor_point_rectified" reuseLastValue="0"/>
+        <field name="_group_height" reuseLastValue="0"/>
+        <field name="_group_info" reuseLastValue="0"/>
+        <field name="_group_width" reuseLastValue="0"/>
         <field name="_img_de" reuseLastValue="0"/>
+        <field name="_img_de_right" reuseLastValue="0"/>
+        <field name="_img_direction" reuseLastValue="0"/>
         <field name="_img_fr" reuseLastValue="0"/>
+        <field name="_img_fr_right" reuseLastValue="0"/>
         <field name="_img_it" reuseLastValue="0"/>
+        <field name="_img_it_right" reuseLastValue="0"/>
         <field name="_img_ro" reuseLastValue="0"/>
+        <field name="_img_ro_right" reuseLastValue="0"/>
         <field name="_inserted_date" reuseLastValue="0"/>
         <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modified_date" reuseLastValue="0"/>
@@ -14318,6 +14893,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_next_sign_in_frame" reuseLastValue="0"/>
         <field name="_previous_frame" reuseLastValue="0"/>
         <field name="_previous_sign_in_frame" reuseLastValue="0"/>
+        <field name="_rank" reuseLastValue="0"/>
         <field name="_symbol_height" reuseLastValue="0"/>
         <field name="_symbol_shift" reuseLastValue="0"/>
         <field name="_symbol_value_de" reuseLastValue="0"/>
@@ -14325,6 +14901,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_symbol_value_it" reuseLastValue="0"/>
         <field name="_symbol_value_ro" reuseLastValue="0"/>
         <field name="_symbol_width" reuseLastValue="0"/>
+        <field name="_verso" reuseLastValue="0"/>
         <field name="azimut" reuseLastValue="0"/>
         <field name="azimut__edited" reuseLastValue="0"/>
         <field name="case_decision" reuseLastValue="0"/>
@@ -14333,6 +14910,7 @@ def my_form_open(dialog, layer, feature):
         <field name="complex" reuseLastValue="0"/>
         <field name="dimension_1" reuseLastValue="0"/>
         <field name="dimension_2" reuseLastValue="0"/>
+        <field name="directional_sign" reuseLastValue="0"/>
         <field name="fk_coating" reuseLastValue="0"/>
         <field name="fk_durability" reuseLastValue="0"/>
         <field name="fk_lighting" reuseLastValue="0"/>
@@ -14344,12 +14922,14 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" reuseLastValue="0"/>
         <field name="fk_sign_type" reuseLastValue="0"/>
         <field name="fk_status" reuseLastValue="0"/>
+        <field name="fk_support_type" reuseLastValue="0"/>
         <field name="fk_user_sign" reuseLastValue="0"/>
         <field name="frame__edited" reuseLastValue="0"/>
         <field name="frame__inserted_date" reuseLastValue="0"/>
         <field name="frame__inserted_user" reuseLastValue="0"/>
         <field name="frame__last_modified_date" reuseLastValue="0"/>
         <field name="frame__last_modified_user" reuseLastValue="0"/>
+        <field name="frame_anchor_point" reuseLastValue="0"/>
         <field name="frame_comment" reuseLastValue="0"/>
         <field name="frame_dimension_1" reuseLastValue="0"/>
         <field name="frame_dimension_2" reuseLastValue="0"/>
@@ -14366,6 +14946,8 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" reuseLastValue="0"/>
         <field name="frame_usr_frame_3" reuseLastValue="0"/>
         <field name="geometry" reuseLastValue="0"/>
+        <field name="group_by_anchor_point" reuseLastValue="0"/>
+        <field name="hanging_mode" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
         <field name="inscription_1" reuseLastValue="0"/>
         <field name="inscription_2" reuseLastValue="0"/>
@@ -14374,8 +14956,10 @@ def my_form_open(dialog, layer, feature):
         <field name="manufacturing_date" reuseLastValue="0"/>
         <field name="mirror_protruding" reuseLastValue="0"/>
         <field name="mirror_red_frame" reuseLastValue="0"/>
+        <field name="natural_direction_or_left" reuseLastValue="0"/>
         <field name="photo" reuseLastValue="0"/>
         <field name="picture" reuseLastValue="0"/>
+        <field name="pk" reuseLastValue="0"/>
         <field name="sign__edited" reuseLastValue="0"/>
         <field name="sign_rank" reuseLastValue="0"/>
         <field name="support__edited" reuseLastValue="0"/>
@@ -14672,51 +15256,6 @@ END</previewExpression>
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem referencePoint="7" frame="false" zValue="2" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" mapUuid="" visibility="1" anchorPoint="7" svgBorderColor="0,0,0,255" outlineWidthM="0.3,mm" background="false" pictureRotation="0" northMode="0" size="130.768,148.068,mm" excludeFromExports="0" resizeMode="0" positionOnPage="148.5,150.814,mm" opacity="1" file="101.svg" svgFillColor="255,255,255,255" frameJoinStyle="miter" itemRotation="0" groupUuid="" pictureWidth="130.768" position="148.5,150.814,mm" type="65640" blendMode="0" mode="0" positionLock="false" pictureHeight="114.557" svgBorderWidth="0.2" id="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
-        <FrameColor red="0" green="0" blue="0" alpha="255"/>
-        <BackgroundColor red="255" green="255" blue="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option name="name" value="" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-              </Option>
-              <Option name="type" value="collection" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option type="Map">
-              <Option name="svg-dynamic-parameters" type="Map">
-                <Option name="text1" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription1" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text2" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription2" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text3" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription3" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text4" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription4" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-              </Option>
-            </Option>
-          </customproperties>
-        </LayoutObject>
-      </LayoutItem>
       <LayoutItem referencePoint="0" frame="false" zValue="2" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" outlineWidthM="0.3,mm" background="false" size="247.028,53.7715,mm" marginX="0" marginY="0" excludeFromExports="0" positionOnPage="24.986,142.228,mm" opacity="1" valign="128" frameJoinStyle="miter" htmlState="0" itemRotation="0" groupUuid="" position="24.986,142.228,mm" type="65641" blendMode="0" halign="4" positionLock="false" id="" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}">
         <FrameColor red="0" green="0" blue="0" alpha="255"/>
         <BackgroundColor red="255" green="255" blue="255" alpha="255"/>
@@ -14779,6 +15318,51 @@ END</previewExpression>
           </dd_properties>
         </text-style>
       </LayoutItem>
+      <LayoutItem referencePoint="7" frame="false" zValue="2" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" mapUuid="" visibility="1" anchorPoint="7" svgBorderColor="0,0,0,255" outlineWidthM="0.3,mm" background="false" pictureRotation="0" northMode="0" size="130.768,148.068,mm" excludeFromExports="0" resizeMode="0" positionOnPage="148.5,150.814,mm" opacity="1" file="101.svg" svgFillColor="255,255,255,255" frameJoinStyle="miter" itemRotation="0" groupUuid="" pictureWidth="130.768" position="148.5,150.814,mm" type="65640" blendMode="0" mode="0" positionLock="false" pictureHeight="114.557" svgBorderWidth="0.2" id="" northOffset="0" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}">
+        <FrameColor red="0" green="0" blue="0" alpha="255"/>
+        <BackgroundColor red="255" green="255" blue="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="dataDefinedSource" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+              </Option>
+              <Option name="type" value="collection" type="QString"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option type="Map">
+              <Option name="svg-dynamic-parameters" type="Map">
+                <Option name="text1" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription1" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text2" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription2" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text3" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription3" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text4" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription4" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+              </Option>
+            </Option>
+          </customproperties>
+        </LayoutObject>
+      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option name="atlasRasterFormat" value="png" type="QString"/>
@@ -14802,7 +15386,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152342.84519026125781238" ymax="1152641.26096725719980896" xmin="2537304.00361342262476683" xmax="2537477.78117603529244661">
+    <DefaultViewExtent ymin="1152497.90839509153738618" ymax="1152553.62117319647222757" xmin="2537350.39567877491936088" xmax="2537429.36997763486579061">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
