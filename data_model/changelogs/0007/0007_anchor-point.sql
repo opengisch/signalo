@@ -1,7 +1,7 @@
 CREATE TYPE signalo_db.anchor_point AS ENUM ('LEFT', 'CENTER', 'RIGHT');
 CREATE TYPE signalo_db.sign_hanging AS ENUM ('RECTO', 'RECTO-VERSO', 'VERSO');
 
-ALTER TABLE signalo_db.support ADD COLUMN ordering_by_anchor_point BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE signalo_db.support ADD COLUMN group_by_anchor_point BOOLEAN NOT NULL DEFAULT TRUE;
 ALTER TABLE signalo_db.frame ADD COLUMN anchor_point signalo_db.anchor_point  NOT NULL DEFAULT 'CENTER'::signalo_db.anchor_point;
 
 INSERT INTO signalo_db.vl_support_type (id, value_fr, value_de) VALUES (17, 'borne d''îlot', 'Inselpfosten');

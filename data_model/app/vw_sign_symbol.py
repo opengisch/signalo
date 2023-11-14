@@ -34,7 +34,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , {frame_columns}
                 , sign.rank AS sign_rank
                 , support.id AS support_id
-                , support.ordering_by_anchor_point
+                , support.group_by_anchor_point
                 , support.fk_support_type
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
                 , COALESCE(vl_official_sign.directional_sign, FALSE) AS directional_sign
@@ -170,7 +170,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND ordering_by_anchor_point IS FALSE
+            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND group_by_anchor_point IS FALSE
             ORDER BY support_id, azimut, _rank
         ),
         -- recto ordered by anchor point
@@ -182,7 +182,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor_point ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND ordering_by_anchor_point IS TRUE
+            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND group_by_anchor_point IS TRUE
             ORDER BY support_id, azimut, frame_anchor_point, _rank
         ),
         -- verso NOT ordered by anchor point (RECTO-VERSO are duplicated)
@@ -198,7 +198,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND ordering_by_anchor_point IS FALSE
+            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor_point IS FALSE
             ORDER BY support_id, azimut, _rank
         ),
         -- verso ordered by anchor point (RECTO-VERSO are duplicated)
@@ -214,7 +214,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor_point ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND ordering_by_anchor_point IS TRUE
+            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor_point IS TRUE
             ORDER BY support_id, azimut, frame_anchor_point, _rank
         ),
 
@@ -258,7 +258,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , oss.*
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY support_id, _azimut_rectified, _verso ) AS _max_shift_for_azimut
                 , CASE
-                      WHEN ordering_by_anchor_point IS TRUE THEN
+                      WHEN group_by_anchor_point IS TRUE THEN
                           MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_point_rectified, _verso )
                       ELSE
                           MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, _verso )

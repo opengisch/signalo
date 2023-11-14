@@ -9720,7 +9720,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="ordering_by_anchor_point" configurationFlags="None">
+        <field name="group_by_anchor_point" configurationFlags="None">
           <editWidget type="CheckBox">
             <config>
               <Option type="Map">
@@ -9775,7 +9775,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="date de dernière modification" field="_last_modified_date" index="19"/>
         <alias name="dernière modification par" field="_last_modified_user" index="20"/>
         <alias name="édité" field="_edited" index="21"/>
-        <alias name="" field="ordering_by_anchor_point" index="22"/>
+        <alias name="" field="group_by_anchor_point" index="22"/>
         <alias name="" field="geometry_x" index="23"/>
         <alias name="" field="geometry_y" index="24"/>
       </aliases>
@@ -9802,7 +9802,7 @@ def my_form_open(dialog, layer, feature):
         <default field="_last_modified_date" expression="now()" applyOnUpdate="1"/>
         <default field="_last_modified_user" expression=" @user_full_name " applyOnUpdate="1"/>
         <default field="_edited" expression="if(  @qgis_platform = 'desktop', false, true )" applyOnUpdate="1"/>
-        <default field="ordering_by_anchor_point" expression="" applyOnUpdate="0"/>
+        <default field="group_by_anchor_point" expression="" applyOnUpdate="0"/>
         <default field="geometry_x" expression="" applyOnUpdate="0"/>
         <default field="geometry_y" expression="" applyOnUpdate="0"/>
       </defaults>
@@ -9829,7 +9829,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="_last_modified_date" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_last_modified_user" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_edited" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint field="ordering_by_anchor_point" unique_strength="0" constraints="1" notnull_strength="1" exp_strength="0"/>
+        <constraint field="group_by_anchor_point" unique_strength="0" constraints="1" notnull_strength="1" exp_strength="0"/>
         <constraint field="geometry_x" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="geometry_y" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
       </constraints>
@@ -9856,7 +9856,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="_last_modified_date" exp="" desc=""/>
         <constraint field="_last_modified_user" exp="" desc=""/>
         <constraint field="_edited" exp="" desc=""/>
-        <constraint field="ordering_by_anchor_point" exp="" desc=""/>
+        <constraint field="group_by_anchor_point" exp="" desc=""/>
         <constraint field="geometry_x" exp="" desc=""/>
         <constraint field="geometry_y" exp="" desc=""/>
       </constraintExpressions>
@@ -9893,7 +9893,7 @@ def my_form_open(dialog, layer, feature):
           <column name="usr_support_1" hidden="0" width="-1" type="field"/>
           <column name="usr_support_2" hidden="0" width="-1" type="field"/>
           <column name="usr_support_3" hidden="0" width="-1" type="field"/>
-          <column name="ordering_by_anchor_point" hidden="0" width="-1" type="field"/>
+          <column name="group_by_anchor_point" hidden="0" width="-1" type="field"/>
           <column name="picture_2" hidden="0" width="-1" type="field"/>
           <column name="picture" hidden="0" width="-1" type="field"/>
         </columns>
@@ -9994,7 +9994,7 @@ def my_form_open(dialog, layer, feature):
               <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField name="ordering_by_anchor_point" index="22" showLabel="1">
+          <attributeEditorField name="group_by_anchor_point" index="22" showLabel="1">
             <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
               <labelFont strikethrough="0" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" underline="0"/>
             </labelStyle>
@@ -10053,7 +10053,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" editable="1"/>
         <field name="height_free_under_signal" editable="1"/>
         <field name="id" editable="1"/>
-        <field name="ordering_by_anchor_point" editable="1"/>
+        <field name="group_by_anchor_point" editable="1"/>
         <field name="photo" editable="1"/>
         <field name="picture" editable="1"/>
         <field name="picture_2" editable="1"/>
@@ -10085,7 +10085,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" labelOnTop="0"/>
         <field name="height_free_under_signal" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
-        <field name="ordering_by_anchor_point" labelOnTop="0"/>
+        <field name="group_by_anchor_point" labelOnTop="0"/>
         <field name="photo" labelOnTop="0"/>
         <field name="picture" labelOnTop="0"/>
         <field name="picture_2" labelOnTop="0"/>
@@ -10115,7 +10115,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" reuseLastValue="0"/>
         <field name="height_free_under_signal" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
-        <field name="ordering_by_anchor_point" reuseLastValue="0"/>
+        <field name="group_by_anchor_point" reuseLastValue="0"/>
         <field name="photo" reuseLastValue="0"/>
         <field name="picture" reuseLastValue="0"/>
         <field name="picture_2" reuseLastValue="0"/>
@@ -13183,7 +13183,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="ordering_by_anchor_point" configurationFlags="None">
+        <field name="group_by_anchor_point" configurationFlags="None">
           <editWidget type="">
             <config>
               <Option/>
@@ -13489,7 +13489,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="frame_usr_frame_3" index="57"/>
         <alias name="Rang signal" field="sign_rank" index="58"/>
         <alias name="Id support" field="support_id" index="59"/>
-        <alias name="" field="ordering_by_anchor_point" index="60"/>
+        <alias name="" field="group_by_anchor_point" index="60"/>
         <alias name="" field="fk_support_type" index="61"/>
         <alias name="" field="directional_sign" index="62"/>
         <alias name="" field="_symbol_value_de" index="63"/>
@@ -13585,7 +13585,7 @@ def my_form_open(dialog, layer, feature):
         <default field="frame_usr_frame_3" expression="" applyOnUpdate="0"/>
         <default field="sign_rank" expression="1" applyOnUpdate="0"/>
         <default field="support_id" expression="" applyOnUpdate="0"/>
-        <default field="ordering_by_anchor_point" expression="" applyOnUpdate="0"/>
+        <default field="group_by_anchor_point" expression="" applyOnUpdate="0"/>
         <default field="fk_support_type" expression="" applyOnUpdate="0"/>
         <default field="directional_sign" expression="" applyOnUpdate="0"/>
         <default field="_symbol_value_de" expression="" applyOnUpdate="0"/>
@@ -13681,7 +13681,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="frame_usr_frame_3" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="sign_rank" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="support_id" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint field="ordering_by_anchor_point" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint field="group_by_anchor_point" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="fk_support_type" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="directional_sign" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint field="_symbol_value_de" unique_strength="0" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -13777,7 +13777,7 @@ def my_form_open(dialog, layer, feature):
         <constraint field="frame_usr_frame_3" exp="" desc=""/>
         <constraint field="sign_rank" exp="" desc=""/>
         <constraint field="support_id" exp="" desc=""/>
-        <constraint field="ordering_by_anchor_point" exp="" desc=""/>
+        <constraint field="group_by_anchor_point" exp="" desc=""/>
         <constraint field="fk_support_type" exp="" desc=""/>
         <constraint field="directional_sign" exp="" desc=""/>
         <constraint field="_symbol_value_de" exp="" desc=""/>
@@ -13895,7 +13895,7 @@ def my_form_open(dialog, layer, feature):
           <column name="sign__edited" hidden="0" width="-1" type="field"/>
           <column name="fk_user_sign" hidden="0" width="-1" type="field"/>
           <column name="frame_anchor_point" hidden="0" width="-1" type="field"/>
-          <column name="ordering_by_anchor_point" hidden="0" width="-1" type="field"/>
+          <column name="group_by_anchor_point" hidden="0" width="-1" type="field"/>
           <column name="fk_support_type" hidden="0" width="-1" type="field"/>
           <column name="pk" hidden="0" width="-1" type="field"/>
           <column name="hanging_mode" hidden="0" width="-1" type="field"/>
