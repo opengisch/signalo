@@ -189,7 +189,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ordered_verso_signs_not_grouped_by_anchor_point AS (
             SELECT
                 joined_tables.*
-                , azimut-180 AS _azimut_rectified
+                , azimut+180 AS _azimut_rectified
                 , CASE
                       WHEN frame_anchor_point = 'LEFT'::signalo_db.anchor_point THEN 'RIGHT'::signalo_db.anchor_point
                       WHEN frame_anchor_point = 'RIGHT'::signalo_db.anchor_point THEN 'LEFT'::signalo_db.anchor_point
