@@ -25,6 +25,16 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     cursor = conn.cursor()
 
     view_sql = """
+        -- Calculates the offset for blocks to avoid overlapping
+        CREATE FUNCTION signalo_app.calculate_block_offset (azimut integer, group_info json)
+            RETURNS integer
+        AS $$
+        DECLARE
+        BEGIN
+             RETURN 0;
+        END;
+        $$ LANGUAGE plpgsql;
+
         CREATE OR REPLACE VIEW signalo_app.vw_sign_symbol AS
 
         WITH joined_tables AS (
@@ -268,23 +278,26 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 FROM ordered_shifted_signs_grouped_by_anchor_point ossg
         ),
 
-        group_info_azimut AS (
-            SELECT DISTINCT support_id, _azimut_rectified
-            FROM union_view
+        group_info_blocks AS (
+                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('anchor', _frame_anchor_point_rectified, 'width', _group_width, 'height', _group_height)) AS _blocks
+                FROM union_view WHERE group_by_anchor_point IS TRUE
+                GROUP BY support_id, _azimut_rectified
+            UNION ALL
+                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('width', _group_width, 'height', _group_height)) AS _blocks
+                FROM union_view WHERE group_by_anchor_point IS FALSE
+                GROUP BY support_id, _azimut_rectified
         ),
 
         group_info AS (
-            SELECT
-                support_id
-                , ARRAY_AGG(_azimut_rectified) AS azimuts_for_support
-            FROM group_info_azimut
+            SELECT support_id, JSON_AGG(JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks)) AS _blocks
+            FROM group_info_blocks
             GROUP BY support_id
         )
 
             SELECT
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
-                , azimuts_for_support
+                , _blocks
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (_frame_anchor_point_rectified, natural_direction_or_left) IN (
