@@ -36,16 +36,15 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             last_azimut integer := NULL;
         BEGIN
 
-        RETURN 0;
                 RAISE NOTICE '********';
                 RAISE NOTICE '%%', group_info;
                 --RAISE NOTICE '%%', azimut;
 
-            select json_array_elements(group_info);
+            --select json_array_elements(group_info);
 
             --RAISE NOTICE '%%', _data;
 
-            FOR i IN 1..json_array_length(group_info)
+            FOR i IN 0..json_array_length(group_info)-1
             LOOP
                 RAISE NOTICE '%%', group_info->i->'azimut';
                 CONTINUE;
@@ -317,7 +316,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ),
 
         group_info AS (
-            SELECT support_id, json_object_agg(_azimut_rectified, JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks) ORDER BY _azimut_rectified) AS _blocks
+            SELECT support_id, json_agg(JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks) ORDER BY _azimut_rectified) AS _blocks
             FROM group_info_blocks
             GROUP BY support_id
         )
