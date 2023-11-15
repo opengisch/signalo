@@ -29,7 +29,7 @@ def create_views(srid: int, pg_service: str):
 
     variables = {"SRID": srid}
 
-    run_sql("data_model/app/drop_views.sql", pg_service, variables)
+    run_sql("data_model/app/drop_schema.sql", pg_service, variables)
 
     run_sql("data_model/app/create_schema.sql", pg_service, variables)
 

@@ -30,8 +30,36 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             RETURNS integer
         AS $$
         DECLARE
+            _data json;
+            shifted_blocks integer[];
+            previous_azimut integer := NULL;
+            last_azimut integer := NULL;
         BEGIN
-             RETURN 0;
+
+        RETURN 0;
+                RAISE NOTICE '********';
+                RAISE NOTICE '%%', group_info;
+                --RAISE NOTICE '%%', azimut;
+
+            select json_array_elements(group_info);
+
+            --RAISE NOTICE '%%', _data;
+
+            FOR i IN 1..json_array_length(group_info)
+            LOOP
+                RAISE NOTICE '%%', group_info->i->'azimut';
+                CONTINUE;
+                IF previous_azimut IS NULL THEN
+                    previous_azimut = _data->'azimut';
+                ELSE
+                    IF ABS( _data->'azimut' - previous_azimut ) < 90 THEN
+                    END IF;
+
+                END IF;
+                last_azimut = _data->'azimut';
+            END LOOP;
+
+            RETURN 0;
         END;
         $$ LANGUAGE plpgsql;
 
@@ -289,7 +317,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ),
 
         group_info AS (
-            SELECT support_id, JSON_AGG(JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks)) AS _blocks
+            SELECT support_id, json_object_agg(_azimut_rectified, JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks) ORDER BY _azimut_rectified) AS _blocks
             FROM group_info_blocks
             GROUP BY support_id
         )
@@ -298,6 +326,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
                 , _blocks
+                , signalo_app.calculate_block_offset(_azimut_rectified, _blocks) AS _block_offset
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (_frame_anchor_point_rectified, natural_direction_or_left) IN (
