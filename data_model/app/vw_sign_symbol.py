@@ -34,6 +34,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             shifted_blocks integer[];
             previous_azimut integer := NULL;
             last_azimut integer := NULL;
+            count integer;
         BEGIN
 
                 RAISE NOTICE '********';
@@ -44,18 +45,19 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
 
             --RAISE NOTICE '%%', _data;
 
-            FOR i IN 0..json_array_length(group_info)-1
-            LOOP
-                RAISE NOTICE '%%', group_info->i->'azimut';
-                CONTINUE;
-                IF previous_azimut IS NULL THEN
-                    previous_azimut = _data->'azimut';
-                ELSE
-                    IF ABS( _data->'azimut' - previous_azimut ) < 90 THEN
-                    END IF;
+            count = json_array_length(group_info);
 
+            FOR i IN 0..(count-1)
+            LOOP
+                RAISE NOTICE 'gggg %%', (group_info->i->>'azimut')::integer;
+                IF i = 0 THEN
+                    CONTINUE;
                 END IF;
-                last_azimut = _data->'azimut';
+                IF ABS( (group_info->i->>'azimut')::integer - (group_info->(i-1)->>'azimut')::integer ) % 360 < 45 THEN
+                    -- if < 45, only signs with LEFT anchor are in the way
+                    RAISE NOTICE 'xxx';
+                END IF;
+
             END LOOP;
 
             RETURN 0;
@@ -310,7 +312,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 FROM union_view WHERE group_by_anchor_point IS TRUE
                 GROUP BY support_id, _azimut_rectified
             UNION ALL
-                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('width', _group_width, 'height', _group_height)) AS _blocks
+                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('anchor', 'CENTER', 'width', _group_width, 'height', _group_height)) AS _blocks
                 FROM union_view WHERE group_by_anchor_point IS FALSE
                 GROUP BY support_id, _azimut_rectified
         ),
