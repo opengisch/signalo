@@ -25,45 +25,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     cursor = conn.cursor()
 
     view_sql = """
-        -- Calculates the offset for blocks to avoid overlapping
-        CREATE FUNCTION signalo_app.calculate_block_offset (azimut integer, group_info json)
-            RETURNS integer
-        AS $$
-        DECLARE
-            _data json;
-            shifted_blocks integer[];
-            previous_azimut integer := NULL;
-            last_azimut integer := NULL;
-            count integer;
-        BEGIN
-
-                RAISE NOTICE '********';
-                RAISE NOTICE '%%', group_info;
-                --RAISE NOTICE '%%', azimut;
-
-            --select json_array_elements(group_info);
-
-            --RAISE NOTICE '%%', _data;
-
-            count = json_array_length(group_info);
-
-            FOR i IN 0..(count-1)
-            LOOP
-                RAISE NOTICE 'gggg %%', (group_info->i->>'azimut')::integer;
-                IF i = 0 THEN
-                    CONTINUE;
-                END IF;
-                IF ABS( (group_info->i->>'azimut')::integer - (group_info->(i-1)->>'azimut')::integer ) % 360 < 45 THEN
-                    -- if < 45, only signs with LEFT anchor are in the way
-                    RAISE NOTICE 'xxx';
-                END IF;
-
-            END LOOP;
-
-            RETURN 0;
-        END;
-        $$ LANGUAGE plpgsql;
-
         CREATE OR REPLACE VIEW signalo_app.vw_sign_symbol AS
 
         WITH joined_tables AS (
@@ -327,7 +288,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
                 , _blocks
-                , signalo_app.calculate_block_offset(_azimut_rectified, _blocks) AS _block_offset
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (_frame_anchor_point_rectified, natural_direction_or_left) IN (

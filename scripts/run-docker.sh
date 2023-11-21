@@ -23,6 +23,6 @@ if [[ $BUILD -eq 1 ]]; then
 fi
 
 docker rm -f signalo || true
-docker run -d -p 5433:5432 -v $(pwd):/src  --name signalo opengisch/signalo
+docker run -d -p 5433:5432 -v $(pwd):/src  --name signalo opengisch/signalo -c log_statement=all
 docker exec signalo init_db.sh wait
 docker exec signalo init_db.sh build -d
