@@ -31,6 +31,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 {sign_columns}
                 , azimut.azimut
+                , azimut.offset_x
+                , azimut.offset_y
                 , {frame_columns}
                 , sign.rank AS sign_rank
                 , support.id AS support_id
@@ -166,6 +168,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 joined_tables.*
                 , azimut AS _azimut_rectified
+                , offset_x AS _azimut_offset_x_rectified
+                , offset_y AS _azimut_offset_y_rectified
                 , frame_anchor_point AS _frame_anchor_point_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
@@ -178,6 +182,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 joined_tables.*
                 , azimut AS _azimut_rectified
+                , offset_x AS _azimut_offset_x_rectified
+                , offset_y AS _azimut_offset_y_rectified
                 , frame_anchor_point AS _frame_anchor_point_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor_point ORDER BY frame_rank, sign_rank ) AS _rank
@@ -188,34 +194,40 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         -- verso NOT ordered by anchor point (RECTO-VERSO are duplicated)
         ordered_verso_signs_not_grouped_by_anchor_point AS (
             SELECT
-                joined_tables.*
-                , azimut+180 AS _azimut_rectified
+                jt.*
+                , jt.azimut+180 AS _azimut_rectified
+                , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
                 , CASE
                       WHEN frame_anchor_point = 'LEFT'::signalo_db.anchor_point THEN 'RIGHT'::signalo_db.anchor_point
                       WHEN frame_anchor_point = 'RIGHT'::signalo_db.anchor_point THEN 'LEFT'::signalo_db.anchor_point
                       ELSE 'CENTER'::signalo_db.anchor_point
                   END AS _frame_anchor_point_rectified
                 , true::bool AS _verso
-                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
-            FROM joined_tables
+                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
+            FROM joined_tables jt
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) %% 360) AND az.fk_support = support_id
             WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor_point IS FALSE
-            ORDER BY support_id, azimut, _rank
+            ORDER BY support_id, jt.azimut, _rank
         ),
         -- verso ordered by anchor point (RECTO-VERSO are duplicated)
         ordered_verso_signs_grouped_by_anchor_point AS (
             SELECT
-                joined_tables.*
-                , azimut-180 AS _azimut_rectified
+                jt.*
+                , jt.azimut+180 AS _azimut_rectified
+                , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
                 , CASE
                       WHEN frame_anchor_point = 'LEFT'::signalo_db.anchor_point THEN 'RIGHT'::signalo_db.anchor_point
                       WHEN frame_anchor_point = 'RIGHT'::signalo_db.anchor_point THEN 'LEFT'::signalo_db.anchor_point
                       ELSE 'CENTER'::signalo_db.anchor_point
                   END AS _frame_anchor_point_rectified
                 , true::bool AS _verso
-                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor_point ORDER BY frame_rank, sign_rank ) AS _rank
-            FROM joined_tables
+                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor_point ORDER BY frame_rank, sign_rank ) AS _rank
+            FROM joined_tables jt
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) %% 360) AND az.fk_support = support_id
             WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor_point IS TRUE
-            ORDER BY support_id, azimut, frame_anchor_point, _rank
+            ORDER BY support_id, jt.azimut, frame_anchor_point, _rank
         ),
 
         ordered_signs_not_grouped_by_anchor_point AS (
@@ -266,28 +278,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 SELECT
                     ossg.*
                 FROM ordered_shifted_signs_grouped_by_anchor_point ossg
-        ),
-
-        group_info_blocks AS (
-                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('anchor', _frame_anchor_point_rectified, 'width', _group_width, 'height', _group_height)) AS _blocks
-                FROM union_view WHERE group_by_anchor_point IS TRUE
-                GROUP BY support_id, _azimut_rectified
-            UNION ALL
-                SELECT support_id, _azimut_rectified, JSON_AGG(JSON_BUILD_OBJECT('anchor', 'CENTER', 'width', _group_width, 'height', _group_height)) AS _blocks
-                FROM union_view WHERE group_by_anchor_point IS FALSE
-                GROUP BY support_id, _azimut_rectified
-        ),
-
-        group_info AS (
-            SELECT support_id, json_agg(JSON_BUILD_OBJECT('azimut', _azimut_rectified, 'data', _blocks) ORDER BY _azimut_rectified) AS _blocks
-            FROM group_info_blocks
-            GROUP BY support_id
         )
 
             SELECT
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
-                , _blocks
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (_frame_anchor_point_rectified, natural_direction_or_left) IN (
@@ -297,9 +292,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                     ) THEN '_right'
                     ELSE ''
                   END AS _img_direction
-            FROM union_view uv
-            LEFT JOIN group_info gi ON gi.support_id = uv.support_id
-        ;
+            FROM union_view uv;
     """.format(
         sign_columns=select_columns(
             pg_cur=cursor,
