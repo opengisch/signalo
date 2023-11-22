@@ -34,3 +34,8 @@ repos:
     hooks:
       - id: isort
         args: ["--profile", "black", "--filter-files"]
+
+
+ci:
+  autofix_prs: true
+  autoupdate_schedule: quarterly
