@@ -8,7 +8,7 @@ export $(grep -v '^#' .env | xargs)
 
 BUILD=0
 DEMO_DATA=0
-SIGNALO_PG_PORT=${TWW_PG_PORT:-5432}
+SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
 
 while getopts 'bdp:' opt; do
   case "$opt" in
