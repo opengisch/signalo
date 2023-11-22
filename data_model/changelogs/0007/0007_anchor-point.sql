@@ -5,6 +5,7 @@ ALTER TABLE signalo_db.support ADD COLUMN group_by_anchor BOOLEAN NOT NULL DEFAU
 ALTER TABLE signalo_db.frame ADD COLUMN anchor signalo_db.anchor NOT NULL DEFAULT 'CENTER'::signalo_db.anchor;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_x INTEGER NOT NULL DEFAULT 0;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_y INTEGER NOT NULL DEFAULT 0;
+UPDATE signalo_db.azimut SET azimut = (azimut + 180) % 360;
 
 INSERT INTO signalo_db.vl_support_type (id, value_fr, value_de) VALUES (17, 'borne d''îlot', 'Inselpfosten');
 
