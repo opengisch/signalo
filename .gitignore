@@ -1,3 +1,11 @@
+.env
+project/images/_*
+project/this-is-the-way.jpg
+project/signalo.ts
+project/signalo_attachments.zip
+website/tx
+website/local.html
+
 .idea
 .DS_Store
 *.orig
@@ -12,13 +20,3 @@ official-signs.json
 postgresql.jar
 schemaspy*.jar
 schemaspy/
-website/local.html
-project/this-is-the-way.jpg
-project/signalo.ts
-project/signalo_attachments.zip
-website/tx
-Pipfile
-Pipfile.lock
-.env
-Pipfile
-project/images/_*
