@@ -8,7 +8,7 @@ FROM base-$BUILDARCH as common
 ARG AUTO_INIT=True
 
 # System deps (bc + exiftool for testing)
-RUN apt-get update && apt-get install -y python3 python3-pip python3-venv libpq-dev wget bc && apt-get clean
+RUN apt-get update && apt-get install -y python3 python3-pip python3-venv libpq-dev wget bc exiftool && apt-get clean
 
 # Python deps
 # Python deps

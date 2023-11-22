@@ -54,27 +54,27 @@ class DbTestBase:
             row,
         )
 
-    def delete(self, table, id, schema="signalo_db"):
+    def delete(self, table, fid, schema="signalo_db"):
         cur = self.conn.cursor()
         cur.execute(
             "DELETE FROM {schema}.{table} WHERE id=%s".format(
                 table=table, schema=schema
             ),
-            [id],
+            [fid],
         )
 
-    def insert_check(self, table, row, expected_row=None, schema="signalo_db"):
-        id = self.insert(table, row, schema)
-        result = self.select(table, id, schema)
+    def insert_check(self, table, row, expected_row=None, schema="signalo_db") -> str:
+        fid = self.insert(table, row, schema)
+        result = self.select(table, fid, schema)
 
-        assert result, id
+        assert result, fid
 
         if expected_row:
             row = expected_row
 
         self.check_result(row, result, table, "insert", schema)
 
-        return id
+        return fid
 
     def update_check(self, table, row, id, schema="signalo_db"):
         self.update(table, row, id, schema)
