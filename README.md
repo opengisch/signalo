@@ -14,5 +14,5 @@ Any change in the app (`signalo_app` schema) or in the QGIS demo project will re
 
 ### Minimum Requirements
 
-  * QGIS 3.22
+  * QGIS LTR
   * PostgreSQL 10
