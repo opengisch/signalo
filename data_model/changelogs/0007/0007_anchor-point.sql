@@ -1,3 +1,6 @@
+ALTER TABLE signalo_db.sign DISABLE TRIGGER tr_sign_on_delete_reorder;
+ALTER TABLE signalo_db.sign DISABLE TRIGGER tr_sign_on_update_prevent_fk_frame;
+
 CREATE TYPE signalo_db.anchor AS ENUM ('LEFT', 'CENTER', 'RIGHT');
 CREATE TYPE signalo_db.sign_hanging AS ENUM ('RECTO', 'RECTO-VERSO', 'VERSO');
 
@@ -65,3 +68,6 @@ UPDATE signalo_db.sign SET fk_official_sign = replace(fk_official_sign, '-l', ''
 UPDATE signalo_db.sign SET fk_official_sign = replace(fk_official_sign, '-r', '') WHERE fk_official_sign LIKE '%-r';
 
 ALTER TABLE signalo_db.sign ADD CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES signalo_db.vl_official_sign (id);
+
+ALTER TABLE signalo_db.sign ENABLE TRIGGER tr_sign_on_delete_reorder;
+ALTER TABLE signalo_db.sign ENABLE TRIGGER tr_sign_on_update_prevent_fk_frame;
