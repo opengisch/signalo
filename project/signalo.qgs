@@ -1206,7 +1206,7 @@
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="225,89,137,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -1221,7 +1221,7 @@
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -1786,7 +1786,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="229,182,54,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -1801,7 +1801,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -2105,7 +2105,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="196,60,57,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -2120,7 +2120,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -2441,7 +2441,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="190,178,151,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -2456,7 +2456,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -2772,7 +2772,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="anchor_point" configurationFlags="None">
+        <field name="anchor" configurationFlags="None">
           <editWidget type="Enumeration">
             <config>
               <Option/>
@@ -2801,7 +2801,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="" index="17" field="_last_modified_date"/>
         <alias name="" index="18" field="_last_modified_user"/>
         <alias name="" index="19" field="_edited"/>
-        <alias name="point d'ancrage" index="20" field="anchor_point"/>
+        <alias name="point d'ancrage" index="20" field="anchor"/>
       </aliases>
       <defaults>
         <default applyOnUpdate="0" expression="substr(uuid(),2,36)" field="id"/>
@@ -2824,7 +2824,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="1" expression="now()" field="_last_modified_date"/>
         <default applyOnUpdate="1" expression=" @user_full_name " field="_last_modified_user"/>
         <default applyOnUpdate="1" expression=" if(  @qgis_platform = 'desktop', false, true )" field="_edited"/>
-        <default applyOnUpdate="0" expression="" field="anchor_point"/>
+        <default applyOnUpdate="0" expression="" field="anchor"/>
       </defaults>
       <constraints>
         <constraint constraints="3" notnull_strength="1" field="id" exp_strength="0" unique_strength="1"/>
@@ -2847,7 +2847,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" notnull_strength="0" field="_last_modified_date" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_last_modified_user" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_edited" exp_strength="0" unique_strength="0"/>
-        <constraint constraints="1" notnull_strength="1" field="anchor_point" exp_strength="0" unique_strength="0"/>
+        <constraint constraints="1" notnull_strength="1" field="anchor" exp_strength="0" unique_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint desc="" field="id" exp=""/>
@@ -2870,7 +2870,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="_last_modified_date" exp=""/>
         <constraint desc="" field="_last_modified_user" exp=""/>
         <constraint desc="" field="_edited" exp=""/>
-        <constraint desc="" field="anchor_point" exp=""/>
+        <constraint desc="" field="anchor" exp=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -2898,7 +2898,7 @@ def my_form_open(dialog, layer, feature):
           <column name="_edited" width="-1" hidden="0" type="field"/>
           <column name="usr_frame_1" width="-1" hidden="0" type="field"/>
           <column name="usr_frame_2" width="-1" hidden="0" type="field"/>
-          <column name="anchor_point" width="-1" hidden="0" type="field"/>
+          <column name="anchor" width="-1" hidden="0" type="field"/>
           <column name="usr_frame_3" width="-1" hidden="0" type="field"/>
         </columns>
       </attributetableconfig>
@@ -2949,7 +2949,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField name="anchor_point" index="20" showLabel="1">
+        <attributeEditorField name="anchor" index="20" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
@@ -3016,7 +3016,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" editable="1"/>
         <field name="_last_modified_date" editable="0"/>
         <field name="_last_modified_user" editable="1"/>
-        <field name="anchor_point" editable="1"/>
+        <field name="anchor" editable="1"/>
         <field name="comment" editable="1"/>
         <field name="dimension_1" editable="1"/>
         <field name="dimension_2" editable="1"/>
@@ -3039,7 +3039,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modified_date" labelOnTop="0"/>
         <field name="_last_modified_user" labelOnTop="0"/>
-        <field name="anchor_point" labelOnTop="0"/>
+        <field name="anchor" labelOnTop="0"/>
         <field name="comment" labelOnTop="0"/>
         <field name="dimension_1" labelOnTop="0"/>
         <field name="dimension_2" labelOnTop="0"/>
@@ -3062,7 +3062,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modified_date" reuseLastValue="0"/>
         <field name="_last_modified_user" reuseLastValue="0"/>
-        <field name="anchor_point" reuseLastValue="0"/>
+        <field name="anchor" reuseLastValue="0"/>
         <field name="comment" reuseLastValue="0"/>
         <field name="dimension_1" reuseLastValue="0"/>
         <field name="dimension_2" reuseLastValue="0"/>
@@ -3268,7 +3268,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="145,82,45,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -3283,7 +3283,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -3587,7 +3587,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="125,139,143,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -3602,7 +3602,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -3906,7 +3906,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="133,182,111,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -3921,7 +3921,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -4249,7 +4249,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="164,113,88,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -4264,7 +4264,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -4636,7 +4636,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="213,180,60,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -4651,7 +4651,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -5013,7 +5013,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="114,155,111,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -5028,7 +5028,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -5595,7 +5595,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="243,166,178,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -5610,7 +5610,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -6058,7 +6058,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="141,90,153,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -6073,7 +6073,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -6521,7 +6521,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="232,113,141,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -6536,7 +6536,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -8617,7 +8617,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="255,158,23,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -8632,7 +8632,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -8945,7 +8945,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="183,72,75,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -8960,7 +8960,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -9296,7 +9296,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="231,113,72,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -9311,7 +9311,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -9339,7 +9339,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="139,196,33,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="circle" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -9354,7 +9354,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="2.6" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -9752,7 +9752,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="group_by_anchor_point" configurationFlags="None">
+        <field name="group_by_anchor" configurationFlags="None">
           <editWidget type="CheckBox">
             <config>
               <Option type="Map">
@@ -9830,7 +9830,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="date de dernière modification" index="19" field="_last_modified_date"/>
         <alias name="dernière modification par" index="20" field="_last_modified_user"/>
         <alias name="édité" index="21" field="_edited"/>
-        <alias name="grouper par point d'ancrage" index="22" field="group_by_anchor_point"/>
+        <alias name="grouper par point d'ancrage" index="22" field="group_by_anchor"/>
         <alias name="photo 2" index="23" field="picture_2"/>
         <alias name="" index="24" field="geometry_x"/>
         <alias name="" index="25" field="geometry_y"/>
@@ -9858,7 +9858,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="1" expression="now()" field="_last_modified_date"/>
         <default applyOnUpdate="1" expression=" @user_full_name " field="_last_modified_user"/>
         <default applyOnUpdate="1" expression="if(  @qgis_platform = 'desktop', false, true )" field="_edited"/>
-        <default applyOnUpdate="0" expression="" field="group_by_anchor_point"/>
+        <default applyOnUpdate="0" expression="" field="group_by_anchor"/>
         <default applyOnUpdate="0" expression="" field="picture_2"/>
         <default applyOnUpdate="0" expression="" field="geometry_x"/>
         <default applyOnUpdate="0" expression="" field="geometry_y"/>
@@ -9886,7 +9886,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" notnull_strength="0" field="_last_modified_date" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_last_modified_user" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_edited" exp_strength="0" unique_strength="0"/>
-        <constraint constraints="1" notnull_strength="1" field="group_by_anchor_point" exp_strength="0" unique_strength="0"/>
+        <constraint constraints="1" notnull_strength="1" field="group_by_anchor" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="picture_2" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="geometry_x" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="geometry_y" exp_strength="0" unique_strength="0"/>
@@ -9914,7 +9914,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="_last_modified_date" exp=""/>
         <constraint desc="" field="_last_modified_user" exp=""/>
         <constraint desc="" field="_edited" exp=""/>
-        <constraint desc="" field="group_by_anchor_point" exp=""/>
+        <constraint desc="" field="group_by_anchor" exp=""/>
         <constraint desc="" field="picture_2" exp=""/>
         <constraint desc="" field="geometry_x" exp=""/>
         <constraint desc="" field="geometry_y" exp=""/>
@@ -9952,7 +9952,7 @@ def my_form_open(dialog, layer, feature):
           <column name="usr_support_1" width="-1" hidden="0" type="field"/>
           <column name="usr_support_2" width="-1" hidden="0" type="field"/>
           <column name="usr_support_3" width="-1" hidden="0" type="field"/>
-          <column name="group_by_anchor_point" width="-1" hidden="0" type="field"/>
+          <column name="group_by_anchor" width="-1" hidden="0" type="field"/>
           <column name="picture_2" width="-1" hidden="0" type="field"/>
           <column name="picture" width="-1" hidden="0" type="field"/>
         </columns>
@@ -10053,7 +10053,7 @@ def my_form_open(dialog, layer, feature):
               <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField name="group_by_anchor_point" index="22" showLabel="1">
+          <attributeEditorField name="group_by_anchor" index="22" showLabel="1">
             <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
               <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
             </labelStyle>
@@ -10110,7 +10110,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_type" editable="1"/>
         <field name="geometry_x" editable="0"/>
         <field name="geometry_y" editable="0"/>
-        <field name="group_by_anchor_point" editable="1"/>
+        <field name="group_by_anchor" editable="1"/>
         <field name="height" editable="1"/>
         <field name="height_free_under_signal" editable="1"/>
         <field name="id" editable="1"/>
@@ -10142,7 +10142,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_type" labelOnTop="0"/>
         <field name="geometry_x" labelOnTop="0"/>
         <field name="geometry_y" labelOnTop="0"/>
-        <field name="group_by_anchor_point" labelOnTop="0"/>
+        <field name="group_by_anchor" labelOnTop="0"/>
         <field name="height" labelOnTop="0"/>
         <field name="height_free_under_signal" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
@@ -10172,7 +10172,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_type" reuseLastValue="0"/>
         <field name="geometry_x" reuseLastValue="0"/>
         <field name="geometry_y" reuseLastValue="0"/>
-        <field name="group_by_anchor_point" reuseLastValue="0"/>
+        <field name="group_by_anchor" reuseLastValue="0"/>
         <field name="height" reuseLastValue="0"/>
         <field name="height_free_under_signal" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
@@ -10367,7 +10367,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="152,125,183,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -10382,7 +10382,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -10703,7 +10703,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="190,207,80,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -10718,7 +10718,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -11085,7 +11085,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="255,158,23,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -11100,7 +11100,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -11700,7 +11700,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="225,89,137,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -11715,7 +11715,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -11747,7 +11747,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="254,0,42,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="circle" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -11762,7 +11762,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="20" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -11786,7 +11786,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="182,15,224,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="circle" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -11801,7 +11801,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="20" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -12121,7 +12121,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="square" name="cap_style" type="QString"/>
                 <Option value="229,182,54,255" name="color" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="bevel" name="joinstyle" type="QString"/>
                 <Option value="diamond" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
@@ -12136,7 +12136,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="3" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="MM" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -12168,7 +12168,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="0,0,0,255" name="color" type="QString"/>
                 <Option value="0" name="fixedAspectRatio" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="gpsicons/question.svg" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="offset_map_unit_scale" type="QString"/>
@@ -12198,7 +12198,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="Point" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -12226,7 +12226,7 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option name="offset" type="Map">
                       <Option value="true" name="active" type="bool"/>
-                      <Option value="array(&#xa;CASE WHEN &quot;_frame_anchor_point_rectified&quot; IS  'CENTER' THEN 0&#xa;WHEN   &quot;_frame_anchor_point_rectified&quot; IS 'LEFT' THEN 1&#xa;WHEN  &quot;_frame_anchor_point_rectified&quot; IS  'RIGHT' THEN -1&#xa;END&#xa;* @signalo_img_size *  &quot;_group_width&quot; / 2 / 100&#xa;+  &quot;_azimut_offset_x_rectified&quot; * @signalo_img_size&#xa;-- X&#xa;,(&quot;_final_rank&quot;-1)*2 + @signalo_img_size*(0.2+coalesce( &quot;_symbol_shift&quot;,0)/100) &#xa;+  &quot;_azimut_offset_y_rectified&quot; * @signalo_img_size&#xa;-- Y&#xa;)" name="expression" type="QString"/>
+                      <Option value="array(&#xa;CASE WHEN &quot;_frame_anchor_rectified&quot; IS  'CENTER' THEN 0&#xa;WHEN   &quot;_frame_anchor_rectified&quot; IS 'LEFT' THEN 1&#xa;WHEN  &quot;_frame_anchor_rectified&quot; IS  'RIGHT' THEN -1&#xa;END&#xa;* @signalo_img_size *  &quot;_group_width&quot; / 2 / 100&#xa;+  &quot;_azimut_offset_x_rectified&quot; * @signalo_img_size&#xa;-- X&#xa;,(&quot;_final_rank&quot;-1)*2 + @signalo_img_size*(0.2+coalesce( &quot;_symbol_shift&quot;,0)/100) &#xa;+  &quot;_azimut_offset_y_rectified&quot; * @signalo_img_size&#xa;-- Y&#xa;)" name="expression" type="QString"/>
                       <Option value="3" name="type" type="int"/>
                     </Option>
                     <Option name="vAnchor" type="Map">
@@ -12249,7 +12249,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="255,0,0,255" name="color" type="QString"/>
                 <Option value="0" name="fixedAspectRatio" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="./images/other/original/marker.svg" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="offset_map_unit_scale" type="QString"/>
@@ -12263,7 +12263,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="30" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="Point" name="size_unit" type="QString"/>
-                <Option value="0" name="vertical_anchor_point" type="QString"/>
+                <Option value="0" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -12303,7 +12303,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="0" name="angle" type="QString"/>
                 <Option value="0,0,0,255" name="color" type="QString"/>
                 <Option value="0" name="fixedAspectRatio" type="QString"/>
-                <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                <Option value="1" name="horizontal_anchor" type="QString"/>
                 <Option value="./images/edited.svg" name="name" type="QString"/>
                 <Option value="0,0" name="offset" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="offset_map_unit_scale" type="QString"/>
@@ -12333,7 +12333,7 @@ def my_form_open(dialog, layer, feature):
                 <Option value="8.2" name="size" type="QString"/>
                 <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                 <Option value="Point" name="size_unit" type="QString"/>
-                <Option value="1" name="vertical_anchor_point" type="QString"/>
+                <Option value="1" name="vertical_anchor" type="QString"/>
               </Option>
               <data_defined_properties>
                 <Option type="Map">
@@ -12402,7 +12402,7 @@ def my_form_open(dialog, layer, feature):
                     <Option value="0" name="angle" type="QString"/>
                     <Option value="square" name="cap_style" type="QString"/>
                     <Option value="213,180,60,255" name="color" type="QString"/>
-                    <Option value="1" name="horizontal_anchor_point" type="QString"/>
+                    <Option value="1" name="horizontal_anchor" type="QString"/>
                     <Option value="bevel" name="joinstyle" type="QString"/>
                     <Option value="circle" name="name" type="QString"/>
                     <Option value="0,0" name="offset" type="QString"/>
@@ -12417,7 +12417,7 @@ def my_form_open(dialog, layer, feature):
                     <Option value="2" name="size" type="QString"/>
                     <Option value="3x:0,0,0,0,0,0" name="size_map_unit_scale" type="QString"/>
                     <Option value="MM" name="size_unit" type="QString"/>
-                    <Option value="1" name="vertical_anchor_point" type="QString"/>
+                    <Option value="1" name="vertical_anchor" type="QString"/>
                   </Option>
                   <data_defined_properties>
                     <Option type="Map">
@@ -13144,7 +13144,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="frame_anchor_point" configurationFlags="None">
+        <field name="frame_anchor" configurationFlags="None">
           <editWidget type="Enumeration">
             <config>
               <Option/>
@@ -13359,7 +13359,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="group_by_anchor_point" configurationFlags="None">
+        <field name="group_by_anchor" configurationFlags="None">
           <editWidget type="CheckBox">
             <config>
               <Option type="Map">
@@ -13571,7 +13571,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_frame_anchor_point_rectified" configurationFlags="None">
+        <field name="_frame_anchor_rectified" configurationFlags="None">
           <editWidget type="Enumeration">
             <config>
               <Option/>
@@ -13775,7 +13775,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="" index="42" field="frame__inserted_user"/>
         <alias name="" index="43" field="frame__last_modified_date"/>
         <alias name="" index="44" field="frame__last_modified_user"/>
-        <alias name="" index="45" field="frame_anchor_point"/>
+        <alias name="" index="45" field="frame_anchor"/>
         <alias name="Commentaire cadre" index="46" field="frame_comment"/>
         <alias name="" index="47" field="frame_dimension_1"/>
         <alias name="" index="48" field="frame_dimension_2"/>
@@ -13792,7 +13792,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="" index="59" field="frame_usr_frame_3"/>
         <alias name="Rang signal" index="60" field="sign_rank"/>
         <alias name="Id support" index="61" field="support_id"/>
-        <alias name="" index="62" field="group_by_anchor_point"/>
+        <alias name="" index="62" field="group_by_anchor"/>
         <alias name="" index="63" field="fk_support_type"/>
         <alias name="" index="64" field="directional_sign"/>
         <alias name="" index="65" field="_symbol_value_de"/>
@@ -13812,7 +13812,7 @@ def my_form_open(dialog, layer, feature):
         <alias name="" index="79" field="_azimut_rectified"/>
         <alias name="" index="80" field="_azimut_offset_x_rectified"/>
         <alias name="" index="81" field="_azimut_offset_y_rectified"/>
-        <alias name="" index="82" field="_frame_anchor_point_rectified"/>
+        <alias name="" index="82" field="_frame_anchor_rectified"/>
         <alias name="" index="83" field="_verso"/>
         <alias name="" index="84" field="_rank"/>
         <alias name="" index="85" field="_final_rank"/>
@@ -13876,7 +13876,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="frame__inserted_user"/>
         <default applyOnUpdate="0" expression="" field="frame__last_modified_date"/>
         <default applyOnUpdate="0" expression="" field="frame__last_modified_user"/>
-        <default applyOnUpdate="0" expression="" field="frame_anchor_point"/>
+        <default applyOnUpdate="0" expression="" field="frame_anchor"/>
         <default applyOnUpdate="0" expression="NULL" field="frame_comment"/>
         <default applyOnUpdate="0" expression="" field="frame_dimension_1"/>
         <default applyOnUpdate="0" expression="" field="frame_dimension_2"/>
@@ -13893,7 +13893,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="frame_usr_frame_3"/>
         <default applyOnUpdate="0" expression="1" field="sign_rank"/>
         <default applyOnUpdate="0" expression="" field="support_id"/>
-        <default applyOnUpdate="0" expression="" field="group_by_anchor_point"/>
+        <default applyOnUpdate="0" expression="" field="group_by_anchor"/>
         <default applyOnUpdate="0" expression="" field="fk_support_type"/>
         <default applyOnUpdate="0" expression="" field="directional_sign"/>
         <default applyOnUpdate="0" expression="" field="_symbol_value_de"/>
@@ -13913,7 +13913,7 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="_azimut_rectified"/>
         <default applyOnUpdate="0" expression="" field="_azimut_offset_x_rectified"/>
         <default applyOnUpdate="0" expression="" field="_azimut_offset_y_rectified"/>
-        <default applyOnUpdate="0" expression="" field="_frame_anchor_point_rectified"/>
+        <default applyOnUpdate="0" expression="" field="_frame_anchor_rectified"/>
         <default applyOnUpdate="0" expression="" field="_verso"/>
         <default applyOnUpdate="0" expression="" field="_rank"/>
         <default applyOnUpdate="0" expression="" field="_final_rank"/>
@@ -13977,7 +13977,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" notnull_strength="0" field="frame__inserted_user" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="frame__last_modified_date" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="frame__last_modified_user" exp_strength="0" unique_strength="0"/>
-        <constraint constraints="0" notnull_strength="0" field="frame_anchor_point" exp_strength="0" unique_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="frame_anchor" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="frame_comment" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="frame_dimension_1" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="frame_dimension_2" exp_strength="0" unique_strength="0"/>
@@ -13994,7 +13994,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" notnull_strength="0" field="frame_usr_frame_3" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="sign_rank" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="support_id" exp_strength="0" unique_strength="0"/>
-        <constraint constraints="0" notnull_strength="0" field="group_by_anchor_point" exp_strength="0" unique_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="group_by_anchor" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="fk_support_type" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="directional_sign" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_symbol_value_de" exp_strength="0" unique_strength="0"/>
@@ -14014,7 +14014,7 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" notnull_strength="0" field="_azimut_rectified" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_azimut_offset_x_rectified" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_azimut_offset_y_rectified" exp_strength="0" unique_strength="0"/>
-        <constraint constraints="0" notnull_strength="0" field="_frame_anchor_point_rectified" exp_strength="0" unique_strength="0"/>
+        <constraint constraints="0" notnull_strength="0" field="_frame_anchor_rectified" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_verso" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_rank" exp_strength="0" unique_strength="0"/>
         <constraint constraints="0" notnull_strength="0" field="_final_rank" exp_strength="0" unique_strength="0"/>
@@ -14078,7 +14078,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="frame__inserted_user" exp=""/>
         <constraint desc="" field="frame__last_modified_date" exp=""/>
         <constraint desc="" field="frame__last_modified_user" exp=""/>
-        <constraint desc="" field="frame_anchor_point" exp=""/>
+        <constraint desc="" field="frame_anchor" exp=""/>
         <constraint desc="" field="frame_comment" exp=""/>
         <constraint desc="" field="frame_dimension_1" exp=""/>
         <constraint desc="" field="frame_dimension_2" exp=""/>
@@ -14095,7 +14095,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="frame_usr_frame_3" exp=""/>
         <constraint desc="" field="sign_rank" exp=""/>
         <constraint desc="" field="support_id" exp=""/>
-        <constraint desc="" field="group_by_anchor_point" exp=""/>
+        <constraint desc="" field="group_by_anchor" exp=""/>
         <constraint desc="" field="fk_support_type" exp=""/>
         <constraint desc="" field="directional_sign" exp=""/>
         <constraint desc="" field="_symbol_value_de" exp=""/>
@@ -14115,7 +14115,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" field="_azimut_rectified" exp=""/>
         <constraint desc="" field="_azimut_offset_x_rectified" exp=""/>
         <constraint desc="" field="_azimut_offset_y_rectified" exp=""/>
-        <constraint desc="" field="_frame_anchor_point_rectified" exp=""/>
+        <constraint desc="" field="_frame_anchor_rectified" exp=""/>
         <constraint desc="" field="_verso" exp=""/>
         <constraint desc="" field="_rank" exp=""/>
         <constraint desc="" field="_final_rank" exp=""/>
@@ -14215,8 +14215,8 @@ def my_form_open(dialog, layer, feature):
           <column name="azimut__edited" width="-1" hidden="0" type="field"/>
           <column name="sign__edited" width="-1" hidden="0" type="field"/>
           <column name="fk_user_sign" width="-1" hidden="0" type="field"/>
-          <column name="frame_anchor_point" width="-1" hidden="0" type="field"/>
-          <column name="group_by_anchor_point" width="-1" hidden="0" type="field"/>
+          <column name="frame_anchor" width="-1" hidden="0" type="field"/>
+          <column name="group_by_anchor" width="-1" hidden="0" type="field"/>
           <column name="fk_support_type" width="-1" hidden="0" type="field"/>
           <column name="pk" width="-1" hidden="0" type="field"/>
           <column name="hanging_mode" width="-1" hidden="0" type="field"/>
@@ -14230,7 +14230,7 @@ def my_form_open(dialog, layer, feature):
           <column name="_img_direction" width="-1" hidden="0" type="field"/>
           <column name="_azimut_rectified" width="-1" hidden="0" type="field"/>
           <column name="_rank" width="-1" hidden="0" type="field"/>
-          <column name="_frame_anchor_point_rectified" width="-1" hidden="0" type="field"/>
+          <column name="_frame_anchor_rectified" width="-1" hidden="0" type="field"/>
           <column name="_group_height" width="-1" hidden="0" type="field"/>
           <column name="_group_width" width="-1" hidden="0" type="field"/>
           <column name="azimuts_for_support" width="-1" hidden="0" type="field"/>
@@ -14419,7 +14419,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField name="frame_anchor_point" index="45" showLabel="1">
+        <attributeEditorField name="frame_anchor" index="45" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
@@ -14609,7 +14609,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField name="_frame_anchor_point_rectified" index="82" showLabel="1">
+        <attributeEditorField name="_frame_anchor_rectified" index="82" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
@@ -14679,7 +14679,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField name="group_by_anchor_point" index="62" showLabel="1">
+        <attributeEditorField name="group_by_anchor" index="62" showLabel="1">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont style="" italic="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" strikethrough="0" underline="0"/>
           </labelStyle>
@@ -14729,7 +14729,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_rectified" editable="1"/>
         <field name="_edited" editable="1"/>
         <field name="_final_rank" editable="1"/>
-        <field name="_frame_anchor_point_rectified" editable="1"/>
+        <field name="_frame_anchor_rectified" editable="1"/>
         <field name="_group_height" editable="1"/>
         <field name="_group_info" editable="1"/>
         <field name="_group_width" editable="1"/>
@@ -14789,7 +14789,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame__inserted_user" editable="1"/>
         <field name="frame__last_modified_date" editable="1"/>
         <field name="frame__last_modified_user" editable="1"/>
-        <field name="frame_anchor_point" editable="1"/>
+        <field name="frame_anchor" editable="1"/>
         <field name="frame_comment" editable="1"/>
         <field name="frame_dimension_1" editable="1"/>
         <field name="frame_dimension_2" editable="1"/>
@@ -14806,7 +14806,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" editable="1"/>
         <field name="frame_usr_frame_3" editable="1"/>
         <field name="geometry" editable="1"/>
-        <field name="group_by_anchor_point" editable="1"/>
+        <field name="group_by_anchor" editable="1"/>
         <field name="hanging_mode" editable="1"/>
         <field name="id" editable="1"/>
         <field name="inscription" editable="1"/>
@@ -14849,7 +14849,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_rectified" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
         <field name="_final_rank" labelOnTop="0"/>
-        <field name="_frame_anchor_point_rectified" labelOnTop="0"/>
+        <field name="_frame_anchor_rectified" labelOnTop="0"/>
         <field name="_group_height" labelOnTop="0"/>
         <field name="_group_info" labelOnTop="0"/>
         <field name="_group_width" labelOnTop="0"/>
@@ -14909,7 +14909,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame__inserted_user" labelOnTop="0"/>
         <field name="frame__last_modified_date" labelOnTop="0"/>
         <field name="frame__last_modified_user" labelOnTop="0"/>
-        <field name="frame_anchor_point" labelOnTop="0"/>
+        <field name="frame_anchor" labelOnTop="0"/>
         <field name="frame_comment" labelOnTop="0"/>
         <field name="frame_dimension_1" labelOnTop="0"/>
         <field name="frame_dimension_2" labelOnTop="0"/>
@@ -14926,7 +14926,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" labelOnTop="0"/>
         <field name="frame_usr_frame_3" labelOnTop="0"/>
         <field name="geometry" labelOnTop="0"/>
-        <field name="group_by_anchor_point" labelOnTop="0"/>
+        <field name="group_by_anchor" labelOnTop="0"/>
         <field name="hanging_mode" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
         <field name="inscription" labelOnTop="0"/>
@@ -14969,7 +14969,7 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_rectified" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
         <field name="_final_rank" reuseLastValue="0"/>
-        <field name="_frame_anchor_point_rectified" reuseLastValue="0"/>
+        <field name="_frame_anchor_rectified" reuseLastValue="0"/>
         <field name="_group_height" reuseLastValue="0"/>
         <field name="_group_info" reuseLastValue="0"/>
         <field name="_group_width" reuseLastValue="0"/>
@@ -15026,7 +15026,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame__inserted_user" reuseLastValue="0"/>
         <field name="frame__last_modified_date" reuseLastValue="0"/>
         <field name="frame__last_modified_user" reuseLastValue="0"/>
-        <field name="frame_anchor_point" reuseLastValue="0"/>
+        <field name="frame_anchor" reuseLastValue="0"/>
         <field name="frame_comment" reuseLastValue="0"/>
         <field name="frame_dimension_1" reuseLastValue="0"/>
         <field name="frame_dimension_2" reuseLastValue="0"/>
@@ -15043,7 +15043,7 @@ def my_form_open(dialog, layer, feature):
         <field name="frame_usr_frame_2" reuseLastValue="0"/>
         <field name="frame_usr_frame_3" reuseLastValue="0"/>
         <field name="geometry" reuseLastValue="0"/>
-        <field name="group_by_anchor_point" reuseLastValue="0"/>
+        <field name="group_by_anchor" reuseLastValue="0"/>
         <field name="hanging_mode" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
         <field name="inscription_1" reuseLastValue="0"/>

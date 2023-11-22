@@ -1,8 +1,8 @@
-CREATE TYPE signalo_db.anchor_point AS ENUM ('LEFT', 'CENTER', 'RIGHT');
+CREATE TYPE signalo_db.anchor AS ENUM ('LEFT', 'CENTER', 'RIGHT');
 CREATE TYPE signalo_db.sign_hanging AS ENUM ('RECTO', 'RECTO-VERSO', 'VERSO');
 
-ALTER TABLE signalo_db.support ADD COLUMN group_by_anchor_point BOOLEAN NOT NULL DEFAULT TRUE;
-ALTER TABLE signalo_db.frame ADD COLUMN anchor_point signalo_db.anchor_point NOT NULL DEFAULT 'CENTER'::signalo_db.anchor_point;
+ALTER TABLE signalo_db.support ADD COLUMN group_by_anchor BOOLEAN NOT NULL DEFAULT TRUE;
+ALTER TABLE signalo_db.frame ADD COLUMN anchor signalo_db.anchor NOT NULL DEFAULT 'CENTER'::signalo_db.anchor;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_x INTEGER NOT NULL DEFAULT 0;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_y INTEGER NOT NULL DEFAULT 0;
 
@@ -29,15 +29,15 @@ ALTER TABLE signalo_db.vl_official_sign ADD CONSTRAINT directional CHECK (
 );
 
 -- adjust frame anchor point based on official sign
-UPDATE signalo_db.frame f SET anchor_point = 'LEFT'::signalo_db.anchor_point
+UPDATE signalo_db.frame f SET anchor = 'LEFT'::signalo_db.anchor
 FROM signalo_db.sign s, signalo_db.vl_official_sign o
 WHERE s.fk_frame = f.id AND s.fk_sign_type = 11 AND s.fk_official_sign = o.id AND o.id LIKE '%-r';
 
-UPDATE signalo_db.frame f SET anchor_point = 'RIGHT'::signalo_db.anchor_point
+UPDATE signalo_db.frame f SET anchor = 'RIGHT'::signalo_db.anchor
 FROM signalo_db.sign s, signalo_db.vl_official_sign o
 WHERE s.fk_frame = f.id AND s.fk_sign_type = 11 AND s.fk_official_sign = o.id AND o.id LIKE '%-l';
 
-UPDATE signalo_db.frame f SET anchor_point = 'CENTER'::signalo_db.anchor_point
+UPDATE signalo_db.frame f SET anchor = 'CENTER'::signalo_db.anchor
 FROM signalo_db.sign s, signalo_db.vl_official_sign o
 WHERE s.fk_frame = f.id AND s.fk_sign_type = 11 AND s.fk_official_sign = o.id AND o.id NOT LIKE '%-r' AND o.id NOT LIKE '%-l';
 
