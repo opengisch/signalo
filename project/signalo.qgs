@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" version="3.28.11-Firenze" saveDateTime="2023-11-24T09:53:37">
+<qgis saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" version="3.28.11-Firenze" saveDateTime="2023-11-24T09:58:07">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -193,10 +193,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537525.13483177125453949</xmin>
-      <ymin>1152355.23896568617783487</ymin>
-      <xmax>2538011.56064008176326752</xmax>
-      <ymax>1152684.9447816249448806</ymax>
+      <xmin>2537358.06239502038806677</xmin>
+      <ymin>1152392.92951528448611498</ymin>
+      <xmax>2537789.99061832390725613</xmax>
+      <ymax>1152685.69615070568397641</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1267,6 +1267,8 @@
           <Option name="QFieldSync/photo_naming" type="QString" value="{}"/>
           <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{&quot;azimut-cadre&quot;: 4}"/>
           <Option name="dualview/previewExpressions" type="List">
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
@@ -12232,8 +12234,8 @@ def my_form_open(dialog, layer, feature):
                   <Option name="properties" type="Map">
                     <Option name="angle" type="Map">
                       <Option name="active" type="bool" value="true"/>
-                      <Option name="field" type="QString" value="_azimut_rectified"/>
-                      <Option name="type" type="int" value="2"/>
+                      <Option name="expression" type="QString" value="&quot;_azimut_rectified&quot; +180"/>
+                      <Option name="type" type="int" value="3"/>
                     </Option>
                     <Option name="hAnchor" type="Map">
                       <Option name="active" type="bool" value="true"/>
@@ -12297,7 +12299,7 @@ def my_form_open(dialog, layer, feature):
                   <Option name="properties" type="Map">
                     <Option name="angle" type="Map">
                       <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="azimut"/>
+                      <Option name="expression" type="QString" value="azimut+180"/>
                       <Option name="type" type="int" value="3"/>
                     </Option>
                     <Option name="enabled" type="Map">
@@ -15419,7 +15421,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152173.23925606557168067" ymax="1152866.94449124555103481" xmin="2537525.13483177125453949" xmax="2538011.56064008176326752">
+    <DefaultViewExtent ymin="1152392.92951528448611498" ymax="1152685.69615070568397641" xmin="2537354.53134652832522988" xmax="2537793.52166681597009301">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
