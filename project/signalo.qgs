@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" version="3.28.11-Firenze" saveDateTime="2023-11-23T11:31:14">
+<qgis saveUser="rouzauddenis" saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" version="3.28.11-Firenze" saveDateTime="2023-11-24T09:53:37">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -193,10 +193,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537730.59457535110414028</xmin>
-      <ymin>1152456.69126552506349981</ymin>
-      <xmax>2537822.66033852379769087</xmax>
-      <ymax>1152519.09465171047486365</ymax>
+      <xmin>2537525.13483177125453949</xmin>
+      <ymin>1152355.23896568617783487</ymin>
+      <xmax>2538011.56064008176326752</xmax>
+      <ymax>1152684.9447816249448806</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -12179,7 +12179,6 @@ def my_form_open(dialog, layer, feature):
       <renderer-v2 enableorderby="0" referencescale="-1" forceraster="0" type="RuleRenderer" symbollevels="0">
         <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
           <rule symbol="0" label="Signaux" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" filter=" @qgis_platform = 'desktop' or &#xa; ( &#xa;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xa; )"/>
-          <rule symbol="1" label="édité" key="{b6d63966-7f0e-44fd-93c0-07a2649b11cd}" filter=" @qgis_platform = 'desktop' and &#xa; ( &#xa;&quot;support__edited&quot; is true or &quot;azimut__edited&quot; is true or &quot;sign__edited&quot; is true or  &quot;frame__edited&quot; is true&#xa; )"/>
         </rules>
         <symbols>
           <symbol name="0" frame_rate="10" is_animated="0" clip_to_extent="1" alpha="1" type="marker" force_rhr="0">
@@ -12303,102 +12302,12 @@ def my_form_open(dialog, layer, feature):
                     </Option>
                     <Option name="enabled" type="Map">
                       <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="_verso IS FALSE AND &quot;fk_support_type&quot; =  17"/>
+                      <Option name="expression" type="QString" value="_verso IS FALSE AND coalesce(&quot;fk_support_type&quot;, 0) =  17"/>
                       <Option name="type" type="int" value="3"/>
                     </Option>
                     <Option name="offset" type="Map">
                       <Option name="active" type="bool" value="true"/>
                       <Option name="expression" type="QString" value="array(0, @signalo_img_size * (0.2+&quot;_max_shift_for_azimut&quot; /100) )"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                  </Option>
-                  <Option name="type" type="QString" value="collection"/>
-                </Option>
-              </data_defined_properties>
-            </layer>
-          </symbol>
-          <symbol name="1" frame_rate="10" is_animated="0" clip_to_extent="1" alpha="1" type="marker" force_rhr="0">
-            <data_defined_properties>
-              <Option type="Map">
-                <Option name="name" type="QString" value=""/>
-                <Option name="properties"/>
-                <Option name="type" type="QString" value="collection"/>
-              </Option>
-            </data_defined_properties>
-            <layer class="SvgMarker" locked="0" pass="0" enabled="1">
-              <Option type="Map">
-                <Option name="angle" type="QString" value="0"/>
-                <Option name="color" type="QString" value="0,0,0,255"/>
-                <Option name="fixedAspectRatio" type="QString" value="0"/>
-                <Option name="horizontal_anchor_point" type="QString" value="1"/>
-                <Option name="name" type="QString" value="./images/edited.svg"/>
-                <Option name="offset" type="QString" value="0,0"/>
-                <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="offset_unit" type="QString" value="Point"/>
-                <Option name="outline_color" type="QString" value="255,255,255,255"/>
-                <Option name="outline_width" type="QString" value="0"/>
-                <Option name="outline_width_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="outline_width_unit" type="QString" value="Pixel"/>
-                <Option name="parameters" type="Map">
-                  <Option name="text1" type="Map">
-                    <Option name="active" type="bool" value="true"/>
-                    <Option name="expression" type="QString" value="inscription_1"/>
-                    <Option name="type" type="int" value="3"/>
-                  </Option>
-                  <Option name="text2" type="Map">
-                    <Option name="active" type="bool" value="true"/>
-                    <Option name="expression" type="QString" value="inscription_2"/>
-                    <Option name="type" type="int" value="3"/>
-                  </Option>
-                  <Option name="text3" type="Map">
-                    <Option name="active" type="bool" value="true"/>
-                    <Option name="expression" type="QString" value="inscription_3"/>
-                    <Option name="type" type="int" value="3"/>
-                  </Option>
-                </Option>
-                <Option name="scale_method" type="QString" value="diameter"/>
-                <Option name="size" type="QString" value="8.2"/>
-                <Option name="size_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"/>
-                <Option name="size_unit" type="QString" value="Point"/>
-                <Option name="vertical_anchor_point" type="QString" value="1"/>
-              </Option>
-              <data_defined_properties>
-                <Option type="Map">
-                  <Option name="name" type="QString" value=""/>
-                  <Option name="properties" type="Map">
-                    <Option name="angle" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="&quot;azimut&quot;  - if(verso, 0, 180)"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="hAnchor" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="'center'"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="height" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="@signalo_img_size*&quot;_symbol_height&quot;/100"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="name" type="Map">
-                      <Option name="active" type="bool" value="false"/>
-                      <Option name="expression" type="QString" value="CASE &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_de&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_de&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_fr&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_fr&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_it&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_it&quot;  &#xd;&#xa;&#xd;&#xa;WHEN &quot;_img_ro&quot; is not null THEN 'images/official/editable/' ||  &quot;_img_ro&quot;  &#xd;&#xa;&#xd;&#xa;END"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="offset" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="array(0,(&quot;_final_rank&quot;-1)*2 + @signalo_img_size*(.5+coalesce( &quot;_symbol_shift&quot;,0)/100) )"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="vAnchor" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="'top'"/>
-                      <Option name="type" type="int" value="3"/>
-                    </Option>
-                    <Option name="width" type="Map">
-                      <Option name="active" type="bool" value="true"/>
-                      <Option name="expression" type="QString" value="@signalo_img_size*&quot;_symbol_width&quot;/100"/>
                       <Option name="type" type="int" value="3"/>
                     </Option>
                   </Option>
@@ -15510,7 +15419,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152422.24419903033412993" ymax="1152553.54171820520423353" xmin="2537730.59457535110414028" xmax="2537822.66033852379769087">
+    <DefaultViewExtent ymin="1152173.23925606557168067" ymax="1152866.94449124555103481" xmin="2537525.13483177125453949" xmax="2538011.56064008176326752">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
