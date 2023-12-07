@@ -1,4 +1,5 @@
 version: '3'
+
 services:
   signalo:
     build:
@@ -10,7 +11,7 @@ services:
       - ${SOURCE_DIR}:/usr/src
     ports:
       # making the postgres database accessible for debugging
-      - 5432:5432
+      - ${SIGNALO_PG_PORT:-5432}:${SIGNALO_PG_PORT:-5432}
 
   qgis:
     image: opengisch/qgis
@@ -20,3 +21,21 @@ services:
       - ./.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
     links:
       - signalo
+    profiles:
+      - qgis
+
+  schemaspy:
+    image: schemaspy/schemaspy
+    volumes:
+      - ../data_model/schemaspy:/output
+      - ../data_model/schemaspy.properties:/schemaspy.properties
+    depends_on:
+      - signalo
+    network_mode: "service:signalo"
+    command: [
+      "-configFile",
+      "/schemaspy.properties"
+    ]
+    user: "${UID}:${GID}"
+    profiles:
+      - schemaspy

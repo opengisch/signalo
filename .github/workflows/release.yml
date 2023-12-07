@@ -12,7 +12,7 @@ jobs:
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
       DOCKER_TAG: stable
-      COMPOSE_FILE: .docker/docker-compose.qgis.yml
+      COMPOSE_FILE: .docker/docker-compose.yml
 
     steps:
       - name: Checkout code
@@ -29,18 +29,18 @@ jobs:
       - name: Docker build
         run: |
           export SOURCE_DIR=$(pwd)
-          docker compose up --build -d
-          docker compose exec -T signalo init_db.sh wait
+          docker compose --profile qgis --profile schemaspy up --build -d
+          docker compose exec signalo init_db.sh wait
 
       - name: create dumps
         run: |
           export SOURCE_DIR=$(pwd)
-          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup signalo
-          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql signalo
-          docker compose exec -T signalo pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql signalo
-          docker compose exec -T signalo init_db.sh build -d
-          docker compose exec -T signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup signalo
-          docker compose exec -T signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql signalo
+          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup signalo
+          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql signalo
+          docker compose exec signalo pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql signalo
+          docker compose exec signalo init_db.sh build -d
+          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup signalo
+          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql signalo
 
       - name: translate project
         run: |
@@ -58,20 +58,15 @@ jobs:
           cp data_model/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
           zip -r signalo-${{ github.event.release.tag_name }}-project.zip project README.md
 
-      - name: "zip changelogs"
+      - name: zip changelogs
         run: |
           zip -r signalo-${{ github.event.release.tag_name }}-changelogs.zip data_model/changelogs
 
-      - name: SchemaSpy
+      - name: schemaspy
         run: |
-          sudo apt-get install -y openjdk-8-jdk graphviz
-          wget https://github.com/schemaspy/schemaspy/releases/download/v6.1.0/schemaspy-6.1.0.jar
-          wget https://jdbc.postgresql.org/download/postgresql-42.2.24.jar -O postgresql.jar
-          java -jar schemaspy-6.1.0.jar -t pgsql -db signalo -u postgres -host localhost -p postgres \
-               -schemas signalo_db,signalo_app -norows \
-               -hq -o model-documentation -dp postgresql.jar \
-               -desc "signalo data model documentation (version ${{ github.event.release.tag_name }})"
-          zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip model-documentation/*
+          sed -i "s/version dev/version ${{ github.event.release.tag_name }}/" data_model/schemaspy.properties
+          docker compose run schemaspy
+          zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip datamodel/schemaspy/*
 
       - name: Login to DockerHub
         if: github.event_name != 'pull_request'
