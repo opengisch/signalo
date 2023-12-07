@@ -28,13 +28,11 @@ jobs:
 
       - name: Docker build
         run: |
-          export SOURCE_DIR=$(pwd)
           docker compose --profile qgis --profile schemaspy up --build -d
           docker compose exec signalo init_db.sh wait
 
       - name: create dumps
         run: |
-          export SOURCE_DIR=$(pwd)
           docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup signalo
           docker compose exec signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql signalo
           docker compose exec signalo pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql signalo
@@ -45,7 +43,6 @@ jobs:
       - name: translate project
         run: |
           ./tx pull -a
-          export SOURCE_DIR=$(pwd)
           docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-compile.sh'
           rm project/signalo_*.ts  # do not package ts files
 

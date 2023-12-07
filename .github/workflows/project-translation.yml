@@ -25,13 +25,11 @@ jobs:
 
       - name: Start Docker compose
         run: |
-          export SOURCE_DIR=$(pwd)
           docker compose --profile qgis up --build -d
           docker compose exec signalo init_db.sh wait
 
       - name: Translate
         run: |
-          export SOURCE_DIR=$(pwd)
           docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-create-source.py'
 
       - name: Push to TX
