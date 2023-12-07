@@ -12,7 +12,7 @@ jobs:
 
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
-      COMPOSE_FILE: .docker/docker-compose.qgis.yml
+      COMPOSE_FILE: .docker/docker-compose.yml
 
     steps:
       - name: Checkout code
@@ -26,8 +26,8 @@ jobs:
       - name: Start Docker compose
         run: |
           export SOURCE_DIR=$(pwd)
-          docker compose up --build -d
-          docker compose exec -T signalo init_db.sh wait
+          docker compose --profile qgis up --build -d
+          docker compose exec signalo init_db.sh wait
 
       - name: Translate
         run: |
