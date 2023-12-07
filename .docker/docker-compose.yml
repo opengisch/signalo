@@ -27,8 +27,8 @@ services:
   schemaspy:
     image: schemaspy/schemaspy
     volumes:
-      - ../data_model/schemaspy:/output
-      - ../data_model/schemaspy.properties:/schemaspy.properties
+      - ../model-documentation:/output
+      - ${SOURCE_DIR:-..}/data_model/schemaspy.properties:/schemaspy.properties
     depends_on:
       - signalo
     network_mode: "service:signalo"
