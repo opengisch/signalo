@@ -1,4 +1,4 @@
-name: Update project translations
+name: 🌎 Update project translations
 
 on:
   push:
