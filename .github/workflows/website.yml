@@ -1,4 +1,4 @@
-name: Website MkDocs
+name: 🚧 Website MkDocs
 on:
   push:
     branches:
