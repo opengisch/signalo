@@ -6,6 +6,8 @@ project/signalo_attachments.zip
 website/tx
 website/local.html
 
+data/*
+
 .idea
 .DS_Store
 *.orig
