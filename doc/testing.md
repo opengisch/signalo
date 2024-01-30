@@ -47,4 +47,4 @@ To start SIGNALO virtual environement automatically with Docker, use: `docker up
 
 ## Setup on an existing DB server
 
-Run bash script to init the data model: `data_model/setup.sh -p _PG_SERVICE_`
+Run bash script to init the data model: `datamodel/setup.sh -p _PG_SERVICE_`
