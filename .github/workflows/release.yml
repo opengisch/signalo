@@ -52,16 +52,16 @@ jobs:
           sed -i 's|projectname="Signalo - Demo"|projectname="Signalo - v${{ github.event.release.tag_name }}"|' project/signalo.qgs
           sed 's/pg_signalo/pg_signalo_dev/g' project/signalo.qgs > project/signalo_dev.qgs
           sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
-          cp data_model/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
+          cp datamodel/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
           zip -r signalo-${{ github.event.release.tag_name }}-project.zip project README.md
 
       - name: zip changelogs
         run: |
-          zip -r signalo-${{ github.event.release.tag_name }}-changelogs.zip data_model/changelogs
+          zip -r signalo-${{ github.event.release.tag_name }}-changelogs.zip datamodel/changelogs
 
       - name: schemaspy
         run: |
-          sed -i "s/version dev/version ${{ github.event.release.tag_name }}/" data_model/schemaspy.properties
+          sed -i "s/version dev/version ${{ github.event.release.tag_name }}/" datamodel/schemaspy.properties
           docker compose run schemaspy
           zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip model-documentation/*
 
