@@ -5,7 +5,7 @@
    viewBox="0 0 100 80"
    version="1.1"
    id="svg891"
-   sodipodi:docname="mirror-noframe.svg"
+   sodipodi:docname="mirror-circular.svg"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
@@ -49,7 +49,7 @@
        x2="98.75"
        y2="50.000004"
        gradientUnits="userSpaceOnUse"
-       gradientTransform="matrix(1.031288,0,0,1.0746122,-1.5644016,-13.730608)" />
+       gradientTransform="matrix(0.98717632,0,0,1.0170571,0.64121181,-10.852653)" />
   </defs>
   <sodipodi:namedview
      pagecolor="#ffffff"
@@ -64,10 +64,10 @@
      inkscape:window-height="1051"
      id="namedview893"
      showgrid="false"
-     inkscape:zoom="5.0821436"
-     inkscape:cx="90.611371"
-     inkscape:cy="73.787762"
-     inkscape:window-x="5"
+     inkscape:zoom="4.7456101"
+     inkscape:cx="52.364184"
+     inkscape:cy="61.741271"
+     inkscape:window-x="0"
      inkscape:window-y="38"
      inkscape:window-maximized="0"
      inkscape:current-layer="svg891"
@@ -76,18 +76,8 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="pt" />
-  <rect
-     style="fill:url(#linearGradient868);fill-opacity:1;stroke:none;stroke-width:0;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+  <path
      id="rect840"
-     width="99.471588"
-     height="79.471588"
-     x="0.2642065"
-     y="0.2642065" />
-  <rect
-     style="fill:none;fill-opacity:1;stroke:#717171;stroke-width:0.528413;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
-     id="rect840-1"
-     width="99.471588"
-     height="79.471588"
-     x="0.2642065"
-     y="0.2642065" />
+     style="fill:url(#linearGradient868);fill-opacity:1;stroke:#ff0000;stroke-width:5.02275;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:20.0909, 5.02275;stroke-dashoffset:0;stroke-opacity:1;paint-order:fill markers stroke"
+     d="M 49.999561,2.5113372 A 47.488242,37.488761 0 0 0 2.5116792,40.000661 47.488242,37.488761 0 0 0 49.999561,77.488599 47.488242,37.488761 0 0 0 97.488845,40.000661 47.488242,37.488761 0 0 0 49.999561,2.5113372 Z" />
 </svg>
