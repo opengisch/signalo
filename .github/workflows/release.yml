@@ -43,7 +43,7 @@ jobs:
       - name: translate project
         run: |
           ./tx pull -a
-          docker compose run qgis /usr/src/project/scripts/project-translation-compile.sh /usr/src/project
+          docker compose run qgis sh -c '/usr/src/project/scripts/project-translation-compile.sh /usr/src/project'
           rm project/signalo_*.ts  # do not package ts files
 
       - name: set project version + create project archive
