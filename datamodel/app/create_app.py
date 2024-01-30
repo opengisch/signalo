@@ -34,6 +34,8 @@ def create_views(srid: int, pg_service: str):
     run_sql("datamodel/app/create_schema.sql", pg_service, variables)
 
     run_sql("datamodel/app/vw_edited_support.sql", pg_service, variables)
+    run_sql("datamodel/app/vw_azimut_edit.sql", pg_service, variables)
+
     vw_sign_symbol(pg_service=pg_service, srid=srid)
 
 
