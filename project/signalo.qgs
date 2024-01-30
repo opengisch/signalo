@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Rouzaud Denis" saveUser="rouzauddenis" saveDateTime="2024-01-30T09:28:45" version="3.28.11-Firenze" projectname="Signalo - Demo">
+<qgis saveUserFull="Rouzaud Denis" saveUser="rouzauddenis" saveDateTime="2024-01-30T09:40:02" version="3.28.11-Firenze" projectname="Signalo - Demo">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -193,10 +193,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537608.2291513062082231</xmin>
-      <ymin>1152416.96248149126768112</ymin>
-      <xmax>2537834.22565326327458024</xmax>
-      <ymax>1152570.14588539581745863</ymax>
+      <xmin>2537201.78926040325313807</xmin>
+      <ymin>1152333.50271277572028339</ymin>
+      <xmax>2537743.9898305693641305</xmax>
+      <ymax>1152701.01339640724472702</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1239,6 +1239,7 @@
           <Option name="QFieldSync/action" value="offline" type="QString"/>
           <Option name="QFieldSync/attachment_naming" value="{}" type="QString"/>
           <Option name="QFieldSync/cloud_action" value="offline" type="QString"/>
+          <Option name="QFieldSync/geometry_locked_expression" value="" type="QString"/>
           <Option name="QFieldSync/photo_naming" value="{}" type="QString"/>
           <Option name="QFieldSync/relationship_maximum_visible" value="{&quot;azimut-cadre&quot;: 4}" type="QString"/>
           <Option name="dualview/previewExpressions" type="List">
@@ -1248,10 +1249,14 @@
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option name="embeddedWidgets/count" value="0" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -1384,21 +1389,29 @@
           </editWidget>
         </field>
         <field name="offset_x" configurationFlags="None">
-          <editWidget type="TextEdit">
+          <editWidget type="Range">
             <config>
               <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="100" type="int"/>
+                <Option name="Min" value="0" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
               </Option>
             </config>
           </editWidget>
         </field>
         <field name="offset_y" configurationFlags="None">
-          <editWidget type="TextEdit">
+          <editWidget type="Range">
             <config>
               <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
+                <Option name="AllowNull" value="true" type="bool"/>
+                <Option name="Max" value="100" type="int"/>
+                <Option name="Min" value="0" type="int"/>
+                <Option name="Precision" value="0" type="int"/>
+                <Option name="Step" value="1" type="int"/>
+                <Option name="Style" value="SpinBox" type="QString"/>
               </Option>
             </config>
           </editWidget>
@@ -1533,6 +1546,16 @@ def my_form_open(dialog, layer, feature):
             <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
           </labelStyle>
         </attributeEditorField>
+        <attributeEditorField name="offset_x" index="11" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
+          </labelStyle>
+        </attributeEditorField>
+        <attributeEditorField name="offset_y" index="12" showLabel="1">
+          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
+            <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
+          </labelStyle>
+        </attributeEditorField>
         <attributeEditorRelation relationWidgetTypeId="ordered_relation_editor" name="azimut-cadre" relation="azimut-cadre" nmRelationId="" label="Cadres" showLabel="1" forceSuppressFormPopup="0">
           <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
             <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
@@ -1544,16 +1567,6 @@ def my_form_open(dialog, layer, feature):
             <Option name="ordering_field" value="rank" type="QString"/>
           </editor_configuration>
         </attributeEditorRelation>
-        <attributeEditorField name="offset_x" index="11" showLabel="1">
-          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-            <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
-          </labelStyle>
-        </attributeEditorField>
-        <attributeEditorField name="offset_y" index="12" showLabel="1">
-          <labelStyle overrideLabelFont="0" overrideLabelColor="0" labelColor="0,0,0,255">
-            <labelFont underline="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" bold="0" italic="0"/>
-          </labelStyle>
-        </attributeEditorField>
       </attributeEditorForm>
       <editable>
         <field name="_edited" editable="1"/>
@@ -1605,7 +1618,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="azimut-cadre">
           <config type="Map">
             <Option name="force-suppress-popup" value="false" type="bool"/>
-            <Option name="nm-rel" type="invalid"/>
+            <Option name="nm-rel" value="" type="QString"/>
           </config>
         </widget>
         <widget name="azimut_sign_1">
@@ -9100,15 +9113,15 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer simplifyMaxScale="1" readOnly="0" simplifyDrawingHints="0" simplifyAlgorithm="0" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" maxScale="0" hasScaleBasedVisibilityFlag="0" minScale="100000000" refreshOnNotifyMessage="" type="vector" legendPlaceholderImage="" autoRefreshEnabled="0" autoRefreshTime="0" simplifyLocal="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" wkbType="Point" geometry="Point" labelsEnabled="0">
       <extent>
-        <xmin>2537421.28515252703800797</xmin>
-        <ymin>1152455.01010819314979017</ymin>
+        <xmin>2537381.93679434293881059</xmin>
+        <ymin>1152420.06054681539535522</ymin>
         <xmax>2538449.47999999998137355</xmax>
         <ymax>1152830.11123771546408534</ymax>
       </extent>
       <wgs84extent>
-        <xmin>6.62307361719564902</xmin>
-        <ymin>46.52046085733173442</ymin>
-        <xmax>6.63652284548480331</xmax>
+        <xmin>6.62256084096342956</xmin>
+        <ymin>46.52014279500794203</ymin>
+        <xmax>6.63652751045500366</xmax>
         <ymax>46.52393046604050397</ymax>
       </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
@@ -11524,15 +11537,15 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer simplifyMaxScale="1" readOnly="0" simplifyDrawingHints="1" simplifyAlgorithm="0" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" maxScale="0" hasScaleBasedVisibilityFlag="0" minScale="100000000" refreshOnNotifyMessage="" type="vector" legendPlaceholderImage="" autoRefreshEnabled="0" autoRefreshTime="0" simplifyLocal="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" wkbType="Point" geometry="Point" labelsEnabled="0">
       <extent>
-        <xmin>2537421.28515252703800797</xmin>
-        <ymin>1152455.01010819314979017</ymin>
+        <xmin>2537381.93679434293881059</xmin>
+        <ymin>1152420.06054681539535522</ymin>
         <xmax>2538449.47999999998137355</xmax>
         <ymax>1152830.11123771546408534</ymax>
       </extent>
       <wgs84extent>
-        <xmin>6.62307361719564902</xmin>
-        <ymin>46.52046085733173442</ymin>
-        <xmax>6.63652284548480331</xmax>
+        <xmin>6.62256084096342956</xmin>
+        <ymin>46.52014279500794203</ymin>
+        <xmax>6.63652751045500366</xmax>
         <ymax>46.52393046604050397</ymax>
       </wgs84extent>
       <id>vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b</id>
@@ -11907,15 +11920,15 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer simplifyMaxScale="1" readOnly="1" simplifyDrawingHints="0" simplifyAlgorithm="0" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" maxScale="0" hasScaleBasedVisibilityFlag="1" minScale="2500" refreshOnNotifyMessage="" type="vector" legendPlaceholderImage="" autoRefreshEnabled="0" autoRefreshTime="0" simplifyLocal="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" wkbType="Point" geometry="Point" labelsEnabled="0">
       <extent>
-        <xmin>2537421.28515252703800797</xmin>
-        <ymin>1152455.01010819314979017</ymin>
+        <xmin>2537381.93679434293881059</xmin>
+        <ymin>1152420.06054681539535522</ymin>
         <xmax>2538449.47999999998137355</xmax>
         <ymax>1152830.11123771546408534</ymax>
       </extent>
       <wgs84extent>
-        <xmin>6.62307361719564902</xmin>
-        <ymin>46.52046085733173442</ymin>
-        <xmax>6.63652284548480331</xmax>
+        <xmin>6.62256084096342956</xmin>
+        <ymin>46.52014279500794203</ymin>
+        <xmax>6.63652751045500366</xmax>
         <ymax>46.52393046604050397</ymax>
       </wgs84extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
@@ -15401,7 +15414,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152361.59546815999783576" ymax="1152625.512898727087304" xmin="2537608.2291513062082231" xmax="2537834.22565326327458024">
+    <DefaultViewExtent ymin="1152333.50271277572028339" ymax="1152701.01339640724472702" xmin="2537190.97520879562944174" xmax="2537754.80388217698782682">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
