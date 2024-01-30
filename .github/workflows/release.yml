@@ -23,6 +23,9 @@ jobs:
           curl -OL https://github.com/transifex/cli/releases/download/v1.6.5/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
 
+      - name: Install Qt lrelease
+        run: sudo apt-get update && sudo apt-get install qtbase5-dev qttools5-dev-tools
+
       - name: Set version
         run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
 
@@ -43,7 +46,7 @@ jobs:
       - name: translate project
         run: |
           ./tx pull -a
-          docker compose run qgis sh -c 'xvfb-run /usr/src/project/scripts/project-translation-compile.sh /usr/src/project'
+          ./project/scripts/project-translation-compile.sh project
           rm project/signalo_*.ts  # do not package ts files
 
       - name: set project version + create project archive
