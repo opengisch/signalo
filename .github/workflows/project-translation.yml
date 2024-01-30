@@ -30,7 +30,7 @@ jobs:
 
       - name: Translate
         run: |
-          docker compose run qgis sh -c 'xvfb-run /usr/src/scripts/project-translation-create-source.py /usr/src/project/signalo.qgs'
+          docker compose run qgis sh -c 'xvfb-run /usr/src/project/scripts/project-translation-create-source.py /usr/src/project/signalo.qgs'
 
       - name: Push to TX
         run: ./tx push --source
