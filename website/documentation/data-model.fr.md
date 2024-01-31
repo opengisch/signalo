@@ -29,6 +29,7 @@ La description complète du modèle de données se trouve [ici](https://www.sign
 
 La structure des données peut évoluer d'une release à une autre. Si votre base de données est déjà en place, les mises à jour peuvent facilement être faites grâce à des fichiers de migration `sql`. Ainsi, la structure est actualisée sans modification des données existantes.
 
-1. Supprimer l'application: `psql -c "DROP SCHEMA signalo_app CASCADE"`
-2. Lancer les différents scripts SQL de migration: `psql -v ON_ERROR_STOP=1 -v SRID=2056 -f datamodel/changelogs/XXXX/XXXX_zzzzzz.sql` (pour chaque fichier)
-3. Recréer l'application avec le ficher SQL de la release: `psql -v ON_ERROR_STOP=1 -f signalo-1.X.Y-db-app.sql`
+1. Télécharger les changelogs et le fichier application (`signalo-1.X.Y-db-app.sql`) sur la page de la [release](https://github.com/opengisch/signalo/releases/latest)
+2. Supprimer l'application: `psql -c "DROP SCHEMA signalo_app CASCADE"`
+3. Lancer les différents scripts SQL de migration: `psql -v ON_ERROR_STOP=1 -v SRID=2056 -f datamodel/changelogs/XXXX/XXXX_zzzzzz.sql` (pour chaque fichier)
+4. Recréer l'application avec le ficher SQL de la release: `psql -v ON_ERROR_STOP=1 -f signalo-1.X.Y-db-app.sql`
