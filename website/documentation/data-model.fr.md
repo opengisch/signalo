@@ -32,4 +32,3 @@ La structure des données peut évoluer d'une release à une autre. Si votre bas
 1. Supprimer l'application: `psql -c "DROP SCHEMA signalo_app CASCADE"`
 2. Lancer les différents scripts SQL de migration: `psql -v ON_ERROR_STOP=1 -v SRID=2056 -f datamodel/changelogs/XXXX/XXXX_zzzzzz.sql` (pour chaque fichier)
 3. Recréer l'application avec le ficher SQL de la release: `psql -v ON_ERROR_STOP=1 -f signalo-1.X.Y-db-app.sql`
-
