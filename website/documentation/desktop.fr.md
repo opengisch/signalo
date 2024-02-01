@@ -26,7 +26,7 @@ hide:
   <figcaption>Onglet photo</figcaption>
 </figure>
 
-Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. Depuis la version 1.0.0, l'attribut 'Azimut' peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`. 
+Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. Depuis la version 1.0.0, l'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`. 
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
@@ -35,7 +35,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. Depu
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/azimut-edit.png){ width="500"; loading=lazy }
-  <figcaption>Définition de l'azimut de manière graphique, grâce à la vue *vw_azimut_edit*</figcaption>
+  <figcaption>Définition de l'azimut de manière graphique, grâce à la vue vw_azimut_edit</figcaption>
 </figure>
 
 ## Taille des panneaux
@@ -49,28 +49,28 @@ La taille des panneaux peut être ajustée dans les propriétés du projet, dans
 
 ## Décalage des panneaux
 
-En cas de supports portant de nombreux signaux, la visibilité des signaux sur la carte peut être améliorée avec les attributs `offset_x` et `offset_y` de la table `azimut` (attributs 'décalage X' et 'décalage Y' de la couche 'Azimut' dans QGIS). Ce décalage est dépendant du niveau de zoom.
+En cas de supports portant de nombreux signaux, la visibilité des signaux sur la carte peut être améliorée avec les attributs `offset_x` et `offset_y` de la table `azimut` (attributs *décalage X* et *décalage Y* de la couche *Azimut* dans QGIS). Ce décalage est dépendant du niveau de zoom.
 
 ## Panneaux spéciaux
 ### Panneaux directionnels
 
 Depuis la Version 1.0.0 le modèle des données permet une gestion plus fine des panneaux directionnels. Trois attributs définissent l'affichage de ces panneaux:
-* Dans la table `vl_official_sign` (couche 'Signal officiel' dans le projet QGIS), l'attribut boolean `directional_sign` permet de définir si un signal est un signal directionnel ou non.
-* Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: 'LEFT', 'CENTER' ou 'RIGHT' (couche 'Cadre' avec attribut 'point d'ancrage' dans le projet QGIS). 
-* Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case 'direction naturel ou gauche'. 
+* Dans la table `vl_official_sign` (couche *Signal officiel* dans le projet QGIS), l'attribut boolean `directional_sign` permet de définir si un signal est un signal directionnel ou non.
+* Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: *LEFT*, *CENTER* ou *RIGHT* (couche *Cadre* avec attribut *point d'ancrage* dans le projet QGIS). 
+* Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case *direction naturel ou gauche*. 
 
 ### Panneaux recto-verso
 
-Au niveau du signal, (table `sign`, couche 'Signal' dans QGIS) l'attribut `hanging_mode` ou 'mode d'accrochage' permet de définir si un panneaux porte le même signal des deux côté. 
-* 'VERSO' -> le signal n'est affiché que d'un côté
-* 'RECTO-VERSO' -> le signal est affiché des deux côté du panneau
-* 'RECTO' -> le signal n'est affiche que dans le dos du panneau. Cette valeur peut être choisi p.ex. quand le recto est le verso du panneau ne sont pas identique. 
+Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneaux porte le même signal des deux côté. 
+* *VERSO* -> le signal n'est affiché que d'un côté
+* *RECTO-VERSO* -> le signal est affiché des deux côté du panneau
+* *RECTO* -> le signal n'est affiche que dans le dos du panneau. Cette valeur peut être choisi p.ex. quand le recto est le verso du panneau ne sont pas identique. 
 
-*A noter: la couche 'cadre' contient également un attribut lié au recto-verso (case à cocher 'montage recto-verso'). La valeur de cet attribut n'est néanmoins qu'informative, elle n'aura aucune influence sur l'affichage du panneau sur la carte.*
+*A noter: la couche **cadre** contient également un attribut lié au recto-verso (case à cocher **montage recto-verso**). La valeur de cet attribut n'est néanmoins qu'informative, elle n'aura aucune influence sur l'affichage du panneau sur la carte.*
 
 ### Signaux définis par l'utilisateur
 
-Il arrive qu'une certaine composition de signaux sur un même panneau n'existe pas dans la sélection des signaux officiels. La table `vl_user_sign` (couche 'Signal défini par l'utilisateur' dans QGIS) permet la création de signaux personnalisés. Cette table contient les mêmes attributs que `vl_official_sign`, la liste des signaux officiels. Au minimum, les attributs suivants doivent être renseignés:
+Il arrive qu'une certaine composition de signaux sur un même panneau n'existe pas dans la sélection des signaux officiels. La table `vl_user_sign` (couche *Signal défini par l'utilisateur* dans QGIS) permet la création de signaux personnalisés. Cette table contient les mêmes attributs que `vl_official_sign`, la liste des signaux officiels. Au minimum, les attributs suivants doivent être renseignés:
 * `id` - identifiant unique qui sera utilisé dans la liste déroulante dans QGIS
 * `active` - à mettre sur *true*, autrement le signal n'apparaîtra pas dans la liste déroulante dans QGIS
 * `value_fr`, ou `value_de` ou `value_it`, en fonction de la langue utilisateur - ce nom apparaîtra également dans la liste déroulante dans QGIS
@@ -81,7 +81,7 @@ A partir de la version 1.0.0, les attributs suivants permettent en outre de cré
 * `directional_sign` - à mettre sur true s'il s'agit d'un panneau directionnel
 * `img_fr_right`, `img_de_right`, `img_it_right`, `img_ro_right`, qui contiendront le nom du fichier `.svg` avec direction à droite, par exemple *composite-r.svg*. Les attributs `img_fr`, `img_de` etc. contiendront alors le nom du fichier `.svg` avec direction à gauche, par exemple *composite-l.svg*.
 
-Afin d'accéder à la liste déroulante des signaux définis dans l'utilisateur dans QGIS, le 'type de signal' *défini par l'utilisateur* doit être choisi.
+Afin d'accéder à la liste déroulante des signaux définis dans l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/liste_defini_par_lutilisateur.png){ width="500"; loading=lazy }
@@ -91,7 +91,8 @@ Afin d'accéder à la liste déroulante des signaux définis dans l'utilisateur 
 La création du `.svg` correspondant est donc dans la responsabilité de l'utilisateur. Le fichier d'image doit être enregistré dans les deux dossiers 
 * project > images > user-defined > original : ceci est l'image non-dynamique qui sera aussi affiché dans le formulaire d'attributs
 * project > images > user-defined > editable : ceci est l'image dynamique qui permet d'afficher des inscriptions 
-Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé - et pour les tailles et pour comprendre comment rendre possible les inscriptions dynamiques. 
+
+Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques. 
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy }
