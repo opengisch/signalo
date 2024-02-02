@@ -8,7 +8,7 @@ INSERT INTO signalo_db.vl_official_sign(
 		'Début de localité sur route principale (1 ligne)',
 		'Inizio della località sulle strade principali (1 ligne)',
 		'427-1.svg', '427-1.svg', '427-1.svg', '427-1.svg', 80, 110,
-		0, 'Biel',
+		1, 'Biel',
 		false);
 
 INSERT INTO signalo_db.vl_official_sign(
@@ -21,7 +21,7 @@ INSERT INTO signalo_db.vl_official_sign(
 		'Début de localité sur route principale (2 lignes)',
 		'Inizio della località sulle strade principali (2 ligne)',
 		'427-2.svg', '427-2.svg', '427-2.svg', '427-2.svg', 80, 110,
-		0, 'Biel', 'Bienne',
+		2, 'Biel', 'Bienne',
 		false);
 
 INSERT INTO signalo_db.vl_official_sign(
@@ -34,7 +34,7 @@ INSERT INTO signalo_db.vl_official_sign(
 		'Début de localité sur route principale (3 lignes)',
 		'Inizio della località sulle strade principali (3 ligne)',
 		'427-3.svg', '427-3.svg', '427-3.svg', '427-3.svg', 80, 110,
-		0, 'Biel', 'Bienne', 'BE',
+		3, 'Biel', 'Bienne', 'BE',
 		false);
 
 INSERT INTO signalo_db.vl_official_sign(
@@ -47,7 +47,7 @@ INSERT INTO signalo_db.vl_official_sign(
 		'Début de localité sur route secondaire (1 ligne)',
 		'Inizio della località sulle strade secondarie (1 ligne)',
 		'429-1.svg', '429-1.svg', '429-1.svg', '429-1.svg', 80, 109,
-		0, 'Maur',
+		1, 'Maur',
 		false);
 
 INSERT INTO signalo_db.vl_official_sign(
@@ -60,7 +60,7 @@ INSERT INTO signalo_db.vl_official_sign(
 		'Début de localité sur route secondaire (2 lignes)',
 		'Inizio della località sulle strade secondarie (2 ligne)',
 		'429-2.svg', '429-2.svg', '429-2.svg', '429-2.svg', 80, 109,
-		0, 'Maur', '(ZH)',
+		2, 'Maur', '(ZH)',
 		false);
 
 
