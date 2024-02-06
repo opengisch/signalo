@@ -49,7 +49,7 @@ La taille des panneaux peut être ajustée dans les propriétés du projet, dans
 
 ## Décalage des panneaux
 
-En cas de supports portant de nombreux signaux, la visibilité des signaux sur la carte peut être améliorée avec les attributs `offset_x` et `offset_y` de la table `azimut` (attributs *décalage X* et *décalage Y* de la couche *Azimut* dans QGIS). Ce décalage est dépendant du niveau de zoom.
+En cas de supports portant de nombreux signaux, la visibilité des signaux sur la carte peut être améliorée avec les attributs `offset_x` et `offset_y` de la table `azimut` (attributs *décalage X* et *décalage Y* de la couche *Azimut* dans QGIS).
 
 ## Panneaux spéciaux
 ### Panneaux directionnels
