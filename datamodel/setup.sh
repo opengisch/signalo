@@ -75,6 +75,7 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changel
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0100/0100_add_signs_img.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0100/0100_indexes.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0100/0100_change_official.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0100/0100_direction_user_signs.sql
 
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
