@@ -39,7 +39,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , support.group_by_anchor
                 , support.fk_support_type
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
-                , COALESCE(vl_official_sign.directional_sign, FALSE) AS directional_sign
+                , COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, FALSE) AS directional_sign
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_de
                     ELSE vl_official_sign.value_de
