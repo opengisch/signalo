@@ -26,7 +26,7 @@ hide:
   <figcaption>Onglet photo</figcaption>
 </figure>
 
-Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. Depuis la version 1.0.0, l'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
+Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
@@ -55,7 +55,7 @@ En cas de supports portant de nombreux signaux, la visibilité des signaux sur l
 ### Panneaux directionnels
 
 Depuis la Version 1.0.0 le modèle des données permet une gestion plus fine des panneaux directionnels. Trois attributs définissent l'affichage de ces panneaux:
-* Dans la table `vl_official_sign` (couche *Signal officiel* dans le projet QGIS), l'attribut boolean `directional_sign` permet de définir si un signal est un signal directionnel ou non.
+* Dans la table `vl_official_sign` (couche *Signal officiel* dans le projet QGIS), l'attribut boolean `directional_sign` définit si un signal est un signal directionnel ou non.
 * Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: *LEFT*, *CENTER* ou *RIGHT* (couche *Cadre* avec l'attribut *point d'ancrage* dans le projet QGIS).
 * Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera à l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case *direction naturel ou gauche*.
 
@@ -77,14 +77,14 @@ Il arrive qu'une certaine composition de signaux sur un même panneau n'existe p
 * `img_fr` ou `img_de` ou `img_it`, en fonction de la langue de l'utilisateur. Cet attribut doit contenir le nom exact du fichier `.svg` du signal personnalisé
 * `img_height` et `img_width` - deux valeurs qui contiennent la hauteur et la largeur de l'image `.svg`
 
-A partir de la version 1.0.0, les attributs suivants permettent en outre de créer et gérer des panneaux directionnels personnalisés:
+Les attributs suivants permettent en outre de créer et gérer des panneaux directionnels personnalisés:
 * `directional_sign` - à mettre sur true s'il s'agit d'un panneau directionnel
 * `img_fr_right`, `img_de_right`, `img_it_right`, `img_ro_right`, qui contiendront le nom du fichier `.svg` avec direction à droite, par exemple *composite-r.svg*. Les attributs `img_fr`, `img_de` etc. contiendront alors le nom du fichier `.svg` avec direction à gauche, par exemple *composite-l.svg*.
 
 Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/liste_defini_par_lutilisateur.png){ width="500"; loading=lazy }
+  ![Liste définie par l'utilisateur](./assets/images/printscreen/liste_defini_par_lutilisateur.png){ width="500"; loading=lazy }
   <figcaption>Liste des types de signal</figcaption>
 </figure>
 
