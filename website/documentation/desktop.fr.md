@@ -56,15 +56,15 @@ En cas de supports portant de nombreux signaux, la visibilité des signaux sur l
 
 Depuis la Version 1.0.0 le modèle des données permet une gestion plus fine des panneaux directionnels. Trois attributs définissent l'affichage de ces panneaux:
 * Dans la table `vl_official_sign` (couche *Signal officiel* dans le projet QGIS), l'attribut boolean `directional_sign` permet de définir si un signal est un signal directionnel ou non.
-* Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: *LEFT*, *CENTER* ou *RIGHT* (couche *Cadre* avec attribut *point d'ancrage* dans le projet QGIS).
-* Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case *direction naturel ou gauche*.
+* Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: *LEFT*, *CENTER* ou *RIGHT* (couche *Cadre* avec l'attribut *point d'ancrage* dans le projet QGIS).
+* Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera à l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case *direction naturel ou gauche*.
 
 ### Panneaux recto-verso
 
-Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneaux porte le même signal des deux côté.
+Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneaux porte le même signal des deux côtés.
 * *VERSO* -> le signal n'est affiché que d'un côté
-* *RECTO-VERSO* -> le signal est affiché des deux côté du panneau
-* *RECTO* -> le signal n'est affiche que dans le dos du panneau. Cette valeur peut être choisi p.ex. quand le recto est le verso du panneau ne sont pas identique.
+* *RECTO-VERSO* -> le signal est affiché des deux côtés du panneau
+* *RECTO* -> le signal n'est affiché que dans le dos du panneau. Cette valeur peut être choisi p.ex. quand le recto et le verso du panneau ne sont pas identiques.
 
 *A noter: la couche **cadre** contient également un attribut lié au recto-verso (case à cocher **montage recto-verso**). La valeur de cet attribut n'est néanmoins qu'informative, elle n'aura aucune influence sur l'affichage du panneau sur la carte.*
 
@@ -81,7 +81,7 @@ A partir de la version 1.0.0, les attributs suivants permettent en outre de cré
 * `directional_sign` - à mettre sur true s'il s'agit d'un panneau directionnel
 * `img_fr_right`, `img_de_right`, `img_it_right`, `img_ro_right`, qui contiendront le nom du fichier `.svg` avec direction à droite, par exemple *composite-r.svg*. Les attributs `img_fr`, `img_de` etc. contiendront alors le nom du fichier `.svg` avec direction à gauche, par exemple *composite-l.svg*.
 
-Afin d'accéder à la liste déroulante des signaux définis dans l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
+Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
   ![Projet QField](./assets/images/printscreen/liste_defini_par_lutilisateur.png){ width="500"; loading=lazy }
@@ -89,7 +89,7 @@ Afin d'accéder à la liste déroulante des signaux définis dans l'utilisateur 
 </figure>
 
 La création du `.svg` correspondant est donc dans la responsabilité de l'utilisateur. Le fichier d'image doit être enregistré dans les deux dossiers
-* project > images > user-defined > original : ceci est l'image non-dynamique qui sera aussi affiché dans le formulaire d'attributs
+* project > images > user-defined > original : ceci est l'image non-dynamique qui sera aussi affichée dans le formulaire d'attributs
 * project > images > user-defined > editable : ceci est l'image dynamique qui permet d'afficher des inscriptions
 
 Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
@@ -112,7 +112,7 @@ Plusieurs fichiers projets sont disponibles avec chaque version:
 
 ## Langues
 
-Un système de traduction du projet QGIS a été mis en place. Les fichiers de traduction `signalo_XX.qm` doivent se situer dans le dossier du projet QGIS. Le projet `signalo.qgs` s'ouvre alors dans la langue du profil de l'utilisateur QGIS. Pour le moment, le projet existe en français (langue *master*) et en allemand (fichier de traduction `signalo_de.qm`). Si la langue du logiciel est l'allemand, un fichier de projet `signalo_de.qgs` se créera alors automatiquement à l'ouverture du projet `signalo.qgs`.
+Un système de traduction du projet QGIS a été mis en place. Les fichiers de traduction `signalo_XX.qm` doivent se situer dans le dossier du projet QGIS. Le projet `signalo.qgs` s'ouvre alors dans la langue du profil de l'utilisateur QGIS. Pour le moment, le projet existe en français (langue *master*) et en allemand (avec le fichier de traduction `signalo_de.qm`). Si la langue du logiciel est l'allemand, un fichier de projet `signalo_de.qgs` se créera alors automatiquement à l'ouverture du projet `signalo.qgs`.
 
 ## Filtrage et analyse de la cohérence globale
 
