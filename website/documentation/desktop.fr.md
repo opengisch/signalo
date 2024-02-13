@@ -15,39 +15,39 @@ hide:
 !!! example
 
     === "Unordered List"
-    ``` markdown
-    * Sed sagittis eleifend rutrum
-    * Donec vitae suscipit est
-    * Nulla tempor lobortis orci
-    ```
+        ``` markdown
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+        ```
 
     === "Ordered List"
-    ``` markdown
-    1. Sed sagittis eleifend rutrum
-    2. Donec vitae suscipit est
-    3. Nulla tempor lobortis orci
-    ```
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ```
 
 
 !!! info Le formulaire et composé de trois onglets:
 
     === Général
-    <figure markdown>
-      ![Onglet général](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
-      <figcaption>Onglet général</figcaption>
-    </figure>
+        <figure markdown>
+          ![Onglet général](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
+          <figcaption>Onglet général</figcaption>
+        </figure>
 
     === Azimut
-    <figure markdown>
-      ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
-      <figcaption>Onglet azimut</figcaption>
-    </figure>
+        <figure markdown>
+          ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
+          <figcaption>Onglet azimut</figcaption>
+        </figure>
 
     === Photo
-    <figure markdown>
-      ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
-      <figcaption>Onglet photo</figcaption>
-    </figure>
+        <figure markdown>
+          ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
+          <figcaption>Onglet photo</figcaption>
+        </figure>
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
