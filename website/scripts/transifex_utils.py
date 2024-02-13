@@ -1,7 +1,8 @@
+#!/usr/bin/env python3
+
 import glob
 import os
-
-import frontmatter
+import re
 
 TX_ORGANIZATION = "opengisch"
 TX_PROJECT = "signalo-website"
@@ -30,10 +31,20 @@ def create_transifex_config():
             # Get relative path of file
             relative_path = os.path.relpath(file, start=root)
 
-            tx_slug = frontmatter.load(file).get("tx_slug", None)
+            tx_slugs = [re.match(r"^tx_slug: +(.*)", line) for line in open(file)]
+            tx_slugs = [t for t in tx_slugs if t]
 
-            if tx_slug:
-                print(f"Found file with tx_slug defined: {relative_path}, {tx_slug}")
+            if not tx_slugs:
+                print(f"No TX slug found for {relative_path}")
+
+            if len(tx_slugs) > 1:
+                print(f"More than 1 TX slug found for {relative_path}")
+
+            if tx_slugs:
+                tx_slug = tx_slugs[0].group(1)
+                print(
+                    f"Found file with tx_slug defined: `{relative_path}`, `{tx_slug}`"
+                )
                 f.write(f"[o:{TX_ORGANIZATION}:p:{TX_PROJECT}:r:{tx_slug}]\n")
                 f.write(
                     f"file_filter = {''.join(relative_path.split('.')[:-2])}.<lang>.md\n"

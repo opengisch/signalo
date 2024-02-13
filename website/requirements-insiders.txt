@@ -1,2 +1,1 @@
-# mkdocs-material-8.5.4 (2022-09-30) at https://github.com/opengisch/mkdocs-material-insiders/commit/425df60910d649d80505851dc2fd3d240cd65e73
-git+https://${GH_TOKEN_INSIDER}@github.com/opengisch/mkdocs-material-insiders@425df60910d649d80505851dc2fd3d240cd65e73#egg=mkdocs-material
+git+https://${GH_TOKEN_INSIDER}@github.com/opengisch/mkdocs-material-insiders@9.4.6-insiders-4.42.2#egg=mkdocs-material
