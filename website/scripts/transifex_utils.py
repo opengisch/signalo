@@ -4,8 +4,8 @@ import glob
 import os
 import re
 
-TX_ORGANIZATION = ""
-TX_PROJECT = ""
+TX_ORGANIZATION = "opengisch"
+TX_PROJECT = "signalo-website"
 TX_SOURCE_LANG = "fr"
 TX_TYPE = "GITHUBMARKDOWN"
 
