@@ -31,7 +31,7 @@ def create_transifex_config():
             # Get relative path of file
             relative_path = os.path.relpath(file, start=root)
 
-            tx_slugs = [re.match(r"^tx_slug: (.*)", line) for line in open(file)]
+            tx_slugs = [re.match(r"^tx_slug: +(.*)", line) for line in open(file)]
             tx_slugs = [t for t in tx_slugs if t]
 
             if not tx_slugs:
@@ -41,7 +41,6 @@ def create_transifex_config():
                 print(f"More than 1 TX slug found for {relative_path}")
 
             if tx_slugs:
-                print(tx_slugs)
                 tx_slug = tx_slugs[0].group(0)
                 print(f"Found file with tx_slug defined: {relative_path}, {tx_slug}")
                 f.write(f"[o:{TX_ORGANIZATION}:p:{TX_PROJECT}:r:{tx_slug}]\n")
