@@ -12,7 +12,48 @@ hide:
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
 
-!!! Le formulaire et composé de trois onglets:
+!!! example
+
+    === "Unordered List"
+
+        ``` markdown
+        * Sed sagittis eleifend rutrum
+        * Donec vitae suscipit est
+        * Nulla tempor lobortis orci
+        ```
+
+    === "Ordered List"
+
+        ``` markdown
+        1. Sed sagittis eleifend rutrum
+        2. Donec vitae suscipit est
+        3. Nulla tempor lobortis orci
+        ```
+
+!!! info Le formulaire et composé de trois onglets:
+
+    === Général
+
+        <figure markdown>
+          ![Onglet général](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
+          <figcaption>Onglet général</figcaption>
+        </figure>
+
+    === Azimut
+
+        <figure markdown>
+          ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
+          <figcaption>Onglet azimut</figcaption>
+        </figure>
+
+    === Photo
+
+        <figure markdown>
+          ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
+          <figcaption>Onglet photo</figcaption>
+        </figure>
+
+!!! info Le formulaire et composé de trois onglets:
 
     === Général
 

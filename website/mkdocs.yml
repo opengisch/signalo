@@ -66,6 +66,7 @@ markdown_extensions:
   - fancyboxmd
   - sane_lists
   - admonition
+  - pymdownx.details
   - pymdownx.tabbed
   - pymdownx.superfences
 
