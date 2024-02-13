@@ -11,20 +11,28 @@ hide:
 ### Ajout de signaux
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
-* Le formulaire et composé de trois onglets "Général", "Azimut" et "Photo"
+* Le formulaire et composé de trois onglets:
 
-<figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
-  <figcaption>Onglet général</figcaption>
-</figure>
-<figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
-  <figcaption>Onglet azimut</figcaption>
-</figure>
-<figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
-  <figcaption>Onglet photo</figcaption>
-</figure>
+=== Général
+
+    <figure markdown>
+      ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
+      <figcaption>Onglet général</figcaption>
+    </figure>
+
+=== Azimut
+
+    <figure markdown>
+      ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
+      <figcaption>Onglet azimut</figcaption>
+    </figure>
+
+=== Photo
+
+    <figure markdown>
+      ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
+      <figcaption>Onglet photo</figcaption>
+    </figure>
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
