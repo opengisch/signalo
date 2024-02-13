@@ -163,6 +163,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , offset_x AS _azimut_offset_x_rectified
                 , offset_y AS _azimut_offset_y_rectified
                 , frame_anchor AS _frame_anchor_rectified
+                , natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
@@ -177,6 +178,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , offset_x AS _azimut_offset_x_rectified
                 , offset_y AS _azimut_offset_y_rectified
                 , frame_anchor AS _frame_anchor_rectified
+                , natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
@@ -195,6 +197,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN frame_anchor = 'RIGHT'::signalo_db.anchor THEN 'LEFT'::signalo_db.anchor
                       ELSE 'CENTER'::signalo_db.anchor
                   END AS _frame_anchor_rectified
+                , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
@@ -214,6 +217,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN frame_anchor = 'RIGHT'::signalo_db.anchor THEN 'LEFT'::signalo_db.anchor
                       ELSE 'CENTER'::signalo_db.anchor
                   END AS _frame_anchor_rectified
+                , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
@@ -277,7 +281,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , uv.*
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
-                    WHEN directional_sign IS TRUE AND (_frame_anchor_rectified, natural_direction_or_left) IN (
+                    WHEN directional_sign IS TRUE AND (_frame_anchor_rectified, _natural_direction_or_left_rectified) IN (
                         ('LEFT', TRUE),
                         ('CENTER', FALSE),
                         ('RIGHT', FALSE)
