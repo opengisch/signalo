@@ -17,33 +17,33 @@ hide:
     === Général
 
     <figure markdown>
-      ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
+      ![Onglet général](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
       <figcaption>Onglet général</figcaption>
     </figure>
 
     === Azimut
 
     <figure markdown>
-      ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
+      ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
       <figcaption>Onglet azimut</figcaption>
     </figure>
 
     === Photo
 
     <figure markdown>
-      ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
+      ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
       <figcaption>Onglet photo</figcaption>
     </figure>
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
+  ![Exemple](./assets/images/printscreen/support-all.png){ width="500"; loading=lazy }
   <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
 </figure>
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/azimut-edit.png){ width="500"; loading=lazy }
+  ![Azimut](./assets/images/printscreen/azimut-edit.png){ width="500"; loading=lazy }
   <figcaption>Définition de l'azimut de manière graphique, grâce à la vue vw_azimut_edit</figcaption>
 </figure>
 
@@ -52,7 +52,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
 La taille des panneaux peut être ajustée dans les propriétés du projet, dans l'onglet `Variables`, en modifiant la variable `signalo_img_size`.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/set-image-size.png){ width="500"; loading=lazy }
+  ![Réglage](./assets/images/printscreen/set-image-size.png){ width="500"; loading=lazy }
   <figcaption>Réglage de la taille de l'image</figcaption>
 </figure>
 
