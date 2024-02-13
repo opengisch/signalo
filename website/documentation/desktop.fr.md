@@ -29,21 +29,21 @@ hide:
         ```
 
 
-!!! info Le formulaire et composé de trois onglets:
+!!! info "Le formulaire et composé de trois onglets:"
 
-    === Général
+    === "Général"
         <figure markdown>
           ![Onglet général](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
           <figcaption>Onglet général</figcaption>
         </figure>
 
-    === Azimut
+    === "Azimut"
         <figure markdown>
           ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
           <figcaption>Onglet azimut</figcaption>
         </figure>
 
-    === Photo
+    === "Photo"
         <figure markdown>
           ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
           <figcaption>Onglet photo</figcaption>
