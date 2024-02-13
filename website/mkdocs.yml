@@ -16,6 +16,7 @@ copyright: Copyright &copy; 2022 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
 theme:
   name: material
   custom_dir: theme_overrides/
+  language: fr
   features:
     - navigation.tabs
     - navigation.tabs.sticky
@@ -67,7 +68,8 @@ markdown_extensions:
   - sane_lists
   - admonition
   - pymdownx.details
-  - pymdownx.tabbed
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.superfences
 
 plugins:
