@@ -65,7 +65,9 @@ markdown_extensions:
   - md_in_html
   - fancyboxmd
   - sane_lists
+  - admonition
   - pymdownx.tabbed
+  - pymdownx.superfences
 
 plugins:
   - search

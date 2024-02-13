@@ -11,23 +11,24 @@ hide:
 ### Ajout de signaux
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
-* Le formulaire et composé de trois onglets:
 
-=== Général
+!!! Le formulaire et composé de trois onglets:
+
+    === Général
 
     <figure markdown>
       ![Projet QField](./assets/images/printscreen/support-form-general.png){ width="500"; loading=lazy }
       <figcaption>Onglet général</figcaption>
     </figure>
 
-=== Azimut
+    === Azimut
 
     <figure markdown>
       ![Projet QField](./assets/images/printscreen/support-form-azimut.png){ width="500"; loading=lazy }
       <figcaption>Onglet azimut</figcaption>
     </figure>
 
-=== Photo
+    === Photo
 
     <figure markdown>
       ![Projet QField](./assets/images/printscreen/support-form-photo.png){ width="500"; loading=lazy }
