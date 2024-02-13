@@ -41,8 +41,10 @@ def create_transifex_config():
                 print(f"More than 1 TX slug found for {relative_path}")
 
             if tx_slugs:
-                tx_slug = tx_slugs[0].group(0)
-                print(f"Found file with tx_slug defined: {relative_path}, {tx_slug}")
+                tx_slug = tx_slugs[0].group(1)
+                print(
+                    f"Found file with tx_slug defined: `{relative_path}`, `{tx_slug}`"
+                )
                 f.write(f"[o:{TX_ORGANIZATION}:p:{TX_PROJECT}:r:{tx_slug}]\n")
                 f.write(
                     f"file_filter = {''.join(relative_path.split('.')[:-2])}.<lang>.md\n"

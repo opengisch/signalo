@@ -1,49 +1,49 @@
 [main]
 host = https://www.transifex.com
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_desktop]
+[o:opengisch:p:signalo-website:r:documentation_desktop]
 file_filter = documentation/desktop.<lang>.md
 source_file = documentation/desktop.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_roadmap]
+[o:opengisch:p:signalo-website:r:documentation_roadmap]
 file_filter = documentation/roadmap.<lang>.md
 source_file = documentation/roadmap.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_mobile]
+[o:opengisch:p:signalo-website:r:documentation_mobile]
 file_filter = documentation/mobile.<lang>.md
 source_file = documentation/mobile.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_installation]
+[o:opengisch:p:signalo-website:r:documentation_installation]
 file_filter = documentation/installation.<lang>.md
 source_file = documentation/installation.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_home]
+[o:opengisch:p:signalo-website:r:documentation_home]
 file_filter = documentation/index.<lang>.md
 source_file = documentation/index.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_datamodel-doc]
+[o:opengisch:p:signalo-website:r:documentation_datamodel-doc]
 file_filter = documentation/datamodel-doc.<lang>.md
 source_file = documentation/datamodel-doc.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_data-model]
+[o:opengisch:p:signalo-website:r:documentation_data-model]
 file_filter = documentation/data-model.<lang>.md
 source_file = documentation/data-model.fr.md
 source_lang = fr
 type = GITHUBMARKDOWN
 
-[o:opengisch:p:signalo-website:r:tx_slug: documentation_contribute]
+[o:opengisch:p:signalo-website:r:documentation_contribute]
 file_filter = documentation/contribute.<lang>.md
 source_file = documentation/contribute.fr.md
 source_lang = fr
