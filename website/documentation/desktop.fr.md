@@ -12,7 +12,7 @@ hide:
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
 
-!!! info "Le formulaire et composé de trois onglets:"
+!!! info "Le formulaire est composé de trois onglets:"
 
     === "Général"
         <figure markdown>
