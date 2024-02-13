@@ -53,8 +53,7 @@ jobs:
           tar -xvzf tx-linux-amd64.tar.gz
 
       - name: Configure Transifex
-        run: |
-          python ./utils/transifex_utils.py
+        run: scripts/transifex_utils.py
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
