@@ -20,7 +20,10 @@ CREATE FUNCTION signalo_app.ft_azimut_insert() RETURNS trigger
         END IF;
         SELECT id FROM signalo_db.support s WHERE ST_Equals(s.geometry, ST_StartPoint(NEW.geometry)) INTO support_id;
         IF support_id IS NULL THEN
-            RAISE EXCEPTION 'Could not find a support at the start of the line';
+            INSERT INTO signalo_db.support (geometry) VALUES (ST_StartPoint(NEW.geometry)) RETURNING id INTO support_id;
+            IF support_id IS NULL THEN
+                RAISE EXCEPTION 'Could not create a support';
+            END IF;
         END IF;
         INSERT INTO signalo_db.azimut (fk_support, azimut) VALUES (support_id, degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry))));
         RETURN NEW;

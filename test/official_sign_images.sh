@@ -47,7 +47,7 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
     elif [[ ${_IMG_DIR} = editable ]]; then
       ih=$(exiftool -ImageHeight ${FILE} | sed "s/.*: //;s/pt//g")
       iw=$(exiftool -ImageWidth ${FILE} | sed "s/.*: //;s/pt//g")
-      tsize=$(psql -t -c "SELECT img_width,img_height FROM signalo_db.vl_official_sign WHERE img_de='${IMAGE}' OR  img_fr='${IMAGE}' OR  img_it='${IMAGE}' OR  img_ro='${IMAGE}' OR img_de_right='${IMAGE}' OR img_fr_right='${IMAGE}' OR img_it_right='${IMAGE}' OR img_ro_right='${IMAGE}'")
+      tsize=$(psql -t -c "SELECT img_width,img_height FROM signalo_db.vl_official_sign WHERE img_de='${IMAGE}' OR img_fr='${IMAGE}' OR img_it='${IMAGE}' OR img_ro='${IMAGE}' OR img_de_right='${IMAGE}' OR img_fr_right='${IMAGE}' OR img_it_right='${IMAGE}' OR img_ro_right='${IMAGE}'")
       tw=$(echo ${tsize} | cut -d\| -f1)
       th=$(echo ${tsize} | cut -d\| -f2)
       ir=$(echo "${ih}/${iw}" | bc -l)
