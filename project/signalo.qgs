@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" saveDateTime="2024-02-14T11:09:25" saveUser="rouzauddenis" version="3.28.11-Firenze">
+<qgis saveUserFull="Rouzaud Denis" projectname="Signalo - Demo" saveDateTime="2024-02-14T14:09:23" saveUser="rouzauddenis" version="3.28.11-Firenze">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -21,7 +21,7 @@
     <customproperties>
       <Option/>
     </customproperties>
-    <layer-tree-layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" providerKey="postgres" expanded="1" patch_size="-1,-1" legend_split_behavior="0" name="vw_azimut_edit" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" checked="Qt::Checked" legend_exp="">
+    <layer-tree-layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" providerKey="postgres" expanded="1" patch_size="-1,-1" legend_split_behavior="0" name="vw_azimut_edit" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" checked="Qt::Unchecked" legend_exp="">
       <customproperties>
         <Option/>
       </customproperties>
@@ -200,10 +200,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537567.8250479381531477</xmin>
-      <ymin>1152357.92443228932097554</ymin>
-      <xmax>2537908.33268171455711126</xmax>
-      <ymax>1152645.60972802015021443</ymax>
+      <xmin>2537325.69335483340546489</xmin>
+      <ymin>1152290.52147246850654483</ymin>
+      <xmax>2537932.23939346009865403</xmax>
+      <ymax>1152802.97511282470077276</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -224,9 +224,9 @@
   </mapcanvas>
   <projectModels/>
   <legend updateDrawingOrder="true">
-    <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="vw_azimut_edit" checked="Qt::Checked">
+    <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="vw_azimut_edit" checked="Qt::Unchecked">
       <filegroup open="true" hidden="false">
-        <legendlayerfile visible="1" isInOverview="0" layerid="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"/>
+        <legendlayerfile visible="0" isInOverview="0" layerid="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"/>
       </filegroup>
     </legendlayer>
     <legendlayer showFeatureCount="0" open="true" drawingOrder="-1" name="Support" checked="Qt::Checked">
@@ -13195,8 +13195,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="CASE&#xa;WHEN &quot;fk_user_sign&quot; is not NULL&#xa;&#xa;THEN  &quot;fk_user_sign&quot;&#xa;ELSE&#xa; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xa;END" type="QString"/>
           </Option>
           <Option value="0" type="QString" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -16065,51 +16065,6 @@ END</previewExpression>
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
-      <LayoutItem svgBorderWidth="0.2" size="130.768,148.068,mm" northMode="0" frame="false" pictureHeight="114.557" svgFillColor="255,255,255,255" file="101.svg" itemRotation="0" pictureWidth="130.768" zValue="2" position="148.5,150.814,mm" svgBorderColor="0,0,0,255" opacity="1" referencePoint="7" northOffset="0" type="65640" groupUuid="" mode="0" blendMode="0" outlineWidthM="0.3,mm" excludeFromExports="0" frameJoinStyle="miter" positionLock="false" positionOnPage="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" anchorPoint="7" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" background="false" pictureRotation="0" mapUuid="" id="" resizeMode="0">
-        <FrameColor blue="0" green="0" red="0" alpha="255"/>
-        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option value="" type="QString" name="name"/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="dataDefinedSource">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString" name="expression"/>
-                  <Option value="3" type="int" name="type"/>
-                </Option>
-              </Option>
-              <Option value="collection" type="QString" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option type="Map">
-              <Option type="Map" name="svg-dynamic-parameters">
-                <Option type="Map" name="text1">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="default_inscription1" type="QString" name="expression"/>
-                  <Option value="3" type="int" name="type"/>
-                </Option>
-                <Option type="Map" name="text2">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="default_inscription2" type="QString" name="expression"/>
-                  <Option value="3" type="int" name="type"/>
-                </Option>
-                <Option type="Map" name="text3">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="default_inscription3" type="QString" name="expression"/>
-                  <Option value="3" type="int" name="type"/>
-                </Option>
-                <Option type="Map" name="text4">
-                  <Option value="true" type="bool" name="active"/>
-                  <Option value="default_inscription4" type="QString" name="expression"/>
-                  <Option value="3" type="int" name="type"/>
-                </Option>
-              </Option>
-            </Option>
-          </customproperties>
-        </LayoutObject>
-      </LayoutItem>
       <LayoutItem labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" marginX="0" size="247.028,53.7715,mm" marginY="0" halign="4" frame="false" itemRotation="0" zValue="2" position="24.986,142.228,mm" opacity="1" referencePoint="0" htmlState="0" type="65641" groupUuid="" blendMode="0" outlineWidthM="0.3,mm" excludeFromExports="0" valign="128" frameJoinStyle="miter" positionLock="false" positionOnPage="24.986,142.228,mm" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" visibility="1" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" background="false" id="">
         <FrameColor blue="0" green="0" red="0" alpha="255"/>
         <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
@@ -16172,6 +16127,51 @@ END</previewExpression>
           </dd_properties>
         </text-style>
       </LayoutItem>
+      <LayoutItem svgBorderWidth="0.2" size="130.768,148.068,mm" northMode="0" frame="false" pictureHeight="114.557" svgFillColor="255,255,255,255" file="101.svg" itemRotation="0" pictureWidth="130.768" zValue="2" position="148.5,150.814,mm" svgBorderColor="0,0,0,255" opacity="1" referencePoint="7" northOffset="0" type="65640" groupUuid="" mode="0" blendMode="0" outlineWidthM="0.3,mm" excludeFromExports="0" frameJoinStyle="miter" positionLock="false" positionOnPage="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" visibility="1" anchorPoint="7" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" background="false" pictureRotation="0" mapUuid="" id="" resizeMode="0">
+        <FrameColor blue="0" green="0" red="0" alpha="255"/>
+        <BackgroundColor blue="255" green="255" red="255" alpha="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option value="" type="QString" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+              <Option value="collection" type="QString" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option type="Map">
+              <Option type="Map" name="svg-dynamic-parameters">
+                <Option type="Map" name="text1">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="default_inscription1" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="text2">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="default_inscription2" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="text3">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="default_inscription3" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+                <Option type="Map" name="text4">
+                  <Option value="true" type="bool" name="active"/>
+                  <Option value="default_inscription4" type="QString" name="expression"/>
+                  <Option value="3" type="int" name="type"/>
+                </Option>
+              </Option>
+            </Option>
+          </customproperties>
+        </LayoutObject>
+      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option value="png" type="QString" name="atlasRasterFormat"/>
@@ -16195,7 +16195,7 @@ END</previewExpression>
   <Bookmarks/>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537509.41034926054999232" xmax="2537966.74738039216026664" ymin="1152357.92443228932097554" ymax="1152645.60972802015021443">
+    <DefaultViewExtent xmin="2537325.69335483340546489" xmax="2537932.23939346009865403" ymin="1152204.67458600807003677" ymax="1152888.82199928513728082">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
