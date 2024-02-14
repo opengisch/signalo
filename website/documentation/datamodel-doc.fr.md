@@ -6,4 +6,4 @@ hide:
   - toc
 ---
 
---8<-- "https://www.signalo.ch/model-documentation"
+--8<-- "../model-documentation/index.html"
