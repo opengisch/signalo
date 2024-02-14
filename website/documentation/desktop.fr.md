@@ -2,7 +2,6 @@
 title: Desktop
 tx_slug: documentation_desktop
 hide:
-  - navigation
   - toc
 ---
 

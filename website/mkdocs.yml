@@ -21,6 +21,7 @@ theme:
     - navigation.tabs
     - navigation.tabs.sticky
     - navigation.sections
+    - navigation.tracking
     - search.suggest
     - search.highlight
   logo: assets/images/signalo_logo.png
