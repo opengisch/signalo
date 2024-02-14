@@ -75,15 +75,17 @@ markdown_extensions:
 plugins:
   - search
   - i18n:
-      default_language: fr
-      # default_language_only: !ENV [DEFAULT_LANGUAGE_ONLY, true]
+      default_language_only: false
       search_reconfigure: false
       languages:
-        fr:
+        - locale: fr
+          default: true
           name: Français
+          site_name: SIGNALO
           site_description: Signalo est un module de gestion de la signalisation verticale.
-        de:
+        - locale: de
           name: Deutsch
+          site_name: SIGNALO
           site_description: Signalo ist ein Modul für vertikale Signalisierung
         # it: Italiano
         # en: English
