@@ -6,4 +6,4 @@ hide:
   - toc
 ---
 
---8<-- "model-documentation/index.html"
+--8<-- "assets/model-documentation/index.html"
