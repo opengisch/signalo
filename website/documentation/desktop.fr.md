@@ -15,22 +15,13 @@ hide:
 !!! info "Le formulaire est composé de trois onglets:"
 
     === "Général"
-        <figure markdown>
-          ![Onglet général](./assets/images/printscreen/support-form-general.png){loading=lazy}
-          <figcaption>Onglet général</figcaption>
-        </figure>
+        ![Onglet général](./assets/images/printscreen/support-form-general.png){loading=lazy}
 
     === "Azimut"
-        <figure markdown>
-          ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){loading=lazy}
-          <figcaption>Onglet azimut</figcaption>
-        </figure>
+        ![Onglet azimut](./assets/images/printscreen/support-form-azimut.png){loading=lazy}
 
     === "Photo"
-        <figure markdown>
-          ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){loading=lazy}
-          <figcaption>Onglet photo</figcaption>
-        </figure>
+        ![Onglet azimut](./assets/images/printscreen/support-form-photo.png){loading=lazy}
 
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
