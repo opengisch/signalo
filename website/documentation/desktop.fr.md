@@ -25,7 +25,7 @@ hide:
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
 <figure markdown>
-  ![Exemple](./assets/images/printscreen/support-all.png){loading=lazy; max-width: 700px}
+  ![Exemple](./assets/images/printscreen/support-all.png){loading=lazy; style="max-width: 700px"}
   <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
 </figure>
 
