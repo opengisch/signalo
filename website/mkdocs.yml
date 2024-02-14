@@ -75,8 +75,6 @@ markdown_extensions:
 plugins:
   - search
   - i18n:
-      default_language_only: false
-      search_reconfigure: false
       languages:
         - locale: fr
           default: true
