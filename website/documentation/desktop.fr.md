@@ -5,9 +5,9 @@ hide:
   - toc
 ---
 
-## Edition
+# Edition
 
-### Ajout de signaux
+## Ajout de signaux
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
 
@@ -34,7 +34,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
   <figcaption>Définition de l'azimut de manière graphique, grâce à la vue vw_azimut_edit</figcaption>
 </figure>
 
-## Taille des panneaux
+# Taille des panneaux
 
 La taille des panneaux peut être ajustée dans les propriétés du projet, dans l'onglet `Variables`, en modifiant la variable `signalo_img_size`.
 
@@ -43,12 +43,13 @@ La taille des panneaux peut être ajustée dans les propriétés du projet, dans
   <figcaption>Réglage de la taille de l'image</figcaption>
 </figure>
 
-## Décalage des panneaux
+# Décalage des panneaux
 
 En cas de supports portant de nombreux signaux, la visibilité des signaux sur la carte peut être améliorée avec les attributs `offset_x` et `offset_y` de la table `azimut` (attributs *décalage X* et *décalage Y* de la couche *Azimut* dans QGIS).
 
-## Panneaux spéciaux
-### Panneaux directionnels
+# Panneaux spéciaux
+
+## Panneaux directionnels
 
 Le modèle des données permet une gestion fine des panneaux directionnels. Trois attributs définissent l'affichage de ces panneaux:
 
@@ -56,7 +57,7 @@ Le modèle des données permet une gestion fine des panneaux directionnels. Troi
 * Dans la table `frame`, l'attribut `anchor` permet de définir le point d'ancrage du cadre: *Gauche*, *Centré* ou *Droite* (couche *Cadre* avec l'attribut *point d'ancrage* dans le projet QGIS).
 * Dans la table `sign`, l'attribut boolean `natural_direction_or_left` permet de changer la direction naturelle du panneau par rapport à son point d'ancrage défini au niveau du cadre. Par défaut (la case est cochée), la direction du panneau sera à l'opposé de son point d'ancrage. C'est-à-dire, si le point d'ancrage est à droite, le panneau pointera à gauche et vice-versa. Cet automatisme peut être contourné en décochant la case *direction naturel ou gauche*.
 
-### Panneaux recto-verso
+## Panneaux recto-verso
 
 Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneaux porte le même signal des deux côtés.
 
@@ -66,7 +67,7 @@ Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hangi
 
 * A noter: la couche **cadre** contient également un attribut lié au recto-verso (case à cocher **montage recto-verso**). La valeur de cet attribut n'est néanmoins qu'informative, elle n'aura aucune influence sur l'affichage du panneau sur la carte.*
 
-### Signaux définis par l'utilisateur
+## Signaux définis par l'utilisateur
 
 Il arrive qu'une certaine composition de signaux sur un même panneau n'existe pas dans la sélection des signaux officiels. La table `vl_user_sign` (couche *Signal défini par l'utilisateur* dans QGIS) permet la création de signaux personnalisés. Cette table contient les mêmes attributs que `vl_official_sign`, la liste des signaux officiels. Au minimum, les attributs suivants doivent être renseignés:
 
@@ -100,7 +101,7 @@ Il est recommandé de prendre une des images officielles comme exemple et base p
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
 
-## Environnements de travail
+# Environnements de travail
 
 Vous avez la possibilité d'avoir plusieurs environnements de travail: test, production, …
 Plusieurs fichiers projets sont disponibles avec chaque version:
@@ -111,11 +112,11 @@ Plusieurs fichiers projets sont disponibles avec chaque version:
 | `signalo_prod.qgs` | `pg_signalo_prod` | production            |
 | `signalo_dev.qgs` | `pg_signalo_dev`   | test et développement |
 
-## Langues
+# Langues
 
 Un système de traduction du projet QGIS a été mis en place. Les fichiers de traduction `signalo_XX.qm` doivent se situer dans le dossier du projet QGIS. Le projet `signalo.qgs` s'ouvre alors dans la langue du profil de l'utilisateur QGIS. Pour le moment, le projet existe en français (langue *master*) et en allemand (avec le fichier de traduction `signalo_de.qm`). Si la langue du logiciel est l'allemand, un fichier de projet `signalo_de.qgs` se créera alors automatiquement à l'ouverture du projet `signalo.qgs`.
 
-## Filtrage et analyse de la cohérence globale
+# Filtrage et analyse de la cohérence globale
 
 Cette fonctionnalité devrait être [améliorée](roadmap.md) dans les versions suivantes.
 
