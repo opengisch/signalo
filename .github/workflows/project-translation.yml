@@ -4,7 +4,9 @@ on:
   push:
     branches:
       - master
-
+    paths:
+      - 'project/**'
+      - '.github/workflows/project-translation.yml'
 jobs:
   build:
     name: Update project translations
