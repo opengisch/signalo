@@ -5,6 +5,8 @@ import os
 import sys
 
 import psycopg2
+from pirogue import SimpleJoins
+from yaml import safe_load
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
 
@@ -37,6 +39,10 @@ def create_views(srid: int, pg_service: str):
     run_sql("datamodel/app/vw_azimut_edit.sql", pg_service, variables)
 
     vw_sign_symbol(pg_service=pg_service, srid=srid)
+
+    SimpleJoins(
+        safe_load(open("datamodel/app/vw_sign_export.yaml")), pg_service
+    ).create()
 
 
 if __name__ == "__main__":

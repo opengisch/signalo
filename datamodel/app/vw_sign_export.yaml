@@ -1,0 +1,65 @@
+#!/usr/bin/env python
+
+
+table: signalo_app.vw_sign_symbol
+view_name: vw_sign_export
+view_schema: signalo_app
+pkey: id
+
+joins:
+  official_sign:
+    table: signalo_db.vl_official_sign
+    fkey: fk_official_sign
+    prefix: official_sign_
+  sign_type:
+    table: signalo_db.vl_sign_type
+    fkey: fk_sign_type
+    prefix: sign_type_
+  marker_type:
+    table: signalo_db.vl_marker_type
+    fkey: fk_marker_type
+    prefix: marker_type_
+  mirror_shape:
+    table: signalo_db.vl_mirror_shape
+    fkey: fk_mirror_shape
+    prefix: mirror_shape_
+  durability:
+    table: signalo_db.vl_durability
+    fkey: fk_durability
+    prefix: durability_
+  coating:
+    table: signalo_db.vl_coating
+    fkey: fk_coating
+    prefix: coating_
+  lighting:
+    table: signalo_db.vl_lighting
+    fkey: fk_lighting
+    prefix: lighting_
+  support_type:
+    table: signalo_db.vl_support_type
+    fkey: fk_support_type
+    prefix: support_type_
+  support_base_type:
+    table: signalo_db.vl_support_base_type
+    fkey: fk_support_base_type
+    prefix: support_base_type_
+  owner:
+    table: signalo_db.vl_owner
+    fkey: fk_owner
+    prefix: owner_
+  provider:
+    table: signalo_db.vl_provider
+    fkey: fk_provider
+    prefix: provider_
+  status:
+    table: signalo_db.vl_status
+    fkey: fk_status
+    prefix: status_
+  frame_type:
+    table: signalo_db.vl_frame_type
+    fkey: frame_fk_frame_type
+    prefix: frame_type_
+  frame_fixing_type:
+    table: signalo_db.vl_frame_fixing_type
+    fkey: frame_fk_frame_fixing_type
+    prefix: frame_fixing_type_

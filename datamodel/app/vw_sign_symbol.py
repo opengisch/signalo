@@ -38,6 +38,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , support.id AS support_id
                 , support.group_by_anchor
                 , support.fk_support_type
+                , support.fk_support_base_type
                 , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
                 , COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, FALSE) AS directional_sign
                 , CASE
