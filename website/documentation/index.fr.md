@@ -2,6 +2,9 @@
 template: home.html
 title: SIGNALO
 tx_slug: documentation_home
+hide:
+  - navigation
+  - toc
 ---
 
 
