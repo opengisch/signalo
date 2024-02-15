@@ -73,8 +73,6 @@ jobs:
 
       - name: Build documentation
         run: mkdocs build
-        env:
-          DEFAULT_LANGUAGE_ONLY: false
 
       - name: Datamodel Documentation
         run: |
