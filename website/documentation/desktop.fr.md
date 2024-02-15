@@ -25,12 +25,12 @@ hide:
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` du schéma `signalo_app`.
 
 <figure markdown>
-  ![Exemple](./assets/images/printscreen/support-all.png){loading=lazy; style="max-width: 900px"}
+  !![Exemple](./assets/images/printscreen/support-all.png)
   <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
 </figure>
 
 <figure markdown>
-  ![Azimut](./assets/images/printscreen/azimut-edit.png){loading=lazy; style="max-width: 900px"}
+  !![Azimut](./assets/images/printscreen/azimut-edit.png)
   <figcaption>Définition de l'azimut de manière graphique, grâce à la vue vw_azimut_edit</figcaption>
 </figure>
 
@@ -39,7 +39,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
 La taille des panneaux peut être ajustée dans les propriétés du projet, dans l'onglet `Variables`, en modifiant la variable `signalo_img_size`.
 
 <figure markdown>
-  ![Réglage](./assets/images/printscreen/set-image-size.png){loading=lazy; style="max-width: 900px"}
+  !![Réglage](./assets/images/printscreen/set-image-size.png)
   <figcaption>Réglage de la taille de l'image</figcaption>
 </figure>
 
@@ -85,7 +85,7 @@ Les attributs suivants permettent en outre de créer et gérer des panneaux dire
 Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
-  ![Liste définie par l'utilisateur](./assets/images/printscreen/liste_defini_par_lutilisateur.png){loading=lazy; style="max-width: 900px"}
+  !![Liste définie par l'utilisateur](./assets/images/printscreen/liste_defini_par_lutilisateur.png)
   <figcaption>Liste des types de signal</figcaption>
 </figure>
 
@@ -97,7 +97,7 @@ La création du `.svg` correspondant est donc dans la responsabilité de l'utili
 Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy; style="max-width: 900px"}
+  !![Projet QField](./assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy; style="max-width: 900px"}
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
 
@@ -125,6 +125,6 @@ Avec un clic-droit sur la couche, sélectionner "Filtrer…" dans le menu.
 Il faut alors construire une requête pour filtrer les éléments.
 
 <figure markdown>
-  ![Projet QField](./assets/images/printscreen/filter.png){loading=lazy; style="max-width: 900px"}
+  !![Projet QField](./assets/images/printscreen/filter.png)
   <figcaption>Filtrage des signaux</figcaption>
 </figure>
