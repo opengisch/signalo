@@ -32,21 +32,21 @@ theme:
       primary: grey
       toggle:
         icon: material/brightness-auto
-        name: Switch to light mode
+        name: Utiliser le mode clair
     # Palette toggle for light mode
     - media: "(prefers-color-scheme: light)"
       scheme: default
       primary: grey
       toggle:
         icon: material/brightness-7
-        name: Switch to dark mode
+        name: Utiliser le mode sombre
     # Palette toggle for dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
       primary: grey
       toggle:
         icon: material/brightness-4
-        name: Switch to system preference
+        name: Utiliser les préférences système
 
 nav:
   - Présentation: index.md
@@ -105,3 +105,24 @@ plugins:
             Mobile: Mobil
             Feuille de route: Roadmap
             Documentation BD: DB Dokumentation
+          palette:
+            # Palette toggle for automatic mode
+            - media: "(prefers-color-scheme)"
+              primary: grey
+              toggle:
+                icon: material/brightness-auto
+                name: Wechseln Sie in den Lichtmodus
+            # Palette toggle for light mode
+            - media: "(prefers-color-scheme: light)"
+              scheme: default
+              primary: grey
+              toggle:
+                icon: material/brightness-7
+                name: Wechseln Sie in den Dunkelmodus
+            # Palette toggle for dark mode
+            - media: "(prefers-color-scheme: dark)"
+              scheme: slate
+              primary: grey
+              toggle:
+                icon: material/brightness-4
+                name: Wechseln Sie zu den Systemeinstellungen
