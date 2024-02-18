@@ -52,6 +52,9 @@ jobs:
           curl -OL https://github.com/transifex/cli/releases/download/v1.6.10/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
 
+      - name: Extract translatable content from mkdocs.yml config
+        run: ./website/scripts/mkdocs_tx.py create_source mkdocs_tx.yaml
+
       - name: Configure Transifex
         run: scripts/transifex_utils.py
         env:
