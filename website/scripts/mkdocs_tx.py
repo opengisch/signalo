@@ -17,7 +17,11 @@ def create_translation_source(config, source_path, source_language):
             for lang in plugin["i18n"]["languages"]:
                 print(lang["locale"])
 
-    tx_cfg = {"nav": config["nav"]}
+    nav_config = []
+    for _entry in config["nav"]:
+        nav_config.append({v: k for k, v in _entry.items()})
+
+    tx_cfg = {"nav": nav_config}
 
     tx_cfg["theme"] = {"palette": []}
     for palette in config["theme"]["palette"]:
