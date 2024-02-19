@@ -18,8 +18,10 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     # on push create a pull request
     git checkout ${GITHUB_REF_NAME}
     BRANCH="update-mkdocs-tx-$RANDOM"
+    pre-commit install
     git checkout -b ${BRANCH}
     git add mkdocs.yml
+    pre-commit run
     git commit -m "Update mkdocs.yml translation"
     git push -u origin $BRANCH
     echo "gh pr create -B ${GITHUB_REF_NAME} -H ${BRANCH} --title 'Update mkdocs translations' --body 'run from mkdocs_tx'"
