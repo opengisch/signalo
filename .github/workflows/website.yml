@@ -77,7 +77,7 @@ jobs:
       - name: Translate Mkdocs config
         if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == 'opengisch/signalo' && github.actor != 'dependabot[bot]' }}
         run: |
-          ./website/scripts/mkdocs_tx.py -s fr update_config
+          ./scripts/mkdocs_tx.py -s fr update_config
           if [[ git diff --exit-code mkdocs.yml ]]; then
             echo "no change mkdocs.yml"
           else
