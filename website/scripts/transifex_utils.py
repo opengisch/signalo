@@ -30,7 +30,7 @@ def create_transifex_config():
             f.write(f"[o:{TX_ORGANIZATION}:p:{TX_PROJECT}:r:site_navigation]\n")
             f.write("resource_name = site navigation\n")
             f.write("file_filter = mkdocs_tx.<lang>.md\n")
-            f.write(f"source_file = mkdocs_tx.yaml\n")
+            f.write(f"source_file = mkdocs_tx.yml\n")
             f.write(f"source_lang = {TX_SOURCE_LANG}\n")
             f.write(f"type = YAML_GENERIC\n\n")
         else:
