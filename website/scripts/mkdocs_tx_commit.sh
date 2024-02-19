@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ $(git diff --exit-code mkdocs.yml) ]]; then
+  git config --global user.email "bot@opengis.ch"
+  git config --global user.name "OPENGIS.ch Bot"
+
   echo "detected changes in mkdocs.yml"
   if [[ ${GITHUB_EVENT} == "pull_request" ]]; then
     # on PR push to the same branch
