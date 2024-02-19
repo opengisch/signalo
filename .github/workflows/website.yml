@@ -9,7 +9,6 @@ on:
   push:
     branches:
       - master
-      - website*
     paths:
       - 'website/**'
       - '.github/workflows/website.yml'
