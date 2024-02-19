@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
 if [[ $(git diff --exit-code mkdocs.yml) ]]; then
-  echo "no change mkdocs.yml"
-else
   echo "detected changes in mkdocs.yml"
   if [[ ${{ github.event_name }} == "pull_request" ]]; then
     # on PR push to the same branch
@@ -17,4 +15,6 @@ else
     git commit -m "Update mkdocs.yml translation"
     gh pr create -B update-mkdocs-tx -H update-mkdocs-tx --title 'Update mkdocs translations'
   fi
+else
+  echo "no change mkdocs.yml"
 fi
