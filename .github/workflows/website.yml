@@ -79,7 +79,7 @@ jobs:
           ./scripts/mkdocs_tx.py -s fr update_config
           ./scripts/mkdocs_tx_commit.sh
         env:
-          GITHUB_HEADREF: ${{ github.head_ref }}
+          GITHUB_REF: ${{ github.ref }}
           GITHUB_EVENT: ${{ github.event_name }}
           GH_TOKEN: ${{ secrets.GEONINJA_PAT }}
 
