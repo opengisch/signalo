@@ -7,7 +7,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
   git config --global user.name "Geo Ninja"
 
   echo "detected changes in mkdocs.yml"
-  if [[ ${GITHUB_EVENT} == "pull_request" ]]; then
+  if [[ ${GITHUB_EVENT_NAME} == "pull_request" ]]; then
     echo "mkdocs is not updated from a PR"
     # on PR push to the same branch
     # gh pr checkout ${{ github.event.pull_request.number }}
@@ -21,7 +21,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
     gh repo fork
-    git push -u geoninja ${BRANCH}
+    git push -u geo-ninja ${BRANCH}
     gh pr create -B "${GITHUB_REF}" -H "${BRANCH}" --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
   fi
 else
