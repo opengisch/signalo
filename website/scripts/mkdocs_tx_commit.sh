@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ $(git diff --exit-code mkdocs.yml) ]]; then
+  git config --global user.email "qgisninja@gmail.com"
+  git config --global user.name "Geo Ninja"
+
   echo "detected changes in mkdocs.yml"
   if [[ ${GITHUB_EVENT} == "pull_request" ]]; then
     # on PR push to the same branch
