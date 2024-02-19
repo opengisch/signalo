@@ -21,8 +21,9 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     git checkout -b ${BRANCH}
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
+    git push -u origin $BRANCH
     echo "gh pr create -B ${GITHUB_REF_NAME} -H ${BRANCH} --title 'Update mkdocs translations' --body 'run from mkdocs_tx'"
-    gh pr create -B ${GITHUB_REF_NAME} --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
+    gh pr create -B ${GITHUB_REF_NAME} -H ${BRANCH} --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
   fi
 else
   echo "no change mkdocs.yml"
