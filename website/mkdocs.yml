@@ -10,7 +10,7 @@ repo_url: https://github.com/opengisch/signalo
 edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
 
 # Copyright
-copyright: Copyright &copy; 2022 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
+copyright: Copyright &copy; 2022-2024 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
 
 # Configuration
 theme:
