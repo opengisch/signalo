@@ -14,12 +14,12 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
   else
     # on push create a pull request
     git checkout ${GITHUB_HEADREF}
-    BRANCH=update-mkdocs-tx-$RANDOM
-    git checkout -b $BRANCH
+    BRANCH="update-mkdocs-tx-$RANDOM"
+    git checkout -b ${BRANCH}
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
-    git push -u origin $BRANCH
-    gh pr create -B ${GITHUB_HEADREF} -H $BRANCH --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
+    git push -u origin ${BRANCH}
+    gh pr create -B ${GITHUB_HEADREF} -H "${BRANCH}" --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
   fi
 else
   echo "no change mkdocs.yml"
