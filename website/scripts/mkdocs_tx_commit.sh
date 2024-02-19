@@ -13,7 +13,6 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     git push
   else
     # on push create a pull request
-    git checkout ${GITHUB_REF}
     BRANCH="update-mkdocs-tx-$RANDOM"
     git checkout -b ${BRANCH}
     git add mkdocs.yml
