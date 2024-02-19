@@ -2,7 +2,7 @@
 
 if [[ $(git diff --exit-code mkdocs.yml) ]]; then
   echo "detected changes in mkdocs.yml"
-  if [[ ${{ github.event_name }} == "pull_request" ]]; then
+  if [[ GITHUB_EVENT == "pull_request" ]]; then
     # on PR push to the same branch
     gh pr checkout ${{ github.event.pull_request.number }}
     git add mkdocs.yml

@@ -80,6 +80,7 @@ jobs:
           ./scripts/mkdocs_tx.py -s fr update_config
           ./scripts/mkdocs_tx_commit.sh
         env:
+          GITHUB_EVENT: ${{ github.event_name }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build documentation
