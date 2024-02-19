@@ -111,18 +111,18 @@ plugins:
               primary: grey
               toggle:
                 icon: material/brightness-auto
-                name: Wechseln Sie in den Lichtmodus
+                name: In den Hellmodus wechseln
     # Palette toggle for light mode
             - media: "(prefers-color-scheme: light)"
               scheme: default
               primary: grey
               toggle:
                 icon: material/brightness-7
-                name: Wechseln Sie in den Dunkelmodus
+                name: In den Dunkelmodus wechseln
     # Palette toggle for dark mode
             - media: "(prefers-color-scheme: dark)"
               scheme: slate
               primary: grey
               toggle:
                 icon: material/brightness-4
-                name: Wechseln Sie zu den Systemeinstellungen
+                name: Die Systemeinstellungen verwenden
