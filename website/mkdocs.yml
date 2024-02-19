@@ -95,7 +95,7 @@ plugins:
         - locale: de
           name: Deutsch
           site_name: SIGNALO
-          site_description: Signalo ist ein Modul für vertikale Signalisierung
+          site_description: Signalo ist ein Modul für vertikale Signalisierung.
           nav_translations:
             Présentation: Präsentation
             Participer: Mitmachen
