@@ -97,14 +97,14 @@ plugins:
           site_name: SIGNALO
           site_description: Signalo ist ein Modul für vertikale Signalisierung
           nav_translations:
-            Présentation: Präsentation
-            Participer: Mitmachen
+            Présentation: Présentation
+            Participer: Participer
             Installation: Installation
-            Modèle de données: Datenmodelle
+            Modèle de données: Modèle de données
             Desktop: Desktop
-            Mobile: Mobil
-            Feuille de route: Roadmap
-            Documentation BD: DB Dokumentation
+            Mobile: Mobile
+            Feuille de route: Feuille de route
+            Documentation BD: Documentation BD
           palette:
             # Palette toggle for automatic mode
             - media: "(prefers-color-scheme)"
