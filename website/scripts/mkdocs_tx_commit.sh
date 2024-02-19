@@ -15,6 +15,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     # on push create a pull request
     git checkout ${GITHUB_HEADREF}
     git checkout -b update-mkdocs-tx
+    git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
     gh pr create -B update-mkdocs-tx -H update-mkdocs-tx --title 'Update mkdocs translations'
   fi
