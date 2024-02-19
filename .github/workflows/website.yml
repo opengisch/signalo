@@ -82,7 +82,7 @@ jobs:
             echo "no change mkdocs.yml"
           else
             echo "detected changes in mkdocs.yml"
-            if [[ ${{ github.event_name } == "pull_request" ]]; then
+            if [[ ${{ github.event_name }} == "pull_request" ]]; then
               # on PR push to the same branch
               gh pr checkout ${{ github.event.pull_request.number }}
               git add mkdocs.yml
