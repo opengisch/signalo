@@ -15,9 +15,6 @@ on:
       - '.github/workflows/website.yml'
   workflow_dispatch: # useful for testing tx pushes
 
-permissions:
-  contents: write
-
 defaults:
   run:
     working-directory: website
