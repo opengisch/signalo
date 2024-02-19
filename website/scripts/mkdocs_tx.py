@@ -6,16 +6,14 @@ from ruamel.yaml import YAML
 
 
 def read_config(file_path: str):
-    yaml = YAML(typ="safe")
+    yaml = YAML(typ="rt")
+    yaml.preserve_quotes = True
     with open(file_path) as f:
         return yaml.load(f)
 
 
-def create_translation_source(config, source_path, source_language):
-    for plugin in config["plugins"]:
-        if type(plugin) == dict and "i18n" in plugin:
-            for lang in plugin["i18n"]["languages"]:
-                print(lang["locale"])
+def create_translation_source(config_path, source_path):
+    config = read_config(config_path)
 
     nav_config = []
     for _entry in config["nav"]:
@@ -23,15 +21,40 @@ def create_translation_source(config, source_path, source_language):
 
     tx_cfg = {"nav": nav_config}
 
-    tx_cfg["theme"] = {"palette": []}
-    for palette in config["theme"]["palette"]:
-        tx_cfg["theme"]["palette"].append(
-            {"toggle": {"name": palette["toggle"]["name"]}}
-        )
+    try:
+        tx_cfg["theme"] = {"palette": []}
+        for palette in config["theme"]["palette"]:
+            tx_cfg["theme"]["palette"].append(
+                {"toggle": {"name": palette["toggle"]["name"]}}
+            )
+    except KeyError:
+        print("No theme/palette/toggle/name to translate")
 
     with open(source_path, "w") as f:
         yaml = YAML()
-        yaml.dump({source_language: tx_cfg}, f)
+        yaml.dump(tx_cfg, f)
+
+
+def update_config(config_path, source_path):
+    config = read_config(config_path)
+
+    for plugin in config["plugins"]:
+        if type(plugin) == dict and "i18n" in plugin:
+            for lang in plugin["i18n"]["languages"]:
+                ltx = lang["locale"]
+
+                tx_file = source_path.replace(".yml", f".{ltx}.yml")
+                with open(tx_file) as f:
+                    yaml = YAML(typ="safe")
+                    tx = yaml.load(f)
+
+                    for nav_entry in tx["nav"]:
+                        print(nav_entry)
+
+    with open(config_path, "w") as f:
+        yaml = YAML()
+        yaml.indent(mapping=2, sequence=4, offset=2)
+        yaml.dump(config, f)
 
 
 if __name__ == "__main__":
@@ -39,8 +62,12 @@ if __name__ == "__main__":
     parser.add_argument(
         "-c", "--config_path", default="mkdocs.yml", help="mkdocs.yml complete path"
     )
+    # parser.add_argument("-s", "--source_language", default="en", help="source language of the config")
     parser.add_argument(
-        "-s", "--source_language", default="en", help="source language of the config"
+        "-t",
+        "--translation_file_path",
+        default="mkdocs_tx.yaml",
+        help="Translation file to create and translate",
     )
 
     subparsers = parser.add_subparsers(title="command", dest="command")
@@ -48,9 +75,6 @@ if __name__ == "__main__":
     # create the parser for the create_source command
     parser_source = subparsers.add_parser(
         "create_source", help="Creates the source file to be translated"
-    )
-    parser_source.add_argument(
-        "translation_file_path", help="Translation file to create"
     )
 
     # create the parser for the update_config command
@@ -60,7 +84,12 @@ if __name__ == "__main__":
     )
 
     args = parser.parse_args()
-    cfg = read_config(args.config_path)
 
     if args.command == "create_source":
-        create_translation_source(cfg, args.translation_file_path, args.source_language)
+        create_translation_source(args.config_path, args.translation_file_path)
+
+    elif args.command == "update_config":
+        update_config(args.config_path, args.translation_file_path)
+
+    else:
+        raise ValueError
