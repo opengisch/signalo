@@ -74,6 +74,32 @@ jobs:
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
 
+      - name: Translate Mkdocs config
+        if: ${{ github.event_name == 'push' || github.event.pull_request.head.repo.full_name == 'opengisch/signalo' && github.actor != 'dependabot[bot]' }}
+        run: |
+          ./website/scripts/mkdocs_tx.py -s fr update_config
+          if [[ git diff --exit-code mkdocs.yml ]]; then
+            echo "no change mkdocs.yml"
+          else
+            echo "detected changes in mkdocs.yml"
+            if [[ ${{ github.event_name } == "pull_request" ]]; then
+              # on PR push to the same branch
+              gh pr checkout ${{ github.event.pull_request.number }}
+              git add mkdocs.yml
+              git commit -m "Update mkdocs.yml translation"
+              git push
+            else
+              # on push create a pull request
+              git checkout ${{ github.head_ref }}
+              git checkout -b update-mkdocs-tx
+              git commit -m "Update mkdocs.yml translation"
+              gh pr create -B update-mkdocs-tx -H update-mkdocs-tx --title 'Update mkdocs translations'
+            fi
+          fi
+          gh pr create -B base_branch -H branch_to_merge --title 'Merge branch_to_merge into base_branch' --body 'Created by Github action'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Build documentation
         run: mkdocs build
 
