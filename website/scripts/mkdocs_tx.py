@@ -5,6 +5,11 @@ import copy
 
 from ruamel.yaml import YAML
 
+# This scripts helps with translatable content from mkdocs.yml
+# It provides commands:
+#   * to create the YAML translatable file
+#   * to update the mkdocs.yml with the translated content
+
 
 def read_config(file_path: str):
     yaml = YAML(typ="rt")
