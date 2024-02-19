@@ -17,6 +17,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     git checkout -b update-mkdocs-tx
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
+    git push -u origin update-mkdocs-tx
     gh pr create -B update-mkdocs-tx -H update-mkdocs-tx --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
   fi
 else
