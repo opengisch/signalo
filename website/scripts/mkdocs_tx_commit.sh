@@ -9,7 +9,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
   echo "detected changes in mkdocs.yml"
   if [[ ${GITHUB_EVENT_NAME} == "pull_request" ]]; then
     # on PR push to the same branch
-    gh pr checkout ${{ github.event.pull_request.number }}
+    gh pr checkout $(echo "${GITHUB_REF_NAME}" | cut -d/ -f1)
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
     git push
