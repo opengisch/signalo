@@ -81,7 +81,7 @@ jobs:
         env:
           GITHUB_HEADREF: ${{ github.head_ref }}
           GITHUB_EVENT: ${{ github.event_name }}
-          GH_TOKEN: ${{ secrets.GEONINJA_PAT_NO_ACCESS }}
+          GH_TOKEN: ${{ secrets.GEONINJA_PAT }}
 
       - name: Build documentation
         run: mkdocs build
