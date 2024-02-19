@@ -79,7 +79,7 @@ jobs:
           ./scripts/mkdocs_tx.py -s fr update_config
           ./scripts/mkdocs_tx_commit.sh
         env:
-          GH_TOKEN: ${{ secrets.GEONINJA_PAT }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Build documentation
         run: mkdocs build

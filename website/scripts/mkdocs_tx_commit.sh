@@ -3,8 +3,8 @@
 set -e
 
 if [[ $(git diff --exit-code mkdocs.yml) ]]; then
-  git config --global user.email "qgisninja@gmail.com"
-  git config --global user.name "Geo Ninja"
+  git config --global user.email "github-actions[bot]@users.noreply.github.com"
+  git config --global user.name "github-actions[bot]"
 
   echo "detected changes in mkdocs.yml"
   if [[ ${GITHUB_EVENT_NAME} == "pull_request" ]]; then
@@ -20,9 +20,7 @@ if [[ $(git diff --exit-code mkdocs.yml) ]]; then
     git checkout -b ${BRANCH}
     git add mkdocs.yml
     git commit -m "Update mkdocs.yml translation"
-    gh repo fork
-    git push -u origin ${BRANCH}
-    gh pr create -B "${GITHUB_REF}" -H "${BRANCH}" --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
+    gh pr create -B "${GITHUB_REF}" --title 'Update mkdocs translations' --body 'run from mkdocs_tx'
   fi
 else
   echo "no change mkdocs.yml"
