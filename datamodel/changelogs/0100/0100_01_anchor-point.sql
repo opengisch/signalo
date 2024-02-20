@@ -5,6 +5,8 @@ ALTER TABLE signalo_db.support ADD COLUMN group_by_anchor BOOLEAN NOT NULL DEFAU
 ALTER TABLE signalo_db.frame ADD COLUMN anchor signalo_db.anchor NOT NULL DEFAULT 'CENTER'::signalo_db.anchor;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_x INTEGER NOT NULL DEFAULT 0;
 ALTER TABLE signalo_db.azimut ADD COLUMN offset_y INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE signalo_db.azimut ADD COLUMN offset_x_verso INTEGER NOT NULL DEFAULT 0;
+ALTER TABLE signalo_db.azimut ADD COLUMN offset_y_verso INTEGER NOT NULL DEFAULT 0;
 
 INSERT INTO signalo_db.vl_support_type (id, value_fr, value_de) VALUES (17, 'borne d''îlot', 'Inselpfosten');
 

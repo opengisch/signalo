@@ -33,6 +33,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , azimut.azimut
                 , azimut.offset_x
                 , azimut.offset_y
+                , azimut.offset_x_verso
+                , azimut.offset_y_verso
                 , {frame_columns}
                 , sign.rank AS sign_rank
                 , support.id AS support_id
@@ -189,8 +191,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 jt.*
                 , jt.azimut+180 AS _azimut_rectified
-                , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
-                , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
+                , COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified
                 , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
@@ -204,8 +206,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 jt.*
                 , jt.azimut+180 AS _azimut_rectified
-                , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
-                , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
+                , COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified
                 , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
