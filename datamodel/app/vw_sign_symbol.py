@@ -163,7 +163,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , azimut AS _azimut_rectified
                 , offset_x AS _azimut_offset_x_rectified
                 , offset_y AS _azimut_offset_y_rectified
-                , frame_anchor AS _frame_anchor_rectified
                 , natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
@@ -178,7 +177,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , azimut AS _azimut_rectified
                 , offset_x AS _azimut_offset_x_rectified
                 , offset_y AS _azimut_offset_y_rectified
-                , frame_anchor AS _frame_anchor_rectified
                 , natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
@@ -193,11 +191,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , jt.azimut+180 AS _azimut_rectified
                 , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
                 , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
-                , CASE
-                      WHEN frame_anchor = 'LEFT'::signalo_db.anchor THEN 'RIGHT'::signalo_db.anchor
-                      WHEN frame_anchor = 'RIGHT'::signalo_db.anchor THEN 'LEFT'::signalo_db.anchor
-                      ELSE 'CENTER'::signalo_db.anchor
-                  END AS _frame_anchor_rectified
                 , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
@@ -213,11 +206,6 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , jt.azimut+180 AS _azimut_rectified
                 , COALESCE(az.offset_x, 0) AS _azimut_offset_x_rectified
                 , COALESCE(az.offset_y, 0) AS _azimut_offset_y_rectified
-                , CASE
-                      WHEN frame_anchor = 'LEFT'::signalo_db.anchor THEN 'RIGHT'::signalo_db.anchor
-                      WHEN frame_anchor = 'RIGHT'::signalo_db.anchor THEN 'LEFT'::signalo_db.anchor
-                      ELSE 'CENTER'::signalo_db.anchor
-                  END AS _frame_anchor_rectified
                 , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
@@ -255,14 +243,14 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ordered_shifted_signs_grouped_by_anchor AS (
             SELECT
                 ordered_signs_grouped_by_anchor.*
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified ORDER BY _rank ) AS _final_rank
-                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING ), 0) AS _symbol_shift
-                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified), 0) AS _group_height
-                , MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified ) AS _group_width
-                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS _previous_sign_in_frame
-                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS _next_sign_in_frame
-                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS _previous_frame
-                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, _frame_anchor_rectified ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ORDER BY _rank ) AS _final_rank
+                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING ), 0) AS _symbol_shift
+                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor), 0) AS _group_height
+                , MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ) AS _group_width
+                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, _azimut_rectified, frame_anchor, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS _previous_sign_in_frame
+                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS _next_sign_in_frame
+                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS _previous_frame
+                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
             FROM
                 ordered_signs_grouped_by_anchor
         ),
@@ -282,7 +270,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , uv.*
                 , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
-                    WHEN directional_sign IS TRUE AND (_frame_anchor_rectified, _natural_direction_or_left_rectified) IN (
+                    WHEN directional_sign IS TRUE AND (frame_anchor, _natural_direction_or_left_rectified) IN (
                         ('LEFT', TRUE),
                         ('CENTER', FALSE),
                         ('RIGHT', FALSE)
