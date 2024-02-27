@@ -3,14 +3,14 @@
    width="145"
    height="37"
    version="1.1"
-   id="svg807"
+   id="svg676"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
-     id="metadata813">
+     id="metadata682">
     <rdf:RDF>
       <cc:Work
          rdf:about="">
@@ -21,12 +21,12 @@
     </rdf:RDF>
   </metadata>
   <defs
-     id="defs811" />
+     id="defs680" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
-     id="g797">
+     id="g666">
     <title
-       id="title791">background</title>
+       id="title660">background</title>
     <rect
        fill="#ffffff"
        opacity="0"
@@ -50,24 +50,40 @@
          x="0"
          height="100%"
          width="100%"
-         id="rect794" />
+         id="rect663" />
     </g>
   </g>
-  <g
-     stroke="null"
-     id="svg_65"
-     transform="matrix(-0.52414982,0,0,0.52414982,178.29086,-34.028356)">
-    <path
-       fill="#211e1e"
-       fill-rule="nonzero"
-       id="svg_62"
-       d="M 63.51747,132.85521 H 279.31524 L 338.65648,99.80083 279.31524,66.71001 H 63.51747 v 66.1452" />
-    <path
-       fill="#ffffff"
-       fill-rule="nonzero"
-       id="svg_61"
-       d="M 67.56177,128.88109 H 278.24468 L 308.98586,99.79354 278.24468,70.67682 H 67.56177 v 58.20427" />
-  </g>
+  <path
+     stroke="#211e1e"
+     fill="#000000"
+     fill-rule="nonzero"
+     stroke-width="0.151278"
+     stroke-linejoin="round"
+     stroke-miterlimit="4"
+     id="svg_51"
+     d="M 0.39295191,36.650662 H 113.64033 L 144.78171,18.569684 113.64033,0.46877818 H 0.39295191 V 36.650662"
+     style="fill:#000000;fill-opacity:1" />
+  <path
+     fill="#f58228"
+     fill-rule="nonzero"
+     id="svg_50"
+     d="M 2.5153419,34.476793 H 113.07853 L 129.21103,18.565701 113.07853,2.6386482 H 2.5153419 V 34.476787"
+     style="fill:#f58228;fill-opacity:1;stroke-width:0.533607" />
+  <text
+     xml:space="preserve"
+     style="font-style:italic;font-size:18.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic'"
+     x="78.378784"
+     y="58.784088"
+     id="text5762"><tspan
+       id="tspan5760"
+       x="78.378784"
+       y="58.784088" /><tspan
+       id="tspan5764"
+       x="78.378784"
+       y="82.117462" /><tspan
+       x="78.378784"
+       y="105.45084"
+       id="tspan5766" /></text>
   <text
      xml:space="default"
      dominant-baseline="middle"
@@ -75,14 +91,14 @@
      font-family="sans-serif"
      font-size="13.1037px"
      id="svg_12-5"
-     y="10.697577"
-     x="35"
+     y="11.403779"
+     x="6.786407"
      stroke-width="0"
      stroke="#000000"
      fill="#000000"
      style="font-size:13.1037px;font-family:sans-serif;dominant-baseline:middle;fill:#000000;stroke:#000000;stroke-width:0"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       id="tspan3657">param(text1)</tspan></text>
+       id="tspan5018">La Chaux-de-Fonds</tspan></text>
   <text
      xml:space="default"
      dominant-baseline="middle"
@@ -90,27 +106,27 @@
      font-family="sans-serif"
      font-size="13.1037px"
      id="svg_12-5-8"
-     y="20.697582"
-     x="35"
+     y="21.403784"
+     x="6.786407"
      stroke-width="0"
      stroke="#000000"
      fill="#000000"
      style="font-size:13.1037px;font-family:sans-serif;dominant-baseline:middle;fill:#000000;stroke:#000000;stroke-width:0"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       id="tspan3655">param(text2)</tspan></text>
+       id="tspan5020">Le Locle</tspan></text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
      font-size="13.1037px"
-     id="svg_12-5-8-1"
-     y="30.697582"
-     x="35"
+     id="svg_12-5-8-3"
+     y="31.403784"
+     x="6.786407"
      stroke-width="0"
      stroke="#000000"
      fill="#000000"
      style="font-size:13.1037px;font-family:sans-serif;dominant-baseline:middle;fill:#000000;stroke:#000000;stroke-width:0"><tspan
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.33333px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal"
-       id="tspan3655-9">param(text3)</tspan></text>
+       id="tspan5020-8">La Sagne</tspan></text>
 </svg>
