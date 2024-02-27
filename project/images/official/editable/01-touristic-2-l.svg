@@ -4,11 +4,33 @@
    height="37"
    version="1.1"
    id="svg676"
+   sodipodi:docname="01-touristic-2-l.svg"
+   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview837"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     inkscape:zoom="4.7841449"
+     inkscape:cx="66.992118"
+     inkscape:cy="-1.1496307"
+     inkscape:window-width="1312"
+     inkscape:window-height="969"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg676" />
   <metadata
      id="metadata682">
     <rdf:RDF>
@@ -80,8 +102,8 @@
      font-family="sans-serif"
      font-size="13.1037px"
      id="svg_12-5"
-     y="16"
-     x="30"
+     y="12"
+     x="38"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff">param(text1)</text>
@@ -92,8 +114,8 @@
      font-family="sans-serif"
      font-size="13.1037px"
      id="svg_12-5-3"
-     y="30"
-     x="30"
+     y="26"
+     x="38"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff">param(text2)</text>
