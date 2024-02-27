@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="145"
+   height="37"
+   version="1.1"
+   id="svg676"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <metadata
+     id="metadata682">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs680" />
+  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
+  <g
+     id="g666">
+    <title
+       id="title660">background</title>
+    <rect
+       fill="#ffffff"
+       opacity="0"
+       id="canvas_background"
+       height="202"
+       width="402"
+       y="-1"
+       x="-1" />
+    <g
+       display="none"
+       overflow="visible"
+       y="0"
+       x="0"
+       height="100%"
+       width="100%"
+       id="canvasGrid">
+      <rect
+         fill="url(#gridpattern)"
+         stroke-width="0"
+         y="0"
+         x="0"
+         height="100%"
+         width="100%"
+         id="rect663" />
+    </g>
+  </g>
+  <path
+     stroke="#211e1e"
+     fill="#000000"
+     fill-rule="nonzero"
+     stroke-width="0.151278"
+     stroke-linejoin="round"
+     stroke-miterlimit="4"
+     id="svg_51"
+     d="M 144.7817,36.650662 H 31.53432 L 0.39294442,18.569684 31.53432,0.46877818 H 144.7817 V 36.650662"
+     style="fill:#000000;fill-opacity:1" />
+  <path
+     fill="#f58228"
+     fill-rule="nonzero"
+     id="svg_50"
+     d="M 142.65931,34.476793 H 32.096122 L 15.963622,18.565701 32.096122,2.6386482 H 142.65931 V 34.476787"
+     style="stroke-width:0.533607;fill:#f58228;fill-opacity:1" />
+</svg>
