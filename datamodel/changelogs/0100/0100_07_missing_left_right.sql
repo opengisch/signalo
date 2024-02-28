@@ -93,3 +93,36 @@ INSERT INTO signalo_db.vl_official_sign(
     '434-3-l.svg', '434-3-l.svg', '434-3-l.svg', '434-3-l.svg',
     60, 241, 0, 'Lugano','Bellinzona','Locarno',true,
     '434-3-r.svg', '434-3-r.svg', '434-3-r.svg', '434-3-r.svg');
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, value_de, value_fr, value_it, value_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription,
+    default_inscription1, default_inscription2, default_inscription3, directional_sign,
+    img_de_right, img_fr_right, img_it_right, img_ro_right)
+	VALUES ('0.1-2', true, 'Touristisch (2 Linien)',
+    'Touristique (2 lignes)',
+    'Turistico (2 ligne)',
+    'Turissem (2 lingias)',
+    '01-touristic-2-l.svg', '01-touristic-2-l.svg', '01-touristic-2-l.svg', '01-touristic-2-l.svg',
+    37, 145, 0, 'Chateau','Lac',NULL,true,
+    '01-touristic-2-r.svg', '01-touristic-2-r.svg', '01-touristic-2-r.svg', '01-touristic-2-r.svg');
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, value_de, value_fr, value_it, value_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription,
+    default_inscription1, default_inscription2, default_inscription3, directional_sign,
+    img_de_right, img_fr_right, img_it_right, img_ro_right)
+	VALUES ('0.1-3', true, 'Touristisch (2 Linien)',
+    'Touristique (3 lignes)',
+    'Turistico (3 ligne)',
+    'Turissem (3 lingias)',
+    '01-touristic-3-l.svg', '01-touristic-3-l.svg', '01-touristic-3-l.svg', '01-touristic-3-l.svg',
+    37, 145, 0, 'Chateau','Lac','Montagne',true,
+    '01-touristic-3-r.svg', '01-touristic-3-r.svg', '01-touristic-3-r.svg', '01-touristic-3-r.svg');
+
+UPDATE signalo_db.vl_official_sign
+    SET value_ro = 'Turissem (1 lingia)',
+    value_de = 'Touristisch (1 Linie)',
+    value_fr = 'Touristique (1 ligne)',
+    value_it = 'Turistico (1 ligne)',
+    img_de = '01-touristic-1-l.svg', img_fr = '01-touristic-1-l.svg', img_it = '01-touristic-1-l.svg', img_ro = '01-touristic-1-l.svg',
+    img_de_right = '01-touristic-1-r.svg', img_fr_right = '01-touristic-1-r.svg', img_it_right = '01-touristic-1-r.svg', img_ro_right = '01-touristic-1-r.svg'
+    WHERE id = '0.1';
