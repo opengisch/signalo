@@ -39,6 +39,7 @@ jobs:
           pip install -r requirements-dev.txt
 
       - name: Install Python requirements insiders
+        if: contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name) || ${{ github.event_name == 'pull_request' && github.repository == 'opengisch/signalo' }}
         run: pip install -r requirements-insiders.txt
         env:
           GH_USER_INSIDER: ${{ secrets.GH_USER_INSIDER }}
