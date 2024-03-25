@@ -43,10 +43,18 @@
      inkscape:zoom="6.4119718"
      inkscape:cx="48.773836"
      inkscape:cy="18.814767"
-     inkscape:window-x="5752"
+     inkscape:window-x="1912"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg943" />
+     inkscape:current-layer="svg943"
+     inkscape:document-rotation="0" />
+  <rect
+     style="fill:#ffffff;stroke:#ffffff;stroke-width:0.075"
+     id="rect931"
+     width="70.867188"
+     height="42.519531"
+     x="0.085937507"
+     y="0.94921899" />
   <path
      style="fill:#211e1e;fill-opacity:1;fill-rule:nonzero;stroke:none"
      d="M 0.0859375,43.46875 V 0.949219 H 70.953125 V 43.46875 H 0.0859375 M 1.5,42.050781 H 69.535156 V 2.363281 H 1.5 v 39.6875"
