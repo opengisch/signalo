@@ -23,7 +23,7 @@ jobs:
   website:
     runs-on: ubuntu-latest
     # Skip if this job was scheduled and the runner belongs to a fork (i.e. forks have no use for this action)
-    if: (github.event_name == 'schedule' && github.repository == 'opengisch/QField-docs') || (github.event_name != 'schedule')
+    if: (github.event_name == 'schedule' && github.repository == 'opengisch/signalo') || (github.event_name != 'schedule')
     steps:
       - uses: actions/checkout@v4
 
