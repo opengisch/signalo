@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://www.signalo.ch/contribute/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/contribute/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/contribute/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/data-model/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/data-model/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/data-model/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/datamodel-doc/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/datamodel-doc/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/datamodel-doc/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/desktop/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/desktop/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/desktop/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/installation/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/installation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/installation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/mobile/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/mobile/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/mobile/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/roadmap/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/roadmap/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/contribute/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/contribute/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/contribute/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/data-model/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/data-model/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/data-model/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/datamodel-doc/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/datamodel-doc/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/datamodel-doc/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/desktop/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/desktop/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/desktop/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/installation/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/installation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/mobile/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/mobile/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/mobile/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/roadmap/</loc>
+        <lastmod>2024-03-25</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/roadmap/"/>
+    </url>
+</urlset>
