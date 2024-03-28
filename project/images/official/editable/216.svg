@@ -41,11 +41,12 @@
      showgrid="false"
      inkscape:zoom="3.494423"
      inkscape:cx="-7.2048738"
-     inkscape:cy="-11.862481"
-     inkscape:window-x="3832"
-     inkscape:window-y="-3"
+     inkscape:cy="-34.756103"
+     inkscape:window-x="5752"
+     inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1707" />
+     inkscape:current-layer="svg1707"
+     inkscape:document-rotation="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
      id="g1695">
@@ -94,27 +95,8 @@
      font-size="20px"
      id="svg_14"
      y="49.93866"
-     x="17.726891"
+     x="25"
      stroke-width="0"
      stroke="#000000"
      fill="#000000">param(text1)</text>
-  <text
-     xml:space="preserve"
-     text-anchor="start"
-     font-family="sans-serif"
-     font-size="20px"
-     id="svg_14-2"
-     y="49.864204"
-     x="58.363991"
-     stroke-width="0"
-     stroke="#000000"
-     fill="#000000"><tspan
-       sodipodi:role="line"
-       id="tspan2304"
-       x="58.363991"
-       y="49.864204">t</tspan><tspan
-       sodipodi:role="line"
-       id="tspan2306"
-       x="58.363991"
-       y="74.864204" /></text>
 </svg>
