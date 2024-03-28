@@ -43,5 +43,5 @@ INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_i
 INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_it, value_ro, description_de, description_fr, description_it, description_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription, default_inscription1, default_inscription2, default_inscription3, default_inscription4, directional_sign) VALUES ('4.77/29', true, 'Überleitung und Rückführung von Fahrstreifen (doppelspurig nach rechts)', 'Dégagement et retour des voies de circulation (à deux voies à droite)', 'Sgombero e ripristino delle corsie di traffico (a due corsie a destra)', NULL, NULL, NULL, NULL, NULL, '477-29.svg', '477-29.svg', '477-29.svg', '477-29.svg', 100, 85, 0, NULL, NULL, NULL, NULL, false);
 
 -- DROP OLD 4.77.1
-UPDATE signalo.sign SET fk_official_sign = '4.77/01' WHERE fk_official_sign = '4.77.1';
+UPDATE signalo_db.sign SET fk_official_sign = '4.77/01' WHERE fk_official_sign = '4.77.1';
 DELETE from signalo_db.vl_official_sign where id = '4.77.1';
