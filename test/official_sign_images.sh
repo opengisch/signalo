@@ -42,7 +42,7 @@ for _IMG_DIR in "${_IMG_DIRS[@]}"; do
     IMAGE=$(basename ${FILE})
     COUNT=$(psql -t -c "SELECT COUNT(id) FROM signalo_db.vl_official_sign WHERE img_de='${IMAGE}' OR img_fr='${IMAGE}' OR img_it='${IMAGE}' OR img_ro='${IMAGE}' OR img_de_right='${IMAGE}' OR img_fr_right='${IMAGE}' OR img_it_right='${IMAGE}' OR img_ro_right='${IMAGE}'")
     if [[ ${COUNT} -ne "1" ]]; then
-      echo "*** Image ${IMAGE} is not used once in signalo_db.vl_official_sign"
+      echo "*** Image ${IMAGE} is not used once in signalo_db.vl_official_sign (or maybe more than once, checkout)"
       return_code=1
     elif [[ ${_IMG_DIR} = editable ]]; then
       ih=$(exiftool -ImageHeight ${FILE} | sed "s/.*: //;s/pt//g")
