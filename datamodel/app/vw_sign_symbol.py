@@ -195,7 +195,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
-            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) %% 360) AND az.fk_support = support_id
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
             WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor IS FALSE
             ORDER BY support_id, jt.azimut, _rank
         ),
@@ -210,7 +210,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , true::bool AS _verso
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
-            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) %% 360) AND az.fk_support = support_id
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
             WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor IS TRUE
             ORDER BY support_id, jt.azimut, frame_anchor, _rank
         ),
