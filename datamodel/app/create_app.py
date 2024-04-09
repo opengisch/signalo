@@ -4,7 +4,7 @@ import argparse
 import os
 import sys
 
-import psycopg2
+import psycopg
 from pirogue import SimpleJoins
 from yaml import safe_load
 
@@ -15,7 +15,7 @@ from vw_sign_symbol import vw_sign_symbol
 
 def run_sql(file_path: str, pg_service: str, variables: dict = {}):
     sql = open(file_path).read()
-    conn = psycopg2.connect(f"service={pg_service}")
+    conn = psycopg.connect(f"service={pg_service}")
     cursor = conn.cursor()
     cursor.execute(sql, variables)
     conn.commit()
