@@ -5,7 +5,7 @@
 import argparse
 import os
 
-import psycopg2
+import psycopg
 from pirogue.utils import insert_command, select_columns, table_parts, update_command
 
 
@@ -19,9 +19,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         pg_service = os.getenv("PGSERVICE")
     assert pg_service
 
-    variables = {"SRID": int(srid)}
-
-    conn = psycopg2.connect(f"service={pg_service}")
+    conn = psycopg.connect(f"service={pg_service}")
     cursor = conn.cursor()
 
     view_sql = """
@@ -41,7 +39,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , support.group_by_anchor
                 , support.fk_support_type
                 , support.fk_support_base_type
-                , support.geometry::geometry(Point,%(SRID)s) AS support_geometry
+                , support.geometry::geometry(Point,{srid}) AS support_geometry
                 , COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, FALSE) AS directional_sign
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_de
@@ -281,6 +279,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                   END AS _img_direction
             FROM union_view uv;
     """.format(
+        srid=srid,
         sign_columns=select_columns(
             pg_cur=cursor,
             table_schema="signalo_db",
@@ -309,8 +308,8 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     )
 
     try:
-        cursor.execute(view_sql, variables)
-    except psycopg2.Error as e:
+        cursor.execute(view_sql)
+    except psycopg.Error as e:
         with open("~view.sql", "w") as f:
             f.write(view_sql)
         print(f"*** Failing:\n{view_sql}\n***")

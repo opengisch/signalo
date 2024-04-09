@@ -1,8 +1,7 @@
 import os
 import unittest
 
-import psycopg2
-import psycopg2.extras
+import psycopg
 
 from .utils import DbTestBase
 
@@ -19,7 +18,7 @@ class TestViews(unittest.TestCase, DbTestBase):
     @classmethod
     def setUpClass(cls):
         pg_service = os.environ.get("PGSERVICE") or "signalo"
-        cls.conn = psycopg2.connect(f"service={pg_service}")
+        cls.conn = psycopg.connect(f"service={pg_service}")
 
     def test_reorder_signs_in_rank(self):
         frame_count = self.count("frame")

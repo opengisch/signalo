@@ -1,17 +1,16 @@
 import unittest
 
-import psycopg2
-import psycopg2.extras
+import psycopg
 
 
 class DbTestBase:
     def count(self, table, schema="signalo_db") -> int:
-        cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
         cur.execute(f"SELECT COUNT(*) FROM {schema}.{table}")
         return cur.fetchone()[0]
 
     def select(self, table, id, schema="signalo_db"):
-        cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
         cur.execute(
             "SELECT * FROM {schema}.{table} WHERE id=%(id)s".format(
                 table=table, schema=schema
@@ -24,12 +23,12 @@ class DbTestBase:
         return self.execute(f"SELECT {sql};", params=params).fetchone()[0]
 
     def execute(self, sql: str, params=[]):
-        cur = self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
         cur.execute(sql, params)
         return cur
 
     def cursor(self):
-        return self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        return self.conn.cursor(row_factory=psycopg.rows.dict_row)
 
     def insert(self, table, row, schema="signalo_db"):
         cur = self.conn.cursor()

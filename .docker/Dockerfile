@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y python3 python3-pip python3-venv libpq-
 ENV VIRTUAL_ENV=/opt/venv
 RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
-RUN pip3 install pytest psycopg2 pirogue
+RUN pip3 install pytest psycopg pirogue[psycopg3]
 
 # Add source
 ADD . /src
@@ -37,7 +37,7 @@ RUN if [ "${AUTO_INIT}" = "True" ]; then ln -s /src/.docker/init_db.sh /docker-e
 
 # Some defaults
 ENV POSTGRES_PASSWORD=postgres
-# otherwise psycopg2 cannot connect
+# otherwise psycopg cannot connect
 ENV PGSERVICEFILE=/etc/postgresql-common/pg_service.conf
 
 ENV PGSERVICE=pg_signalo

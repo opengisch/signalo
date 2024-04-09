@@ -5,11 +5,10 @@
 import math
 import os
 
-import psycopg2
-import psycopg2.extras
+import psycopg
 
 pg_service = os.environ.get("PGSERVICE") or "pg_signalo"
-conn = psycopg2.connect(f"service={pg_service}")
+conn = psycopg.connect(f"service={pg_service}")
 
 sign_per_support = 8
 step = 100  # in meters
@@ -19,7 +18,7 @@ n_per_col = 20
 def insert(table, row, schema="signalo_db"):
     cols = ", ".join(row.keys())
     values = ", ".join([f"%({key})s" for key in row.keys()])
-    cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+    cur = conn.cursor(row_factory=psycopg.rows.dict_row)
     cur.execute(
         "INSERT INTO {schema}.{table} ({cols}) VALUES ({values}) RETURNING id".format(
             table=table, schema=schema, cols=cols, values=values
@@ -29,7 +28,7 @@ def insert(table, row, schema="signalo_db"):
     return cur.fetchone()[0]
 
 
-cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+cur = conn.cursor(row_factory=psycopg.rows.dict_row)
 cur.execute("SELECT * FROM signalo_db.vl_official_sign")
 rows = cur.fetchall()
 
@@ -45,7 +44,7 @@ for row in rows:
 
         # create support + azimut + frame
         sql = f"SELECT ST_SetSRID(ST_MakePoint({2700000+x_shift*step}, {1300000+y_shift*step}), 2056);"
-        cur = conn.cursor(cursor_factory=psycopg2.extras.DictCursor)
+        cur = conn.cursor(row_factory=psycopg.rows.dict_row)
         cur.execute(sql)
         geom = cur.fetchone()[0]
 
