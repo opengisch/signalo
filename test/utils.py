@@ -10,7 +10,7 @@ class DbTestBase:
         return cur.fetchone()[0]
 
     def select(self, table, id, schema="signalo_db"):
-        cur = self.conn.cursor(r)
+        cur = self.conn.cursor()
         cur.execute(
             "SELECT * FROM {schema}.{table} WHERE id=%(id)s".format(
                 table=table, schema=schema
