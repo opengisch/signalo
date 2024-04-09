@@ -44,7 +44,7 @@ for row in rows:
 
         # create support + azimut + frame
         sql = f"SELECT ST_SetSRID(ST_MakePoint({2700000+x_shift*step}, {1300000+y_shift*step}), 2056);"
-        cur = conn.cursor(row_factory=psycopg.rows.dict_row)
+        cur = conn.cursor()
         cur.execute(sql)
         geom = cur.fetchone()[0]
 
