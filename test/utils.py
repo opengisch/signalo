@@ -5,7 +5,7 @@ import psycopg
 
 class DbTestBase:
     def count(self, table, schema="signalo_db") -> int:
-        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
+        cur = self.conn.cursor()
         cur.execute(f"SELECT COUNT(*) FROM {schema}.{table}")
         return cur.fetchone()[0]
 
