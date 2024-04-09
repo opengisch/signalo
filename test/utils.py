@@ -10,7 +10,7 @@ class DbTestBase:
         return cur.fetchone()[0]
 
     def select(self, table, id, schema="signalo_db"):
-        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
+        cur = self.conn.cursor(r)
         cur.execute(
             "SELECT * FROM {schema}.{table} WHERE id=%(id)s".format(
                 table=table, schema=schema
@@ -19,11 +19,11 @@ class DbTestBase:
         )
         return cur.fetchone()
 
-    def execute_select(self, sql: str, params=[]):
+    def execute_select(self, sql: str, params=None):
         return self.execute(f"SELECT {sql};", params=params).fetchone()[0]
 
     def execute(self, sql: str, params=[]):
-        cur = self.conn.cursor(row_factory=psycopg.rows.dict_row)
+        cur = self.conn.cursor()
         cur.execute(sql, params)
         return cur
 
