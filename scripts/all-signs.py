@@ -18,7 +18,7 @@ n_per_col = 20
 def insert(table, row, schema="signalo_db"):
     cols = ", ".join(row.keys())
     values = ", ".join([f"%({key})s" for key in row.keys()])
-    cur = conn.cursor(row_factory=psycopg.rows.dict_row)
+    cur = conn.cursor()
     cur.execute(
         "INSERT INTO {schema}.{table} ({cols}) VALUES ({values}) RETURNING id".format(
             table=table, schema=schema, cols=cols, values=values
