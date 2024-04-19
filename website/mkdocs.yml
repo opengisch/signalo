@@ -56,7 +56,7 @@ nav:
   - Desktop: desktop.md
   - Mobile: mobile.md
   - Feuille de route: roadmap.md
-  - Documentation BD: datamodel-doc.fr.md
+  - Documentation BD: /model-documentation/
 
 # Css
 extra_css:

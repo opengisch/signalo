@@ -92,7 +92,7 @@ jobs:
           cp -r model-documentation site/
 
       - uses: actions/upload-artifact@v4
-        # if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' }}
         with:
           name: website
           path: website/site
@@ -100,4 +100,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name)
-        run: mkdocs gh-deploy --force
+        run: ghp-import --push --force --no-jekyll site
