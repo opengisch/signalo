@@ -9,6 +9,7 @@ on:
   push:
     branches:
       - master
+      - 3nids-patch-2
     paths:
       - 'website/**'
       - '.github/workflows/website.yml'
@@ -100,4 +101,4 @@ jobs:
 
       - name: Deploy to GitHub Pages
         if: contains(fromJSON('["push", "workflow_dispatch"]'), github.event_name)
-        run: mkdocs gh-deploy --force
+        run: ghp-import --force --no-jekyll

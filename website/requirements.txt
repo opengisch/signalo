@@ -2,3 +2,4 @@ mkdocs-material==9.5.17
 mkdocs-video==1.5.0
 mkdocs-static-i18n==1.2.2
 fancyboxmd==1.1.0
+ghp-import==2.1.0
