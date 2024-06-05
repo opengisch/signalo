@@ -43,18 +43,22 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, FALSE) AS directional_sign
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_de
+                    WHEN sign.fk_sign_type = 16 THEN vl_balise.value_de
                     ELSE vl_official_sign.value_de
                   END AS _symbol_value_de
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_fr
+                    WHEN sign.fk_sign_type = 16 THEN vl_balise.value_fr
                     ELSE vl_official_sign.value_fr
                   END AS _symbol_value_fr
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_it
+                    WHEN sign.fk_sign_type = 16 THEN vl_balise.value_it
                     ELSE vl_official_sign.value_it
                   END AS _symbol_value_it
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_ro
+                    WHEN sign.fk_sign_type = 16 THEN vl_balise.value_ro
                     ELSE vl_official_sign.value_ro
                   END AS _symbol_value_ro
                 , CASE
@@ -64,6 +68,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_de
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_de
                       ELSE NULL::text
                   END AS _img_de
                 , CASE
@@ -73,6 +78,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_fr
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_fr
                       ELSE NULL::text
                   END AS _img_fr
                 , CASE
@@ -82,6 +88,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_it
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_it
                       ELSE NULL::text
                   END AS _img_it
                 , CASE
@@ -91,6 +98,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_ro
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_ro
                       ELSE NULL::text
                   END AS _img_ro
                 , CASE
@@ -100,6 +108,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_de_right
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_de_right
                       ELSE NULL::text
                   END AS _img_de_right
                 , CASE
@@ -109,6 +118,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_fr_right
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_fr_right
                       ELSE NULL::text
                   END AS _img_fr_right
                 , CASE
@@ -118,6 +128,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_it_right
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_it_right
                       ELSE NULL::text
                   END AS _img_it_right
                 , CASE
@@ -127,6 +138,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 'mirror'||CASE WHEN sign.fk_mirror_shape=12 THEN '-circular' ELSE '' END||CASE WHEN NOT mirror_red_frame THEN '-noframe' ELSE '' END || '.svg'::text
                       WHEN sign.fk_sign_type = 14 THEN 'street-plate.svg'::text
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_ro_right
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_ro_right
                       ELSE NULL::text
                   END AS _img_ro_right
                 , CASE
@@ -136,6 +148,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 80
                       WHEN sign.fk_sign_type = 14 THEN 50
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_height
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_height
                       ELSE NULL::integer
                   END AS _symbol_height
                 , CASE
@@ -145,6 +158,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                       WHEN sign.fk_sign_type = 13 THEN 100
                       WHEN sign.fk_sign_type = 14 THEN 100
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_width
+                      WHEN sign.fk_sign_type = 16 THEN vl_balise.img_width
                       ELSE NULL::integer
                   END AS _symbol_width
             FROM signalo_db.sign
@@ -153,6 +167,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 LEFT JOIN signalo_db.support ON support.id = azimut.fk_support
                 LEFT JOIN signalo_db.vl_official_sign ON vl_official_sign.id = sign.fk_official_sign
                 LEFT JOIN signalo_db.vl_user_sign ON vl_user_sign.id = sign.fk_user_sign
+                LEFT JOIN signalo_db.vl_balise ON vl_balise.id = sign.fk_balise
         ),
 
 
