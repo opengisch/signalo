@@ -51,12 +51,22 @@ theme:
 nav:
   - Présentation: index.md
   - Participer: contribute.md
-  - Installation: installation.md
-  - Modèle de données: data-model.md
-  - Desktop: desktop.md
-  - Mobile: mobile.md
+  - Mode d'emploi: 
+    - documentation/user-guide/installation.md
+    - documentation/user-guide/concepts.md
+    - documentation/user-guide/adddata.md
+    - Configuration avancée:
+      - documentation/user-guide/advanced/size.md
+      - documentation/user-guide/advanced/offset.md
+      - documentation/user-guide/advanced/specialsigns.md
+      - documentation/user-guide/advanced/workenvironment.md
+      - documentation/user-guide/advanced/language.md
+      - documentation/user-guide/advanced/coherence.md
+    - Mobile: mobile.md
+    - Mises à jour: documentation/user-guide/updates.md
+    - Documentation BD: /model-documentation/
   - Feuille de route: roadmap.md
-  - Documentation BD: /model-documentation/
+  
 
 # Css
 extra_css:
