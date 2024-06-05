@@ -1,6 +1,6 @@
 ---
 title: Mobile
-tx_slug: documentation_mobile
+tx_slug: documentation_user-guide_mobile
 hide:
   - navigation
   - toc
