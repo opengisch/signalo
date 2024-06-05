@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="200mm"
+   height="50mm"
+   version="1.1"
+   viewBox="0 0 200 50"
+   id="svg1363"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs1367" />
+  <rect
+     width="200"
+     height="50"
+     fill="#fff"
+     vector-effect="non-scaling-stroke"
+     style="-inkscape-stroke:hairline;paint-order:markers stroke fill"
+     id="rect1327" />
+  <g
+     fill-rule="evenodd"
+     id="g1361"
+     transform="matrix(-1,0,0,1,200,0)">
+    <path
+       d="M 100,25 V 0 H 75 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1329" />
+    <path
+       d="M 50,0 V 25 H 75 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1331" />
+    <path
+       d="M 100,25 V 50 H 75 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1333" />
+    <path
+       d="M 50,50 V 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1335" />
+    <path
+       d="M 50,25 V 0 H 25 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1337" />
+    <path
+       d="M 0,0 V 25 H 25 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1339" />
+    <path
+       d="M 50,25 V 50 H 25 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1341" />
+    <path
+       d="M 0,50 V 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1343" />
+    <path
+       d="M 200,25 V 0 h -25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1345" />
+    <path
+       d="m 150,0 v 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1347" />
+    <path
+       d="M 200,25 V 50 H 175 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1349" />
+    <path
+       d="M 150,50 V 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1351" />
+    <path
+       d="M 150,25 V 0 h -25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1353" />
+    <path
+       d="m 100,0 v 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1355" />
+    <path
+       d="M 150,25 V 50 H 125 Z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1357" />
+    <path
+       d="M 100,50 V 25 h 25 z"
+       vector-effect="non-scaling-stroke"
+       style="-inkscape-stroke:hairline"
+       id="path1359" />
+  </g>
+</svg>

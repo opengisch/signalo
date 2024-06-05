@@ -1,0 +1,5 @@
+<svg width="100mm" height="8mm" version="1.1" viewBox="0 0 100 8" xmlns="http://www.w3.org/2000/svg">
+ <path d="m0 0h100v8h-100v-8" fill="#fff" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+ <path d="m25 0h25v8h-25v-8" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+ <path d="m75 0h25v8h-25v-8" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+</svg>

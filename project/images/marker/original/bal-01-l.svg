@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="50mm"
+   height="50mm"
+   viewBox="0 0 50 50"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-141.16057,-228.92143)">
+    <g
+       id="g1079"
+       transform="matrix(-1,0,0,1,191.16057,228.92143)">
+      <rect
+         width="50"
+         height="50"
+         fill="#ffffff"
+         vector-effect="non-scaling-stroke"
+         style="-inkscape-stroke:hairline;paint-order:markers stroke fill"
+         id="rect1055"
+         x="0"
+         y="0" />
+      <g
+         fill-rule="evenodd"
+         id="g1065">
+        <path
+           d="M 50,25 V 0 H 25 Z"
+           vector-effect="non-scaling-stroke"
+           style="-inkscape-stroke:hairline"
+           id="path1057" />
+        <path
+           d="M 0,0 V 25 H 25 Z"
+           vector-effect="non-scaling-stroke"
+           style="-inkscape-stroke:hairline"
+           id="path1059" />
+        <path
+           d="M 50,25 V 50 H 25 Z"
+           vector-effect="non-scaling-stroke"
+           style="-inkscape-stroke:hairline"
+           id="path1061" />
+        <path
+           d="M 0,50 V 25 h 25 z"
+           vector-effect="non-scaling-stroke"
+           style="-inkscape-stroke:hairline"
+           id="path1063" />
+      </g>
+    </g>
+  </g>
+</svg>

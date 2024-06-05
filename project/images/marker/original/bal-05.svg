@@ -1,0 +1,14 @@
+<svg width="25mm" height="100mm" version="1.1" viewBox="0 0 25 100" xmlns="http://www.w3.org/2000/svg">
+ <rect width="25" height="100" fill="#fff" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline;paint-order:markers stroke fill"/>
+ <g fill-rule="evenodd">
+  <path d="m12.5 6.25h-25v25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m-12.5 56.3h25v-25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m12.5 6.25h25v25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m37.5 56.3h-25v-25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m12.5 56.3h-25v25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m-12.5 106h25v-25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m12.5 56.3h25v25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+  <path d="m37.5 106h-25v-25z" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline"/>
+ </g>
+ <rect width="25" height="6.25" vector-effect="non-scaling-stroke" style="-inkscape-stroke:hairline;paint-order:markers stroke fill"/>
+</svg>
