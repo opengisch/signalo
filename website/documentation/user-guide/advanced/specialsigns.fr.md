@@ -38,6 +38,8 @@ Les attributs suivants permettent en outre de créer et gérer des panneaux dire
 * `directional_sign` - à mettre sur true s'il s'agit d'un panneau directionnel
 * `img_fr_right`, `img_de_right`, `img_it_right`, `img_ro_right`, qui contiendront le nom du fichier `.svg` avec direction à droite, par exemple *composite-r.svg*. Les attributs `img_fr`, `img_de` etc. contiendront alors le nom du fichier `.svg` avec direction à gauche, par exemple *composite-l.svg*.
 
+L'attribut `no_dynamic_inscription` devrait contenir le nombre de textes dynamiques dans le `.svg` (ce qui équivaut au nombre de lignes). Cette information doit être renseignée manuellement.
+
 Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
@@ -47,8 +49,8 @@ Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur d
 
 La création du `.svg` correspondant est donc dans la responsabilité de l'utilisateur. Le fichier d'image doit être enregistré dans les deux dossiers
 
-* project > images > user-defined > original : ceci est l'image non-dynamique qui sera aussi affichée dans le formulaire d'attributs. Cette image peut contenir un text d'exemple
-* project > images > user-defined > editable : ceci est l'image dynamique qui permet d'afficher des inscriptions
+* `project/images/user-defined/original` : ceci est l'image non-dynamique qui sera aussi affichée dans le formulaire d'attributs. Cette image peut contenir un text d'exemple
+* `project/images/user-defined/editable` : ceci est l'image dynamique qui permet d'afficher des inscriptions
 
 > A noter: Il est recommandé de prendre une des images officielles (project > images > official > original ou éditable) **comme exemple et base** pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
 
@@ -58,3 +60,4 @@ Si le signal personnalisé ne doit pas contenir une inscription dynamique, les f
   ![Stockage fichiers personnalisés](../../assets/images/printscreen/folder_tree_images.png){width="200"; loading=lazy; style="max-width: 900px"}
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
+
