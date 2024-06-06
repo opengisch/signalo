@@ -110,10 +110,10 @@ plugins:
           nav_translations:
             Présentation: Präsentation
             Participer: Mitmachen
-            Mode d'emploi: Bedienungsanleitung
-            Configuration avancée: Erweiterte Einstellungen
+            Mode d'emploi: Mode d'emploi
+            Configuration avancée: Configuration avancée
             Mobile: Mobil
-            Mises à jour: Updates
+            Mises à jour: Mises à jour
             Documentation BD: DB Dokumentation
             Feuille de route: Roadmap
           palette:
