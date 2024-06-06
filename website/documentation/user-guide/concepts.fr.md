@@ -21,8 +21,8 @@ Frame "1" --- "*" Sign
 @enduml
 -->
 
-![Classes](./assets/images/signalo_classes.png#only-light)
-![Classes](./assets/images/signalo_classes_dark.png#only-dark)
+![Classes](../assets/images/signalo_classes.png#only-light)
+![Classes](../assets/images/signalo_classes_dark.png#only-dark)
 
 Un support peut présenter des objets selon plusieurs azimuts, chacun pouvant présenter plusieurs cadres, chacun pouvant supporter plusieurs signaux.
 
