@@ -18,21 +18,21 @@ hide:
 
     === "Général"
         <figure markdown>
-          ![Projet QField](./assets/images/printscreen/qfield_signalo.jpg){ width="300" align="left"; loading=lazy }
+          ![Projet QField](../assets/images/printscreen/qfield_signalo.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>visualisation sous QField</figcaption>
         </figure>
 
     === "Azimut"
         <figure markdown>
-          ![Projet QField](./assets/images/printscreen/qfield_edit.jpg){ width="300" align="left"; loading=lazy }
+          ![Projet QField](../assets/images/printscreen/qfield_edit.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>édition des supports</figcaption>
         </figure>
 
     === "Signal"
         <figure markdown>
-          ![Projet QField](./assets/images/printscreen/qfield_form.jpg){ width="300" align="left"; loading=lazy }
+          ![Projet QField](../assets/images/printscreen/qfield_form.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>édition du signal</figcaption>
         </figure>
 
 
-De retour au bureau, synchroniser le projet à l'aide de QFieldSync
+De retour au bureau, synchroniser le projet à l'aide de QFieldSync.

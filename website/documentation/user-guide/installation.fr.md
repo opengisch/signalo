@@ -34,6 +34,6 @@ hide:
 4. Dans QGIS, installez les plugins suivants:
     * [Ordered Relation Editor](https://plugins.qgis.org/plugins/ordered_relation_editor/)
     * [QFieldSync](https://plugins.qgis.org/plugins/qfieldsync/) (version min 4.0)
-    * [Document Management System](https://plugins.qgis.org/plugins/document_management_system/)
+    * [Document Management System](https://plugins.qgis.org/plugins/document_management_system/)  
 
 5. Ouvrez le projet QGIS du dossier extrait.

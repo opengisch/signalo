@@ -1,6 +1,6 @@
 ---
 title: Taille des panneaux
-tx_slug: documentation_user-guide_advanced_size
+tx_slug: documentation_user-guide_advanced_specialsigns
 hide:
   - navigation
   - toc
@@ -56,6 +56,6 @@ La création du `.svg` correspondant est donc dans la responsabilité de l'utili
 Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
 
 <figure markdown>
-  !![Projet QField](./assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy; style="max-width: 900px"}
+  !![Projet QField](../../assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy; style="max-width: 900px"}
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
