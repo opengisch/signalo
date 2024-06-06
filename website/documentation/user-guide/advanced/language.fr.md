@@ -1,9 +1,6 @@
 ---
 title: Langues
 tx_slug: documentation_user-guide_advanced_languages
-hide:
-  - navigation
-  - toc
 ---
 
 # Langues

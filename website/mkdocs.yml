@@ -20,7 +20,6 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
     - navigation.expand
     - navigation.indexes
     - navigation.top
@@ -62,6 +61,7 @@ nav:
           - user-guide/advanced/size.md
           - user-guide/advanced/offset.md
           - user-guide/advanced/specialsigns.md
+          - user-guide/advanced/add_values.md
           - user-guide/advanced/workenvironment.md
           - user-guide/advanced/language.md
           - user-guide/advanced/coherence.md
@@ -96,6 +96,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.superfences
+  - toc: 
+      permalink: true
 
 plugins:
   - search

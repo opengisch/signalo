@@ -1,18 +1,11 @@
 ---
 title: Mobile
 tx_slug: documentation_user-guide_mobile
-hide:
-  - navigation
-  - toc
 ---
 
+Pour le travail de terrain, l'application mobile [**QField**](https://qfield.org/) et l'extension pour QGIS [**QFieldSync**](https://plugins.qgis.org/plugins/qfieldsync/) sont utilisées. 
 
-* Utiliser le plugin “QFieldSync” pour créer un paquet projet pour QField
-* Le dossier se compose d'un projet QGIS (qgs) et d'un fichier de base de données (gpkg)
-* Ajouter le dossier “images” à ce dossier. Ceci permet d'avoir un rendu avec les images de la signalisation.
-* Copier ce dossier sur votre appareil mobile à l'emplacement de votre choix
-* Ouvrir QField ⇒ cliquer sur “Ouvrir un fichier local”
-* Chercher le fichier qgs copié en local sur votre mobile
+Nous renvoyons ici vers la [documentation de QField](https://docs.qfield.org/get-started/) pour les étapes de préparation du projet de terrain.
 
 !!! info "Édition sous QField"
 
@@ -34,5 +27,4 @@ hide:
           <figcaption>édition du signal</figcaption>
         </figure>
 
-
-De retour au bureau, synchroniser le projet à l'aide de QFieldSync.
+> A noter : L'affichage des signaux sur la carte dépend d'une vue dans la base de données. Comme le travail de terrain est effectué hors ligne avec une copie locale des données, la couche dont dépend la symbologie n'est pas mise à jour sur le terrain. L'affichage des signaux nouveaux ou édités sur la carte ne fonctionne donc pas dans QField. 

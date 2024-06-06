@@ -1,9 +1,6 @@
 ---
 title: Filtrage et cohérence
 tx_slug: documentation_user-guide_advanced_coherence
-hide:
-  - navigation
-  - toc
 ---
 
 # Filtrage et analyse de la cohérence globale

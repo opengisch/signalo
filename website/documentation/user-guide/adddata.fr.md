@@ -1,14 +1,9 @@
 ---
-title: Edition
+title: Ajout de signaux
 tx_slug: documentation_user-guide_adddata
-hide:
-  - navigation
-  - toc
 ---
 
-# Edition
-
-## Ajout de signaux
+# Ajout de signaux
 
 * Mettre la couche "Support" en édition et digitaliser un point pour ouvrir le formulaire.
 
@@ -35,7 +30,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
 
 <figure markdown>
   ![Outil Azimut](../assets/images/printscreen/azimut-edit.png)
-  <figcaption>Définition de l'azimut de manière graphique, grâce à l'outil</figcaption>
+  <figcaption>Définition de l'azimut de manière graphique, grâce à l'Outil Azimut</figcaption>
 </figure>
 
-Dans l'onglet “Documents“, des fichiers de tout format peuvent être liés à un support à travers leur chemin de stockage. L'extension [Document Management System](https://plugins.qgis.org/plugins/document_management_system/),fournit une interface pour gérer les relations du système de gestion des documents des deux côtés (côté document et côté objet). Elle prend en charge les relations 1-N et N-M. Les chemins vers les documents sont stockés dans la base de données dans la table `signalo_db.dms_document`.
+Dans l'onglet “Documents“, des fichiers de tout format peuvent être liés à un support à travers leur chemin de stockage. L'extension [Document Management System](https://plugins.qgis.org/plugins/document_management_system/) fournit une interface pour gérer les relations du système de gestion des documents des deux côtés (côté document et côté support). Elle prend en charge les relations 1-N et N-M. Les chemins vers les documents sont stockés dans la base de données dans la table `signalo_db.dms_document`.

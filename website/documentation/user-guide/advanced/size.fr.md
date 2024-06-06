@@ -1,9 +1,6 @@
 ---
 title: Taille des panneaux
 tx_slug: documentation_user-guide_advanced_size
-hide:
-  - navigation
-  - toc
 ---
 
 # Taille des panneaux

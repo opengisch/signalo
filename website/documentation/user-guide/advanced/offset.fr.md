@@ -1,9 +1,6 @@
 ---
 title: Décalage des panneaux
 tx_slug: documentation_user-guide_advanced_offset
-hide:
-  - navigation
-  - toc
 ---
 
 # Décalage des panneaux

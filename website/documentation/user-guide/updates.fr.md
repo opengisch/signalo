@@ -1,9 +1,6 @@
 ---
 title: Mises à jour
 tx_slug: documentation_user-guide_updates
-hide:
-  - navigation
-  - toc
 ---
 
 

@@ -4,7 +4,9 @@ tx_slug: documentation_user-guide_installation
 ---
 
 
-# Prérequis
+# Installation
+
+## Prérequis
 
 * QGIS version LTR ou plus récente
 * Un serveur Postgresql version 10 ou plus récente
@@ -26,7 +28,7 @@ tx_slug: documentation_user-guide_installation
     `PGSERVICE=pg_signalo psql -v ON_ERROR_STOP=1 -f _chemin_vers_le_fichier_sql`
 
 
-## Desktop
+## Extensions
 
 4. Dans QGIS, installez les plugins suivants:
     * [Ordered Relation Editor](https://plugins.qgis.org/plugins/ordered_relation_editor/)

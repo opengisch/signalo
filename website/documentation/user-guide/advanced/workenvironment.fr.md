@@ -1,9 +1,6 @@
 ---
 title: Environnements de travail
 tx_slug: documentation_user-guide_advanced_workenvironment
-hide:
-  - navigation
-  - toc
 ---
 
 # Environnements de travail
