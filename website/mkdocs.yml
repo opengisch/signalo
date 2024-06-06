@@ -62,6 +62,7 @@ nav:
           - documentation/user-guide/advanced/workenvironment.md
           - documentation/user-guide/advanced/language.md
           - documentation/user-guide/advanced/coherence.md
+          - documentation/user-guide/advanced/export.md
       - Mobile: documentation/user-guide/mobile.md
       - Mises à jour: documentation/user-guide/updates.md
       - Documentation BD: /model-documentation/
