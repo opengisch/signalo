@@ -1,9 +1,6 @@
 ---
 title: Installation
 tx_slug: documentation_user-guide_installation
-hide:
-  - navigation
-  - toc
 ---
 
 
