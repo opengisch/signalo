@@ -52,19 +52,19 @@ nav:
   - Présentation: index.md
   - Participer: contribute.md
   - Mode d'emploi:
-      - documentation/user-guide/installation.md
-      - documentation/user-guide/concepts.md
-      - documentation/user-guide/adddata.md
+      - user-guide/installation.md
+      - user-guide/concepts.md
+      - user-guide/adddata.md
       - Configuration avancée:
-          - documentation/user-guide/advanced/size.md
-          - documentation/user-guide/advanced/offset.md
-          - documentation/user-guide/advanced/specialsigns.md
-          - documentation/user-guide/advanced/workenvironment.md
-          - documentation/user-guide/advanced/language.md
-          - documentation/user-guide/advanced/coherence.md
-          - documentation/user-guide/advanced/export.md
-      - Mobile: documentation/user-guide/mobile.md
-      - Mises à jour: documentation/user-guide/updates.md
+          - user-guide/advanced/size.md
+          - user-guide/advanced/offset.md
+          - user-guide/advanced/specialsigns.md
+          - user-guide/advanced/workenvironment.md
+          - user-guide/advanced/language.md
+          - user-guide/advanced/coherence.md
+          - user-guide/advanced/export.md
+      - Mobile: user-guide/mobile.md
+      - Mises à jour: user-guide/updates.md
       - Documentation BD: /model-documentation/
   - Feuille de route: roadmap.md
 
