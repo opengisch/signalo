@@ -18,19 +18,19 @@ hide:
 
     === "Général"
         <figure markdown>
-          ![Projet QField](../assets/images/printscreen/qfield_signalo.jpg){ width="300" align="left"; loading=lazy }
+          ![visualisation QField](../assets/images/printscreen/qfield_signalo.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>visualisation sous QField</figcaption>
         </figure>
 
     === "Azimut"
         <figure markdown>
-          ![Projet QField](../assets/images/printscreen/qfield_edit.jpg){ width="300" align="left"; loading=lazy }
+          ![Edition supports](../assets/images/printscreen/qfield_edit.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>édition des supports</figcaption>
         </figure>
 
     === "Signal"
         <figure markdown>
-          ![Projet QField](../assets/images/printscreen/qfield_form.jpg){ width="300" align="left"; loading=lazy }
+          ![Edition signal](../assets/images/printscreen/qfield_form.jpg){ width="300" align="left"; loading=lazy }
           <figcaption>édition du signal</figcaption>
         </figure>
 
