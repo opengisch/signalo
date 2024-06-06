@@ -15,6 +15,6 @@ Avec un clic-droit sur la couche, sélectionner "Filtrer…" dans le menu.
 Il faut alors construire une requête pour filtrer les éléments.
 
 <figure markdown>
-  !![Projet QField](../../assets/images/printscreen/filter.png)
+  ![Filtrage des signaux](../../assets/images/printscreen/filter.png)
   <figcaption>Filtrage des signaux</figcaption>
 </figure>

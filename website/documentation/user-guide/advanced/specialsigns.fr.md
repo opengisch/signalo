@@ -44,7 +44,7 @@ Les attributs suivants permettent en outre de créer et gérer des panneaux dire
 Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
 <figure markdown>
-  !![Liste définie par l'utilisateur](./assets/images/printscreen/liste_defini_par_lutilisateur.png)
+  ![Liste définie par l'utilisateur](../../assets/images/printscreen/liste_defini_par_lutilisateur.png)
   <figcaption>Liste des types de signal</figcaption>
 </figure>
 
@@ -56,6 +56,6 @@ La création du `.svg` correspondant est donc dans la responsabilité de l'utili
 Il est recommandé de prendre une des images officielles comme exemple et base pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
 
 <figure markdown>
-  !![Projet QField](../../assets/images/printscreen/folder_tree_images.png){ width="200"; loading=lazy; style="max-width: 900px"}
+  ![Projet QField](../../assets/images/printscreen/folder_tree_images.png){width="200"; loading=lazy; style="max-width: 900px"}
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
