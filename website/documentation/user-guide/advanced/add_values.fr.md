@@ -5,7 +5,7 @@ tx_slug: documentation_user-guide_advanced_add_values
 
 # Ajouter une entrée dans une liste de valeurs
 
-Comme décrit dans le [modèle des données](https://www.signalo.ch/model-documentation), SIGNALO se repose sur un certain nombre de listes de valeurs, intégrées comme listes déroulantes dans les formulaires des différents couches de données.
+Comme décrit dans le [modèle des données](https://www.signalo.ch/model-documentation), SIGNALO repose sur un certain nombre de listes de valeurs, intégrées comme listes déroulantes dans les formulaires des différents couches de données.
 
 Le contenu et la structure de ces listes de valeurs sont relativement fixes. Elles ne peuvent être modifiées que lors d'une mise à jour du modèle de données qui sera publiée avec une [release officielle](https://github.com/opengisch/signalo/releases).
 
