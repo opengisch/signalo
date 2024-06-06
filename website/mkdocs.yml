@@ -62,6 +62,7 @@ nav:
           - user-guide/advanced/offset.md
           - user-guide/advanced/specialsigns.md
           - user-guide/advanced/add_values.md
+          - user-guide/advanced/duplicateobject.md
           - user-guide/advanced/workenvironment.md
           - user-guide/advanced/language.md
           - user-guide/advanced/coherence.md
