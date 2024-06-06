@@ -110,12 +110,12 @@ plugins:
           nav_translations:
             Présentation: Präsentation
             Participer: Mitmachen
-            Installation: Installation
-            Modèle de données: Datenmodelle
-            Desktop: Desktop
-            Mobile: Mobil
+            Mode d'emploi: Bedienungsanleitung
+              Configuration avancée: Erweiterte Einstellungen
+              Mobile: Mobil
+              Mises à jour: Updates
+              Documentation BD: DB Dokumentation
             Feuille de route: Roadmap
-            Documentation BD: DB Dokumentation
           palette:
             # Palette toggle for automatic mode
             - media: "(prefers-color-scheme)"
