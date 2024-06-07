@@ -20,7 +20,9 @@ theme:
   features:
     - navigation.tabs
     - navigation.tabs.sticky
-    - navigation.sections
+    - navigation.expand
+    - navigation.indexes
+    - navigation.top
     - navigation.tracking
     - search.suggest
     - search.highlight
@@ -51,12 +53,25 @@ theme:
 nav:
   - Présentation: index.md
   - Participer: contribute.md
-  - Installation: installation.md
-  - Modèle de données: data-model.md
-  - Desktop: desktop.md
-  - Mobile: mobile.md
+  - Mode d'emploi:
+      - user-guide/installation.md
+      - user-guide/concepts.md
+      - user-guide/adddata.md
+      - Configuration avancée:
+          - user-guide/advanced/size.md
+          - user-guide/advanced/offset.md
+          - user-guide/advanced/specialsigns.md
+          - user-guide/advanced/add_values.md
+          - user-guide/advanced/duplicateobject.md
+          - user-guide/advanced/workenvironment.md
+          - user-guide/advanced/language.md
+          - user-guide/advanced/coherence.md
+          - user-guide/advanced/export.md
+      - Mobile: user-guide/mobile.md
+      - Mises à jour: user-guide/updates.md
+      - Documentation BD: /model-documentation/
   - Feuille de route: roadmap.md
-  - Documentation BD: /model-documentation/
+
 
 # Css
 extra_css:
@@ -82,6 +97,8 @@ markdown_extensions:
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.superfences
+  - toc:
+      permalink: true
 
 plugins:
   - search
@@ -99,12 +116,12 @@ plugins:
           nav_translations:
             Présentation: Präsentation
             Participer: Mitmachen
-            Installation: Installation
-            Modèle de données: Datenmodelle
-            Desktop: Desktop
+            Mode d'emploi: Mode d'emploi
+            Configuration avancée: Configuration avancée
             Mobile: Mobil
-            Feuille de route: Roadmap
+            Mises à jour: Mises à jour
             Documentation BD: DB Dokumentation
+            Feuille de route: Roadmap
           palette:
             # Palette toggle for automatic mode
             - media: "(prefers-color-scheme)"

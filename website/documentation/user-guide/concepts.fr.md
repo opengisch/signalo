@@ -1,12 +1,9 @@
 ---
-title: Data Model
-tx_slug: documentation_data-model
-hide:
-  - navigation
-  - toc
+title: Concepts
+tx_slug: documentation_user-guide_concepts
 ---
 
-## Structure
+# Structure
 
 On distingue 4 classes principales dans le modèle de données:
 <!--
@@ -21,8 +18,8 @@ Frame "1" --- "*" Sign
 @enduml
 -->
 
-![Classes](./assets/images/signalo_classes.png#only-light)
-![Classes](./assets/images/signalo_classes_dark.png#only-dark)
+![Classes](../assets/images/signalo_classes.png#only-light)
+![Classes](../assets/images/signalo_classes_dark.png#only-dark)
 
 Un support peut présenter des objets selon plusieurs azimuts, chacun pouvant présenter plusieurs cadres, chacun pouvant supporter plusieurs signaux.
 
@@ -30,11 +27,11 @@ Ces tables, ansi que les tables de listes de valeurs, sont regroupé dans un sch
 
 Il existe par ailleurs un second schéma, `signalo_app` offrant quant à lui la vue permettant l'affichage des signaux sur la carte. Celle-ci regroupe les données des quatres tables principales dans une hierarchie aplatie et est générée de manière à ce que l'ordre des panneaux, cadres et azimuts est respecté.
 
-## Documentation
+# Documentation
 
 La description complète du modèle de données se trouve [ici](https://www.signalo.ch/model-documentation).
 
-## Mise à jour du modèles de données
+# Mise à jour du modèles de données
 
 La structure des données peut évoluer d'une release à une autre. Si votre base de données est déjà en place, les mises à jour peuvent facilement être faites grâce à des fichiers de migration `sql`. Ainsi, la structure est actualisée sans modification des données existantes.
 

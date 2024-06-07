@@ -1,9 +1,6 @@
 ---
 title: Data Model
-tx_slug: documentation_datamodel-doc
-hide:
-  - navigation
-  - toc
+tx_slug: documentation_user-guide_datamodel-doc
 ---
 
 <div class="doc">
