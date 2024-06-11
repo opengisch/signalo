@@ -29,6 +29,6 @@ Ces tables, ansi que les tables de listes de valeurs, sont regroupé dans un sch
 Il existe par ailleurs un second schéma, `signalo_app` offrant quant à lui la vue permettant l'affichage des signaux sur la carte. Celle-ci regroupe les données des quatres tables principales dans une hierarchie aplatie et est générée de manière à ce que l'ordre des panneaux, cadres et azimuts est respecté.
 
   
-## Documentation
+## Documentation du modèle des données
 
 La description complète du modèle de données se trouve [ici](https://www.signalo.ch/model-documentation).
