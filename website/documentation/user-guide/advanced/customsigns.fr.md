@@ -40,4 +40,3 @@ Si le signal personnalisé ne doit pas contenir d'inscription dynamique, les fic
   ![Stockage fichiers personnalisés](../../assets/images/printscreen/folder_tree_images.png){width="200"; loading=lazy; style="max-width: 900px"}
   <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
 </figure>
-
