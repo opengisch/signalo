@@ -58,12 +58,12 @@ nav:
       - user-guide/concepts.md
       - user-guide/adddata.md
       - user-guide/directionalsigns.md
+      - user-guide/marker.md
       - Configuration avancée:
           - user-guide/advanced/size.md
           - user-guide/advanced/offset.md
           - user-guide/advanced/doublesided.md
           - user-guide/advanced/customsigns.md
-          - user-guide/advanced/marker.md
           - user-guide/advanced/add_values.md
           - user-guide/advanced/duplicateobject.md
           - user-guide/advanced/workenvironment.md
@@ -118,7 +118,7 @@ plugins:
           site_description: Signalo ist ein Modul für vertikale Signalisierung.
           nav_translations:
             Présentation: Präsentation
-            Participer: Mitmachen
+            Contribuer: Mitmachen
             Mode d'emploi: Mode d'emploi
             Configuration avancée: Configuration avancée
             Mobile: Mobil
