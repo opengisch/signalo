@@ -9,7 +9,7 @@ Les balises sont gérées comme une catégorie de signaux à part. Tout comme le
 
 <figure markdown>
   ![Choix type balise](../../assets/images/printscreen/sign_form_marker.png){width="200"; loading=lazy; style="max-width: 900px"}
-  <figcaption>Choisir le type de signal *balise*</figcaption>
+  <figcaption>Choisir le type de signal "balise"</figcaption>
 </figure>
 
 Les images `.svg` des balises sont stockées dans `project/images/marker/editable` et `... original`. 

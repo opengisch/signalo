@@ -52,7 +52,7 @@ theme:
 
 nav:
   - Présentation: index.md
-  - Participer: contribute.md
+  - Contribuer: contribute.md
   - Mode d'emploi:
       - user-guide/installation.md
       - user-guide/concepts.md
@@ -64,7 +64,6 @@ nav:
           - user-guide/advanced/doublesided.md
           - user-guide/advanced/customsigns.md
           - user-guide/advanced/marker.md
-          - user-guide/advanced/specialsigns.md
           - user-guide/advanced/add_values.md
           - user-guide/advanced/duplicateobject.md
           - user-guide/advanced/workenvironment.md
