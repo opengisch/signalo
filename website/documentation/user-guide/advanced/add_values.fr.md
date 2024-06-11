@@ -13,4 +13,4 @@ Si une utilisatrice ou un utilisateur souhaite ajouter une valeur dans une liste
 En cas d'une nouvelle valeur qui aurait une influence sur l'affichage des signaux sur la carte, p.ex. un nouveau type de support, une image `.svg` correspondant devrait être fourni avec.  
 Dans ce cas-là, le projet QGIS doit également être mis à jour.
 
-Il est fortement déconseillé de modifier les listes directement dans la base de données locale. A la sortie d'une nouvelle version du modèle de données SIGNALO, ces modifications locales seront écrasées et la mise à jour peut provoquer des conflits s'il y a eu utilisation de clés étrangères non-connues par la structure des données officielle.
+Nous encourageons vivement cette approche à l'ajout d'entrées dans les listes de valeurs. Si toutefois, vous veniez à compléter ces listes, il est possible que cela entraîne des complications lors des mises à jour du modèle de données.
