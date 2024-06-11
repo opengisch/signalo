@@ -1,5 +1,5 @@
 ---
-title: Signaux directionnels
+title: Panneaux directionnels
 tx_slug: documentation_user-guide_directionalsigns
 ---
 

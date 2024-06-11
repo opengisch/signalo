@@ -8,11 +8,11 @@ hide:
 
 SIGNALO est continuellement amélioré afin de répondre aux besoins des gestionnaires de la signalisation routière. SIGNALO se base sur la dernière LTR de QGIS. Celle-ci est généralement mise à jour en début d'année (voir aussi [Roadmap QGIS](https://qgis.org/fr/site/getinvolved/development/roadmap.html#location-of-prereleases-nightly-builds)). Une nouvelle version de SIGNALO est mise à disposition dans le mois qui suit la sortie de la LTR QGIS. Les releases suivants se basent sur la LTR en cours.
 
-### Versioning
+## Versioning
 
 Les versions sont nommées major.minor.bugfix (par exemple 0.5.1). Tout changement dans le modèle de données (schéma signalo_db) se traduira par une augmentation de la version mineure et les changelogs correspondants sont nommés en conséquence. Tout changement dans l'application (schéma signalo_app) ou dans le projet de démonstration QGIS entraînera une augmentation de la correction de bugs.
 
-### Roadmap
+## Roadmap
 Voici une liste non-exhaustive des améliorations prévues pour SIGNALO
 
 * Amélioration de l'interface du formulaire avec un regroupement des cadres et signaux:
@@ -30,6 +30,6 @@ Voici une liste non-exhaustive des améliorations prévues pour SIGNALO
 * Outil avancé pour l'analyse de la cohérence globale via un plugin
 
 
-### Derniers changements
+## Derniers changements
 
 Toutes les releases sont disponible sur [Github](https://github.com/opengisch/signalo/releases/)  - le changelog décrit les changements d'une version à une autre.
