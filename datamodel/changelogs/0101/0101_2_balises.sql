@@ -2,51 +2,35 @@
 ALTER TABLE signalo_db.sign
     DROP CONSTRAINT fkey_vl_marker_type;
 
-TRUNCATE signalo_db.vl_marker_type;
+DROP TABLE IF EXISTS signalo_db.vl_marker_type;
 
-ALTER TABLE signalo_db.vl_marker_type
-    DROP CONSTRAINT marker_type_pkey,
-	DROP COLUMN id,
-	DROP COLUMN active,
-	DROP COLUMN value_de,
-	DROP COLUMN value_fr,
-	DROP COLUMN description_de,
-	DROP COLUMN description_fr;
-
-ALTER TABLE signalo_db.vl_marker_type
-	ADD COLUMN id text,
-	ADD COLUMN active boolean,
-	ADD COLUMN value_de text,
-    ADD COLUMN value_fr text,
-	ADD COLUMN value_it text,
-    ADD COLUMN value_ro text,
-	ADD COLUMN description_de text,
-	ADD COLUMN description_fr text,
-    ADD COLUMN description_it text,
-    ADD COLUMN description_ro text,
-    ADD COLUMN img_de text,
-    ADD COLUMN img_fr text,
-    ADD COLUMN img_it text,
-    ADD COLUMN img_ro text,
-    ADD COLUMN img_height integer DEFAULT 100,
-    ADD COLUMN img_width integer DEFAULT 100,
-    ADD COLUMN no_dynamic_inscription integer DEFAULT 0,
-    ADD COLUMN default_inscription1 text,
-    ADD COLUMN default_inscription2 text,
-    ADD COLUMN default_inscription3 text,
-    ADD COLUMN default_inscription4 text,
-    ADD COLUMN directional_sign boolean, 
-    ADD COLUMN img_de_right text, 
-    ADD COLUMN img_fr_right text, 
-    ADD COLUMN img_it_right text, 
-    ADD COLUMN img_ro_right text;
-
--- Add the new sign type 'balise' to the value list signalo_db.vl_sign_type
--- INSERT INTO signalo_db.vl_sign_type (id, active, value_de, value_fr) VALUES (16, true, 'Leiteinrichtung', 'dispositif de balisage');
-
-
-ALTER TABLE signalo_db.vl_marker_type
-    ALTER COLUMN id TYPE text USING id::text;
+CREATE TABLE signalo_db.vl_marker_type (
+	id text,
+	active boolean,
+	value_de text,
+    value_fr text,
+	value_it text,
+    value_ro text,
+	description_de text,
+	description_fr text,
+    description_it text,
+    description_ro text,
+    img_de text,
+    img_fr text,
+    img_it text,
+    img_ro text,
+    img_height integer DEFAULT 100,
+    img_width integer DEFAULT 100,
+    no_dynamic_inscription integer DEFAULT 0,
+    default_inscription1 text,
+    default_inscription2 text,
+    default_inscription3 text,
+    default_inscription4 text,
+    directional_sign boolean, 
+    img_de_right text, 
+    img_fr_right text, 
+    img_it_right text, 
+    img_ro_right text);
 
 ALTER TABLE signalo_db.sign
     ALTER COLUMN fk_marker_type TYPE text USING fk_marker_type::text;
