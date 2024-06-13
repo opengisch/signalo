@@ -26,10 +26,10 @@ CREATE TABLE signalo_db.vl_marker_type (
     default_inscription2 text,
     default_inscription3 text,
     default_inscription4 text,
-    directional_sign boolean, 
-    img_de_right text, 
-    img_fr_right text, 
-    img_it_right text, 
+    directional_sign boolean,
+    img_de_right text,
+    img_fr_right text,
+    img_it_right text,
     img_ro_right text);
 
 ALTER TABLE signalo_db.sign
@@ -93,7 +93,7 @@ ALTER TABLE ONLY signalo_db.vl_marker_type
 -- Set foreign key for user signs in signalo_db.sign
 ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_marker_type FOREIGN KEY (fk_marker_type) REFERENCES signalo_db.vl_marker_type(id) MATCH FULL;
-	
+
 -- Recreate functions and triggers in signalo_db.sign
 -- FUNCTION: signalo_db.ft_reorder_signs_in_frame()
 CREATE OR REPLACE FUNCTION signalo_db.ft_reorder_signs_in_frame()
@@ -113,7 +113,7 @@ AS $BODY$
         END LOOP;
 		RETURN OLD;
 	END;
-	
+
 $BODY$;
 
 ALTER FUNCTION signalo_db.ft_reorder_signs_in_frame()
@@ -131,7 +131,7 @@ AS $BODY$
     BEGIN
       RAISE EXCEPTION 'A sign cannot be reassigned to another frame.';
     END;
-    
+
 $BODY$;
 
 ALTER FUNCTION signalo_db.ft_sign_prevent_fk_frame_update()
@@ -155,4 +155,3 @@ CREATE OR REPLACE TRIGGER tr_sign_on_update_prevent_fk_frame
     FOR EACH ROW
     WHEN (new.fk_frame <> old.fk_frame)
     EXECUTE FUNCTION signalo_db.ft_sign_prevent_fk_frame_update();
-
