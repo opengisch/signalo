@@ -12,11 +12,10 @@ Les balises sont gérées comme une catégorie de signaux à part. Tout comme le
   <figcaption>Choisir le type de signal "balise"</figcaption>
 </figure>
 
-Les images `.svg` des balises sont stockées dans `project/images/marker/editable` et `... original`. 
+Les images `.svg` des balises sont stockées dans `project/images/marker/editable` et `... original`.
 
 Les types de balises suivants sont directionnels et traités dans le projet QGIS exactement comme les [panneaux directionnels](https://signalo.ch/user-guide/directionalsigns/):  
 
 - Flèche de balisage simple
 - Flèche de balisage multiple
 - Balise de guidage (direction).
-
