@@ -115,7 +115,7 @@ plugins:
           site_description: Signalo ist ein Modul für vertikale Signalisierung.
           nav_translations:
             Présentation: Präsentation
-            Participer: Mitmachen
+            Participer: Participer
             Mode d'emploi: Mode d'emploi
             Configuration avancée: Configuration avancée
             Mobile: Mobil
