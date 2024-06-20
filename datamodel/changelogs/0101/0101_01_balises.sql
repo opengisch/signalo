@@ -1,3 +1,6 @@
+--Disable triggers in signalo_db.sign before changes
+ALTER TABLE signalo_db.sign DISABLE TRIGGER ALL;
+
 --Disable foreign keys
 ALTER TABLE signalo_db.sign
     DROP CONSTRAINT fkey_vl_marker_type;
