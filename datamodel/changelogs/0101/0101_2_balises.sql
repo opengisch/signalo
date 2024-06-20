@@ -1,4 +1,4 @@
---Add to signalo_db.sign a field named fk_balise
+--Disable foreign keys
 ALTER TABLE signalo_db.sign
     DROP CONSTRAINT fkey_vl_marker_type;
 
@@ -137,21 +137,4 @@ $BODY$;
 ALTER FUNCTION signalo_db.ft_sign_prevent_fk_frame_update()
     OWNER TO postgres;
 
-
--- Set trigger: tr_sign_on_delete_reorder
-CREATE OR REPLACE TRIGGER tr_sign_on_delete_reorder
-    AFTER DELETE
-    ON signalo_db.sign
-    FOR EACH ROW
-    EXECUTE FUNCTION signalo_db.ft_reorder_signs_in_frame();
-
-COMMENT ON TRIGGER tr_sign_on_delete_reorder ON signalo_db.sign
-    IS 'Trigger: update signs order after deleting one.';
-
--- Set trigger: tr_sign_on_update_prevent_fk_frame
-CREATE OR REPLACE TRIGGER tr_sign_on_update_prevent_fk_frame
-    BEFORE UPDATE OF fk_frame
-    ON signalo_db.sign
-    FOR EACH ROW
-    WHEN (new.fk_frame <> old.fk_frame)
-    EXECUTE FUNCTION signalo_db.ft_sign_prevent_fk_frame_update();
+ALTER TABLE signalo_db.sign ENABLE TRIGGER ALL;
