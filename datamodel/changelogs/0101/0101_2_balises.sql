@@ -94,47 +94,5 @@ ALTER TABLE ONLY signalo_db.vl_marker_type
 ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_marker_type FOREIGN KEY (fk_marker_type) REFERENCES signalo_db.vl_marker_type(id) MATCH FULL;
 
--- Recreate functions and triggers in signalo_db.sign
--- FUNCTION: signalo_db.ft_reorder_signs_in_frame()
-CREATE OR REPLACE FUNCTION signalo_db.ft_reorder_signs_in_frame()
-    RETURNS trigger
-    LANGUAGE 'plpgsql'
-    COST 100
-    VOLATILE NOT LEAKPROOF
-AS $BODY$
-	DECLARE
-	    _rank integer := 1;
-	    _sign record;
-	BEGIN
-        FOR _sign IN (SELECT * FROM signalo_db.sign WHERE fk_frame = OLD.fk_frame ORDER BY rank ASC)
-        LOOP
-            UPDATE signalo_db.sign SET rank = _rank WHERE id = _sign.id;
-            _rank = _rank + 1;
-        END LOOP;
-		RETURN OLD;
-	END;
-
-$BODY$;
-
-ALTER FUNCTION signalo_db.ft_reorder_signs_in_frame()
-    OWNER TO postgres;
-
-
--- FUNCTION: signalo_db.ft_sign_prevent_fk_frame_update()
-
-CREATE OR REPLACE FUNCTION signalo_db.ft_sign_prevent_fk_frame_update()
-    RETURNS trigger
-    LANGUAGE 'plpgsql'
-    COST 100
-    VOLATILE NOT LEAKPROOF
-AS $BODY$
-    BEGIN
-      RAISE EXCEPTION 'A sign cannot be reassigned to another frame.';
-    END;
-
-$BODY$;
-
-ALTER FUNCTION signalo_db.ft_sign_prevent_fk_frame_update()
-    OWNER TO postgres;
-
+-- Enable triggers in signalo_db.sign
 ALTER TABLE signalo_db.sign ENABLE TRIGGER ALL;
