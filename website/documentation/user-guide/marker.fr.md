@@ -1,6 +1,6 @@
 ---
 title: Balises
-tx_slug: documentation_user-guide_advanced_marker
+tx_slug: documentation_user-guide_marker
 ---
 
 # Balises
@@ -20,3 +20,10 @@ Les types de balises suivants sont directionnels et traités dans le projet QGIS
 - Flèche de balisage multiple
 - Balise de guidage (direction).
 
+## Borne d'îlot
+Les bornes d'îlot ne sont pas de type *balise*. Elles sont définis avec le type de support.
+
+<figure markdown>
+  ![Type de support - Borne d'îlot](../../assets/images/printscreen/marker_ilot_fr.png){width="200"; loading=lazy; style="max-width: 900px"}
+  <figcaption>Type de support: borne d'îlot</figcaption>
+</figure>
