@@ -36,7 +36,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
   
 
 <video controls>
-<source src="../../assets/videos/azimut_tool_720.mp4" type="video/mp4">
+<source src="../assets/videos/azimut_tool_720.mp4" type="video/mp4">
 </video>
 
 

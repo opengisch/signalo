@@ -14,5 +14,5 @@ Afin de faciliter la création de plusieurs supports qui comportent des signaux 
 * Enregistrer les modifications.
 
 <video controls>
-<source src="../../../assets/videos/duplicate_features_720.mp4" type="video/mp4">
+<source src="../../assets/videos/duplicate_features_720.mp4" type="video/mp4">
 </video>
