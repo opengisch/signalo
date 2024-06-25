@@ -120,10 +120,10 @@ plugins:
           nav_translations:
             Présentation: Präsentation
             Contribuer: Mitmachen
-            Mode d'emploi: Mode d'emploi
-            Configuration avancée: Configuration avancée
+            Mode d'emploi: Bedienungsanleitung
+            Configuration avancée: Erweiterte Einstellungen
             Mobile: Mobil
-            Mises à jour: Mises à jour
+            Mises à jour: Updates
             Documentation BD: DB Dokumentation
             Feuille de route: Roadmap
           palette:
