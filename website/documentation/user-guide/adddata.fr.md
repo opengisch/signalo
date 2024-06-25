@@ -33,7 +33,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
   ![Outil Azimut](../assets/images/printscreen/azimut-edit.png)
   <figcaption>Définition de l'azimut de manière graphique, grâce à l'Outil Azimut</figcaption>
 </figure>
-  
+
 
 <video controls>
 <source src="../../assets/videos/azimut_tool_720.mp4" type="video/mp4">

@@ -14,7 +14,7 @@ Plusieurs fichiers projets sont disponibles avec chaque version:
 | `signalo_prod.qgs` | `pg_signalo_prod` | production            |
 | `signalo_dev.qgs` | `pg_signalo_dev`   | test et développement |
 
-  
+
 ## PG Service Parser
 
 L'extension [PG Service Parser](https://github.com/opengisch/qgis-pg-service-parser-plugin) permet de visualiser, d'éditer ou de copier les entrées du service PG (i.e., pg_service.conf) pour les connexions PostgreSQL. Cela permet de travailler avec un seul projet QGIS et de simplement adapter les informations du service pour pointer vers la base de données souhaitée.
