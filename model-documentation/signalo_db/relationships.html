@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>signalo.signalo_db</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="bower/html5shiv/html5shiv.min.js"></script>
+        <script src="bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../index.html" class="navbar-brand"><b>signalo</b></a><span class="navbar-brand" style="padding-left: 0">.signalo_db</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>All Relationships</h1>
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 class="box-title">Diagrams</h3>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom">
+                                <!-- Tabs within a box -->
+                                <h5>By default only columns that are primary keys, foreign keys or indexes are shown.</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#compactDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact</a></li>
+                                    <li class=""><a href="#largeDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large</a></li>
+                                    <li class=""><a href="#compactimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Compact Implied</a></li>
+                                    <li class=""><a href="#largeimpliedDegreeImg-chart" data-toggle="tab" aria-expanded="true">Large Implied</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="compactDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactRelationshipsDiagram" name="compactRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/dms_document.html" target="_top" title="dms_document" alt="" coords="892,1539,1093,1656">
+<area shape="rect" id="node2" href="tables/vl_frame_fixing_type.html" target="_top" title="vl_frame_fixing_type" alt="" coords="589,333,831,451">
+<area shape="rect" id="node3" href="tables/vl_coating.html" target="_top" title="vl_coating" alt="" coords="910,1135,1075,1252">
+<area shape="rect" id="node4" href="tables/vl_user_sign.html" target="_top" title="vl_user_sign" alt="" coords="875,1404,1111,1521">
+<area shape="rect" id="node5" href="tables/vl_sign_type.html" target="_top" title="vl_sign_type" alt="" coords="905,353,1080,471">
+<area shape="rect" id="node6" href="tables/vl_durability.html" target="_top" title="vl_durability" alt="" coords="903,964,1082,1081">
+<area shape="rect" id="node7" href="tables/vl_provider.html" target="_top" title="vl_provider" alt="" coords="27,633,233,751">
+<area shape="rect" id="node8" href="tables/frame.html" target="_top" title="frame" alt="" coords="886,43,1099,336">
+<area shape="rect" id="node15" href="tables/vl_frame_type.html" target="_top" title="vl_frame_type" alt="" coords="615,199,805,316">
+<area shape="rect" id="node19" href="tables/vl_status.html" target="_top" title="vl_status" alt="" coords="47,768,213,885">
+<area shape="rect" id="node20" href="tables/azimut.html" target="_top" title="azimut" alt="" coords="607,5,813,181">
+<area shape="rect" id="node9" href="tables/dms_rel_document.html" target="_top" title="dms_rel_document" alt="" coords="1163,1509,1392,1656">
+<area shape="rect" id="node10" href="tables/support.html" target="_top" title="support" alt="" coords="299,261,545,525">
+<area shape="rect" id="node12" href="tables/vl_support_type.html" target="_top" title="vl_support_type" alt="" coords="27,229,233,347">
+<area shape="rect" id="node13" href="tables/vl_owner.html" target="_top" title="vl_owner" alt="" coords="27,499,233,616">
+<area shape="rect" id="node21" href="tables/vl_support_base_type.html" target="_top" title="vl_support_base_type" alt="" coords="5,364,255,481">
+<area shape="rect" id="node11" href="tables/vl_marker_type.html" target="_top" title="vl_marker_type" alt="" coords="892,623,1093,740">
+<area shape="rect" id="node14" href="tables/vl_lighting.html" target="_top" title="vl_lighting" alt="" coords="910,1269,1075,1387">
+<area shape="rect" id="node16" href="tables/vl_mirror_shape.html" target="_top" title="vl_mirror_shape" alt="" coords="889,757,1096,875">
+<area shape="rect" id="node17" href="tables/sign.html" target="_top" title="sign" alt="" coords="1155,621,1400,1208">
+<area shape="rect" id="node18" href="tables/vl_official_sign.html" target="_top" title="vl_official_sign" alt="" coords="875,488,1111,605">
+</map>
+                                        <a name='diagram'><img id="compactDegreeImg" src="diagrams/summary/relationships.real.compact.png" usemap="#compactRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeRelationshipsDiagram" name="largeRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/dms_document.html" target="_top" title="dms_document" alt="" coords="892,4244,1093,4425">
+<area shape="rect" id="node2" href="tables/vl_frame_fixing_type.html" target="_top" title="vl_frame_fixing_type" alt="" coords="589,784,831,1024">
+<area shape="rect" id="node3" href="tables/vl_coating.html" target="_top" title="vl_coating" alt="" coords="910,2885,1075,3125">
+<area shape="rect" id="node4" href="tables/vl_user_sign.html" target="_top" title="vl_user_sign" alt="" coords="875,3400,1111,4227">
+<area shape="rect" id="node5" href="tables/vl_sign_type.html" target="_top" title="vl_sign_type" alt="" coords="905,904,1080,1144">
+<area shape="rect" id="node6" href="tables/vl_durability.html" target="_top" title="vl_durability" alt="" coords="903,2592,1082,2832">
+<area shape="rect" id="node7" href="tables/vl_provider.html" target="_top" title="vl_provider" alt="" coords="27,1621,233,1979">
+<area shape="rect" id="node8" href="tables/frame.html" target="_top" title="frame" alt="" coords="886,207,1099,887">
+<area shape="rect" id="node15" href="tables/vl_frame_type.html" target="_top" title="vl_frame_type" alt="" coords="615,527,805,767">
+<area shape="rect" id="node19" href="tables/vl_status.html" target="_top" title="vl_status" alt="" coords="47,1996,213,2236">
+<area shape="rect" id="node20" href="tables/azimut.html" target="_top" title="azimut" alt="" coords="607,5,813,509">
+<area shape="rect" id="node9" href="tables/dms_rel_document.html" target="_top" title="dms_rel_document" alt="" coords="1163,4215,1392,4396">
+<area shape="rect" id="node10" href="tables/support.html" target="_top" title="support" alt="" coords="299,815,545,1612">
+<area shape="rect" id="node12" href="tables/vl_support_type.html" target="_top" title="vl_support_type" alt="" coords="27,720,233,960">
+<area shape="rect" id="node13" href="tables/vl_owner.html" target="_top" title="vl_owner" alt="" coords="27,1239,233,1596">
+<area shape="rect" id="node21" href="tables/vl_support_base_type.html" target="_top" title="vl_support_base_type" alt="" coords="5,977,255,1217">
+<area shape="rect" id="node11" href="tables/vl_marker_type.html" target="_top" title="vl_marker_type" alt="" coords="892,2005,1093,2245">
+<area shape="rect" id="node14" href="tables/vl_lighting.html" target="_top" title="vl_lighting" alt="" coords="910,3143,1075,3383">
+<area shape="rect" id="node16" href="tables/vl_mirror_shape.html" target="_top" title="vl_mirror_shape" alt="" coords="889,2263,1096,2503">
+<area shape="rect" id="node17" href="tables/sign.html" target="_top" title="sign" alt="" coords="1155,2220,1400,3428">
+<area shape="rect" id="node18" href="tables/vl_official_sign.html" target="_top" title="vl_official_sign" alt="" coords="875,1161,1111,1988">
+</map>
+                                        <a name='diagram'><img id="largeDegreeImg" src="diagrams/summary/relationships.real.large.png" usemap="#largeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="compactimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="compactImpliedRelationshipsDiagram" name="compactImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/dms_document.html" target="_top" title="dms_document" alt="" coords="892,1583,1093,1700">
+<area shape="rect" id="node2" href="tables/vl_frame_fixing_type.html" target="_top" title="vl_frame_fixing_type" alt="" coords="589,399,831,516">
+<area shape="rect" id="node3" href="tables/vl_coating.html" target="_top" title="vl_coating" alt="" coords="910,1179,1075,1296">
+<area shape="rect" id="node4" href="tables/vl_user_sign.html" target="_top" title="vl_user_sign" alt="" coords="875,1448,1111,1565">
+<area shape="rect" id="node5" href="tables/vl_sign_type.html" target="_top" title="vl_sign_type" alt="" coords="905,433,1080,551">
+<area shape="rect" id="node6" href="tables/vl_durability.html" target="_top" title="vl_durability" alt="" coords="903,1008,1082,1125">
+<area shape="rect" id="node7" href="tables/vl_provider.html" target="_top" title="vl_provider" alt="" coords="27,460,233,577">
+<area shape="rect" id="node8" href="tables/frame.html" target="_top" title="frame" alt="" coords="886,123,1099,416">
+<area shape="rect" id="node15" href="tables/vl_frame_type.html" target="_top" title="vl_frame_type" alt="" coords="615,264,805,381">
+<area shape="rect" id="node19" href="tables/vl_status.html" target="_top" title="vl_status" alt="" coords="47,595,213,712">
+<area shape="rect" id="node20" href="tables/azimut.html" target="_top" title="azimut" alt="" coords="607,71,813,247">
+<area shape="rect" id="node9" href="tables/dms_rel_document.html" target="_top" title="dms_rel_document" alt="" coords="1163,1553,1392,1700">
+<area shape="rect" id="node10" href="tables/support.html" target="_top" title="support" alt="" coords="299,175,545,439">
+<area shape="rect" id="node12" href="tables/vl_support_type.html" target="_top" title="vl_support_type" alt="" coords="27,180,233,297">
+<area shape="rect" id="node13" href="tables/vl_owner.html" target="_top" title="vl_owner" alt="" coords="27,5,233,123">
+<area shape="rect" id="node21" href="tables/vl_support_base_type.html" target="_top" title="vl_support_base_type" alt="" coords="5,315,255,432">
+<area shape="rect" id="node11" href="tables/vl_marker_type.html" target="_top" title="vl_marker_type" alt="" coords="892,703,1093,820">
+<area shape="rect" id="node14" href="tables/vl_lighting.html" target="_top" title="vl_lighting" alt="" coords="910,1313,1075,1431">
+<area shape="rect" id="node16" href="tables/vl_mirror_shape.html" target="_top" title="vl_mirror_shape" alt="" coords="889,837,1096,955">
+<area shape="rect" id="node17" href="tables/sign.html" target="_top" title="sign" alt="" coords="1155,661,1400,1248">
+<area shape="rect" id="node18" href="tables/vl_official_sign.html" target="_top" title="vl_official_sign" alt="" coords="875,568,1111,685">
+</map>
+                                        <a name='diagram'><img id="compactimpliedDegreeImg" src="diagrams/summary/relationships.implied.compact.png" usemap="#compactImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                    <div class="chart tab-pane " id="largeimpliedDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="largeImpliedRelationshipsDiagram" name="largeImpliedRelationshipsDiagram">
+<area shape="rect" id="node1" href="tables/dms_document.html" target="_top" title="dms_document" alt="" coords="892,4296,1093,4477">
+<area shape="rect" id="node2" href="tables/vl_frame_fixing_type.html" target="_top" title="vl_frame_fixing_type" alt="" coords="589,857,831,1097">
+<area shape="rect" id="node3" href="tables/vl_coating.html" target="_top" title="vl_coating" alt="" coords="910,2937,1075,3177">
+<area shape="rect" id="node4" href="tables/vl_user_sign.html" target="_top" title="vl_user_sign" alt="" coords="875,3452,1111,4279">
+<area shape="rect" id="node5" href="tables/vl_sign_type.html" target="_top" title="vl_sign_type" alt="" coords="905,992,1080,1232">
+<area shape="rect" id="node6" href="tables/vl_durability.html" target="_top" title="vl_durability" alt="" coords="903,2644,1082,2884">
+<area shape="rect" id="node7" href="tables/vl_provider.html" target="_top" title="vl_provider" alt="" coords="27,1001,233,1359">
+<area shape="rect" id="node8" href="tables/frame.html" target="_top" title="frame" alt="" coords="886,295,1099,975">
+<area shape="rect" id="node15" href="tables/vl_frame_type.html" target="_top" title="vl_frame_type" alt="" coords="615,600,805,840">
+<area shape="rect" id="node19" href="tables/vl_status.html" target="_top" title="vl_status" alt="" coords="47,1376,213,1616">
+<area shape="rect" id="node20" href="tables/azimut.html" target="_top" title="azimut" alt="" coords="607,79,813,583">
+<area shape="rect" id="node9" href="tables/dms_rel_document.html" target="_top" title="dms_rel_document" alt="" coords="1163,4267,1392,4448">
+<area shape="rect" id="node10" href="tables/support.html" target="_top" title="support" alt="" coords="299,331,545,1128">
+<area shape="rect" id="node12" href="tables/vl_support_type.html" target="_top" title="vl_support_type" alt="" coords="27,381,233,621">
+<area shape="rect" id="node13" href="tables/vl_owner.html" target="_top" title="vl_owner" alt="" coords="27,5,233,363">
+<area shape="rect" id="node21" href="tables/vl_support_base_type.html" target="_top" title="vl_support_base_type" alt="" coords="5,639,255,879">
+<area shape="rect" id="node11" href="tables/vl_marker_type.html" target="_top" title="vl_marker_type" alt="" coords="892,1249,1093,1489">
+<area shape="rect" id="node14" href="tables/vl_lighting.html" target="_top" title="vl_lighting" alt="" coords="910,3195,1075,3435">
+<area shape="rect" id="node16" href="tables/vl_mirror_shape.html" target="_top" title="vl_mirror_shape" alt="" coords="889,1507,1096,1747">
+<area shape="rect" id="node17" href="tables/sign.html" target="_top" title="sign" alt="" coords="1155,1617,1400,2825">
+<area shape="rect" id="node18" href="tables/vl_official_sign.html" target="_top" title="vl_official_sign" alt="" coords="875,1764,1111,2591">
+</map>
+                                        <a name='diagram'><img id="largeimpliedDegreeImg" src="diagrams/summary/relationships.implied.large.png" usemap="#largeImpliedRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="bower/pdfmake/pdfmake.min.js"></script>
+        <script src="bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="bower/codemirror/codemirror.js"></script>
+        <script src="bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="relationships.js"></script>
+        <script src="schemaSpy.js"></script>
+    </body>
+</html>
