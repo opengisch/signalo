@@ -35,10 +35,7 @@ Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'at
 </figure>
 
 
-<video controls>
-<source src="../../assets/videos/azimut_tool_720.mp4" type="video/mp4">
-</video>
-
+![type:video](../assets/videos/azimut_tool_720.mp4)
 
 ## Onglet Documents
 Dans l'onglet “Documents“, des fichiers de tout format peuvent être liés à un support à travers leur chemin de stockage. L'extension [Document Management System](https://plugins.qgis.org/plugins/document_management_system/) fournit une interface pour gérer les relations du système de gestion des documents des deux côtés (côté document et côté support). Elle prend en charge les relations 1-N et N-M. Les chemins vers les documents sont stockés dans la base de données dans la table `signalo_db.dms_document`.
