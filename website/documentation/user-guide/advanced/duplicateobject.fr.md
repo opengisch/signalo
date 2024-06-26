@@ -13,6 +13,4 @@ Afin de faciliter la création de plusieurs supports qui comportent des signaux 
 * De retour sur la carte: choisir l'emplacement de l'objet dupliqué.
 * Enregistrer les modifications.
 
-<video controls>
-<source src="../../../assets/videos/duplicate_features_720.mp4" type="video/mp4">
-</video>
+![type:video](../../assets/videos/duplicate_features_720.mp4)
