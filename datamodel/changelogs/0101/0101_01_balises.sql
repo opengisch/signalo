@@ -49,7 +49,7 @@ INSERT INTO signalo_db.vl_marker_type (
     ('m-13', true, 'Verkehrsteiler vom Typ B', 'Séparateur de trafic de type B', 'm-13.svg', 'm-13.svg', 'm-13.svg', 'm-13.svg', 50, 200, false, NULL, NULL, NULL, NULL),
     ('m-14', true, 'Leitbake (Richtung)', 'Balise de guidage (direction)', 'm-14-l.svg', 'm-14-l.svg', 'm-14-l.svg', 'm-14-l.svg', 200, 50, true, 'm-14-r.svg', 'm-14-r.svg','m-14-r.svg', 'm-14-r.svg'),
     ('m-15', true, 'Leitbake mittig', 'Balisage de guidage milieu', 'm-15.svg', 'm-15.svg', 'm-15.svg', 'm-15.svg', 200, 50, false, NULL, NULL, NULL, NULL),
-    ('m-16', true, 'Leitstreifen', 'Bande de balisage', 'm-16.svg', 'm-16.svg', 'm-16.svg', 'm-16.svg', 16, 200, false, NULL, NULL, NULL, NULL);
+    ('m-16', true, 'Leitstreifen', 'Bande de balisage', 'm-16-l.svg', 'm-16-l.svg', 'm-16-l.svg', 'm-16-l.svg', 16, 200, true, 'm-16-r.svg', 'm-16-r.svg', 'm-16-r.svg', 'm-16-r.svg');
 
 UPDATE signalo_db.sign
 SET fk_marker_type = 'm-1'
