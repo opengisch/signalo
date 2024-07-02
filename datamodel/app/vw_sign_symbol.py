@@ -273,7 +273,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             SELECT
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
-                , _symbol_height + MAX(_symbol_shift) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
+                , MAX(_group_height) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (frame_anchor, _natural_direction_or_left_rectified) IN (
                         ('LEFT', TRUE),
