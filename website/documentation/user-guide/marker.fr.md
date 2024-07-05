@@ -8,10 +8,7 @@ tx_slug: documentation_user-guide_marker
 
 Les balises sont gérées comme une catégorie de signaux à part. Tout comme les signaux officiels et les signaux définis par l'utilisateur, une liste de valeurs spécifique (`vl_marker_type`) existe pour les balises. L'accès aux valeurs dans cette liste se fait en choisissant *balises* dans la liste déroulante **type de signal** de la couche *Signal*.
 
-<figure markdown>
-  ![Choix type balise](../assets/images/printscreen/sign_form_marker.png){width="300"; loading=lazy; style="max-width: 900px"}
-  <figcaption>Choisir le type de signal "balise"</figcaption>
-</figure>
+![Choisir le type de signal "balise"](../assets/images/printscreen/sign_form_marker.png){width="300"; loading=lazy; style="max-width: 900px"}
 
 Les images `.svg` des balises sont stockées dans `project/images/marker/editable` et `... original`.
 

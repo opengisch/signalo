@@ -54,7 +54,4 @@ Si le signal personnalisé ne doit pas contenir d'inscription dynamique, les fic
 ## Utilisation dans le projet QGIS
 Afin d'accéder à la liste déroulante des signaux définis par l'utilisateur dans QGIS, le **type de signal** *défini par l'utilisateur* doit être choisi.
 
-<figure markdown>
-  ![Liste définie par l'utilisateur](../../assets/images/printscreen/liste_defini_par_lutilisateur.png)
-  <figcaption>Liste des types de signal</figcaption>
-</figure>
+![Liste des types de signal](../../assets/images/printscreen/liste_defini_par_lutilisateur.png)
