@@ -32,10 +32,7 @@ La création du `.svg` correspondant est donc dans la responsabilité de l'utili
 
 > A noter: Il est recommandé de reprendre un des fichiers d'images officielles (`project/images/official/original` et `/éditable`) **comme exemple et base** pour créer un signal personnalisé, afin d'avoir une idée de la taille et pour comprendre comment configurer les inscriptions dynamiques.
 
-<figure markdown>
-  ![Stockage fichiers personnalisés](../../assets/images/printscreen/folder_tree_images.png){width="200"; loading=lazy; style="max-width: 900px"}
-  <figcaption>Emplacement des fichiers `.svg` des signaux définis par l'utilisateur</figcaption>
-</figure>
+![Emplacement des fichiers `.svg` des signaux définis par l'utilisateur](../../assets/images/printscreen/folder_tree_images.png){width="200"; loading=lazy; style="max-width: 900px"}
 
 ### Signaux dynamiques
 Les fichiers `.svg` éditables (dynamiques) contiennent des objets texte `param(text1)`, `param(text2)`, `param(text3)` en fonction du nombre de lignes à afficher sur le signal. Ce texte est défini via le projet QGIS, dans les champs `inscription_1`, `inscription_2` et `inscription_3` du formulaire d'attribut du signal.  
@@ -43,10 +40,7 @@ Le nombre de lignes d'inscriptions dynamiques est limité à 3 au maximum.
 
 Le `.svg` dynamique ne laisse pas beaucoup d'options de formatage. Le texte sera toujours affiché à partir de là où commence le champs texte `param(text)`. Il n'est donc pas possible de centrer le texte dynamique sur le signal.
 
-<figure markdown>
-  ![Exemple signal éditable](../../assets/images/printscreen/example_editable_sign.png){width="400"; loading=lazy; style="max-width: 900px"}
-  <figcaption>Exemple de signal dynamique</figcaption>
-</figure>
+![Exemple de signal dynamique](../../assets/images/printscreen/example_editable_sign.png){width="400"; loading=lazy; style="max-width: 900px"}
 
 ### Signaux statiques
 Si le signal personnalisé ne doit pas contenir d'inscription dynamique, les fichiers dans les dossiers `user-defined/original` et `user-defined/editable` peuvent être les mêmes.  
