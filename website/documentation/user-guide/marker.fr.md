@@ -21,7 +21,4 @@ Les types de balises suivants sont directionnels et traités dans le projet QGIS
 ## Bornes d'îlot
 Les bornes d'îlot ne sont pas définies au niveau du type de signal (*balises*), mais avec le type de support *borne d'îlot*. Sur la carte s'affichera donc une borne en jaune et noire.
 
-<figure markdown>
-  ![Type de support - Borne d'îlot](../assets/images/printscreen/form_ilot_fr.png){width="600"; loading=lazy; style="max-width: 900px"}
-  <figcaption>Type de support: borne d'îlot</figcaption>
-</figure>
+![Type de support: borne d'îlot](../assets/images/printscreen/form_ilot_fr.png){width="600"; loading=lazy; style="max-width: 900px"}
