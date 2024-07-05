@@ -24,16 +24,9 @@ tx_slug: documentation_user-guide_adddata
 ## Onglet Azimut
 Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` (couche Outil Azimut) du schéma `signalo_app`.
 
-<figure markdown>
-  ![Exemple Azimut](../assets/images/printscreen/support-all.png)
-  <figcaption>Exemple d'un azimut avec plusieurs cadres et signaux</figcaption>
-</figure>
+![Exemple d'un azimut avec plusieurs cadres et signaux](../assets/images/printscreen/support-all.png)
 
-<figure markdown>
-  ![Outil Azimut](../assets/images/printscreen/azimut-edit.png)
-  <figcaption>Définition de l'azimut de manière graphique, grâce à l'Outil Azimut</figcaption>
-</figure>
-
+![Définition de l'azimut de manière graphique, grâce à l'Outil Azimut](../assets/images/printscreen/azimut-edit.png)
 
 ![type:video](../assets/videos/azimut_tool_720.mp4)
 
