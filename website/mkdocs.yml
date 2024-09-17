@@ -7,7 +7,8 @@ docs_dir: documentation
 # Repository
 repo_name: opengisch/signalo
 repo_url: https://github.com/opengisch/signalo
-edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
+# this is automatically set for Github
+# edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
 
 # Copyright
 copyright: Copyright &copy; 2022-2024 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
