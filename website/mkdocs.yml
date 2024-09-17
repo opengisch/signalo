@@ -7,8 +7,7 @@ docs_dir: documentation
 # Repository
 repo_name: opengisch/signalo
 repo_url: https://github.com/opengisch/signalo
-# this is automatically set for Github
-# edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
+edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
 # edit_uri_template: 'blob/master/website/documentation/{path}'
 
 # Copyright
