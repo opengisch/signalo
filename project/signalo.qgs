@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-05T12:35:15">
+<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-05T16:42:13">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -47,7 +47,12 @@
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-group mutually-exclusive="1" groupLayer="" name="symbologie" mutually-exclusive-child="0" checked="Qt::Checked" expanded="1">
+    <layer-tree-layer id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" name="Contrôles" legend_exp="" source="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_last_modifications&quot; (geometry)" providerKey="postgres" patch_size="-1,-1" checked="Qt::Checked" legend_split_behavior="0" expanded="1">
+      <customproperties>
+        <Option/>
+      </customproperties>
+    </layer-tree-layer>
+    <layer-tree-group mutually-exclusive="1" groupLayer="" name="symbologie" mutually-exclusive-child="0" checked="Qt::Checked" expanded="0">
       <customproperties>
         <Option/>
       </customproperties>
@@ -57,12 +62,7 @@
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-layer id="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b" name="Support édités" legend_exp="" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table=&quot;signalo_app&quot;.&quot;vw_edited_support&quot; (geometry)" providerKey="postgres" patch_size="-1,-1" checked="Qt::Unchecked" legend_split_behavior="0" expanded="0">
-      <customproperties>
-        <Option/>
-      </customproperties>
-    </layer-tree-layer>
-    <layer-tree-group mutually-exclusive="1" groupLayer="" name="Fonds de plan" mutually-exclusive-child="1" checked="Qt::Checked" expanded="1">
+    <layer-tree-group mutually-exclusive="1" groupLayer="" name="Fonds de plan" mutually-exclusive-child="1" checked="Qt::Checked" expanded="0">
       <customproperties>
         <Option/>
       </customproperties>
@@ -82,7 +82,7 @@
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group groupLayer="" name="vl" checked="Qt::Checked" expanded="1">
+    <layer-tree-group groupLayer="" name="vl" checked="Qt::Checked" expanded="0">
       <customproperties>
         <Option/>
       </customproperties>
@@ -182,16 +182,16 @@
       <item>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</item>
       <item>OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997</item>
       <item>Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b</item>
-      <item>vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b</item>
       <item>SWISSIMAGE_Fond_de_plan_7d61cf38_35d1_4208_a775_1d854d304e6f</item>
       <item>vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359</item>
+      <item>vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings scaleDependencyMode="0" tolerance="12" intersection-snapping="0" minScale="0" unit="1" maxScale="0" mode="2" self-snapping="0" type="1" enabled="1">
     <individual-layer-settings>
       <layer-setting id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
+      <layer-setting id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
-      <layer-setting id="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
     </individual-layer-settings>
   </snapping-settings>
@@ -223,10 +223,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537750.94208419835194945</xmin>
-      <ymin>1152456.24874302046373487</ymin>
-      <xmax>2537802.46189682045951486</xmax>
-      <ymax>1152494.14614904765039682</ymax>
+      <xmin>2537768.14350964967161417</xmin>
+      <ymin>1152473.96924676606431603</ymin>
+      <xmax>2537795.30268165003508329</xmax>
+      <ymax>1152493.94723418913781643</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -272,19 +272,19 @@
         <legendlayerfile visible="1" isInOverview="0" layerid="sign_2499f9bd_24a2_4384_b329_dc522a94c545"/>
       </filegroup>
     </legendlayer>
-    <legendgroup name="symbologie" open="true" checked="Qt::Checked">
+    <legendlayer name="Contrôles" showFeatureCount="0" drawingOrder="-1" open="true" checked="Qt::Checked">
+      <filegroup open="true" hidden="false">
+        <legendlayerfile visible="1" isInOverview="0" layerid="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
+      </filegroup>
+    </legendlayer>
+    <legendgroup name="symbologie" open="false" checked="Qt::Checked">
       <legendlayer name="Vue signal (symbologie)" showFeatureCount="0" drawingOrder="-1" open="false" checked="Qt::Checked">
         <filegroup open="false" hidden="false">
           <legendlayerfile visible="1" isInOverview="0" layerid="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendlayer name="Support édités" showFeatureCount="0" drawingOrder="-1" open="false" checked="Qt::Unchecked">
-      <filegroup open="false" hidden="false">
-        <legendlayerfile visible="0" isInOverview="0" layerid="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b"/>
-      </filegroup>
-    </legendlayer>
-    <legendgroup name="Fonds de plan" open="true" checked="Qt::Checked">
+    <legendgroup name="Fonds de plan" open="false" checked="Qt::Checked">
       <legendlayer name="SWISSIMAGE Fond de plan" showFeatureCount="0" drawingOrder="-1" open="true" checked="Qt::Unchecked">
         <filegroup open="true" hidden="false">
           <legendlayerfile visible="0" isInOverview="0" layerid="SWISSIMAGE_Fond_de_plan_7d61cf38_35d1_4208_a775_1d854d304e6f"/>
@@ -301,7 +301,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup name="vl" open="true" checked="Qt::Checked">
+    <legendgroup name="vl" open="false" checked="Qt::Checked">
       <legendlayer name="Fournisseur" showFeatureCount="0" drawingOrder="-1" open="true" checked="Qt::Checked">
         <filegroup open="true" hidden="false">
           <legendlayerfile visible="1" isInOverview="0" layerid="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a"/>
@@ -392,6 +392,31 @@
     </legendgroup>
   </legend>
   <mapViewDocks/>
+  <mapcanvas name="mAreaCanvas" annotationsVisible="1">
+    <units>degrees</units>
+    <extent>
+      <xmin>179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</xmin>
+      <ymin>179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</ymin>
+      <xmax>-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</xmax>
+      <ymax>-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368</ymax>
+    </extent>
+    <rotation>0</rotation>
+    <destinationsrs>
+      <spatialrefsys nativeFormat="Wkt">
+        <wkt>GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],MEMBER["World Geodetic System 1984 (G2139)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
+        <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
+        <srsid>3452</srsid>
+        <srid>4326</srid>
+        <authid>EPSG:4326</authid>
+        <description>WGS 84</description>
+        <projectionacronym>longlat</projectionacronym>
+        <ellipsoidacronym>EPSG:7030</ellipsoidacronym>
+        <geographicflag>true</geographicflag>
+      </spatialrefsys>
+    </destinationsrs>
+    <rendermaptile>0</rendermaptile>
+    <expressionContextScope/>
+  </mapcanvas>
   <main-annotation-layer autoRefreshMode="Disabled" autoRefreshTime="0" minScale="0" maxScale="0" styleCategories="AllStyleCategories" legendPlaceholderImage="" refreshOnNotifyEnabled="0" type="annotation" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0">
     <id>Annotations_12d93f67_97ee_4956_a1a1_ce69a09e6c74</id>
     <datasource></datasource>
@@ -1175,7 +1200,7 @@
         <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
-      <temporal startExpression="" fixedDuration="0" endField="" durationField="azimut" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_inserted_date" durationUnit="min">
+      <temporal startExpression="" fixedDuration="0" endField="" durationField="azimut" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_creation_date" durationUnit="min">
         <fixedRange>
           <start></start>
           <end></end>
@@ -1334,10 +1359,11 @@
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option name="embeddedWidgets/count" value="0" type="QString"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -1419,7 +1445,7 @@
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_date" configurationFlags="NoFlag">
+        <field name="_creation_date" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -1429,7 +1455,7 @@
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_user" configurationFlags="NoFlag">
+        <field name="_creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -1516,11 +1542,13 @@
           </editWidget>
         </field>
         <field name="needs_validation" configurationFlags="NoFlag">
-          <editWidget type="TextEdit">
+          <editWidget type="CheckBox">
             <config>
               <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
+                <Option name="AllowNullState" value="false" type="bool"/>
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
               </Option>
             </config>
           </editWidget>
@@ -1543,8 +1571,8 @@
         <alias name="" field="usr_azimut_1" index="3"/>
         <alias name="" field="usr_azimut_2" index="4"/>
         <alias name="" field="usr_azimut_3" index="5"/>
-        <alias name="Insertion data" field="_inserted_date" index="6"/>
-        <alias name="Insertion utilisateur" field="_inserted_user" index="7"/>
+        <alias name="Insertion data" field="_creation_date" index="6"/>
+        <alias name="Insertion utilisateur" field="_creation_user" index="7"/>
         <alias name="Dernière modification date" field="_last_modification_date" index="8"/>
         <alias name="Dernière modification utilisateur" field="_last_modification_user" index="9"/>
         <alias name="décalage X" field="offset_x" index="10"/>
@@ -1561,8 +1589,8 @@
         <policy policy="Duplicate" field="usr_azimut_1"/>
         <policy policy="Duplicate" field="usr_azimut_2"/>
         <policy policy="Duplicate" field="usr_azimut_3"/>
-        <policy policy="DefaultValue" field="_inserted_date"/>
-        <policy policy="DefaultValue" field="_inserted_user"/>
+        <policy policy="DefaultValue" field="_creation_date"/>
+        <policy policy="DefaultValue" field="_creation_user"/>
         <policy policy="DefaultValue" field="_last_modification_date"/>
         <policy policy="DefaultValue" field="_last_modification_user"/>
         <policy policy="DefaultValue" field="offset_x"/>
@@ -1579,15 +1607,15 @@
         <default applyOnUpdate="0" field="usr_azimut_1" expression=""/>
         <default applyOnUpdate="0" field="usr_azimut_2" expression=""/>
         <default applyOnUpdate="0" field="usr_azimut_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="0" field="_creation_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_creation_user" expression=" @user_full_name "/>
         <default applyOnUpdate="1" field="_last_modification_date" expression="now()"/>
         <default applyOnUpdate="1" field="_last_modification_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="offset_x" expression=""/>
         <default applyOnUpdate="0" field="offset_y" expression=""/>
         <default applyOnUpdate="0" field="offset_x_verso" expression=""/>
         <default applyOnUpdate="0" field="offset_y_verso" expression=""/>
-        <default applyOnUpdate="0" field="needs_validation" expression=""/>
+        <default applyOnUpdate="1" field="needs_validation" expression=" @signalo_validation = 'any' or  @signalo_validation =  @qgis_platform "/>
         <default applyOnUpdate="1" field="_last_modification_platform" expression=" @qgis_platform "/>
       </defaults>
       <constraints>
@@ -1597,8 +1625,8 @@
         <constraint unique_strength="0" field="usr_azimut_1" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_azimut_2" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_azimut_3" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="offset_x" constraints="1" notnull_strength="1" exp_strength="0"/>
@@ -1615,8 +1643,8 @@
         <constraint field="usr_azimut_1" exp="" desc=""/>
         <constraint field="usr_azimut_2" exp="" desc=""/>
         <constraint field="usr_azimut_3" exp="" desc=""/>
-        <constraint field="_inserted_date" exp="" desc=""/>
-        <constraint field="_inserted_user" exp="" desc=""/>
+        <constraint field="_creation_date" exp="" desc=""/>
+        <constraint field="_creation_user" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
         <constraint field="offset_x" exp="" desc=""/>
@@ -1636,9 +1664,9 @@
           <column name="fk_support" type="field" width="395" hidden="0"/>
           <column name="azimut" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="270" hidden="0"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="usr_azimut_1" type="field" width="-1" hidden="0"/>
           <column name="usr_azimut_2" type="field" width="-1" hidden="0"/>
@@ -1758,12 +1786,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
-          <attributeEditorField horizontalStretch="0" name="_inserted_user" verticalStretch="0" showLabel="1" index="7">
+          <attributeEditorField horizontalStretch="0" name="_creation_user" verticalStretch="0" showLabel="1" index="7">
             <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
               <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField horizontalStretch="0" name="_inserted_date" verticalStretch="0" showLabel="1" index="6">
+          <attributeEditorField horizontalStretch="0" name="_creation_date" verticalStretch="0" showLabel="1" index="6">
             <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
               <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
             </labelStyle>
@@ -1791,9 +1819,9 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_edited" editable="1"/>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
         <field name="_last_modification_platform" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
@@ -1810,9 +1838,9 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_azimut_3" editable="1"/>
       </editable>
       <labelOnTop>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
         <field name="_last_modification_platform" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
@@ -1829,9 +1857,9 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_azimut_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
         <field name="_last_modification_platform" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
@@ -3419,7 +3447,7 @@ def my_form_open(dialog, layer, feature):
         <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
-      <temporal startExpression="" fixedDuration="0" endField="" durationField="rank" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_inserted_date" durationUnit="min">
+      <temporal startExpression="" fixedDuration="0" endField="" durationField="rank" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_creation_date" durationUnit="min">
         <fixedRange>
           <start></start>
           <end></end>
@@ -3818,7 +3846,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_date" configurationFlags="NoFlag">
+        <field name="_creation_date" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -3828,7 +3856,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_user" configurationFlags="NoFlag">
+        <field name="_creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -3878,16 +3906,22 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="needs_validation" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_last_modification_platform" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -3908,8 +3942,8 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="usr_frame_1" index="12"/>
         <alias name="" field="usr_frame_2" index="13"/>
         <alias name="" field="usr_frame_3" index="14"/>
-        <alias name="" field="_inserted_date" index="15"/>
-        <alias name="" field="_inserted_user" index="16"/>
+        <alias name="" field="_creation_date" index="15"/>
+        <alias name="" field="_creation_user" index="16"/>
         <alias name="" field="_last_modification_date" index="17"/>
         <alias name="" field="_last_modification_user" index="18"/>
         <alias name="point d'ancrage" field="anchor" index="19"/>
@@ -3932,13 +3966,13 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="usr_frame_1"/>
         <policy policy="Duplicate" field="usr_frame_2"/>
         <policy policy="Duplicate" field="usr_frame_3"/>
-        <policy policy="Duplicate" field="_inserted_date"/>
-        <policy policy="Duplicate" field="_inserted_user"/>
+        <policy policy="Duplicate" field="_creation_date"/>
+        <policy policy="Duplicate" field="_creation_user"/>
         <policy policy="Duplicate" field="_last_modification_date"/>
         <policy policy="Duplicate" field="_last_modification_user"/>
         <policy policy="Duplicate" field="anchor"/>
-        <policy policy="Duplicate" field="needs_validation"/>
-        <policy policy="Duplicate" field="_last_modification_platform"/>
+        <policy policy="DefaultValue" field="needs_validation"/>
+        <policy policy="DefaultValue" field="_last_modification_platform"/>
       </splitPolicies>
       <defaults>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
@@ -3956,13 +3990,13 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="usr_frame_1" expression=""/>
         <default applyOnUpdate="0" field="usr_frame_2" expression=""/>
         <default applyOnUpdate="0" field="usr_frame_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name"/>
+        <default applyOnUpdate="0" field="_creation_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_creation_user" expression=" @user_full_name"/>
         <default applyOnUpdate="1" field="_last_modification_date" expression="now()"/>
         <default applyOnUpdate="1" field="_last_modification_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="anchor" expression=""/>
-        <default applyOnUpdate="0" field="needs_validation" expression=""/>
-        <default applyOnUpdate="0" field="_last_modification_platform" expression=""/>
+        <default applyOnUpdate="1" field="needs_validation" expression=" @signalo_validation = 'any' or  @signalo_validation =  @qgis_platform "/>
+        <default applyOnUpdate="1" field="_last_modification_platform" expression="@qgis_platform"/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" constraints="3" notnull_strength="1" exp_strength="0"/>
@@ -3980,8 +4014,8 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="usr_frame_1" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_frame_2" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_frame_3" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="anchor" constraints="1" notnull_strength="1" exp_strength="0"/>
@@ -4004,8 +4038,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="usr_frame_1" exp="" desc=""/>
         <constraint field="usr_frame_2" exp="" desc=""/>
         <constraint field="usr_frame_3" exp="" desc=""/>
-        <constraint field="_inserted_date" exp="" desc=""/>
-        <constraint field="_inserted_user" exp="" desc=""/>
+        <constraint field="_creation_date" exp="" desc=""/>
+        <constraint field="_creation_user" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
         <constraint field="anchor" exp="" desc=""/>
@@ -4029,16 +4063,17 @@ def my_form_open(dialog, layer, feature):
           <column name="picture" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
           <column name="fk_provider" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column name="dimension_1" type="field" width="-1" hidden="0"/>
           <column name="dimension_2" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
-          <column name="_edited" type="field" width="-1" hidden="0"/>
           <column name="usr_frame_1" type="field" width="-1" hidden="0"/>
           <column name="usr_frame_2" type="field" width="-1" hidden="0"/>
           <column name="anchor" type="field" width="-1" hidden="0"/>
+          <column name="needs_validation" type="field" width="-1" hidden="0"/>
+          <column name="_last_modification_platform" type="field" width="-1" hidden="0"/>
           <column name="usr_frame_3" type="field" width="-1" hidden="0"/>
         </columns>
       </attributetableconfig>
@@ -4152,10 +4187,11 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorRelation>
       </attributeEditorForm>
       <editable>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_edited" editable="1"/>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
+        <field name="_last_modification_platform" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="anchor" editable="1"/>
         <field name="comment" editable="1"/>
@@ -4168,6 +4204,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" editable="1"/>
         <field name="fk_status" editable="1"/>
         <field name="id" editable="1"/>
+        <field name="needs_validation" editable="1"/>
         <field name="picture" editable="1"/>
         <field name="rank" editable="1"/>
         <field name="usr_frame_1" editable="1"/>
@@ -4175,10 +4212,11 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_frame_3" editable="1"/>
       </editable>
       <labelOnTop>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
+        <field name="_last_modification_platform" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="anchor" labelOnTop="0"/>
         <field name="comment" labelOnTop="0"/>
@@ -4191,6 +4229,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" labelOnTop="0"/>
         <field name="fk_status" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="needs_validation" labelOnTop="0"/>
         <field name="picture" labelOnTop="0"/>
         <field name="rank" labelOnTop="0"/>
         <field name="usr_frame_1" labelOnTop="0"/>
@@ -4198,10 +4237,11 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_frame_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
+        <field name="_last_modification_platform" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="anchor" reuseLastValue="0"/>
         <field name="comment" reuseLastValue="0"/>
@@ -4214,6 +4254,7 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_provider" reuseLastValue="0"/>
         <field name="fk_status" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
+        <field name="needs_validation" reuseLastValue="0"/>
         <field name="picture" reuseLastValue="0"/>
         <field name="rank" reuseLastValue="0"/>
         <field name="usr_frame_1" reuseLastValue="0"/>
@@ -4231,7 +4272,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="frame-sign">
           <config type="Map">
             <Option name="force-suppress-popup" value="false" type="bool"/>
-            <Option name="nm-rel" type="invalid"/>
+            <Option name="nm-rel" value="" type="QString"/>
           </config>
         </widget>
       </widgets>
@@ -7314,22 +7355,16 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="_inserted_date" configurationFlags="NoFlag">
-          <editWidget type="TextEdit">
+          <editWidget type="">
             <config>
-              <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
         <field name="_inserted_user" configurationFlags="NoFlag">
-          <editWidget type="TextEdit">
+          <editWidget type="">
             <config>
-              <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
@@ -7379,8 +7414,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="usr_owner_1" expression=""/>
         <default applyOnUpdate="0" field="usr_owner_2" expression=""/>
         <default applyOnUpdate="0" field="usr_owner_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="0" field="_inserted_date" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=""/>
         <default applyOnUpdate="0" field="_last_modified_date" expression=""/>
         <default applyOnUpdate="0" field="_last_modified_user" expression=""/>
       </defaults>
@@ -7416,10 +7451,10 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column name="id" type="field" width="-1" hidden="0"/>
           <column name="name" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="active" type="field" width="-1" hidden="0"/>
           <column name="usr_owner_1" type="field" width="-1" hidden="0"/>
@@ -7456,8 +7491,8 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="active" editable="1"/>
@@ -7468,8 +7503,8 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_owner_3" editable="1"/>
       </editable>
       <labelOnTop>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="active" labelOnTop="0"/>
@@ -7480,8 +7515,8 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_owner_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="active" reuseLastValue="0"/>
@@ -7786,22 +7821,16 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="_inserted_date" configurationFlags="NoFlag">
-          <editWidget type="TextEdit">
+          <editWidget type="">
             <config>
-              <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
         <field name="_inserted_user" configurationFlags="NoFlag">
-          <editWidget type="TextEdit">
+          <editWidget type="">
             <config>
-              <Option type="Map">
-                <Option name="IsMultiline" value="false" type="bool"/>
-                <Option name="UseHtml" value="false" type="bool"/>
-              </Option>
+              <Option/>
             </config>
           </editWidget>
         </field>
@@ -7851,8 +7880,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="usr_provider_1" expression=""/>
         <default applyOnUpdate="0" field="usr_provider_2" expression=""/>
         <default applyOnUpdate="0" field="usr_provider_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="0" field="_inserted_date" expression=""/>
+        <default applyOnUpdate="0" field="_inserted_user" expression=""/>
         <default applyOnUpdate="0" field="_last_modified_date" expression=""/>
         <default applyOnUpdate="0" field="_last_modified_user" expression=""/>
       </defaults>
@@ -7888,10 +7917,10 @@ def my_form_open(dialog, layer, feature):
         <columns>
           <column name="id" type="field" width="-1" hidden="0"/>
           <column name="name" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="active" type="field" width="-1" hidden="0"/>
           <column name="usr_provider_1" type="field" width="-1" hidden="0"/>
@@ -7928,8 +7957,8 @@ def my_form_open(dialog, layer, feature):
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
       <editable>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="active" editable="1"/>
@@ -7940,8 +7969,8 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_provider_3" editable="1"/>
       </editable>
       <labelOnTop>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="active" labelOnTop="0"/>
@@ -7952,8 +7981,8 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_provider_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="active" reuseLastValue="0"/>
@@ -8676,7 +8705,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_date" configurationFlags="NoFlag">
+        <field name="_creation_date" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -8686,7 +8715,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_user" configurationFlags="NoFlag">
+        <field name="_creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -8758,16 +8787,22 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="needs_validation" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_last_modification_platform" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -9347,8 +9382,8 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="usr_sign_1" index="28"/>
         <alias name="" field="usr_sign_2" index="29"/>
         <alias name="" field="usr_sign_3" index="30"/>
-        <alias name="" field="_inserted_date" index="31"/>
-        <alias name="" field="_inserted_user" index="32"/>
+        <alias name="" field="_creation_date" index="31"/>
+        <alias name="" field="_creation_user" index="32"/>
         <alias name="" field="_last_modification_date" index="33"/>
         <alias name="" field="_last_modification_user" index="34"/>
         <alias name="signal défini par l'utilisateur" field="fk_user_sign" index="35"/>
@@ -9464,15 +9499,15 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="usr_sign_1"/>
         <policy policy="Duplicate" field="usr_sign_2"/>
         <policy policy="Duplicate" field="usr_sign_3"/>
-        <policy policy="Duplicate" field="_inserted_date"/>
-        <policy policy="Duplicate" field="_inserted_user"/>
+        <policy policy="Duplicate" field="_creation_date"/>
+        <policy policy="Duplicate" field="_creation_user"/>
         <policy policy="Duplicate" field="_last_modification_date"/>
         <policy policy="Duplicate" field="_last_modification_user"/>
         <policy policy="Duplicate" field="fk_user_sign"/>
         <policy policy="Duplicate" field="natural_direction_or_left"/>
         <policy policy="Duplicate" field="hanging_mode"/>
-        <policy policy="Duplicate" field="needs_validation"/>
-        <policy policy="Duplicate" field="_last_modification_platform"/>
+        <policy policy="DefaultValue" field="needs_validation"/>
+        <policy policy="DefaultValue" field="_last_modification_platform"/>
         <policy policy="Duplicate" field="official_sign_active"/>
         <policy policy="Duplicate" field="official_sign_value_de"/>
         <policy policy="Duplicate" field="official_sign_value_fr"/>
@@ -9581,15 +9616,15 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="usr_sign_1" expression=""/>
         <default applyOnUpdate="0" field="usr_sign_2" expression=""/>
         <default applyOnUpdate="0" field="usr_sign_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="0" field="_creation_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_creation_user" expression=" @user_full_name "/>
         <default applyOnUpdate="1" field="_last_modification_date" expression="now()"/>
         <default applyOnUpdate="1" field="_last_modification_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="fk_user_sign" expression=""/>
         <default applyOnUpdate="0" field="natural_direction_or_left" expression=""/>
         <default applyOnUpdate="0" field="hanging_mode" expression=""/>
-        <default applyOnUpdate="0" field="needs_validation" expression=""/>
-        <default applyOnUpdate="0" field="_last_modification_platform" expression=""/>
+        <default applyOnUpdate="1" field="needs_validation" expression=" @signalo_validation = 'any' or  @signalo_validation =  @qgis_platform "/>
+        <default applyOnUpdate="1" field="_last_modification_platform" expression=" @qgis_platform"/>
         <default applyOnUpdate="0" field="official_sign_active" expression=""/>
         <default applyOnUpdate="0" field="official_sign_value_de" expression=""/>
         <default applyOnUpdate="0" field="official_sign_value_fr" expression=""/>
@@ -9698,8 +9733,8 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="usr_sign_1" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_sign_2" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_sign_3" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="fk_user_sign" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -9815,8 +9850,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="usr_sign_1" exp="" desc=""/>
         <constraint field="usr_sign_2" exp="" desc=""/>
         <constraint field="usr_sign_3" exp="" desc=""/>
-        <constraint field="_inserted_date" exp="" desc=""/>
-        <constraint field="_inserted_user" exp="" desc=""/>
+        <constraint field="_creation_date" exp="" desc=""/>
+        <constraint field="_creation_user" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
         <constraint field="fk_user_sign" exp="" desc=""/>
@@ -9946,11 +9981,11 @@ def my_form_open(dialog, layer, feature):
           <column name="mirror_protruding" type="field" width="-1" hidden="0"/>
           <column name="mirror_red_frame" type="field" width="-1" hidden="0"/>
           <column name="fk_provider" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column name="dimension_1" type="field" width="-1" hidden="0"/>
           <column name="dimension_2" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="official_sign_no_dynamic_inscription" type="field" width="-1" hidden="0"/>
           <column name="official_sign_default_inscription1" type="field" width="-1" hidden="0"/>
@@ -9958,7 +9993,6 @@ def my_form_open(dialog, layer, feature):
           <column name="official_sign_default_inscription3" type="field" width="-1" hidden="0"/>
           <column name="official_sign_default_inscription4" type="field" width="-1" hidden="0"/>
           <column name="complex" type="field" width="-1" hidden="0"/>
-          <column name="_edited" type="field" width="-1" hidden="0"/>
           <column name="usr_sign_1" type="field" width="-1" hidden="0"/>
           <column name="usr_sign_2" type="field" width="-1" hidden="0"/>
           <column name="usr_sign_3" type="field" width="-1" hidden="0"/>
@@ -10020,6 +10054,8 @@ def my_form_open(dialog, layer, feature):
           <column name="marker_type_img_fr_right" type="field" width="-1" hidden="0"/>
           <column name="marker_type_img_it_right" type="field" width="-1" hidden="0"/>
           <column name="marker_type_img_ro_right" type="field" width="-1" hidden="0"/>
+          <column name="needs_validation" type="field" width="-1" hidden="0"/>
+          <column name="_last_modification_platform" type="field" width="-1" hidden="0"/>
           <column name="picture" type="field" width="-1" hidden="0"/>
         </columns>
       </attributetableconfig>
@@ -10247,10 +10283,11 @@ def my_form_open(dialog, layer, feature):
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_edited" editable="1"/>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
+        <field name="_last_modification_platform" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="case_decision" editable="1"/>
         <field name="case_id" editable="1"/>
@@ -10309,6 +10346,7 @@ def my_form_open(dialog, layer, feature):
         <field name="mirror_protruding" editable="1"/>
         <field name="mirror_red_frame" editable="1"/>
         <field name="natural_direction_or_left" editable="1"/>
+        <field name="needs_validation" editable="1"/>
         <field name="official_sign_active" editable="0"/>
         <field name="official_sign_default_inscription1" editable="0"/>
         <field name="official_sign_default_inscription2" editable="0"/>
@@ -10389,10 +10427,11 @@ def my_form_open(dialog, layer, feature):
         <field name="verso" editable="1"/>
       </editable>
       <labelOnTop>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
+        <field name="_last_modification_platform" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="case_decision" labelOnTop="0"/>
         <field name="case_id" labelOnTop="0"/>
@@ -10451,6 +10490,7 @@ def my_form_open(dialog, layer, feature):
         <field name="mirror_protruding" labelOnTop="0"/>
         <field name="mirror_red_frame" labelOnTop="0"/>
         <field name="natural_direction_or_left" labelOnTop="0"/>
+        <field name="needs_validation" labelOnTop="0"/>
         <field name="official_sign_active" labelOnTop="0"/>
         <field name="official_sign_default_inscription1" labelOnTop="0"/>
         <field name="official_sign_default_inscription2" labelOnTop="0"/>
@@ -10531,10 +10571,11 @@ def my_form_open(dialog, layer, feature):
         <field name="verso" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
+        <field name="_last_modification_platform" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="case_decision" reuseLastValue="0"/>
         <field name="case_id" reuseLastValue="0"/>
@@ -10591,6 +10632,7 @@ def my_form_open(dialog, layer, feature):
         <field name="mirror_protruding" reuseLastValue="0"/>
         <field name="mirror_red_frame" reuseLastValue="0"/>
         <field name="natural_direction_or_left" reuseLastValue="0"/>
+        <field name="needs_validation" reuseLastValue="0"/>
         <field name="official_sign_active" reuseLastValue="0"/>
         <field name="official_sign_default_inscription1" reuseLastValue="0"/>
         <field name="official_sign_default_inscription2" reuseLastValue="0"/>
@@ -11997,7 +12039,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_date" configurationFlags="NoFlag">
+        <field name="_creation_date" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -12007,7 +12049,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_user" configurationFlags="NoFlag">
+        <field name="_creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -12072,16 +12114,24 @@ def my_form_open(dialog, layer, feature):
           </editWidget>
         </field>
         <field name="needs_validation" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="CheckBox">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="AllowNullState" value="false" type="bool"/>
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
             </config>
           </editWidget>
         </field>
         <field name="_last_modification_platform" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
-              <Option/>
+              <Option type="Map">
+                <Option name="IsMultiline" value="false" type="bool"/>
+                <Option name="UseHtml" value="false" type="bool"/>
+              </Option>
             </config>
           </editWidget>
         </field>
@@ -12124,13 +12174,13 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="usr_support_1" index="14"/>
         <alias name="" field="usr_support_2" index="15"/>
         <alias name="" field="usr_support_3" index="16"/>
-        <alias name="date insertion" field="_inserted_date" index="17"/>
-        <alias name="insertion par" field="_inserted_user" index="18"/>
+        <alias name="date insertion" field="_creation_date" index="17"/>
+        <alias name="insertion par" field="_creation_user" index="18"/>
         <alias name="date de dernière modification" field="_last_modification_date" index="19"/>
         <alias name="dernière modification par" field="_last_modification_user" index="20"/>
         <alias name="grouper par point d'ancrage" field="group_by_anchor" index="21"/>
         <alias name="photo 2" field="picture_2" index="22"/>
-        <alias name="" field="needs_validation" index="23"/>
+        <alias name="À contrôler" field="needs_validation" index="23"/>
         <alias name="" field="_last_modification_platform" index="24"/>
         <alias name="" field="geometry_x" index="25"/>
         <alias name="" field="geometry_y" index="26"/>
@@ -12153,14 +12203,14 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="usr_support_1"/>
         <policy policy="Duplicate" field="usr_support_2"/>
         <policy policy="Duplicate" field="usr_support_3"/>
-        <policy policy="DefaultValue" field="_inserted_date"/>
-        <policy policy="DefaultValue" field="_inserted_user"/>
+        <policy policy="DefaultValue" field="_creation_date"/>
+        <policy policy="DefaultValue" field="_creation_user"/>
         <policy policy="DefaultValue" field="_last_modification_date"/>
         <policy policy="DefaultValue" field="_last_modification_user"/>
         <policy policy="Duplicate" field="group_by_anchor"/>
         <policy policy="Duplicate" field="picture_2"/>
-        <policy policy="Duplicate" field="needs_validation"/>
-        <policy policy="Duplicate" field="_last_modification_platform"/>
+        <policy policy="DefaultValue" field="needs_validation"/>
+        <policy policy="DefaultValue" field="_last_modification_platform"/>
         <policy policy="Duplicate" field="geometry_x"/>
         <policy policy="Duplicate" field="geometry_y"/>
       </splitPolicies>
@@ -12182,14 +12232,14 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="usr_support_1" expression=""/>
         <default applyOnUpdate="0" field="usr_support_2" expression=""/>
         <default applyOnUpdate="0" field="usr_support_3" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_date" expression="now()"/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=" @user_full_name "/>
+        <default applyOnUpdate="0" field="_creation_date" expression="now()"/>
+        <default applyOnUpdate="0" field="_creation_user" expression=" @user_full_name "/>
         <default applyOnUpdate="1" field="_last_modification_date" expression="now()"/>
         <default applyOnUpdate="1" field="_last_modification_user" expression=" @user_full_name "/>
         <default applyOnUpdate="0" field="group_by_anchor" expression=""/>
         <default applyOnUpdate="0" field="picture_2" expression=""/>
-        <default applyOnUpdate="0" field="needs_validation" expression=""/>
-        <default applyOnUpdate="0" field="_last_modification_platform" expression=""/>
+        <default applyOnUpdate="1" field="needs_validation" expression=" @signalo_validation = 'any' or  @signalo_validation =  @qgis_platform "/>
+        <default applyOnUpdate="1" field="_last_modification_platform" expression="@qgis_platform"/>
         <default applyOnUpdate="0" field="geometry_x" expression=""/>
         <default applyOnUpdate="0" field="geometry_y" expression=""/>
       </defaults>
@@ -12211,8 +12261,8 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="usr_support_1" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_support_2" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="usr_support_3" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="group_by_anchor" constraints="1" notnull_strength="1" exp_strength="0"/>
@@ -12240,8 +12290,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="usr_support_1" exp="" desc=""/>
         <constraint field="usr_support_2" exp="" desc=""/>
         <constraint field="usr_support_3" exp="" desc=""/>
-        <constraint field="_inserted_date" exp="" desc=""/>
-        <constraint field="_inserted_user" exp="" desc=""/>
+        <constraint field="_creation_date" exp="" desc=""/>
+        <constraint field="_creation_user" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
         <constraint field="group_by_anchor" exp="" desc=""/>
@@ -12274,11 +12324,10 @@ def my_form_open(dialog, layer, feature):
           <column name="geometry_x" type="field" width="-1" hidden="0"/>
           <column name="geometry_y" type="field" width="-1" hidden="0"/>
           <column name="fk_provider" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
-          <column name="_edited" type="field" width="-1" hidden="0"/>
           <column name="road_segment" type="field" width="-1" hidden="0"/>
           <column name="address" type="field" width="-1" hidden="0"/>
           <column name="usr_support_1" type="field" width="-1" hidden="0"/>
@@ -12286,6 +12335,8 @@ def my_form_open(dialog, layer, feature):
           <column name="usr_support_3" type="field" width="-1" hidden="0"/>
           <column name="group_by_anchor" type="field" width="-1" hidden="0"/>
           <column name="picture_2" type="field" width="-1" hidden="0"/>
+          <column name="needs_validation" type="field" width="-1" hidden="0"/>
+          <column name="_last_modification_platform" type="field" width="-1" hidden="0"/>
           <column name="picture" type="field" width="-1" hidden="0"/>
         </columns>
       </attributetableconfig>
@@ -12440,12 +12491,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
-          <attributeEditorField horizontalStretch="0" name="_inserted_date" verticalStretch="0" showLabel="1" index="17">
+          <attributeEditorField horizontalStretch="0" name="_creation_date" verticalStretch="0" showLabel="1" index="17">
             <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
               <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField horizontalStretch="0" name="_inserted_user" verticalStretch="0" showLabel="1" index="18">
+          <attributeEditorField horizontalStretch="0" name="_creation_user" verticalStretch="0" showLabel="1" index="18">
             <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
               <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
             </labelStyle>
@@ -12460,13 +12511,19 @@ def my_form_open(dialog, layer, feature):
               <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
             </labelStyle>
           </attributeEditorField>
+          <attributeEditorField horizontalStretch="0" name="needs_validation" verticalStretch="0" showLabel="1" index="23">
+            <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
+              <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
+            </labelStyle>
+          </attributeEditorField>
         </attributeEditorContainer>
       </attributeEditorForm>
       <editable>
+        <field name="_creation_date" editable="0"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_edited" editable="1"/>
-        <field name="_inserted_date" editable="0"/>
-        <field name="_inserted_user" editable="1"/>
         <field name="_last_modification_date" editable="0"/>
+        <field name="_last_modification_platform" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="address" editable="1"/>
         <field name="adress" editable="1"/>
@@ -12486,6 +12543,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" editable="1"/>
         <field name="height_free_under_signal" editable="1"/>
         <field name="id" editable="1"/>
+        <field name="needs_validation" editable="1"/>
         <field name="photo" editable="1"/>
         <field name="picture" editable="1"/>
         <field name="picture_2" editable="1"/>
@@ -12495,10 +12553,11 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_support_3" editable="1"/>
       </editable>
       <labelOnTop>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
+        <field name="_last_modification_platform" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="address" labelOnTop="0"/>
         <field name="adress" labelOnTop="0"/>
@@ -12518,6 +12577,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" labelOnTop="0"/>
         <field name="height_free_under_signal" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="needs_validation" labelOnTop="0"/>
         <field name="photo" labelOnTop="0"/>
         <field name="picture" labelOnTop="0"/>
         <field name="picture_2" labelOnTop="0"/>
@@ -12527,10 +12587,11 @@ def my_form_open(dialog, layer, feature):
         <field name="usr_support_3" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
+        <field name="_last_modification_platform" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="address" reuseLastValue="0"/>
         <field name="adress" reuseLastValue="0"/>
@@ -12548,6 +12609,7 @@ def my_form_open(dialog, layer, feature):
         <field name="height" reuseLastValue="0"/>
         <field name="height_free_under_signal" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
+        <field name="needs_validation" reuseLastValue="0"/>
         <field name="photo" reuseLastValue="0"/>
         <field name="picture" reuseLastValue="0"/>
         <field name="picture_2" reuseLastValue="0"/>
@@ -14503,31 +14565,48 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
+        <field name="needs_validation" configurationFlags="NoFlag">
+          <editWidget type="CheckBox">
+            <config>
+              <Option type="Map">
+                <Option name="AllowNullState" value="false" type="bool"/>
+                <Option name="CheckedState" value="" type="QString"/>
+                <Option name="TextDisplayMethod" value="0" type="int"/>
+                <Option name="UncheckedState" value="" type="QString"/>
+              </Option>
+            </config>
+          </editWidget>
+        </field>
       </fieldConfiguration>
       <aliases>
         <alias name="" field="id" index="0"/>
         <alias name="" field="_last_modification_date" index="1"/>
         <alias name="" field="_last_modification_user" index="2"/>
+        <alias name="" field="needs_validation" index="3"/>
       </aliases>
       <splitPolicies>
         <policy policy="Duplicate" field="id"/>
         <policy policy="Duplicate" field="_last_modification_date"/>
         <policy policy="Duplicate" field="_last_modification_user"/>
+        <policy policy="Duplicate" field="needs_validation"/>
       </splitPolicies>
       <defaults>
         <default applyOnUpdate="0" field="id" expression=""/>
         <default applyOnUpdate="1" field="_last_modification_date" expression="now()"/>
         <default applyOnUpdate="0" field="_last_modification_user" expression="@user_full_name"/>
+        <default applyOnUpdate="1" field="needs_validation" expression=" @signalo_validation = 'any' or  @signalo_validation =  @qgis_platform "/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" constraints="3" notnull_strength="1" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="needs_validation" constraints="0" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint field="id" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
+        <constraint field="needs_validation" exp="" desc=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -14542,6 +14621,7 @@ def my_form_open(dialog, layer, feature):
           <column name="id" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
+          <column name="needs_validation" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -14577,29 +14657,44 @@ def my_form_open(dialog, layer, feature):
         <field name="_last_modification_date" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="id" editable="1"/>
+        <field name="needs_validation" editable="1"/>
       </editable>
       <labelOnTop>
         <field name="_last_modification_date" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="id" labelOnTop="0"/>
+        <field name="needs_validation" labelOnTop="0"/>
       </labelOnTop>
       <reuseLastValue>
         <field name="_last_modification_date" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="id" reuseLastValue="0"/>
+        <field name="needs_validation" reuseLastValue="0"/>
       </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
       <previewExpression>"id"</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
-    <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="1" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="100000000" type="vector" hasScaleBasedVisibilityFlag="0" labelsEnabled="0">
-      <id>vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='0' table="signalo_app"."vw_edited_support" (geometry)</datasource>
+    <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="100000000" type="vector" hasScaleBasedVisibilityFlag="0" labelsEnabled="0">
+      <extent>
+        <xmin>2537376.25502501102164388</xmin>
+        <ymin>1152411.42123516835272312</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771546408534</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.6224867978221571</xmin>
+        <ymin>46.52006455084227809</ymin>
+        <xmax>6.63652866359770055</xmax>
+        <ymax>46.52393046604050397</ymax>
+      </wgs84extent>
+      <id>vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</id>
+      <datasource>service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_last_modifications" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
-      <layername>Support édités</layername>
+      <layername>Contrôles</layername>
       <srs>
         <spatialrefsys nativeFormat="Wkt">
           <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
@@ -14620,6 +14715,15 @@ def my_form_open(dialog, layer, feature):
         <type>dataset</type>
         <title></title>
         <abstract></abstract>
+        <contact>
+          <name></name>
+          <organization></organization>
+          <position></position>
+          <voice></voice>
+          <fax></fax>
+          <email></email>
+          <role></role>
+        </contact>
         <links/>
         <dates/>
         <fees></fees>
@@ -14637,12 +14741,26 @@ def my_form_open(dialog, layer, feature):
             <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
-        <extent/>
+        <extent>
+          <spatial dimensions="2" minx="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxx="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" crs="EPSG:2056" miny="179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" maxy="-179769313486231570814527423731704356798070567525844996598917476803157260780028538760589558632766878171540458953514382464234321326889464182768467546703537516986049910576551282076245490090389328944075868508455133942304583236903222948165808559332123348274797826204144723168738177180919299881250404026184124858368" minz="0" maxz="0"/>
+          <temporal>
+            <period>
+              <start></start>
+              <end></end>
+            </period>
+          </temporal>
+        </extent>
       </resourceMetadata>
       <provider encoding="">postgres</provider>
       <vectorjoins/>
       <layerDependencies/>
-      <dataDependencies/>
+      <dataDependencies>
+        <layer id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4"/>
+        <layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"/>
+        <layer id="support_347aa750_1661_498f_a7e8_017adc616ba0"/>
+        <layer id="sign_2499f9bd_24a2_4384_b329_dc522a94c545"/>
+        <layer id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3"/>
+      </dataDependencies>
       <expressionfields/>
       <map-layer-style-manager current="default">
         <map-layer-style name="default"/>
@@ -14655,7 +14773,7 @@ def my_form_open(dialog, layer, feature):
         <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
-      <temporal startExpression="" fixedDuration="0" endField="_last_modification_date" durationField="" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="" durationUnit="min">
+      <temporal startExpression="" fixedDuration="0" endField="" durationField="" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="last_modification_date" durationUnit="min">
         <fixedRange>
           <start></start>
           <end></end>
@@ -14678,7 +14796,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer id="{3151fd7b-4fb4-44e6-8d22-4d0e7a281a5e}" pass="0" enabled="1" class="SimpleLine" locked="0">
+            <layer id="{15a3f002-7e75-4412-916b-8c833390fe3a}" pass="0" enabled="1" class="SimpleLine" locked="0">
               <Option type="Map">
                 <Option name="align_dash_pattern" value="0" type="QString"/>
                 <Option name="capstyle" value="square" type="QString"/>
@@ -14690,7 +14808,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="dash_pattern_offset_unit" value="MM" type="QString"/>
                 <Option name="draw_inside_polygon" value="0" type="QString"/>
                 <Option name="joinstyle" value="bevel" type="QString"/>
-                <Option name="line_color" value="225,89,137,255" type="QString"/>
+                <Option name="line_color" value="114,155,111,255" type="QString"/>
                 <Option name="line_style" value="solid" type="QString"/>
                 <Option name="line_width" value="0.6" type="QString"/>
                 <Option name="line_width_unit" value="MM" type="QString"/>
@@ -14727,15 +14845,15 @@ def my_form_open(dialog, layer, feature):
                 <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer id="{aa97ecaa-1370-49a7-be43-2bf8edaee46e}" pass="0" enabled="1" class="SimpleFill" locked="0">
+            <layer id="{1843a2ce-d4da-4e7c-8a9f-3e14381e8430}" pass="0" enabled="1" class="SimpleFill" locked="0">
               <Option type="Map">
                 <Option name="border_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
-                <Option name="color" value="225,89,137,255" type="QString"/>
+                <Option name="color" value="114,155,111,255" type="QString"/>
                 <Option name="joinstyle" value="bevel" type="QString"/>
                 <Option name="offset" value="0,0" type="QString"/>
                 <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="offset_unit" value="MM" type="QString"/>
-                <Option name="outline_color" value="161,64,98,255" type="QString"/>
+                <Option name="outline_color" value="81,111,79,255" type="QString"/>
                 <Option name="outline_style" value="solid" type="QString"/>
                 <Option name="outline_width" value="0.2" type="QString"/>
                 <Option name="outline_width_unit" value="MM" type="QString"/>
@@ -14760,18 +14878,18 @@ def my_form_open(dialog, layer, feature):
                 <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer id="{0bfd2d70-c96f-43b3-9cd2-ac0b55d150bd}" pass="0" enabled="1" class="SimpleMarker" locked="0">
+            <layer id="{10243944-1a13-40c1-a73f-559aa8cbeccf}" pass="0" enabled="1" class="SimpleMarker" locked="0">
               <Option type="Map">
                 <Option name="angle" value="0" type="QString"/>
                 <Option name="cap_style" value="square" type="QString"/>
-                <Option name="color" value="225,89,137,255" type="QString"/>
+                <Option name="color" value="114,155,111,255" type="QString"/>
                 <Option name="horizontal_anchor_point" value="1" type="QString"/>
                 <Option name="joinstyle" value="bevel" type="QString"/>
                 <Option name="name" value="diamond" type="QString"/>
                 <Option name="offset" value="0,0" type="QString"/>
                 <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="offset_unit" value="MM" type="QString"/>
-                <Option name="outline_color" value="161,64,98,255" type="QString"/>
+                <Option name="outline_color" value="81,111,79,255" type="QString"/>
                 <Option name="outline_style" value="solid" type="QString"/>
                 <Option name="outline_width" value="0.2" type="QString"/>
                 <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
@@ -14793,11 +14911,11 @@ def my_form_open(dialog, layer, feature):
           </symbol>
         </profileMarkerSymbol>
       </elevation>
-      <renderer-v2 referencescale="-1" symbollevels="0" type="RuleRenderer" forceraster="0" enableorderby="0">
-        <rules key="{67ed4935-cd13-41f2-bc32-4bc2a2133aeb}">
-          <rule filter="day( now()-&quot;_last_modification_date&quot; ) &lt; 1" symbol="0" key="{188f2ae1-7c6b-43ff-b8f4-02ca9a9f08ee}" label="Edition &lt; 1 jour"/>
-          <rule filter=" day( now()-&quot;_last_modification_date&quot; ) &lt; 3 and day( now()-&quot;_last_modification_date&quot; ) >= 1" symbol="1" key="{f039df21-e6cb-4969-990a-7d95223146b9}" label="Edition &lt; 3 jours"/>
-        </rules>
+      <renderer-v2 referencescale="-1" symbollevels="0" attr="needs_validation" type="categorizedSymbol" forceraster="0" enableorderby="0">
+        <categories>
+          <category render="true" uuid="{a7211a42-ae33-48f6-9f3f-67dbfe7efc12}" value="true" symbol="0" type="string" label="à contrôler"/>
+          <category render="true" uuid="{22acd119-522f-4263-a6f5-7bb76e06c38b}" value="" symbol="1" type="string" label="non"/>
+        </categories>
         <symbols>
           <symbol name="0" alpha="1" is_animated="0" force_rhr="0" type="marker" clip_to_extent="1" frame_rate="10">
             <data_defined_properties>
@@ -14807,11 +14925,11 @@ def my_form_open(dialog, layer, feature):
                 <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer id="{1b3459a1-138c-46ba-bab2-00bf0b17ee07}" pass="0" enabled="1" class="SimpleMarker" locked="0">
+            <layer id="{bf01223a-6301-4783-baaa-2b6cb857ff40}" pass="0" enabled="1" class="SimpleMarker" locked="0">
               <Option type="Map">
                 <Option name="angle" value="0" type="QString"/>
                 <Option name="cap_style" value="square" type="QString"/>
-                <Option name="color" value="254,0,42,255" type="QString"/>
+                <Option name="color" value="211,107,55,255" type="QString"/>
                 <Option name="horizontal_anchor_point" value="1" type="QString"/>
                 <Option name="joinstyle" value="bevel" type="QString"/>
                 <Option name="name" value="circle" type="QString"/>
@@ -14824,7 +14942,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="outline_width_unit" value="MM" type="QString"/>
                 <Option name="scale_method" value="diameter" type="QString"/>
-                <Option name="size" value="20" type="QString"/>
+                <Option name="size" value="5" type="QString"/>
                 <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="size_unit" value="MM" type="QString"/>
                 <Option name="vertical_anchor_point" value="1" type="QString"/>
@@ -14846,11 +14964,11 @@ def my_form_open(dialog, layer, feature):
                 <Option name="type" value="collection" type="QString"/>
               </Option>
             </data_defined_properties>
-            <layer id="{e2c48c6d-021d-4128-ad2d-814461d1e60e}" pass="0" enabled="1" class="SimpleMarker" locked="0">
+            <layer id="{a9524448-22ce-4680-a2b6-8419845a08b0}" pass="0" enabled="1" class="SimpleMarker" locked="0">
               <Option type="Map">
                 <Option name="angle" value="0" type="QString"/>
                 <Option name="cap_style" value="square" type="QString"/>
-                <Option name="color" value="182,15,224,255" type="QString"/>
+                <Option name="color" value="133,182,111,255" type="QString"/>
                 <Option name="horizontal_anchor_point" value="1" type="QString"/>
                 <Option name="joinstyle" value="bevel" type="QString"/>
                 <Option name="name" value="circle" type="QString"/>
@@ -14863,7 +14981,7 @@ def my_form_open(dialog, layer, feature):
                 <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="outline_width_unit" value="MM" type="QString"/>
                 <Option name="scale_method" value="diameter" type="QString"/>
-                <Option name="size" value="20" type="QString"/>
+                <Option name="size" value="5" type="QString"/>
                 <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
                 <Option name="size_unit" value="MM" type="QString"/>
                 <Option name="vertical_anchor_point" value="1" type="QString"/>
@@ -14878,48 +14996,191 @@ def my_form_open(dialog, layer, feature):
             </layer>
           </symbol>
         </symbols>
+        <source-symbol>
+          <symbol name="0" alpha="1" is_animated="0" force_rhr="0" type="marker" clip_to_extent="1" frame_rate="10">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer id="{bf01223a-6301-4783-baaa-2b6cb857ff40}" pass="0" enabled="1" class="SimpleMarker" locked="0">
+              <Option type="Map">
+                <Option name="angle" value="0" type="QString"/>
+                <Option name="cap_style" value="square" type="QString"/>
+                <Option name="color" value="213,180,60,255" type="QString"/>
+                <Option name="horizontal_anchor_point" value="1" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="name" value="circle" type="QString"/>
+                <Option name="offset" value="0,0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="outline_color" value="35,35,35,255" type="QString"/>
+                <Option name="outline_style" value="solid" type="QString"/>
+                <Option name="outline_width" value="0" type="QString"/>
+                <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="outline_width_unit" value="MM" type="QString"/>
+                <Option name="scale_method" value="diameter" type="QString"/>
+                <Option name="size" value="2" type="QString"/>
+                <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="size_unit" value="MM" type="QString"/>
+                <Option name="vertical_anchor_point" value="1" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </source-symbol>
+        <rotation/>
+        <sizescale/>
       </renderer-v2>
       <selection mode="Default">
         <selectionColor invalid="1"/>
+        <selectionSymbol>
+          <symbol name="" alpha="1" is_animated="0" force_rhr="0" type="marker" clip_to_extent="1" frame_rate="10">
+            <data_defined_properties>
+              <Option type="Map">
+                <Option name="name" value="" type="QString"/>
+                <Option name="properties"/>
+                <Option name="type" value="collection" type="QString"/>
+              </Option>
+            </data_defined_properties>
+            <layer id="{9be27bdc-e145-44aa-af7e-66decebd21e6}" pass="0" enabled="1" class="SimpleMarker" locked="0">
+              <Option type="Map">
+                <Option name="angle" value="0" type="QString"/>
+                <Option name="cap_style" value="square" type="QString"/>
+                <Option name="color" value="255,0,0,255" type="QString"/>
+                <Option name="horizontal_anchor_point" value="1" type="QString"/>
+                <Option name="joinstyle" value="bevel" type="QString"/>
+                <Option name="name" value="circle" type="QString"/>
+                <Option name="offset" value="0,0" type="QString"/>
+                <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="offset_unit" value="MM" type="QString"/>
+                <Option name="outline_color" value="35,35,35,255" type="QString"/>
+                <Option name="outline_style" value="solid" type="QString"/>
+                <Option name="outline_width" value="0" type="QString"/>
+                <Option name="outline_width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="outline_width_unit" value="MM" type="QString"/>
+                <Option name="scale_method" value="diameter" type="QString"/>
+                <Option name="size" value="2" type="QString"/>
+                <Option name="size_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                <Option name="size_unit" value="MM" type="QString"/>
+                <Option name="vertical_anchor_point" value="1" type="QString"/>
+              </Option>
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+            </layer>
+          </symbol>
+        </selectionSymbol>
       </selection>
       <customproperties>
         <Option type="Map">
-          <Option name="QFieldSync/action" value="offline" type="QString"/>
-          <Option name="QFieldSync/attachment_naming" value="{}" type="QString"/>
-          <Option name="QFieldSync/cloud_action" value="offline" type="QString"/>
-          <Option name="QFieldSync/geometry_locked_expression" value="" type="QString"/>
-          <Option name="QFieldSync/photo_naming" value="{}" type="QString"/>
-          <Option name="QFieldSync/relationship_maximum_visible" value="{}" type="QString"/>
-          <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" value="30" type="int"/>
-          <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" value="false" type="bool"/>
-          <Option name="QFieldSync/tracking_measurement_type" value="0" type="int"/>
-          <Option name="QFieldSync/tracking_time_requirement_interval_seconds" value="30" type="int"/>
-          <Option name="dualview/previewExpressions" type="List">
-            <Option value="&quot;id&quot;" type="QString"/>
-          </Option>
+          <Option name="embeddedWidgets/count" value="0" type="int"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
       <featureBlendMode>0</featureBlendMode>
       <layerOpacity>1</layerOpacity>
+      <SingleCategoryDiagramRenderer attributeLegend="1" diagramType="Histogram">
+        <DiagramCategory showAxis="1" scaleBasedVisibility="0" scaleDependency="Area" minScaleDenominator="0" maxScaleDenominator="1e+08" sizeType="MM" height="15" direction="0" opacity="1" lineSizeScale="3x:0,0,0,0,0,0" minimumSize="0" backgroundColor="#ffffff" backgroundAlpha="255" spacingUnitScale="3x:0,0,0,0,0,0" lineSizeType="MM" spacingUnit="MM" labelPlacementMethod="XHeight" penWidth="0" spacing="5" width="15" sizeScale="3x:0,0,0,0,0,0" diagramOrientation="Up" barWidth="5" penColor="#000000" enabled="0" rotationOffset="270" penAlpha="255">
+          <fontProperties strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
+          <attribute colorOpacity="1" field="" color="#000000" label=""/>
+          <axisSymbol>
+            <symbol name="" alpha="1" is_animated="0" force_rhr="0" type="line" clip_to_extent="1" frame_rate="10">
+              <data_defined_properties>
+                <Option type="Map">
+                  <Option name="name" value="" type="QString"/>
+                  <Option name="properties"/>
+                  <Option name="type" value="collection" type="QString"/>
+                </Option>
+              </data_defined_properties>
+              <layer id="{04a1495f-7664-4fa5-9505-ece9534ad25c}" pass="0" enabled="1" class="SimpleLine" locked="0">
+                <Option type="Map">
+                  <Option name="align_dash_pattern" value="0" type="QString"/>
+                  <Option name="capstyle" value="square" type="QString"/>
+                  <Option name="customdash" value="5;2" type="QString"/>
+                  <Option name="customdash_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                  <Option name="customdash_unit" value="MM" type="QString"/>
+                  <Option name="dash_pattern_offset" value="0" type="QString"/>
+                  <Option name="dash_pattern_offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                  <Option name="dash_pattern_offset_unit" value="MM" type="QString"/>
+                  <Option name="draw_inside_polygon" value="0" type="QString"/>
+                  <Option name="joinstyle" value="bevel" type="QString"/>
+                  <Option name="line_color" value="35,35,35,255" type="QString"/>
+                  <Option name="line_style" value="solid" type="QString"/>
+                  <Option name="line_width" value="0.26" type="QString"/>
+                  <Option name="line_width_unit" value="MM" type="QString"/>
+                  <Option name="offset" value="0" type="QString"/>
+                  <Option name="offset_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                  <Option name="offset_unit" value="MM" type="QString"/>
+                  <Option name="ring_filter" value="0" type="QString"/>
+                  <Option name="trim_distance_end" value="0" type="QString"/>
+                  <Option name="trim_distance_end_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                  <Option name="trim_distance_end_unit" value="MM" type="QString"/>
+                  <Option name="trim_distance_start" value="0" type="QString"/>
+                  <Option name="trim_distance_start_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                  <Option name="trim_distance_start_unit" value="MM" type="QString"/>
+                  <Option name="tweak_dash_pattern_on_corners" value="0" type="QString"/>
+                  <Option name="use_custom_dash" value="0" type="QString"/>
+                  <Option name="width_map_unit_scale" value="3x:0,0,0,0,0,0" type="QString"/>
+                </Option>
+                <data_defined_properties>
+                  <Option type="Map">
+                    <Option name="name" value="" type="QString"/>
+                    <Option name="properties"/>
+                    <Option name="type" value="collection" type="QString"/>
+                  </Option>
+                </data_defined_properties>
+              </layer>
+            </symbol>
+          </axisSymbol>
+        </DiagramCategory>
+      </SingleCategoryDiagramRenderer>
+      <DiagramLayerSettings dist="0" priority="0" obstacle="0" placement="0" showAll="1" linePlacementFlags="18" zIndex="0">
+        <properties>
+          <Option type="Map">
+            <Option name="name" value="" type="QString"/>
+            <Option name="properties"/>
+            <Option name="type" value="collection" type="QString"/>
+          </Option>
+        </properties>
+      </DiagramLayerSettings>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
-        <activeChecks type="StringList">
-          <Option value="" type="QString"/>
-        </activeChecks>
+        <activeChecks/>
         <checkConfiguration/>
       </geometryOptions>
       <legend showLabelLegend="0" type="default-vector"/>
       <referencedLayers/>
       <fieldConfiguration>
         <field name="id" configurationFlags="NoFlag">
-          <editWidget type="">
+          <editWidget type="TextEdit">
             <config>
               <Option/>
             </config>
           </editWidget>
         </field>
-        <field name="_last_modification_date" configurationFlags="NoFlag">
-          <editWidget type="">
+        <field name="last_modification_date" configurationFlags="NoFlag">
+          <editWidget type="DateTime">
+            <config>
+              <Option/>
+            </config>
+          </editWidget>
+        </field>
+        <field name="needs_validation" configurationFlags="NoFlag">
+          <editWidget type="CheckBox">
             <config>
               <Option/>
             </config>
@@ -14928,23 +15189,28 @@ def my_form_open(dialog, layer, feature):
       </fieldConfiguration>
       <aliases>
         <alias name="" field="id" index="0"/>
-        <alias name="" field="_last_modification_date" index="1"/>
+        <alias name="" field="last_modification_date" index="1"/>
+        <alias name="" field="needs_validation" index="2"/>
       </aliases>
       <splitPolicies>
         <policy policy="Duplicate" field="id"/>
-        <policy policy="Duplicate" field="_last_modification_date"/>
+        <policy policy="Duplicate" field="last_modification_date"/>
+        <policy policy="Duplicate" field="needs_validation"/>
       </splitPolicies>
       <defaults>
         <default applyOnUpdate="0" field="id" expression=""/>
-        <default applyOnUpdate="0" field="_last_modification_date" expression=""/>
+        <default applyOnUpdate="0" field="last_modification_date" expression=""/>
+        <default applyOnUpdate="0" field="needs_validation" expression=""/>
       </defaults>
       <constraints>
         <constraint unique_strength="1" field="id" constraints="3" notnull_strength="1" exp_strength="0"/>
-        <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="needs_validation" constraints="0" notnull_strength="0" exp_strength="0"/>
       </constraints>
       <constraintExpressions>
         <constraint field="id" exp="" desc=""/>
-        <constraint field="_last_modification_date" exp="" desc=""/>
+        <constraint field="last_modification_date" exp="" desc=""/>
+        <constraint field="needs_validation" exp="" desc=""/>
       </constraintExpressions>
       <expressionfields/>
       <attributeactions>
@@ -14952,8 +15218,9 @@ def my_form_open(dialog, layer, feature):
       </attributeactions>
       <attributetableconfig sortOrder="0" sortExpression="" actionWidgetStyle="dropDown">
         <columns>
-          <column name="id" type="field" width="560" hidden="0"/>
-          <column name="_last_modification_date" type="field" width="402" hidden="0"/>
+          <column name="id" type="field" width="-1" hidden="0"/>
+          <column name="last_modification_date" type="field" width="-1" hidden="0"/>
+          <column name="needs_validation" type="field" width="-1" hidden="0"/>
           <column type="actions" width="-1" hidden="1"/>
         </columns>
       </attributetableconfig>
@@ -14966,12 +15233,40 @@ def my_form_open(dialog, layer, feature):
       <editforminit/>
       <editforminitcodesource>0</editforminitcodesource>
       <editforminitfilepath></editforminitfilepath>
-      <editforminitcode><![CDATA[]]></editforminitcode>
+      <editforminitcode><![CDATA[# -*- coding: utf-8 -*-
+"""
+QGIS forms can have a Python function that is called when the form is
+opened.
+
+Use this function to add extra logic to your forms.
+
+Enter the name of the function in the "Python Init function"
+field.
+An example follows:
+"""
+from qgis.PyQt.QtWidgets import QWidget
+
+def my_form_open(dialog, layer, feature):
+    geom = feature.geometry()
+    control = dialog.findChild(QWidget, "MyLineEdit")
+]]></editforminitcode>
       <featformsuppress>0</featformsuppress>
       <editorlayout>generatedlayout</editorlayout>
-      <editable/>
-      <labelOnTop/>
-      <reuseLastValue/>
+      <editable>
+        <field name="id" editable="1"/>
+        <field name="last_modification_date" editable="1"/>
+        <field name="needs_validation" editable="1"/>
+      </editable>
+      <labelOnTop>
+        <field name="id" labelOnTop="0"/>
+        <field name="last_modification_date" labelOnTop="0"/>
+        <field name="needs_validation" labelOnTop="0"/>
+      </labelOnTop>
+      <reuseLastValue>
+        <field name="id" reuseLastValue="0"/>
+        <field name="last_modification_date" reuseLastValue="0"/>
+        <field name="needs_validation" reuseLastValue="0"/>
+      </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
       <previewExpression>"id"</previewExpression>
@@ -15083,7 +15378,7 @@ def my_form_open(dialog, layer, feature):
         <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
-      <temporal startExpression="" fixedDuration="0" endField="" durationField="dimension_1" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_inserted_date" durationUnit="min">
+      <temporal startExpression="" fixedDuration="0" endField="" durationField="dimension_1" mode="0" limitMode="0" accumulate="0" endExpression="" enabled="0" startField="_creation_date" durationUnit="min">
         <fixedRange>
           <start></start>
           <end></end>
@@ -15646,7 +15941,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_date" configurationFlags="NoFlag">
+        <field name="_creation_date" configurationFlags="NoFlag">
           <editWidget type="DateTime">
             <config>
               <Option type="Map">
@@ -15659,7 +15954,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="_inserted_user" configurationFlags="NoFlag">
+        <field name="_creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -16142,7 +16437,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="frame__inserted_date" configurationFlags="NoFlag">
+        <field name="frame__creation_date" configurationFlags="NoFlag">
           <editWidget type="DateTime">
             <config>
               <Option type="Map">
@@ -16155,7 +16450,7 @@ def my_form_open(dialog, layer, feature):
             </config>
           </editWidget>
         </field>
-        <field name="frame__inserted_user" configurationFlags="NoFlag">
+        <field name="frame__creation_user" configurationFlags="NoFlag">
           <editWidget type="TextEdit">
             <config>
               <Option type="Map">
@@ -16755,8 +17050,8 @@ def my_form_open(dialog, layer, feature):
       <aliases>
         <alias name="" field="pk" index="0"/>
         <alias name="" field="id" index="1"/>
-        <alias name="" field="_inserted_date" index="2"/>
-        <alias name="" field="_inserted_user" index="3"/>
+        <alias name="" field="_creation_date" index="2"/>
+        <alias name="" field="_creation_user" index="3"/>
         <alias name="" field="_last_modification_date" index="4"/>
         <alias name="" field="_last_modification_user" index="5"/>
         <alias name="Cas decision" field="case_decision" index="6"/>
@@ -16796,8 +17091,8 @@ def my_form_open(dialog, layer, feature):
         <alias name="" field="offset_x_verso" index="40"/>
         <alias name="" field="offset_y_verso" index="41"/>
         <alias name="Cadre" field="frame_id" index="42"/>
-        <alias name="" field="frame__inserted_date" index="43"/>
-        <alias name="" field="frame__inserted_user" index="44"/>
+        <alias name="" field="frame__creation_date" index="43"/>
+        <alias name="" field="frame__creation_user" index="44"/>
         <alias name="" field="frame__last_modification_date" index="45"/>
         <alias name="" field="frame__last_modification_user" index="46"/>
         <alias name="" field="frame_anchor" index="47"/>
@@ -16855,8 +17150,8 @@ def my_form_open(dialog, layer, feature):
       <splitPolicies>
         <policy policy="Duplicate" field="pk"/>
         <policy policy="Duplicate" field="id"/>
-        <policy policy="Duplicate" field="_inserted_date"/>
-        <policy policy="Duplicate" field="_inserted_user"/>
+        <policy policy="Duplicate" field="_creation_date"/>
+        <policy policy="Duplicate" field="_creation_user"/>
         <policy policy="Duplicate" field="_last_modification_date"/>
         <policy policy="Duplicate" field="_last_modification_user"/>
         <policy policy="Duplicate" field="case_decision"/>
@@ -16896,8 +17191,8 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="offset_x_verso"/>
         <policy policy="Duplicate" field="offset_y_verso"/>
         <policy policy="Duplicate" field="frame_id"/>
-        <policy policy="Duplicate" field="frame__inserted_date"/>
-        <policy policy="Duplicate" field="frame__inserted_user"/>
+        <policy policy="Duplicate" field="frame__creation_date"/>
+        <policy policy="Duplicate" field="frame__creation_user"/>
         <policy policy="Duplicate" field="frame__last_modification_date"/>
         <policy policy="Duplicate" field="frame__last_modification_user"/>
         <policy policy="Duplicate" field="frame_anchor"/>
@@ -16955,8 +17250,8 @@ def my_form_open(dialog, layer, feature):
       <defaults>
         <default applyOnUpdate="0" field="pk" expression=""/>
         <default applyOnUpdate="0" field="id" expression="substr(uuid(),2,36)"/>
-        <default applyOnUpdate="0" field="_inserted_date" expression=""/>
-        <default applyOnUpdate="0" field="_inserted_user" expression=""/>
+        <default applyOnUpdate="0" field="_creation_date" expression=""/>
+        <default applyOnUpdate="0" field="_creation_user" expression=""/>
         <default applyOnUpdate="0" field="_last_modification_date" expression=""/>
         <default applyOnUpdate="0" field="_last_modification_user" expression=""/>
         <default applyOnUpdate="0" field="case_decision" expression="NULL"/>
@@ -16996,8 +17291,8 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" field="offset_x_verso" expression=""/>
         <default applyOnUpdate="0" field="offset_y_verso" expression=""/>
         <default applyOnUpdate="0" field="frame_id" expression=""/>
-        <default applyOnUpdate="0" field="frame__inserted_date" expression=""/>
-        <default applyOnUpdate="0" field="frame__inserted_user" expression=""/>
+        <default applyOnUpdate="0" field="frame__creation_date" expression=""/>
+        <default applyOnUpdate="0" field="frame__creation_user" expression=""/>
         <default applyOnUpdate="0" field="frame__last_modification_date" expression=""/>
         <default applyOnUpdate="0" field="frame__last_modification_user" expression=""/>
         <default applyOnUpdate="0" field="frame_anchor" expression=""/>
@@ -17055,8 +17350,8 @@ def my_form_open(dialog, layer, feature):
       <constraints>
         <constraint unique_strength="1" field="pk" constraints="3" notnull_strength="1" exp_strength="0"/>
         <constraint unique_strength="1" field="id" constraints="3" notnull_strength="1" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="_inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="_creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="_last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="case_decision" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -17096,8 +17391,8 @@ def my_form_open(dialog, layer, feature):
         <constraint unique_strength="0" field="offset_x_verso" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="offset_y_verso" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_id" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="frame__inserted_date" constraints="0" notnull_strength="0" exp_strength="0"/>
-        <constraint unique_strength="0" field="frame__inserted_user" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__creation_date" constraints="0" notnull_strength="0" exp_strength="0"/>
+        <constraint unique_strength="0" field="frame__creation_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame__last_modification_date" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame__last_modification_user" constraints="0" notnull_strength="0" exp_strength="0"/>
         <constraint unique_strength="0" field="frame_anchor" constraints="0" notnull_strength="0" exp_strength="0"/>
@@ -17155,8 +17450,8 @@ def my_form_open(dialog, layer, feature):
       <constraintExpressions>
         <constraint field="pk" exp="" desc=""/>
         <constraint field="id" exp="" desc=""/>
-        <constraint field="_inserted_date" exp="" desc=""/>
-        <constraint field="_inserted_user" exp="" desc=""/>
+        <constraint field="_creation_date" exp="" desc=""/>
+        <constraint field="_creation_user" exp="" desc=""/>
         <constraint field="_last_modification_date" exp="" desc=""/>
         <constraint field="_last_modification_user" exp="" desc=""/>
         <constraint field="case_decision" exp="" desc=""/>
@@ -17196,8 +17491,8 @@ def my_form_open(dialog, layer, feature):
         <constraint field="offset_x_verso" exp="" desc=""/>
         <constraint field="offset_y_verso" exp="" desc=""/>
         <constraint field="frame_id" exp="" desc=""/>
-        <constraint field="frame__inserted_date" exp="" desc=""/>
-        <constraint field="frame__inserted_user" exp="" desc=""/>
+        <constraint field="frame__creation_date" exp="" desc=""/>
+        <constraint field="frame__creation_user" exp="" desc=""/>
         <constraint field="frame__last_modification_date" exp="" desc=""/>
         <constraint field="frame__last_modification_user" exp="" desc=""/>
         <constraint field="frame_anchor" exp="" desc=""/>
@@ -17308,16 +17603,16 @@ def my_form_open(dialog, layer, feature):
           <column name="fk_mirror_shape" type="field" width="-1" hidden="0"/>
           <column name="mirror_protruding" type="field" width="-1" hidden="0"/>
           <column name="mirror_red_frame" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_date" type="field" width="-1" hidden="0"/>
-          <column name="_inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="_creation_date" type="field" width="-1" hidden="0"/>
+          <column name="_creation_user" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_date" type="field" width="-1" hidden="0"/>
           <column name="_last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="complex" type="field" width="-1" hidden="0"/>
           <column name="dimension_1" type="field" width="-1" hidden="0"/>
           <column name="dimension_2" type="field" width="-1" hidden="0"/>
           <column name="fk_provider" type="field" width="-1" hidden="0"/>
-          <column name="frame__inserted_date" type="field" width="-1" hidden="0"/>
-          <column name="frame__inserted_user" type="field" width="-1" hidden="0"/>
+          <column name="frame__creation_date" type="field" width="-1" hidden="0"/>
+          <column name="frame__creation_user" type="field" width="-1" hidden="0"/>
           <column name="frame__last_modification_date" type="field" width="-1" hidden="0"/>
           <column name="frame__last_modification_user" type="field" width="-1" hidden="0"/>
           <column name="frame_dimension_1" type="field" width="-1" hidden="0"/>
@@ -17395,7 +17690,7 @@ def my_form_open(dialog, layer, feature):
         <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
           <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
         </labelStyle>
-        <attributeEditorField horizontalStretch="0" name="_inserted_date" verticalStretch="0" showLabel="1" index="2">
+        <attributeEditorField horizontalStretch="0" name="_creation_date" verticalStretch="0" showLabel="1" index="2">
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
@@ -17415,7 +17710,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField horizontalStretch="0" name="_inserted_user" verticalStretch="0" showLabel="1" index="3">
+        <attributeEditorField horizontalStretch="0" name="_creation_user" verticalStretch="0" showLabel="1" index="3">
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
@@ -17595,7 +17890,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField horizontalStretch="0" name="frame__inserted_date" verticalStretch="0" showLabel="1" index="43">
+        <attributeEditorField horizontalStretch="0" name="frame__creation_date" verticalStretch="0" showLabel="1" index="43">
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
@@ -17640,7 +17935,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField horizontalStretch="0" name="frame__inserted_user" verticalStretch="0" showLabel="1" index="44">
+        <attributeEditorField horizontalStretch="0" name="frame__creation_user" verticalStretch="0" showLabel="1" index="44">
           <labelStyle overrideLabelColor="0" labelColor="0,0,0,255" overrideLabelFont="0">
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
@@ -17855,6 +18150,8 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_offset_x_rectified" editable="1"/>
         <field name="_azimut_offset_y_rectified" editable="1"/>
         <field name="_azimut_rectified" editable="1"/>
+        <field name="_creation_date" editable="1"/>
+        <field name="_creation_user" editable="1"/>
         <field name="_edited" editable="1"/>
         <field name="_final_rank" editable="1"/>
         <field name="_frame_anchor_rectified" editable="1"/>
@@ -17870,8 +18167,6 @@ def my_form_open(dialog, layer, feature):
         <field name="_img_it_right" editable="1"/>
         <field name="_img_ro" editable="1"/>
         <field name="_img_ro_right" editable="1"/>
-        <field name="_inserted_date" editable="1"/>
-        <field name="_inserted_user" editable="1"/>
         <field name="_last_modification_date" editable="1"/>
         <field name="_last_modification_user" editable="1"/>
         <field name="_max_shift_for_azimut" editable="1"/>
@@ -17915,9 +18210,9 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_base_type" editable="1"/>
         <field name="fk_support_type" editable="1"/>
         <field name="fk_user_sign" editable="1"/>
+        <field name="frame__creation_date" editable="1"/>
+        <field name="frame__creation_user" editable="1"/>
         <field name="frame__edited" editable="0"/>
-        <field name="frame__inserted_date" editable="1"/>
-        <field name="frame__inserted_user" editable="1"/>
         <field name="frame__last_modification_date" editable="1"/>
         <field name="frame__last_modification_user" editable="1"/>
         <field name="frame_anchor" editable="1"/>
@@ -17984,6 +18279,8 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_offset_x_rectified" labelOnTop="0"/>
         <field name="_azimut_offset_y_rectified" labelOnTop="0"/>
         <field name="_azimut_rectified" labelOnTop="0"/>
+        <field name="_creation_date" labelOnTop="0"/>
+        <field name="_creation_user" labelOnTop="0"/>
         <field name="_edited" labelOnTop="0"/>
         <field name="_final_rank" labelOnTop="0"/>
         <field name="_frame_anchor_rectified" labelOnTop="0"/>
@@ -17999,8 +18296,6 @@ def my_form_open(dialog, layer, feature):
         <field name="_img_it_right" labelOnTop="0"/>
         <field name="_img_ro" labelOnTop="0"/>
         <field name="_img_ro_right" labelOnTop="0"/>
-        <field name="_inserted_date" labelOnTop="0"/>
-        <field name="_inserted_user" labelOnTop="0"/>
         <field name="_last_modification_date" labelOnTop="0"/>
         <field name="_last_modification_user" labelOnTop="0"/>
         <field name="_max_shift_for_azimut" labelOnTop="0"/>
@@ -18044,9 +18339,9 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_base_type" labelOnTop="0"/>
         <field name="fk_support_type" labelOnTop="0"/>
         <field name="fk_user_sign" labelOnTop="0"/>
+        <field name="frame__creation_date" labelOnTop="0"/>
+        <field name="frame__creation_user" labelOnTop="0"/>
         <field name="frame__edited" labelOnTop="0"/>
-        <field name="frame__inserted_date" labelOnTop="0"/>
-        <field name="frame__inserted_user" labelOnTop="0"/>
         <field name="frame__last_modification_date" labelOnTop="0"/>
         <field name="frame__last_modification_user" labelOnTop="0"/>
         <field name="frame_anchor" labelOnTop="0"/>
@@ -18113,6 +18408,8 @@ def my_form_open(dialog, layer, feature):
         <field name="_azimut_offset_x_rectified" reuseLastValue="0"/>
         <field name="_azimut_offset_y_rectified" reuseLastValue="0"/>
         <field name="_azimut_rectified" reuseLastValue="0"/>
+        <field name="_creation_date" reuseLastValue="0"/>
+        <field name="_creation_user" reuseLastValue="0"/>
         <field name="_edited" reuseLastValue="0"/>
         <field name="_final_rank" reuseLastValue="0"/>
         <field name="_frame_anchor_rectified" reuseLastValue="0"/>
@@ -18128,8 +18425,6 @@ def my_form_open(dialog, layer, feature):
         <field name="_img_it_right" reuseLastValue="0"/>
         <field name="_img_ro" reuseLastValue="0"/>
         <field name="_img_ro_right" reuseLastValue="0"/>
-        <field name="_inserted_date" reuseLastValue="0"/>
-        <field name="_inserted_user" reuseLastValue="0"/>
         <field name="_last_modification_date" reuseLastValue="0"/>
         <field name="_last_modification_user" reuseLastValue="0"/>
         <field name="_max_shift_for_azimut" reuseLastValue="0"/>
@@ -18170,9 +18465,9 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_support_base_type" reuseLastValue="0"/>
         <field name="fk_support_type" reuseLastValue="0"/>
         <field name="fk_user_sign" reuseLastValue="0"/>
+        <field name="frame__creation_date" reuseLastValue="0"/>
+        <field name="frame__creation_user" reuseLastValue="0"/>
         <field name="frame__edited" reuseLastValue="0"/>
-        <field name="frame__inserted_date" reuseLastValue="0"/>
-        <field name="frame__inserted_user" reuseLastValue="0"/>
         <field name="frame__last_modification_date" reuseLastValue="0"/>
         <field name="frame__last_modification_user" reuseLastValue="0"/>
         <field name="frame_anchor" reuseLastValue="0"/>
@@ -18243,9 +18538,9 @@ END</previewExpression>
     <layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405"/>
     <layer id="OSM_ch_Swiss_Style_6887daaa_c829_4e55_b811_94db1c26b997"/>
     <layer id="Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b"/>
-    <layer id="vw_edited_support_9e44c97f_e06b_4184_b445_881318a02e8b"/>
     <layer id="SWISSIMAGE_Fond_de_plan_7d61cf38_35d1_4208_a775_1d854d304e6f"/>
     <layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"/>
+    <layer id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
   </layerorder>
   <properties>
     <DefaultStyles/>
@@ -18314,10 +18609,12 @@ END</previewExpression>
       <variableNames type="QStringList">
         <value>signalo_img_size</value>
         <value>signalo_inscr_length</value>
+        <value>signalo_validation</value>
       </variableNames>
       <variableValues type="QStringList">
         <value>30</value>
         <value>15</value>
+        <value>any</value>
       </variableValues>
     </Variables>
     <WCSLayers type="QStringList"/>
@@ -18645,7 +18942,7 @@ END</previewExpression>
   <Sensors/>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152452.71143953572027385" ymax="1152497.68345253239385784" xmin="2537750.94208419835194945" xmax="2537802.46189682045951486">
+    <DefaultViewExtent ymin="1152472.10452271346002817" ymax="1152495.81195824174210429" xmin="2537768.14350964967161417" xmax="2537795.30268165003508329">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -18710,7 +19007,7 @@ END</previewExpression>
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings destinationFollowsActiveLayer="1" autoCommitFeatures="0" destinationLayerName="Azimut" autoAddTrackVertices="0" destinationLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" destinationLayerSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" destinationLayerProvider="postgres">
+  <ProjectGpsSettings destinationFollowsActiveLayer="1" autoCommitFeatures="0" destinationLayerName="Outil Azimut" autoAddTrackVertices="0" destinationLayer="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" destinationLayerSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" destinationLayerProvider="postgres">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>

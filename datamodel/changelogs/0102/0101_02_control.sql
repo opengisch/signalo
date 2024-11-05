@@ -22,3 +22,13 @@ ALTER TABLE signalo_db.support RENAME COLUMN _last_modified_user TO _last_modifi
 ALTER TABLE signalo_db.azimut RENAME COLUMN _last_modified_user TO _last_modification_user;
 ALTER TABLE signalo_db.frame RENAME COLUMN _last_modified_user TO _last_modification_user;
 ALTER TABLE signalo_db.sign RENAME COLUMN _last_modified_user TO _last_modification_user;
+
+ALTER TABLE signalo_db.support RENAME COLUMN _inserted_date TO _creation_date;
+ALTER TABLE signalo_db.azimut RENAME COLUMN _inserted_date TO _creation_date;
+ALTER TABLE signalo_db.frame RENAME COLUMN _inserted_date TO _creation_date;
+ALTER TABLE signalo_db.sign RENAME COLUMN _inserted_date TO _creation_date;
+
+ALTER TABLE signalo_db.support RENAME COLUMN _inserted_user TO _creation_user;
+ALTER TABLE signalo_db.azimut RENAME COLUMN _inserted_user TO _creation_user;
+ALTER TABLE signalo_db.frame RENAME COLUMN _inserted_user TO _creation_user;
+ALTER TABLE signalo_db.sign RENAME COLUMN _inserted_user TO _creation_user;
