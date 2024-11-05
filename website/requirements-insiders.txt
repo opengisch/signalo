@@ -1,1 +1,1 @@
-git+https://${GH_TOKEN_INSIDER}@github.com/opengisch/mkdocs-material-insiders@9.5.28-insiders-4.53.11#egg=mkdocs-material
+git+https://${GH_TOKEN_INSIDER}@github.com/opengisch/mkdocs-material-insiders@9.5.43-insiders-4.53.14#egg=mkdocs-material
