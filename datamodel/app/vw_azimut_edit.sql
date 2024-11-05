@@ -4,8 +4,8 @@ CREATE OR REPLACE VIEW signalo_app.vw_azimut_edit
 AS
 SELECT
   az.id,
-  az._last_modified_date,
-  az._last_modified_user,
+  az._last_modification_date,
+  az._last_modification_user,
   ST_MakeLine(su.geometry, ST_SetSRID(St_MakePoint(ST_X(su.geometry) + 10 * sin(radians(az.azimut)), ST_Y(su.geometry) + 10 *cos(radians(az.azimut))), 2056))::geometry(LineString, 2056) as geometry
 FROM signalo_db.azimut az
 INNER JOIN signalo_db.support su ON az.fk_support = su.id;
@@ -29,13 +29,13 @@ CREATE FUNCTION signalo_app.ft_azimut_insert() RETURNS trigger
         END IF;
         INSERT INTO signalo_db.azimut (
                 fk_support,
-                _last_modified_date,
-                _last_modified_user,
+                _last_modification_date,
+                _last_modification_user,
                 azimut
             ) VALUES (
                 support_id,
-                NEW._last_modified_date,
-                NEW._last_modified_user,
+                NEW._last_modification_date,
+                NEW._last_modification_user,
                 degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry)))
             );
         RETURN NEW;
@@ -62,8 +62,8 @@ CREATE FUNCTION signalo_app.ft_azimut_update() RETURNS trigger
         END IF;
         UPDATE signalo_db.azimut SET
             azimut = degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry))),
-            _last_modified_date = NEW._last_modified_date,
-            _last_modified_user = NEW._last_modified_user
+            _last_modification_date = NEW._last_modification_date,
+            _last_modification_user = NEW._last_modification_user
         WHERE id = NEW.id;
         RETURN NEW;
     END;
