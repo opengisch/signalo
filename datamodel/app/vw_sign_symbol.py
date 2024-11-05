@@ -291,7 +291,12 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             table_name="sign",
             remove_pkey=False,
             indent=4,
-            skip_columns=["rank", "fk_frame", "_edited"],
+            skip_columns=[
+                "rank",
+                "fk_frame",
+                "needs_validation",
+                "_last_modification_platform",
+            ],
         ),
         frame_columns=select_columns(
             pg_cur=cursor,
@@ -299,7 +304,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             table_name="frame",
             remove_pkey=False,
             indent=4,
-            skip_columns=["_edited"],
+            skip_columns=["needs_validation", "_last_modification_platform"],
             prefix="frame_",
         ),
         vl_official_sign_columns=select_columns(

@@ -11,6 +11,7 @@ DEMO_DATA=""
 SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
 ROLES=""
 
+
 show_help() {
     echo "Usage: $(basename "$0") [OPTIONS]... [ARGUMENTS]..."
     echo
@@ -25,7 +26,7 @@ show_help() {
     echo "  -p      Override PG port"
 }
 
-while getopts 'bdrp:h' opt; do
+while getopts 'bdp:h' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -46,7 +47,7 @@ while getopts 'bdrp:h' opt; do
       ROLES="-r"
       ;;
     ?|h)
-      echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
+      show_help
       exit 1
       ;;
   esac
