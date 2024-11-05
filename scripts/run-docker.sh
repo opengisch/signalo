@@ -10,7 +10,21 @@ BUILD=0
 DEMO_DATA=0
 SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
 
-while getopts 'bdp:' opt; do
+
+show_help() {
+    echo "Usage: $(basename "$0") [OPTIONS]... [ARGUMENTS]..."
+    echo
+    echo "Description:"
+    echo "  Build and run Docker container with SIGNALO application"
+    echo
+    echo "Options:"
+    echo "  -h      Display this help message and exit"
+    echo "  -b      Build Docker image"
+    echo "  -d      Load demo data"
+    echo "  -p      Override PG port"
+}
+
+while getopts 'bdp:h' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -26,10 +40,8 @@ while getopts 'bdp:' opt; do
       echo "Overriding PG port to ${OPTARG}"
       TWW_PG_PORT=${OPTARG}
       ;;
-
-
     ?|h)
-      echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
+      show_help
       exit 1
       ;;
   esac
