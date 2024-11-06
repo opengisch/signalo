@@ -47,7 +47,7 @@
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" name="Contrôles" legend_exp="" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_last_modifications&quot; (geometry)" providerKey="postgres" patch_size="-1,-1" checked="Qt::Checked" legend_split_behavior="0" expanded="0">
+    <layer-tree-layer id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" name="Contrôles" legend_exp="" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_validation&quot; (geometry)" providerKey="postgres" patch_size="-1,-1" checked="Qt::Checked" legend_split_behavior="0" expanded="0">
       <customproperties>
         <Option/>
       </customproperties>
@@ -184,12 +184,12 @@
       <item>Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b</item>
       <item>SWISSIMAGE_Fond_de_plan_7d61cf38_35d1_4208_a775_1d854d304e6f</item>
       <item>vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359</item>
-      <item>vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</item>
+      <item>vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</item>
     </custom-order>
   </layer-tree-group>
   <snapping-settings scaleDependencyMode="0" tolerance="12" intersection-snapping="0" minScale="0" unit="1" maxScale="0" mode="2" self-snapping="0" type="1" enabled="1">
     <individual-layer-settings>
-      <layer-setting id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
+      <layer-setting id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
@@ -274,7 +274,7 @@
     </legendlayer>
     <legendlayer name="Contrôles" showFeatureCount="0" drawingOrder="-1" open="false" checked="Qt::Checked">
       <filegroup open="false" hidden="false">
-        <legendlayerfile visible="1" isInOverview="0" layerid="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
+        <legendlayerfile visible="1" isInOverview="0" layerid="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
       </filegroup>
     </legendlayer>
     <legendgroup name="symbologie" open="false" checked="Qt::Checked">
@@ -14678,8 +14678,8 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="100000000" type="vector" hasScaleBasedVisibilityFlag="0" labelsEnabled="0">
-      <id>vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_last_modifications" (geometry)</datasource>
+      <id>vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</id>
+      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_validation" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -18529,7 +18529,7 @@ END</previewExpression>
     <layer id="Landeskarten__farbig__a4d140cf_7103_4db6_a9bc_52ef09d7ea6b"/>
     <layer id="SWISSIMAGE_Fond_de_plan_7d61cf38_35d1_4208_a775_1d854d304e6f"/>
     <layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"/>
-    <layer id="vw_last_modifications_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
+    <layer id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab"/>
   </layerorder>
   <properties>
     <DefaultStyles/>
