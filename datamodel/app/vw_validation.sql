@@ -1,4 +1,4 @@
-CREATE OR REPLACE VIEW signalo_app.vw_last_modifications AS
+CREATE OR REPLACE VIEW signalo_app.vw_validation AS
     SELECT
         DISTINCT ON (su.id)
         su.id,
