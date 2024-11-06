@@ -21,17 +21,17 @@ Dans la configuration du projet, il faut définir la variable `signalo_validatio
 * `desktop`: la validation est requise pour les changements sur QGIS Desktop uniquement
 * `mobile`: la validation est requise pour les changements sur QField uniquement
 
-![Validation](../assets/images/printscreen/validation-config.png)
+![Validation](../assets/images/printscreen/validation/validation-config.png)
 
 ## Validation des données
 
 La vue dénommée "Contrôles" dans le projet QGIS permet de passer en revue les supports nécessitant un contrôle, que ce soit au niveau du support, d'un azimut, d'un cadre ou d'un signal.
 
-![Validation](../assets/images/printscreen/validation-layer.png)
+![Validation](../assets/images/printscreen/validation/validation-layer.png)
 
 Pour marquer un support comme contrôler, deux approches sont possibles:
 
 * soit éditer directement le champ "à contrôler" dans la vue
 * soit faire un clic droit sur le support avec l'outil d'identification et sélectionner "Marquer comme contrôlé".
 
-![Validation](../assets/images/printscreen/validation-action.png)
+![Validation](../assets/images/printscreen/validation/validation-action.png)
