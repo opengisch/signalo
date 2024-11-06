@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-06T10:53:16">
+<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-06T11:10:30">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -189,10 +189,10 @@
   </layer-tree-group>
   <snapping-settings scaleDependencyMode="0" tolerance="12" intersection-snapping="0" minScale="0" unit="1" maxScale="0" mode="2" self-snapping="0" type="1" enabled="1">
     <individual-layer-settings>
-      <layer-setting id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
-      <layer-setting id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
+      <layer-setting id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
       <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
+      <layer-setting id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" tolerance="12" minScale="0" maxScale="0" units="1" type="1" enabled="0"/>
     </individual-layer-settings>
   </snapping-settings>
   <relations>
@@ -223,10 +223,10 @@
   <mapcanvas name="theMapCanvas" annotationsVisible="1">
     <units>meters</units>
     <extent>
-      <xmin>2537213.714336599688977</xmin>
-      <ymin>1152209.79181023989804089</ymin>
-      <xmax>2537869.83258421765640378</xmax>
-      <ymax>1152692.4251577949617058</ymax>
+      <xmin>2537258.62725377362221479</xmin>
+      <ymin>1152313.65436830907128751</ymin>
+      <xmax>2537628.30671762116253376</xmax>
+      <ymax>1152585.58650524751283228</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1351,6 +1351,8 @@
           <Option name="QFieldSync/tracking_measurement_type" value="0" type="int"/>
           <Option name="QFieldSync/tracking_time_requirement_interval_seconds" value="30" type="int"/>
           <Option name="dualview/previewExpressions" type="List">
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
+            <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
             <Option value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )" type="QString"/>
@@ -3606,8 +3608,8 @@ def my_form_open(dialog, layer, feature):
             <Option value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )" type="QString"/>
           </Option>
           <Option name="embeddedWidgets/count" value="0" type="QString"/>
-          <Option name="variableNames" type="invalid"/>
-          <Option name="variableValues" type="invalid"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions geometryPrecision="0" removeDuplicateNodes="0">
@@ -4175,9 +4177,8 @@ def my_form_open(dialog, layer, feature):
             <labelFont strikethrough="0" underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" italic="0" bold="0"/>
           </labelStyle>
           <editor_configuration type="Map">
-            <Option name="buttons" value="AllButtons" type="QString"/>
             <Option name="description" value="CASE &#xa;  WHEN fk_sign_type = 11 &#xa;  THEN attribute(concat('official_sign_value_',@qgis_locale))&#xa;  &#xa;  WHEN fk_sign_type = 12&#xa;  THEN attribute(concat('marker_type_value_',@qgis_locale))&#xa;&#xa;  &#xa;  WHEN fk_sign_type = 13 AND @qgis_locale = 'fr' &#xa;  THEN 'miroir'&#xa;  WHEN fk_sign_type = 13 AND @qgis_locale = 'de' &#xa;  THEN 'Spiegel'&#xa;  &#xa;  WHEN fk_sign_type = 14 AND @qgis_locale = 'fr' &#xa;  THEN 'plaque de rue'&#xa;&#xa;  WHEN fk_sign_type = 14 AND @qgis_locale = 'de'&#xa;  THEN 'Strassenschild'&#xa;  &#xa;  WHEN fk_sign_type = 15 &#xa;  THEN attribute(concat('user_sign_value_',@qgis_locale))&#xa;  &#xa;  ELSE '?'&#xa;END" type="QString"/>
-            <Option name="image_path" value="replace(regexp_replace(file_path(@project_path), '^(\\w:)', 'file:///\\1'),'\\', '/') ||'/images/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN concat('official/original/',attribute(concat('official_sign_img_',@qgis_locale)))&#xa;  WHEN fk_sign_type = 12 THEN concat('marker/original/',attribute(concat('marker_type_img_',@qgis_locale)))&#xa;  WHEN fk_sign_type = 13 THEN 'other/original/mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'other/original/street-plate.svg'&#xa;  WHEN fk_sign_type = 15 THEN concat('user-defined/original/',attribute(concat('user_sign_img_',@qgis_locale)))&#xa;  ELSE 'official/original/no-image.svg'&#xa;END" type="QString"/>
+            <Option name="image_path" value="with_variable('signalo_locale', if(@qgis_locale in ('fr', 'fr', 'it', 'ro'), @qgis_locale, 'fr'),&#xa;replace(regexp_replace(file_path(@project_path), '^(\\w:)', 'file:///\\1'),'\\', '/') ||'/images/' || &#xa;CASE &#xa;  WHEN fk_sign_type = 11 THEN concat('official/original/',attribute(concat('official_sign_img_',@signalo_locale)))&#xa;  WHEN fk_sign_type = 12 THEN concat('marker/original/',attribute(concat('marker_type_img_',@signalo_locale)))&#xa;  WHEN fk_sign_type = 13 THEN 'other/original/mirror.svg' &#xa;  WHEN fk_sign_type = 14 THEN 'other/original/street-plate.svg'&#xa;  WHEN fk_sign_type = 15 THEN concat('user-defined/original/',attribute(concat('user_sign_img_',@signalo_locale)))&#xa;  ELSE 'official/original/no-image.svg'&#xa;END&#xa;)" type="QString"/>
             <Option name="ordering_field" value="rank" type="QString"/>
           </editor_configuration>
         </attributeEditorRelation>
@@ -4268,7 +4269,7 @@ def my_form_open(dialog, layer, feature):
         <widget name="frame-sign">
           <config type="Map">
             <Option name="force-suppress-popup" value="false" type="bool"/>
-            <Option name="nm-rel" value="" type="QString"/>
+            <Option name="nm-rel" type="invalid"/>
           </config>
         </widget>
       </widgets>
@@ -14182,7 +14183,7 @@ def my_form_open(dialog, layer, feature):
       <auxiliaryLayer/>
       <metadataUrls/>
       <flags>
-        <Identifiable>1</Identifiable>
+        <Identifiable>0</Identifiable>
         <Removable>1</Removable>
         <Searchable>1</Searchable>
         <Private>0</Private>
@@ -18373,8 +18374,8 @@ END</previewExpression>
             <Option value="&quot;id&quot;" type="QString"/>
           </Option>
           <Option name="embeddedWidgets/count" value="0" type="int"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option name="variableNames" type="invalid"/>
+          <Option name="variableValues" type="invalid"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -18849,6 +18850,51 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem zValue="2" itemRotation="0" mapUuid="" visibility="1" svgBorderColor="0,0,0,255" northOffset="0" referencePoint="7" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" excludeFromExports="0" northMode="0" position="148.5,150.814,mm" positionLock="false" resizeMode="0" anchorPoint="7" opacity="1" frameJoinStyle="miter" size="130.768,148.068,mm" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" positionOnPage="148.5,150.814,mm" groupUuid="" file="101.svg" pictureHeight="114.557" blendMode="0" pictureRotation="0" type="65640" svgBorderWidth="0.2" svgFillColor="255,255,255,255" mode="0" pictureWidth="130.768" frame="false" id="" background="false" outlineWidthM="0.3,mm">
+        <FrameColor red="0" alpha="255" blue="0" green="0"/>
+        <BackgroundColor red="255" alpha="255" blue="255" green="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option name="name" value="" type="QString"/>
+              <Option name="properties" type="Map">
+                <Option name="dataDefinedSource" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+              </Option>
+              <Option name="type" value="collection" type="QString"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option type="Map">
+              <Option name="svg-dynamic-parameters" type="Map">
+                <Option name="text1" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription1" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text2" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription2" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text3" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription3" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+                <Option name="text4" type="Map">
+                  <Option name="active" value="true" type="bool"/>
+                  <Option name="expression" value="default_inscription4" type="QString"/>
+                  <Option name="type" value="3" type="int"/>
+                </Option>
+              </Option>
+            </Option>
+          </customproperties>
+        </LayoutObject>
+      </LayoutItem>
       <LayoutItem zValue="2" itemRotation="0" visibility="1" referencePoint="0" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" excludeFromExports="0" marginX="0" marginY="0" position="24.986,142.228,mm" positionLock="false" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" opacity="1" valign="128" frameJoinStyle="miter" size="247.028,53.7715,mm" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" positionOnPage="24.986,142.228,mm" htmlState="0" groupUuid="" blendMode="0" halign="4" type="65641" frame="false" id="" background="false" outlineWidthM="0.3,mm">
         <FrameColor red="0" alpha="255" blue="0" green="0"/>
         <BackgroundColor red="255" alpha="255" blue="255" green="255"/>
@@ -18911,51 +18957,6 @@ def my_form_open(dialog, layer, feature):
           </dd_properties>
         </text-style>
       </LayoutItem>
-      <LayoutItem zValue="2" itemRotation="0" mapUuid="" visibility="1" svgBorderColor="0,0,0,255" northOffset="0" referencePoint="7" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" excludeFromExports="0" northMode="0" position="148.5,150.814,mm" positionLock="false" resizeMode="0" anchorPoint="7" opacity="1" frameJoinStyle="miter" size="130.768,148.068,mm" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" positionOnPage="148.5,150.814,mm" groupUuid="" file="101.svg" pictureHeight="114.557" blendMode="0" pictureRotation="0" type="65640" svgBorderWidth="0.2" svgFillColor="255,255,255,255" mode="0" pictureWidth="130.768" frame="false" id="" background="false" outlineWidthM="0.3,mm">
-        <FrameColor red="0" alpha="255" blue="0" green="0"/>
-        <BackgroundColor red="255" alpha="255" blue="255" green="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option name="name" value="" type="QString"/>
-              <Option name="properties" type="Map">
-                <Option name="dataDefinedSource" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-              </Option>
-              <Option name="type" value="collection" type="QString"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option type="Map">
-              <Option name="svg-dynamic-parameters" type="Map">
-                <Option name="text1" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription1" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text2" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription2" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text3" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription3" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-                <Option name="text4" type="Map">
-                  <Option name="active" value="true" type="bool"/>
-                  <Option name="expression" value="default_inscription4" type="QString"/>
-                  <Option name="type" value="3" type="int"/>
-                </Option>
-              </Option>
-            </Option>
-          </customproperties>
-        </LayoutObject>
-      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option name="atlasRasterFormat" value="png" type="QString"/>
@@ -18980,7 +18981,7 @@ def my_form_open(dialog, layer, feature):
   <Sensors/>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymin="1152200.25260734488256276" ymax="1152701.96436068997718394" xmin="2537213.714336599688977" xmax="2537869.83258421765640378">
+    <DefaultViewExtent ymin="1152308.2796551005449146" ymax="1152590.96121845603920519" xmin="2537258.62725377362221479" xmax="2537628.30671762116253376">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -19045,7 +19046,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings destinationFollowsActiveLayer="1" autoCommitFeatures="0" destinationLayerName="Outil Azimut" autoAddTrackVertices="0" destinationLayer="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" destinationLayerSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" destinationLayerProvider="postgres">
+  <ProjectGpsSettings destinationFollowsActiveLayer="1" autoCommitFeatures="0" destinationLayerName="Cadre" autoAddTrackVertices="0" destinationLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" destinationLayerSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" destinationLayerProvider="postgres">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>
