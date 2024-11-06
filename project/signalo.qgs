@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-06T10:10:29">
+<qgis saveUser="rouzauddenis" version="3.34.6-Prizren" projectname="Signalo - Demo" saveUserFull="Rouzaud Denis" saveDateTime="2024-11-06T10:26:50">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -11389,6 +11389,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="100000000" type="vector" hasScaleBasedVisibilityFlag="0" labelsEnabled="0">
+      <extent>
+        <xmin>2537376.25502501102164388</xmin>
+        <ymin>1152411.42123516835272312</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771546408534</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.6224867978221571</xmin>
+        <ymin>46.52006455084227809</ymin>
+        <xmax>6.63652866359770055</xmax>
+        <ymax>46.52393046604050397</ymax>
+      </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
       <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_db"."support" (geometry)</datasource>
       <keywordList>
@@ -14085,6 +14097,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer wkbType="LineString" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Line" simplifyDrawingHints="1" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="2500" type="vector" hasScaleBasedVisibilityFlag="1" labelsEnabled="0">
+      <extent>
+        <xmin>2537376.25502501102164388</xmin>
+        <ymin>1152411.42123516835272312</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771546408534</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.6224867978221571</xmin>
+        <ymin>46.52006455084227809</ymin>
+        <xmax>6.63652866359770055</xmax>
+        <ymax>46.52393046604050397</ymax>
+      </wgs84extent>
       <id>vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359</id>
       <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table="signalo_app"."vw_azimut_edit" (geometry)</datasource>
       <keywordList>
@@ -14664,6 +14688,18 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="1" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="5000" type="vector" hasScaleBasedVisibilityFlag="1" labelsEnabled="0">
+      <extent>
+        <xmin>2537376.25502501102164388</xmin>
+        <ymin>1152411.42123516835272312</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771546408534</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.6224867978221571</xmin>
+        <ymin>46.52006455084227809</ymin>
+        <xmax>6.63652866359770055</xmax>
+        <ymax>46.52393046604050397</ymax>
+      </wgs84extent>
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
       <datasource>service='pg_signalo' sslmode=disable key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
@@ -17924,6 +17960,18 @@ END</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer wkbType="Point" symbologyReferenceScale="-1" simplifyMaxScale="1" refreshOnNotifyEnabled="0" readOnly="0" autoRefreshTime="0" styleCategories="AllStyleCategories" geometry="Point" simplifyDrawingHints="0" autoRefreshMode="Disabled" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingTol="1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" minScale="100000000" type="vector" hasScaleBasedVisibilityFlag="0" labelsEnabled="0">
+      <extent>
+        <xmin>2537376.25502501102164388</xmin>
+        <ymin>1152411.42123516835272312</ymin>
+        <xmax>2538449.47999999998137355</xmax>
+        <ymax>1152830.11123771546408534</ymax>
+      </extent>
+      <wgs84extent>
+        <xmin>6.6224867978221571</xmin>
+        <ymin>46.52006455084227809</ymin>
+        <xmax>6.63652866359770055</xmax>
+        <ymax>46.52393046604050397</ymax>
+      </wgs84extent>
       <id>vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</id>
       <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_validation" (geometry)</datasource>
       <keywordList>
@@ -18589,7 +18637,7 @@ def my_form_open(dialog, layer, feature):
       <variableValues type="QStringList">
         <value>30</value>
         <value>15</value>
-        <value>any</value>
+        <value>mobile</value>
       </variableValues>
     </Variables>
     <WCSLayers type="QStringList"/>
