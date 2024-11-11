@@ -29,7 +29,7 @@ La vue dénommée "Contrôles" dans le projet QGIS permet de passer en revue les
 
 ![Validation](../assets/images/printscreen/validation/validation-layer.png)
 
-Pour marquer un support comme contrôler, deux approches sont possibles:
+Pour marquer un support comme à contrôler, deux approches sont possibles:
 
 * soit éditer directement le champ "à contrôler" dans la vue
 * soit faire un clic droit sur le support avec l'outil d'identification et sélectionner "Marquer comme contrôlé".
