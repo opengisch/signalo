@@ -7,10 +7,25 @@ set -e
 export $(grep -v '^#' .env | xargs)
 
 BUILD=0
-DEMO_DATA=0
+DEMO_DATA=""
 SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
+ROLES=""
 
-while getopts 'bdp:' opt; do
+show_help() {
+    echo "Usage: $(basename "$0") [OPTIONS]... [ARGUMENTS]..."
+    echo
+    echo "Description:"
+    echo "  Build and run Docker container with SIGNALO application"
+    echo
+    echo "Options:"
+    echo "  -h      Display this help message and exit"
+    echo "  -b      Build Docker image"
+    echo "  -d      Load demo data"
+    echo "  -r      Create roles"
+    echo "  -p      Override PG port"
+}
+
+while getopts 'bdrp:h' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -19,15 +34,17 @@ while getopts 'bdp:' opt; do
 
     d)
       echo "Load demo data"
-      DEMO_DATA=1
+      DEMO_DATA="-d"
       ;;
 
     p)
       echo "Overriding PG port to ${OPTARG}"
       TWW_PG_PORT=${OPTARG}
       ;;
-
-
+    r)
+      echo "Setting up roles"
+      ROLES="-r"
+      ;;
     ?|h)
       echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
       exit 1
@@ -43,6 +60,4 @@ fi
 docker rm -f signalo || true
 docker run -d -p ${SIGNALO_PG_PORT}:5432 -v $(pwd):/src --name signalo opengisch/signalo -c log_statement=all
 docker exec signalo init_db.sh wait
-if [[ $DEMO_DATA -eq 1 ]]; then
-  docker exec signalo init_db.sh build -d
-fi
+docker exec signalo init_db.sh build ${DEMO_DATA} ${ROLES}

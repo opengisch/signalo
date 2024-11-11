@@ -18,7 +18,7 @@ on:
 
 jobs:
   docker-tests:
-    name: Docker
+    name: Run tests and deploy demo data
     runs-on: ubuntu-latest
 
     steps:
@@ -29,7 +29,7 @@ jobs:
 
       - name: "initialize container"
         run: |
-          docker run -d -p 5432:5432 --name signalo opengisch/signalo:unstable
+          docker run -d -p 5432:5432 --name signalo -v $(pwd):/src opengisch/signalo:unstable
           docker exec signalo init_db.sh wait
           docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build -d
           docker exec -e PGSERVICE=pg_signalo_demo signalo /src/scripts/all-signs.py
@@ -65,6 +65,21 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           docker push opengisch/signalo:unstable
+
+      - name: Deploy Demo DB
+        if: github.event_name != 'pull_request'
+        env:
+            DEMO_DB_HOST: ${{ secrets.DEMO_DB_HOST }}
+            DEMO_DB_USER: ${{ secrets.DEMO_DB_USER }}
+            DEMO_DB_PORT: ${{ secrets.DEMO_DB_PORT }}
+            DEMO_DB_TESTING: ${{ secrets.DEMO_DB_TESTING }}
+            DEMO_DB_PASSWORD: ${{ secrets.DEMO_DB_PASSWORD }}
+        run: |
+            BACKUP_FILE=signalo-testing-db-dump-with-demo.backup
+            export PGPASSWORD=${DEMO_DB_PASSWORD}
+            docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file ${BACKUP_FILE} signalo
+            pg_restore --host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname==${DEMO_DB_TESTING} --exit-on-error --clean --if-exists --no-owner ${BACKUP_FILE}
+            psql --host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING} -v EXIT_ON_ERROR=on -f ./datamodel/roles.sql
 
       - name: "failure logs"
         if: failure()

@@ -94,3 +94,10 @@ if [[ $demo_data == True ]]; then
 fi
 
 ${DIR}/app/create_app.py --pg_service ${PGSERVICE} --srid=${SRID}
+
+if [[ $roles == True ]]; then
+  echo "*** setting roles"
+  # for now demo data is the test data
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/roles/create.sql
+  psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -f ${DIR}/roles/setup.sql
+fi
