@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Rouzaud Denis" version="3.34.6-Prizren" saveDateTime="2024-11-11T11:45:56" projectname="Signalo - Demo" saveUser="rouzauddenis">
+<qgis saveUserFull="Rouzaud Denis" version="3.34.6-Prizren" saveDateTime="2024-11-11T13:21:01" projectname="Signalo - Demo" saveUser="rouzauddenis">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -22,32 +22,32 @@
     <customproperties>
       <Option/>
     </customproperties>
-    <layer-tree-layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" expanded="1" legend_exp="" legend_split_behavior="0" name="Outil Azimut" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)">
+    <layer-tree-layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" expanded="1" legend_exp="" legend_split_behavior="0" name="Outil Azimut" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="support_347aa750_1661_498f_a7e8_017adc616ba0" expanded="1" legend_exp="" legend_split_behavior="0" name="Support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)">
+    <layer-tree-layer id="support_347aa750_1661_498f_a7e8_017adc616ba0" expanded="1" legend_exp="" legend_split_behavior="0" name="Support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" expanded="1" legend_exp="" legend_split_behavior="0" name="Azimut" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;">
+    <layer-tree-layer id="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" expanded="1" legend_exp="" legend_split_behavior="0" name="Azimut" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" expanded="1" legend_exp="" legend_split_behavior="0" name="Cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;">
+    <layer-tree-layer id="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" expanded="1" legend_exp="" legend_split_behavior="0" name="Cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;sign&quot;">
+    <layer-tree-layer id="sign_2499f9bd_24a2_4384_b329_dc522a94c545" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;sign&quot;">
       <customproperties>
         <Option/>
       </customproperties>
     </layer-tree-layer>
-    <layer-tree-layer id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" expanded="0" legend_exp="" legend_split_behavior="0" name="Contrôles" checked="Qt::Unchecked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_validation&quot; (geometry)">
+    <layer-tree-layer id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" expanded="0" legend_exp="" legend_split_behavior="0" name="Contrôles" checked="Qt::Unchecked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_validation&quot; (geometry)">
       <customproperties>
         <Option/>
       </customproperties>
@@ -56,7 +56,7 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" expanded="0" legend_exp="" legend_split_behavior="0" name="Vue signal (symbologie)" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_sign_symbol&quot; (support_geometry)">
+      <layer-tree-layer id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" expanded="0" legend_exp="" legend_split_behavior="0" name="Vue signal (symbologie)" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_sign_symbol&quot; (support_geometry)">
         <customproperties>
           <Option/>
         </customproperties>
@@ -86,77 +86,77 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" expanded="1" legend_exp="" legend_split_behavior="0" name="Fournisseur" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;">
+      <layer-tree-layer id="provider_4ab3ab90_0529_498a_8d27_4debfbbe453a" expanded="1" legend_exp="" legend_split_behavior="0" name="Fournisseur" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_provider&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" expanded="1" legend_exp="" legend_split_behavior="0" name="Propriétaire" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;">
+      <layer-tree-layer id="owner_4e532508_fa34_406c_8846_8f8306ca74ee" expanded="1" legend_exp="" legend_split_behavior="0" name="Propriétaire" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_owner&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" expanded="1" legend_exp="" legend_split_behavior="0" name="Forme de miroir" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_mirror_shape&quot;">
+      <layer-tree-layer id="mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc" expanded="1" legend_exp="" legend_split_behavior="0" name="Forme de miroir" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_mirror_shape&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" expanded="1" legend_exp="" legend_split_behavior="0" name="Type de balise" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_marker_type&quot;">
+      <layer-tree-layer id="marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273" expanded="1" legend_exp="" legend_split_behavior="0" name="Type de balise" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;vl_marker_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="coating_7ea56753_207f_4981_84ef_635958fc4808" expanded="1" legend_exp="" legend_split_behavior="0" name="Revêtement" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_coating&quot;">
+      <layer-tree-layer id="coating_7ea56753_207f_4981_84ef_635958fc4808" expanded="1" legend_exp="" legend_split_behavior="0" name="Revêtement" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_coating&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="durability_a4cef524_85b2_4913_84a1_926afcce6000" expanded="1" legend_exp="" legend_split_behavior="0" name="Durabilité" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_durability&quot;">
+      <layer-tree-layer id="durability_a4cef524_85b2_4913_84a1_926afcce6000" expanded="1" legend_exp="" legend_split_behavior="0" name="Durabilité" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_durability&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" expanded="1" legend_exp="" legend_split_behavior="0" name="Type fixation cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_fixing_type&quot;">
+      <layer-tree-layer id="frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c" expanded="1" legend_exp="" legend_split_behavior="0" name="Type fixation cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_fixing_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" expanded="1" legend_exp="" legend_split_behavior="0" name="Type cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_type&quot;">
+      <layer-tree-layer id="frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d" expanded="1" legend_exp="" legend_split_behavior="0" name="Type cadre" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_frame_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" expanded="1" legend_exp="" legend_split_behavior="0" name="Eclairage" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_lighting&quot;">
+      <layer-tree-layer id="lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c" expanded="1" legend_exp="" legend_split_behavior="0" name="Eclairage" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_lighting&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal officiel" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;">
+      <layer-tree-layer id="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal officiel" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal défini par l'utilisateur" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_user_sign&quot;">
+      <layer-tree-layer id="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" expanded="1" legend_exp="" legend_split_behavior="0" name="Signal défini par l'utilisateur" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_user_sign&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="sign_type_922b284e_5fef_4464_826e_755cf776cac5" expanded="1" legend_exp="" legend_split_behavior="0" name="Type de signal" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_sign_type&quot;">
+      <layer-tree-layer id="sign_type_922b284e_5fef_4464_826e_755cf776cac5" expanded="1" legend_exp="" legend_split_behavior="0" name="Type de signal" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_sign_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" expanded="1" legend_exp="" legend_split_behavior="0" name="État" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_status&quot;">
+      <layer-tree-layer id="status_5f245030_6519_4c89_8eb9_987e8fac9a4d" expanded="1" legend_exp="" legend_split_behavior="0" name="État" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_status&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c" expanded="1" legend_exp="" legend_split_behavior="0" name="Type base support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_support_base_type&quot;">
+      <layer-tree-layer id="support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c" expanded="1" legend_exp="" legend_split_behavior="0" name="Type base support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_support_base_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf" expanded="1" legend_exp="" legend_split_behavior="0" name="Type support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_support_type&quot;">
+      <layer-tree-layer id="support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf" expanded="1" legend_exp="" legend_split_behavior="0" name="Type support" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_support_type&quot;">
         <customproperties>
           <Option/>
         </customproperties>
@@ -166,12 +166,12 @@
       <customproperties>
         <Option/>
       </customproperties>
-      <layer-tree-layer id="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" expanded="1" legend_exp="" legend_split_behavior="0" name="dms_document" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_document&quot;">
+      <layer-tree-layer id="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" expanded="1" legend_exp="" legend_split_behavior="0" name="dms_document" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_document&quot;">
         <customproperties>
           <Option/>
         </customproperties>
       </layer-tree-layer>
-      <layer-tree-layer id="dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b" expanded="1" legend_exp="" legend_split_behavior="0" name="dms_rel_document" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_rel_document&quot;">
+      <layer-tree-layer id="dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b" expanded="1" legend_exp="" legend_split_behavior="0" name="dms_rel_document" checked="Qt::Checked" providerKey="postgres" patch_size="-1,-1" source="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_rel_document&quot;">
         <customproperties>
           <Option/>
         </customproperties>
@@ -189,9 +189,9 @@
   </layer-tree-group>
   <snapping-settings mode="2" type="1" tolerance="12" scaleDependencyMode="0" self-snapping="0" enabled="1" intersection-snapping="0" minScale="0" maxScale="0" unit="1">
     <individual-layer-settings>
+      <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" type="1" tolerance="12" units="1" enabled="0" minScale="0" maxScale="0"/>
       <layer-setting id="support_347aa750_1661_498f_a7e8_017adc616ba0" type="1" tolerance="12" units="1" enabled="0" minScale="0" maxScale="0"/>
       <layer-setting id="vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab" type="1" tolerance="12" units="1" enabled="0" minScale="0" maxScale="0"/>
-      <layer-setting id="vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405" type="1" tolerance="12" units="1" enabled="0" minScale="0" maxScale="0"/>
       <layer-setting id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" type="1" tolerance="12" units="1" enabled="0" minScale="0" maxScale="0"/>
     </individual-layer-settings>
   </snapping-settings>
@@ -223,10 +223,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537255.63591554528102279</xmin>
-      <ymin>1152141.49720062152482569</ymin>
-      <xmax>2537995.57135777035728097</xmax>
-      <ymax>1152685.78555222577415407</ymax>
+      <xmin>2537192.9163381545804441</xmin>
+      <ymin>1152015.91638508578762412</ymin>
+      <xmax>2538184.55056591471657157</xmax>
+      <ymax>1152745.35158770252019167</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -1098,7 +1098,7 @@
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."azimut"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."azimut"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1335,8 +1335,8 @@
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -1345,7 +1345,7 @@
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="support_azimut" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" strength="Composition" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" dataSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" layerName="Support" name="support_azimut" providerKey="postgres" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
+        <relation id="support_azimut" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" strength="Composition" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" dataSource="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" layerName="Support" name="support_azimut" providerKey="postgres" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3">
           <fieldRef referencedField="id" referencingField="fk_support"/>
         </relation>
       </referencedLayers>
@@ -1688,32 +1688,32 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="0" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="azimut" index="2" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="azimut" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_x" index="10" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_x" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_y" index="11" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_y" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_x_verso" index="12" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_x_verso" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_y_verso" index="13" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="offset_y_verso" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -1734,7 +1734,7 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support" index="1" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -1759,32 +1759,32 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="7" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="6" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="8" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="9" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_platform" index="15" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_platform" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="needs_validation" index="14" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="needs_validation" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -1868,7 +1868,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>coating_7ea56753_207f_4981_84ef_635958fc4808</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_coating"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_coating"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -1883,7 +1883,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -1907,7 +1907,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -2201,7 +2201,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."dms_document"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."dms_document"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2577,22 +2577,22 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="0" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="identification" index="1" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="identification" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="path" index="2" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="path" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="type" index="3" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="type" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -2639,7 +2639,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."dms_rel_document"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."dms_rel_document"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -2877,7 +2877,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="dms_rel_do_fk_document_dms_docume_id" referencedLayer="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" strength="Association" layerId="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_document&quot;" layerName="dms_document" name="Documents" providerKey="postgres" referencingLayer="dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b">
+        <relation id="dms_rel_do_fk_document_dms_docume_id" referencedLayer="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" strength="Association" layerId="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table=&quot;signalo_db&quot;.&quot;dms_document&quot;" layerName="dms_document" name="Documents" providerKey="postgres" referencingLayer="dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b">
           <fieldRef referencedField="id" referencingField="fk_document"/>
         </relation>
       </referencedLayers>
@@ -3010,7 +3010,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>durability_a4cef524_85b2_4913_84a1_926afcce6000</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_durability"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_durability"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3025,7 +3025,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -3049,7 +3049,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -3343,7 +3343,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."frame"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."frame"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -3583,8 +3583,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="COALESCE( &quot;rank&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -3593,7 +3593,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="azimut-cadre" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" layerName="Azimut" name="azimut-cadre" providerKey="postgres" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4">
+        <relation id="azimut-cadre" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" layerName="Azimut" name="azimut-cadre" providerKey="postgres" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4">
           <fieldRef referencedField="id" referencingField="fk_azimut"/>
         </relation>
       </referencedLayers>
@@ -4082,67 +4082,67 @@ def my_form_open(dialog, layer, feature):
         <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
           <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
         </labelStyle>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="0" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_azimut" index="1" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_azimut" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="rank" index="2" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="rank" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="anchor" index="19" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="anchor" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame_type" index="3" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame_fixing_type" index="4" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame_fixing_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="double_sided" index="5" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="double_sided" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_1" index="10" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_2" index="11" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="6" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="7" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="8" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="9" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
@@ -4254,7 +4254,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>frame_fixing_type_63843528_0c72_40f3_957a_7147d1820e7c</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_frame_fixing_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_frame_fixing_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4269,7 +4269,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4293,7 +4293,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4587,7 +4587,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>frame_type_497d77ea_a95f_41cd_8c09_df811ac9635d</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_frame_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_frame_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4602,7 +4602,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4626,7 +4626,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -4920,7 +4920,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>lighting_c690da23_6bac_4bb9_ae77_84d1c461a41c</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_lighting"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_lighting"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -4935,7 +4935,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -4959,7 +4959,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -5260,7 +5260,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>marker_type_92d19509_ce38_40d9_bac4_eecb4dff3273</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_marker_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_marker_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -5901,7 +5901,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>mirror_shape_96db4de4_ebf8_43e1_8365_5c16d28719bc</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_mirror_shape"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_mirror_shape"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6309,7 +6309,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_official_sign"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_official_sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -6324,7 +6324,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -6357,7 +6357,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -7037,7 +7037,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>owner_4e532508_fa34_406c_8846_8f8306ca74ee</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_owner"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_owner"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7052,7 +7052,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -7085,7 +7085,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -7506,7 +7506,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>provider_4ab3ab90_0529_498a_8d27_4debfbbe453a</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_provider"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='0' table="signalo_db"."vl_provider"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -7972,7 +7972,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>sign_2499f9bd_24a2_4384_b329_dc522a94c545</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."sign"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -8207,8 +8207,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="&quot;id&quot;"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -8217,13 +8217,13 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend type="default-vector" showLabelLegend="0"/>
       <referencedLayers>
-        <relation id="frame-sign" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" layerName="Cadre" name="cadre-signal" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
+        <relation id="frame-sign" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" layerName="Cadre" name="cadre-signal" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
           <fieldRef referencedField="id" referencingField="fk_frame"/>
         </relation>
-        <relation id="sign-official-sign" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" strength="Association" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" layerName="Signal officiel" name="Signal officiel" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
+        <relation id="sign-official-sign" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" strength="Association" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" layerName="Signal officiel" name="Signal officiel" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
           <fieldRef referencedField="id" referencingField="fk_official_sign"/>
         </relation>
-        <relation id="sign-userdefined-sign" referencedLayer="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" strength="Association" layerId="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" dataSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_user_sign&quot;" layerName="Signal défini par l'utilisateur" name="signal_user_defined" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
+        <relation id="sign-userdefined-sign" referencedLayer="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" strength="Association" layerId="vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b" dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_user_sign&quot;" layerName="Signal défini par l'utilisateur" name="signal_user_defined" providerKey="postgres" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545">
           <fieldRef referencedField="id" referencingField="fk_user_sign"/>
         </relation>
       </referencedLayers>
@@ -10068,42 +10068,42 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="0" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame" index="1" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_frame" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="10" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="complex" index="3" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="complex" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="rank" index="2" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="rank" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="9" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="12" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_parent" index="8" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_parent" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10113,62 +10113,62 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_sign_type" index="4" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_sign_type" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="hanging_mode" index="37" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="hanging_mode" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="natural_direction_or_left" index="36" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="natural_direction_or_left" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_durability" index="11" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_durability" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_lighting" index="21" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_lighting" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="installation_date" index="13" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="installation_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="case_decision" index="16" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="case_decision" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="case_id" index="15" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="case_id" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="manufacturing_date" index="14" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="manufacturing_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_1" index="17" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_1" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_2" index="18" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_2" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_3" index="19" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_3" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10178,12 +10178,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_official_sign" index="5" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_official_sign" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="20" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10193,12 +10193,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_user_sign" index="35" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_user_sign" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="20" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10208,17 +10208,17 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_protruding" index="24" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_protruding" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_red_frame" index="25" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_red_frame" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_mirror_shape" index="7" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_mirror_shape" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10228,12 +10228,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_marker_type" index="6" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_marker_type" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="20" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10243,12 +10243,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="22" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="23" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -10692,7 +10692,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>sign_type_922b284e_5fef_4464_826e_755cf776cac5</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_sign_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_sign_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -10707,7 +10707,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -10731,7 +10731,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -11034,7 +11034,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>status_5f245030_6519_4c89_8eb9_987e8fac9a4d</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_status"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_status"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -11049,7 +11049,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -11073,7 +11073,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -11366,20 +11366,8 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer labelsEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" minScale="100000000" simplifyMaxScale="1" simplifyDrawingHints="0" autoRefreshMode="Disabled" symbologyReferenceScale="-1" type="vector" wkbType="Point" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" readOnly="0" geometry="Point" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" styleCategories="AllStyleCategories">
-      <extent>
-        <xmin>2537376.25502501102164388</xmin>
-        <ymin>1152411.42123516835272312</ymin>
-        <xmax>2538449.47999999998137355</xmax>
-        <ymax>1152830.11123771546408534</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>6.6224867978221571</xmin>
-        <ymin>46.52006455084227809</ymin>
-        <xmax>6.63652866359770055</xmax>
-        <ymax>46.52393046604050397</ymax>
-      </wgs84extent>
       <id>support_347aa750_1661_498f_a7e8_017adc616ba0</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_db"."support" (geometry)</datasource>
+      <datasource>service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_db"."support" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -11702,8 +11690,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="&quot;id&quot;"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -12364,67 +12352,67 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="address" index="1" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="address" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_type" index="2" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_type" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="3" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="4" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_base_type" index="5" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_base_type" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="road_segment" index="6" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="road_segment" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="height" index="7" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="height" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="height_free_under_signal" index="8" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="height_free_under_signal" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="date_install" index="9" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="date_install" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="date_last_stability_check" index="10" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="date_last_stability_check" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="11" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="12" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="group_by_anchor" index="21" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="group_by_anchor" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -12449,12 +12437,12 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="13" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="picture_2" index="22" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="picture_2" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -12479,27 +12467,27 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="17" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="18" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="19" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="20" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorField verticalStretch="0" showLabel="1" name="needs_validation" index="23" horizontalStretch="0">
+          <attributeEditorField verticalStretch="0" showLabel="1" name="needs_validation" index="-1" horizontalStretch="0">
             <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
             </labelStyle>
@@ -12620,7 +12608,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>support_base_type_fe9c67db_d588_4092_adef_496e922cfa4c</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_support_base_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_support_base_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12635,7 +12623,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -12659,7 +12647,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent/>
@@ -12953,7 +12941,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>support_type_d8e8fb77_0ce7_4d23_bb9e_c12c12d412bf</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_support_type"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_support_type"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -12968,7 +12956,7 @@ def my_form_open(dialog, layer, feature):
           <description></description>
           <projectionacronym></projectionacronym>
           <ellipsoidacronym></ellipsoidacronym>
-          <geographicflag>true</geographicflag>
+          <geographicflag>false</geographicflag>
         </spatialrefsys>
       </srs>
       <resourceMetadata>
@@ -13001,7 +12989,7 @@ def my_form_open(dialog, layer, feature):
             <description></description>
             <projectionacronym></projectionacronym>
             <ellipsoidacronym></ellipsoidacronym>
-            <geographicflag>true</geographicflag>
+            <geographicflag>false</geographicflag>
           </spatialrefsys>
         </crs>
         <extent>
@@ -13349,7 +13337,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" type="vector" wkbType="NoGeometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" refreshOnNotifyEnabled="0" styleCategories="AllStyleCategories" refreshOnNotifyMessage="" minScale="1e+08" readOnly="0" maxScale="0" geometry="No geometry">
       <id>vl_user_sign_c625b1d7_23e8_4c2b_a4d4_e027a23ebe9b</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_user_sign"</datasource>
+      <datasource>service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table="signalo_db"."vl_user_sign"</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -14074,20 +14062,8 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer labelsEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" minScale="2500" simplifyMaxScale="1" simplifyDrawingHints="1" autoRefreshMode="Disabled" symbologyReferenceScale="-1" type="vector" wkbType="LineString" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" readOnly="0" geometry="Line" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="1" legendPlaceholderImage="" styleCategories="AllStyleCategories">
-      <extent>
-        <xmin>2537376.25502501102164388</xmin>
-        <ymin>1152411.42123516835272312</ymin>
-        <xmax>2538449.47999999998137355</xmax>
-        <ymax>1152830.11123771546408534</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>6.6224867978221571</xmin>
-        <ymin>46.52006455084227809</ymin>
-        <xmax>6.63652866359770055</xmax>
-        <ymax>46.52393046604050397</ymax>
-      </wgs84extent>
       <id>vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table="signalo_app"."vw_azimut_edit" (geometry)</datasource>
+      <datasource>service='pg_signalo' key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table="signalo_app"."vw_azimut_edit" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -14446,8 +14422,8 @@ def my_form_open(dialog, layer, feature):
           <Option type="int" value="0" name="QFieldSync/tracking_measurement_type"/>
           <Option type="int" value="30" name="QFieldSync/tracking_time_requirement_interval_seconds"/>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
-          <Option name="variableNames"/>
-          <Option name="variableValues"/>
+          <Option type="invalid" name="variableNames"/>
+          <Option type="invalid" name="variableValues"/>
         </Option>
       </customproperties>
       <blendMode>0</blendMode>
@@ -14668,7 +14644,7 @@ def my_form_open(dialog, layer, feature):
     </maplayer>
     <maplayer labelsEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" minScale="5000" simplifyMaxScale="1" simplifyDrawingHints="0" autoRefreshMode="Disabled" symbologyReferenceScale="-1" type="vector" wkbType="Point" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" readOnly="1" geometry="Point" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="1" legendPlaceholderImage="" styleCategories="AllStyleCategories">
       <id>vw_sign_symbol_a4db15ac_b65f_46c3_b5d8_bcf3dbf10405</id>
-      <datasource>service='pg_signalo' sslmode=disable key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_sign_symbol" (support_geometry)</datasource>
+      <datasource>service='pg_signalo' key='pk' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_sign_symbol" (support_geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -17084,342 +17060,342 @@ def my_form_open(dialog, layer, feature):
         <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
           <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
         </labelStyle>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="2" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="1" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="id" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="pk" index="0" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="pk" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="case_id" index="7" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="case_id" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="3" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_creation_user" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="4" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="5" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_last_modification_user" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="case_decision" index="6" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="case_decision" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="8" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="comment" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="complex" index="9" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="complex" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_1" index="10" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_2" index="11" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="dimension_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="12" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_coating" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_durability" index="13" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_durability" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_lighting" index="14" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_lighting" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_marker_type" index="15" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_marker_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_mirror_shape" index="16" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_mirror_shape" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_official_sign" index="17" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_official_sign" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="18" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_owner" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_parent" index="19" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_parent" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="20" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_provider" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_sign_type" index="21" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_sign_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="22" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_status" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_user_sign" index="23" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_user_sign" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_1" index="34" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_frame_type" index="54" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_frame_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_id" index="42" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_id" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_3" index="27" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_3" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_dimension_2" index="50" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_dimension_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_red_frame" index="31" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_red_frame" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_anchor" index="47" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_anchor" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="natural_direction_or_left" index="32" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="natural_direction_or_left" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_azimut" index="52" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_azimut" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_comment" index="48" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_comment" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_provider" index="55" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_provider" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="azimut" index="37" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="azimut" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_2" index="26" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_double_sided" index="51" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_double_sided" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_dimension_1" index="49" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_dimension_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_3" index="36" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_3" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__creation_date" index="43" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__creation_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_protruding" index="30" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="mirror_protruding" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="installation_date" index="28" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="installation_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_2" index="35" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="usr_sign_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_status" index="56" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_status" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__last_modification_user" index="46" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__last_modification_user" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_frame_fixing_type" index="53" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_fk_frame_fixing_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="33" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="picture" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__last_modification_date" index="45" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__last_modification_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__creation_user" index="44" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame__creation_user" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="manufacturing_date" index="29" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="manufacturing_date" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="hanging_mode" index="24" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="hanging_mode" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_1" index="25" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="inscription_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_azimut_rectified" index="82" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_azimut_rectified" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_it" index="74" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_it" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_verso" index="86" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_verso" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_it_right" index="78" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_it_right" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_de_right" index="76" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_de_right" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_de" index="72" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_de" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_next_frame" index="95" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_next_frame" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_shift" index="89" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_shift" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_group_width" index="91" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_group_width" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_ro_right" index="79" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_ro_right" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_height" index="80" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_height" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_fr_right" index="77" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_fr_right" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_group_height" index="90" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_group_height" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_fr" index="73" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_fr" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_final_rank" index="88" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_final_rank" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
@@ -17429,37 +17405,37 @@ def my_form_open(dialog, layer, feature):
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_next_sign_in_frame" index="93" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_next_sign_in_frame" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_rank" index="87" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_rank" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_previous_frame" index="94" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_previous_frame" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_previous_sign_in_frame" index="92" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_previous_sign_in_frame" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_ro" index="75" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_ro" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_width" index="81" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_width" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_direction" index="97" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_img_direction" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
@@ -17469,72 +17445,72 @@ def my_form_open(dialog, layer, feature):
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_it" index="70" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_it" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="directional_sign" index="67" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="directional_sign" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="sign_rank" index="62" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="sign_rank" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_fr" index="69" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_fr" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_type" index="65" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="fk_support_type" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="group_by_anchor" index="64" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="group_by_anchor" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_de" index="68" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_de" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_ro" index="71" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="_symbol_value_ro" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="support_id" index="63" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="support_id" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_1" index="59" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_1" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_3" index="61" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_3" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_2" index="60" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_usr_frame_2" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_rank" index="58" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_rank" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_picture" index="57" horizontalStretch="0">
+        <attributeEditorField verticalStretch="0" showLabel="1" name="frame_picture" index="-1" horizontalStretch="0">
           <labelStyle labelColor="0,0,0,255" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont italic="0" bold="0" strikethrough="0" style="" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" underline="0"/>
           </labelStyle>
@@ -17928,7 +17904,7 @@ END</previewExpression>
     </maplayer>
     <maplayer labelsEnabled="0" simplifyLocal="1" maxScale="0" autoRefreshTime="0" minScale="100000000" simplifyMaxScale="1" simplifyDrawingHints="0" autoRefreshMode="Disabled" symbologyReferenceScale="-1" type="vector" wkbType="Point" simplifyDrawingTol="1" refreshOnNotifyEnabled="0" simplifyAlgorithm="0" readOnly="0" geometry="Point" refreshOnNotifyMessage="" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" styleCategories="AllStyleCategories">
       <id>vw_validation_74e4eac7_fc6b_4d7d_8b39_ab67b5148aab</id>
-      <datasource>service='pg_signalo' sslmode=disable key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_validation" (geometry)</datasource>
+      <datasource>service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table="signalo_app"."vw_validation" (geometry)</datasource>
       <keywordList>
         <value></value>
       </keywordList>
@@ -18804,6 +18780,51 @@ def my_form_open(dialog, layer, feature):
         </LayoutItem>
         <GuideCollection visible="1"/>
       </PageCollection>
+      <LayoutItem svgFillColor="255,255,255,255" excludeFromExports="0" id="" blendMode="0" pictureWidth="130.768" size="130.768,148.068,mm" resizeMode="0" outlineWidthM="0.3,mm" itemRotation="0" file="101.svg" svgBorderWidth="0.2" northOffset="0" type="65640" frame="false" mapUuid="" positionLock="false" referencePoint="7" mode="0" pictureRotation="0" anchorPoint="7" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgBorderColor="0,0,0,255" northMode="0" zValue="2" frameJoinStyle="miter" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" positionOnPage="148.5,150.814,mm" pictureHeight="131.57" visibility="1" background="false" groupUuid="" opacity="1">
+        <FrameColor blue="0" alpha="255" red="0" green="0"/>
+        <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
+        <LayoutObject>
+          <dataDefinedProperties>
+            <Option type="Map">
+              <Option type="QString" value="" name="name"/>
+              <Option type="Map" name="properties">
+                <Option type="Map" name="dataDefinedSource">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+              </Option>
+              <Option type="QString" value="collection" name="type"/>
+            </Option>
+          </dataDefinedProperties>
+          <customproperties>
+            <Option type="Map">
+              <Option type="Map" name="svg-dynamic-parameters">
+                <Option type="Map" name="text1">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="default_inscription1" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+                <Option type="Map" name="text2">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="default_inscription2" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+                <Option type="Map" name="text3">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="default_inscription3" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+                <Option type="Map" name="text4">
+                  <Option type="bool" value="true" name="active"/>
+                  <Option type="QString" value="default_inscription4" name="expression"/>
+                  <Option type="int" value="3" name="type"/>
+                </Option>
+              </Option>
+            </Option>
+          </customproperties>
+        </LayoutObject>
+      </LayoutItem>
       <LayoutItem excludeFromExports="0" valign="128" id="" blendMode="0" size="247.028,53.7715,mm" outlineWidthM="0.3,mm" itemRotation="0" type="65641" frame="false" positionLock="false" halign="4" referencePoint="0" marginX="0" templateUuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" marginY="0" zValue="2" frameJoinStyle="miter" position="24.986,142.228,mm" labelText="([% &quot;id&quot;  || ') '  ||   &quot;value_fr&quot; %]&#xa;[%case when default_inscription1 is not null then '(dynamique)'  else '' end%]" uuid="{5b2fd107-099e-4f2c-8d9e-ca27d7141969}" positionOnPage="24.986,142.228,mm" visibility="1" htmlState="0" background="false" groupUuid="" opacity="1">
         <FrameColor blue="0" alpha="255" red="0" green="0"/>
         <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
@@ -18866,51 +18887,6 @@ def my_form_open(dialog, layer, feature):
           </dd_properties>
         </text-style>
       </LayoutItem>
-      <LayoutItem svgFillColor="255,255,255,255" excludeFromExports="0" id="" blendMode="0" pictureWidth="130.768" size="130.768,148.068,mm" resizeMode="0" outlineWidthM="0.3,mm" itemRotation="0" file="101.svg" svgBorderWidth="0.2" northOffset="0" type="65640" frame="false" mapUuid="" positionLock="false" referencePoint="7" mode="0" pictureRotation="0" anchorPoint="7" templateUuid="{44494381-8e9f-4200-aff1-22c57d64a580}" svgBorderColor="0,0,0,255" northMode="0" zValue="2" frameJoinStyle="miter" position="148.5,150.814,mm" uuid="{44494381-8e9f-4200-aff1-22c57d64a580}" positionOnPage="148.5,150.814,mm" pictureHeight="114.557" visibility="1" background="false" groupUuid="" opacity="1">
-        <FrameColor blue="0" alpha="255" red="0" green="0"/>
-        <BackgroundColor blue="255" alpha="255" red="255" green="255"/>
-        <LayoutObject>
-          <dataDefinedProperties>
-            <Option type="Map">
-              <Option type="QString" value="" name="name"/>
-              <Option type="Map" name="properties">
-                <Option type="Map" name="dataDefinedSource">
-                  <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="file_path(@project_path) ||'/images/official/editable/' ||   attribute(  get_feature_by_id( 'official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae', coalesce(@atlas_featureid,1) ), 'img_fr')" name="expression"/>
-                  <Option type="int" value="3" name="type"/>
-                </Option>
-              </Option>
-              <Option type="QString" value="collection" name="type"/>
-            </Option>
-          </dataDefinedProperties>
-          <customproperties>
-            <Option type="Map">
-              <Option type="Map" name="svg-dynamic-parameters">
-                <Option type="Map" name="text1">
-                  <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="default_inscription1" name="expression"/>
-                  <Option type="int" value="3" name="type"/>
-                </Option>
-                <Option type="Map" name="text2">
-                  <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="default_inscription2" name="expression"/>
-                  <Option type="int" value="3" name="type"/>
-                </Option>
-                <Option type="Map" name="text3">
-                  <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="default_inscription3" name="expression"/>
-                  <Option type="int" value="3" name="type"/>
-                </Option>
-                <Option type="Map" name="text4">
-                  <Option type="bool" value="true" name="active"/>
-                  <Option type="QString" value="default_inscription4" name="expression"/>
-                  <Option type="int" value="3" name="type"/>
-                </Option>
-              </Option>
-            </Option>
-          </customproperties>
-        </LayoutObject>
-      </LayoutItem>
       <customproperties>
         <Option type="Map">
           <Option type="QString" value="png" name="atlasRasterFormat"/>
@@ -18927,7 +18903,7 @@ def my_form_open(dialog, layer, feature):
           <Option type="int" value="0" name="pdfTextFormat"/>
         </Option>
       </customproperties>
-      <Atlas coverageLayerSource="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" hideCoverage="0" sortAscending="1" filterFeatures="0" pageNameExpression="&quot;id&quot;" coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" coverageLayerName="Signal officiel" coverageLayerProvider="postgres" enabled="1" sortKey="id" sortFeatures="1" filenamePattern="'output_'||@atlas_featurenumber"/>
+      <Atlas coverageLayerSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" hideCoverage="0" sortAscending="1" filterFeatures="0" pageNameExpression="&quot;id&quot;" coverageLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" coverageLayerName="Signal officiel" coverageLayerProvider="postgres" enabled="1" sortKey="id" sortFeatures="1" filenamePattern="'output_'||@atlas_featurenumber"/>
     </Layout>
   </Layouts>
   <mapViewDocks3D/>
@@ -18935,7 +18911,7 @@ def my_form_open(dialog, layer, feature):
   <Sensors/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537248.94212844409048557" xmax="2538002.26514487154781818" ymin="1152141.49720062152482569" ymax="1152685.78555222577415407">
+    <DefaultViewExtent xmin="2537183.9455712134949863" xmax="2538193.52133285580202937" ymin="1152015.91638508578762412" ymax="1152745.35158770252019167">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth of initial line",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor on initial line",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -19000,7 +18976,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings autoAddTrackVertices="0" destinationLayer="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" destinationLayerName="Outil Azimut" destinationLayerSource="service='pg_signalo' sslmode=disable key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayerProvider="postgres">
+  <ProjectGpsSettings autoAddTrackVertices="0" destinationLayer="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359" destinationLayerName="Outil Azimut" destinationLayerSource="service='pg_signalo' key='id' srid=2056 type=LineString checkPrimaryKeyUnicity='1' table=&quot;signalo_app&quot;.&quot;vw_azimut_edit&quot; (geometry)" autoCommitFeatures="0" destinationFollowsActiveLayer="1" destinationLayerProvider="postgres">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>
