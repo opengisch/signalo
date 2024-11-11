@@ -76,10 +76,12 @@ jobs:
             DEMO_DB_PASSWORD: ${{ secrets.DEMO_DB_PASSWORD }}
         run: |
             BACKUP_FILE=signalo-testing-db-dump-with-demo.backup
+            CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING}""
             export PGPASSWORD=${DEMO_DB_PASSWORD}
             docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file ${BACKUP_FILE} signalo
-            pg_restore --host="${DEMO_DB_HOST}" --username="${DEMO_DB_USER}" --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING} --exit-on-error --clean --if-exists --no-owner ${BACKUP_FILE}
-            psql --host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING} -v EXIT_ON_ERROR=on -f ./datamodel/roles.sql
+            psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+            pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner ${BACKUP_FILE}
+            psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles.sql
 
       - name: "failure logs"
         if: failure()
