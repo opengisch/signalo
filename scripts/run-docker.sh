@@ -26,7 +26,7 @@ show_help() {
     echo "  -p      Override PG port"
 }
 
-while getopts 'bdp:h' opt; do
+while getopts 'bdrp:h' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
