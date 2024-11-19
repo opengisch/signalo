@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - control
     paths-ignore:
       - 'website/**'
       - '.github/workflows/website.yml'
