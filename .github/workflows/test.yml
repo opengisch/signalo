@@ -33,8 +33,8 @@ jobs:
           docker run -d -p 5432:5432 --name signalo -v $(pwd):/src opengisch/signalo:unstable
           docker exec signalo init_db.sh wait
           docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build -d
+          docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup signalo_demo
           docker exec -e PGSERVICE=pg_signalo_demo signalo /src/scripts/all-signs.py
-
 
 #      - uses: actions/setup-node@v3
 #        with:
@@ -76,15 +76,21 @@ jobs:
             DEMO_DB_TESTING: ${{ secrets.DEMO_DB_TESTING }}
             DEMO_DB_PASSWORD: ${{ secrets.DEMO_DB_PASSWORD }}
         run: |
-            BACKUP_FILE=signalo-testing-db-dump-with-demo.backup
             CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING}"
             export PGPASSWORD=${DEMO_DB_PASSWORD}
-            docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file ${BACKUP_FILE} signalo_demo
             psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-            pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner ${BACKUP_FILE}
+            pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner signalo-testing-db-dump-with-demo.backup
             psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
 
       - name: "failure logs"
         if: failure()
         run: |
           docker logs signalo
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'pull_request'
+        with:
+          name: signalo-pr-testing
+          path: |
+            signalo-testing-db-dump-with-demo.backup
+            project
