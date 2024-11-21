@@ -1,4 +1,4 @@
-name: 🧪 Test and build Docker image
+name: 🧪 Run tests and deploy demo data
 
 on:
   push:
