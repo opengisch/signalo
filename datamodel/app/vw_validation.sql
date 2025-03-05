@@ -10,12 +10,14 @@ CREATE OR REPLACE VIEW signalo_app.vw_validation AS
             SELECT array_agg(a.id)
             FROM signalo_db.azimut a
             WHERE a.fk_support = su.id AND a.needs_validation = TRUE
+            ORDER BY a.id
         ) AS azimuts_need_validation,
         (
             SELECT array_agg(f.id)
             FROM signalo_db.frame f
             JOIN signalo_db.azimut a ON f.fk_azimut = a.id
             WHERE a.fk_support = su.id AND f.needs_validation = TRUE
+            ORDER BY f.id
         ) AS frames_need_validation,
         (
             SELECT array_agg(sgn.id)
@@ -23,6 +25,7 @@ CREATE OR REPLACE VIEW signalo_app.vw_validation AS
             JOIN signalo_db.frame f ON sgn.fk_frame = f.id
             JOIN signalo_db.azimut a ON f.fk_azimut = a.id
             WHERE a.fk_support = su.id AND sgn.needs_validation = TRUE
+            ORDER BY sgn.id
         ) AS signs_need_validation
     FROM signalo_db.support su
     LEFT JOIN (SELECT id, fk_support, needs_validation, MAX(_last_modification_date) OVER (PARTITION BY fk_support ORDER BY needs_validation DESC NULLS LAST) AS _last_modification_date FROM signalo_db.azimut ) a ON a.fk_support = su.id

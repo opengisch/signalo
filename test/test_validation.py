@@ -114,10 +114,12 @@ class TestViews(unittest.TestCase, DbTestBase):
                 "support_needs_validation": False,
                 "azimuts_need_validation": None,
                 "frames_need_validation": None,
-                "signs_need_validation": [
-                    sign_ids[frame_ids[100][0]][2],
-                    sign_ids[frame_ids[200][1]][1],
-                ],
+                "signs_need_validation": sorted(
+                    [
+                        sign_ids[frame_ids[100][0]][2],
+                        sign_ids[frame_ids[200][1]][1],
+                    ]
+                ),
             },
             "vw_validation",
             support_id,
@@ -138,19 +140,21 @@ class TestViews(unittest.TestCase, DbTestBase):
             {
                 "needs_validation": True,
                 "support_needs_validation": True,
-                "azimuts_need_validation": [azimut_ids[100], azimut_ids[200]],
-                "frames_need_validation": [frame_ids[300][1], frame_ids[100][1]],
-                "signs_need_validation": [
-                    sign_ids[frame_ids[100][0]][2],
-                    sign_ids[frame_ids[200][1]][1],
-                ],
+                "azimuts_need_validation": sorted([azimut_ids[100], azimut_ids[200]]),
+                "frames_need_validation": sorted(
+                    [frame_ids[300][1], frame_ids[100][1]]
+                ),
+                "signs_need_validation": sorted(
+                    [
+                        sign_ids[frame_ids[100][0]][2],
+                        sign_ids[frame_ids[200][1]][1],
+                    ]
+                ),
             },
             "vw_validation",
             support_id,
             "signalo_app",
         )
-
-        # self.update({'needs_validation': True}, "support", support_id, "signalo_db")
 
 
 if __name__ == "__main__":
