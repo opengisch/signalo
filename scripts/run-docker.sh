@@ -8,8 +8,10 @@ export $(grep -v '^#' .env | xargs)
 
 BUILD=0
 DEMO_DATA=""
+TEST=0
 SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
 ROLES=""
+
 
 show_help() {
     echo "Usage: $(basename "$0") [OPTIONS]... [ARGUMENTS]..."
@@ -23,9 +25,10 @@ show_help() {
     echo "  -d      Load demo data"
     echo "  -r      Create roles"
     echo "  -p      Override PG port"
+    echo "  -t      Run tests"
 }
 
-while getopts 'bdrp:h' opt; do
+while getopts 'bdrtp:h' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -45,8 +48,12 @@ while getopts 'bdrp:h' opt; do
       echo "Setting up roles"
       ROLES="-r"
       ;;
+    t)
+      echo "Run tests"
+      TEST=1
+      ;;
     ?|h)
-      echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
+      show_help
       exit 1
       ;;
   esac
@@ -61,3 +68,7 @@ docker rm -f signalo || true
 docker run -d -p ${SIGNALO_PG_PORT}:5432 -v $(pwd):/src --name signalo opengisch/signalo -c log_statement=all
 docker exec signalo init_db.sh wait
 docker exec signalo init_db.sh build ${DEMO_DATA} ${ROLES}
+
+if [[ $TEST -eq 1 ]]; then
+  docker exec signalo pytest
+fi
