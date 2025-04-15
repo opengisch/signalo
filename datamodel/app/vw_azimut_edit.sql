@@ -4,6 +4,9 @@ CREATE OR REPLACE VIEW signalo_app.vw_azimut_edit
 AS
 SELECT
   az.id,
+  az._last_modification_date,
+  az._last_modification_user,
+  az.needs_validation,
   ST_MakeLine(su.geometry, ST_SetSRID(St_MakePoint(ST_X(su.geometry) + 10 * sin(radians(az.azimut)), ST_Y(su.geometry) + 10 *cos(radians(az.azimut))), 2056))::geometry(LineString, 2056) as geometry
 FROM signalo_db.azimut az
 INNER JOIN signalo_db.support su ON az.fk_support = su.id;
@@ -25,7 +28,19 @@ CREATE FUNCTION signalo_app.ft_azimut_insert() RETURNS trigger
                 RAISE EXCEPTION 'Could not create a support';
             END IF;
         END IF;
-        INSERT INTO signalo_db.azimut (fk_support, azimut) VALUES (support_id, degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry))));
+        INSERT INTO signalo_db.azimut (
+                fk_support,
+                _last_modification_date,
+                _last_modification_user,
+                needs_validation,
+                azimut
+            ) VALUES (
+                support_id,
+                NEW._last_modification_date,
+                NEW._last_modification_user,
+                NEW.needs_validation,
+                degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry)))
+            );
         RETURN NEW;
     END;
     $$;
@@ -48,7 +63,12 @@ CREATE FUNCTION signalo_app.ft_azimut_update() RETURNS trigger
         IF ST_NumPoints(NEW.geometry) != 2 THEN
             RAISE EXCEPTION 'The line should have only 2 vertices';
         END IF;
-        UPDATE signalo_db.azimut SET azimut = degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry))) WHERE id = NEW.id;
+        UPDATE signalo_db.azimut SET
+            azimut = degrees(ST_Azimuth(ST_StartPoint(NEW.geometry), ST_EndPoint(NEW.geometry))),
+            _last_modification_date = NEW._last_modification_date,
+            _last_modification_user = NEW._last_modification_user,
+            needs_validation = NEW.needs_validation::boolean
+        WHERE id = NEW.id;
         RETURN NEW;
     END;
     $$;

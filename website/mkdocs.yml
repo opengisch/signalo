@@ -73,6 +73,7 @@ nav:
           - user-guide/advanced/coherence.md
           - user-guide/advanced/export.md
       - Mobile: user-guide/mobile.md
+      - Validation: user-guide/validation.md
       - Mises à jour: user-guide/updates.md
       - Documentation BD: https://signalo.ch/model-documentation/ "target=_blank
   - Feuille de route: roadmap.md
