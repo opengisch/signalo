@@ -47,19 +47,28 @@ jobs:
                 qgis_process run native:atlaslayouttopdf \
                     --PROJECT_PATH="/src/project/signalo.qgs" \
                     LAYOUT="official sign" \
-                    OUTPUT="/src/atlas_export.pdf"
+                    OUTPUT="/src/doc/official-sign-fr.pdf"
 
         - name: Create layout PDF
           run: |
                 sudo apt-get update
                 sudo apt-get install -y texlive-extra-utils
-                pdfjam --nup 3x2 --landscape --outfile signalo_official_signs.pdf atlas_export.pdf
+                pdfjam --nup 4x3 --landscape --outfile doc/official-sign-fr.pdf atlas_export.pdf
 
 
         - name: Upload PDF
           uses: actions/upload-artifact@v4
           with:
-            name: signalo_official_signs.pdf
-            path: signalo_official_signs.pdf
+            name: doc/official-sign-fr.pdf
+            path: doc/official-sign-fr.pdf
+
+        - name: Commit
+          if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
+          run: |
+                git config --global user.name "GitHub Actions"
+                git config --global user.email "
+                git add doc/official-sign-fr.pdf
+                git commit -m "Update official-sign-fr.pdf"
+                git push
 
   
