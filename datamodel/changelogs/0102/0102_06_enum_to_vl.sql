@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS signalo_db.vl_hanging_mode
 );
 
 INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto', 'recto', 'Rechts');
-INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto-verso'), 'recto-verso', 'Rechts-Verso');
+INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto-verso', 'recto-verso', 'Rechts-Verso');
 INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto', 'verso', 'Verso');
 
 ALTER TABLE signalo_db.sign ALTER COLUMN hanging_mode SET DATA TYPE text USING hanging_mode::text;
