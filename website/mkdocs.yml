@@ -58,7 +58,7 @@ nav:
   - Mode d'emploi:
       - user-guide/installation.md
       - user-guide/concepts.md
-      - user-guide/list-signs.md
+      - https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf target=_blank
       - user-guide/adddata.md
       - user-guide/directionalsigns.md
       - user-guide/marker.md
@@ -77,7 +77,7 @@ nav:
       - Validation: user-guide/validation.md
       - Mises à jour: user-guide/updates.md
       - Test: user-guide/tests.fr.md
-      - Documentation BD: https://signalo.ch/model-documentation/ "target=_blank
+      - Documentation BD: https://signalo.ch/model-documentation/ target=_blank
   - Feuille de route: roadmap.md
 
 
