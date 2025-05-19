@@ -45,7 +45,7 @@ COMMENT ON COLUMN signalo_db.support._last_modification_user
     IS 'User of last modification, automatically filled in within QGIS project';
 
 COMMENT ON COLUMN signalo_db.support._last_modification_platform
-    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project. 
+    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.
     This field is used as a condition in the control view.';
 
 COMMENT ON COLUMN signalo_db.support.usr_support_1
@@ -75,7 +75,7 @@ COMMENT ON COLUMN signalo_db.azimut._last_modification_user
     IS 'User of last modification, automatically filled in within QGIS project';
 
 COMMENT ON COLUMN signalo_db.azimut._last_modification_platform
-    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project. 
+    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.
     This field is used as a condition in the control view.';
 
 COMMENT ON COLUMN signalo_db.azimut.offset_x
@@ -115,7 +115,7 @@ COMMENT ON COLUMN signalo_db.frame.fk_frame_type
 
 COMMENT ON COLUMN signalo_db.frame.fk_frame_fixing_type
     IS 'Foreign key for frame fixing type value list';
-    
+
 COMMENT ON COLUMN signalo_db.frame.double_sided
     IS 'Set true if double sided (default). This has no influence on the symbology of the map';
 
@@ -123,25 +123,25 @@ COMMENT ON COLUMN signalo_db.frame.fk_status
     IS 'Foreign key of status value list';
 
 COMMENT ON COLUMN signalo_db.frame.fk_provider
-    IS 'Foreign key of provider value list';    
-    
+    IS 'Foreign key of provider value list';
+
 COMMENT ON COLUMN signalo_db.frame.dimension_1
-    IS 'If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, major/minor radius';    
-   
+    IS 'If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, major/minor radius';
+
 COMMENT ON COLUMN signalo_db.frame.dimension_2
-    IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, major/minor radius';        
-     
+    IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, major/minor radius';
+
 COMMENT ON COLUMN signalo_db.frame.anchor
-    IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_anchor condition';   
+    IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_anchor condition';
 
 -- sign
 
 COMMENT ON COLUMN signalo_db.sign.fk_frame
-    IS 'Foreign key of associated frame';    
+    IS 'Foreign key of associated frame';
 
 COMMENT ON COLUMN signalo_db.sign.rank
     IS 'Ranking (automatically filled in in QGIS) depending on the order of signs for each frame';
-    
+
 COMMENT ON COLUMN signalo_db.sign.complex
     IS 'Set true if the sign is too complex for being in the available svg selection. A placeholder sign ("?") will appear on the map, the real sign can be seen on the photo in the form';
 
@@ -161,37 +161,37 @@ COMMENT ON COLUMN signalo_db.sign.fk_parent
     IS 'Foreign key of associated parent sign';
 
 COMMENT ON COLUMN signalo_db.sign.fk_owner
-    IS 'Foreign key of owner value list'; 
-    
+    IS 'Foreign key of owner value list';
+
 COMMENT ON COLUMN signalo_db.sign.fk_provider
-    IS 'Foreign key of provider value list'; 
+    IS 'Foreign key of provider value list';
 
 COMMENT ON COLUMN signalo_db.sign.fk_durability
-    IS 'Foreign key of durability value list'; 
+    IS 'Foreign key of durability value list';
 
 COMMENT ON COLUMN signalo_db.sign.fk_status
-    IS 'Foreign key of status value list';      
-    
+    IS 'Foreign key of status value list';
+
 COMMENT ON COLUMN signalo_db.sign.case_id
-    IS 'Identifier of offical autorisation case'; 
+    IS 'Identifier of offical autorisation case';
 
 COMMENT ON COLUMN signalo_db.sign.case_decision
-    IS 'Decision of offical autorisation case';     
-    
+    IS 'Decision of offical autorisation case';
+
 COMMENT ON COLUMN signalo_db.sign.inscription_1
     IS 'Line 1 for dynamic inscriptions';
 
 COMMENT ON COLUMN signalo_db.sign.inscription_2
     IS 'Line 2 for dynamic inscriptions';
-    
+
 COMMENT ON COLUMN signalo_db.sign.inscription_3
-    IS 'Line 3 for dynamic inscriptions';   
-    
+    IS 'Line 3 for dynamic inscriptions';
+
 COMMENT ON COLUMN signalo_db.sign.fk_coating
-    IS 'Foreign key of coating value list';    
-    
+    IS 'Foreign key of coating value list';
+
 COMMENT ON COLUMN signalo_db.sign.fk_lighting
-    IS 'Foreign key of lighting value list';  
+    IS 'Foreign key of lighting value list';
 
 COMMENT ON COLUMN signalo_db.sign.mirror_protruding
     IS 'boolean (default is false)';
@@ -200,11 +200,11 @@ COMMENT ON COLUMN signalo_db.sign.mirror_red_frame
     IS 'boolean (default is false)';
 
 COMMENT ON COLUMN signalo_db.sign.dimension_1
-    IS 'If sign is rectangular, height/width; if sign is circular, radius; if sign is elliptic, major/minor radius';    
-   
+    IS 'If sign is rectangular, height/width; if sign is circular, radius; if sign is elliptic, major/minor radius';
+
 COMMENT ON COLUMN signalo_db.sign.dimension_2
-    IS 'If sign is rectangular, height/width; if sign is circular, not needed; if sign is elliptic, major/minor radius';        
-    
+    IS 'If sign is rectangular, height/width; if sign is circular, not needed; if sign is elliptic, major/minor radius';
+
 COMMENT ON COLUMN signalo_db.sign.fk_user_sign
     IS 'Foreign key of user sign value list';
 
@@ -227,7 +227,7 @@ COMMENT ON COLUMN signalo_db.sign._last_modification_user
     IS 'User of last modification, automatically filled in within QGIS project';
 
 COMMENT ON COLUMN signalo_db.sign._last_modification_platform
-    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project. 
+    IS 'Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.
     This field is used as a condition in the control view.';
 
 COMMENT ON COLUMN signalo_db.sign.needs_validation
@@ -300,16 +300,16 @@ COMMENT ON COLUMN signalo_db.dms_document.path
     IS 'Path to the document';
 
 COMMENT ON COLUMN signalo_db.dms_document.type
-    IS 'Type (jpg, png, pdf, image, document, etc.)'; 
-    
+    IS 'Type (jpg, png, pdf, image, document, etc.)';
+
 
 -- dms_rel_document
 
 COMMENT ON COLUMN signalo_db.dms_rel_document.fk_document
-    IS 'Foreign key of document; automatically filled in'; 
+    IS 'Foreign key of document; automatically filled in';
 
 COMMENT ON COLUMN signalo_db.dms_rel_document.fk_object
     IS 'Foreign key of associated object (azimut or support); automatically filled in';
 
 COMMENT ON COLUMN signalo_db.dms_rel_document.object_class
-    IS 'Type of associated object: azimut or support; automatically filled in';  
+    IS 'Type of associated object: azimut or support; automatically filled in';
