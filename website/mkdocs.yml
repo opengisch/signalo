@@ -58,6 +58,7 @@ nav:
   - Mode d'emploi:
       - user-guide/installation.md
       - user-guide/concepts.md
+      - user-guide/list-signs.md
       - user-guide/adddata.md
       - user-guide/directionalsigns.md
       - user-guide/marker.md
