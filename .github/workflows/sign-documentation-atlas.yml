@@ -59,7 +59,7 @@ jobs:
         - name: Upload PDF
           uses: actions/upload-artifact@v4
           with:
-            name: doc/official-sign-fr.pdf
+            name: official-sign-fr.pdf
             path: doc/official-sign-fr.pdf
 
         - name: Commit
