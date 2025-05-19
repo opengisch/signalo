@@ -70,5 +70,3 @@ jobs:
                 git add doc/official-sign-fr.pdf
                 git commit -m "Update official-sign-fr.pdf"
                 git push
-
-
