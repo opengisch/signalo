@@ -172,7 +172,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'verso' AND group_by_anchor IS FALSE
+            WHERE fk_hanging_mode != 'verso' AND group_by_anchor IS FALSE
             ORDER BY support_id, azimut, _rank
         ),
         -- recto ordered by anchor point
@@ -184,10 +184,10 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , offset_y AS _azimut_offset_y_rectified
                 , natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_fk_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'verso' AND group_by_anchor IS TRUE
-            ORDER BY support_id, azimut, frame_anchor, _rank
+            WHERE fk_ fk_hanging_mode != 'verso' AND group_by_anchor IS TRUE
+            ORDER BY support_id, azimut, frame_fk_anchor, _rank
         ),
         -- verso NOT ordered by anchor point (RECTO-VERSO are duplicated)
         ordered_verso_signs_not_grouped_by_anchor AS (
@@ -201,7 +201,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
             LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE hanging_mode != 'recto' AND group_by_anchor IS FALSE
+            WHERE fk_hanging_mode != 'recto' AND group_by_anchor IS FALSE
             ORDER BY support_id, jt.azimut, _rank
         ),
         -- verso ordered by anchor point (RECTO-VERSO are duplicated)
@@ -213,11 +213,11 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified
                 , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
-                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
+                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_fk_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
             LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE hanging_mode != 'recto' AND group_by_anchor IS TRUE
-            ORDER BY support_id, jt.azimut, frame_anchor, _rank
+            WHERE fk_hanging_mode != 'recto' AND group_by_anchor IS TRUE
+            ORDER BY support_id, jt.azimut, frame_fk_anchor, _rank
         ),
 
         ordered_signs_not_grouped_by_anchor AS (
@@ -248,14 +248,14 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
         ordered_shifted_signs_grouped_by_anchor AS (
             SELECT
                 ordered_signs_grouped_by_anchor.*
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ORDER BY _rank ) AS _final_rank
-                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING ), 0) AS _symbol_shift
-                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor), 0) AS _group_height
-                , MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ) AS _group_width
-                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, _azimut_rectified, frame_anchor, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS _previous_sign_in_frame
-                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS _next_sign_in_frame
-                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS _previous_frame
-                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_anchor ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor ORDER BY _rank ) AS _final_rank
+                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING ), 0) AS _symbol_shift
+                , COALESCE(SUM( _symbol_height ) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor), 0) AS _group_height
+                , MAX(_symbol_width) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor ) AS _group_width
+                , NULLIF(FIRST_VALUE(id) OVER (PARTITION BY support_id, _azimut_rectified, frame_fk_anchor, frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), id) AS _previous_sign_in_frame
+                , NULLIF(LAST_VALUE(id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor, frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), id) AS _next_sign_in_frame
+                , NULLIF(FIRST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor ROWS BETWEEN 1 PRECEDING AND CURRENT ROW ), frame_id) AS _previous_frame
+                , NULLIF(LAST_VALUE(frame_id) OVER ( PARTITION BY support_id, _azimut_rectified, frame_fk_anchor ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING ), frame_id) AS _next_frame
             FROM
                 ordered_signs_grouped_by_anchor
         ),
@@ -275,7 +275,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , uv.*
                 , MAX(_group_height) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
-                    WHEN directional_sign IS TRUE AND (frame_anchor, _natural_direction_or_left_rectified) IN (
+                    WHEN directional_sign IS TRUE AND (frame_fk_anchor, _natural_direction_or_left_rectified) IN (
                         ('LEFT', TRUE),
                         ('CENTER', FALSE),
                         ('RIGHT', FALSE)
