@@ -125,11 +125,11 @@ COMMENT ON COLUMN signalo_db.frame.fk_status
 COMMENT ON COLUMN signalo_db.frame.fk_provider
     IS 'Foreign key of provider value list';    
     
---COMMENT ON COLUMN signalo_db.frame.dimension_1
---    IS 'If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, radius';    
+COMMENT ON COLUMN signalo_db.frame.dimension_1
+    IS 'If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, major/minor radius';    
    
---COMMENT ON COLUMN signalo_db.frame.dimension_2
---    IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, offset'';        
+COMMENT ON COLUMN signalo_db.frame.dimension_2
+    IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, major/minor radius';        
      
 COMMENT ON COLUMN signalo_db.frame.anchor
     IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_anchor condition';   
@@ -199,12 +199,12 @@ COMMENT ON COLUMN signalo_db.sign.mirror_protruding
 COMMENT ON COLUMN signalo_db.sign.mirror_red_frame
     IS 'boolean (default is false)';
 
---COMMENT ON COLUMN signalo_db.sign.dimension_1
---    IS '';    
+COMMENT ON COLUMN signalo_db.sign.dimension_1
+    IS 'If sign is rectangular, height/width; if sign is circular, radius; if sign is elliptic, major/minor radius';    
+   
+COMMENT ON COLUMN signalo_db.sign.dimension_2
+    IS 'If sign is rectangular, height/width; if sign is circular, not needed; if sign is elliptic, major/minor radius';        
     
---COMMENT ON COLUMN signalo_db.sign.dimension_2
---    IS '';    
-
 COMMENT ON COLUMN signalo_db.sign.fk_user_sign
     IS 'Foreign key of user sign value list';
 
@@ -258,9 +258,6 @@ COMMENT ON COLUMN signalo_db.vl_official_sign.img_width
 
 COMMENT ON COLUMN signalo_db.vl_official_sign.no_dynamic_inscription
     IS 'Number of dynamic inscriptions. Default is 0';
-
---COMMENT ON COLUMN signalo_db.vl_official_sign.default_inscription1
---    IS ' ';
 
 COMMENT ON COLUMN signalo_db.vl_official_sign.directional_sign
     IS 'Boolean if sign is directional. Default is false';
