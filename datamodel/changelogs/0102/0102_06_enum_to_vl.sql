@@ -14,7 +14,7 @@ INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('left', 'gauch
 INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('center', 'centre', 'Mitte');
 INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('right', 'droite', 'rechts');
 
-ALTER TABLE signalo_db.frame ALTER COLUMN anchor SET DATA TYPE text USING lower(anchor)::text;
+ALTER TABLE signalo_db.frame ALTER COLUMN anchor SET DATA TYPE text USING lower(anchor::text);
 ALTER TABLE signalo_db.frame RENAME COLUMN anchor TO fk_anchor;
 ALTER TABLE signalo_db.frame ADD CONSTRAINT frame_fk_anchor_key FOREIGN KEY (fk_anchor) REFERENCES signalo_db.vl_anchor (id);
 
@@ -35,7 +35,7 @@ INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto',
 INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('recto-verso', 'recto-verso', 'Rechts-Verso');
 INSERT INTO signalo_db.vl_hanging_mode (id, value_fr, value_de) VALUES ('verso', 'verso', 'Verso');
 
-ALTER TABLE signalo_db.sign ALTER COLUMN hanging_mode SET DATA TYPE text USING lower(hanging_mode)::text;
+ALTER TABLE signalo_db.sign ALTER COLUMN hanging_mode SET DATA TYPE text USING lower(hanging_mode::text);
 ALTER TABLE signalo_db.sign RENAME COLUMN hanging_mode TO fk_hanging_mode;
 ALTER TABLE signalo_db.sign ADD CONSTRAINT frame_fk_hanging_mode_key FOREIGN KEY (fk_hanging_mode) REFERENCES signalo_db.vl_hanging_mode (id);
 
