@@ -14,8 +14,8 @@ COMMENT ON COLUMN signalo_db.support.fk_provider
 COMMENT ON COLUMN signalo_db.support.fk_support_base_type
     IS 'Foreign key of support base type value list';
 
---COMMENT ON COLUMN signalo_db.support.road_segment
---    IS '';
+COMMENT ON COLUMN signalo_db.support.road_segment
+    IS 'Optional field to reference a road';
 
 COMMENT ON COLUMN signalo_db.support.height
     IS 'Support height';
@@ -126,10 +126,10 @@ COMMENT ON COLUMN signalo_db.frame.fk_provider
     IS 'Foreign key of provider value list';    
     
 --COMMENT ON COLUMN signalo_db.frame.dimension_1
---    IS ' ';    
+--    IS 'If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, radius';    
    
 --COMMENT ON COLUMN signalo_db.frame.dimension_2
---    IS ' ';        
+--    IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, offset'';        
      
 COMMENT ON COLUMN signalo_db.frame.anchor
     IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_anchor condition';   

@@ -83,7 +83,8 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changel
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0101/0101_01_balises.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_01_control.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_02_display.sql
-psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_03_comments.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_03_cleanup.sql
+psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_04_comments.sql
 
 
 if [[ $demo_data == True ]]; then
