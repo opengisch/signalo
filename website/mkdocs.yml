@@ -58,7 +58,8 @@ nav:
   - Mode d'emploi:
       - user-guide/installation.md
       - user-guide/concepts.md
-      - https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf target=_blank
+      - https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf
+        target=_blank
       - user-guide/adddata.md
       - user-guide/directionalsigns.md
       - user-guide/marker.md
