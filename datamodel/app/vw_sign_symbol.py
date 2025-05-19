@@ -186,7 +186,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_fk_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE fk_ fk_hanging_mode != 'verso' AND group_by_anchor IS TRUE
+            WHERE fk_hanging_mode != 'verso' AND group_by_anchor IS TRUE
             ORDER BY support_id, azimut, frame_fk_anchor, _rank
         ),
         -- verso NOT ordered by anchor point (RECTO-VERSO are duplicated)
