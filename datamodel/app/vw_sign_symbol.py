@@ -172,7 +172,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND group_by_anchor IS FALSE
+            WHERE hanging_mode != 'verso' AND group_by_anchor IS FALSE
             ORDER BY support_id, azimut, _rank
         ),
         -- recto ordered by anchor point
@@ -186,7 +186,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , false::bool AS _verso
                 , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE hanging_mode != 'VERSO'::signalo_db.sign_hanging AND group_by_anchor IS TRUE
+            WHERE hanging_mode != 'verso' AND group_by_anchor IS TRUE
             ORDER BY support_id, azimut, frame_anchor, _rank
         ),
         -- verso NOT ordered by anchor point (RECTO-VERSO are duplicated)
@@ -201,7 +201,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
             LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor IS FALSE
+            WHERE hanging_mode != 'recto' AND group_by_anchor IS FALSE
             ORDER BY support_id, jt.azimut, _rank
         ),
         -- verso ordered by anchor point (RECTO-VERSO are duplicated)
@@ -216,7 +216,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
                 , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_anchor ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
             LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE hanging_mode != 'RECTO'::signalo_db.sign_hanging AND group_by_anchor IS TRUE
+            WHERE hanging_mode != 'recto' AND group_by_anchor IS TRUE
             ORDER BY support_id, jt.azimut, frame_anchor, _rank
         ),
 
