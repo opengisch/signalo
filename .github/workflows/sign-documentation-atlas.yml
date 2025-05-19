@@ -52,8 +52,9 @@ jobs:
         - name: Create layout PDF
           run: |
                 sudo apt-get update
-                sudo apt-get install -y pdfjam
-                pdfjam --nup 3x2 --landscape --outfile signalo_official_signs.pdf atlas_export.pdf
+                sudo apt-get install -y pdfnup
+                pdfnup atlas_export.pdf --nup 3x2 --outfile signalo_official_signs.pdf
+
 
         - name: Upload PDF
           uses: actions/upload-artifact@v4
