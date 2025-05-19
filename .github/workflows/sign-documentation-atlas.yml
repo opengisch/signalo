@@ -1,0 +1,74 @@
+
+name: Build Atlas PDF of all signs
+on:
+    workflow_dispatch:
+    workflow_call:
+    push:
+        branches:
+            - atlas-sign
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+
+        - name: "build dockerfile"
+          run: docker build -f .docker/Dockerfile --tag opengisch/signalo:unstable .
+
+        - name: "initialize container"
+          run: |
+                docker network create signalo_network
+                docker run -d -p 5432:5432 --network signalo_network --name signalo -v $(pwd):/src opengisch/signalo:unstable
+                docker exec signalo init_db.sh wait
+                docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build
+
+        - name: "create pg_service.conf"
+          run: |
+                cat <<EOF > .pg_service.conf
+                [pg_signalo]
+                host=signalo
+                port=5432
+                dbname=signalo
+                user=postgres
+                password=postgres
+                EOF
+
+        - name: Build Atlas PDF
+          run: |
+                docker run \
+                --network signalo_network \
+                --platform linux/amd64 \
+                -e QT_QPA_PLATFORM=offscreen \
+                -e PGSERVICEFILE=/src/.pg_service.conf \
+                --rm \
+                -v $(pwd):/src \
+                qgis/qgis \
+                qgis_process run native:atlaslayouttopdf \
+                    --PROJECT_PATH="/src/project/signalo.qgs" \
+                    LAYOUT="official sign" \
+                    OUTPUT="/src/doc/official-sign-fr.pdf"
+
+        - name: Create layout PDF
+          run: |
+                sudo apt-get update
+                sudo apt-get install -y texlive-extra-utils
+                pdfjam --nup 4x3 --landscape --outfile doc/official-sign-fr.pdf atlas_export.pdf
+
+
+        - name: Upload PDF
+          uses: actions/upload-artifact@v4
+          with:
+            name: doc/official-sign-fr.pdf
+            path: doc/official-sign-fr.pdf
+
+        - name: Commit
+          if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
+          run: |
+                git config --global user.name "GitHub Actions"
+                git config --global user.email "
+                git add doc/official-sign-fr.pdf
+                git commit -m "Update official-sign-fr.pdf"
+                git push
+
+

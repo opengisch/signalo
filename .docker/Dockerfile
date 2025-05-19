@@ -3,7 +3,7 @@ FROM imresamu/postgis-arm64:15-3.4 AS base-arm64
 
 FROM postgis/postgis:15-3.4 AS base-amd64
 
-FROM base-$BUILDARCH as common
+FROM base-$BUILDARCH AS common
 
 ARG AUTO_INIT=True
 
