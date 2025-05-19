@@ -24,7 +24,9 @@ jobs:
         
         - name: Build Atlas PDF
           run: |
-                docker run --rm \
+                docker run \
+                -e QT_QPA_PLATFORM=offscreen \
+                --rm \
                 -v $(pwd):/src \
                 qgis/qgis \
                 qgis_process run native:layoutreport \
