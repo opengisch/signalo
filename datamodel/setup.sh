@@ -86,7 +86,6 @@ psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changel
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_03_cleanup.sql
 psql "service=${PGSERVICE}" -v ON_ERROR_STOP=1 -v SRID=${SRID} -f ${DIR}/changelogs/0102/0102_04_comments.sql
 
-
 if [[ $demo_data == True ]]; then
   echo "*** inserting demo_data"
   # for now demo data is the test data
