@@ -75,6 +75,7 @@ nav:
       - Mobile: user-guide/mobile.md
       - Validation: user-guide/validation.md
       - Mises à jour: user-guide/updates.md
+      - Test: website/documentation/user-guide/tests.fr.md
       - Documentation BD: https://signalo.ch/model-documentation/ "target=_blank
   - Feuille de route: roadmap.md
 
