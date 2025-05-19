@@ -1,0 +1,34 @@
+
+name: Build Atlas PDF of all signs
+on:
+    workflow_dispatch:
+    workflow_call:
+    push:
+        branches:
+            - atlas-sign
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+        - uses: actions/checkout@v4
+
+        - name: "build dockerfile"
+          run: docker build -f .docker/Dockerfile --tag opengisch/signalo:unstable .
+
+        - name: "initialize container"
+          run: |
+                docker run -d -p 5432:5432 --name signalo -v $(pwd):/src opengisch/signalo:unstable
+                docker exec signalo init_db.sh wait
+                docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build
+        
+        - name: Build Atlas PDF
+          run: |
+                docker run --rm \
+                -v $(pwd):/src \
+                qgis/qgis \
+                qgis_process run native:layoutreport \
+                    --project "project/signalo.qgs" \
+                    layout="official sign" \
+                    destination="/src/atlas_export.pdf"
+  
