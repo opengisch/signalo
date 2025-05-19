@@ -55,7 +55,7 @@ jobs:
                 pdfjam --nup 2x2 --landscape --outfile atlas_export_4_signs.pdf atlas_export.pdf
 
         - name: Upload PDF
-          uses: actions/upload-artifact@v3
+          uses: actions/upload-artifact@v4
           with:
             name: signalo_official_signs.pdf
             path: atlas_export_4_signs.pdf
