@@ -24,7 +24,7 @@ jobs:
                 docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build
 
         - name: "create pg_service.conf"
-          run: |  
+          run: |
                 cat <<EOF > .pg_service.conf
                 [pg_signalo]
                 host=signalo
@@ -33,7 +33,7 @@ jobs:
                 user=postgres
                 password=postgres
                 EOF
-        
+
         - name: Build Atlas PDF
           run: |
                 docker run \
@@ -71,4 +71,4 @@ jobs:
                 git commit -m "Update official-sign-fr.pdf"
                 git push
 
-  
+
