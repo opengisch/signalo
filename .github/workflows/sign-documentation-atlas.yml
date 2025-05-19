@@ -52,8 +52,8 @@ jobs:
         - name: Create layout PDF
           run: |
                 sudo apt-get update
-                sudo apt-get install -y pdfnup
-                pdfnup atlas_export.pdf --nup 3x2 --outfile signalo_official_signs.pdf
+                sudo apt-get install -y texlive-extra-utils
+                pdfjam --nup 3x2 --landscape --outfile signalo_official_signs.pdf atlas_export.pdf
 
 
         - name: Upload PDF
