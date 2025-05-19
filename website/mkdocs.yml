@@ -130,6 +130,7 @@ plugins:
             Mobile: Mobil
             Validation: Validierung
             Mises à jour: Updates
+            Test: Test
             Documentation BD: DB Dokumentation
             Feuille de route: Roadmap
           palette:
