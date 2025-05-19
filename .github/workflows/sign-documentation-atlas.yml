@@ -49,9 +49,10 @@ jobs:
                     LAYOUT="official sign" \
                     OUTPUT="/src/atlas_export.pdf"
 
-        - name: Create a 4 signs per page PDF
+        - name: Create layout PDF
           run: |
-                apt-get install -y pdfjam
+                sudo apt-get update
+                sudo apt-get install -y pdfjam
                 pdfjam --nup 3x2 --landscape --outfile signalo_official_signs.pdf atlas_export.pdf
 
         - name: Upload PDF
