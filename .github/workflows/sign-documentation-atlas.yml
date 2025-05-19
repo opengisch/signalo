@@ -64,12 +64,26 @@ jobs:
             name: official-sign-fr.pdf
             path: doc/official-sign-fr.pdf
 
-        - name: Commit
+        - name: Commit and push to branch
           if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
           run: |
-                git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-                git config --global user.name "github-actions[bot]"
-                git config --global user.email "github-actions[bot]@users.noreply.github.com"
-                git add doc/official-sign-fr.pdf
-                git commit -m "Update official-sign-fr.pdf"
-                git push
+            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
+            git config --global user.name "github-actions[bot]"
+            git config --global user.email "github-actions[bot]@users.noreply.github.com"
+            branch_name=update-atlas-pdf-${GITHUB_RUN_ID}
+            git checkout -b $branch_name
+            git add doc/official-sign-fr.pdf
+            git commit -m "Update official-sign-fr.pdf"
+            git push origin $branch_name
+
+        - name: Create Pull Request
+          if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
+          env:
+            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: |
+            gh pr create \
+              --title "Update official-sign-fr.pdf" \
+              --body "Automated update of the Atlas PDF." \
+              --head update-atlas-pdf-${GITHUB_RUN_ID} \
+              --base ${{ github.ref_name }} \
+              --repo ${{ github.repository }}
