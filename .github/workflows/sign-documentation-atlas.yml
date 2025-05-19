@@ -26,7 +26,7 @@ jobs:
         - name: "create pg_service.conf"
           run: |  
                 cat <<EOF > .pg_service.conf
-                [pg_signalo_demo]
+                [pg_signalo]
                 host=signalo
                 port=5432
                 dbname=signalo
@@ -52,12 +52,12 @@ jobs:
         - name: Create a 4 signs per page PDF
           run: |
                 apt-get install -y pdfjam
-                pdfjam --nup 2x2 --landscape --outfile atlas_export_4_signs.pdf atlas_export.pdf
+                pdfjam --nup 3x2 --landscape --outfile signalo_official_signs.pdf atlas_export.pdf
 
         - name: Upload PDF
           uses: actions/upload-artifact@v4
           with:
             name: signalo_official_signs.pdf
-            path: atlas_export_4_signs.pdf
+            path: signalo_official_signs.pdf
 
   
