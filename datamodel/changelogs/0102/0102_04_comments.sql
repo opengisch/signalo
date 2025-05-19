@@ -265,6 +265,31 @@ COMMENT ON COLUMN signalo_db.vl_official_sign.directional_sign
 COMMENT ON COLUMN signalo_db.vl_official_sign.img_de_right
     IS 'Path to svg (if directional, this is the right direction). Idem for img_fr_right, img_it_right, img_ro_right';
 
+-- vl_official_sign
+
+COMMENT ON COLUMN signalo_db.vl_official_sign.active
+    IS 'Set to false if sign should not appear in the selection anymore. Default is true';
+
+COMMENT ON COLUMN signalo_db.vl_official_sign.img_de
+    IS 'Path to svg (if directional, this is the left direction). Idem for img_fr, img_it, img_ro';
+
+-- vl_user_sign
+
+COMMENT ON COLUMN signalo_db.vl_user_sign.img_height
+    IS 'Height of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected';
+
+COMMENT ON COLUMN signalo_db.vl_user_sign.img_width
+    IS 'Width of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected';
+
+COMMENT ON COLUMN signalo_db.vl_user_sign.no_dynamic_inscription
+    IS 'Number of dynamic inscriptions. Default is 0';
+
+COMMENT ON COLUMN signalo_db.vl_user_sign.directional_sign
+    IS 'Boolean if sign is directional. Default is false';
+
+COMMENT ON COLUMN signalo_db.vl_user_sign.img_de_right
+    IS 'Path to svg (if directional, this is the right direction). Idem for img_fr_right, img_it_right, img_ro_right';
+
 
 -- dms_document
 
