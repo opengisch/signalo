@@ -5,7 +5,7 @@ tx_slug: documentation_user-guide_advanced_doublesided
 
 # Panneaux recto-verso
 
-Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneaux porte le même signal des deux côtés.
+Au niveau du signal, (table `sign`, couche *Signal* dans QGIS) l'attribut `hanging_mode` ou *mode d'accrochage* permet de définir si un panneau porte le même signal des deux côtés.
 
 * *RECTO* -> le signal n'est affiché que d'un côté
 * *RECTO-VERSO* -> le signal est affiché des deux côtés du panneau
