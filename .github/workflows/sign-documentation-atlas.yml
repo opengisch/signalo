@@ -18,19 +18,46 @@ jobs:
 
         - name: "initialize container"
           run: |
-                docker run -d -p 5432:5432 --name signalo -v $(pwd):/src opengisch/signalo:unstable
+                docker network create signalo_network
+                docker run -d -p 5432:5432 --network signalo_network --name signalo -v $(pwd):/src opengisch/signalo:unstable
                 docker exec signalo init_db.sh wait
                 docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build
+
+        - name: "create pg_service.conf"
+          run: |  
+                cat <<EOF > .pg_service.conf
+                [pg_signalo_demo]
+                host=signalo
+                port=5432
+                dbname=signalo
+                user=postgres
+                password=postgres
+                EOF
         
         - name: Build Atlas PDF
           run: |
                 docker run \
+                --network signalo_network \
+                --platform linux/amd64 \
                 -e QT_QPA_PLATFORM=offscreen \
+                -e PGSERVICEFILE=/src/.pg_service.conf \
                 --rm \
                 -v $(pwd):/src \
                 qgis/qgis \
-                qgis_process run native:layoutreport \
-                    --project "project/signalo.qgs" \
-                    layout="official sign" \
-                    destination="/src/atlas_export.pdf"
+                qgis_process run native:atlaslayouttopdf \
+                    --PROJECT_PATH="/src/project/signalo.qgs" \
+                    LAYOUT="official sign" \
+                    OUTPUT="/src/atlas_export.pdf"
+
+        - name: Create a 4 signs per page PDF
+          run: |
+                apt-get install -y pdfjam
+                pdfjam --nup 2x2 --landscape --outfile atlas_export_4_signs.pdf atlas_export.pdf
+
+        - name: Upload PDF
+          uses: actions/upload-artifact@v3
+          with:
+            name: signalo_official_signs.pdf
+            path: atlas_export_4_signs.pdf
+
   

@@ -65,7 +65,8 @@ if [[ $BUILD -eq 1 ]]; then
 fi
 
 docker rm -f signalo || true
-docker run -d -p ${SIGNALO_PG_PORT}:5432 -v $(pwd):/src --name signalo opengisch/signalo -c log_statement=all
+docker network create signalo_network || true
+docker run --network signalo_network -d -p ${SIGNALO_PG_PORT}:5432 -v $(pwd):/src --name signalo opengisch/signalo -c log_statement=all
 docker exec signalo init_db.sh wait
 docker exec signalo init_db.sh build ${DEMO_DATA} ${ROLES}
 
