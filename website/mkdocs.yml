@@ -58,9 +58,6 @@ nav:
   - Mode d'emploi:
       - user-guide/installation.md
       - user-guide/concepts.md
-      - Liste de signaux:
-          https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf
-          "target=_blank
       - user-guide/adddata.md
       - user-guide/directionalsigns.md
       - user-guide/marker.md
@@ -68,6 +65,7 @@ nav:
           - user-guide/advanced/size.md
           - user-guide/advanced/offset.md
           - user-guide/advanced/doublesided.md
+          - user-guide/advanced/group_by_anchor.md
           - user-guide/advanced/customsigns.md
           - user-guide/advanced/add_values.md
           - user-guide/advanced/duplicateobject.md
@@ -75,6 +73,7 @@ nav:
           - user-guide/advanced/language.md
           - user-guide/advanced/coherence.md
           - user-guide/advanced/export.md
+      - Symbologie: user-guide/symbologyfields.md
       - Mobile: user-guide/mobile.md
       - Validation: user-guide/validation.md
       - Mises à jour: user-guide/updates.md
@@ -130,8 +129,8 @@ plugins:
             Présentation: Präsentation
             Contribuer: Mitmachen
             Mode d'emploi: Bedienungsanleitung
-            Liste de signaux: Liste de signaux
             Configuration avancée: Erweiterte Einstellungen
+            Symbologie: Symbolisierung
             Mobile: Mobil
             Validation: Validierung
             Mises à jour: Updates

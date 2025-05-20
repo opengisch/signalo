@@ -25,7 +25,8 @@ tx_slug: documentation_user-guide_adddata
         ![Onglet contrôle](../assets/images/printscreen/support-form-control.png){loading=lazy}
 
 ## Onglet Azimut
-Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` (couche Outil Azimut) du schéma `signalo_app`.
+Dans l’onglet “Azimut”, les cadres et signaux peuvent y être saisis. L'attribut *Azimut* peut être rempli de manière graphique, grâce à la vue `vw_azimut_edit` (couche Outil Azimut) du schéma `signalo_app`. 
+Le catalogue des signaux officiaux peut être téléchargé en [pdf](https://www.signalo.ch/user-guide/concepts/#liste-des-signaux).
 
 ![Exemple d'un azimut avec plusieurs cadres et signaux](../assets/images/printscreen/support-all.png)
 
