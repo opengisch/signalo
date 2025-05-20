@@ -17,4 +17,3 @@ Les testeurs reçoivent un accès personnalisé à la base de données de test. 
 À la fin du test, le service `pg_signalo` peut être rétabli à sa configuration d’origine.
 
 Une fois le projet testé et validé, une version officielle sera publiée. Les instructions sur les [Mises à jour](https://www.signalo.ch/user-guide/updates)pourront alors être suivies.
-
