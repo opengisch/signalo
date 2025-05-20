@@ -30,7 +30,7 @@ Il existe par ailleurs un second schéma, `signalo_app` offrant quant à lui la 
 
 ## Liste des signaux
 
-Le catalogue des signaux officaux est intégré en tant que mise en page (atlas) dans le projet QGIS. Une version condensée peut directement être téléchargée en [pdf](https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf). 
+Le catalogue des signaux officaux est intégré en tant que mise en page (atlas) dans le projet QGIS. Une version condensée peut directement être téléchargée en [pdf](https://raw.githubusercontent.com/opengisch/signalo/refs/heads/master/doc/official-sign-fr.pdf).
 
 ## Documentation du modèle des données
 
