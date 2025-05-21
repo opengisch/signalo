@@ -106,13 +106,17 @@ SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Zug)',
 UPDATE signalo_db.vl_official_sign
 SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Tram)',
     value_fr = 'Parking avec accès aux transports publics (tram)',
-    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (tram)'
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (tram)',
+    img_height = 100,
+    img_width = 100
       WHERE id = '4.25c'; 
 
 UPDATE signalo_db.vl_official_sign
 SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Bus)',
     value_fr = 'Parking avec accès aux transports publics (bus)',
-    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (autobus)'
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (autobus)',
+    img_height = 100,
+    img_width = 100
       WHERE id = '4.25d'; 
 
 UPDATE signalo_db.vl_official_sign
@@ -120,4 +124,7 @@ SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel',
     value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico'
       WHERE id = '4.25'; 
 
-    
+UPDATE signalo_db.vl_official_sign
+SET img_height = 100,
+    img_width = 100
+      WHERE id = '5.54';     
