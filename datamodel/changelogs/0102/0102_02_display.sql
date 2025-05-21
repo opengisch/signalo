@@ -39,3 +39,30 @@ INSERT INTO signalo_db.vl_official_sign(
     100, 72, 
     false);
 
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, 
+    value_de, value_fr, value_it, 
+    img_de, img_fr, img_it, img_ro, 
+    img_height, img_width, 
+    directional_sign)
+	VALUES ('4.21-1', true, 
+    'Parkhaus mit Parkscheibe', 
+    'Parking couvert avec disque de stationnement',
+    'Parcheggio coperto con disco', 
+    '421-1.svg', '421-1.svg', '421-1.svg', '421-1.svg', 
+    100, 72, 
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, 
+    value_de, value_fr, value_it, 
+    img_de, img_fr, img_it, img_ro, 
+    img_height, img_width, 
+    directional_sign)
+	VALUES ('4.21-2', true, 
+    'Parkhaus gegen Gebühr', 
+    'Parking couvert contre paiement',
+    'Parcheggio coperto contro pagamento', 
+    '421-2.svg', '421-2.svg', '421-2.svg', '421-2.svg', 
+    100, 72, 
+    false);
