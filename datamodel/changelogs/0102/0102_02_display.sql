@@ -68,13 +68,56 @@ INSERT INTO signalo_db.vl_official_sign(
     false);
 
 UPDATE signalo_db.vl_official_sign
-SET img_de = '4.22-l.svg',
-    img_fr = '4.22-l.svg',
-    img_it = '4.22-l.svg',
-    img_ro = '4.22-l.svg',
-    img_de_right = '4.22-r.svg',
-    img_fr_right = '4.22-r.svg',
-    img_it_right = '4.22-r.svg',
-    img_ro_right = '4.22-r.svg',
+SET img_de = '422-l.svg',
+    img_fr = '422-l.svg',
+    img_it = '422-l.svg',
+    img_ro = '422-l.svg',
+    img_de_right = '422-r.svg',
+    img_fr_right = '422-r.svg',
+    img_it_right = '422-r.svg',
+    img_ro_right = '422-r.svg',
     directional_sign = true
       WHERE id = '4.22';
+
+UPDATE signalo_db.vl_official_sign
+SET img_de = '423-l.svg',
+    img_fr = '423-l.svg',
+    img_it = '423-l.svg',
+    img_ro = '423-l.svg',
+    img_de_right = '423-r.svg',
+    img_fr_right = '423-r.svg',
+    img_it_right = '423-r.svg',
+    img_ro_right = '423-r.svg',
+    directional_sign = true
+      WHERE id = '4.23';
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Parkhaus mit Anschluss an öffentliches Verkehrsmittel',
+    value_fr = 'Parking couvert avec accès aux transports publics',
+    value_it = 'Parcheggio coperto con collegamento a un mezzo di trasporto pubblico'
+      WHERE id = '4.25a'; 
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Zug)',
+    value_fr = 'Parking avec accès aux transports publics (train)',
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (treno)'
+      WHERE id = '4.25b'; 
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Tram)',
+    value_fr = 'Parking avec accès aux transports publics (tram)',
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (tram)'
+      WHERE id = '4.25c'; 
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel (Bus)',
+    value_fr = 'Parking avec accès aux transports publics (bus)',
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico (autobus)'
+      WHERE id = '4.25d'; 
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Parkplatz mit Anschluss an öffentliches Verkehrsmittel',
+    value_it = 'Parcheggio con collegamento a un mezzo di trasporto pubblico'
+      WHERE id = '4.25'; 
+
+    
