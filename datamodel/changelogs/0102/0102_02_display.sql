@@ -66,3 +66,15 @@ INSERT INTO signalo_db.vl_official_sign(
     '421-2.svg', '421-2.svg', '421-2.svg', '421-2.svg', 
     100, 72, 
     false);
+
+UPDATE signalo_db.vl_official_sign
+SET img_de = '4.22-l.svg',
+    img_fr = '4.22-l.svg',
+    img_it = '4.22-l.svg',
+    img_ro = '4.22-l.svg',
+    img_de_right = '4.22-r.svg',
+    img_fr_right = '4.22-r.svg',
+    img_it_right = '4.22-r.svg',
+    img_ro_right = '4.22-r.svg',
+    directional_sign = true
+      WHERE id = '4.22';
