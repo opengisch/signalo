@@ -3,3 +3,39 @@
 UPDATE signalo_db.vl_official_sign
 SET img_height = 100,
     img_width = 65 WHERE id = '4.51.3';
+
+UPDATE signalo_db.vl_official_sign
+SET value_de = 'Obligatorische Richtung für Fahrzeuge, die gefährliche Güter befördern (rechts)',
+    value_fr = 'Sens obligatoire pour les véhicules transportant des marchandises dangereuses (droite)',
+    value_it = 'Direzione obbligatoria per i veicoli che trasportano merci pericolose (destra)'
+      WHERE id = '2.41.2';
+
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, 
+    value_de, value_fr, value_it, 
+    img_de, img_fr, img_it, img_ro, 
+    img_height, img_width, 
+    directional_sign)
+	VALUES ('2.41.2a', true, 
+    'Obligatorische Richtung für Fahrzeuge, die gefährliche Güter befördern (links)', 
+    'Sens obligatoire pour les véhicules transportant des marchandises dangereuses (gauche)',
+    'Direzione obbligatoria per i veicoli che trasportano merci pericolose (sinistra)', 
+    '241-2a.svg', '241-2a.svg', '241-2a.svg', '241-2a.svg', 
+    100, 72, 
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active, 
+    value_de, value_fr, value_it, 
+    img_de, img_fr, img_it, img_ro, 
+    img_height, img_width, 
+    directional_sign)
+	VALUES ('2.41.2b', true, 
+    'Obligatorische Richtung für Fahrzeuge, die gefährliche Güter befördern (geradeaus)', 
+    'Sens obligatoire pour les véhicules transportant des marchandises dangereuses (tout droit)',
+    'Direzione obbligatoria per i veicoli che trasportano merci pericolose (diritto)', 
+    '241-2b.svg', '241-2b.svg', '241-2b.svg', '241-2b.svg', 
+    100, 72, 
+    false);
+
