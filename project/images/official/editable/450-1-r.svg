@@ -4,10 +4,6 @@
    height="36"
    version="1.1"
    id="svg2016"
-   sodipodi:docname="450-1-r.svg"
-   inkscape:version="1.1.2 (b8e25be8, 2022-02-05)"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns="http://www.w3.org/2000/svg"
    xmlns:svg="http://www.w3.org/2000/svg"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -26,28 +22,6 @@
   </metadata>
   <defs
      id="defs2020" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1147"
-     id="namedview2018"
-     showgrid="false"
-     inkscape:zoom="3.6854405"
-     inkscape:cx="142.72378"
-     inkscape:cy="-27.269468"
-     inkscape:window-x="0"
-     inkscape:window-y="25"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg2016"
-     inkscape:document-rotation="0"
-     inkscape:pagecheckerboard="0" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
      id="g1999">
@@ -131,13 +105,16 @@
   <text
      xml:space="default"
      dominant-baseline="middle"
-     text-anchor="left"
+     text-anchor="middle"
      font-family="sans-serif"
-     font-size="13.1037px"
-     id="svg_12"
-     y="23"
-     x="46"
+     font-size="12.8704px"
+     id="svg_50"
+     y="22.23525"
+     x="99.320068"
      stroke-width="0"
      stroke="#ffffff"
-     fill="#ffffff">param(text1)</text>
+     fill="#ffffff"
+     style="stroke-width:0.188976;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.188976;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="tspan16486">param(text1)</tspan></text>
 </svg>
