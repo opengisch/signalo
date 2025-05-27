@@ -144,3 +144,18 @@ UPDATE signalo_db.vl_official_sign
 SET img_height = 35,
     img_width = 175
       WHERE id = '4.50.4';
+
+UPDATE signalo_db.vl_official_sign
+SET img_height = 60,
+    img_width = 236
+      WHERE id = '0.1';
+
+UPDATE signalo_db.vl_official_sign
+SET img_height = 60,
+    img_width = 236
+      WHERE id = '0.1-2';
+
+UPDATE signalo_db.vl_official_sign
+SET img_height = 60,
+    img_width = 236
+      WHERE id = '0.1-3';
