@@ -132,7 +132,7 @@ COMMENT ON COLUMN signalo_db.frame.dimension_2
     IS 'If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, major/minor radius';
 
 COMMENT ON COLUMN signalo_db.frame.anchor
-    IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_anchor condition';
+    IS 'Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_mounting_point condition';
 
 -- sign
 

@@ -1,5 +1,9 @@
--- Anchors
-CREATE TABLE IF NOT EXISTS signalo_db.vl_anchor
+-- Mounting Points
+
+ALTER TABLE signalo_db.support RENAME COLUMN group_by_anchor TO group_by_mounting_point;
+ALTER TABLE signalo_db.frame RENAME COLUMN anchor to fk_mounting_point;
+
+CREATE TABLE IF NOT EXISTS signalo_db.vl_mounting_point
 (
     id text NOT NULL,
     active boolean DEFAULT true,
@@ -7,17 +11,16 @@ CREATE TABLE IF NOT EXISTS signalo_db.vl_anchor
     value_de text,
     description_fr text,
     description_de text,
-    CONSTRAINT anchor_pkey PRIMARY KEY (id)
+    CONSTRAINT mounting_point_pkey PRIMARY KEY (id)
 );
 
-INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('left', 'gauche', 'links');
-INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('center', 'centre', 'Mitte');
-INSERT INTO signalo_db.vl_anchor (id, value_fr, value_de) VALUES ('right', 'droite', 'rechts');
+INSERT INTO signalo_db.vl_mounting_point (id, value_fr, value_de) VALUES ('left', 'gauche', 'links');
+INSERT INTO signalo_db.vl_mounting_point (id, value_fr, value_de) VALUES ('center', 'centre', 'Mitte');
+INSERT INTO signalo_db.vl_mounting_point (id, value_fr, value_de) VALUES ('right', 'droite', 'rechts');
 
-ALTER TABLE signalo_db.frame ALTER COLUMN anchor SET DATA TYPE text USING lower(anchor::text);
-ALTER TABLE signalo_db.frame ALTER COLUMN anchor SET DEFAULT 'center';
-ALTER TABLE signalo_db.frame RENAME COLUMN anchor TO fk_anchor;
-ALTER TABLE signalo_db.frame ADD CONSTRAINT frame_fk_anchor_key FOREIGN KEY (fk_anchor) REFERENCES signalo_db.vl_anchor (id);
+ALTER TABLE signalo_db.frame ALTER COLUMN fk_mounting_point SET DATA TYPE text USING lower(fk_mounting_point::text);
+ALTER TABLE signalo_db.frame ALTER COLUMN fk_mounting_point SET DEFAULT 'center';
+ALTER TABLE signalo_db.frame ADD CONSTRAINT frame_fk_mounting_point_key FOREIGN KEY (fk_mounting_point) REFERENCES signalo_db.vl_mounting_point (id);
 
 
 -- Hanging modes
