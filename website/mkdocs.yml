@@ -65,7 +65,7 @@ nav:
           - user-guide/advanced/size.md
           - user-guide/advanced/offset.md
           - user-guide/advanced/doublesided.md
-          - user-guide/advanced/group_by_anchor.md
+          - user-guide/advanced/group_by_mounting_point.md
           - user-guide/advanced/customsigns.md
           - user-guide/advanced/add_values.md
           - user-guide/advanced/duplicateobject.md
