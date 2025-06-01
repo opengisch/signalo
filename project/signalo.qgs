@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="Denis" version="3.40.3-Bratislava" projectname="Signalo - Demo" saveDateTime="2025-06-01T13:47:20" saveUser="denis">
+<qgis saveUserFull="Denis" version="3.40.3-Bratislava" projectname="Signalo - Demo" saveDateTime="2025-06-01T14:18:01" saveUser="denis">
   <homePath path=""/>
   <title>Signalo - Demo</title>
   <transaction mode="AutomaticGroups"/>
@@ -100,7 +100,7 @@
         </customproperties>
       </layer-tree-layer>
     </layer-tree-group>
-    <layer-tree-group expanded="0" name="vl" checked="Qt::Checked" groupLayer="">
+    <layer-tree-group expanded="1" name="vl" checked="Qt::Checked" groupLayer="">
       <customproperties>
         <Option/>
       </customproperties>
@@ -252,10 +252,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>meters</units>
     <extent>
-      <xmin>2537309.62380208820104599</xmin>
-      <ymin>1152439.95125696947798133</ymin>
-      <xmax>2537766.88515897188335657</xmax>
-      <ymax>1152745.24344342807307839</ymax>
+      <xmin>2537391.6469823932275176</xmin>
+      <ymin>1152370.31860605091787875</ymin>
+      <xmax>2537735.25574899185448885</xmax>
+      <ymax>1152609.6493605908472091</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -335,7 +335,7 @@
         </filegroup>
       </legendlayer>
     </legendgroup>
-    <legendgroup name="vl" checked="Qt::Checked" open="false">
+    <legendgroup name="vl" checked="Qt::Checked" open="true">
       <legendlayer name="Mode de pose" checked="Qt::Checked" drawingOrder="-1" open="true" showFeatureCount="0">
         <filegroup hidden="false" open="true">
           <legendlayerfile layerid="vl_hanging_mode_377b09f0_9ad6_4503_990f_6209e05bfa83" isInOverview="0" visible="1"/>
@@ -7374,6 +7374,10 @@
           <Option type="List" name="dualview/previewExpressions">
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
+            <Option type="QString" value="COALESCE( &quot;azimut&quot;, '&lt;NULL>' )"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
           <Option type="invalid" name="variableNames"/>
@@ -8496,6 +8500,7 @@ def my_form_open(dialog, layer, feature):
           <Option type="int" value="0" name="QFieldSync/tracking_measurement_type"/>
           <Option type="int" value="30" name="QFieldSync/tracking_time_requirement_interval_seconds"/>
           <Option type="List" name="dualview/previewExpressions">
+            <Option type="QString" value="COALESCE( &quot;identification&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="COALESCE( &quot;identification&quot;, '&lt;NULL>' )"/>
             <Option type="QString" value="&quot;id&quot;"/>
             <Option type="QString" value="COALESCE( &quot;identification&quot;, '&lt;NULL>' )"/>
@@ -12709,6 +12714,7 @@ def my_form_open(dialog, layer, feature):
           <Option type="int" value="0" name="QFieldSync/tracking_measurement_type"/>
           <Option type="int" value="30" name="QFieldSync/tracking_time_requirement_interval_seconds"/>
           <Option type="List" name="dualview/previewExpressions">
+            <Option type="QString" value="&quot;id&quot; || ' ' || attribute(concat('value_',@qgis_locale))"/>
             <Option type="QString" value="&quot;id&quot; || ' ' ||&quot;value_fr&quot;"/>
           </Option>
           <Option type="int" value="0" name="embeddedWidgets/count"/>
@@ -13232,7 +13238,13 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties/>
       <widgets/>
-      <previewExpression>"id" || ' ' || attribute(concat('value_',@qgis_locale))</previewExpression>
+      <previewExpression>"id" || ' ' ||
+attribute(
+	concat(
+		'value_',
+		if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr')
+	)
+)</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer type="vector" wkbType="NoGeometry" autoRefreshMode="Disabled" autoRefreshTime="0" minScale="1e+08" readOnly="0" hasScaleBasedVisibilityFlag="0" maxScale="0" legendPlaceholderImage="" geometry="No geometry" styleCategories="AllStyleCategories" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="">
@@ -14431,8 +14443,8 @@ def my_form_open(dialog, layer, feature):
             <Option type="QString" value="&quot;id&quot;"/>
           </Option>
           <Option type="QString" value="0" name="embeddedWidgets/count"/>
-          <Option type="invalid" name="variableNames"/>
-          <Option type="invalid" name="variableValues"/>
+          <Option name="variableNames"/>
+          <Option name="variableValues"/>
         </Option>
       </customproperties>
       <geometryOptions removeDuplicateNodes="0" geometryPrecision="0">
@@ -14531,12 +14543,13 @@ def my_form_open(dialog, layer, feature):
                 <Option type="bool" value="false" name="AllowAddFeatures"/>
                 <Option type="bool" value="true" name="AllowNULL"/>
                 <Option type="bool" value="false" name="ChainFilters"/>
+                <Option type="bool" value="true" name="FetchLimitActive"/>
+                <Option type="int" value="100" name="FetchLimitNumber"/>
                 <Option type="QString" value="&quot;active&quot; is true" name="FilterExpression"/>
-                <Option type="invalid" name="FilterFields"/>
+                <Option name="FilterFields"/>
                 <Option type="bool" value="false" name="MapIdentification"/>
-                <Option type="bool" value="false" name="OrderByValue"/>
                 <Option type="bool" value="false" name="ReadOnly"/>
-                <Option type="QString" value="service='pg_signalo' sslmode=disable key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" name="ReferencedLayerDataSource"/>
+                <Option type="QString" value="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" name="ReferencedLayerDataSource"/>
                 <Option type="QString" value="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" name="ReferencedLayerId"/>
                 <Option type="QString" value="Signal officiel" name="ReferencedLayerName"/>
                 <Option type="QString" value="postgres" name="ReferencedLayerProviderKey"/>
@@ -15687,7 +15700,7 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="rank"/>
         <policy policy="Duplicate" field="complex"/>
         <policy policy="Duplicate" field="fk_sign_type"/>
-        <policy policy="Duplicate" field="fk_official_sign"/>
+        <policy policy="DefaultValue" field="fk_official_sign"/>
         <policy policy="Duplicate" field="fk_marker_type"/>
         <policy policy="Duplicate" field="fk_mirror_shape"/>
         <policy policy="Duplicate" field="fk_parent"/>
@@ -18700,7 +18713,7 @@ def my_form_open(dialog, layer, feature):
           <actionScope id="Feature"/>
         </actionsetting>
       </attributeactions>
-      <attributetableconfig sortExpression="&quot;id&quot;" sortOrder="0" actionWidgetStyle="dropDown">
+      <attributetableconfig sortExpression="&quot;group_by_mounting_point&quot;" sortOrder="1" actionWidgetStyle="dropDown">
         <columns>
           <column type="field" hidden="0" width="550" name="id"/>
           <column type="field" hidden="0" width="-1" name="fk_support_type"/>
@@ -18725,7 +18738,7 @@ def my_form_open(dialog, layer, feature):
           <column type="field" hidden="0" width="-1" name="usr_support_1"/>
           <column type="field" hidden="0" width="-1" name="usr_support_2"/>
           <column type="field" hidden="0" width="-1" name="usr_support_3"/>
-          <column type="field" hidden="0" width="-1" name="group_by_mounting_point"/>
+          <column type="field" hidden="0" width="186" name="group_by_mounting_point"/>
           <column type="field" hidden="0" width="-1" name="picture_2"/>
           <column type="field" hidden="0" width="-1" name="needs_validation"/>
           <column type="field" hidden="0" width="-1" name="_last_modification_platform"/>
@@ -26346,7 +26359,7 @@ def my_form_open(dialog, layer, feature):
   <Sensors/>
   <ProjectViewSettings UseProjectScales="0" rotation="0">
     <Scales/>
-    <DefaultViewExtent xmin="2537309.62380208820104599" xmax="2537766.88515897188335657" ymin="1152433.35125958896242082" ymax="1152751.8434408085886389">
+    <DefaultViewExtent xmin="2537391.64698238577693701" xmax="2537735.25574899930506945" ymin="1152370.31860605091787875" ymax="1152609.6493605908472091">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>PROJCRS["CH1903+ / LV95",BASEGEOGCRS["CH1903+",DATUM["CH1903+",ELLIPSOID["Bessel 1841",6377397.155,299.1528128,LENGTHUNIT["metre",1]]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],ID["EPSG",4150]],CONVERSION["Swiss Oblique Mercator 1995",METHOD["Hotine Oblique Mercator (variant B)",ID["EPSG",9815]],PARAMETER["Latitude of projection centre",46.9524055555556,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8811]],PARAMETER["Longitude of projection centre",7.43958333333333,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8812]],PARAMETER["Azimuth at projection centre",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8813]],PARAMETER["Angle from Rectified to Skew Grid",90,ANGLEUNIT["degree",0.0174532925199433],ID["EPSG",8814]],PARAMETER["Scale factor at projection centre",1,SCALEUNIT["unity",1],ID["EPSG",8815]],PARAMETER["Easting at projection centre",2600000,LENGTHUNIT["metre",1],ID["EPSG",8816]],PARAMETER["Northing at projection centre",1200000,LENGTHUNIT["metre",1],ID["EPSG",8817]]],CS[Cartesian,2],AXIS["(E)",east,ORDER[1],LENGTHUNIT["metre",1]],AXIS["(N)",north,ORDER[2],LENGTHUNIT["metre",1]],USAGE[SCOPE["Cadastre, engineering survey, topographic mapping (large and medium scale)."],AREA["Liechtenstein; Switzerland."],BBOX[45.82,5.96,47.81,10.49]],ID["EPSG",2056]]</wkt>
         <proj4>+proj=somerc +lat_0=46.9524055555556 +lon_0=7.43958333333333 +k_0=1 +x_0=2600000 +y_0=1200000 +ellps=bessel +towgs84=674.374,15.056,405.346,0,0,0,0 +units=m +no_defs</proj4>
@@ -26411,7 +26424,7 @@ def my_form_open(dialog, layer, feature):
       </spatialrefsys>
     </CoordinateCustomCrs>
   </ProjectDisplaySettings>
-  <ProjectGpsSettings destinationLayerName="Support" autoAddTrackVertices="0" destinationFollowsActiveLayer="1" destinationLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" autoCommitFeatures="0" destinationLayerSource="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" destinationLayerProvider="postgres">
+  <ProjectGpsSettings destinationLayerName="Cadre" autoAddTrackVertices="0" destinationFollowsActiveLayer="1" destinationLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" autoCommitFeatures="0" destinationLayerSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" destinationLayerProvider="postgres">
     <timeStampFields/>
   </ProjectGpsSettings>
 </qgis>
