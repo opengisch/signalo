@@ -173,3 +173,49 @@ INSERT INTO signalo_db.vl_official_sign(
     '442-2.svg', '442-2.svg', '442-2.svg', '442-2.svg',
     200, 208,
     false);
+<<<<<<< HEAD
+=======
+
+    INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('0.1-1.1', true,
+    'Touristisch nicht richtungsweisend (1 Linie)',
+    'Touristique non directionnel (1 ligne)',
+    'Turistico non direzionale (1 linea)',
+    '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg',
+    80, 110,
+    false);
+
+
+    INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('0.1-2.1', true,
+    'Touristisch nicht richtungsweisend (2 Linien)',
+    'Touristique non directionnel (2 lignes)',
+    'Turistico non direzionale (2 linee)',
+    '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg',
+    80, 110,
+    false);
+
+    INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('0.1-3.1', true,
+    'Touristisch nicht richtungsweisend (3 Linien)',
+    'Touristique non directionnel (3 lignes)',
+    'Turistico non direzionale (3 linee)',
+    '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg',
+    80, 110,
+    false);
+>>>>>>> 8fbc25c (issue #272 touristic signs (without direction))
