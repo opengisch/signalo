@@ -219,3 +219,45 @@ INSERT INTO signalo_db.vl_official_sign(
     80, 110,
     false);
 >>>>>>> 8fbc25c (issue #272 touristic signs (without direction))
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.2-1', true,
+    'Fortführung Umleitung geradeaus (1 Linie)',
+    'Continuation de la déviation tout droit (1 ligne)',
+    'Proseguimento della deviazione in linea retta (1 linea)',
+    '434a-2-1.svg', '434a-2-1.svg', '434a-2-1.svg', '434a-2-1.svg',
+    60, 241,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.2-2', true,
+    'Fortführung Umleitung geradeaus (2 Linien)',
+    'Continuation de la déviation tout droit (2 lignes)',
+    'Proseguimento della deviazione in linea retta (2 linee)',
+    '434a-2-2.svg', '434a-2-2.svg', '434a-2-2.svg', '434a-2-2.svg',
+    60, 241,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.2-3', true,
+    'Fortführung Umleitung geradeaus (3 Linien)',
+    'Continuation de la déviation tout droit (3 lignes)',
+    'Proseguimento della deviazione in linea retta (3 linee)',
+    '434a-2-3.svg', '434a-2-3.svg', '434a-2-3.svg', '434a-2-3.svg',
+    79, 241,
+    false);
