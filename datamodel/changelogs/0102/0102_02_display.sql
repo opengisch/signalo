@@ -168,7 +168,7 @@ INSERT INTO signalo_db.vl_official_sign(
     directional_sign)
 	VALUES ('4.42-2', true,
     'Einspurtafel über Fahrstreifen auf Nebenstrassen (2 Linien)',
-    'Panneau de présélection au-ressus d''une voie de circulation sur route secondaire (2 lignes)',
+    'Panneau de présélection au-dessus d''une voie de circulation sur route secondaire (2 lignes)',
     'Cartello di preselezione collocato al di sopra di una corsia su strada secondaria (2 ligne)',
     '442-2.svg', '442-2.svg', '442-2.svg', '442-2.svg',
     200, 208,
