@@ -217,6 +217,49 @@ INSERT INTO signalo_db.vl_official_sign(
     false);
 
 INSERT INTO signalo_db.vl_official_sign(
+    id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+    VALUES ('0.1-1.1', true,
+    'Touristisch nicht richtungsweisend (1 Linie)',
+    'Touristique non directionnel (1 ligne)',
+    'Turistico non direzionale (1 linea)',
+    '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg',
+    80, 110,
+    false);
+
+
+    INSERT INTO signalo_db.vl_official_sign(
+    id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+    VALUES ('0.1-2.1', true,
+    'Touristisch nicht richtungsweisend (2 Linien)',
+    'Touristique non directionnel (2 lignes)',
+    'Turistico non direzionale (2 linee)',
+    '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg',
+    80, 110,
+    false);
+
+    INSERT INTO signalo_db.vl_official_sign(
+    id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+    VALUES ('0.1-3.1', true,
+    'Touristisch nicht richtungsweisend (3 Linien)',
+    'Touristique non directionnel (3 lignes)',
+    'Turistico non direzionale (3 linee)',
+    '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg',
+    80, 110,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
 	id, active,
     value_de, value_fr, value_it,
     img_de, img_fr, img_it, img_ro,
@@ -257,3 +300,49 @@ INSERT INTO signalo_db.vl_official_sign(
     '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg',
     79, 241,
     false);
+<<<<<<< HEAD
+=======
+
+    
+    INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.3-1', true,
+    'Umleitung nicht richtungsweisend (1 Linie)',
+    'Déviation non directionnelle (1 ligne)',
+    'Deviazione non direzionale  (1 linea)',
+    '434a-3-1.svg', '434a-3-1.svg', '434a-3-1.svg', '434a-3-1.svg',
+    60, 241,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.3-2', true,
+    'Umleitung nicht richtungsweisend (2 Linien)',
+    'Déviation non directionnelle (2 lignes)',
+    'Deviazione non direzionale (2 linee)',
+    '434a-3-2.svg', '434a-3-2.svg', '434a-3-2.svg', '434a-3-2.svg',
+    60, 241,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.34.3-3', true,
+    'Umleitung nicht richtungsweisend (3 Linien)',
+    'Déviation non directionnelle (3 lignes)',
+    'Deviazione non direzionale (3 linee)',
+    '434a-3-3.svg', '434a-3-3.svg', '434a-3-3.svg', '434a-3-3.svg',
+    79, 241,
+    false);
+>>>>>>> c5172aa (one more deviatio #278)
