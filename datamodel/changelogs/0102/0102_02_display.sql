@@ -381,4 +381,4 @@ INSERT INTO signalo_db.vl_official_sign(
     'Cartelo di ripetizione (orizzontale)',
     '504-1.svg', '504-1.svg', '504-1.svg', '504-1.svg',
     34, 100,
-    false);    
+    false);
