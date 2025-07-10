@@ -300,7 +300,7 @@ INSERT INTO signalo_db.vl_official_sign(
     '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg',
     79, 241,
     false);
-    
+
     INSERT INTO signalo_db.vl_official_sign(
 	id, active,
     value_de, value_fr, value_it,
