@@ -354,3 +354,17 @@ UPDATE signalo_db.vl_official_sign
     img_it = '507-l.svg',
     img_ro = '507-l.svg'
       WHERE id = '5.07';
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.09.1', true,
+    'Sackgasse mit Ausnahmen (Fahrrad, Fussgänger)',
+    'Impasse avec exceptions (vélo, piéton)',
+    'Strada senza uscita con eccezioni (bicicletta, pedone)',
+    '409-1.svg', '409-1.svg', '409-1.svg', '409-1.svg',
+    100, 100,
+    false);
