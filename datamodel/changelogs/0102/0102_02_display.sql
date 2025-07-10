@@ -303,7 +303,7 @@ INSERT INTO signalo_db.vl_official_sign(
 <<<<<<< HEAD
 =======
 
-    
+
     INSERT INTO signalo_db.vl_official_sign(
 	id, active,
     value_de, value_fr, value_it,
