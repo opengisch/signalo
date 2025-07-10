@@ -368,3 +368,17 @@ INSERT INTO signalo_db.vl_official_sign(
     '409-1.svg', '409-1.svg', '409-1.svg', '409-1.svg',
     100, 100,
     false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('5.04.1', true,
+    'Wiederholungstafel (horizontal)',
+    'Plaque de rappel (horizontal)',
+    'Cartelo di ripetizione (orizzontale)',
+    '504-1.svg', '504-1.svg', '504-1.svg', '504-1.svg',
+    34, 100,
+    false);    
