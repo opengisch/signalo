@@ -300,10 +300,7 @@ INSERT INTO signalo_db.vl_official_sign(
     '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg', '01-touristic-3a.svg',
     79, 241,
     false);
-<<<<<<< HEAD
-=======
-
-
+    
     INSERT INTO signalo_db.vl_official_sign(
 	id, active,
     value_de, value_fr, value_it,
@@ -345,4 +342,15 @@ INSERT INTO signalo_db.vl_official_sign(
     '434a-3-3.svg', '434a-3-3.svg', '434a-3-3.svg', '434a-3-3.svg',
     79, 241,
     false);
->>>>>>> c5172aa (one more deviatio #278)
+
+UPDATE signalo_db.vl_official_sign
+    SET directional_sign = true,
+    img_de_right = '507-r.svg',
+    img_fr_right = '507-r.svg',
+    img_it_right = '507-r.svg',
+    img_ro_right = '507-r.svg',
+    img_de = '507-l.svg',
+    img_fr = '507-l.svg',
+    img_it = '507-l.svg',
+    img_ro = '507-l.svg'
+      WHERE id = '5.07';
