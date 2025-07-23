@@ -17,10 +17,10 @@ UPDATE signalo_db.vl_official_sign
     img_ro = '477-11-1.svg'
       WHERE id = '4.77/11';
 
-UPDATE signalo_db.sign 
+UPDATE signalo_db.sign
 SET fk_official_sign = '4.77/11-1' where fk_official_sign = '4.77/11';
 
-UPDATE signalo_db.sign 
+UPDATE signalo_db.sign
 SET fk_official_sign = '4.77/11-2' where fk_official_sign = '4.77/1-01';
 
 
