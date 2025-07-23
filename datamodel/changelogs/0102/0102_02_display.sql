@@ -382,3 +382,70 @@ INSERT INTO signalo_db.vl_official_sign(
     '504-1.svg', '504-1.svg', '504-1.svg', '504-1.svg',
     34, 100,
     false);
+
+
+UPDATE signalo_db.vl_official_sign
+SET img_de = '477-28-1-l.svg',
+    img_fr = '477-28-1-l.svg',
+    img_it = '477-28-1-l.svg',
+    img_ro = '477-28-1-l.svg',
+    img_de_right = '477-28-1-r.svg',
+    img_fr_right = '477-28-1-r.svg',
+    img_it_right = '477-28-1-r.svg',
+    img_ro_right = '477-28-1-r.svg',
+    directional_sign = true
+      WHERE id = '4.77/28-1';
+
+UPDATE signalo_db.vl_official_sign
+SET img_de = '477-28-2-l.svg',
+    img_fr = '477-28-2-l.svg',
+    img_it = '477-28-2-l.svg',
+    img_ro = '477-28-2-l.svg',
+    img_de_right = '477-28-2-r.svg',
+    img_fr_right = '477-28-2-r.svg',
+    img_it_right = '477-28-2-r.svg',
+    img_ro_right = '477-28-2-r.svg',
+    directional_sign = true
+      WHERE id = '4.77/28-2';
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.77.2-1', true,
+    'Freigabe des Pannenstreifens (Anfang)',
+    'Ouverture de la bande d''arrêt d''urgence (début)',
+    'Rilascio della corsia di emergenza (inizio)',
+    '477-2-1.svg', '477-2-1.svg', '477-2-1.svg', '477-2-1.svg',
+    100, 100,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.77.2-2', true,
+    'Freigabe des Pannenstreifens (offen)',
+    'Ouverture de la bande d''arrêt d''urgence (ouvert)',
+    'Rilascio della corsia di emergenza (aperto)',
+    '477-2-2.svg', '477-2-2.svg', '477-2-2.svg', '477-2-2.svg',
+    100, 100,
+    false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.77.2-3', true,
+    'Freigabe des Pannenstreifens (Ende, Ausfahrt)',
+    'Ouverture de la bande d''arrêt d''urgence (fin, sortie)',
+    'Rilascio della corsia di emergenza (fine, uscita)',
+    '477-2-3.svg', '477-2-3.svg', '477-2-3.svg', '477-2-3.svg',
+    100, 100,
+    false);
