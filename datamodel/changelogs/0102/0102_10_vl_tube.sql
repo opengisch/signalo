@@ -28,4 +28,3 @@ INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VAL
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (4, true, 'Ø 2', 'Ø 2');
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (5, true, 'Ø 2.5', 'Ø 2.5');
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (6, true, 'Ø 3', 'Ø 3');
-
