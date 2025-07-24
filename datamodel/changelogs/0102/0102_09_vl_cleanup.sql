@@ -54,7 +54,3 @@ INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VAL
 -- add new value in vl_support_type
 
 INSERT INTO signalo_db.vl_support_type (id, active, value_fr, value_de) VALUES (18, true, 'mât ligne de contact trolleybus', 'Oberleitungsmast Trolleybus');
-
-
-
-
