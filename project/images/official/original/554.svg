@@ -1,7 +1,49 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57pt" height="58pt" viewBox="0 0 57 58" version="1.1">
-<g id="surface1">
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(0%,49.674988%,27.331543%);fill-opacity:1;" d="M 16.773438 57.519531 L 40.265625 57.519531 L 56.863281 40.917969 L 56.863281 17.425781 L 40.265625 0.828125 L 16.773438 0.828125 L 0.171875 17.425781 L 0.171875 40.917969 L 16.773438 57.519531 "/>
-<path style=" stroke:none;fill-rule:nonzero;fill:rgb(100%,100%,100%);fill-opacity:1;" d="M 4.429688 40.917969 L 52.617188 40.917969 L 52.617188 17.410156 L 4.429688 17.410156 Z M 4.429688 40.917969 "/>
-</g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="68pt"
+   height="68pt"
+   viewBox="0 0 68.000001 68.000001"
+   version="1.1"
+   id="svg3513"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3517">
+    <clipPath
+       id="clip1">
+      <path
+         d="M 0,0.371094 H 485.92969 V 184 H 0 Z m 0,0"
+         id="path6178" />
+    </clipPath>
+  </defs>
+  <g
+     id="layer2"
+     style="display:inline"
+     transform="matrix(0.74036996,0,0,1,0.57805507,0.4117761)" />
+  <rect
+     style="display:inline;fill:#ffffff;stroke:none;stroke-width:0;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3621"
+     width="68"
+     height="68"
+     x="-5.5511151e-17"
+     y="1.110223e-16" />
+  <rect
+     style="display:inline;fill:none;stroke:#000000;stroke-width:0.194925;stroke-linecap:square;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="rect3621-4"
+     width="63.805077"
+     height="63.805077"
+     x="2.0974617"
+     y="2.0974617" />
+  <g
+     id="surface1-1"
+     transform="translate(5.482422,4.826172)">
+    <path
+       style="fill:#007d45;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="M 16.773438,57.519531 H 40.265625 L 56.863281,40.917969 V 17.425781 L 40.265625,0.828125 H 16.773438 L 0.171875,17.425781 v 23.492188 l 16.601563,16.601562"
+       id="path6975" />
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none"
+       d="m 4.429688,40.917969 h 48.1875 V 17.410156 h -48.1875 z m 0,0"
+       id="path6977" />
+  </g>
 </svg>
