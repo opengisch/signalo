@@ -25,4 +25,4 @@ SET fk_official_sign = '4.77/11-2' where fk_official_sign = '4.77/1-01';
 
 
 ALTER TABLE ONLY signalo_db.sign
-    ADD CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fkey_vl_official_sign) REFERENCES signalo_db.vl_official_sign(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
+    ADD CONSTRAINT fkey_vl_official_sign FOREIGN KEY (fk_official_sign) REFERENCES signalo_db.vl_official_sign(id) MATCH FULL DEFERRABLE INITIALLY DEFERRED;
