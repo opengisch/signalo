@@ -28,3 +28,13 @@ INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VAL
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (4, true, 'Ø 2', 'Ø 2');
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (5, true, 'Ø 2.5', 'Ø 2.5');
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (6, true, 'Ø 3', 'Ø 3');
+
+
+ALTER TABLE signalo_db.support 
+ADD fk_support_tube_type INTEGER;
+
+ALTER TABLE ONLY signalo_db.support
+    ADD CONSTRAINT fkey_vl_support_tube_type FOREIGN KEY (fk_support_tube_type) REFERENCES signalo_db.vl_support_tube_type(id) MATCH FULL;
+
+COMMENT ON COLUMN signalo_db.support.fk_support_tube_type
+    IS 'Foreign key of tube type value list';
