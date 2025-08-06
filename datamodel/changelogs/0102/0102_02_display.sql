@@ -449,3 +449,17 @@ INSERT INTO signalo_db.vl_official_sign(
     '477-2-3.svg', '477-2-3.svg', '477-2-3.svg', '477-2-3.svg',
     100, 100,
     false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.77/10-2', true,
+    'Bestätigung der Anzahl Fahrstreifen (zwei, mit Geschwindigkeitsbegrenzung)',
+    'Confirmation du nombre de voies de circulation (deux, avec réduction de vitesse)',
+    'Conferma del numero di corsie di traffico (due, con riduzione della velocità)',
+    '477-10-2.svg', '477-10-2.svg', '477-10-2.svg','477-10-2.svg',
+    100, 70,
+    false);
