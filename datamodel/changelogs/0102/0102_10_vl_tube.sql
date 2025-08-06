@@ -30,7 +30,7 @@ INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VAL
 INSERT INTO signalo_db.vl_support_tube_type (id, active, value_fr, value_de) VALUES (6, true, 'Ø 3', 'Ø 3');
 
 
-ALTER TABLE signalo_db.support 
+ALTER TABLE signalo_db.support
 ADD fk_support_tube_type INTEGER;
 
 ALTER TABLE ONLY signalo_db.support
@@ -52,5 +52,3 @@ SELECT setval('signalo_db.vl_status_id_seq',(SELECT max(id) FROM signalo_db.vl_s
 SELECT setval('signalo_db.vl_support_base_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_base_type));
 SELECT setval('signalo_db.vl_support_tube_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_tube_type));
 SELECT setval('signalo_db.vl_support_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_type));
-
-
