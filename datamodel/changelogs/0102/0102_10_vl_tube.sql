@@ -38,3 +38,19 @@ ALTER TABLE ONLY signalo_db.support
 
 COMMENT ON COLUMN signalo_db.support.fk_support_tube_type
     IS 'Foreign key of tube type value list';
+
+
+-- update current value of sequences
+SELECT setval('signalo_db.vl_coating_id_seq',(SELECT max(id) FROM signalo_db.vl_coating));
+SELECT setval('signalo_db.vl_durability_id_seq',(SELECT max(id) FROM signalo_db.vl_durability));
+SELECT setval('signalo_db.vl_frame_fixing_type_id_seq',(SELECT max(id) FROM signalo_db.vl_frame_fixing_type));
+SELECT setval('signalo_db.vl_frame_type_id_seq',(SELECT max(id) FROM signalo_db.vl_frame_type));
+SELECT setval('signalo_db.vl_lighting_id_seq',(SELECT max(id) FROM signalo_db.vl_lighting));
+SELECT setval('signalo_db.vl_mirror_shape_id_seq',(SELECT max(id) FROM signalo_db.vl_mirror_shape));
+SELECT setval('signalo_db.vl_sign_type_id_seq',(SELECT max(id) FROM signalo_db.vl_sign_type));
+SELECT setval('signalo_db.vl_status_id_seq',(SELECT max(id) FROM signalo_db.vl_status));
+SELECT setval('signalo_db.vl_support_base_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_base_type));
+SELECT setval('signalo_db.vl_support_tube_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_tube_type));
+SELECT setval('signalo_db.vl_support_type_id_seq',(SELECT max(id) FROM signalo_db.vl_support_type));
+
+
