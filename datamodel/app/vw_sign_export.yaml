@@ -43,6 +43,10 @@ joins:
     table: signalo_db.vl_support_base_type
     fkey: fk_support_base_type
     prefix: support_base_type_
+  support_tube_type:
+    table: signalo_db.vl_support_tube_type
+    fkey: fk_support_tube_type
+    prefix: support_tube_type_
   owner:
     table: signalo_db.vl_owner
     fkey: fk_owner

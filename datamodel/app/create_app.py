@@ -24,7 +24,7 @@ def run_sql(file_path: str, pg_service: str, variables: dict = {}):
 
 def create_views(srid: int, pg_service: str):
     """
-    Creates the views for QGEP
+    Creates the views for signalo
     :param srid: the EPSG code for geometry columns
     :param pg_service: the PostgreSQL service, if not given it will be determined from environment variable in Pirogue
     """
