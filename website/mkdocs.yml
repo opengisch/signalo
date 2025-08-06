@@ -7,11 +7,13 @@ docs_dir: documentation
 # Repository
 repo_name: opengisch/signalo
 repo_url: https://github.com/opengisch/signalo
-edit_uri: https://github.com/opengisch/signalo/tree/master/website/documentation/
+edit_uri:
+  https://github.com/opengisch/signalo/tree/master/website/documentation/
 # edit_uri_template: 'blob/master/website/documentation/{path}'
 
 # Copyright
-copyright: Copyright &copy; 2022-2024 <a href="https://OPENGIS.ch">OPENGIS.ch</a>
+copyright: Copyright &copy; 2022-2024 <a
+  href="https://OPENGIS.ch">OPENGIS.ch</a>
 
 # Configuration
 theme:
@@ -120,7 +122,8 @@ plugins:
           default: true
           name: Français
           site_name: SIGNALO
-          site_description: Signalo est un module de gestion de la signalisation verticale.
+          site_description: Signalo est un module de gestion de la signalisation
+            verticale.
         - locale: de
           name: Deutsch
           site_name: SIGNALO
