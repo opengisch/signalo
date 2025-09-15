@@ -468,3 +468,17 @@ INSERT INTO signalo_db.vl_official_sign(
     '477-10-2.svg', '477-10-2.svg', '477-10-2.svg','477-10-2.svg',
     100, 70,
     false);
+
+INSERT INTO signalo_db.vl_official_sign(
+	id, active,
+    value_de, value_fr, value_it,
+    img_de, img_fr, img_it, img_ro,
+    img_height, img_width,
+    directional_sign)
+	VALUES ('4.29-3', true,
+    'Ortsbeginn auf Nebenstrassen (3 Linien)',
+    'Début de localité sur route secondaire (3 lignes)',
+    'Inizio della località sulle strade secondarie (3 ligne)',
+    '429-3.svg', '429-3.svg', '429-3.svg','429-3.svg',
+    80, 109,
+    false);
