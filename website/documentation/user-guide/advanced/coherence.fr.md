@@ -8,11 +8,11 @@ tx_slug: documentation_user-guide_advanced_coherence
 Cette fonctionnalité devrait être [améliorée](../../roadmap.md) dans les versions suivantes.
 
 Il est possible de filtrer l'affichage des panneaux en changeant le style de la couche "Vue signal (symbologie)".
-Avec un clic-droit sur la couche, sélectionner "Style" dans le menu et choississez le style souhaité. Par défaut, le style "default" est activé, montrant tous les panneaux. 
+Avec un clic-droit sur la couche, sélectionner "Style" dans le menu et choississez le style souhaité. Par défaut, le style "default" est activé, montrant tous les panneaux.
 
 ![Filtrage des signaux](../../assets/images/printscreen/symbology-filter.png){width="400"; loading=lazy; style="max-width: 900px"}
 
-Le filtre est défini dans l'expression de la règle de la symbologie. Le style '10-direction' du filtre pour les panneaux directionnels contient un exemple de filtrage par inscription (voir capture d'écran ci-dessous). Celui-ci permet d'examiner visuellement la cohérence de signaux saisis. 
+Le filtre est défini dans l'expression de la règle de la symbologie. Le style '10-direction' du filtre pour les panneaux directionnels contient un exemple de filtrage par inscription (voir capture d'écran ci-dessous). Celui-ci permet d'examiner visuellement la cohérence de signaux saisis.
 
 ![Expression filtrage des signaux](../../assets/images/printscreen/symbology-filter-expression.png){width="400"; loading=lazy; style="max-width: 900px"}
 
