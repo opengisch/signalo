@@ -18,6 +18,9 @@ on:
       demo_db_password:
         required: true
         type: string
+      demo_db_backup_file:
+        required: true
+        type: string
 
 jobs:
   deploy-demo-db:
@@ -30,11 +33,12 @@ jobs:
           DEMO_DB_HOST: ${{ inputs.demo_db_host }}
           DEMO_DB_USER: ${{ inputs.demo_db_user }}
           DEMO_DB_PORT: ${{ inputs.demo_db_port }}
-          DEMO_DB_TESTING: ${{ inputs.demo_db_testing }}
+          DEMO_DB_NAME: ${{ inputs.demo_db_name }}
           DEMO_DB_PASSWORD: ${{ inputs.demo_db_password }}
+          DEMO_DB_BACKUP_FILE: ${{ inputs.demo_db_backup_file }}
         run: |
-          CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING}"
+          CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_NAME}"
           export PGPASSWORD=${DEMO_DB_PASSWORD}
           psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner signalo-testing-db-dump-with-demo.backup
+          pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner ${DEMO_DB_BACKUP_FILE}
           psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
