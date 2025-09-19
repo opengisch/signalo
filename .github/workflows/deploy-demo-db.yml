@@ -21,6 +21,14 @@ on:
       demo_db_backup_file:
         required: true
         type: string
+      user_role:
+        required: false
+        type: string
+        default: signalo_user
+      viewer_role:
+        required: false
+        type: string
+        default: signalo_viewer
 
 jobs:
   deploy-demo-db:
@@ -36,9 +44,12 @@ jobs:
           DEMO_DB_NAME: ${{ inputs.demo_db_name }}
           DEMO_DB_PASSWORD: ${{ inputs.demo_db_password }}
           DEMO_DB_BACKUP_FILE: ${{ inputs.demo_db_backup_file }}
+          USER_ROLE: ${{ inputs.user_role }}
+          VIEWER_ROLE: ${{ inputs.viewer_role }}
         run: |
           CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_NAME}"
           export PGPASSWORD=${DEMO_DB_PASSWORD}
           psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner ${DEMO_DB_BACKUP_FILE}
-          psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
+          psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/create.sql -v user_role=${USER_ROLE} -v viewer_role=${VIEWER_ROLE} -f ./datamodel/roles/create.sql
+          psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql -v user_role=${USER_ROLE} -v viewer_role=${VIEWER_ROLE} -f ./datamodel/roles/create.sql
