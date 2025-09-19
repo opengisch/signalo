@@ -69,7 +69,7 @@ jobs:
 
       - name: Fix workspace permissions
         if: github.event_name != 'pull_request'
-        run: sudo chown -R $USER:$USER signalo-testing-db-dump-with-demo.backup
+        run: sudo chown -R $USER:$USER ${GITHUB_WORKSPACE}
 
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
