@@ -67,6 +67,10 @@ jobs:
         run: |
           docker push opengisch/signalo:unstable
 
+      - name: Fix workspace permissions
+        if: github.event_name != 'pull_request'
+        run: sudo chown -R $USER:$USER signalo-testing-db-dump-with-demo.backup
+
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
         uses: ./.github/actions/deploy-demo-db
