@@ -69,18 +69,13 @@ jobs:
 
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
-        env:
-            DEMO_DB_HOST: ${{ secrets.DEMO_DB_HOST }}
-            DEMO_DB_USER: ${{ secrets.DEMO_DB_USER }}
-            DEMO_DB_PORT: ${{ secrets.DEMO_DB_PORT }}
-            DEMO_DB_TESTING: ${{ secrets.DEMO_DB_TESTING }}
-            DEMO_DB_PASSWORD: ${{ secrets.DEMO_DB_PASSWORD }}
-        run: |
-            CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING}"
-            export PGPASSWORD=${DEMO_DB_PASSWORD}
-            psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-            pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner signalo-testing-db-dump-with-demo.backup
-            psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
+        uses: ./.github/workflows/deploy-demo-db.yml
+        with:
+          demo_db_host: ${{ secrets.DEMO_DB_HOST }}
+          demo_db_user: ${{ secrets.DEMO_DB_USER }}
+          demo_db_port: ${{ secrets.DEMO_DB_PORT }}
+          demo_db_name: ${{ secrets.DEMO_DB_TESTING }}
+          demo_db_password: ${{ secrets.DEMO_DB_PASSWORD }}
 
       - name: "failure logs"
         if: failure()

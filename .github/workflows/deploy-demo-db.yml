@@ -1,0 +1,40 @@
+name: Deploy Demo DB
+
+on:
+  workflow_call:
+    inputs:
+      demo_db_host:
+        required: true
+        type: string
+      demo_db_user:
+        required: true
+        type: string
+      demo_db_port:
+        required: true
+        type: string
+      demo_db_name:
+        required: true
+        type: string
+      demo_db_password:
+        required: true
+        type: string
+
+jobs:
+  deploy-demo-db:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Deploy Demo DB
+        env:
+          DEMO_DB_HOST: ${{ inputs.demo_db_host }}
+          DEMO_DB_USER: ${{ inputs.demo_db_user }}
+          DEMO_DB_PORT: ${{ inputs.demo_db_port }}
+          DEMO_DB_TESTING: ${{ inputs.demo_db_testing }}
+          DEMO_DB_PASSWORD: ${{ inputs.demo_db_password }}
+        run: |
+          CONNECTION="--host=${DEMO_DB_HOST} --username=${DEMO_DB_USER} --port=${DEMO_DB_PORT} --dbname=${DEMO_DB_TESTING}"
+          export PGPASSWORD=${DEMO_DB_PASSWORD}
+          psql ${CONNECTION} -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          pg_restore ${CONNECTION} --exit-on-error --clean --if-exists --no-owner signalo-testing-db-dump-with-demo.backup
+          psql ${CONNECTION} -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
