@@ -92,7 +92,7 @@ jobs:
             signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
 
       - name: Deploy Demo DB
-        uses: ./.github/workflows/deploy-demo-db.yml
+        uses: ./.github/actions/deploy-demo-db
         with:
           demo_db_host: ${{ secrets.DEMO_DB_HOST }}
           demo_db_user: ${{ secrets.DEMO_DB_USER }}
