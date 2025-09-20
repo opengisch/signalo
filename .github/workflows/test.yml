@@ -78,7 +78,7 @@ jobs:
           demo_db_host: ${{ secrets.DEMO_DB_HOST }}
           demo_db_user: ${{ secrets.DEMO_DB_USER }}
           demo_db_port: ${{ secrets.DEMO_DB_PORT }}
-          demo_db_name: ${{ secrets.DEMO_DB_TESTING }}
+          demo_db_name: signalo_testing
           demo_db_password: ${{ secrets.DEMO_DB_PASSWORD }}
           demo_db_backup_file: signalo-testing-db-dump-with-demo.backup
           viewer_role: signalo_viewer
