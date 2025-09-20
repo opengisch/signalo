@@ -71,10 +71,6 @@ jobs:
         if: github.event_name != 'pull_request'
         run: sudo chown -R $USER:$USER ${GITHUB_WORKSPACE}
 
-      - name: Copy backup file from container
-        if: github.event_name != 'pull_request'
-        run: docker cp signalo:/src/signalo-testing-db-dump-with-demo.backup signalo-testing-db-dump-with-demo.backup
-
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
         uses: ./.github/actions/deploy-demo-db
