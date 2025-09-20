@@ -1,12 +1,13 @@
+DO $$
+BEGIN
+    IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'signalo_viewer') THEN
+        EXECUTE 'CREATE ROLE signalo_viewer NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION';
+    END IF;
 
+    IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'signalo_user') THEN
+        EXECUTE 'CREATE ROLE signalo_user NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION';
+    END IF;
 
-
-IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'signalo_viewer') THEN
-    CREATE ROLE 'signalo_viewer' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
-END IF;
-
-IF NOT EXISTS (SELECT FROM pg_roles WHERE rolname = 'signalo_user') THEN
-    CREATE ROLE 'signalo_user' NOSUPERUSER INHERIT NOCREATEDB NOCREATEROLE NOREPLICATION;
-END IF;
-
-GRANT 'signalo_viewer' TO 'signalo_user';
+    EXECUTE 'GRANT signalo_viewer TO signalo_user';
+END
+$$;
