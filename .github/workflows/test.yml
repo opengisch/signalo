@@ -81,6 +81,8 @@ jobs:
           demo_db_name: ${{ secrets.DEMO_DB_TESTING }}
           demo_db_password: ${{ secrets.DEMO_DB_PASSWORD }}
           demo_db_backup_file: signalo-testing-db-dump-with-demo.backup
+          viewer_role: signalo_viewer
+          user_role: signalo_user
 
       - name: "failure logs"
         if: failure()

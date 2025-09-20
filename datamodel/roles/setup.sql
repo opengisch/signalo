@@ -4,8 +4,8 @@
 
 DO $$
 DECLARE
-    viewer_role text := :'viewer_role';
-    user_role text := :'user_role';
+    viewer_role text := :'signalor_viewer';
+    user_role text := :'signalo_user';
 BEGIN
 SELECT format('REVOKE CONNECT ON DATABASE %I FROM myuser;', datname)
 FROM pg_database
