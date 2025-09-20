@@ -39,4 +39,6 @@ runs:
         psql $CONNECTION -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
         pg_restore $CONNECTION --exit-on-error --clean --if-exists --no-owner ${{ inputs.demo_db_backup_file }}
         psql $CONNECTION -v EXIT_ON_ERROR=on -f ./datamodel/roles/create.sql
-        psql $CONNECTION -v EXIT_ON_ERROR=on -v db_name=${{ inputs.demo_db_name }} -f ./datamodel/roles/setup.sql
+        psql $CONNECTION -v EXIT_ON_ERROR=on -f ./datamodel/roles/setup.sql
+        sed "s/__DB_NAME__/${{ inputs.demo_db_name }}/g" ./datamodel/roles/grant.sql.in > ./datamodel/roles/grant.sql
+        psql $CONNECTION -v EXIT_ON_ERROR=on -f ./datamodel/roles/grant.sql

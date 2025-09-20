@@ -2,16 +2,6 @@
 /* GRANT on schemas - once per database */
 ------------------------------------------
 
-DO $$
-DECLARE
-    db_name text := current_setting('db_name');
-    rec record;
-BEGIN
-    -- Example: revoke connect from all except db_name
-    FOR rec IN SELECT datname FROM pg_database WHERE datname <> db_name LOOP
-        EXECUTE format('REVOKE CONNECT ON DATABASE %I FROM signalo_viewer', rec.datname);
-    END LOOP;
-    EXECUTE format('GRANT CONNECT ON DATABASE %I TO signalo_viewer', db_name);
 
     GRANT USAGE ON SCHEMA signalo_db TO signalo_viewer;
     GRANT USAGE ON SCHEMA signalo_app TO signalo_viewer;
@@ -32,5 +22,3 @@ BEGIN
     GRANT ALL ON ALL SEQUENCES IN SCHEMA signalo_app TO signalo_user;
     ALTER DEFAULT PRIVILEGES IN SCHEMA signalo_app GRANT ALL ON TABLES TO signalo_user;
     ALTER DEFAULT PRIVILEGES IN SCHEMA signalo_app GRANT ALL ON SEQUENCES TO signalo_user;
-END
-$$;

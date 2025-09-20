@@ -1,0 +1,14 @@
+
+
+DO $$
+DECLARE
+    db_name text := __DB_NAME__;  -- replace __DB_NAME__ with your actual database name or set it via psql variable
+    rec record;
+BEGIN
+    -- Example: revoke connect from all except db_name
+    FOR rec IN SELECT datname FROM pg_database WHERE datname <> db_name LOOP
+        EXECUTE format('REVOKE CONNECT ON DATABASE %I FROM signalo_viewer', rec.datname);
+    END LOOP;
+    EXECUTE format('GRANT CONNECT ON DATABASE %I TO signalo_viewer', db_name);
+END
+$$;
