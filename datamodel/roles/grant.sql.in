@@ -2,7 +2,7 @@
 
 DO $$
 DECLARE
-    db_name text := __DB_NAME__;  -- replace __DB_NAME__ with your actual database name or set it via psql variable
+    db_name text := '__DB_NAME__';  -- replace __DB_NAME__ with your actual database name or set it via psql variable
     rec record;
 BEGIN
     -- Example: revoke connect from all except db_name
