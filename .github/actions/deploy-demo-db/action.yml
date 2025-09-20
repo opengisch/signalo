@@ -33,9 +33,10 @@ runs:
     - name: Deploy Demo DB
       shell: bash
       run: |
+        set -e
         CONNECTION="--host=${{ inputs.demo_db_host }} --username=${{ inputs.demo_db_user }} --port=${{ inputs.demo_db_port }} --dbname=${{ inputs.demo_db_name }}"
         export PGPASSWORD="${{ inputs.demo_db_password }}"
         psql $CONNECTION -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
         pg_restore $CONNECTION --exit-on-error --clean --if-exists --no-owner ${{ inputs.demo_db_backup_file }}
-        psql $CONNECTION -v EXIT_ON_ERROR=on -v user_role=${{ inputs.user_role }} -v viewer_role=${{ inputs.viewer_role }} -f ./datamodel/roles/create.sql
-        psql $CONNECTION -v EXIT_ON_ERROR=on -v user_role=${{ inputs.user_role }} -v viewer_role=${{ inputs.viewer_role }} -f ./datamodel/roles/setup.sql
+        psql $CONNECTION -v EXIT_ON_ERROR=on -f ./datamodel/roles/create.sql
+        psql $CONNECTION -v EXIT_ON_ERROR=on -v db_name=${{ inputs.demo_db_name }} -f ./datamodel/roles/setup.sql
