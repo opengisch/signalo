@@ -79,7 +79,7 @@ nav:
       - Mobile: user-guide/mobile.md
       - Validation: user-guide/validation.md
       - Mises à jour: user-guide/updates.md
-      - Test: user-guide/tests.fr.md
+      - Test: user-guide/tests.md
       - Documentation BD: https://signalo.ch/model-documentation/ "target=_blank
   - Feuille de route: roadmap.md
 
