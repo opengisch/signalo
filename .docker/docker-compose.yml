@@ -14,7 +14,7 @@ services:
       - ${SIGNALO_PG_PORT:-5432}:${SIGNALO_PG_PORT:-5432}
 
   qgis:
-    image: opengisch/qgis
+    image: qgis/qgis:3.44
     tty: true
     volumes:
       - ${SOURCE_DIR:-..}:/usr/src
