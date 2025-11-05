@@ -1,48 +1,43 @@
 #!/usr/bin/env python3
 
 import argparse
+import logging
 import os
 import sys
+from pathlib import Path
 
 import psycopg
 from pirogue import SimpleJoins
+from pum import HookBase
 from yaml import safe_load
 
 sys.path.append(os.path.join(os.path.dirname(__file__)))
-
 from vw_sign_symbol import vw_sign_symbol
 
-
-def run_sql(file_path: str, pg_service: str, variables: dict = {}):
-    sql = open(file_path).read()
-    conn = psycopg.connect(f"service={pg_service}")
-    cursor = conn.cursor()
-    cursor.execute(sql, variables)
-    conn.commit()
-    conn.close()
+logger = logging.getLogger(__name__)
 
 
-def create_views(srid: int, pg_service: str):
-    """
-    Creates the views for signalo
-    :param srid: the EPSG code for geometry columns
-    :param pg_service: the PostgreSQL service, if not given it will be determined from environment variable in Pirogue
-    """
+class Hook(HookBase):
+    def run_hook(
+        self,
+        connection: psycopg.Connection,
+        SRID: int = 2056,
+    ):
+        """
+        Creates the application schema signalo_app for SIGNALO application data.
+        :param connection: the psycopg connection to the database.
+        :param SRID: the EPSG code for geometry columns
+        """
 
-    variables = {"SRID": srid}
+        self.execute(Path("datamodel") / "app" / "create_schema.sql")
+        self.execute(Path("datamodel") / "app" / "vw_validation.sql")
+        self.execute(Path("datamodel") / "app" / "vw_azimut_edit.sql")
 
-    run_sql("datamodel/app/drop_schema.sql", pg_service, variables)
+        vw_sign_symbol(connection=connection, srid=SRID)
 
-    run_sql("datamodel/app/create_schema.sql", pg_service, variables)
-
-    run_sql("datamodel/app/vw_validation.sql", pg_service, variables)
-    run_sql("datamodel/app/vw_azimut_edit.sql", pg_service, variables)
-
-    vw_sign_symbol(pg_service=pg_service, srid=srid)
-
-    SimpleJoins(
-        safe_load(open("datamodel/app/vw_sign_export.yaml")), pg_service
-    ).create()
+        SimpleJoins(
+            safe_load(open("datamodel/app/vw_sign_export.yaml")), connection=connection
+        ).create()
 
 
 if __name__ == "__main__":
@@ -58,4 +53,11 @@ if __name__ == "__main__":
         pg_service = os.getenv("PGSERVICE")
     assert pg_service
 
-    create_views(args.srid, pg_service)
+    with psycopg.connect(f"service={pg_service}") as connection:
+        if args.drop_schema:
+            connection.execute("DROP SCHEMA IF EXISTS tww_app CASCADE;")
+        hook = Hook()
+        hook.run_hook(
+            connection=connection,
+            srid=args.srid,
+        )

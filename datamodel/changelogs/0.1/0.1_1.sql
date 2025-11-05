@@ -241,7 +241,7 @@ CREATE TABLE signalo_db.support (
     fk_status integer,
     comment text,
     picture text,
-    geometry public.geometry(Point,:SRID) NOT NULL,
+    geometry public.geometry(Point,{SRID}) NOT NULL,
     usr_support_1 text,
     usr_support_2 text,
     usr_support_3 text,
