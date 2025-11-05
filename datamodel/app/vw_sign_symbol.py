@@ -9,18 +9,13 @@ import psycopg
 from pirogue.utils import insert_command, select_columns, table_parts, update_command
 
 
-def vw_sign_symbol(srid: int, pg_service: str = None):
+def vw_sign_symbol(connection: psycopg.Connection, srid: int):
     """
     Creates sign_symbol view
     :param srid: EPSG code for geometries
     :param pg_service: the PostgreSQL service name
     """
-    if not pg_service:
-        pg_service = os.getenv("PGSERVICE")
-    assert pg_service
-
-    conn = psycopg.connect(f"service={pg_service}")
-    cursor = conn.cursor()
+    cursor = connection.cursor()
 
     view_sql = """
         CREATE OR REPLACE VIEW signalo_app.vw_sign_symbol AS
@@ -287,7 +282,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
     """.format(
         srid=srid,
         sign_columns=select_columns(
-            pg_cur=cursor,
+            connection=connection,
             table_schema="signalo_db",
             table_name="sign",
             remove_pkey=False,
@@ -300,7 +295,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             ],
         ),
         frame_columns=select_columns(
-            pg_cur=cursor,
+            connection=connection,
             table_schema="signalo_db",
             table_name="frame",
             remove_pkey=False,
@@ -309,7 +304,7 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             prefix="frame_",
         ),
         vl_official_sign_columns=select_columns(
-            pg_cur=cursor,
+            connection=connection,
             table_schema="signalo_db",
             table_name="vl_official_sign",
             remove_pkey=False,
@@ -325,16 +320,3 @@ def vw_sign_symbol(srid: int, pg_service: str = None):
             f.write(view_sql)
         print(f"*** Failing:\n{view_sql}\n***")
         raise e
-    conn.commit()
-    conn.close()
-
-
-if __name__ == "__main__":
-    # create the top-level parser
-    parser = argparse.ArgumentParser()
-    parser.add_argument("-s", "--srid", help="EPSG code for SRID")
-    parser.add_argument("-p", "--pg_service", help="the PostgreSQL service name")
-    args = parser.parse_args()
-    srid = args.srid or os.getenv("SRID")
-    pg_service = args.pg_service or os.getenv("PGSERVICE")
-    vw_sign_symbol(srid=srid, pg_service=pg_service)

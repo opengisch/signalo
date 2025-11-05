@@ -1,0 +1,51 @@
+
+pum:
+  migration_table_schema: signalo_od
+  minimum_version: 1.1.18
+
+roles:
+  - name: signalo_viewer
+    description: Role for users who can view the SIGNALO data.
+    permissions:
+      - type: read
+        schemas: [signalo_od, signalo_app]
+
+  - name: signalo_user
+    description: Role for users who can view and edit the SIGNALO data.
+    inherit: signalo_viewer
+    permissions:
+      - type: write
+        schemas: [signalo_od]
+
+
+parameters:
+  - name: SRID
+    type: integer
+    default: 2056
+    description: Coordinate Reference System (CRS) to use for the data. This is used for the geometry column in the database. Default is 2056 (CH1903+ / LV95).
+
+  - name: lang_code
+    type: text
+    default: en
+    description: language code for the creation of custom views
+
+dependencies:
+  - name: pirogue
+    minimum_version: 3.0.0
+
+migration_hooks:
+  pre:
+    - code: DROP SCHEMA IF EXISTS signalo_app CASCADE;
+  post:
+    - file: app/create_app.py
+
+demo_data:
+  - name: Lausanne
+    files:
+       - demo_data/owner_content.sql
+       - demo_data/provider_content.sql
+       - demo_data/vl_user_sign_content.sql
+       - demo_data/support_content.sql
+       - demo_data/azimut_content.sql
+       - demo_data/frame_content.sql
+       - demo_data/sign_content.sql
