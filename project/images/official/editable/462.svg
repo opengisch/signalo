@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   xmlns:dc="http://purl.org/dc/elements/1.1/"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns="http://www.w3.org/2000/svg"
-   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="129pt"
-   height="96pt"
+   width="172"
+   height="128"
    version="1.1"
    id="svg5524"
-   sodipodi:docname="462.svg"
-   inkscape:version="1.0.2 (e86c870879, 2021-01-15, custom)">
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
   <metadata
      id="metadata5530">
     <rdf:RDF>
@@ -21,83 +17,58 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs5528" />
-  <sodipodi:namedview
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1"
-     objecttolerance="10"
-     gridtolerance="10"
-     guidetolerance="10"
-     inkscape:pageopacity="0"
-     inkscape:pageshadow="2"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     id="namedview5526"
-     showgrid="false"
-     units="pt"
-     inkscape:zoom="4.4270833"
-     inkscape:cx="82.145171"
-     inkscape:cy="52.24526"
-     inkscape:window-x="5752"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
-     inkscape:current-layer="svg5524" />
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-  <g
-     id="g5522"
-     transform="matrix(1.3410052,0,0,1.3410052,-0.57510579,0.1802833)">
-    <title
-       id="title5512">Layer 1</title>
-    <metadata
-       id="svg_13">image/svg+xml</metadata>
-    <g
-       id="svg_15">
-      <path
-         fill="#1966ba"
-         fill-rule="nonzero"
-         id="svg_12"
-         d="M 1.0241,94.97732 H 128.20519 V 0.79612 H 1.0241 Z m 0,0" />
-      <path
-         fill="#ffffff"
-         fill-rule="nonzero"
-         id="svg_11"
-         d="m 126.511,7.52114 c 0,-2.78504 -2.2784,-5.04473 -5.09036,-5.04473 H 7.80865 c -2.81196,0 -5.09036,2.25969 -5.09036,5.04473 v 80.72729 c 0,2.78889 2.2784,5.0486 5.08646,5.0486 h 113.61589 c 2.81196,0.0039 5.09036,-2.2597 5.09036,-5.04474 V 7.52114" />
-      <path
-         fill="#1966ba"
-         fill-rule="nonzero"
-         id="svg_10"
-         d="m 124.81291,7.52114 v 80.73115 c 0,1.85798 -1.51893,3.36445 -3.39227,3.36058 H 7.80475 C 5.9353,91.61674 4.41248,90.11027 4.41638,88.24843 V 7.52114 C 4.41248,5.66316 5.9353,4.1567 7.80865,4.16056 h 113.61199 c 1.87334,-0.00387 3.39617,1.5026 3.39227,3.36058" />
-      <path
-         fill="#ffffff"
-         fill-rule="nonzero"
-         id="svg_9"
-         d="M 78.78547,66.09951 C 79.03863,65.58577 78.6881,64.98318 78.11169,64.94069 L 61.8202,63.78959 c -0.74388,-0.05408 -1.16062,0.83435 -0.64262,1.36742 l 4.66584,4.78592 -15.81244,8.3551 3.05344,5.24173 15.20097,-9.40189 1.84608,6.40055 c 0.20642,0.71074 1.18788,0.79573 1.51503,0.13134 l 7.13897,-14.57024" />
-    </g>
-    <text
-       xml:space="default"
-       dominant-baseline="middle"
-       text-anchor="middle"
-       font-family="sans-serif"
-       font-size="15px"
-       id="svg_16"
-       y="24.59096"
-       x="65.5"
-       fill="#ffffff">param(text1)</text>
-    <text
-       xml:space="default"
-       dominant-baseline="middle"
-       text-anchor="middle"
-       font-family="sans-serif"
-       font-size="15px"
-       id="svg_17"
-       y="47.772732"
-       x="65.5"
-       fill="#ffffff">param(text2)</text>
-  </g>
+  <path
+     fill="#1966ba"
+     fill-rule="nonzero"
+     id="svg_12"
+     d="M 0,128 H 172 V 0 H 0 Z m 0,0"
+     style="stroke-width:1.35574" />
+  <path
+     fill="#ffffff"
+     fill-rule="nonzero"
+     id="svg_11"
+     d="m 169.70877,9.139856 c 0,-3.785099 -3.08131,-6.856204 -6.88421,-6.856204 H 9.175441 c -3.802901,0 -6.884215,3.071105 -6.884215,6.856204 V 118.85489 c 0,3.79033 3.081314,6.86146 6.878941,6.86146 H 162.82456 c 3.8029,0.005 6.88421,-3.07112 6.88421,-6.85622 V 9.139856"
+     style="stroke-width:1.35574" />
+  <path
+     fill="#1966ba"
+     fill-rule="nonzero"
+     id="svg_10"
+     d="M 167.41227,9.139856 V 118.86013 c 0,2.52515 -2.0542,4.57257 -4.58771,4.56731 H 9.170167 c -2.528249,0.005 -4.587714,-2.04216 -4.58244,-4.57255 V 9.139856 C 4.582427,6.614708 6.641918,4.567305 9.175441,4.572551 H 162.82456 c 2.53351,-0.0053 4.59299,2.042157 4.58771,4.567305"
+     style="stroke-width:1.35574" />
+  <path
+     fill="#ffffff"
+     fill-rule="nonzero"
+     id="svg_9"
+     d="m 105.16466,88.752681 c 0.34237,-0.698214 -0.13169,-1.517184 -0.91123,-1.574931 L 82.220785,85.61331 c -1.006025,-0.0735 -1.569625,1.13395 -0.86908,1.858436 l 6.310092,6.50446 -21.38478,11.355264 4.12948,7.12395 20.557826,-12.777946 2.496643,8.698876 c 0.279163,0.96595 1.606492,1.08146 2.04893,0.1785 l 9.654764,-19.802155"
+     style="stroke-width:1.35574" />
+  <text
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="20.3361px"
+     id="svg_16"
+     y="32.3"
+     x="86.0"
+     fill="#ffffff"
+     transform="scale(0.99753946,1.0024666)"
+     style="stroke-width:1.35574">param(text1)</text>
+  <text
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="20.3361px"
+     id="svg_17"
+     y="63.7"
+     x="86.0"
+     fill="#ffffff"
+     transform="scale(0.99753946,1.0024666)"
+     style="stroke-width:1.35574">param(text2)</text>
 </svg>
