@@ -11,6 +11,8 @@ on:
     paths:
       - 'project/**'
       - '.github/workflows/project-translation.yml'
+  workflow_dispatch:
+
 jobs:
   build:
     name: Update project translations
