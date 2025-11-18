@@ -14,7 +14,10 @@ jobs:
 
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
-      COMPOSE_FILE: .docker/docker-compose.yml
+      COMPOSE_FILE: ./docker-compose.yml
+      DB_NAME: signalo
+      PG_SERVICE: pg_signalo
+
 
     steps:
       - name: Checkout code
@@ -25,10 +28,16 @@ jobs:
           curl -OL https://github.com/transifex/cli/releases/download/v1.6.5/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
 
-      - name: Start Docker compose
+      - name: Initialize container
         run: |
           docker compose --profile qgis up --build -d
-          docker compose exec signalo init_db.sh wait
+          until docker compose exec signalo pg_isready -U postgres; do
+            echo "Waiting for PostgreSQL to be ready..."
+            sleep 2
+          done
+          # create the database
+          docker compose exec signalo sh -c "createdb ${DB_NAME}"
+          docker compose exec signalo pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
 
       - name: Translate
         run: |
