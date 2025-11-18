@@ -3,7 +3,7 @@ name: 🌎 Update project translations
 on:
   push:
     branches:
-      - master
+      - main
     paths:
       - 'project/**'
       - '.github/workflows/project-translation.yml'

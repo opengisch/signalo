@@ -4,14 +4,14 @@ services:
   signalo:
     build:
       context: ..
-      dockerfile: ./.docker/Dockerfile
+      dockerfile: ./datamodel/.docker/Dockerfile
     image: opengisch/signalo:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     volumes:
       - ${SOURCE_DIR:-..}:/usr/src
     ports:
       # making the postgres database accessible for debugging
-      - ${SIGNALO_PG_PORT:-5432}:${SIGNALO_PG_PORT:-5432}
+      - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
 
   qgis:
     image: qgis/qgis:3.44

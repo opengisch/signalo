@@ -4,31 +4,24 @@ set -e
 
 # load env vars
 # https://stackoverflow.com/a/20909045/1548052
-export $(grep -v '^#' .env | xargs)
+if [ -f .env ]; then
+  export $(grep -v '^#' .env | xargs)
+elif [ -f .env.example ]; then
+  export $(grep -v '^#' .env.example | xargs)
+fi
+
+DOCKER_TAG=opengisch/pum_db
+CONTAINER_NAME=pum_db_test
+DB_NAME=${DB_NAME:-pum_test}
+PG_SERVICE=${PG_SERVICE:-pg_pum_test}
+DEMO_DATA_NAME=${DEMO_DATA_NAME:-}
+PUM_GH_SHA=${PUM_GH_SHA:-}
 
 BUILD=0
-DEMO_DATA=""
-TEST=0
-SIGNALO_PG_PORT=${SIGNALO_PG_PORT:-5432}
-ROLES=""
+DEMO_DATA=
+PG_CONTAINER_PORT=${PG_CONTAINER_PORT:-5432}
 
-
-show_help() {
-    echo "Usage: $(basename "$0") [OPTIONS]... [ARGUMENTS]..."
-    echo
-    echo "Description:"
-    echo "  Build and run Docker container with SIGNALO application"
-    echo
-    echo "Options:"
-    echo "  -h      Display this help message and exit"
-    echo "  -b      Build Docker image"
-    echo "  -d      Load demo data"
-    echo "  -r      Create roles"
-    echo "  -p      Override PG port"
-    echo "  -t      Run tests"
-}
-
-while getopts 'bdrtp:h' opt; do
+while getopts 'bdp:' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -37,23 +30,17 @@ while getopts 'bdrtp:h' opt; do
 
     d)
       echo "Load demo data"
-      DEMO_DATA="-d"
+      DEMO_DATA="-d ${DEMO_DATA_NAME}"
       ;;
 
     p)
       echo "Overriding PG port to ${OPTARG}"
-      TWW_PG_PORT=${OPTARG}
+      PG_PORT=${OPTARG}
       ;;
-    r)
-      echo "Setting up roles"
-      ROLES="-r"
-      ;;
-    t)
-      echo "Run tests"
-      TEST=1
-      ;;
+
+
     ?|h)
-      show_help
+      echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
       exit 1
       ;;
   esac
@@ -61,15 +48,26 @@ done
 shift "$(($OPTIND -1))"
 
 if [[ $BUILD -eq 1 ]]; then
-  docker build -f .docker/Dockerfile --tag opengisch/signalo .
+  docker build \
+  --build-arg RUN_TEST=True \
+  --build-arg PUM_GH_SHA=${PUM_GH_SHA} \
+  --build-arg DB_NAME=${DB_NAME} \
+  --build-arg PG_SERVICE=${PG_SERVICE} \
+  -f datamodel/.docker/Dockerfile \
+  --tag ${DOCKER_TAG} \
+  .
 fi
 
-docker rm -f signalo || true
-docker network create signalo_network || true
-docker run --network signalo_network -d -p ${SIGNALO_PG_PORT}:5432 -v $(pwd):/src --name signalo opengisch/signalo -c log_statement=all
-docker exec signalo init_db.sh wait
-docker exec signalo init_db.sh build ${DEMO_DATA} ${ROLES}
+docker rm -f ${CONTAINER_NAME} || true
+docker run -d -p 5432:${PG_CONTAINER_PORT} -v $(pwd):/src --name ${CONTAINER_NAME} ${DOCKER_TAG} -c log_statement=all
 
-if [[ $TEST -eq 1 ]]; then
-  docker exec signalo pytest
-fi
+docker exec ${CONTAINER_NAME} sh -c 'pum --version'
+
+until docker exec ${CONTAINER_NAME} pg_isready -U postgres; do
+  echo "Waiting for PostgreSQL to be ready..."
+  sleep 2
+done
+
+echo "Creating database ${DB_NAME}"
+docker exec ${CONTAINER_NAME} sh -c "createdb ${DB_NAME}"
+docker exec ${CONTAINER_NAME} pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}
