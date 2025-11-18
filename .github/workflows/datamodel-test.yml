@@ -70,7 +70,7 @@ jobs:
         run: docker exec pum_db_container pytest
 
       - name: "test images"
-        run: docker exec pum_db_container /src/test/official_sign_images.sh
+        run: docker exec pum_db_container /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
