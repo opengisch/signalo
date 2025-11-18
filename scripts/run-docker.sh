@@ -5,13 +5,15 @@ set -e
 # load env vars
 # https://stackoverflow.com/a/20909045/1548052
 if [ -f .env ]; then
+  echo "Loading .env file"
   export $(grep -v '^#' .env | xargs)
 elif [ -f .env.example ]; then
+  echo "Loading .env.example file since .env is missing"
   export $(grep -v '^#' .env.example | xargs)
 fi
 
-DOCKER_TAG=opengisch/pum_db
-CONTAINER_NAME=pum_db_test
+DOCKER_TAG=${DOCKER_TAG:-opengisch/pum_db}
+CONTAINER_NAME=${CONTAINER_NAME:-pum_db_test}
 DB_NAME=${DB_NAME:-pum_test}
 PG_SERVICE=${PG_SERVICE:-pg_pum_test}
 DEMO_DATA_NAME=${DEMO_DATA_NAME:-}
@@ -60,7 +62,7 @@ if [[ $BUILD -eq 1 ]]; then
 fi
 
 docker rm -f ${CONTAINER_NAME} || true
-docker run -d -p 5432:${PG_CONTAINER_PORT} -v $(pwd):/usr/src --name ${CONTAINER_NAME} ${DOCKER_TAG} -c log_statement=all
+docker run -d -p ${PG_CONTAINER_PORT}:5432 -v $(pwd):/usr/src --name ${CONTAINER_NAME} ${DOCKER_TAG} -c log_statement=all
 
 docker exec ${CONTAINER_NAME} sh -c 'pum --version'
 
