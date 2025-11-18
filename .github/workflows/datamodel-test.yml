@@ -21,40 +21,46 @@ jobs:
     name: Run tests and deploy demo data
     runs-on: ubuntu-latest
 
+    env:
+      DOCKER_TAG: opengisch/signalo:unstable
+      DB_NAME: signalo
+      PG_SERVICE: pg_signalo
+      DEMO_DATA: Lausanne
+
     steps:
       - uses: actions/checkout@v5
 
       - name: "build dockerfile"
-        run: docker build -f datamodel/.docker/Dockerfile --tag opengisch/signalo:unstable .
+        run: docker build -f datamodel/.docker/Dockerfile --build-arg RUN_TEST=True --build-arg DB_NAME=${DB_NAME} --build-arg PG_SERVICE=${PG_SERVICE} --tag ${DOCKER_TAG} .
 
       - name: Initialize container
         run: |
-          docker run -d -p 5432:5432 --name signalo opengisch/signalo:unstable
+          docker run -d -p 5432:5432 --name pum_db_container ${DOCKER_TAG}
           until docker exec signalo pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
           # create the database
-          docker exec signalo sh -c 'createdb signalo'
-          docker exec signalo pum -vvv -s pg_signalo -d datamodel install -p SRID 2056 --demo-data Lausanne --roles --grant
+          docker exec pum_db_container sh -c 'createdb signalo'
+          docker exec pum_db_container pum -vvv -s pg_signalo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "initialize container"
         run: |
-          docker exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup signalo
-          docker exec -e PGSERVICE=pg_signalo signalo /src/scripts/all-signs.py
+          docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup signalo
+          docker exec -e PGSERVICE=pg_signalo pum_db_container /src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker exec signalo pytest
+        run: docker exec pum_db_container pytest
 
       - name: "test images"
-        run: docker exec signalo /src/test/official_sign_images.sh
+        run: docker exec pum_db_container /src/test/official_sign_images.sh
 
       - name: "test changelog"
-        run: docker exec signalo /src/test/test-changelog.sh
+        run: docker exec pum_db_container /src/test/test-changelog.sh
 
 #      - name: "schema lint"
 #        run: |
