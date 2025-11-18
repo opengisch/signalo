@@ -3,12 +3,12 @@ version: '3'
 services:
   signalo:
     build:
-      context: ..
+      context: .
       dockerfile: ./datamodel/.docker/Dockerfile
     image: opengisch/signalo:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     volumes:
-      - ${SOURCE_DIR:-.}:/usr/src
+      - .:/usr/src
     ports:
       # making the postgres database accessible for debugging
       - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
@@ -17,7 +17,7 @@ services:
     image: qgis/qgis:3.44
     tty: true
     volumes:
-      - ${SOURCE_DIR:-.}:/usr/src
+      - .:/usr/src
       - ./.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
     links:
       - signalo
@@ -27,8 +27,8 @@ services:
   schemaspy:
     image: schemaspy/schemaspy
     volumes:
-      - ../model-documentation:/output
-      - ${SOURCE_DIR:-.}/datamodel/schemaspy.properties:/schemaspy.properties
+      - ./model-documentation:/output
+      - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
       - signalo
     network_mode: "service:signalo"
