@@ -5,6 +5,10 @@ services:
     build:
       context: .
       dockerfile: ./datamodel/.docker/Dockerfile
+      args:
+        DB_NAME: ${DB_NAME:-signalo}
+        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
+
     image: opengisch/signalo:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     volumes:
