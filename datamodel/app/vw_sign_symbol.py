@@ -28,7 +28,6 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
                 , azimut.offset_y
                 , azimut.offset_x_verso
                 , azimut.offset_y_verso
-                , {frame_columns}
                 , sign.rank AS sign_rank
                 , support.id AS support_id
                 , support.group_by_mounting_point
@@ -147,6 +146,9 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_width
                       ELSE NULL::integer
                   END AS _symbol_width
+                , {azimut_columns}
+                , {frame_columns}
+                , {support_columns}
             FROM signalo_db.sign
                 LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
                 LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
@@ -302,6 +304,28 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
             indent=4,
             skip_columns=["needs_validation", "_last_modification_platform"],
             prefix="frame_",
+        ),
+        azimut_columns=select_columns(
+            connection=connection,
+            table_schema="signalo_db",
+            table_name="azimut",
+            remove_pkey=False,
+            indent=4,
+            skip_columns=["needs_validation", "_last_modification_platform"],
+            prefix="azimut_",
+        ),
+        support_columns=select_columns(
+            connection=connection,
+            table_schema="signalo_db",
+            table_name="support",
+            remove_pkey=True,
+            indent=4,
+            skip_columns=[
+                "needs_validation",
+                "_last_modification_platform",
+                "geometry",
+            ],
+            prefix="support_",
         ),
         vl_official_sign_columns=select_columns(
             connection=connection,
