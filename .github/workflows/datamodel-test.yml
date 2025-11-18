@@ -36,7 +36,7 @@ jobs:
       - name: Initialize container
         run: |
           docker run -d -p 5432:5432 --name pum_db_container ${DOCKER_TAG}
-          until docker exec signalo pg_isready -U postgres; do
+          until docker exec pum_db_container pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
@@ -44,7 +44,7 @@ jobs:
           docker exec pum_db_container sh -c 'createdb signalo'
           docker exec pum_db_container pum -vvv -s pg_signalo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
-      - name: "initialize container"
+      - name: "dumps + all signs"
         run: |
           docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup signalo
           docker exec -e PGSERVICE=pg_signalo pum_db_container /src/scripts/all-signs.py
