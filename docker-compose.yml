@@ -8,7 +8,7 @@ services:
     image: opengisch/signalo:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     volumes:
-      - ${SOURCE_DIR:-}:/usr/src
+      - ${SOURCE_DIR:-.}:/usr/src
     ports:
       # making the postgres database accessible for debugging
       - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
@@ -17,7 +17,7 @@ services:
     image: qgis/qgis:3.44
     tty: true
     volumes:
-      - ${SOURCE_DIR:-}:/usr/src
+      - ${SOURCE_DIR:-.}:/usr/src
       - ./.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
     links:
       - signalo
@@ -28,7 +28,7 @@ services:
     image: schemaspy/schemaspy
     volumes:
       - ../model-documentation:/output
-      - ${SOURCE_DIR:-}/datamodel/schemaspy.properties:/schemaspy.properties
+      - ${SOURCE_DIR:-.}/datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
       - signalo
     network_mode: "service:signalo"
