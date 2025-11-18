@@ -46,6 +46,11 @@ if __name__ == "__main__":
     parser.add_argument(
         "-s", "--srid", help="SRID EPSG code, defaults to 2056", type=int, default=2056
     )
+    parser.add_argument(
+        "--drop_schema",
+        help="Drop existing signalo_app schema before creating it",
+        action="store_true",
+    )
     args = parser.parse_args()
 
     pg_service = args.pg_service
@@ -55,9 +60,10 @@ if __name__ == "__main__":
 
     with psycopg.connect(f"service={pg_service}") as connection:
         if args.drop_schema:
-            connection.execute("DROP SCHEMA IF EXISTS tww_app CASCADE;")
+            connection.execute("DROP SCHEMA IF EXISTS signalo_app CASCADE;")
         hook = Hook()
+        hook._prepare(connection=connection, parameters={"SRID": args.srid})
         hook.run_hook(
             connection=connection,
-            srid=args.srid,
+            SRID=args.srid,
         )
