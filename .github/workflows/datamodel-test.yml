@@ -42,12 +42,13 @@ jobs:
           done
           # create the database
           docker exec pum_db_container sh -c 'createdb signalo'
-          docker exec pum_db_container pum -vvv -s pg_signalo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
-          docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup signalo
-          docker exec -e PGSERVICE=pg_signalo pum_db_container /src/scripts/all-signs.py
+          docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker exec -e PGSERVICE=${PG_SERVICE}_demo pum_db_container /src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
