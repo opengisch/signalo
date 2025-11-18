@@ -1,0 +1,1904 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>vw_sign_symbol - signalo.signalo_app</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link rel="icon" type="image/png" sizes="16x16" href="../favicon.png">
+        <!-- Bootstrap 3.3.5 -->
+        <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+        <!-- Ionicons -->
+        <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+        <!-- DataTables -->
+        <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+        <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+        <!-- Code Mirror -->
+        <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+        <!-- Fonts -->
+        <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+        <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+        <!-- Theme style -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+        <!-- Salvattore -->
+        <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+        <!-- AdminLTE Skins. Choose a skin from the css/skins
+           folder instead of downloading all of them to reduce the load. -->
+        <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+        <!-- SchemaSpy -->
+        <link rel="stylesheet" href="../schemaSpy.css">
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+        <script src="../bower/html5shiv/html5shiv.min.js"></script>
+        <script src="../bower/respond/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+    <body class="hold-transition skin-blue layout-top-nav">
+        <div class="wrapper">
+            <header class="main-header">
+                <nav class="navbar navbar-static-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <a href="../../index.html" class="navbar-brand"><b>signalo</b></a><span class="navbar-brand" style="padding-left: 0">.signalo_app</span>
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse"><i class="fa fa-bars"></i></button>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                            <ul class="nav navbar-nav">
+                                <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>
+                                <li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+                                <li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+                                <li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+                                <li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>
+                                <li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+                                <li><a href="../routines.html" title="Procedures and functions">Routines</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.navbar-collapse -->
+                        <!-- Navbar Right Menu -->
+                    </div>
+                    <!-- /.container-fluid -->
+                </nav>
+            </header>
+            <!-- Main content -->
+            <!-- Full Width Column -->
+            <div class="content-wrapper">
+                <!-- Content Header (Page header) -->
+                <section class="content-header">
+                    <h1>vw_sign_symbol</h1><p><span id="recordNumber">0</span> rows</p><br />
+                </section>
+                <!-- Main content -->
+                <section class="content">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+                            <h3 id="Columns" class="box-title">Columns</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <table
+                                    id="standard_table"
+                                    class="table table-bordered table-striped dataTable"
+                                    role="grid"
+                                    data-paging="true"
+                                    data-page-length="10"
+                                    data-length-change="false">
+                                <thead align='left'>
+                                <tr>
+                                    <th>Column</th>
+                                    <th>Type</th>
+                                    <th>Size</th>
+                                    <th title='Are nulls allowed?'>Nulls</th>
+                                    <th title='Is column automatically updated?'>Auto</th>
+                                    <th title='Default value'>Default</th>
+                                    <th title='Columns in tables that reference this column'>Children</th>
+                                    <th title='Columns in tables that are referenced by this column'>Parents</th>
+                                    <th title='Comments' class="toggle"><span>Comments</span></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td><span id="pk">pk</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="id">id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_inserted_date">_inserted_date</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_inserted_user">_inserted_user</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_last_modified_date">_last_modified_date</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_last_modified_user">_last_modified_user</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="case_decision">case_decision</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="case_id">case_id</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="comment">comment</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="complex">complex</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dimension_1">dimension_1</span></td>
+                                    <td>numeric</td>
+                                    <td>8,3</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="dimension_2">dimension_2</span></td>
+                                    <td>numeric</td>
+                                    <td>8,3</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_coating">fk_coating</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_durability">fk_durability</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_lighting">fk_lighting</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_marker_type">fk_marker_type</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_mirror_shape">fk_mirror_shape</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_official_sign">fk_official_sign</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_owner">fk_owner</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_parent">fk_parent</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_provider">fk_provider</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_sign_type">fk_sign_type</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_status">fk_status</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_user_sign">fk_user_sign</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="hanging_mode">hanging_mode</span></td>
+                                    <td>&quot;signalo_db&quot;.&quot;sign_hanging&quot;</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="inscription_1">inscription_1</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="inscription_2">inscription_2</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="inscription_3">inscription_3</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="installation_date">installation_date</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="manufacturing_date">manufacturing_date</span></td>
+                                    <td>date</td>
+                                    <td>13</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="mirror_protruding">mirror_protruding</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="mirror_red_frame">mirror_red_frame</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="natural_direction_or_left">natural_direction_or_left</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="picture">picture</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="usr_sign_1">usr_sign_1</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="usr_sign_2">usr_sign_2</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="usr_sign_3">usr_sign_3</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="azimut">azimut</span></td>
+                                    <td>int2</td>
+                                    <td>5</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="offset_x">offset_x</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="offset_y">offset_y</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="offset_x_verso">offset_x_verso</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="offset_y_verso">offset_y_verso</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_id">frame_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame__inserted_date">frame__inserted_date</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame__inserted_user">frame__inserted_user</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame__last_modified_date">frame__last_modified_date</span></td>
+                                    <td>timestamp</td>
+                                    <td>29,6</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame__last_modified_user">frame__last_modified_user</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_anchor">frame_anchor</span></td>
+                                    <td>&quot;signalo_db&quot;.&quot;anchor&quot;</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_comment">frame_comment</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_dimension_1">frame_dimension_1</span></td>
+                                    <td>numeric</td>
+                                    <td>8,3</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_dimension_2">frame_dimension_2</span></td>
+                                    <td>numeric</td>
+                                    <td>8,3</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_double_sided">frame_double_sided</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_fk_azimut">frame_fk_azimut</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_fk_frame_fixing_type">frame_fk_frame_fixing_type</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_fk_frame_type">frame_fk_frame_type</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_fk_provider">frame_fk_provider</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_fk_status">frame_fk_status</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_picture">frame_picture</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_rank">frame_rank</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_usr_frame_1">frame_usr_frame_1</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_usr_frame_2">frame_usr_frame_2</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="frame_usr_frame_3">frame_usr_frame_3</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="sign_rank">sign_rank</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="support_id">support_id</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="group_by_anchor">group_by_anchor</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_support_type">fk_support_type</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="fk_support_base_type">fk_support_base_type</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="support_geometry">support_geometry</span></td>
+                                    <td>geometry</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="directional_sign">directional_sign</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_value_de">_symbol_value_de</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_value_fr">_symbol_value_fr</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_value_it">_symbol_value_it</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_value_ro">_symbol_value_ro</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_de">_img_de</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_fr">_img_fr</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_it">_img_it</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_ro">_img_ro</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_de_right">_img_de_right</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_fr_right">_img_fr_right</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_it_right">_img_it_right</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_ro_right">_img_ro_right</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_height">_symbol_height</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_width">_symbol_width</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_azimut_rectified">_azimut_rectified</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_azimut_offset_x_rectified">_azimut_offset_x_rectified</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_azimut_offset_y_rectified">_azimut_offset_y_rectified</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_natural_direction_or_left_rectified">_natural_direction_or_left_rectified</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_verso">_verso</span></td>
+                                    <td>bool</td>
+                                    <td>1</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_rank">_rank</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_final_rank">_final_rank</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_symbol_shift">_symbol_shift</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_group_height">_group_height</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_group_width">_group_width</span></td>
+                                    <td>int4</td>
+                                    <td>10</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_previous_sign_in_frame">_previous_sign_in_frame</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_next_sign_in_frame">_next_sign_in_frame</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_previous_frame">_previous_frame</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_next_frame">_next_frame</span></td>
+                                    <td>uuid</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_max_shift_for_azimut">_max_shift_for_azimut</span></td>
+                                    <td>int8</td>
+                                    <td>19</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td><span id="_img_direction">_img_direction</span></td>
+                                    <td>text</td>
+                                    <td>2147483647</td>
+                                    <td title='nullable'>√</td>
+                                    <td title=''></td>
+                                    <td>null</td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td>
+                                        <table border='0' cellspacing='0' cellpadding='0'>
+                                        </table>
+                                    </td>
+                                    <td></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-code-fork"></i>
+                            <h3 id="Relationships" class="box-title">Relationships</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <div class="nav-tabs-custom"><!-- Tabs within a box -->
+                                <h5>Close relationships within degrees of separation</h5>
+                                <ul class="nav nav-tabs pull-left ui-sortable-handle">
+                                    <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>
+                                </ul>
+                                <div class="tab-content no-padding">
+                                    <div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">
+                                        <map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="vw_sign_symbol.html" target="_top" title="vw_sign_symbol" alt="" coords="5,5,627,2955">
+</map>
+                                        <a name='diagram'><img id="oneDegreeImg" src="../diagrams/tables/vw_sign_symbol.1degree.png" usemap="#oneDegreeRelationshipsDiagram" class="diagram" border="0" align="left"></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <i class="fa fa-file-code-o"></i>
+                            <h3 id="ViewDefinition" class="box-title">View Definition</h3>
+                            <div class="box-tools pull-right">
+                                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
+                                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="box-body">
+                            <textarea id="sql-script-codemirror" name="sql-script-codemirror" rows="" style="display: none;">WITH joined_tables AS (&#10;         SELECT sign.id,&#10;            sign._inserted_date,&#10;            sign._inserted_user,&#10;            sign._last_modified_date,&#10;            sign._last_modified_user,&#10;            sign.case_decision,&#10;            sign.case_id,&#10;            sign.comment,&#10;            sign.complex,&#10;            sign.dimension_1,&#10;            sign.dimension_2,&#10;            sign.fk_coating,&#10;            sign.fk_durability,&#10;            sign.fk_lighting,&#10;            sign.fk_marker_type,&#10;            sign.fk_mirror_shape,&#10;            sign.fk_official_sign,&#10;            sign.fk_owner,&#10;            sign.fk_parent,&#10;            sign.fk_provider,&#10;            sign.fk_sign_type,&#10;            sign.fk_status,&#10;            sign.fk_user_sign,&#10;            sign.hanging_mode,&#10;            sign.inscription_1,&#10;            sign.inscription_2,&#10;            sign.inscription_3,&#10;            sign.installation_date,&#10;            sign.manufacturing_date,&#10;            sign.mirror_protruding,&#10;            sign.mirror_red_frame,&#10;            sign.natural_direction_or_left,&#10;            sign.picture,&#10;            sign.usr_sign_1,&#10;            sign.usr_sign_2,&#10;            sign.usr_sign_3,&#10;            azimut.azimut,&#10;            azimut.offset_x,&#10;            azimut.offset_y,&#10;            azimut.offset_x_verso,&#10;            azimut.offset_y_verso,&#10;            frame.id AS frame_id,&#10;            frame._inserted_date AS frame__inserted_date,&#10;            frame._inserted_user AS frame__inserted_user,&#10;            frame._last_modified_date AS frame__last_modified_date,&#10;            frame._last_modified_user AS frame__last_modified_user,&#10;            frame.anchor AS frame_anchor,&#10;            frame.comment AS frame_comment,&#10;            frame.dimension_1 AS frame_dimension_1,&#10;            frame.dimension_2 AS frame_dimension_2,&#10;            frame.double_sided AS frame_double_sided,&#10;            frame.fk_azimut AS frame_fk_azimut,&#10;            frame.fk_frame_fixing_type AS frame_fk_frame_fixing_type,&#10;            frame.fk_frame_type AS frame_fk_frame_type,&#10;            frame.fk_provider AS frame_fk_provider,&#10;            frame.fk_status AS frame_fk_status,&#10;            frame.picture AS frame_picture,&#10;            frame.rank AS frame_rank,&#10;            frame.usr_frame_1 AS frame_usr_frame_1,&#10;            frame.usr_frame_2 AS frame_usr_frame_2,&#10;            frame.usr_frame_3 AS frame_usr_frame_3,&#10;            sign.rank AS sign_rank,&#10;            support.id AS support_id,&#10;            support.group_by_anchor,&#10;            support.fk_support_type,&#10;            support.fk_support_base_type,&#10;            support.geometry AS support_geometry,&#10;            COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, vl_marker_type.directional_sign, false) AS directional_sign,&#10;                CASE&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.value_de&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.value_de&#10;                    ELSE vl_official_sign.value_de&#10;                END AS _symbol_value_de,&#10;                CASE&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.value_fr&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.value_fr&#10;                    ELSE vl_official_sign.value_fr&#10;                END AS _symbol_value_fr,&#10;                CASE&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.value_it&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.value_it&#10;                    ELSE vl_official_sign.value_it&#10;                END AS _symbol_value_it,&#10;                CASE&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.value_ro&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.value_ro&#10;                    ELSE vl_official_sign.value_ro&#10;                END AS _symbol_value_ro,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_de&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_de&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_de&#10;                    ELSE NULL::text&#10;                END AS _img_de,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_fr&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_fr&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_fr&#10;                    ELSE NULL::text&#10;                END AS _img_fr,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_it&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_it&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_it&#10;                    ELSE NULL::text&#10;                END AS _img_it,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_ro&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_ro&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_ro&#10;                    ELSE NULL::text&#10;                END AS _img_ro,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_de_right&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_de_right&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_de_right&#10;                    ELSE NULL::text&#10;                END AS _img_de_right,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_fr_right&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_fr_right&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_fr_right&#10;                    ELSE NULL::text&#10;                END AS _img_fr_right,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_it_right&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_it_right&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_it_right&#10;                    ELSE NULL::text&#10;                END AS _img_it_right,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN &#39;complex.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_ro_right&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_ro_right&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN (((&#39;mirror&#39;::text ||&#10;                    CASE&#10;                        WHEN (sign.fk_mirror_shape &#61; 12) THEN &#39;-circular&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) ||&#10;                    CASE&#10;                        WHEN (NOT sign.mirror_red_frame) THEN &#39;-noframe&#39;::text&#10;                        ELSE &#39;&#39;::text&#10;                    END) || &#39;.svg&#39;::text)&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN &#39;street-plate.svg&#39;::text&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_ro_right&#10;                    ELSE NULL::text&#10;                END AS _img_ro_right,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN 106&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_height&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_height&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN 80&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN 50&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_height&#10;                    ELSE NULL::integer&#10;                END AS _symbol_height,&#10;                CASE&#10;                    WHEN (sign.complex IS TRUE) THEN 121&#10;                    WHEN (sign.fk_sign_type &#61; 11) THEN vl_official_sign.img_width&#10;                    WHEN (sign.fk_sign_type &#61; 12) THEN vl_marker_type.img_width&#10;                    WHEN (sign.fk_sign_type &#61; 13) THEN 100&#10;                    WHEN (sign.fk_sign_type &#61; 14) THEN 100&#10;                    WHEN (sign.fk_sign_type &#61; 15) THEN vl_user_sign.img_width&#10;                    ELSE NULL::integer&#10;                END AS _symbol_width&#10;           FROM ((((((signalo_db.sign&#10;             LEFT JOIN signalo_db.frame ON ((frame.id &#61; sign.fk_frame)))&#10;             LEFT JOIN signalo_db.azimut ON ((azimut.id &#61; frame.fk_azimut)))&#10;             LEFT JOIN signalo_db.support ON ((support.id &#61; azimut.fk_support)))&#10;             LEFT JOIN signalo_db.vl_official_sign ON ((vl_official_sign.id &#61; sign.fk_official_sign)))&#10;             LEFT JOIN signalo_db.vl_user_sign ON ((vl_user_sign.id &#61; sign.fk_user_sign)))&#10;             LEFT JOIN signalo_db.vl_marker_type ON ((vl_marker_type.id &#61; sign.fk_marker_type)))&#10;        ), ordered_recto_signs_not_grouped_by_anchor AS (&#10;         SELECT joined_tables.id,&#10;            joined_tables._inserted_date,&#10;            joined_tables._inserted_user,&#10;            joined_tables._last_modified_date,&#10;            joined_tables._last_modified_user,&#10;            joined_tables.case_decision,&#10;            joined_tables.case_id,&#10;            joined_tables.comment,&#10;            joined_tables.complex,&#10;            joined_tables.dimension_1,&#10;            joined_tables.dimension_2,&#10;            joined_tables.fk_coating,&#10;            joined_tables.fk_durability,&#10;            joined_tables.fk_lighting,&#10;            joined_tables.fk_marker_type,&#10;            joined_tables.fk_mirror_shape,&#10;            joined_tables.fk_official_sign,&#10;            joined_tables.fk_owner,&#10;            joined_tables.fk_parent,&#10;            joined_tables.fk_provider,&#10;            joined_tables.fk_sign_type,&#10;            joined_tables.fk_status,&#10;            joined_tables.fk_user_sign,&#10;            joined_tables.hanging_mode,&#10;            joined_tables.inscription_1,&#10;            joined_tables.inscription_2,&#10;            joined_tables.inscription_3,&#10;            joined_tables.installation_date,&#10;            joined_tables.manufacturing_date,&#10;            joined_tables.mirror_protruding,&#10;            joined_tables.mirror_red_frame,&#10;            joined_tables.natural_direction_or_left,&#10;            joined_tables.picture,&#10;            joined_tables.usr_sign_1,&#10;            joined_tables.usr_sign_2,&#10;            joined_tables.usr_sign_3,&#10;            joined_tables.azimut,&#10;            joined_tables.offset_x,&#10;            joined_tables.offset_y,&#10;            joined_tables.offset_x_verso,&#10;            joined_tables.offset_y_verso,&#10;            joined_tables.frame_id,&#10;            joined_tables.frame__inserted_date,&#10;            joined_tables.frame__inserted_user,&#10;            joined_tables.frame__last_modified_date,&#10;            joined_tables.frame__last_modified_user,&#10;            joined_tables.frame_anchor,&#10;            joined_tables.frame_comment,&#10;            joined_tables.frame_dimension_1,&#10;            joined_tables.frame_dimension_2,&#10;            joined_tables.frame_double_sided,&#10;            joined_tables.frame_fk_azimut,&#10;            joined_tables.frame_fk_frame_fixing_type,&#10;            joined_tables.frame_fk_frame_type,&#10;            joined_tables.frame_fk_provider,&#10;            joined_tables.frame_fk_status,&#10;            joined_tables.frame_picture,&#10;            joined_tables.frame_rank,&#10;            joined_tables.frame_usr_frame_1,&#10;            joined_tables.frame_usr_frame_2,&#10;            joined_tables.frame_usr_frame_3,&#10;            joined_tables.sign_rank,&#10;            joined_tables.support_id,&#10;            joined_tables.group_by_anchor,&#10;            joined_tables.fk_support_type,&#10;            joined_tables.fk_support_base_type,&#10;            joined_tables.support_geometry,&#10;            joined_tables.directional_sign,&#10;            joined_tables._symbol_value_de,&#10;            joined_tables._symbol_value_fr,&#10;            joined_tables._symbol_value_it,&#10;            joined_tables._symbol_value_ro,&#10;            joined_tables._img_de,&#10;            joined_tables._img_fr,&#10;            joined_tables._img_it,&#10;            joined_tables._img_ro,&#10;            joined_tables._img_de_right,&#10;            joined_tables._img_fr_right,&#10;            joined_tables._img_it_right,&#10;            joined_tables._img_ro_right,&#10;            joined_tables._symbol_height,&#10;            joined_tables._symbol_width,&#10;            joined_tables.azimut AS _azimut_rectified,&#10;            joined_tables.offset_x AS _azimut_offset_x_rectified,&#10;            joined_tables.offset_y AS _azimut_offset_y_rectified,&#10;            joined_tables.natural_direction_or_left AS _natural_direction_or_left_rectified,&#10;            false AS _verso,&#10;            row_number() OVER (PARTITION BY joined_tables.support_id, joined_tables.azimut ORDER BY joined_tables.frame_rank, joined_tables.sign_rank) AS _rank&#10;           FROM joined_tables&#10;          WHERE ((joined_tables.hanging_mode &lt;&gt; &#39;VERSO&#39;::signalo_db.sign_hanging) AND (joined_tables.group_by_anchor IS FALSE))&#10;          ORDER BY joined_tables.support_id, joined_tables.azimut, (row_number() OVER (PARTITION BY joined_tables.support_id, joined_tables.azimut ORDER BY joined_tables.frame_rank, joined_tables.sign_rank))&#10;        ), ordered_recto_signs_grouped_by_anchor AS (&#10;         SELECT joined_tables.id,&#10;            joined_tables._inserted_date,&#10;            joined_tables._inserted_user,&#10;            joined_tables._last_modified_date,&#10;            joined_tables._last_modified_user,&#10;            joined_tables.case_decision,&#10;            joined_tables.case_id,&#10;            joined_tables.comment,&#10;            joined_tables.complex,&#10;            joined_tables.dimension_1,&#10;            joined_tables.dimension_2,&#10;            joined_tables.fk_coating,&#10;            joined_tables.fk_durability,&#10;            joined_tables.fk_lighting,&#10;            joined_tables.fk_marker_type,&#10;            joined_tables.fk_mirror_shape,&#10;            joined_tables.fk_official_sign,&#10;            joined_tables.fk_owner,&#10;            joined_tables.fk_parent,&#10;            joined_tables.fk_provider,&#10;            joined_tables.fk_sign_type,&#10;            joined_tables.fk_status,&#10;            joined_tables.fk_user_sign,&#10;            joined_tables.hanging_mode,&#10;            joined_tables.inscription_1,&#10;            joined_tables.inscription_2,&#10;            joined_tables.inscription_3,&#10;            joined_tables.installation_date,&#10;            joined_tables.manufacturing_date,&#10;            joined_tables.mirror_protruding,&#10;            joined_tables.mirror_red_frame,&#10;            joined_tables.natural_direction_or_left,&#10;            joined_tables.picture,&#10;            joined_tables.usr_sign_1,&#10;            joined_tables.usr_sign_2,&#10;            joined_tables.usr_sign_3,&#10;            joined_tables.azimut,&#10;            joined_tables.offset_x,&#10;            joined_tables.offset_y,&#10;            joined_tables.offset_x_verso,&#10;            joined_tables.offset_y_verso,&#10;            joined_tables.frame_id,&#10;            joined_tables.frame__inserted_date,&#10;            joined_tables.frame__inserted_user,&#10;            joined_tables.frame__last_modified_date,&#10;            joined_tables.frame__last_modified_user,&#10;            joined_tables.frame_anchor,&#10;            joined_tables.frame_comment,&#10;            joined_tables.frame_dimension_1,&#10;            joined_tables.frame_dimension_2,&#10;            joined_tables.frame_double_sided,&#10;            joined_tables.frame_fk_azimut,&#10;            joined_tables.frame_fk_frame_fixing_type,&#10;            joined_tables.frame_fk_frame_type,&#10;            joined_tables.frame_fk_provider,&#10;            joined_tables.frame_fk_status,&#10;            joined_tables.frame_picture,&#10;            joined_tables.frame_rank,&#10;            joined_tables.frame_usr_frame_1,&#10;            joined_tables.frame_usr_frame_2,&#10;            joined_tables.frame_usr_frame_3,&#10;            joined_tables.sign_rank,&#10;            joined_tables.support_id,&#10;            joined_tables.group_by_anchor,&#10;            joined_tables.fk_support_type,&#10;            joined_tables.fk_support_base_type,&#10;            joined_tables.support_geometry,&#10;            joined_tables.directional_sign,&#10;            joined_tables._symbol_value_de,&#10;            joined_tables._symbol_value_fr,&#10;            joined_tables._symbol_value_it,&#10;            joined_tables._symbol_value_ro,&#10;            joined_tables._img_de,&#10;            joined_tables._img_fr,&#10;            joined_tables._img_it,&#10;            joined_tables._img_ro,&#10;            joined_tables._img_de_right,&#10;            joined_tables._img_fr_right,&#10;            joined_tables._img_it_right,&#10;            joined_tables._img_ro_right,&#10;            joined_tables._symbol_height,&#10;            joined_tables._symbol_width,&#10;            joined_tables.azimut AS _azimut_rectified,&#10;            joined_tables.offset_x AS _azimut_offset_x_rectified,&#10;            joined_tables.offset_y AS _azimut_offset_y_rectified,&#10;            joined_tables.natural_direction_or_left AS _natural_direction_or_left_rectified,&#10;            false AS _verso,&#10;            row_number() OVER (PARTITION BY joined_tables.support_id, joined_tables.azimut, joined_tables.frame_anchor ORDER BY joined_tables.frame_rank, joined_tables.sign_rank) AS _rank&#10;           FROM joined_tables&#10;          WHERE ((joined_tables.hanging_mode &lt;&gt; &#39;VERSO&#39;::signalo_db.sign_hanging) AND (joined_tables.group_by_anchor IS TRUE))&#10;          ORDER BY joined_tables.support_id, joined_tables.azimut, joined_tables.frame_anchor, (row_number() OVER (PARTITION BY joined_tables.support_id, joined_tables.azimut, joined_tables.frame_anchor ORDER BY joined_tables.frame_rank, joined_tables.sign_rank))&#10;        ), ordered_verso_signs_not_grouped_by_anchor AS (&#10;         SELECT jt.id,&#10;            jt._inserted_date,&#10;            jt._inserted_user,&#10;            jt._last_modified_date,&#10;            jt._last_modified_user,&#10;            jt.case_decision,&#10;            jt.case_id,&#10;            jt.comment,&#10;            jt.complex,&#10;            jt.dimension_1,&#10;            jt.dimension_2,&#10;            jt.fk_coating,&#10;            jt.fk_durability,&#10;            jt.fk_lighting,&#10;            jt.fk_marker_type,&#10;            jt.fk_mirror_shape,&#10;            jt.fk_official_sign,&#10;            jt.fk_owner,&#10;            jt.fk_parent,&#10;            jt.fk_provider,&#10;            jt.fk_sign_type,&#10;            jt.fk_status,&#10;            jt.fk_user_sign,&#10;            jt.hanging_mode,&#10;            jt.inscription_1,&#10;            jt.inscription_2,&#10;            jt.inscription_3,&#10;            jt.installation_date,&#10;            jt.manufacturing_date,&#10;            jt.mirror_protruding,&#10;            jt.mirror_red_frame,&#10;            jt.natural_direction_or_left,&#10;            jt.picture,&#10;            jt.usr_sign_1,&#10;            jt.usr_sign_2,&#10;            jt.usr_sign_3,&#10;            jt.azimut,&#10;            jt.offset_x,&#10;            jt.offset_y,&#10;            jt.offset_x_verso,&#10;            jt.offset_y_verso,&#10;            jt.frame_id,&#10;            jt.frame__inserted_date,&#10;            jt.frame__inserted_user,&#10;            jt.frame__last_modified_date,&#10;            jt.frame__last_modified_user,&#10;            jt.frame_anchor,&#10;            jt.frame_comment,&#10;            jt.frame_dimension_1,&#10;            jt.frame_dimension_2,&#10;            jt.frame_double_sided,&#10;            jt.frame_fk_azimut,&#10;            jt.frame_fk_frame_fixing_type,&#10;            jt.frame_fk_frame_type,&#10;            jt.frame_fk_provider,&#10;            jt.frame_fk_status,&#10;            jt.frame_picture,&#10;            jt.frame_rank,&#10;            jt.frame_usr_frame_1,&#10;            jt.frame_usr_frame_2,&#10;            jt.frame_usr_frame_3,&#10;            jt.sign_rank,&#10;            jt.support_id,&#10;            jt.group_by_anchor,&#10;            jt.fk_support_type,&#10;            jt.fk_support_base_type,&#10;            jt.support_geometry,&#10;            jt.directional_sign,&#10;            jt._symbol_value_de,&#10;            jt._symbol_value_fr,&#10;            jt._symbol_value_it,&#10;            jt._symbol_value_ro,&#10;            jt._img_de,&#10;            jt._img_fr,&#10;            jt._img_it,&#10;            jt._img_ro,&#10;            jt._img_de_right,&#10;            jt._img_fr_right,&#10;            jt._img_it_right,&#10;            jt._img_ro_right,&#10;            jt._symbol_height,&#10;            jt._symbol_width,&#10;            (jt.azimut + 180) AS _azimut_rectified,&#10;            COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified,&#10;            COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified,&#10;            (NOT jt.natural_direction_or_left) AS _natural_direction_or_left_rectified,&#10;            true AS _verso,&#10;            (1000 + row_number() OVER (PARTITION BY jt.support_id, jt.azimut ORDER BY jt.frame_rank, jt.sign_rank)) AS _rank&#10;           FROM (joined_tables jt&#10;             LEFT JOIN signalo_db.azimut az ON (((az.azimut &#61; ((jt.azimut + 180) % 360)) AND (az.fk_support &#61; jt.support_id))))&#10;          WHERE ((jt.hanging_mode &lt;&gt; &#39;RECTO&#39;::signalo_db.sign_hanging) AND (jt.group_by_anchor IS FALSE))&#10;          ORDER BY jt.support_id, jt.azimut, (1000 + row_number() OVER (PARTITION BY jt.support_id, jt.azimut ORDER BY jt.frame_rank, jt.sign_rank))&#10;        ), ordered_verso_signs_grouped_by_anchor AS (&#10;         SELECT jt.id,&#10;            jt._inserted_date,&#10;            jt._inserted_user,&#10;            jt._last_modified_date,&#10;            jt._last_modified_user,&#10;            jt.case_decision,&#10;            jt.case_id,&#10;            jt.comment,&#10;            jt.complex,&#10;            jt.dimension_1,&#10;            jt.dimension_2,&#10;            jt.fk_coating,&#10;            jt.fk_durability,&#10;            jt.fk_lighting,&#10;            jt.fk_marker_type,&#10;            jt.fk_mirror_shape,&#10;            jt.fk_official_sign,&#10;            jt.fk_owner,&#10;            jt.fk_parent,&#10;            jt.fk_provider,&#10;            jt.fk_sign_type,&#10;            jt.fk_status,&#10;            jt.fk_user_sign,&#10;            jt.hanging_mode,&#10;            jt.inscription_1,&#10;            jt.inscription_2,&#10;            jt.inscription_3,&#10;            jt.installation_date,&#10;            jt.manufacturing_date,&#10;            jt.mirror_protruding,&#10;            jt.mirror_red_frame,&#10;            jt.natural_direction_or_left,&#10;            jt.picture,&#10;            jt.usr_sign_1,&#10;            jt.usr_sign_2,&#10;            jt.usr_sign_3,&#10;            jt.azimut,&#10;            jt.offset_x,&#10;            jt.offset_y,&#10;            jt.offset_x_verso,&#10;            jt.offset_y_verso,&#10;            jt.frame_id,&#10;            jt.frame__inserted_date,&#10;            jt.frame__inserted_user,&#10;            jt.frame__last_modified_date,&#10;            jt.frame__last_modified_user,&#10;            jt.frame_anchor,&#10;            jt.frame_comment,&#10;            jt.frame_dimension_1,&#10;            jt.frame_dimension_2,&#10;            jt.frame_double_sided,&#10;            jt.frame_fk_azimut,&#10;            jt.frame_fk_frame_fixing_type,&#10;            jt.frame_fk_frame_type,&#10;            jt.frame_fk_provider,&#10;            jt.frame_fk_status,&#10;            jt.frame_picture,&#10;            jt.frame_rank,&#10;            jt.frame_usr_frame_1,&#10;            jt.frame_usr_frame_2,&#10;            jt.frame_usr_frame_3,&#10;            jt.sign_rank,&#10;            jt.support_id,&#10;            jt.group_by_anchor,&#10;            jt.fk_support_type,&#10;            jt.fk_support_base_type,&#10;            jt.support_geometry,&#10;            jt.directional_sign,&#10;            jt._symbol_value_de,&#10;            jt._symbol_value_fr,&#10;            jt._symbol_value_it,&#10;            jt._symbol_value_ro,&#10;            jt._img_de,&#10;            jt._img_fr,&#10;            jt._img_it,&#10;            jt._img_ro,&#10;            jt._img_de_right,&#10;            jt._img_fr_right,&#10;            jt._img_it_right,&#10;            jt._img_ro_right,&#10;            jt._symbol_height,&#10;            jt._symbol_width,&#10;            (jt.azimut + 180) AS _azimut_rectified,&#10;            COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified,&#10;            COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified,&#10;            (NOT jt.natural_direction_or_left) AS _natural_direction_or_left_rectified,&#10;            true AS _verso,&#10;            (1000 + row_number() OVER (PARTITION BY jt.support_id, jt.azimut, jt.frame_anchor ORDER BY jt.frame_rank, jt.sign_rank)) AS _rank&#10;           FROM (joined_tables jt&#10;             LEFT JOIN signalo_db.azimut az ON (((az.azimut &#61; ((jt.azimut + 180) % 360)) AND (az.fk_support &#61; jt.support_id))))&#10;          WHERE ((jt.hanging_mode &lt;&gt; &#39;RECTO&#39;::signalo_db.sign_hanging) AND (jt.group_by_anchor IS TRUE))&#10;          ORDER BY jt.support_id, jt.azimut, jt.frame_anchor, (1000 + row_number() OVER (PARTITION BY jt.support_id, jt.azimut, jt.frame_anchor ORDER BY jt.frame_rank, jt.sign_rank))&#10;        ), ordered_signs_not_grouped_by_anchor AS (&#10;         SELECT ordered_recto_signs_not_grouped_by_anchor.id,&#10;            ordered_recto_signs_not_grouped_by_anchor._inserted_date,&#10;            ordered_recto_signs_not_grouped_by_anchor._inserted_user,&#10;            ordered_recto_signs_not_grouped_by_anchor._last_modified_date,&#10;            ordered_recto_signs_not_grouped_by_anchor._last_modified_user,&#10;            ordered_recto_signs_not_grouped_by_anchor.case_decision,&#10;            ordered_recto_signs_not_grouped_by_anchor.case_id,&#10;            ordered_recto_signs_not_grouped_by_anchor.comment,&#10;            ordered_recto_signs_not_grouped_by_anchor.complex,&#10;            ordered_recto_signs_not_grouped_by_anchor.dimension_1,&#10;            ordered_recto_signs_not_grouped_by_anchor.dimension_2,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_coating,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_durability,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_lighting,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_marker_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_official_sign,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_owner,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_parent,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_provider,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_sign_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_status,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_user_sign,&#10;            ordered_recto_signs_not_grouped_by_anchor.hanging_mode,&#10;            ordered_recto_signs_not_grouped_by_anchor.inscription_1,&#10;            ordered_recto_signs_not_grouped_by_anchor.inscription_2,&#10;            ordered_recto_signs_not_grouped_by_anchor.inscription_3,&#10;            ordered_recto_signs_not_grouped_by_anchor.installation_date,&#10;            ordered_recto_signs_not_grouped_by_anchor.manufacturing_date,&#10;            ordered_recto_signs_not_grouped_by_anchor.mirror_protruding,&#10;            ordered_recto_signs_not_grouped_by_anchor.mirror_red_frame,&#10;            ordered_recto_signs_not_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_recto_signs_not_grouped_by_anchor.picture,&#10;            ordered_recto_signs_not_grouped_by_anchor.usr_sign_1,&#10;            ordered_recto_signs_not_grouped_by_anchor.usr_sign_2,&#10;            ordered_recto_signs_not_grouped_by_anchor.usr_sign_3,&#10;            ordered_recto_signs_not_grouped_by_anchor.azimut,&#10;            ordered_recto_signs_not_grouped_by_anchor.offset_x,&#10;            ordered_recto_signs_not_grouped_by_anchor.offset_y,&#10;            ordered_recto_signs_not_grouped_by_anchor.offset_x_verso,&#10;            ordered_recto_signs_not_grouped_by_anchor.offset_y_verso,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_id,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame__inserted_date,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame__inserted_user,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_anchor,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_comment,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_dimension_1,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_dimension_2,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_double_sided,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_fk_provider,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_fk_status,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_picture,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_rank,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_recto_signs_not_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_recto_signs_not_grouped_by_anchor.sign_rank,&#10;            ordered_recto_signs_not_grouped_by_anchor.support_id,&#10;            ordered_recto_signs_not_grouped_by_anchor.group_by_anchor,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_support_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.fk_support_base_type,&#10;            ordered_recto_signs_not_grouped_by_anchor.support_geometry,&#10;            ordered_recto_signs_not_grouped_by_anchor.directional_sign,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_value_de,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_value_fr,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_value_it,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_value_ro,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_de,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_fr,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_it,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_ro,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_de_right,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_fr_right,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_it_right,&#10;            ordered_recto_signs_not_grouped_by_anchor._img_ro_right,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_height,&#10;            ordered_recto_signs_not_grouped_by_anchor._symbol_width,&#10;            ordered_recto_signs_not_grouped_by_anchor._azimut_rectified,&#10;            ordered_recto_signs_not_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_recto_signs_not_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_recto_signs_not_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_recto_signs_not_grouped_by_anchor._verso,&#10;            ordered_recto_signs_not_grouped_by_anchor._rank&#10;           FROM ordered_recto_signs_not_grouped_by_anchor&#10;        UNION&#10;         SELECT ordered_verso_signs_not_grouped_by_anchor.id,&#10;            ordered_verso_signs_not_grouped_by_anchor._inserted_date,&#10;            ordered_verso_signs_not_grouped_by_anchor._inserted_user,&#10;            ordered_verso_signs_not_grouped_by_anchor._last_modified_date,&#10;            ordered_verso_signs_not_grouped_by_anchor._last_modified_user,&#10;            ordered_verso_signs_not_grouped_by_anchor.case_decision,&#10;            ordered_verso_signs_not_grouped_by_anchor.case_id,&#10;            ordered_verso_signs_not_grouped_by_anchor.comment,&#10;            ordered_verso_signs_not_grouped_by_anchor.complex,&#10;            ordered_verso_signs_not_grouped_by_anchor.dimension_1,&#10;            ordered_verso_signs_not_grouped_by_anchor.dimension_2,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_coating,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_durability,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_lighting,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_marker_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_official_sign,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_owner,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_parent,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_provider,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_sign_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_status,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_user_sign,&#10;            ordered_verso_signs_not_grouped_by_anchor.hanging_mode,&#10;            ordered_verso_signs_not_grouped_by_anchor.inscription_1,&#10;            ordered_verso_signs_not_grouped_by_anchor.inscription_2,&#10;            ordered_verso_signs_not_grouped_by_anchor.inscription_3,&#10;            ordered_verso_signs_not_grouped_by_anchor.installation_date,&#10;            ordered_verso_signs_not_grouped_by_anchor.manufacturing_date,&#10;            ordered_verso_signs_not_grouped_by_anchor.mirror_protruding,&#10;            ordered_verso_signs_not_grouped_by_anchor.mirror_red_frame,&#10;            ordered_verso_signs_not_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_verso_signs_not_grouped_by_anchor.picture,&#10;            ordered_verso_signs_not_grouped_by_anchor.usr_sign_1,&#10;            ordered_verso_signs_not_grouped_by_anchor.usr_sign_2,&#10;            ordered_verso_signs_not_grouped_by_anchor.usr_sign_3,&#10;            ordered_verso_signs_not_grouped_by_anchor.azimut,&#10;            ordered_verso_signs_not_grouped_by_anchor.offset_x,&#10;            ordered_verso_signs_not_grouped_by_anchor.offset_y,&#10;            ordered_verso_signs_not_grouped_by_anchor.offset_x_verso,&#10;            ordered_verso_signs_not_grouped_by_anchor.offset_y_verso,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_id,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame__inserted_date,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame__inserted_user,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_anchor,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_comment,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_dimension_1,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_dimension_2,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_double_sided,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_fk_provider,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_fk_status,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_picture,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_rank,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_verso_signs_not_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_verso_signs_not_grouped_by_anchor.sign_rank,&#10;            ordered_verso_signs_not_grouped_by_anchor.support_id,&#10;            ordered_verso_signs_not_grouped_by_anchor.group_by_anchor,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_support_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.fk_support_base_type,&#10;            ordered_verso_signs_not_grouped_by_anchor.support_geometry,&#10;            ordered_verso_signs_not_grouped_by_anchor.directional_sign,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_value_de,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_value_fr,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_value_it,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_value_ro,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_de,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_fr,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_it,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_ro,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_de_right,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_fr_right,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_it_right,&#10;            ordered_verso_signs_not_grouped_by_anchor._img_ro_right,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_height,&#10;            ordered_verso_signs_not_grouped_by_anchor._symbol_width,&#10;            ordered_verso_signs_not_grouped_by_anchor._azimut_rectified,&#10;            ordered_verso_signs_not_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_verso_signs_not_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_verso_signs_not_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_verso_signs_not_grouped_by_anchor._verso,&#10;            ordered_verso_signs_not_grouped_by_anchor._rank&#10;           FROM ordered_verso_signs_not_grouped_by_anchor&#10;        ), ordered_signs_grouped_by_anchor AS (&#10;         SELECT ordered_recto_signs_grouped_by_anchor.id,&#10;            ordered_recto_signs_grouped_by_anchor._inserted_date,&#10;            ordered_recto_signs_grouped_by_anchor._inserted_user,&#10;            ordered_recto_signs_grouped_by_anchor._last_modified_date,&#10;            ordered_recto_signs_grouped_by_anchor._last_modified_user,&#10;            ordered_recto_signs_grouped_by_anchor.case_decision,&#10;            ordered_recto_signs_grouped_by_anchor.case_id,&#10;            ordered_recto_signs_grouped_by_anchor.comment,&#10;            ordered_recto_signs_grouped_by_anchor.complex,&#10;            ordered_recto_signs_grouped_by_anchor.dimension_1,&#10;            ordered_recto_signs_grouped_by_anchor.dimension_2,&#10;            ordered_recto_signs_grouped_by_anchor.fk_coating,&#10;            ordered_recto_signs_grouped_by_anchor.fk_durability,&#10;            ordered_recto_signs_grouped_by_anchor.fk_lighting,&#10;            ordered_recto_signs_grouped_by_anchor.fk_marker_type,&#10;            ordered_recto_signs_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_recto_signs_grouped_by_anchor.fk_official_sign,&#10;            ordered_recto_signs_grouped_by_anchor.fk_owner,&#10;            ordered_recto_signs_grouped_by_anchor.fk_parent,&#10;            ordered_recto_signs_grouped_by_anchor.fk_provider,&#10;            ordered_recto_signs_grouped_by_anchor.fk_sign_type,&#10;            ordered_recto_signs_grouped_by_anchor.fk_status,&#10;            ordered_recto_signs_grouped_by_anchor.fk_user_sign,&#10;            ordered_recto_signs_grouped_by_anchor.hanging_mode,&#10;            ordered_recto_signs_grouped_by_anchor.inscription_1,&#10;            ordered_recto_signs_grouped_by_anchor.inscription_2,&#10;            ordered_recto_signs_grouped_by_anchor.inscription_3,&#10;            ordered_recto_signs_grouped_by_anchor.installation_date,&#10;            ordered_recto_signs_grouped_by_anchor.manufacturing_date,&#10;            ordered_recto_signs_grouped_by_anchor.mirror_protruding,&#10;            ordered_recto_signs_grouped_by_anchor.mirror_red_frame,&#10;            ordered_recto_signs_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_recto_signs_grouped_by_anchor.picture,&#10;            ordered_recto_signs_grouped_by_anchor.usr_sign_1,&#10;            ordered_recto_signs_grouped_by_anchor.usr_sign_2,&#10;            ordered_recto_signs_grouped_by_anchor.usr_sign_3,&#10;            ordered_recto_signs_grouped_by_anchor.azimut,&#10;            ordered_recto_signs_grouped_by_anchor.offset_x,&#10;            ordered_recto_signs_grouped_by_anchor.offset_y,&#10;            ordered_recto_signs_grouped_by_anchor.offset_x_verso,&#10;            ordered_recto_signs_grouped_by_anchor.offset_y_verso,&#10;            ordered_recto_signs_grouped_by_anchor.frame_id,&#10;            ordered_recto_signs_grouped_by_anchor.frame__inserted_date,&#10;            ordered_recto_signs_grouped_by_anchor.frame__inserted_user,&#10;            ordered_recto_signs_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_recto_signs_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_recto_signs_grouped_by_anchor.frame_anchor,&#10;            ordered_recto_signs_grouped_by_anchor.frame_comment,&#10;            ordered_recto_signs_grouped_by_anchor.frame_dimension_1,&#10;            ordered_recto_signs_grouped_by_anchor.frame_dimension_2,&#10;            ordered_recto_signs_grouped_by_anchor.frame_double_sided,&#10;            ordered_recto_signs_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_recto_signs_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_recto_signs_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_recto_signs_grouped_by_anchor.frame_fk_provider,&#10;            ordered_recto_signs_grouped_by_anchor.frame_fk_status,&#10;            ordered_recto_signs_grouped_by_anchor.frame_picture,&#10;            ordered_recto_signs_grouped_by_anchor.frame_rank,&#10;            ordered_recto_signs_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_recto_signs_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_recto_signs_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_recto_signs_grouped_by_anchor.sign_rank,&#10;            ordered_recto_signs_grouped_by_anchor.support_id,&#10;            ordered_recto_signs_grouped_by_anchor.group_by_anchor,&#10;            ordered_recto_signs_grouped_by_anchor.fk_support_type,&#10;            ordered_recto_signs_grouped_by_anchor.fk_support_base_type,&#10;            ordered_recto_signs_grouped_by_anchor.support_geometry,&#10;            ordered_recto_signs_grouped_by_anchor.directional_sign,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_value_de,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_value_fr,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_value_it,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_value_ro,&#10;            ordered_recto_signs_grouped_by_anchor._img_de,&#10;            ordered_recto_signs_grouped_by_anchor._img_fr,&#10;            ordered_recto_signs_grouped_by_anchor._img_it,&#10;            ordered_recto_signs_grouped_by_anchor._img_ro,&#10;            ordered_recto_signs_grouped_by_anchor._img_de_right,&#10;            ordered_recto_signs_grouped_by_anchor._img_fr_right,&#10;            ordered_recto_signs_grouped_by_anchor._img_it_right,&#10;            ordered_recto_signs_grouped_by_anchor._img_ro_right,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_height,&#10;            ordered_recto_signs_grouped_by_anchor._symbol_width,&#10;            ordered_recto_signs_grouped_by_anchor._azimut_rectified,&#10;            ordered_recto_signs_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_recto_signs_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_recto_signs_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_recto_signs_grouped_by_anchor._verso,&#10;            ordered_recto_signs_grouped_by_anchor._rank&#10;           FROM ordered_recto_signs_grouped_by_anchor&#10;        UNION&#10;         SELECT ordered_verso_signs_grouped_by_anchor.id,&#10;            ordered_verso_signs_grouped_by_anchor._inserted_date,&#10;            ordered_verso_signs_grouped_by_anchor._inserted_user,&#10;            ordered_verso_signs_grouped_by_anchor._last_modified_date,&#10;            ordered_verso_signs_grouped_by_anchor._last_modified_user,&#10;            ordered_verso_signs_grouped_by_anchor.case_decision,&#10;            ordered_verso_signs_grouped_by_anchor.case_id,&#10;            ordered_verso_signs_grouped_by_anchor.comment,&#10;            ordered_verso_signs_grouped_by_anchor.complex,&#10;            ordered_verso_signs_grouped_by_anchor.dimension_1,&#10;            ordered_verso_signs_grouped_by_anchor.dimension_2,&#10;            ordered_verso_signs_grouped_by_anchor.fk_coating,&#10;            ordered_verso_signs_grouped_by_anchor.fk_durability,&#10;            ordered_verso_signs_grouped_by_anchor.fk_lighting,&#10;            ordered_verso_signs_grouped_by_anchor.fk_marker_type,&#10;            ordered_verso_signs_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_verso_signs_grouped_by_anchor.fk_official_sign,&#10;            ordered_verso_signs_grouped_by_anchor.fk_owner,&#10;            ordered_verso_signs_grouped_by_anchor.fk_parent,&#10;            ordered_verso_signs_grouped_by_anchor.fk_provider,&#10;            ordered_verso_signs_grouped_by_anchor.fk_sign_type,&#10;            ordered_verso_signs_grouped_by_anchor.fk_status,&#10;            ordered_verso_signs_grouped_by_anchor.fk_user_sign,&#10;            ordered_verso_signs_grouped_by_anchor.hanging_mode,&#10;            ordered_verso_signs_grouped_by_anchor.inscription_1,&#10;            ordered_verso_signs_grouped_by_anchor.inscription_2,&#10;            ordered_verso_signs_grouped_by_anchor.inscription_3,&#10;            ordered_verso_signs_grouped_by_anchor.installation_date,&#10;            ordered_verso_signs_grouped_by_anchor.manufacturing_date,&#10;            ordered_verso_signs_grouped_by_anchor.mirror_protruding,&#10;            ordered_verso_signs_grouped_by_anchor.mirror_red_frame,&#10;            ordered_verso_signs_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_verso_signs_grouped_by_anchor.picture,&#10;            ordered_verso_signs_grouped_by_anchor.usr_sign_1,&#10;            ordered_verso_signs_grouped_by_anchor.usr_sign_2,&#10;            ordered_verso_signs_grouped_by_anchor.usr_sign_3,&#10;            ordered_verso_signs_grouped_by_anchor.azimut,&#10;            ordered_verso_signs_grouped_by_anchor.offset_x,&#10;            ordered_verso_signs_grouped_by_anchor.offset_y,&#10;            ordered_verso_signs_grouped_by_anchor.offset_x_verso,&#10;            ordered_verso_signs_grouped_by_anchor.offset_y_verso,&#10;            ordered_verso_signs_grouped_by_anchor.frame_id,&#10;            ordered_verso_signs_grouped_by_anchor.frame__inserted_date,&#10;            ordered_verso_signs_grouped_by_anchor.frame__inserted_user,&#10;            ordered_verso_signs_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_verso_signs_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_verso_signs_grouped_by_anchor.frame_anchor,&#10;            ordered_verso_signs_grouped_by_anchor.frame_comment,&#10;            ordered_verso_signs_grouped_by_anchor.frame_dimension_1,&#10;            ordered_verso_signs_grouped_by_anchor.frame_dimension_2,&#10;            ordered_verso_signs_grouped_by_anchor.frame_double_sided,&#10;            ordered_verso_signs_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_verso_signs_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_verso_signs_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_verso_signs_grouped_by_anchor.frame_fk_provider,&#10;            ordered_verso_signs_grouped_by_anchor.frame_fk_status,&#10;            ordered_verso_signs_grouped_by_anchor.frame_picture,&#10;            ordered_verso_signs_grouped_by_anchor.frame_rank,&#10;            ordered_verso_signs_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_verso_signs_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_verso_signs_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_verso_signs_grouped_by_anchor.sign_rank,&#10;            ordered_verso_signs_grouped_by_anchor.support_id,&#10;            ordered_verso_signs_grouped_by_anchor.group_by_anchor,&#10;            ordered_verso_signs_grouped_by_anchor.fk_support_type,&#10;            ordered_verso_signs_grouped_by_anchor.fk_support_base_type,&#10;            ordered_verso_signs_grouped_by_anchor.support_geometry,&#10;            ordered_verso_signs_grouped_by_anchor.directional_sign,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_value_de,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_value_fr,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_value_it,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_value_ro,&#10;            ordered_verso_signs_grouped_by_anchor._img_de,&#10;            ordered_verso_signs_grouped_by_anchor._img_fr,&#10;            ordered_verso_signs_grouped_by_anchor._img_it,&#10;            ordered_verso_signs_grouped_by_anchor._img_ro,&#10;            ordered_verso_signs_grouped_by_anchor._img_de_right,&#10;            ordered_verso_signs_grouped_by_anchor._img_fr_right,&#10;            ordered_verso_signs_grouped_by_anchor._img_it_right,&#10;            ordered_verso_signs_grouped_by_anchor._img_ro_right,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_height,&#10;            ordered_verso_signs_grouped_by_anchor._symbol_width,&#10;            ordered_verso_signs_grouped_by_anchor._azimut_rectified,&#10;            ordered_verso_signs_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_verso_signs_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_verso_signs_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_verso_signs_grouped_by_anchor._verso,&#10;            ordered_verso_signs_grouped_by_anchor._rank&#10;           FROM ordered_verso_signs_grouped_by_anchor&#10;        ), ordered_shifted_signs_not_grouped_by_anchor AS (&#10;         SELECT ordered_signs_not_grouped_by_anchor.id,&#10;            ordered_signs_not_grouped_by_anchor._inserted_date,&#10;            ordered_signs_not_grouped_by_anchor._inserted_user,&#10;            ordered_signs_not_grouped_by_anchor._last_modified_date,&#10;            ordered_signs_not_grouped_by_anchor._last_modified_user,&#10;            ordered_signs_not_grouped_by_anchor.case_decision,&#10;            ordered_signs_not_grouped_by_anchor.case_id,&#10;            ordered_signs_not_grouped_by_anchor.comment,&#10;            ordered_signs_not_grouped_by_anchor.complex,&#10;            ordered_signs_not_grouped_by_anchor.dimension_1,&#10;            ordered_signs_not_grouped_by_anchor.dimension_2,&#10;            ordered_signs_not_grouped_by_anchor.fk_coating,&#10;            ordered_signs_not_grouped_by_anchor.fk_durability,&#10;            ordered_signs_not_grouped_by_anchor.fk_lighting,&#10;            ordered_signs_not_grouped_by_anchor.fk_marker_type,&#10;            ordered_signs_not_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_signs_not_grouped_by_anchor.fk_official_sign,&#10;            ordered_signs_not_grouped_by_anchor.fk_owner,&#10;            ordered_signs_not_grouped_by_anchor.fk_parent,&#10;            ordered_signs_not_grouped_by_anchor.fk_provider,&#10;            ordered_signs_not_grouped_by_anchor.fk_sign_type,&#10;            ordered_signs_not_grouped_by_anchor.fk_status,&#10;            ordered_signs_not_grouped_by_anchor.fk_user_sign,&#10;            ordered_signs_not_grouped_by_anchor.hanging_mode,&#10;            ordered_signs_not_grouped_by_anchor.inscription_1,&#10;            ordered_signs_not_grouped_by_anchor.inscription_2,&#10;            ordered_signs_not_grouped_by_anchor.inscription_3,&#10;            ordered_signs_not_grouped_by_anchor.installation_date,&#10;            ordered_signs_not_grouped_by_anchor.manufacturing_date,&#10;            ordered_signs_not_grouped_by_anchor.mirror_protruding,&#10;            ordered_signs_not_grouped_by_anchor.mirror_red_frame,&#10;            ordered_signs_not_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_signs_not_grouped_by_anchor.picture,&#10;            ordered_signs_not_grouped_by_anchor.usr_sign_1,&#10;            ordered_signs_not_grouped_by_anchor.usr_sign_2,&#10;            ordered_signs_not_grouped_by_anchor.usr_sign_3,&#10;            ordered_signs_not_grouped_by_anchor.azimut,&#10;            ordered_signs_not_grouped_by_anchor.offset_x,&#10;            ordered_signs_not_grouped_by_anchor.offset_y,&#10;            ordered_signs_not_grouped_by_anchor.offset_x_verso,&#10;            ordered_signs_not_grouped_by_anchor.offset_y_verso,&#10;            ordered_signs_not_grouped_by_anchor.frame_id,&#10;            ordered_signs_not_grouped_by_anchor.frame__inserted_date,&#10;            ordered_signs_not_grouped_by_anchor.frame__inserted_user,&#10;            ordered_signs_not_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_signs_not_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_signs_not_grouped_by_anchor.frame_anchor,&#10;            ordered_signs_not_grouped_by_anchor.frame_comment,&#10;            ordered_signs_not_grouped_by_anchor.frame_dimension_1,&#10;            ordered_signs_not_grouped_by_anchor.frame_dimension_2,&#10;            ordered_signs_not_grouped_by_anchor.frame_double_sided,&#10;            ordered_signs_not_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_signs_not_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_signs_not_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_signs_not_grouped_by_anchor.frame_fk_provider,&#10;            ordered_signs_not_grouped_by_anchor.frame_fk_status,&#10;            ordered_signs_not_grouped_by_anchor.frame_picture,&#10;            ordered_signs_not_grouped_by_anchor.frame_rank,&#10;            ordered_signs_not_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_signs_not_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_signs_not_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_signs_not_grouped_by_anchor.sign_rank,&#10;            ordered_signs_not_grouped_by_anchor.support_id,&#10;            ordered_signs_not_grouped_by_anchor.group_by_anchor,&#10;            ordered_signs_not_grouped_by_anchor.fk_support_type,&#10;            ordered_signs_not_grouped_by_anchor.fk_support_base_type,&#10;            ordered_signs_not_grouped_by_anchor.support_geometry,&#10;            ordered_signs_not_grouped_by_anchor.directional_sign,&#10;            ordered_signs_not_grouped_by_anchor._symbol_value_de,&#10;            ordered_signs_not_grouped_by_anchor._symbol_value_fr,&#10;            ordered_signs_not_grouped_by_anchor._symbol_value_it,&#10;            ordered_signs_not_grouped_by_anchor._symbol_value_ro,&#10;            ordered_signs_not_grouped_by_anchor._img_de,&#10;            ordered_signs_not_grouped_by_anchor._img_fr,&#10;            ordered_signs_not_grouped_by_anchor._img_it,&#10;            ordered_signs_not_grouped_by_anchor._img_ro,&#10;            ordered_signs_not_grouped_by_anchor._img_de_right,&#10;            ordered_signs_not_grouped_by_anchor._img_fr_right,&#10;            ordered_signs_not_grouped_by_anchor._img_it_right,&#10;            ordered_signs_not_grouped_by_anchor._img_ro_right,&#10;            ordered_signs_not_grouped_by_anchor._symbol_height,&#10;            ordered_signs_not_grouped_by_anchor._symbol_width,&#10;            ordered_signs_not_grouped_by_anchor._azimut_rectified,&#10;            ordered_signs_not_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_signs_not_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_signs_not_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_signs_not_grouped_by_anchor._verso,&#10;            ordered_signs_not_grouped_by_anchor._rank,&#10;            row_number() OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified ORDER BY ordered_signs_not_grouped_by_anchor._rank) AS _final_rank,&#10;            COALESCE(sum(ordered_signs_not_grouped_by_anchor._symbol_height) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING), (0)::bigint) AS _symbol_shift,&#10;            COALESCE(sum(ordered_signs_not_grouped_by_anchor._symbol_height) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified), (0)::bigint) AS _group_height,&#10;            max(ordered_signs_not_grouped_by_anchor._symbol_width) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified) AS _group_width,&#10;            NULLIF(first_value(ordered_signs_not_grouped_by_anchor.id) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified, ordered_signs_not_grouped_by_anchor.frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW), ordered_signs_not_grouped_by_anchor.id) AS _previous_sign_in_frame,&#10;            NULLIF(last_value(ordered_signs_not_grouped_by_anchor.id) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified, ordered_signs_not_grouped_by_anchor.frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING), ordered_signs_not_grouped_by_anchor.id) AS _next_sign_in_frame,&#10;            NULLIF(first_value(ordered_signs_not_grouped_by_anchor.frame_id) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified ROWS BETWEEN 1 PRECEDING AND CURRENT ROW), ordered_signs_not_grouped_by_anchor.frame_id) AS _previous_frame,&#10;            NULLIF(last_value(ordered_signs_not_grouped_by_anchor.frame_id) OVER (PARTITION BY ordered_signs_not_grouped_by_anchor.support_id, ordered_signs_not_grouped_by_anchor._azimut_rectified ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING), ordered_signs_not_grouped_by_anchor.frame_id) AS _next_frame&#10;           FROM ordered_signs_not_grouped_by_anchor&#10;        ), ordered_shifted_signs_grouped_by_anchor AS (&#10;         SELECT ordered_signs_grouped_by_anchor.id,&#10;            ordered_signs_grouped_by_anchor._inserted_date,&#10;            ordered_signs_grouped_by_anchor._inserted_user,&#10;            ordered_signs_grouped_by_anchor._last_modified_date,&#10;            ordered_signs_grouped_by_anchor._last_modified_user,&#10;            ordered_signs_grouped_by_anchor.case_decision,&#10;            ordered_signs_grouped_by_anchor.case_id,&#10;            ordered_signs_grouped_by_anchor.comment,&#10;            ordered_signs_grouped_by_anchor.complex,&#10;            ordered_signs_grouped_by_anchor.dimension_1,&#10;            ordered_signs_grouped_by_anchor.dimension_2,&#10;            ordered_signs_grouped_by_anchor.fk_coating,&#10;            ordered_signs_grouped_by_anchor.fk_durability,&#10;            ordered_signs_grouped_by_anchor.fk_lighting,&#10;            ordered_signs_grouped_by_anchor.fk_marker_type,&#10;            ordered_signs_grouped_by_anchor.fk_mirror_shape,&#10;            ordered_signs_grouped_by_anchor.fk_official_sign,&#10;            ordered_signs_grouped_by_anchor.fk_owner,&#10;            ordered_signs_grouped_by_anchor.fk_parent,&#10;            ordered_signs_grouped_by_anchor.fk_provider,&#10;            ordered_signs_grouped_by_anchor.fk_sign_type,&#10;            ordered_signs_grouped_by_anchor.fk_status,&#10;            ordered_signs_grouped_by_anchor.fk_user_sign,&#10;            ordered_signs_grouped_by_anchor.hanging_mode,&#10;            ordered_signs_grouped_by_anchor.inscription_1,&#10;            ordered_signs_grouped_by_anchor.inscription_2,&#10;            ordered_signs_grouped_by_anchor.inscription_3,&#10;            ordered_signs_grouped_by_anchor.installation_date,&#10;            ordered_signs_grouped_by_anchor.manufacturing_date,&#10;            ordered_signs_grouped_by_anchor.mirror_protruding,&#10;            ordered_signs_grouped_by_anchor.mirror_red_frame,&#10;            ordered_signs_grouped_by_anchor.natural_direction_or_left,&#10;            ordered_signs_grouped_by_anchor.picture,&#10;            ordered_signs_grouped_by_anchor.usr_sign_1,&#10;            ordered_signs_grouped_by_anchor.usr_sign_2,&#10;            ordered_signs_grouped_by_anchor.usr_sign_3,&#10;            ordered_signs_grouped_by_anchor.azimut,&#10;            ordered_signs_grouped_by_anchor.offset_x,&#10;            ordered_signs_grouped_by_anchor.offset_y,&#10;            ordered_signs_grouped_by_anchor.offset_x_verso,&#10;            ordered_signs_grouped_by_anchor.offset_y_verso,&#10;            ordered_signs_grouped_by_anchor.frame_id,&#10;            ordered_signs_grouped_by_anchor.frame__inserted_date,&#10;            ordered_signs_grouped_by_anchor.frame__inserted_user,&#10;            ordered_signs_grouped_by_anchor.frame__last_modified_date,&#10;            ordered_signs_grouped_by_anchor.frame__last_modified_user,&#10;            ordered_signs_grouped_by_anchor.frame_anchor,&#10;            ordered_signs_grouped_by_anchor.frame_comment,&#10;            ordered_signs_grouped_by_anchor.frame_dimension_1,&#10;            ordered_signs_grouped_by_anchor.frame_dimension_2,&#10;            ordered_signs_grouped_by_anchor.frame_double_sided,&#10;            ordered_signs_grouped_by_anchor.frame_fk_azimut,&#10;            ordered_signs_grouped_by_anchor.frame_fk_frame_fixing_type,&#10;            ordered_signs_grouped_by_anchor.frame_fk_frame_type,&#10;            ordered_signs_grouped_by_anchor.frame_fk_provider,&#10;            ordered_signs_grouped_by_anchor.frame_fk_status,&#10;            ordered_signs_grouped_by_anchor.frame_picture,&#10;            ordered_signs_grouped_by_anchor.frame_rank,&#10;            ordered_signs_grouped_by_anchor.frame_usr_frame_1,&#10;            ordered_signs_grouped_by_anchor.frame_usr_frame_2,&#10;            ordered_signs_grouped_by_anchor.frame_usr_frame_3,&#10;            ordered_signs_grouped_by_anchor.sign_rank,&#10;            ordered_signs_grouped_by_anchor.support_id,&#10;            ordered_signs_grouped_by_anchor.group_by_anchor,&#10;            ordered_signs_grouped_by_anchor.fk_support_type,&#10;            ordered_signs_grouped_by_anchor.fk_support_base_type,&#10;            ordered_signs_grouped_by_anchor.support_geometry,&#10;            ordered_signs_grouped_by_anchor.directional_sign,&#10;            ordered_signs_grouped_by_anchor._symbol_value_de,&#10;            ordered_signs_grouped_by_anchor._symbol_value_fr,&#10;            ordered_signs_grouped_by_anchor._symbol_value_it,&#10;            ordered_signs_grouped_by_anchor._symbol_value_ro,&#10;            ordered_signs_grouped_by_anchor._img_de,&#10;            ordered_signs_grouped_by_anchor._img_fr,&#10;            ordered_signs_grouped_by_anchor._img_it,&#10;            ordered_signs_grouped_by_anchor._img_ro,&#10;            ordered_signs_grouped_by_anchor._img_de_right,&#10;            ordered_signs_grouped_by_anchor._img_fr_right,&#10;            ordered_signs_grouped_by_anchor._img_it_right,&#10;            ordered_signs_grouped_by_anchor._img_ro_right,&#10;            ordered_signs_grouped_by_anchor._symbol_height,&#10;            ordered_signs_grouped_by_anchor._symbol_width,&#10;            ordered_signs_grouped_by_anchor._azimut_rectified,&#10;            ordered_signs_grouped_by_anchor._azimut_offset_x_rectified,&#10;            ordered_signs_grouped_by_anchor._azimut_offset_y_rectified,&#10;            ordered_signs_grouped_by_anchor._natural_direction_or_left_rectified,&#10;            ordered_signs_grouped_by_anchor._verso,&#10;            ordered_signs_grouped_by_anchor._rank,&#10;            row_number() OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor ORDER BY ordered_signs_grouped_by_anchor._rank) AS _final_rank,&#10;            COALESCE(sum(ordered_signs_grouped_by_anchor._symbol_height) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor ROWS BETWEEN UNBOUNDED PRECEDING AND 1 PRECEDING), (0)::bigint) AS _symbol_shift,&#10;            COALESCE(sum(ordered_signs_grouped_by_anchor._symbol_height) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor), (0)::bigint) AS _group_height,&#10;            max(ordered_signs_grouped_by_anchor._symbol_width) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor) AS _group_width,&#10;            NULLIF(first_value(ordered_signs_grouped_by_anchor.id) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor, ordered_signs_grouped_by_anchor.frame_rank ROWS BETWEEN 1 PRECEDING AND CURRENT ROW), ordered_signs_grouped_by_anchor.id) AS _previous_sign_in_frame,&#10;            NULLIF(last_value(ordered_signs_grouped_by_anchor.id) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor, ordered_signs_grouped_by_anchor.frame_rank ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING), ordered_signs_grouped_by_anchor.id) AS _next_sign_in_frame,&#10;            NULLIF(first_value(ordered_signs_grouped_by_anchor.frame_id) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor ROWS BETWEEN 1 PRECEDING AND CURRENT ROW), ordered_signs_grouped_by_anchor.frame_id) AS _previous_frame,&#10;            NULLIF(last_value(ordered_signs_grouped_by_anchor.frame_id) OVER (PARTITION BY ordered_signs_grouped_by_anchor.support_id, ordered_signs_grouped_by_anchor._azimut_rectified, ordered_signs_grouped_by_anchor.frame_anchor ROWS BETWEEN CURRENT ROW AND 1 FOLLOWING), ordered_signs_grouped_by_anchor.frame_id) AS _next_frame&#10;           FROM ordered_signs_grouped_by_anchor&#10;        ), union_view AS (&#10;         SELECT ossng.id,&#10;            ossng._inserted_date,&#10;            ossng._inserted_user,&#10;            ossng._last_modified_date,&#10;            ossng._last_modified_user,&#10;            ossng.case_decision,&#10;            ossng.case_id,&#10;            ossng.comment,&#10;            ossng.complex,&#10;            ossng.dimension_1,&#10;            ossng.dimension_2,&#10;            ossng.fk_coating,&#10;            ossng.fk_durability,&#10;            ossng.fk_lighting,&#10;            ossng.fk_marker_type,&#10;            ossng.fk_mirror_shape,&#10;            ossng.fk_official_sign,&#10;            ossng.fk_owner,&#10;            ossng.fk_parent,&#10;            ossng.fk_provider,&#10;            ossng.fk_sign_type,&#10;            ossng.fk_status,&#10;            ossng.fk_user_sign,&#10;            ossng.hanging_mode,&#10;            ossng.inscription_1,&#10;            ossng.inscription_2,&#10;            ossng.inscription_3,&#10;            ossng.installation_date,&#10;            ossng.manufacturing_date,&#10;            ossng.mirror_protruding,&#10;            ossng.mirror_red_frame,&#10;            ossng.natural_direction_or_left,&#10;            ossng.picture,&#10;            ossng.usr_sign_1,&#10;            ossng.usr_sign_2,&#10;            ossng.usr_sign_3,&#10;            ossng.azimut,&#10;            ossng.offset_x,&#10;            ossng.offset_y,&#10;            ossng.offset_x_verso,&#10;            ossng.offset_y_verso,&#10;            ossng.frame_id,&#10;            ossng.frame__inserted_date,&#10;            ossng.frame__inserted_user,&#10;            ossng.frame__last_modified_date,&#10;            ossng.frame__last_modified_user,&#10;            ossng.frame_anchor,&#10;            ossng.frame_comment,&#10;            ossng.frame_dimension_1,&#10;            ossng.frame_dimension_2,&#10;            ossng.frame_double_sided,&#10;            ossng.frame_fk_azimut,&#10;            ossng.frame_fk_frame_fixing_type,&#10;            ossng.frame_fk_frame_type,&#10;            ossng.frame_fk_provider,&#10;            ossng.frame_fk_status,&#10;            ossng.frame_picture,&#10;            ossng.frame_rank,&#10;            ossng.frame_usr_frame_1,&#10;            ossng.frame_usr_frame_2,&#10;            ossng.frame_usr_frame_3,&#10;            ossng.sign_rank,&#10;            ossng.support_id,&#10;            ossng.group_by_anchor,&#10;            ossng.fk_support_type,&#10;            ossng.fk_support_base_type,&#10;            ossng.support_geometry,&#10;            ossng.directional_sign,&#10;            ossng._symbol_value_de,&#10;            ossng._symbol_value_fr,&#10;            ossng._symbol_value_it,&#10;            ossng._symbol_value_ro,&#10;            ossng._img_de,&#10;            ossng._img_fr,&#10;            ossng._img_it,&#10;            ossng._img_ro,&#10;            ossng._img_de_right,&#10;            ossng._img_fr_right,&#10;            ossng._img_it_right,&#10;            ossng._img_ro_right,&#10;            ossng._symbol_height,&#10;            ossng._symbol_width,&#10;            ossng._azimut_rectified,&#10;            ossng._azimut_offset_x_rectified,&#10;            ossng._azimut_offset_y_rectified,&#10;            ossng._natural_direction_or_left_rectified,&#10;            ossng._verso,&#10;            ossng._rank,&#10;            ossng._final_rank,&#10;            ossng._symbol_shift,&#10;            ossng._group_height,&#10;            ossng._group_width,&#10;            ossng._previous_sign_in_frame,&#10;            ossng._next_sign_in_frame,&#10;            ossng._previous_frame,&#10;            ossng._next_frame&#10;           FROM ordered_shifted_signs_not_grouped_by_anchor ossng&#10;        UNION&#10;         SELECT ossg.id,&#10;            ossg._inserted_date,&#10;            ossg._inserted_user,&#10;            ossg._last_modified_date,&#10;            ossg._last_modified_user,&#10;            ossg.case_decision,&#10;            ossg.case_id,&#10;            ossg.comment,&#10;            ossg.complex,&#10;            ossg.dimension_1,&#10;            ossg.dimension_2,&#10;            ossg.fk_coating,&#10;            ossg.fk_durability,&#10;            ossg.fk_lighting,&#10;            ossg.fk_marker_type,&#10;            ossg.fk_mirror_shape,&#10;            ossg.fk_official_sign,&#10;            ossg.fk_owner,&#10;            ossg.fk_parent,&#10;            ossg.fk_provider,&#10;            ossg.fk_sign_type,&#10;            ossg.fk_status,&#10;            ossg.fk_user_sign,&#10;            ossg.hanging_mode,&#10;            ossg.inscription_1,&#10;            ossg.inscription_2,&#10;            ossg.inscription_3,&#10;            ossg.installation_date,&#10;            ossg.manufacturing_date,&#10;            ossg.mirror_protruding,&#10;            ossg.mirror_red_frame,&#10;            ossg.natural_direction_or_left,&#10;            ossg.picture,&#10;            ossg.usr_sign_1,&#10;            ossg.usr_sign_2,&#10;            ossg.usr_sign_3,&#10;            ossg.azimut,&#10;            ossg.offset_x,&#10;            ossg.offset_y,&#10;            ossg.offset_x_verso,&#10;            ossg.offset_y_verso,&#10;            ossg.frame_id,&#10;            ossg.frame__inserted_date,&#10;            ossg.frame__inserted_user,&#10;            ossg.frame__last_modified_date,&#10;            ossg.frame__last_modified_user,&#10;            ossg.frame_anchor,&#10;            ossg.frame_comment,&#10;            ossg.frame_dimension_1,&#10;            ossg.frame_dimension_2,&#10;            ossg.frame_double_sided,&#10;            ossg.frame_fk_azimut,&#10;            ossg.frame_fk_frame_fixing_type,&#10;            ossg.frame_fk_frame_type,&#10;            ossg.frame_fk_provider,&#10;            ossg.frame_fk_status,&#10;            ossg.frame_picture,&#10;            ossg.frame_rank,&#10;            ossg.frame_usr_frame_1,&#10;            ossg.frame_usr_frame_2,&#10;            ossg.frame_usr_frame_3,&#10;            ossg.sign_rank,&#10;            ossg.support_id,&#10;            ossg.group_by_anchor,&#10;            ossg.fk_support_type,&#10;            ossg.fk_support_base_type,&#10;            ossg.support_geometry,&#10;            ossg.directional_sign,&#10;            ossg._symbol_value_de,&#10;            ossg._symbol_value_fr,&#10;            ossg._symbol_value_it,&#10;            ossg._symbol_value_ro,&#10;            ossg._img_de,&#10;            ossg._img_fr,&#10;            ossg._img_it,&#10;            ossg._img_ro,&#10;            ossg._img_de_right,&#10;            ossg._img_fr_right,&#10;            ossg._img_it_right,&#10;            ossg._img_ro_right,&#10;            ossg._symbol_height,&#10;            ossg._symbol_width,&#10;            ossg._azimut_rectified,&#10;            ossg._azimut_offset_x_rectified,&#10;            ossg._azimut_offset_y_rectified,&#10;            ossg._natural_direction_or_left_rectified,&#10;            ossg._verso,&#10;            ossg._rank,&#10;            ossg._final_rank,&#10;            ossg._symbol_shift,&#10;            ossg._group_height,&#10;            ossg._group_width,&#10;            ossg._previous_sign_in_frame,&#10;            ossg._next_sign_in_frame,&#10;            ossg._previous_frame,&#10;            ossg._next_frame&#10;           FROM ordered_shifted_signs_grouped_by_anchor ossg&#10;        )&#10; SELECT ((uv.id || &#39;-&#39;::text) || (uv._verso)::integer) AS pk,&#10;    uv.id,&#10;    uv._inserted_date,&#10;    uv._inserted_user,&#10;    uv._last_modified_date,&#10;    uv._last_modified_user,&#10;    uv.case_decision,&#10;    uv.case_id,&#10;    uv.comment,&#10;    uv.complex,&#10;    uv.dimension_1,&#10;    uv.dimension_2,&#10;    uv.fk_coating,&#10;    uv.fk_durability,&#10;    uv.fk_lighting,&#10;    uv.fk_marker_type,&#10;    uv.fk_mirror_shape,&#10;    uv.fk_official_sign,&#10;    uv.fk_owner,&#10;    uv.fk_parent,&#10;    uv.fk_provider,&#10;    uv.fk_sign_type,&#10;    uv.fk_status,&#10;    uv.fk_user_sign,&#10;    uv.hanging_mode,&#10;    uv.inscription_1,&#10;    uv.inscription_2,&#10;    uv.inscription_3,&#10;    uv.installation_date,&#10;    uv.manufacturing_date,&#10;    uv.mirror_protruding,&#10;    uv.mirror_red_frame,&#10;    uv.natural_direction_or_left,&#10;    uv.picture,&#10;    uv.usr_sign_1,&#10;    uv.usr_sign_2,&#10;    uv.usr_sign_3,&#10;    uv.azimut,&#10;    uv.offset_x,&#10;    uv.offset_y,&#10;    uv.offset_x_verso,&#10;    uv.offset_y_verso,&#10;    uv.frame_id,&#10;    uv.frame__inserted_date,&#10;    uv.frame__inserted_user,&#10;    uv.frame__last_modified_date,&#10;    uv.frame__last_modified_user,&#10;    uv.frame_anchor,&#10;    uv.frame_comment,&#10;    uv.frame_dimension_1,&#10;    uv.frame_dimension_2,&#10;    uv.frame_double_sided,&#10;    uv.frame_fk_azimut,&#10;    uv.frame_fk_frame_fixing_type,&#10;    uv.frame_fk_frame_type,&#10;    uv.frame_fk_provider,&#10;    uv.frame_fk_status,&#10;    uv.frame_picture,&#10;    uv.frame_rank,&#10;    uv.frame_usr_frame_1,&#10;    uv.frame_usr_frame_2,&#10;    uv.frame_usr_frame_3,&#10;    uv.sign_rank,&#10;    uv.support_id,&#10;    uv.group_by_anchor,&#10;    uv.fk_support_type,&#10;    uv.fk_support_base_type,&#10;    uv.support_geometry,&#10;    uv.directional_sign,&#10;    uv._symbol_value_de,&#10;    uv._symbol_value_fr,&#10;    uv._symbol_value_it,&#10;    uv._symbol_value_ro,&#10;    uv._img_de,&#10;    uv._img_fr,&#10;    uv._img_it,&#10;    uv._img_ro,&#10;    uv._img_de_right,&#10;    uv._img_fr_right,&#10;    uv._img_it_right,&#10;    uv._img_ro_right,&#10;    uv._symbol_height,&#10;    uv._symbol_width,&#10;    uv._azimut_rectified,&#10;    uv._azimut_offset_x_rectified,&#10;    uv._azimut_offset_y_rectified,&#10;    uv._natural_direction_or_left_rectified,&#10;    uv._verso,&#10;    uv._rank,&#10;    uv._final_rank,&#10;    uv._symbol_shift,&#10;    uv._group_height,&#10;    uv._group_width,&#10;    uv._previous_sign_in_frame,&#10;    uv._next_sign_in_frame,&#10;    uv._previous_frame,&#10;    uv._next_frame,&#10;    max(uv._group_height) OVER (PARTITION BY uv.support_id, uv.azimut, uv._verso) AS _max_shift_for_azimut,&#10;        CASE&#10;            WHEN ((uv.directional_sign IS TRUE) AND ((((uv.frame_anchor &#61; &#39;LEFT&#39;::signalo_db.anchor) AND (uv._natural_direction_or_left_rectified &#61; true)) OR ((uv.frame_anchor &#61; &#39;CENTER&#39;::signalo_db.anchor) AND (uv._natural_direction_or_left_rectified &#61; false))) OR ((uv.frame_anchor &#61; &#39;RIGHT&#39;::signalo_db.anchor) AND (uv._natural_direction_or_left_rectified &#61; false)))) THEN &#39;_right&#39;::text&#10;            ELSE &#39;&#39;::text&#10;        END AS _img_direction&#10;   FROM union_view uv;</textarea>
+                            <div style="padding-top: 5px;"><hr></div>
+                            <div class="box box-solid">
+                                <div class="box-header with-border">
+                                    <i class="fa fa-puzzle-piece"></i>
+                                    <h3 class="box-title">Possibly Referenced Tables/Views</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <ul class="list-unstyled">
+                                    </ul>
+                                </div><!-- /.box-body -->
+                            </div>
+                        </div><!-- /.box-body -->
+                    </div>
+                </section>
+                <script>
+                    var config = {
+                        pagination: true
+                    }
+                </script>
+            </div>
+            <!-- /.content-wrapper -->
+            <footer class="main-footer">
+                <div>
+                    <div class="pull-right hidden-xs">
+                        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+                        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+                    </div>
+                    <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.2.4</a></strong>
+                </div>
+                <!-- /.container -->
+            </footer>
+        </div>
+        <!-- ./wrapper -->
+
+        <!-- jQuery 2.2.3 -->
+        <script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+        <script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+        <!-- Bootstrap 3.3.5 -->
+        <script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+        <!-- DataTables -->
+        <script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+        <script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+        <script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+        <script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+        <!-- SheetJS -->
+        <script src="../bower/js-xlsx/xlsx.full.min.js"></script>
+        <!-- pdfmake -->
+        <script src="../bower/pdfmake/pdfmake.min.js"></script>
+        <script src="../bower/pdfmake/vfs_fonts.js"></script>
+        <!-- SlimScroll -->
+        <script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+        <!-- FastClick -->
+        <script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+        <!-- Salvattore -->
+        <script src="../bower/salvattore/salvattore.min.js"></script>
+        <!-- AnchorJS -->
+        <script src="../bower/anchor-js/anchor.min.js"></script>
+        <!-- CodeMirror -->
+        <script src="../bower/codemirror/codemirror.js"></script>
+        <script src="../bower/codemirror/sql.js"></script>
+        <!-- AdminLTE App -->
+        <script src="../bower/admin-lte/dist/js/app.min.js"></script>
+        <script src="table.js"></script>
+        <script src="../schemaSpy.js"></script>
+    </body>
+</html>
