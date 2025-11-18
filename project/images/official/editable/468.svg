@@ -9,6 +9,13 @@
    xmlns:svg="http://www.w3.org/2000/svg">
   <defs
      id="defs933" />
+  <rect
+     style="fill:#ffffff;stroke-width:0.313;paint-order:markers fill stroke"
+     id="rect946"
+     width="161.57812"
+     height="142.52344"
+     x="0.73046899"
+     y="0.91406196" />
   <path
      style="fill:#007d45;fill-opacity:1;fill-rule:nonzero;stroke:none"
      d="M 0.730469,143.4375 H 162.30859 V 0.914062 H 0.730469 Z m 0,0"
