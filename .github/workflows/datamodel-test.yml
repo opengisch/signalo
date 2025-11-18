@@ -42,7 +42,7 @@ jobs:
 
       - name: Initialize container
         run: |
-          docker run -d -p 5432:5432 --name pum_db_container ${DOCKER_TAG}
+          docker run -d -p 5432:5432 -v $(pwd):/src --name pum_db_container ${DOCKER_TAG}
           until docker exec pum_db_container pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
@@ -106,7 +106,7 @@ jobs:
       - name: "failure logs"
         if: failure()
         run: |
-          docker logs signalo
+          docker logs pum_db_container
 
       - uses: actions/upload-artifact@v5
         id: artifact
