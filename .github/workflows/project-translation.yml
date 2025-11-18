@@ -11,6 +11,8 @@ on:
     paths:
       - 'project/**'
       - '.github/workflows/project-translation.yml'
+      - 'docker-compose.yml'
+
   workflow_dispatch:
 
 jobs:
