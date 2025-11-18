@@ -25,7 +25,7 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 RUN pip install --upgrade pip
 RUN pip install -r datamodel/requirements.txt
-RUN if [ "${RUN_TEST}" = "True" ]; then pip install -r datamodel/requirements-test.txt; fi
+RUN if [ "$(printf '%s' "${RUN_TEST}" | tr '[:upper:]' '[:lower:]')" = "true" ]; then pip install -r datamodel/requirements-test.txt; fi
 RUN if [ -n "${PUM_GH_SHA}" ]; then pip install "git+https://github.com/opengisch/pum.git@${PUM_GH_SHA}"; fi
 
 # Configure the postgres connections
