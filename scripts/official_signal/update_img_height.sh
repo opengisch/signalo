@@ -4,7 +4,7 @@
 
 rm -f update.sql
 touch update.sql
-for img in /src/project/images/official/original/542.svg; do
+for img in /usr/src/project/images/official/original/542.svg; do
     echo $img
     file=$(basename ${img})
     convert ${img} img.png

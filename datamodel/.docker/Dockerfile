@@ -16,8 +16,8 @@ ARG TEST_PACKAGES=""
 RUN apk add --no-cache python3 py3-pip py3-virtualenv postgresql-dev git ${TEST_PACKAGES}
 
 # Add source
-ADD . /src
-WORKDIR /src
+ADD . /usr/src
+WORKDIR /usr/src
 
 # Python deps
 ENV VIRTUAL_ENV=/opt/venv

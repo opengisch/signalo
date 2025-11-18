@@ -60,7 +60,7 @@ if [[ $BUILD -eq 1 ]]; then
 fi
 
 docker rm -f ${CONTAINER_NAME} || true
-docker run -d -p 5432:${PG_CONTAINER_PORT} -v $(pwd):/src --name ${CONTAINER_NAME} ${DOCKER_TAG} -c log_statement=all
+docker run -d -p 5432:${PG_CONTAINER_PORT} -v $(pwd):/usr/src --name ${CONTAINER_NAME} ${DOCKER_TAG} -c log_statement=all
 
 docker exec ${CONTAINER_NAME} sh -c 'pum --version'
 
