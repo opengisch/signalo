@@ -10,9 +10,10 @@ ARG AUTO_INIT=True
 ARG RUN_TEST=False
 ARG PUM_GH_SHA=""
 ARG DB_NAME=pum_test
+ARG TEST_PACKAGES=""
 
 # System deps (bc + exiftool for testing)
-RUN apk add --no-cache python3 py3-pip py3-virtualenv postgresql-dev git
+RUN apk add --no-cache python3 py3-pip py3-virtualenv postgresql-dev git ${TEST_PACKAGES}
 
 # Add source
 ADD . /src
