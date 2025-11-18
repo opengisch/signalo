@@ -26,12 +26,18 @@ jobs:
       DB_NAME: signalo
       PG_SERVICE: pg_signalo
       DEMO_DATA: Lausanne
+      TEST_PACKAGES: "exiftool bc"
 
     steps:
       - uses: actions/checkout@v5
 
       - name: "build dockerfile"
-        run: docker build -f datamodel/.docker/Dockerfile --build-arg RUN_TEST=True --build-arg DB_NAME=${DB_NAME} --build-arg PG_SERVICE=${PG_SERVICE} --tag ${DOCKER_TAG} .
+        run: docker build -f datamodel/.docker/Dockerfile \
+         --build-arg RUN_TEST=True \
+         --build-arg DB_NAME=${DB_NAME} \
+         --build-arg PG_SERVICE=${PG_SERVICE} \
+         --build-arg TEST_PACKAGES="${TEST_PACKAGES}" \
+         --tag ${DOCKER_TAG} .
 
       - name: Initialize container
         run: |
