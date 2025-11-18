@@ -2,13 +2,13 @@ name: 🚧 Website MkDocs
 on:
   pull_request:
     branches:
-      - master
+      - main
     paths:
       - 'website/**'
       - '.github/workflows/website.yml'
   push:
     branches:
-      - master
+      - main
       - website
     paths:
       - 'website/**'
