@@ -41,8 +41,8 @@ jobs:
             sleep 2
           done
           # create the database
-          docker exec pum_db_container sh -c 'createdb ${DB_NAME}'
-          docker exec pum_db_container sh -c 'createdb ${DB_NAME}_demo'
+          docker exec pum_db_container sh -c "createdb ${DB_NAME}"
+          docker exec pum_db_container sh -c "createdb ${DB_NAME}_demo"
           docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
           docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
