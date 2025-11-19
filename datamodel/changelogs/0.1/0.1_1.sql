@@ -1,5 +1,5 @@
 
-CREATE SCHEMA signalo_db;
+CREATE SCHEMA IF NOT EXISTS signalo_db;
 
 --
 -- Name: postgis; Type: EXTENSION; Schema: -; Owner:

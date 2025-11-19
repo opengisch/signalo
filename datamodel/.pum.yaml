@@ -8,14 +8,14 @@ roles:
     description: Role for users who can view the SIGNALO data.
     permissions:
       - type: read
-        schemas: [signalo_od, signalo_app]
+        schemas: [signalo_db, signalo_app]
 
   - name: signalo_user
     description: Role for users who can view and edit the SIGNALO data.
     inherit: signalo_viewer
     permissions:
       - type: write
-        schemas: [signalo_od]
+        schemas: [signalo_db]
 
 
 parameters:
