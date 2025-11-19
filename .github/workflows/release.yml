@@ -13,6 +13,8 @@ jobs:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
       DOCKER_TAG: stable
       COMPOSE_FILE: .docker/docker-compose.yml
+      DEMO_DATA: Lausanne
+      REMOTE_DEMO_DB_NAME: signalo_stable
 
     steps:
       - name: Checkout code
@@ -26,19 +28,27 @@ jobs:
       - name: Set version
         run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
 
-      - name: Docker build
+      - name: Docker build and DB init
         run: |
           docker compose --profile qgis --profile schemaspy up --build -d
-          docker compose exec signalo init_db.sh wait
+          until docker compose exec signalo pg_isready -U postgres; do
+            echo "Waiting for PostgreSQL to be ready..."
+            sleep 2
+          done
+
+          docker exec pum_db_container sh -c "createdb ${DB_NAME}"
+          docker exec pum_db_container sh -c "createdb ${DB_NAME}_demo"
+          docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+
 
       - name: create dumps
         run: |
-          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup signalo
-          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql signalo
-          docker compose exec signalo pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql signalo
-          docker compose exec signalo init_db.sh build -d
-          docker compose exec signalo pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup signalo
-          docker compose exec signalo pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql signalo
+          docker compose exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup ${DB_NAME}
+          docker compose exec pum_db_container pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql ${DB_NAME}
+          docker compose exec pum_db_container pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql ${DB_NAME}
+          docker compose exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker compose exec pum_db_container pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql ${DB_NAME}_demo
 
       - name: translate project
         run: |
@@ -92,14 +102,20 @@ jobs:
             signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
 
       - name: Deploy Demo DB
-        uses: ./.github/actions/deploy-demo-db
-        with:
-          demo_db_host: ${{ secrets.DEMO_DB_HOST }}
-          demo_db_user: ${{ secrets.DEMO_DB_USER }}
-          demo_db_port: ${{ secrets.DEMO_DB_PORT }}
-          demo_db_name: signalo_stable
-          demo_db_password: ${{ secrets.DEMO_DB_PASSWORD }}
-          demo_db_backup_file: signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
+        run:
+          cat > pg_service.conf << EOF
+            [remote_db]
+            host=${{ secrets.DEMO_DB_HOST }}
+            port=${{ secrets.DEMO_DB_PORT }}
+            dbname=${{ env.REMOTE_DEMO_DB_NAME }}
+            user=${{ secrets.DEMO_DB_USER }}
+            password=${{ secrets.DEMO_DB_PASSWORD }}
+          EOF
+          docker stop pum_db_container
+          docker run -d -p 5432:5432 -v $(pwd):/usr/src -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf --name pum_db_container ${DOCKER_TAG}
+          docker exec psql "service=remote_db" -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+
 
   rebuild-website:
     uses: ./.github/workflows/website.yml
