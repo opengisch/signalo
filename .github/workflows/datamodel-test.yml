@@ -97,7 +97,9 @@ jobs:
 
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
-        run:
+        run: |
+          set -euo pipefail
+          # Write pg_service.conf with the remote service definition
           cat > pg_service.conf <<EOF
           [remote_db]
           host=${{ secrets.DEMO_DB_HOST }}
@@ -106,10 +108,15 @@ jobs:
           user=${{ secrets.DEMO_DB_USER }}
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
-          docker stop pum_db_container
-          docker run -d -p 5432:5432 -v $(pwd):/usr/src -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf --name pum_db_container ${DOCKER_TAG}
-          docker exec psql "service=remote_db" -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          # Restart container with the service file mounted
+          docker rm -f pum_db_container || true
+          docker run -d -p 5432:5432 \
+            -v $(pwd):/usr/src \
+            -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf \
+            --name pum_db_container "${DOCKER_TAG}"
+          # Use psql inside the container and the pg_service to target the remote DB
+          docker exec pum_db_container psql "service=remote_db" -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data "${DEMO_DATA}" --roles --grant
 
       - name: "failure logs"
         if: failure()
