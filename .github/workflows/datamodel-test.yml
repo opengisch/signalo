@@ -98,7 +98,7 @@ jobs:
       - name: Deploy Demo DB
         if: github.event_name != 'pull_request'
         run: |
-          set -euo pipefail
+          set -euxo pipefail
           # Write pg_service.conf with the remote service definition
           cat > pg_service.conf <<EOF
           [remote_db]
