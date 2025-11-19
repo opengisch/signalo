@@ -116,7 +116,7 @@ jobs:
             --name pum_db_container "${DOCKER_TAG}"
           # Use psql inside the container and the pg_service to target the remote DB
           docker exec -e PGSERVICE="remote_db" pum_db_container psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant 2>&1
+          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()
