@@ -1,6 +1,6 @@
 
 pum:
-  migration_table_schema: signalo_od
+  migration_table_schema: signalo_db
   minimum_version: 1.2.0
 
 roles:
