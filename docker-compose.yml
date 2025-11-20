@@ -5,7 +5,7 @@ services:
       dockerfile: ./datamodel/.docker/db.Dockerfile
       args:
         DB_NAME: ${DB_NAME:-signalo}
-        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
+        PGSERVICE: ${PGSERVICE:-pg_signalo}
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
