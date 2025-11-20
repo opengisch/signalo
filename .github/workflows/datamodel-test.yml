@@ -26,11 +26,6 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKER_TAG: opengisch/signalo:unstable
-      DB_NAME: signalo
-      PG_SERVICE: pg_signalo
-      DEMO_DATA: Lausanne
-      TEST_PACKAGES: "exiftool bc"
       REMOTE_DEMO_DB_NAME: signalo_testing
 
     steps:
@@ -59,28 +54,16 @@ jobs:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker exec pum_db_container pytest
+        run: docker compose exec pum pytest
 
       - name: "test images"
-        run: docker exec pum_db_container /usr/src/test/official_sign_images.sh
+        run: docker compose exec pum /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
 #          npm i --no-fund -g schemalint
 #          cp .schemalintrc.js.template .schemalintrc.js
 #          schemalint
-
-      - name: Login to DockerHub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: "push to dockerhub"
-        if: github.event_name != 'pull_request'
-        run: |
-          docker push opengisch/signalo:unstable
 
       - name: Fix workspace permissions
         if: github.event_name != 'pull_request'
@@ -114,7 +97,7 @@ jobs:
       - name: "failure logs"
         if: failure()
         run: |
-          docker logs pum_db_container
+          docker compose logs pum
 
       - uses: actions/upload-artifact@v5
         id: artifact
