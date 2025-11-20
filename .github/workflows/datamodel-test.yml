@@ -49,7 +49,7 @@ jobs:
 
       - name: "dumps + all signs"
         run: |
-          docker compose exec db pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
           docker compose run pum /usr/src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
