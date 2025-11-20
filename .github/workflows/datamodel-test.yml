@@ -39,25 +39,25 @@ jobs:
             sleep 2
           done
           # create the database
-          docker compose exec pum sh -c "createdb ${DB_NAME}"
-          docker compose exec pum sh -c "createdb ${DB_NAME}_demo"
-          docker compose exec pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose exec pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose exec db sh -c "createdb ${DB_NAME}"
+          docker compose exec db sh -c "createdb ${DB_NAME}_demo"
+          docker compose run pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
           docker compose exec db pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose exec pum /usr/src/scripts/all-signs.py
+          docker compose run pum /usr/src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker compose exec pum pytest
+        run: docker compose run pum pytest
 
       - name: "test images"
-        run: docker compose exec pum /usr/src/test/official_sign_images.sh
+        run: docker compose run pum /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
@@ -82,17 +82,10 @@ jobs:
           user=${{ secrets.DEMO_DB_USER }}
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
-          # Restart container with the service file mounted
-          docker rm -f pum_db_container || true
-          docker run -d -p 5432:5432 \
-            -e PGSERVICE="remote_db" \
-            -v $(pwd):/usr/src \
-            -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf \
-            --name pum_db_container "${DOCKER_TAG}"
-          sleep 5
-          # Use psql inside the container and the pg_service to target the remote DB
-          docker exec pum_db_container psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose down -v
+          docker compose up -e PGSERVICE="remote_db" -e PGSERVICEFILE="/usr/src/pg_service.conf" -d
+          docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()

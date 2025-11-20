@@ -38,14 +38,15 @@ while getopts 'bdp:' opt; do
 done
 shift "$(($OPTIND -1))"
 
+ docker compose down -v  --remove-orphans || true
+
 if [[ $BUILD -eq 1 ]]; then
-  docker compose down -v || true
   docker compose build --no-cache
 fi
 
 docker compose up -d
 
-docker compose exec pum sh -c 'pum --version'
+docker compose run pum sh -c 'pum --version'
 
 until docker compose exec db pg_isready -U postgres; do
   echo "Waiting for PostgreSQL to be ready..."
@@ -53,5 +54,5 @@ until docker compose exec db pg_isready -U postgres; do
 done
 
 echo "Creating database ${DB_NAME}"
-docker compose exec pum sh -c "createdb ${DB_NAME}"
-docker compose exec pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}
+docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
+docker compose run pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}

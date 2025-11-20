@@ -1,4 +1,19 @@
 services:
+  db:
+    build:
+      context: .
+      dockerfile: ./datamodel/.docker/db.Dockerfile
+      args:
+        DB_NAME: ${DB_NAME:-signalo}
+        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      # making the postgres database accessible for debugging
+      - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+
   pum:
     build:
       context: .
@@ -12,21 +27,8 @@ services:
     volumes:
       - .:/usr/src
       - ./datamodel/.docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
-    links:
+    depends_on:
       - db
-
-  db:
-    build:
-      context: .
-      dockerfile: ./datamodel/.docker/db.Dockerfile
-      args:
-        DB_NAME: ${DB_NAME:-signalo}
-        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
-    environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
-    ports:
-      # making the postgres database accessible for debugging
-      - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
 
   qgis:
     image: qgis/qgis:3.44
@@ -54,3 +56,6 @@ services:
     user: "${UID}:${GID}"
     profiles:
       - schemaspy
+
+volumes:
+  db-data:
