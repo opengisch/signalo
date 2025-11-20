@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -e
+set -euo pipefail
 
 # load env vars
 # https://stackoverflow.com/a/20909045/1548052
@@ -12,18 +12,11 @@ elif [ -f .env.example ]; then
   export $(grep -v '^#' .env.example | xargs)
 fi
 
-DOCKER_IMAGE_NAME=${DOCKER_IMAGE_NAME:-opengisch/pum_db}
-DOCKER_TAG=${DOCKER_TAG:-unstable}
-CONTAINER_NAME=${CONTAINER_NAME:-pum_db_test}
-DB_NAME=${DB_NAME:-pum_test}
-PG_SERVICE=${PG_SERVICE:-pg_pum_test}
-DEMO_DATA_NAME=${DEMO_DATA_NAME:-}
+
 PUM_GH_SHA=${PUM_GH_SHA:-}
-TEST_PACKAGES=${TEST_PACKAGES:-""}
 
 BUILD=0
 DEMO_DATA=
-PG_CONTAINER_PORT=${PG_CONTAINER_PORT:-5432}
 
 while getopts 'bdp:' opt; do
   case "$opt" in
@@ -37,12 +30,6 @@ while getopts 'bdp:' opt; do
       DEMO_DATA="-d ${DEMO_DATA_NAME}"
       ;;
 
-    p)
-      echo "Overriding PG port to ${OPTARG}"
-      PG_PORT=${OPTARG}
-      ;;
-
-
     ?|h)
       echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
       exit 1
@@ -51,27 +38,21 @@ while getopts 'bdp:' opt; do
 done
 shift "$(($OPTIND -1))"
 
+ docker compose down -v  --remove-orphans || true
+
 if [[ $BUILD -eq 1 ]]; then
-  docker build \
-  --build-arg RUN_TEST=True \
-  --build-arg PUM_GH_SHA=${PUM_GH_SHA} \
-  --build-arg DB_NAME=${DB_NAME} \
-  --build-arg PG_SERVICE=${PG_SERVICE} \
-  -f datamodel/.docker/Dockerfile \
-  --tag ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} \
-  .
+  docker compose build --no-cache
 fi
 
-docker rm -f ${CONTAINER_NAME} || true
-docker run -d -p ${PG_CONTAINER_PORT}:5432 -v $(pwd):/usr/src --name ${CONTAINER_NAME} ${DOCKER_IMAGE_NAME}:${DOCKER_TAG} -c log_statement=all
+docker compose up -d
 
-docker exec ${CONTAINER_NAME} sh -c 'pum --version'
+docker compose run --rm pum sh -c 'pum --version'
 
-until docker exec ${CONTAINER_NAME} pg_isready -U postgres; do
+until docker compose exec db pg_isready -U postgres; do
   echo "Waiting for PostgreSQL to be ready..."
   sleep 2
 done
 
 echo "Creating database ${DB_NAME}"
-docker exec ${CONTAINER_NAME} sh -c "createdb ${DB_NAME}"
-docker exec ${CONTAINER_NAME} pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}
+docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
+docker compose run --rm pum pum -vvv -s ${PGSERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}

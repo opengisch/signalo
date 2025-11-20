@@ -26,70 +26,48 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      DOCKER_TAG: opengisch/signalo:unstable
-      DB_NAME: signalo
-      PG_SERVICE: pg_signalo
       DEMO_DATA: Lausanne
-      TEST_PACKAGES: "exiftool bc"
       REMOTE_DEMO_DB_NAME: signalo_testing
+      PG_SERVICE: pg_signalo
+      DB_NAME: signalo
+      RUN_TESTS: True
 
     steps:
       - uses: actions/checkout@v5
 
-      - name: "build dockerfile"
-        run: |
-          docker build -f datamodel/.docker/Dockerfile \
-            --build-arg RUN_TEST=True \
-            --build-arg DB_NAME=${DB_NAME} \
-            --build-arg PG_SERVICE=${PG_SERVICE} \
-            --build-arg TEST_PACKAGES="${TEST_PACKAGES}" \
-            --tag ${DOCKER_TAG} .
-
       - name: Initialize container
         run: |
-          docker run -d -p 5432:5432 -v $(pwd):/usr/src --name pum_db_container ${DOCKER_TAG}
-          until docker exec pum_db_container pg_isready -U postgres; do
+          docker compose up --build -d
+          until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
           # create the database
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}"
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}_demo"
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
+          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
-          docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker exec -e PGSERVICE=${PG_SERVICE}_demo pum_db_container /usr/src/scripts/all-signs.py
+          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker compose run --rm pum /usr/src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker exec pum_db_container pytest
+        run: docker compose run --rm pum pytest
 
       - name: "test images"
-        run: docker exec pum_db_container /usr/src/test/official_sign_images.sh
+        run: docker compose run --rm pum /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
 #          npm i --no-fund -g schemalint
 #          cp .schemalintrc.js.template .schemalintrc.js
 #          schemalint
-
-      - name: Login to DockerHub
-        if: github.event_name != 'pull_request'
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: "push to dockerhub"
-        if: github.event_name != 'pull_request'
-        run: |
-          docker push opengisch/signalo:unstable
 
       - name: Fix workspace permissions
         if: github.event_name != 'pull_request'
@@ -108,22 +86,15 @@ jobs:
           user=${{ secrets.DEMO_DB_USER }}
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
-          # Restart container with the service file mounted
-          docker rm -f pum_db_container || true
-          docker run -d -p 5432:5432 \
-            -e PGSERVICE="remote_db" \
-            -v $(pwd):/usr/src \
-            -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf \
-            --name pum_db_container "${DOCKER_TAG}"
-          sleep 5
-          # Use psql inside the container and the pg_service to target the remote DB
-          docker exec pum_db_container psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose down -v
+          docker compose up --env PGSERVICE="remote_db" --env PGSERVICEFILE="/usr/src/pg_service.conf" -d
+          docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()
         run: |
-          docker logs pum_db_container
+          docker compose logs pum
 
       - uses: actions/upload-artifact@v5
         id: artifact

@@ -11,10 +11,10 @@ jobs:
 
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
-      DOCKER_TAG: stable
-      COMPOSE_FILE: .docker/docker-compose.yml
       DEMO_DATA: Lausanne
       REMOTE_DEMO_DB_NAME: signalo_stable
+      PG_SERVICE: pg_signalo
+      DB_NAME: signalo
 
     steps:
       - name: Checkout code
@@ -36,19 +36,19 @@ jobs:
             sleep 2
           done
 
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}"
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}_demo"
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
-
+          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
+          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: create dumps
         run: |
-          docker compose exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump.backup ${DB_NAME}
-          docker compose exec pum_db_container pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump.sql ${DB_NAME}
-          docker compose exec pum_db_container pg_dump --format plain --schema=signalo_app --file signalo-${{ github.event.release.tag_name }}-db-app.sql ${DB_NAME}
-          docker compose exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose exec pum_db_container pg_dump --format plain --exclude-schema=public --file signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql ${DB_NAME}_demo
+          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump.backup ${DB_NAME}
+          docker compose exec db pg_dump -U postgres --format plain --exclude-schema=public --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump.sql ${DB_NAME}
+          docker compose exec db pg_dump -U postgres --format plain --schema=signalo_app --file /dump/signalo-${{ github.event.release.tag_name }}-db-app.sql ${DB_NAME}
+          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker compose exec db pg_dump -U postgres --format plain --exclude-schema=public --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql ${DB_NAME}_demo
+          docker compose cp db:/dump/. ./
 
       - name: translate project
         run: |
@@ -74,19 +74,6 @@ jobs:
           sed -i "s/version dev/version ${{ github.event.release.tag_name }}/" datamodel/schemaspy.properties
           docker compose run schemaspy
           zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip model-documentation/*
-
-      - name: Login to DockerHub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
-
-      - name: "push to dockerhub"
-        if: github.event_name != 'pull_request'
-        run: |
-          docker push opengisch/signalo:stable
-          docker tag opengisch/signalo:stable opengisch/signalo:${{ github.event.release.tag_name }}
-          docker push opengisch/signalo:${{ github.event.release.tag_name }}
 
       - name: Upload Release Assets
         uses: softprops/action-gh-release@v2
