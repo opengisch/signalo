@@ -3,9 +3,6 @@ services:
     build:
       context: .
       dockerfile: ./datamodel/.docker/db.Dockerfile
-      args:
-        DB_NAME: ${DB_NAME:-signalo}
-        PGSERVICE: ${PGSERVICE:-pg_signalo}
     environment:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
@@ -22,8 +19,9 @@ services:
       args:
         - RUN_TESTS=${RUN_TESTS:-False}
         - TEST_PACKAGES=exiftool bc
-
     image: opengisch/pum:${DOCKER_TAG:-unstable}
+    environment:
+      - PGSERVICE=${PGSERVICE:-pg_signalo}
     working_dir: /usr/src
     volumes:
       - .:/usr/src
