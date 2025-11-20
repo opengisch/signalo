@@ -111,11 +111,12 @@ jobs:
           # Restart container with the service file mounted
           docker rm -f pum_db_container || true
           docker run -d -p 5432:5432 \
+            -e PGSERVICE="remote_db" \
             -v $(pwd):/usr/src \
             -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf \
             --name pum_db_container "${DOCKER_TAG}"
           # Use psql inside the container and the pg_service to target the remote DB
-          docker exec -e PGSERVICE="remote_db" pum_db_container psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;" || true
+          docker exec pum_db_container psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;" || true
           docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant 2>&1
 
       - name: "failure logs"
