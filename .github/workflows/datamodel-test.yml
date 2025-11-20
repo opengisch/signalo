@@ -36,7 +36,7 @@ jobs:
 
       - name: Initialize container
         run: |
-          docker compose up -e RUN_TESTS=True --build -d
+          docker compose up --env RUN_TESTS=True --build -d
           until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
@@ -86,7 +86,7 @@ jobs:
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
           docker compose down -v
-          docker compose up -e PGSERVICE="remote_db" -e PGSERVICEFILE="/usr/src/pg_service.conf" -d
+          docker compose up --env PGSERVICE="remote_db" --env PGSERVICEFILE="/usr/src/pg_service.conf" -d
           docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
