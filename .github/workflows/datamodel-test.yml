@@ -77,6 +77,7 @@ jobs:
         if: github.event_name != 'pull_request'
         run: |
           set -euxo pipefail
+          docker compose down -v
           # Write pg_service.conf with the remote service definition
           cat > pg_service.conf <<EOF
           [remote_db]
@@ -86,8 +87,9 @@ jobs:
           user=${{ secrets.DEMO_DB_USER }}
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
-          docker compose down -v
-          docker compose up --env PGSERVICE="remote_db" --env PGSERVICEFILE="/usr/src/pg_service.conf" -d
+          export PGSERVICE="remote_db"
+          export PGSERVICEFILE="/usr/src/pg_service.conf"
+          docker compose up -d
           docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
