@@ -30,13 +30,14 @@ jobs:
       REMOTE_DEMO_DB_NAME: signalo_testing
       PG_SERVICE: pg_signalo
       DB_NAME: signalo
+      RUN_TESTS: True
 
     steps:
       - uses: actions/checkout@v5
 
       - name: Initialize container
         run: |
-          docker compose up --env RUN_TESTS=True --build -d
+          docker compose up --build -d
           until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
