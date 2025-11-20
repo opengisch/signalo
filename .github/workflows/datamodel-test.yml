@@ -30,14 +30,14 @@ jobs:
       REMOTE_DEMO_DB_NAME: signalo_testing
       PG_SERVICE: pg_signalo
       DB_NAME: signalo
-      RUN_TESTS: True
 
     steps:
       - uses: actions/checkout@v5
 
       - name: Initialize container
         run: |
-          docker compose up --build -d
+          docker compose build -env RUN_TESTS=True
+          docker compose up -d
           until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
@@ -58,10 +58,10 @@ jobs:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker compose run pum pytest
+        run: docker compose run --rm pum pytest
 
       - name: "test images"
-        run: docker compose run pum /usr/src/test/official_sign_images.sh
+        run: docker compose run --rm pum /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
