@@ -102,7 +102,7 @@ jobs:
           password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
           export PGSERVICE="remote_db"
-          export PGSERVICEFILE="/usr/src/pg_service.conf"
+          export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
           docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
