@@ -1,5 +1,5 @@
 --Disable triggers in signalo_db.sign before changes
-ALTER TABLE signalo_db.sign DISABLE TRIGGER ALL;
+ALTER TABLE signalo_db.sign DISABLE TRIGGER USER;
 
 --Disable foreign keys
 ALTER TABLE signalo_db.sign
@@ -98,4 +98,4 @@ ALTER TABLE ONLY signalo_db.sign
     ADD CONSTRAINT fkey_vl_marker_type FOREIGN KEY (fk_marker_type) REFERENCES signalo_db.vl_marker_type(id) MATCH FULL;
 
 -- Enable triggers in signalo_db.sign
-ALTER TABLE signalo_db.sign ENABLE TRIGGER ALL;
+ALTER TABLE signalo_db.sign ENABLE TRIGGER USER;
