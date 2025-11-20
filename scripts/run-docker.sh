@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-set -euxo pipefail
+set -euo pipefail
 
 # load env vars
 # https://stackoverflow.com/a/20909045/1548052
@@ -46,7 +46,7 @@ fi
 
 docker compose up -d
 
-docker compose run pum sh -c 'pum --version'
+docker compose run --rm pum sh -c 'pum --version'
 
 until docker compose exec db pg_isready -U postgres; do
   echo "Waiting for PostgreSQL to be ready..."
@@ -55,4 +55,4 @@ done
 
 echo "Creating database ${DB_NAME}"
 docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
-docker compose run pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}
+docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant ${DEMO_DATA}

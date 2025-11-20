@@ -44,13 +44,13 @@ jobs:
           # create the database
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose run pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
           docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose run pum /usr/src/scripts/all-signs.py
+          docker compose run --rm pum /usr/src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
