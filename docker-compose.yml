@@ -12,6 +12,7 @@ services:
       # making the postgres database accessible for debugging
       - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
     volumes:
+      - dump_data:/dump
       - db-data:/var/lib/postgresql/data
 
   pum:
@@ -59,3 +60,4 @@ services:
 
 volumes:
   db-data:
+  dump_data:

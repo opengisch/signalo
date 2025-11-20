@@ -26,7 +26,10 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
+      DEMO_DATA: Lausanne
       REMOTE_DEMO_DB_NAME: signalo_testing
+      PG_SERVICE: pg_signalo
+      DB_NAME: signalo
 
     steps:
       - uses: actions/checkout@v5
