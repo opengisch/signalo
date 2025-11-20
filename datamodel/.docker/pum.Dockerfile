@@ -5,7 +5,7 @@ ARG PUM_GH_SHA=""
 ARG TEST_PACKAGES=""
 
 # System deps (bc + exiftool for testing)
-RUN apk add --no-cache python3 py3-pip py3-virtualenv postgresql-dev postgresql-client git ${TEST_PACKAGES}
+RUN apk add --no-cache python3 py3-pip py3-virtualenv postgresql-dev postgresql-client bash git ${TEST_PACKAGES}
 
 # Add source
 ADD . /usr/src
