@@ -25,7 +25,7 @@ services:
     working_dir: /usr/src
     volumes:
       - .:/usr/src
-      - ./datamodel/.docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+      - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/etc/postgresql-common/pg_service.conf:ro
     depends_on:
       - db
 

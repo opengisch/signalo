@@ -89,19 +89,23 @@ jobs:
             signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
 
       - name: Deploy Demo DB
-        run:
-          cat > pg_service.conf << EOF
-            [remote_db]
-            host=${{ secrets.DEMO_DB_HOST }}
-            port=${{ secrets.DEMO_DB_PORT }}
-            dbname=${{ env.REMOTE_DEMO_DB_NAME }}
-            user=${{ secrets.DEMO_DB_USER }}
-            password=${{ secrets.DEMO_DB_PASSWORD }}
+        run: |
+          set -euxo pipefail
+          docker compose down -v
+          # Write pg_service.conf with the remote service definition
+          cat > pg_service.conf <<EOF
+          [remote_db]
+          host=${{ secrets.DEMO_DB_HOST }}
+          port=${{ secrets.DEMO_DB_PORT }}
+          dbname=${{ env.REMOTE_DEMO_DB_NAME }}
+          user=${{ secrets.DEMO_DB_USER }}
+          password=${{ secrets.DEMO_DB_PASSWORD }}
           EOF
-          docker stop pum_db_container
-          docker run -d -p 5432:5432 -v $(pwd):/usr/src -v $(pwd)/pg_service.conf:/etc/postgresql-common/pg_service.conf --name pum_db_container ${DOCKER_TAG}
-          docker exec psql "service=remote_db" -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker exec pum_db_container pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          export PGSERVICE="remote_db"
+          export PGSERVICEFILE="/usr/src/pg_service.conf"
+          docker compose up -d
+          docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
 
   rebuild-website:
