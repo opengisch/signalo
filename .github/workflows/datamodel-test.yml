@@ -30,6 +30,7 @@ jobs:
       REMOTE_DEMO_DB_NAME: signalo_testing
       PG_SERVICE: pg_signalo
       DB_NAME: signalo
+      RUN_TESTS: True
 
     steps:
       - uses: actions/checkout@v5
