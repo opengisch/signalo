@@ -1,18 +1,29 @@
-version: '3'
-
 services:
-  signalo:
+  pum:
     build:
       context: .
-      dockerfile: ./datamodel/.docker/Dockerfile
+      dockerfile: ./datamodel/.docker/pum.Dockerfile
       args:
-        DB_NAME: ${DB_NAME:-signalo}
-        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
+        - RUN_TESTS=${RUN_TESTS:-False}
+        - TEST_PACKAGES=exiftool bc
 
-    image: opengisch/signalo:${DOCKER_TAG:-unstable}
+    image: opengisch/pum:${DOCKER_TAG:-unstable}
     working_dir: /usr/src
     volumes:
       - .:/usr/src
+      - ./datamodel/.docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+    links:
+      - db
+
+  db:
+    build:
+      context: .
+      dockerfile: ./datamodel/.docker/db.Dockerfile
+      args:
+        DB_NAME: ${DB_NAME:-signalo}
+        PG_SERVICE: ${PG_SERVICE:-pg_signalo}
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
       # making the postgres database accessible for debugging
       - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
@@ -24,7 +35,7 @@ services:
       - .:/usr/src
       - ./docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
     links:
-      - signalo
+      - db
     profiles:
       - qgis
 
@@ -34,7 +45,7 @@ services:
       - ./model-documentation:/output
       - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
-      - signalo
+      - db
     network_mode: "service:signalo"
     command: [
       "-configFile",

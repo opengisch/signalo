@@ -36,32 +36,23 @@ jobs:
     steps:
       - uses: actions/checkout@v5
 
-      - name: "build dockerfile"
-        run: |
-          docker build -f datamodel/.docker/Dockerfile \
-            --build-arg RUN_TEST=True \
-            --build-arg DB_NAME=${DB_NAME} \
-            --build-arg PG_SERVICE=${PG_SERVICE} \
-            --build-arg TEST_PACKAGES="${TEST_PACKAGES}" \
-            --tag ${DOCKER_TAG} .
-
       - name: Initialize container
         run: |
-          docker run -d -p 5432:5432 -v $(pwd):/usr/src --name pum_db_container ${DOCKER_TAG}
-          until docker exec pum_db_container pg_isready -U postgres; do
+          docker compose up --build -d
+          until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
           # create the database
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}"
-          docker exec pum_db_container sh -c "createdb ${DB_NAME}_demo"
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker exec pum_db_container pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose exec pum sh -c "createdb ${DB_NAME}"
+          docker compose exec pum sh -c "createdb ${DB_NAME}_demo"
+          docker compose exec pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose exec pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
-          docker exec pum_db_container pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker exec -e PGSERVICE=${PG_SERVICE}_demo pum_db_container /usr/src/scripts/all-signs.py
+          docker compose exec db pg_dump --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
+          docker compose exec pum /usr/src/scripts/all-signs.py
 
 #      - uses: actions/setup-node@v3
 #        with:
