@@ -1,6 +1,6 @@
 FROM python:3.12-alpine
 
-ARG RUN_TEST=False
+ARG RUN_TESTS=False
 ARG PUM_GH_SHA=""
 ARG TEST_PACKAGES=""
 
