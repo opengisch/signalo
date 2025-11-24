@@ -7,7 +7,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
     ports:
       # making the postgres database accessible for debugging
-      - ${PG_CONTAINER_PORT:-5432}:${PG_CONTAINER_PORT:-5432}
+      - ${PG_CONTAINER_PORT:-5432}:5432
     volumes:
       - dump-data:/dump
       - db-data:/var/lib/postgresql/data
