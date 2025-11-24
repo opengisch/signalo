@@ -25,8 +25,8 @@
     <rect
        x="4.7620125"
        y="-79.222565"
-       width="106.62644"
-       height="23.477419"
+       width="117.57183"
+       height="21.634452"
        id="rect18240" />
   </defs>
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
@@ -67,12 +67,12 @@
      xml:space="preserve"
      id="text18238"
      style="font-style:italic;font-size:14.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240);fill:#ffffff;fill-opacity:1"
-     transform="translate(7.3045981,89.74966)"><tspan
+     transform="translate(2.911193,89.74966)"><tspan
        x="4.7617188"
        y="-65.841781"
-       id="tspan18760"><tspan
-         style="font-family:arial;-inkscape-font-specification:'arial Italic'"
-         id="tspan18758">Tour du château</tspan></tspan></text>
+       id="tspan4394"><tspan
+         style="font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold Italic'"
+         id="tspan4392">Tour du château</tspan></tspan></text>
   <path
      style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
      d="m 130.80555,14.031517 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.4636259 c 0.1095,-0.137078 0.28181,-0.2313191 0.46217,-0.2313191 0.19969,-0.00566 0.38005,0.085674 0.48955,0.2313191 l 5.28686,7.4879009 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,18.13003 h -5.84082 l 1.16753,-18.13003"

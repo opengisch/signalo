@@ -86,9 +86,9 @@
      transform="translate(30.925814,84.837568)"><tspan
        x="4.7617188"
        y="-68.274692"
-       id="tspan40260"><tspan
+       id="tspan1224"><tspan
          style="font-style:normal;font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold'"
-         id="tspan40258">Neuchâtel</tspan></tspan></text>
+         id="tspan1222">Neuchâtel</tspan></tspan></text>
   <text
      xml:space="preserve"
      id="text18238-8"
@@ -96,9 +96,9 @@
      transform="translate(3.4424156,97.319628)"><tspan
        x="4.7617188"
        y="-68.274692"
-       id="tspan40264"><tspan
+       id="tspan1228"><tspan
          style="font-style:normal;font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold'"
-         id="tspan40262">La Chaux-de-Fonds</tspan></tspan></text>
+         id="tspan1226">La Chaux-de-Fonds</tspan></tspan></text>
   <text
      xml:space="preserve"
      id="text18238-8-0"
@@ -106,11 +106,11 @@
      transform="translate(35.091092,109.73432)"><tspan
        x="4.7617188"
        y="-68.274692"
-       id="tspan40268"><tspan
+       id="tspan1232"><tspan
          style="font-style:normal;font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-         id="tspan40266">Le Locle</tspan></tspan></text>
+         id="tspan1230">Le Locle</tspan></tspan></text>
   <path
-     style="fill:#211e1e;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
-     d="m 130.80555,19.422315 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.463626 c 0.1095,-0.137078 0.28181,-0.231319 0.46217,-0.231319 0.19969,-0.0057 0.38005,0.08567 0.48955,0.231319 l 5.28686,7.487901 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,18.13003 h -5.84082 l 1.16753,-18.13003"
-     id="path13982" />
+     style="fill:#0e0d0d;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
+     d="m 130.80555,13.293363 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.4636263 c 0.1095,-0.137078 0.28181,-0.231319 0.46217,-0.231319 0.19969,-0.0057 0.38005,0.08567 0.48955,0.231319 l 5.28686,7.4879013 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,29.266171 h -5.84082 l 1.16753,-29.266171"
+     id="path13982-2" />
 </svg>

@@ -93,10 +93,6 @@
      height="44.551067"
      x="1.533989"
      y="1.8677245" />
-  <path
-     style="fill:#edebeb;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
-     d="m 130.80555,19.422315 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.463626 c 0.1095,-0.137078 0.28181,-0.231319 0.46217,-0.231319 0.19969,-0.0057 0.38005,0.08567 0.48955,0.231319 l 5.28686,7.487901 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,18.13003 h -5.84082 l 1.16753,-18.13003"
-     id="path13982" />
   <text
      xml:space="preserve"
      id="text18238"
@@ -104,19 +100,17 @@
      transform="translate(12.524904,82.85906)"><tspan
        x="4.7617188"
        y="-67.058283"
-       id="tspan37695"><tspan
-         style="font-family:arial;-inkscape-font-specification:'arial Italic'"
-         id="tspan37693">Tour du château</tspan></tspan></text>
+       id="tspan4719"><tspan
+         style="font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold Italic'"
+         id="tspan4717">Tour du château</tspan></tspan></text>
   <text
      xml:space="preserve"
      id="text18238-0"
-     style="font-style:italic;font-size:13.3333px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240-6);fill:#ffffff;fill-opacity:1"
+     style="font-style:italic;font-size:13.3333px;line-height:1.25;font-family:arial;-inkscape-font-specification:'arial Bold Italic';white-space:pre;shape-inside:url(#rect18240-6);fill:#ffffff;fill-opacity:1;font-weight:bold;font-stretch:normal;font-variant:normal"
      transform="translate(39.302181,96.87515)"><tspan
        x="4.7617188"
-       y="-67.058283"
-       id="tspan37699"><tspan
-         style="font-family:arial;-inkscape-font-specification:'arial Italic'"
-         id="tspan37697">Lavaux</tspan></tspan></text>
+       y="-67.212628"
+       id="tspan4721">Lavaux</tspan></text>
   <text
      xml:space="preserve"
      id="text18238-0-4"
@@ -124,7 +118,11 @@
      transform="translate(38.810646,110.60216)"><tspan
        x="4.7617188"
        y="-67.058283"
-       id="tspan37703"><tspan
-         style="font-family:Arial;-inkscape-font-specification:'Arial Italic'"
-         id="tspan37701">Grottes </tspan></tspan></text>
+       id="tspan4725"><tspan
+         style="font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold Italic'"
+         id="tspan4723">Grottes </tspan></tspan></text>
+  <path
+     style="fill:#edebeb;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
+     d="m 130.70969,14.132699 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.4636268 c 0.1095,-0.137078 0.28181,-0.231319 0.46217,-0.231319 0.19969,-0.0057 0.38005,0.08567 0.48955,0.231319 l 5.28686,7.4879018 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,29.266171 h -5.84082 l 1.16753,-29.266171"
+     id="path13982-2" />
 </svg>
