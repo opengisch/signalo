@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="146.32365"
-   height="48.286514"
+   width="144.66699"
+   height="47.422001"
    version="1.1"
    id="svg676"
    xmlns="http://www.w3.org/2000/svg"
@@ -50,7 +50,7 @@
      height="100%"
      width="100%"
      id="canvasGrid"
-     transform="translate(-0.3623937,-0.05756584)">
+     transform="translate(-0.36239365,-0.05756582)">
     <rect
        fill="url(#gridpattern)"
        stroke-width="0"
@@ -62,51 +62,60 @@
        style="stroke:#000000;stroke-opacity:1" />
   </g>
   <g
-     id="g32586"
-     transform="matrix(1,0,0,1.294202,-1.4534862,-2.427992)">
+     id="g1514"
+     transform="scale(1,0.98209615)">
     <rect
-       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.42661;stroke-opacity:1;paint-order:markers fill stroke"
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.61374;stroke-opacity:1;paint-order:markers fill stroke"
        id="rect32430"
-       width="146.32365"
-       height="37.309875"
-       x="1.4534862"
-       y="1.8760533" />
+       width="144.66699"
+       height="48.286514"
+       x="0"
+       y="0" />
     <rect
-       style="fill:#f58228;fill-opacity:1;stroke-width:1.07809;paint-order:markers fill stroke"
+       style="fill:#f58228;fill-opacity:1;stroke-width:1.21415;paint-order:markers fill stroke"
        id="rect11978"
-       width="143.25568"
-       height="34.42358"
-       x="2.9874752"
-       y="3.319201" />
+       width="140.39302"
+       height="44.551067"
+       x="2.2256153"
+       y="1.8677245" />
   </g>
   <text
-     xml:space="preserve"
-     id="text18238"
-     style="font-style:italic;font-size:12px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240)"
-     transform="translate(39.665733,84.837568)"><tspan
-       x="4.7617188"
-       y="-68.274692"
-       id="tspan1711"><tspan
-         style="font-style:normal;font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold'"
-         id="tspan1709">Neuchâtel</tspan></tspan></text>
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="12.0046px"
+     id="svg_14"
+     y="11.394427"
+     x="72.416267"
+     fill="#ffffff"
+     style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.171495"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1"
+       id="tspan34346">Neuchâtel</tspan></text>
   <text
-     xml:space="preserve"
-     id="text18238-8"
-     style="font-style:italic;font-size:12px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240-1)"
-     transform="translate(12.182335,97.319628)"><tspan
-       x="4.7617188"
-       y="-68.274692"
-       id="tspan1715"><tspan
-         style="font-style:normal;font-weight:bold;font-family:arial;-inkscape-font-specification:'arial Bold'"
-         id="tspan1713">La Chaux-de-Fonds</tspan></tspan></text>
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="12.0046px"
+     id="svg_14-8"
+     y="24.583202"
+     x="72.416267"
+     fill="#ffffff"
+     style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.171495"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1"
+       id="tspan34346-6">La Chaux-de-Fonds</tspan></text>
   <text
-     xml:space="preserve"
-     id="text18238-8-0"
-     style="font-style:italic;font-size:12px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240-1-4)"
-     transform="translate(43.831011,109.73432)"><tspan
-       x="4.7617188"
-       y="-68.274692"
-       id="tspan1719"><tspan
-         style="font-style:normal;font-weight:bold;font-family:Arial;-inkscape-font-specification:'Arial Bold'"
-         id="tspan1717">Le Locle</tspan></tspan></text>
+     xml:space="default"
+     dominant-baseline="middle"
+     text-anchor="middle"
+     font-family="sans-serif"
+     font-size="12.0046px"
+     id="svg_14-8-6"
+     y="37.771976"
+     x="72.416267"
+     fill="#ffffff"
+     style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.171495"><tspan
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:sans-serif;fill:#000000;fill-opacity:1"
+       id="tspan34346-6-0">Le Locle</tspan></text>
 </svg>
