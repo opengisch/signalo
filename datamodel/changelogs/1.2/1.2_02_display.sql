@@ -232,7 +232,7 @@ INSERT INTO signalo_db.vl_official_sign(
     'Touristique non directionnel (1 ligne)',
     'Turistico non direzionale (1 linea)',
     '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg', '01-touristic-1.svg',
-    80, 110,
+    60, 241,
     false);
 
 
@@ -247,7 +247,7 @@ INSERT INTO signalo_db.vl_official_sign(
     'Touristique non directionnel (2 lignes)',
     'Turistico non direzionale (2 linee)',
     '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg', '01-touristic-2.svg',
-    80, 110,
+    60, 241,
     false);
 
     INSERT INTO signalo_db.vl_official_sign(
@@ -261,7 +261,7 @@ INSERT INTO signalo_db.vl_official_sign(
     'Touristique non directionnel (3 lignes)',
     'Turistico non direzionale (3 linee)',
     '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg', '01-touristic-3.svg',
-    80, 110,
+    79, 241,
     false);
 
 INSERT INTO signalo_db.vl_official_sign(
