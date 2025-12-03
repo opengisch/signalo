@@ -31,7 +31,7 @@ jobs:
       - name: Docker build and DB init
         run: |
           docker compose --profile qgis --profile schemaspy up --build -d
-          until docker compose exec signalo pg_isready -U postgres; do
+          until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
