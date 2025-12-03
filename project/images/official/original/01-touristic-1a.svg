@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="38.714802mm"
-   height="9.8715715mm"
+   width="38.276417mm"
+   height="9.529398mm"
    version="1.1"
    id="svg676"
    xmlns="http://www.w3.org/2000/svg"
@@ -28,6 +28,12 @@
        width="106.62644"
        height="23.477419"
        id="rect18240" />
+    <rect
+       x="4.7620125"
+       y="-79.222565"
+       width="106.62644"
+       height="23.477419"
+       id="rect18240-6" />
   </defs>
   <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
   <g
@@ -38,7 +44,7 @@
      height="100%"
      width="100%"
      id="canvasGrid"
-     transform="translate(-0.3623937,-0.05756579)">
+     transform="translate(-77.459488,-83.267999)">
     <rect
        fill="url(#gridpattern)"
        stroke-width="0"
@@ -49,32 +55,43 @@
        id="rect663"
        style="stroke:#000000;stroke-opacity:1" />
   </g>
-  <rect
-     style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:1.42661;stroke-opacity:1;paint-order:markers fill stroke"
-     id="rect32430"
-     width="146.32365"
-     height="37.309875"
-     x="0"
-     y="0" />
-  <rect
-     style="fill:#7a2017;fill-opacity:1;stroke-width:1.07809;paint-order:markers fill stroke"
-     id="rect11978"
-     width="143.25568"
-     height="34.42358"
-     x="1.533989"
-     y="1.4431477" />
-  <text
-     xml:space="preserve"
-     id="text18238"
-     style="font-style:italic;font-size:14.6667px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif Italic';white-space:pre;shape-inside:url(#rect18240);fill:#ffffff;fill-opacity:1"
-     transform="translate(7.3045981,89.74966)"><tspan
-       x="4.7617188"
-       y="-65.841781"
-       id="tspan18760"><tspan
-         style="font-family:arial;-inkscape-font-specification:'arial Italic'"
-         id="tspan18758">Tour du château</tspan></tspan></text>
-  <path
-     style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.388196"
-     d="m 130.80555,14.031517 -3.59757,0.484058 c -0.15137,0.03141 -0.30114,-0.01714 -0.3897,-0.124227 -0.11595,-0.124227 -0.12401,-0.29986 -0.0258,-0.439794 l 5.31261,-7.4636259 c 0.1095,-0.137078 0.28181,-0.2313191 0.46217,-0.2313191 0.19969,-0.00566 0.38005,0.085674 0.48955,0.2313191 l 5.28686,7.4879009 c 0.0934,0.122799 0.0837,0.291292 -0.006,0.415519 -0.0902,0.124227 -0.25766,0.175631 -0.40582,0.147073 l -3.62172,-0.506904 1.16913,18.13003 h -5.84082 l 1.16753,-18.13003"
-     id="path13982" />
+  <g
+     id="g1051"
+     transform="scale(0.60027705)">
+    <g
+       id="g932"
+       transform="scale(1,0.97639363)">
+      <rect
+         style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:2.34967;stroke-opacity:1;paint-order:markers fill stroke"
+         id="rect32430"
+         width="241"
+         height="61.450626"
+         x="0"
+         y="0" />
+      <rect
+         style="fill:#7a2017;fill-opacity:1;stroke-width:1.77565;paint-order:markers fill stroke"
+         id="rect11978"
+         width="235.94695"
+         height="56.6968"
+         x="2.5265317"
+         y="2.3769131" />
+    </g>
+    <path
+       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.639372"
+       d="m 215.44116,21.110383 -5.92532,0.79726 c -0.24931,0.05173 -0.49599,-0.02823 -0.64185,-0.204606 -0.19097,-0.204606 -0.20425,-0.49388 -0.0425,-0.724356 l 8.75005,-12.292844 c 0.18035,-0.225772 0.46415,-0.380991 0.76121,-0.380991 0.32889,-0.0093 0.62595,0.141108 0.8063,0.380991 l 8.70764,12.332826 c 0.15383,0.202254 0.13786,0.479768 -0.01,0.684374 -0.14856,0.204606 -0.42438,0.28927 -0.6684,0.242234 l -5.9651,-0.834888 1.9256,29.860772 h -9.62003 l 1.92296,-29.860772"
+       id="path13982" />
+    <text
+       xml:space="default"
+       dominant-baseline="middle"
+       text-anchor="middle"
+       font-family="sans-serif"
+       font-size="19.772px"
+       id="svg_14"
+       y="33.433167"
+       x="113.37686"
+       fill="#ffffff"
+       style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.282458"><tspan
+         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';stroke-width:0.282458"
+         id="tspan34346">Tour du château</tspan></text>
+  </g>
 </svg>
