@@ -47,7 +47,7 @@ services:
       - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
       - db
-    network_mode: "service:signalo"
+    network_mode: "service:db"
     command: [
       "-configFile",
       "/schemaspy.properties"
