@@ -1,0 +1,5 @@
+date=2025-12-03 10:26:21+0000
+os=Linux 6.11.0-1018-azure
+schemaspy-version=7.0.2
+schemaspy-revision=v7.0.2
+renderer=Graphviz dot 2.43.0 
