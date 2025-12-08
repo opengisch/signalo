@@ -22,19 +22,11 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
 
         WITH joined_tables AS (
             SELECT
+                sign.id,
                 {sign_columns}
-                , azimut.azimut
-                , azimut.offset_x
-                , azimut.offset_y
-                , azimut.offset_x_verso
-                , azimut.offset_y_verso
-                , sign.rank AS sign_rank
-                , support.id AS support_id
-                , support.group_by_mounting_point
-                , support.fk_support_type
-                , support.fk_support_base_type
-                , support.fk_support_tube_type
-                , support.geometry::geometry(Point,{srid}) AS support_geometry
+                , {azimut_columns}
+                , {frame_columns}
+                , {support_columns}
                 , COALESCE(vl_official_sign.directional_sign, vl_user_sign.directional_sign, vl_marker_type.directional_sign, FALSE) AS directional_sign
                 , CASE
                     WHEN sign.fk_sign_type = 15 THEN vl_user_sign.value_de
@@ -146,9 +138,6 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
                       WHEN sign.fk_sign_type = 15 THEN vl_user_sign.img_width
                       ELSE NULL::integer
                   END AS _symbol_width
-                , {azimut_columns}
-                , {frame_columns}
-                , {support_columns}
             FROM signalo_db.sign
                 LEFT JOIN signalo_db.frame ON frame.id = sign.fk_frame
                 LEFT JOIN signalo_db.azimut ON azimut.id = frame.fk_azimut
@@ -163,59 +152,59 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
         ordered_recto_signs_not_grouped_by_mounting_point AS (
             SELECT
                 joined_tables.*
-                , azimut AS _azimut_rectified
-                , offset_x AS _azimut_offset_x_rectified
-                , offset_y AS _azimut_offset_y_rectified
-                , natural_direction_or_left AS _natural_direction_or_left_rectified
+                , azimut_azimut AS _azimut_rectified
+                , azimut_offset_x AS _azimut_offset_x_rectified
+                , azimut_offset_y AS _azimut_offset_y_rectified
+                , sign_natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut ORDER BY frame_rank, sign_rank ) AS _rank
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut_azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE fk_hanging_mode != 'verso' AND group_by_mounting_point IS FALSE
-            ORDER BY support_id, azimut, _rank
+            WHERE sign_fk_hanging_mode != 'verso' AND support_group_by_mounting_point IS FALSE
+            ORDER BY support_id, azimut_azimut, _rank
         ),
         -- recto ordered by mounting point
         ordered_recto_signs_grouped_by_mounting_point AS (
             SELECT
                 joined_tables.*
-                , azimut AS _azimut_rectified
-                , offset_x AS _azimut_offset_x_rectified
-                , offset_y AS _azimut_offset_y_rectified
-                , natural_direction_or_left AS _natural_direction_or_left_rectified
+                , azimut_azimut AS _azimut_rectified
+                , azimut_offset_x AS _azimut_offset_x_rectified
+                , azimut_offset_y AS _azimut_offset_y_rectified
+                , sign_natural_direction_or_left AS _natural_direction_or_left_rectified
                 , false::bool AS _verso
-                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut, frame_fk_mounting_point ORDER BY frame_rank, sign_rank ) AS _rank
+                , ROW_NUMBER () OVER ( PARTITION BY support_id, azimut_azimut, frame_fk_mounting_point ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables
-            WHERE fk_hanging_mode != 'verso' AND group_by_mounting_point IS TRUE
-            ORDER BY support_id, azimut, frame_fk_mounting_point, _rank
+            WHERE sign_fk_hanging_mode != 'verso' AND support_group_by_mounting_point IS TRUE
+            ORDER BY support_id, azimut_azimut, frame_fk_mounting_point, _rank
         ),
         -- verso NOT ordered by mounting point (RECTO-VERSO are duplicated)
         ordered_verso_signs_not_grouped_by_mounting_point AS (
             SELECT
                 jt.*
-                , jt.azimut+180 AS _azimut_rectified
-                , COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified
-                , COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified
-                , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
+                , jt.azimut_azimut+180 AS _azimut_rectified
+                , COALESCE(az.offset_x, jt.azimut_offset_x_verso) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, jt.azimut_offset_y_verso) AS _azimut_offset_y_rectified
+                , NOT sign_natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
-                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut ORDER BY frame_rank, sign_rank ) AS _rank
+                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut_azimut ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
-            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE fk_hanging_mode != 'recto' AND group_by_mounting_point IS FALSE
-            ORDER BY support_id, jt.azimut, _rank
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut_azimut+180) % 360) AND az.fk_support = support_id
+            WHERE sign_fk_hanging_mode != 'recto' AND support_group_by_mounting_point IS FALSE
+            ORDER BY support_id, jt.azimut_azimut, _rank
         ),
         -- verso ordered by mounting point (RECTO-VERSO are duplicated)
         ordered_verso_signs_grouped_by_mounting_point AS (
             SELECT
                 jt.*
-                , jt.azimut+180 AS _azimut_rectified
-                , COALESCE(az.offset_x, jt.offset_x_verso) AS _azimut_offset_x_rectified
-                , COALESCE(az.offset_y, jt.offset_y_verso) AS _azimut_offset_y_rectified
-                , NOT natural_direction_or_left AS _natural_direction_or_left_rectified
+                , jt.azimut_azimut+180 AS _azimut_rectified
+                , COALESCE(az.offset_x, jt.azimut_offset_x_verso) AS _azimut_offset_x_rectified
+                , COALESCE(az.offset_y, jt.azimut_offset_y_verso) AS _azimut_offset_y_rectified
+                , NOT sign_natural_direction_or_left AS _natural_direction_or_left_rectified
                 , true::bool AS _verso
-                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut, frame_fk_mounting_point ORDER BY frame_rank, sign_rank ) AS _rank
+                , 1000 + ROW_NUMBER () OVER ( PARTITION BY support_id, jt.azimut_azimut, frame_fk_mounting_point ORDER BY frame_rank, sign_rank ) AS _rank
             FROM joined_tables jt
-            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut+180) % 360) AND az.fk_support = support_id
-            WHERE fk_hanging_mode != 'recto' AND group_by_mounting_point IS TRUE
-            ORDER BY support_id, jt.azimut, frame_fk_mounting_point, _rank
+            LEFT JOIN signalo_db.azimut az ON az.azimut = ((jt.azimut_azimut+180) % 360) AND az.fk_support = support_id
+            WHERE sign_fk_hanging_mode != 'recto' AND support_group_by_mounting_point IS TRUE
+            ORDER BY support_id, jt.azimut_azimut, frame_fk_mounting_point, _rank
         ),
 
         ordered_signs_not_grouped_by_mounting_point AS (
@@ -271,7 +260,7 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
             SELECT
                 uv.id || '-' || _verso::int AS pk
                 , uv.*
-                , MAX(_group_height) OVER ( PARTITION BY uv.support_id, azimut, _verso ) AS _max_shift_for_azimut
+                , MAX(_group_height) OVER ( PARTITION BY uv.support_id, azimut_azimut, _verso ) AS _max_shift_for_azimut
                 , CASE
                     WHEN directional_sign IS TRUE AND (frame_fk_mounting_point, _natural_direction_or_left_rectified) IN (
                         ('left', TRUE),
@@ -287,10 +276,10 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
             connection=connection,
             table_schema="signalo_db",
             table_name="sign",
-            remove_pkey=False,
+            remove_pkey=True,
+            prefix="sign_",
             indent=4,
             skip_columns=[
-                "rank",
                 "fk_frame",
                 "needs_validation",
                 "_last_modification_platform",
@@ -301,9 +290,13 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
             table_schema="signalo_db",
             table_name="frame",
             remove_pkey=False,
-            indent=4,
-            skip_columns=["needs_validation", "_last_modification_platform"],
             prefix="frame_",
+            indent=4,
+            skip_columns=[
+                "needs_validation",
+                "_last_modification_platform",
+                "fk_azimut",
+            ],
         ),
         azimut_columns=select_columns(
             connection=connection,
@@ -311,29 +304,21 @@ def vw_sign_symbol(connection: psycopg.Connection, srid: int):
             table_name="azimut",
             remove_pkey=False,
             indent=4,
-            skip_columns=["needs_validation", "_last_modification_platform"],
+            skip_columns=[
+                "needs_validation",
+                "_last_modification_platform",
+                "fk_support",
+            ],
             prefix="azimut_",
         ),
         support_columns=select_columns(
             connection=connection,
             table_schema="signalo_db",
             table_name="support",
-            remove_pkey=True,
-            indent=4,
-            skip_columns=[
-                "needs_validation",
-                "_last_modification_platform",
-                "geometry",
-            ],
-            prefix="support_",
-        ),
-        vl_official_sign_columns=select_columns(
-            connection=connection,
-            table_schema="signalo_db",
-            table_name="vl_official_sign",
             remove_pkey=False,
             indent=4,
-            prefix="vl_official_sign_",
+            skip_columns=["needs_validation", "_last_modification_platform"],
+            prefix="support_",
         ),
     )
 
