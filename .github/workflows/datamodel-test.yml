@@ -21,6 +21,41 @@ on:
 
 
 jobs:
+  version-tests:
+    if: github.event_name == 'pull_request'
+    name: Check versioning
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 2
+
+      - name: Check changelog versions
+        run: |
+          LATEST_RELEASE=$(gh release view --json tagName -q .tagName 2>/dev/null || echo "")
+          LATEST_RELEASE=$(echo "$LATEST_RELEASE" | cut -d. -f1-2)
+          echo "Latest release: $LATEST_RELEASE"
+
+          MODIFIED_FILES=$(git diff --name-only HEAD^1 HEAD)
+          echo "*** Modified files:"
+          echo "$MODIFIED_FILES"
+
+          MODIFIED_CHANGELOGS=$(echo "$MODIFIED_FILES" | grep "^datamodel/changelogs/" || true)
+          echo "Modified changelog files:"
+          echo "$MODIFIED_CHANGELOGS"
+
+          if [ -n "$MODIFIED_CHANGELOGS" ]; then
+            for file in $MODIFIED_CHANGELOGS; do
+              DIR=$(echo "$file" | cut -d'/' -f3)
+              if [ -n "$LATEST_RELEASE" ] && [ "$DIR" \<= "${LATEST_RELEASE#v}" ]; then
+                echo "❌ Error: Modified changelog in $DIR which is not greater than latest release $LATEST_RELEASE"
+                exit 1
+              fi
+            done
+          fi
+          echo "✅ Changelog versions are valid"
+
   docker-tests:
     name: Run tests and deploy demo data
     runs-on: ubuntu-latest
