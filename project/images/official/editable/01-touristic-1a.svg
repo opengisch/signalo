@@ -1,97 +1,56 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <svg
-   width="38.276417mm"
-   height="9.529398mm"
+   width="144.66676"
+   height="36.016624"
+   viewBox="0 0 144.66676 36.016624"
    version="1.1"
-   id="svg676"
+   xml:space="preserve"
+   style="clip-rule:evenodd;fill-rule:evenodd"
+   id="svg26288"
    xmlns="http://www.w3.org/2000/svg"
-   xmlns:svg="http://www.w3.org/2000/svg"
-   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
-   xmlns:cc="http://creativecommons.org/ns#"
-   xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <metadata
-     id="metadata682">
-    <rdf:RDF>
-      <cc:Work
-         rdf:about="">
-        <dc:format>image/svg+xml</dc:format>
-        <dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-      </cc:Work>
-    </rdf:RDF>
-  </metadata>
-  <defs
-     id="defs680">
-    <rect
-       x="4.7620125"
-       y="-79.222565"
-       width="106.62644"
-       height="23.477419"
-       id="rect18240" />
-    <rect
-       x="4.7620125"
-       y="-79.222565"
-       width="106.62644"
-       height="23.477419"
-       id="rect18240-6" />
-  </defs>
-  <!-- Created with Method Draw - http://github.com/duopixel/Method-Draw/ -->
-  <g
-     display="none"
-     overflow="visible"
-     y="0"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs26292"><rect
+     x="4.7620125"
+     y="-79.222565"
+     width="106.62644"
+     height="23.477419"
+     id="rect18240" /><rect
+     x="4.7620125"
+     y="-79.222565"
+     width="106.62644"
+     height="23.477419"
+     id="rect18240-6" /></defs>
+
+
+
+<g
+   id="g932"
+   transform="scale(0.60027705,0.58610669)"><rect
+     style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:2.34967;stroke-opacity:1;paint-order:markers fill stroke"
+     id="rect32430"
+     width="241"
+     height="61.450626"
      x="0"
-     height="100%"
-     width="100%"
-     id="canvasGrid"
-     transform="translate(-77.459488,-83.267999)">
-    <rect
-       fill="url(#gridpattern)"
-       stroke-width="0"
-       y="0"
-       x="0"
-       height="172.54172%"
-       width="100%"
-       id="rect663"
-       style="stroke:#000000;stroke-opacity:1" />
-  </g>
-  <g
-     id="g1051"
-     transform="scale(0.60027705)">
-    <g
-       id="g932"
-       transform="scale(1,0.97639363)">
-      <rect
-         style="fill:#f8f8f8;fill-opacity:1;stroke:none;stroke-width:2.34967;stroke-opacity:1;paint-order:markers fill stroke"
-         id="rect32430"
-         width="241"
-         height="61.450626"
-         x="0"
-         y="0" />
-      <rect
-         style="fill:#7a2017;fill-opacity:1;stroke-width:1.77565;paint-order:markers fill stroke"
-         id="rect11978"
-         width="235.94695"
-         height="56.6968"
-         x="2.5265317"
-         y="2.3769131" />
-    </g>
-    <path
-       style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.639372"
-       d="m 215.44116,21.110383 -5.92532,0.79726 c -0.24931,0.05173 -0.49599,-0.02823 -0.64185,-0.204606 -0.19097,-0.204606 -0.20425,-0.49388 -0.0425,-0.724356 l 8.75005,-12.292844 c 0.18035,-0.225772 0.46415,-0.380991 0.76121,-0.380991 0.32889,-0.0093 0.62595,0.141108 0.8063,0.380991 l 8.70764,12.332826 c 0.15383,0.202254 0.13786,0.479768 -0.01,0.684374 -0.14856,0.204606 -0.42438,0.28927 -0.6684,0.242234 l -5.9651,-0.834888 1.9256,29.860772 h -9.62003 l 1.92296,-29.860772"
-       id="path13982" />
-    <text
-       xml:space="default"
-       dominant-baseline="middle"
-       text-anchor="middle"
-       font-family="sans-serif"
-       font-size="19.772px"
-       id="svg_14"
-       y="30.10137"
-       x="113.37686"
-       fill="#ffffff"
-       style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.282458"><tspan
-         style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';stroke-width:0.282458"
-         id="tspan34346">param(text1)</tspan></text>
-  </g>
-</svg>
+     y="0" /><rect
+     style="fill:#7a2017;fill-opacity:1;stroke-width:1.77565;paint-order:markers fill stroke"
+     id="rect11978"
+     width="235.94695"
+     height="56.6968"
+     x="2.5265317"
+     y="2.3769131" /></g><path
+   style="fill:#ffffff;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.3838"
+   d="m 129.46713,12.889501 -3.55683,0.478577 c -0.14965,0.03105 -0.29773,-0.01695 -0.38529,-0.122821 -0.11463,-0.12282 -0.1226,-0.296464 -0.0255,-0.434814 l 5.25245,-7.3791118 c 0.10826,-0.1355257 0.27862,-0.2287001 0.45694,-0.2287001 0.19743,-0.00558 0.37575,0.084704 0.48401,0.2287001 l 5.22699,7.4031118 c 0.0923,0.121409 0.0828,0.287994 -0.006,0.410814 -0.0892,0.122821 -0.25475,0.173643 -0.40123,0.145408 l -3.58071,-0.501164 1.15589,17.924736 h -5.77468 l 1.15431,-17.924736"
+   id="path13982" /><text
+   xml:space="default"
+   dominant-baseline="middle"
+   text-anchor="middle"
+   font-family="sans-serif"
+   font-size="11.8687px"
+   id="svg_14"
+   y="20.2794"
+   x="64.92337"
+   fill="#ffffff"
+   style="clip-rule:evenodd;fill-rule:evenodd;stroke-width:0.169553"><tspan
+     style="font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold Italic';text-align:center;text-anchor:middle;stroke-width:0.169553"
+     id="tspan34346"
+     dy="1.8642626">param(text1)</tspan></text></svg>
