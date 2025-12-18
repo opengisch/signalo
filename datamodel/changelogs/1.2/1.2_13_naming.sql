@@ -54,4 +54,3 @@ where id = '4.84';
 UPDATE signalo_db.vl_official_sign
 SET value_fr = 'Auberge de jeunesse'
 where id = '4.89';
-
