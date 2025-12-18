@@ -53,7 +53,7 @@ jobs:
           if [ -n "$MODIFIED_CHANGELOGS" ]; then
             for file in $MODIFIED_CHANGELOGS; do
               DIR=$(echo "$file" | cut -d'/' -f3)
-              if [ -n "$LATEST_RELEASE" ] && [ "$DIR <= ${LATEST_RELEASE}" ]; then
+              if (( $(echo "$DIR <= ${LATEST_RELEASE}" | bc -l) )); then
                 echo "❌ Error: Changelogs are modified in an already existing release directory: $DIR"
                 exit 1
               fi
