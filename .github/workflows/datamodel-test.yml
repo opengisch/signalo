@@ -25,6 +25,8 @@ jobs:
     if: github.event_name == 'pull_request'
     name: Check versioning
     runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
       - uses: actions/checkout@v6
@@ -35,6 +37,10 @@ jobs:
         run: |
           LATEST_RELEASE=$(gh release view --json tagName -q .tagName | cut -d. -f1-2)
           echo "Latest release: $LATEST_RELEASE"
+          if [ -z "$LATEST_RELEASE" ]; then
+            echo "No release found."
+            exit 1
+          fi
 
           MODIFIED_FILES=$(git diff --name-only HEAD^1 HEAD)
           echo "*** Modified files:"
