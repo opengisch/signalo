@@ -33,8 +33,7 @@ jobs:
 
       - name: Check changelog versions
         run: |
-          LATEST_RELEASE=$(gh release view --json tagName -q .tagName 2>/dev/null || echo "")
-          LATEST_RELEASE=$(echo "$LATEST_RELEASE" | cut -d. -f1-2)
+          LATEST_RELEASE=$(gh release view --json tagName -q .tagName | cut -d. -f1-2)
           echo "Latest release: $LATEST_RELEASE"
 
           MODIFIED_FILES=$(git diff --name-only HEAD^1 HEAD)
