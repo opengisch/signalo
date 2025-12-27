@@ -76,7 +76,7 @@ jobs:
       - uses: actions/upload-artifact@v5
         with:
           name: project-translations
-          path: project/teksi_wastewater*
+          path: project/${QGS_PROJECT_FILE}*
           if-no-files-found: error
 
       - name: set project version + create project archive
@@ -89,7 +89,7 @@ jobs:
           zip -r ${MODULE_NAME}-${{ github.event.release.tag_name }}-project.zip project README.md
 
       - name: Zip project translations
-        run: zip -r project-translations.zip project/teksi_wastewater*
+        run: zip -r project-translations.zip project/${QGS_PROJECT_FILE}*
 
       - name: Upload project translations as GitHub Release asset
         if: ${{ inputs.release_tag != '' }}

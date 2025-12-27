@@ -27,7 +27,7 @@ services:
   qgis:
     image: qgis/qgis:3.44
     tty: true
-    env:
+    environment:
       - PGSERVICEFILE=/.pg_service.conf
     volumes:
       - .:/usr/src
