@@ -2,7 +2,7 @@
 host = https://www.transifex.com
 
 [o:opengisch:p:signalo-project-1:r:signalots]
-file_filter = project/signalo_<lang>.ts
-source_file = project/signalo.ts
+file_filter = signalo_<lang>.ts
+source_file = signalo.ts
 source_lang = fr
 type = QT
