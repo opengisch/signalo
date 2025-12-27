@@ -98,7 +98,7 @@ jobs:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker compose run --rm pum --entrypoint pytest
+        run: docker compose run --entrypoint pytest pum
 
 #      - name: "schema lint"
 #        run: |
@@ -127,7 +127,7 @@ jobs:
           export PGSERVICE="remote_db"
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
-          docker compose run --rm pum --entrypoint psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run --entrypoint psql pum -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           docker compose run --rm pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
