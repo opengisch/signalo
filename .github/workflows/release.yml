@@ -33,7 +33,7 @@ jobs:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
       DEMO_DATA: Lausanne
       REMOTE_DEMO_DB_NAME: signalo_stable
-      PG_SERVICE: pg_signalo
+      PGSERVICE: pg_signalo
       DB_NAME: signalo
 
     steps:

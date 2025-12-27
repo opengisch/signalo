@@ -1,4 +1,4 @@
-name: 🌎 Update project translations
+name: 🌎 Update project translations and package project
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
@@ -40,6 +40,7 @@ jobs:
       QGS_PROJECT_TITLE: Signalo
       QGS_PROJECT_FILE: signalo
       PGSERVICE: pg_signalo
+      DB_NAME: signalo
 
     steps:
       - name: Checkout code
