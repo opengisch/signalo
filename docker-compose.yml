@@ -27,9 +27,11 @@ services:
   qgis:
     image: qgis/qgis:3.44
     tty: true
+    env:
+      - PGSERVICEFILE=/.pg_service.conf
     volumes:
       - .:/usr/src
-      - ./docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+      - ./docker/.pg_service.conf:/.pg_service.conf:ro
     links:
       - db
     profiles:
