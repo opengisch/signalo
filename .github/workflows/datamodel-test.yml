@@ -91,7 +91,7 @@ jobs:
       - name: "dumps + all signs"
         run: |
           docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose run --rm pum --entrypoint scripts/all-signs.py
+          docker compose run --entrypoint scripts/all-signs.py pum
 
 #      - uses: actions/setup-node@v3
 #        with:
