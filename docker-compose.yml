@@ -27,9 +27,11 @@ services:
   qgis:
     image: qgis/qgis:3.44
     tty: true
+    environment:
+      - PGSERVICEFILE=/.pg_service.conf
     volumes:
       - .:/usr/src
-      - ./docker/.pg_service.conf:/etc/postgresql-common/pg_service.conf:ro
+      - ./docker/.pg_service.conf:/.pg_service.conf:ro
     links:
       - db
     profiles:
@@ -38,7 +40,7 @@ services:
   schemaspy:
     image: schemaspy/schemaspy
     volumes:
-      - ./model-documentation:/output
+      - ./datamodel/schemaspy:/output
       - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
       - db

@@ -5,88 +5,40 @@ on:
     types: [published]
 
 jobs:
-  release:
-    name: Create release
+  datamodel-dumps-documentation:
+    name: Call Datamodel Create Dumps Workflow
+    uses: ./.github/workflows/datamodel-dumps-documentation.yml
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+
+  plugin-package:
+    name: Call Plugin Package Workflow
+    uses: ./.github/workflows/plugin-package.yml
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+    secrets: inherit
+
+  project-translations:
+    name: Call Project Translations Workflow
+    uses: ./.github/workflows/project-translation-package.yml
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+    secrets: inherit
+
+  deploy-demo-db:
+    name: Deploy Demo Database
     runs-on: ubuntu-latest
 
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
       DEMO_DATA: Lausanne
       REMOTE_DEMO_DB_NAME: signalo_stable
-      PG_SERVICE: pg_signalo
+      PGSERVICE: pg_signalo
       DB_NAME: signalo
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v6
-
-      - name: Install Transifex
-        run: |
-          curl -OL https://github.com/transifex/cli/releases/download/v1.6.5/tx-linux-amd64.tar.gz
-          tar -xvzf tx-linux-amd64.tar.gz
-
-      - name: Set version
-        run: echo ${{ github.event.release.tag_name }} > CURRENT_VERSION.txt
-
-      - name: Docker build and DB init
-        run: |
-          docker compose --profile qgis --profile schemaspy up --build -d
-          until docker compose exec db pg_isready -U postgres; do
-            echo "Waiting for PostgreSQL to be ready..."
-            sleep 2
-          done
-
-          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
-          docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run --rm pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose run --rm pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
-
-      - name: create dumps
-        run: |
-          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump.backup ${DB_NAME}
-          docker compose exec db pg_dump -U postgres --format plain --exclude-schema=public --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump.sql ${DB_NAME}
-          docker compose exec db pg_dump -U postgres --format plain --schema=signalo_app --file /dump/signalo-${{ github.event.release.tag_name }}-db-app.sql ${DB_NAME}
-          docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose exec db pg_dump -U postgres --format plain --exclude-schema=public --file /dump/signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql ${DB_NAME}_demo
-          docker compose cp db:/dump/. ./
-
-      - name: translate project
-        run: |
-          ./tx pull -a
-          docker compose run qgis sh -c '/usr/src/project/scripts/project-translation-compile.sh /usr/src/project/signalo.qgs'
-          rm project/signalo_*.ts  # do not package ts files
-
-      - name: set project version + create project archive
-        run: |
-          sed -i 's|<title>Signalo - Demo</title>|<title>Signalo - v${{ github.event.release.tag_name }}</title>|' project/signalo.qgs
-          sed -i 's|projectname="Signalo - Demo"|projectname="Signalo - v${{ github.event.release.tag_name }}"|' project/signalo.qgs
-          sed 's/pg_signalo/pg_signalo_dev/g' project/signalo.qgs > project/signalo_dev.qgs
-          sed 's/pg_signalo/pg_signalo_prod/g' project/signalo.qgs > project/signalo_prod.qgs
-          cp datamodel/demo_data/this-is-the-way.jpg project/this-is-the-way.jpg
-          zip -r signalo-${{ github.event.release.tag_name }}-project.zip project README.md
-
-      - name: zip changelogs
-        run: |
-          zip -r signalo-${{ github.event.release.tag_name }}-changelogs.zip datamodel/changelogs
-
-      - name: schemaspy
-        run: |
-          sed -i "s/version dev/version ${{ github.event.release.tag_name }}/" datamodel/schemaspy.properties
-          docker compose run schemaspy
-          zip -r signalo-${{ github.event.release.tag_name }}-model-documentation.zip model-documentation/*
-
-      - name: Upload Release Assets
-        uses: softprops/action-gh-release@v2
-        with:
-          files: |
-            signalo-${{ github.event.release.tag_name }}-project.zip
-            signalo-${{ github.event.release.tag_name }}-changelogs.zip
-            signalo-${{ github.event.release.tag_name }}-model-documentation.zip
-            signalo-${{ github.event.release.tag_name }}-db-dump.backup
-            signalo-${{ github.event.release.tag_name }}-db-dump.sql
-            signalo-${{ github.event.release.tag_name }}-db-app.sql
-            signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.backup
-            signalo-${{ github.event.release.tag_name }}-db-dump-with-demo.sql
 
       - name: Deploy Demo DB
         run: |
@@ -104,7 +56,7 @@ jobs:
           export PGSERVICE="remote_db"
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
-          docker compose run pum --entrypoint psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run --entrypoint psql pum -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
           docker compose run pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
 
