@@ -45,6 +45,9 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
+      - name: Setup env
+        run: cp .env.example .env
+
       - name: Install Transifex
         working-directory: project
         run: |
@@ -56,7 +59,7 @@ jobs:
           docker compose up --build -d
           until docker compose exec db pg_isready -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
-            sleep 2
+            sleep 3
           done
           docker compose exec db createdb -U postgres ${DB_NAME}
           docker compose run pum -vvv -s ${PGSERVICE} -d datamodel install -p SRID 2056 --roles --grant
