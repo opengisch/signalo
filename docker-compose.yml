@@ -3,11 +3,14 @@ services:
     image: postgis/postgis:16-3.5
     platform: linux/amd64
     environment:
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
+      - PGSERVICEFILE=/.pg_service.conf
     ports:
       # making the postgres database accessible for debugging
       - ${PG_CONTAINER_PORT:-5432}:5432
     volumes:
+      # use the PGSERVICE to connect to a database from outside the container
+      - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/.pg_service.conf:ro
       - dump-data:/dump
       - db-data:/var/lib/postgresql/data
 
