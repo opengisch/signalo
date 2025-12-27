@@ -45,9 +45,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v6
 
-      - name: Setup env
-        run: cp .env.example .env
-
       - name: Install Transifex
         working-directory: project
         run: |
