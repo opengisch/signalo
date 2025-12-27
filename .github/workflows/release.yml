@@ -38,8 +38,8 @@ jobs:
 
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose run --rm pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --rm pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: create dumps
         run: |
@@ -104,8 +104,8 @@ jobs:
           export PGSERVICE="remote_db"
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
-          docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run pum --entrypoint psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
 
   rebuild-website:
