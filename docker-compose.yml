@@ -4,7 +4,6 @@ services:
     platform: linux/amd64
     environment:
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-postgres}
-      - PGSERVICE=${PGSERVICE:-}
       - PGSERVICEFILE=/.pg_service.conf
     ports:
       # making the postgres database accessible for debugging
