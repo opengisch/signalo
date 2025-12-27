@@ -36,10 +36,10 @@ jobs:
     env:
       TX_TOKEN: ${{ secrets.TX_TOKEN }}
       COMPOSE_PROFILES: qgis
-      MODULE_NAME: tww
-      QGS_PROJECT_TITLE: TWW
-      QGS_PROJECT_FILE: teksi_wastewater
-      PGSERVICE: pg_tww
+      MODULE_NAME: signalo
+      QGS_PROJECT_TITLE: Signalo
+      QGS_PROJECT_FILE: signalo
+      PGSERVICE: pg_signalo
 
     steps:
       - name: Checkout code

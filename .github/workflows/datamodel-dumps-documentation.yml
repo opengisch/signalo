@@ -29,11 +29,11 @@ jobs:
     name: Create dumps and schemaspy of datamodel
     runs-on: ubuntu-latest
     env:
-      PGSERVICE: pg_tww
-      DB_NAME: tww
-      DEMO_DATA: Aletsch
+      PGSERVICE: pg_signalo
+      DB_NAME: signalo
+      DEMO_DATA: Lausanne
       COMPOSE_PROFILES: schemaspy
-      COMPOSE_PROJECT_NAME: wastewater
+      COMPOSE_PROJECT_NAME: signalo
 
     strategy:
       fail-fast: false
