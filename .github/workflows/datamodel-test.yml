@@ -128,7 +128,7 @@ jobs:
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
           docker compose exec db psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run --rm pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()
