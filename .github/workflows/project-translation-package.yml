@@ -47,7 +47,6 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Install Transifex
-        working-directory: project
         run: |
           curl -OL https://github.com/transifex/cli/releases/download/v1.6.10/tx-linux-amd64.tar.gz
           tar -xvzf tx-linux-amd64.tar.gz
@@ -67,14 +66,12 @@ jobs:
 
       - name: Push to TX
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
-        working-directory: project
         run: ./tx push --source
 
       - name: Compile Translations (fetch translated content)
-        working-directory: project
         run: |
           ./tx pull -a
-          docker compose exec qgis sh -c '/usr/src/project/scripts/project-translation-compile.sh /usr/src/project/teksi_wastewater.qgs'
+          docker compose exec qgis sh -c '/usr/src/project/scripts/project-translation-compile.sh /usr/src/project/${QGS_PROJECT_FILE}.qgs'
 
       - uses: actions/upload-artifact@v5
         with:
