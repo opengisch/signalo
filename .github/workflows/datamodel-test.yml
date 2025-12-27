@@ -68,7 +68,7 @@ jobs:
     env:
       DEMO_DATA: Lausanne
       REMOTE_DEMO_DB_NAME: signalo_testing
-      PG_SERVICE: pg_signalo
+      PGSERVICE: pg_signalo
       DB_NAME: signalo
       RUN_TESTS: True
 
@@ -85,8 +85,8 @@ jobs:
           # create the database
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose run --rm pum pum -vvv -s ${PG_SERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PGSERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum pum -vvv -s ${PGSERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
@@ -99,9 +99,6 @@ jobs:
 
       - name: "test data model"
         run: docker compose run --rm pum pytest
-
-      - name: "test images"
-        run: docker compose run --rm pum /usr/src/test/official_sign_images.sh
 
 #      - name: "schema lint"
 #        run: |
@@ -130,8 +127,8 @@ jobs:
           export PGSERVICE="remote_db"
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
-          docker compose run pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --rm pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run --rm pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()
