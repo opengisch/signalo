@@ -45,7 +45,7 @@ jobs:
           done
           # create the database
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
-          docker compose run --rm pum pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum -vvv -s ${PG_SERVICE} -d datamodel install -p SRID 2056 --roles --grant
 
       - name: Translate
         run: |

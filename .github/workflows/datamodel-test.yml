@@ -85,20 +85,20 @@ jobs:
           # create the database
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run --rm pum pum -vvv -s ${PGSERVICE} -d datamodel install -p SRID 2056 --roles --grant
-          docker compose run --rm pum pum -vvv -s ${PGSERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --rm pum -vvv -s ${PGSERVICE} -d datamodel install -p SRID 2056 --roles --grant
+          docker compose run --rm pum -vvv -s ${PGSERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "dumps + all signs"
         run: |
           docker compose exec db pg_dump -U postgres --format custom --exclude-schema=public --blobs --compress 5 --file signalo-testing-db-dump-with-demo.backup ${DB_NAME}_demo
-          docker compose run --rm pum /usr/src/scripts/all-signs.py
+          docker compose run --entrypoint scripts/all-signs.py pum
 
 #      - uses: actions/setup-node@v3
 #        with:
 #          node-version: '18'
 
       - name: "test data model"
-        run: docker compose run --rm pum pytest
+        run: docker compose run --entrypoint pytest pum
 
 #      - name: "schema lint"
 #        run: |
@@ -127,8 +127,8 @@ jobs:
           export PGSERVICE="remote_db"
           export PGSERVICEFILE="$(pwd)/pg_service.conf"
           docker compose up -d
-          docker compose run --rm pum psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run --rm pum pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+          docker compose run --entrypoint psql pum -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
+          docker compose run --rm pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
 
       - name: "failure logs"
         if: failure()
