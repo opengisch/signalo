@@ -56,4 +56,4 @@ jobs:
   rebuild-website:
     uses: ./.github/workflows/website.yml
     secrets: inherit
-    needs: [datamodel-dumps-documentation, project-translations]
+    needs: datamodel-dumps-documentation
