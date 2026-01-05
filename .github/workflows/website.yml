@@ -87,7 +87,7 @@ jobs:
 
       - name: Datamodel Documentation
         run: |
-          wget -q https://github.com/opengisch/signalo/releases/latest/download/signalo-datamodel-schemaspy.zip
+          wget -q https://github.com/opengisch/signalo/releases/latest/download/datamodel-schemaspy.zip
           unzip -q signalo-datamodel-schemaspy.zip
           cp -r model-documentation site/
 
