@@ -1,4 +1,4 @@
-name: Deploy Demo Database
+name: 🗄️ Deploy Demo Database
 
 concurrency:
   # NOTE: This workflow is called via `workflow_call`. Using `github.workflow` here
