@@ -15,6 +15,13 @@ on:
           required: true
           description: 'Database name to deploy the demo data into'
           type: string
+  workflow_dispatch:
+    inputs:
+      db_name:
+        description: 'Database name to deploy the demo data into'
+        required: true
+        default: signalo_testing
+        type: string
 
 
 jobs:
