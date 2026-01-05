@@ -17,7 +17,7 @@ tx_slug: documentation_user-guide_installation
 
 1. Dans QGIS, installer le plugin [oQtopus](https://plugins.qgis.org/plugins/oqtopus/#plugin-about).
 
-2. 
+2.
 
 ### Installation via PUM (utilisateur avancé)
 
@@ -26,7 +26,7 @@ Il est possible d'installer SIGNALO avec la librairie [pum](https://opengisch.gi
 1. Télécharger la dernière release de SIGNALO https://github.com/opengisch/signalo/releases/latest
 2. Définir un service Posrgresql avec les droits suffisants pour créer des schémas et des tables
 3. Installer pum et ses dépendances via `pip install pum`
-4. Lancer l'installation de l'application avec `pum install 
+4. Lancer l'installation de l'application avec `pum install
 
 ## Extensions
 
