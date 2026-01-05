@@ -20,38 +20,10 @@ jobs:
 
   deploy-demo-db:
     name: Deploy Demo Database
-    runs-on: ubuntu-latest
-
-    env:
-      TX_TOKEN: ${{ secrets.TX_TOKEN }}
-      DEMO_DATA: Lausanne
-      REMOTE_DEMO_DB_NAME: signalo_stable
-      PGSERVICE: pg_signalo
-      DB_NAME: signalo
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v6
-
-      - name: Deploy Demo DB
-        run: |
-          set -euxo pipefail
-          docker compose down -v
-          # Write pg_service.conf with the remote service definition
-          cat > pg_service.conf <<EOF
-          [remote_db]
-          host=${{ secrets.DEMO_DB_HOST }}
-          port=${{ secrets.DEMO_DB_PORT }}
-          dbname=${{ env.REMOTE_DEMO_DB_NAME }}
-          user=${{ secrets.DEMO_DB_USER }}
-          password=${{ secrets.DEMO_DB_PASSWORD }}
-          EOF
-          export PGSERVICE="remote_db"
-          export PGSERVICEFILE="$(pwd)/pg_service.conf"
-          docker compose up -d
-          docker compose exec -e PGSERVICE=remote_db db psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
-
+    uses: ./.github/workflows/deploy-demo-db.yml
+    secrets: inherit
+    with:
+      db_name: signalo_stable
 
   rebuild-website:
     uses: ./.github/workflows/website.yml
