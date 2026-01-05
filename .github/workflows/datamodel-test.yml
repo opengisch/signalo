@@ -67,7 +67,6 @@ jobs:
 
     env:
       DEMO_DATA: Lausanne
-      REMOTE_DEMO_DB_NAME: signalo_testing
       PGSERVICE: pg_signalo
       DB_NAME: signalo
       RUN_TESTS: True
@@ -110,26 +109,6 @@ jobs:
         if: github.event_name != 'pull_request'
         run: sudo chown -R $USER:$USER ${GITHUB_WORKSPACE}
 
-      - name: Deploy Demo DB
-        if: github.event_name != 'pull_request'
-        run: |
-          set -euxo pipefail
-          docker compose down -v
-          # Write pg_service.conf with the remote service definition
-          cat > pg_service.conf <<EOF
-          [remote_db]
-          host=${{ secrets.DEMO_DB_HOST }}
-          port=${{ secrets.DEMO_DB_PORT }}
-          dbname=${{ env.REMOTE_DEMO_DB_NAME }}
-          user=${{ secrets.DEMO_DB_USER }}
-          password=${{ secrets.DEMO_DB_PASSWORD }}
-          EOF
-          export PGSERVICE="remote_db"
-          export PGSERVICEFILE="$(pwd)/pg_service.conf"
-          docker compose up -d
-          docker compose exec -e PGSERVICE=remote_db db psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-          docker compose run pum -vvv -s remote_db -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
-
       - name: "failure logs"
         if: failure()
         run: |
@@ -154,3 +133,11 @@ jobs:
             Download [demo data dump and QGIS project](${{ steps.artifact.outputs.artifact-url }}).
             *(Built from commit ${{ github.event.pull_request.head.sha }})*
           pr: ${{ github.event.number }}
+
+  deploy-demo-db:
+    name: Deploy Demo Database
+    if: github.event_name != 'pull_request'
+    uses: ./.github/workflows/deploy-demo-db.yml
+    secrets: inherit
+    with:
+      db_name: signalo_testing
