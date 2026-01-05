@@ -1,4 +1,4 @@
-# Signalo
+# SIGNALO
 
 [Gestion de la signalisation verticale dans QGIS](https://signalo.ch)
 
