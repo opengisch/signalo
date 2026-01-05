@@ -29,14 +29,16 @@ class Hook(HookBase):
         :param SRID: the EPSG code for geometry columns
         """
 
-        self.execute(Path("datamodel") / "app" / "create_schema.sql")
-        self.execute(Path("datamodel") / "app" / "vw_validation.sql")
-        self.execute(Path("datamodel") / "app" / "vw_azimut_edit.sql")
+        cwd = Path(__file__).parent.resolve()
+
+        self.execute(cwd / "create_schema.sql")
+        self.execute(cwd / "vw_validation.sql")
+        self.execute(cwd / "vw_azimut_edit.sql")
 
         vw_sign_symbol(connection=connection, srid=SRID)
 
         SimpleJoins(
-            safe_load(open("datamodel/app/vw_sign_export.yaml")), connection=connection
+            safe_load(open(cwd / "vw_sign_export.yaml")), connection=connection
         ).create()
 
 
