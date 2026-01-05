@@ -1,4 +1,4 @@
-name: Build Atlas PDF of all signs
+name: 📖 Build Atlas PDF of all signs
 on:
     workflow_dispatch:
     workflow_call:

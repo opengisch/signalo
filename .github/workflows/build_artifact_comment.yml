@@ -1,4 +1,4 @@
-name: Write build artifact comments
+name: ✍️ Write build artifact comments
 
 on:
   workflow_run:
