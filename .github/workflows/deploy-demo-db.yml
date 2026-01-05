@@ -1,7 +1,11 @@
 name: Deploy Demo Database
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  # NOTE: This workflow is called via `workflow_call`. Using `github.workflow` here
+  # can resolve to the *caller* workflow name, which may cause a concurrency
+  # deadlock (caller holds the lock while waiting for this workflow).
+  # Lock per target database instead.
+  group: deploy-demo-db-${{ inputs.db_name }}
   cancel-in-progress: true
 
 on:
