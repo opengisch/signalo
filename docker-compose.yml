@@ -29,12 +29,13 @@ services:
 
   qgis:
     image: qgis/qgis:3.44
+    platform: linux/amd64
     tty: true
     environment:
       - PGSERVICEFILE=/.pg_service.conf
     volumes:
       - .:/usr/src
-      - ./docker/.pg_service.conf:/.pg_service.conf:ro
+      - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/.pg_service.conf:ro
     links:
       - db
     profiles:
@@ -42,6 +43,7 @@ services:
 
   schemaspy:
     image: schemaspy/schemaspy
+    platform: linux/amd64
     volumes:
       - ./datamodel/schemaspy:/output
       - ./datamodel/schemaspy.properties:/schemaspy.properties
