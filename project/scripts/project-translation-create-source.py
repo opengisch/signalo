@@ -23,5 +23,7 @@ app.messageLog().messageReceived.connect(print_message)
 project = QgsProject.instance()
 
 assert project.read(args.project)
-print(project.mapLayers())
+for layer in project.mapLayers().values():
+    assert layer.isValid()
+    print(f"Layer {layer.name()} is valid")
 project.generateTsFile(args.language)

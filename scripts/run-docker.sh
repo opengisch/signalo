@@ -18,7 +18,7 @@ PUM_GH_SHA=${PUM_GH_SHA:-}
 BUILD=0
 DEMO_DATA=
 
-while getopts 'bdp:' opt; do
+while getopts 'bdq' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -30,8 +30,12 @@ while getopts 'bdp:' opt; do
       DEMO_DATA="-d ${DEMO_DATA_NAME}"
       ;;
 
+    q)
+      echo "enable QGIS"
+      export COMPOSE_PROFILES=qgis
+      ;;
     ?|h)
-      echo "Usage: $(basename $0) [-bd] [-p PG_PORT]"
+      echo "Usage: $(basename $0) [-bdq]"
       exit 1
       ;;
   esac
