@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+    <url>
+        <loc>https://www.signalo.ch/contribute/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/contribute/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/contribute/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/roadmap/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/roadmap/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/adddata/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/adddata/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/adddata/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/concepts/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/concepts/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/datamodel-doc/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/datamodel-doc/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/datamodel-doc/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/directionalsigns/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/directionalsigns/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/directionalsigns/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/installation/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/installation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/installation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/marker/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/marker/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/marker/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/mobile/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/mobile/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/mobile/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/symbologyfields/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/symbologyfields/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/symbologyfields/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/tests/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/tests/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/tests/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/updates/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/updates/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/updates/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/validation/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/validation/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/validation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/add_values/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/add_values/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/add_values/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/coherence/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/coherence/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/coherence/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/customsigns/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/customsigns/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/customsigns/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/doublesided/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/doublesided/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/doublesided/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/duplicateobject/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/duplicateobject/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/duplicateobject/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/export/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/export/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/export/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/group_by_mounting_point/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/group_by_mounting_point/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/group_by_mounting_point/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/language/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/language/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/language/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/offset/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/offset/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/offset/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/size/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/size/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/size/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/user-guide/advanced/workenvironment/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/workenvironment/"/>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/workenvironment/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/contribute/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/contribute/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/contribute/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/roadmap/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/roadmap/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/roadmap/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/adddata/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/adddata/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/adddata/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/concepts/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/concepts/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/concepts/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/datamodel-doc/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/datamodel-doc/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/datamodel-doc/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/directionalsigns/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/directionalsigns/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/directionalsigns/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/installation/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/installation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/installation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/marker/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/marker/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/marker/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/mobile/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/mobile/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/mobile/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/symbologyfields/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/symbologyfields/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/symbologyfields/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/tests/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/tests/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/tests/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/updates/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/updates/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/updates/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/validation/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/validation/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/validation/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/add_values/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/add_values/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/add_values/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/coherence/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/coherence/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/coherence/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/customsigns/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/customsigns/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/customsigns/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/doublesided/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/doublesided/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/doublesided/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/duplicateobject/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/duplicateobject/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/duplicateobject/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/export/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/export/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/export/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/group_by_mounting_point/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/group_by_mounting_point/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/group_by_mounting_point/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/language/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/language/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/language/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/offset/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/offset/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/offset/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/size/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/size/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/size/"/>
+    </url>
+    <url>
+        <loc>https://www.signalo.ch/de/user-guide/advanced/workenvironment/</loc>
+        <lastmod>2026-01-13</lastmod>
+        <changefreq>daily</changefreq>
+        <xhtml:link rel="alternate" hreflang="de" href="https://www.signalo.ch/de/user-guide/advanced/workenvironment/"/>
+        <xhtml:link rel="alternate" hreflang="fr" href="https://www.signalo.ch/user-guide/advanced/workenvironment/"/>
+    </url>
+</urlset>

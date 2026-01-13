@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<database name="signalo" schema="signalo_db" type="PostgreSQL - 16.9 (Debian 16.9-1.pgdg110+1)">
+   <tables>
+      <table name="azimut" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_azimut" foreignKey="fkey_od_azimut" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_support" nullable="false" remarks="Foreign key of associated support" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_support" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="2" name="azimut" nullable="true" remarks="" size="5" type="int2" typeCode="5"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="usr_azimut_1" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="usr_azimut_2" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="usr_azimut_3" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="_creation_date" nullable="true" remarks="Date of creation, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="_creation_user" nullable="true" remarks="User of creation, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="_last_modification_date" nullable="true" remarks="Date of last modification, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="_last_modification_user" nullable="true" remarks="User of last modification, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="0" digits="2" id="10" name="offset_x" nullable="false" remarks="Sets an offset in X direction of all associated front side signals, to improve visibility on the map" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="0" digits="2" id="11" name="offset_y" nullable="false" remarks="Sets an offset in Y direction of all associated frond side signals, to improve visibility on the map" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="0" digits="2" id="12" name="offset_x_verso" nullable="false" remarks="Sets an offset in X direction of all associated back side signals, to improve visibility on the map" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="0" digits="2" id="13" name="offset_y_verso" nullable="false" remarks="Sets an offset in Y direction of all associated back side signals, to improve visibility on the map" size="10" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="14" name="needs_validation" nullable="false" remarks="Automatically set to true if the conditions for control are met" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="_last_modification_platform" nullable="true" remarks="Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.&#10;    This field is used as a condition in the control view." size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="azimut_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="azimut_fk_support_azimut_key" unique="true">
+            <column ascending="true" name="fk_support"/>
+            <column ascending="true" name="azimut"/>
+         </index>
+         <index name="azimut_fk_support_idx" unique="false">
+            <column ascending="true" name="fk_support"/>
+         </index>
+      </table>
+      <table name="dms_document" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_document" foreignKey="fk_document" implied="false" onDeleteCascade="false" schema="signalo_db" table="dms_rel_document"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="identification" nullable="false" remarks="Name or description of the document" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="path" nullable="true" remarks="Path to the document" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="type" nullable="true" remarks="Type (jpg, png, pdf, image, document, etc.)" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="dms_document_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="dms_rel_document" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_document" nullable="true" remarks="Foreign key of document; automatically filled in" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fk_document" implied="false" onDeleteCascade="false" schema="signalo_db" table="dms_document"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="object_class" nullable="true" remarks="Type of associated object: azimut or support; automatically filled in" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="fk_object" nullable="true" remarks="Foreign key of associated object (azimut or support); automatically filled in" size="2147483647" type="uuid" typeCode="1111"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="dms_rel_document_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="frame" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_frame" foreignKey="fkey_od_frame" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_azimut" nullable="false" remarks="Foreign key of associated azimut" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_azimut" implied="false" onDeleteCascade="false" schema="signalo_db" table="azimut"/>
+         </column>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="2" name="rank" nullable="false" remarks="Ranking (automatically filled in in QGIS) depending on the order of frames for each azimut" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="fk_frame_type" nullable="true" remarks="Foreign key for frame type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_frame_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_frame_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="fk_frame_fixing_type" nullable="true" remarks="Foreign key for frame fixing type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_frame_fixing_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_frame_fixing_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="5" name="double_sided" nullable="true" remarks="Set true if double sided (default). This has no influence on the symbology of the map" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="fk_status" nullable="true" remarks="Foreign key of status value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_status"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fk_provider" nullable="true" remarks="Foreign key of provider value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_provider"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="comment" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="picture" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="10" name="dimension_1" nullable="true" remarks="If frame is rectangular, height/width; if frame is circular, radius; if frame is elliptic, major/minor radius" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="11" name="dimension_2" nullable="true" remarks="If frame is rectangular, height/width; if frame is circular, not needed; if frame is elliptic, major/minor radius" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="usr_frame_1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="usr_frame_2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="usr_frame_3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="15" name="_creation_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="_creation_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="17" name="_last_modification_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="_last_modification_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="'center'::text" digits="0" id="19" name="fk_mounting_point" nullable="false" remarks="Anchor point of frame (left, right, center). Default is center. This value influences the visual representation on the map and is used in support.group_by_mounting_point condition" size="2147483647" type="text" typeCode="12">
+            <parent column="id" foreignKey="frame_fk_mounting_point_key" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_mounting_point"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="20" name="needs_validation" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="_last_modification_platform" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="frame_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="frame_fk_azimut_idx" unique="false">
+            <column ascending="true" name="fk_azimut"/>
+         </index>
+         <index name="frame_fk_azimut_rank_key" unique="true">
+            <column ascending="true" name="fk_azimut"/>
+            <column ascending="true" name="rank"/>
+         </index>
+      </table>
+      <table name="pum_migrations" remarks="version: 1 --  schema_migration table version" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="gen_random_uuid()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="1" name="date_installed" nullable="false" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="module" nullable="true" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="version" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="beta_testing" nullable="false" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="changelog_files" nullable="true" remarks="" size="2147483647" type="_text" typeCode="2003"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="parameters" nullable="true" remarks="" size="2147483647" type="jsonb" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="'2025.0'::character varying" digits="0" id="7" name="migration_table_version" nullable="false" remarks="" size="50" type="varchar" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="pum_migrations_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="sign" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_parent" foreignKey="fkey_od_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="fk_frame" nullable="false" remarks="Foreign key of associated frame" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_frame" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+         </column>
+         <column autoUpdated="false" defaultValue="1" digits="0" id="2" name="rank" nullable="false" remarks="Ranking (automatically filled in in QGIS) depending on the order of signs for each frame" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="3" name="complex" nullable="false" remarks="Set true if the sign is too complex for being in the available svg selection. A placeholder sign (&quot;?&quot;) will appear on the map, the real sign can be seen on the photo in the form" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="fk_sign_type" nullable="false" remarks="Foreign key of sign type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_sign_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_sign_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="fk_official_sign" nullable="true" remarks="Foreign key of official sign value list" size="2147483647" type="text" typeCode="12">
+            <parent column="id" foreignKey="fkey_vl_official_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_official_sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="fk_marker_type" nullable="true" remarks="Foreign key of marker type value list" size="5" type="int2" typeCode="5">
+            <parent column="id" foreignKey="fkey_vl_marker_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_marker_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="fk_mirror_shape" nullable="true" remarks="Foreign key of mirror shape value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_mirror_shape" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_mirror_shape"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="fk_parent" nullable="true" remarks="Foreign key of associated parent sign" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="fk_owner" nullable="true" remarks="Foreign key of owner value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_owner" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_owner"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="fk_provider" nullable="true" remarks="Foreign key of provider value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_provider"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="fk_durability" nullable="true" remarks="Foreign key of durability value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_durability" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_durability"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="fk_status" nullable="true" remarks="Foreign key of status value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_status"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="installation_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="manufacturing_date" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="case_id" nullable="true" remarks="Identifier of offical autorisation case" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="case_decision" nullable="true" remarks="Decision of offical autorisation case" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="inscription_1" nullable="true" remarks="Line 1 for dynamic inscriptions" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="inscription_2" nullable="true" remarks="Line 2 for dynamic inscriptions" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="inscription_3" nullable="true" remarks="Line 3 for dynamic inscriptions" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="fk_coating" nullable="true" remarks="Foreign key of coating value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_coating" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_coating"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="fk_lighting" nullable="true" remarks="Foreign key of lighting value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_lighting" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_lighting"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="comment" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="picture" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="24" name="mirror_protruding" nullable="true" remarks="boolean (default is false)" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="25" name="mirror_red_frame" nullable="true" remarks="boolean (default is false)" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="26" name="dimension_1" nullable="true" remarks="If sign is rectangular, height/width; if sign is circular, radius; if sign is elliptic, major/minor radius" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="27" name="dimension_2" nullable="true" remarks="If sign is rectangular, height/width; if sign is circular, not needed; if sign is elliptic, major/minor radius" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="28" name="usr_sign_1" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="29" name="usr_sign_2" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="30" name="usr_sign_3" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="31" name="_creation_date" nullable="true" remarks="Date of creation, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="32" name="_creation_user" nullable="true" remarks="User of creation, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="33" name="_last_modification_date" nullable="true" remarks="Date of last modification, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="34" name="_last_modification_user" nullable="true" remarks="User of last modification, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="35" name="fk_user_sign" nullable="true" remarks="Foreign key of user sign value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_vl_user_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_user_sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="36" name="natural_direction_or_left" nullable="false" remarks="Determines the direction for directional signs, with reference to frame.anchor. Default is true" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="'recto'::text" digits="0" id="37" name="fk_hanging_mode" nullable="false" remarks="Defines whether a panel carries the same signal on both sides; influences the symbology on the map. Default is recto (only front side)" size="2147483647" type="text" typeCode="12">
+            <parent column="id" foreignKey="frame_fk_hanging_mode_key" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_hanging_mode"/>
+         </column>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="38" name="needs_validation" nullable="false" remarks="Automatically set to true if the conditions for control are met" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="39" name="_last_modification_platform" nullable="true" remarks="Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.&#10;    This field is used as a condition in the control view." size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="sign_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="sign_fk_frame_idx" unique="false">
+            <column ascending="true" name="fk_frame"/>
+         </index>
+         <index name="sign_fk_frame_rank_verso_key" unique="true">
+            <column ascending="true" name="fk_frame"/>
+            <column ascending="true" name="rank"/>
+            <column ascending="true" name="fk_hanging_mode"/>
+         </index>
+      </table>
+      <table name="support" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_support" foreignKey="fkey_od_support" implied="false" onDeleteCascade="false" schema="signalo_db" table="azimut"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="address" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="fk_support_type" nullable="true" remarks="Foreign key of support type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_support_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_support_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="fk_owner" nullable="true" remarks="Foreign key of owner value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_owner" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_owner"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="fk_provider" nullable="true" remarks="Foreign key of provider value list" size="2147483647" type="uuid" typeCode="1111">
+            <parent column="id" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_provider"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="fk_support_base_type" nullable="true" remarks="Foreign key of support base type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_support_base_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_support_base_type"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="road_segment" nullable="true" remarks="Optional field to reference a road" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="7" name="height" nullable="true" remarks="Support height" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="3" id="8" name="height_free_under_signal" nullable="true" remarks="Free height under signals" size="8" type="numeric" typeCode="2"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="date_install" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="date_last_stability_check" nullable="true" remarks="" size="13" type="date" typeCode="91"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="fk_status" nullable="true" remarks="Foreign key of status value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_status"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="comment" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="picture" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="14" name="geometry" nullable="false" remarks="" size="2147483647" type="geometry" typeCode="1111"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="15" name="usr_support_1" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="16" name="usr_support_2" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="usr_support_3" nullable="true" remarks="Field for custom info; use can be specified with alias in QGIS" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="18" name="_creation_date" nullable="true" remarks="Date of creation, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="_creation_user" nullable="true" remarks="User of creation, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="20" name="_last_modification_date" nullable="true" remarks="Date of last modification, automatically filled in within QGIS project" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="_last_modification_user" nullable="true" remarks="User of last modification, automatically filled in within QGIS project" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="22" name="group_by_mounting_point" nullable="false" remarks="Set true to visually order signals by their anchor point (within each azimut), set false if ranking order should be respected" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="picture_2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="24" name="needs_validation" nullable="false" remarks="Automatically set to true if the conditions for control are met" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="_last_modification_platform" nullable="true" remarks="Platform (mobile, desktop) of last modification, automatically filled in within QGIS project.&#10;    This field is used as a condition in the control view." size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="26" name="fk_support_tube_type" nullable="true" remarks="Foreign key of tube type value list" size="10" type="int4" typeCode="4">
+            <parent column="id" foreignKey="fkey_vl_support_tube_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="vl_support_tube_type"/>
+         </column>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="support_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_coating" numRows="7" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_coating" foreignKey="fkey_vl_coating" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="coating_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_durability" numRows="6" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_durability" foreignKey="fkey_vl_durability" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="durability_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_frame_fixing_type" numRows="7" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_frame_fixing_type" foreignKey="fkey_vl_frame_fixing_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="frame_fixing_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_frame_type" numRows="8" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_frame_type" foreignKey="fkey_vl_frame_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="frame_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_hanging_mode" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="text" typeCode="12">
+            <child column="fk_hanging_mode" foreignKey="frame_fk_hanging_mode_key" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="hanging_mode_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_lighting" numRows="7" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_lighting" foreignKey="fkey_vl_lighting" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="lighting_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_marker_type" numRows="9" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="1" digits="0" id="0" name="id" nullable="false" remarks="" size="5" type="int2" typeCode="5">
+            <child column="fk_marker_type" foreignKey="fkey_vl_marker_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="value_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="value_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="description_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="img_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="img_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="img_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="img_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="14" name="img_height" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="15" name="img_width" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="no_dynamic_inscription" nullable="true" remarks="" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="default_inscription1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="default_inscription2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="default_inscription3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="default_inscription4" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="21" name="directional_sign" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="img_de_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="img_fr_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="img_it_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="img_ro_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="marker_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_mirror_shape" numRows="3" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_mirror_shape" foreignKey="fkey_vl_mirror_shape" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="mirror_shape_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_mounting_point" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="text" typeCode="12">
+            <child column="fk_mounting_point" foreignKey="frame_fk_mounting_point_key" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="mounting_point_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_official_sign" numRows="313" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="text" typeCode="12">
+            <child column="fk_official_sign" foreignKey="fkey_vl_official_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="Set to false if sign should not appear in the selection anymore. Default is true" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="value_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="value_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="description_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="img_de" nullable="true" remarks="Path to svg (if directional, this is the left direction). Idem for img_fr, img_it, img_ro" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="img_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="img_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="img_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="14" name="img_height" nullable="true" remarks="Height of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="15" name="img_width" nullable="true" remarks="Width of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="no_dynamic_inscription" nullable="true" remarks="Number of dynamic inscriptions. Default is 0" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="default_inscription1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="default_inscription2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="default_inscription3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="default_inscription4" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="21" name="directional_sign" nullable="false" remarks="Boolean if sign is directional. Default is false" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="img_de_right" nullable="true" remarks="Path to svg (if directional, this is the right direction). Idem for img_fr_right, img_it_right, img_ro_right" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="img_fr_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="img_it_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="img_ro_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="official_sign_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <checkConstraint constraint="(((directional_sign IS FALSE) OR ((img_de_right IS NOT NULL) AND (img_fr_right IS NOT NULL) AND (img_it_right IS NOT NULL) AND (img_ro_right IS NOT NULL))))" name="directional"/>
+      </table>
+      <table name="vl_owner" numRows="4" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_owner" foreignKey="fkey_od_owner" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+            <child column="fk_owner" foreignKey="fkey_od_owner" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="usr_owner_1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="usr_owner_2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="usr_owner_3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="_inserted_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="_inserted_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="_last_modified_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="_last_modified_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="owner_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_provider" numRows="3" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_provider" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+            <child column="fk_provider" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+            <child column="fk_provider" foreignKey="fkey_od_provider" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="name" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="usr_provider_1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="usr_provider_2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="usr_provider_3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="6" name="_inserted_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="_inserted_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="now()" digits="6" id="8" name="_last_modified_date" nullable="true" remarks="" size="29" type="timestamp" typeCode="93"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="_last_modified_user" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="provider_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_sign_type" numRows="7" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_sign_type" foreignKey="fkey_vl_sign_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="sign_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_status" numRows="6" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_status" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="frame"/>
+            <child column="fk_status" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+            <child column="fk_status" foreignKey="fkey_vl_status" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="status_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_support_base_type" numRows="25" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_support_base_type" foreignKey="fkey_vl_support_base_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="support_base_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_support_tube_type" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_support_tube_type" foreignKey="fkey_vl_support_tube_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="support_tube_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_support_type" numRows="10" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="true" defaultValue="null" digits="0" id="0" name="id" nullable="false" remarks="" size="10" type="int4" typeCode="4">
+            <child column="fk_support_type" foreignKey="fkey_vl_support_type" implied="false" onDeleteCascade="false" schema="signalo_db" table="support"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="support_type_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+      </table>
+      <table name="vl_user_sign" remarks="" schema="signalo_db" type="TABLE">
+         <column autoUpdated="false" defaultValue="uuid_generate_v1()" digits="0" id="0" name="id" nullable="false" remarks="" size="2147483647" type="uuid" typeCode="1111">
+            <child column="fk_user_sign" foreignKey="fkey_vl_user_sign" implied="false" onDeleteCascade="false" schema="signalo_db" table="sign"/>
+         </column>
+         <column autoUpdated="false" defaultValue="true" digits="0" id="1" name="active" nullable="true" remarks="" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="2" name="value_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="3" name="value_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="4" name="value_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="5" name="value_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="6" name="description_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="7" name="description_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="8" name="description_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="9" name="description_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="10" name="img_de" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="11" name="img_fr" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="12" name="img_it" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="13" name="img_ro" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="14" name="img_height" nullable="true" remarks="Height of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="100" digits="0" id="15" name="img_width" nullable="true" remarks="Width of the svg. If 0, it will not appear on the map. Ratio width-height has to be respected" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="16" name="no_dynamic_inscription" nullable="true" remarks="Number of dynamic inscriptions. Default is 0" size="10" type="int4" typeCode="4"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="17" name="default_inscription1" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="18" name="default_inscription2" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="19" name="default_inscription3" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="20" name="default_inscription4" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="21" name="directional_sign" nullable="false" remarks="Boolean if sign is directional. Default is false" size="1" type="bool" typeCode="-7"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="22" name="img_de_right" nullable="true" remarks="Path to svg (if directional, this is the right direction). Idem for img_fr_right, img_it_right, img_ro_right" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="23" name="img_fr_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="24" name="img_it_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <column autoUpdated="false" defaultValue="null" digits="0" id="25" name="img_ro_right" nullable="true" remarks="" size="2147483647" type="text" typeCode="12"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="user_sign_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <checkConstraint constraint="(((directional_sign IS FALSE) OR ((img_de_right IS NOT NULL) AND (img_fr_right IS NOT NULL) AND (img_it_right IS NOT NULL) AND (img_ro_right IS NOT NULL))))" name="directional"/>
+      </table>
+   </tables>
+   <routines>
+      <routine dataAccess="MODIFIES" deterministic="false" name="ft_reorder_frames_on_support()" returnType="trigger" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="plpgsql"><![CDATA[Redacted, use --include-routine-definition]]></definition>
+         <parameters>
+            <parameter mode="IN"/>
+         </parameters>
+      </routine>
+      <routine dataAccess="MODIFIES" deterministic="false" name="ft_reorder_frames_on_support_put_last()" returnType="trigger" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="plpgsql"><![CDATA[Redacted, use --include-routine-definition]]></definition>
+         <parameters>
+            <parameter mode="IN"/>
+         </parameters>
+      </routine>
+      <routine dataAccess="MODIFIES" deterministic="false" name="ft_reorder_signs_in_frame()" returnType="trigger" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="plpgsql"><![CDATA[Redacted, use --include-routine-definition]]></definition>
+         <parameters>
+            <parameter mode="IN"/>
+         </parameters>
+      </routine>
+      <routine dataAccess="MODIFIES" deterministic="false" name="ft_sign_prevent_fk_frame_update()" returnType="trigger" securityType="INVOKER" type="FUNCTION">
+         <comment/>
+         <definition language="plpgsql"><![CDATA[Redacted, use --include-routine-definition]]></definition>
+         <parameters>
+            <parameter mode="IN"/>
+         </parameters>
+      </routine>
+   </routines>
+</database>
