@@ -89,7 +89,7 @@ jobs:
         run: |
           curl -fsSL -L -o datamodel-schemaspy.zip https://github.com/opengisch/signalo/releases/latest/download/datamodel-schemaspy.zip
           unzip -q datamodel-schemaspy.zip
-          cp -r datamodel-schemaspy site/
+          mv datamodel/schemaspy site/model-documentation
 
       - uses: actions/upload-artifact@v6
         if: ${{ github.event_name == 'pull_request' }}
