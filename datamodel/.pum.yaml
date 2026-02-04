@@ -1,7 +1,8 @@
 
 pum:
+  module: signalo
   migration_table_schema: signalo_db
-  minimum_version: 1.2.0
+  minimum_version: 1.3.3
 
 roles:
   - name: signalo_viewer
@@ -33,10 +34,10 @@ dependencies:
   - name: pirogue
     minimum_version: 3.0.0
 
-migration_hooks:
-  pre:
+application:
+  drop:
     - code: DROP SCHEMA IF EXISTS signalo_app CASCADE;
-  post:
+  create:
     - file: app/create_app.py
 
 demo_data:

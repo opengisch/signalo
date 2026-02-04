@@ -15,4 +15,4 @@ docker run -d -p 5432:5432 \
 DEMO_DATA="Lausanne"
 
 docker exec signalo-demo-data-uploader psql -v ON_ERROR_STOP=1 -c "DROP SCHEMA IF EXISTS signalo_app CASCADE; DROP SCHEMA IF EXISTS signalo_db CASCADE;"
-docker exec signalo-demo-data-uploader pum -vvv -s signalo_remote_testing -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA} --roles --grant
+docker exec signalo-demo-data-uploader pum -vvv -p signalo_remote_testing -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA}
