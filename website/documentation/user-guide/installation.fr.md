@@ -9,24 +9,24 @@ tx_slug: documentation_user-guide_installation
 ## Prérequis
 
 * QGIS version LTR ou plus récente
-* Un serveur Postgresql version 10 ou plus récente
+* Un serveur Postgresql version 14 ou plus récente
 
-## Téléchargement
+## Installation de l'application (modèle de données)
 
-1. Pour installer signalo, trouvez la [dernière version](https://github.com/opengisch/signalo/releases/latest) et téléchargez
+### Installation simple via interface graphique
 
-    * le fichier `project.zip` contenant le projet QGIS nécessaire à la visualisation des données.
-    * le dump du modèle de données (avec ou sans données démo)
+1. Dans QGIS, installer le plugin [oQtopus](https://plugins.qgis.org/plugins/oqtopus/#plugin-about).
 
-## Modèle de données
+2.
 
-2. Créez un [service postgresl](https://www.postgresql.org/docs/current/libpq-pgservice.html) `pg_signalo` avec les informations de connexion.
+### Installation via PUM (utilisateur avancé)
 
-3. Réstaurez ensuite le dump:
-    * pour un dump binaire (fichier avec extension `.backup`), utiliser `pg_restore` facilement utilisable avec [pgAdmin](https://www.pgadmin.org/)
-    * pour un dump SQL (fichier avec extension `.sql`), utiliser la ligne de commande:
-    `PGSERVICE=pg_signalo psql -v ON_ERROR_STOP=1 -f _chemin_vers_le_fichier_sql`
+Il est possible d'installer SIGNALO avec la librairie [pum](https://opengisch.github.io/pum/).
 
+1. Télécharger la dernière release de SIGNALO https://github.com/opengisch/signalo/releases/latest
+2. Définir un service Posrgresql avec les droits suffisants pour créer des schémas et des tables
+3. Installer pum et ses dépendances via `pip install pum`
+4. Lancer l'installation de l'application avec `pum install
 
 ## Extensions
 
