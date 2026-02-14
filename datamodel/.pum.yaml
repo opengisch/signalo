@@ -50,3 +50,7 @@ demo_data:
        - demo_data/azimut_content.sql
        - demo_data/frame_content.sql
        - demo_data/sign_content.sql
+
+uninstall:
+  - code: DROP SCHEMA IF EXISTS signalo_db CASCADE;
+  - code: DROP SCHEMA IF EXISTS signalo_app CASCADE;
