@@ -16,7 +16,7 @@ tx_slug: documentation_user-guide_installation
 1. Installer le plugin QGIS [oQtopus](https://plugins.qgis.org/plugins/oqtopus/)
 2. Suivez le processus d'[installation](https://opengisch.github.io/oqtopus/usage/module/installation/) pour installer SIGNALO
 
-## Installation via manuelle avec PUM
+## Installation manuelle avec PUM
 
 Il est possible d'installer SIGNALO avec la librairie [pum](https://opengisch.github.io/pum/).
 
