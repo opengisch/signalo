@@ -114,7 +114,7 @@ jobs:
         run: |
           docker compose logs pum
 
-      - uses: actions/upload-artifact@v6
+      - uses: actions/upload-artifact@v7
         id: artifact
         if: github.event_name == 'pull_request'
         with:
