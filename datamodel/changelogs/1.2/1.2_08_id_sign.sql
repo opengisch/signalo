@@ -29,7 +29,7 @@ UPDATE signalo_db.sign
 SET fk_official_sign = '4.77/11-1' where fk_official_sign = '4.77/11';
 
 UPDATE signalo_db.sign
-SET fk_official_sign = '4.77/11-2' where fk_official_sign = '4.77/1-01';
+SET fk_official_sign = '4.77/11-2' where fk_official_sign = '4.77.1/01';
 
 UPDATE signalo_db.sign
 SET fk_official_sign = '4.77/10-1' where fk_official_sign = '4.77/10';
