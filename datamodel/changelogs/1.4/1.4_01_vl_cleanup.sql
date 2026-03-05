@@ -1,5 +1,5 @@
-DELETE FROM signalo_db.vl_support_base_type where id = 16 and value_fr = 'SPCH–Type 3';
-DELETE FROM signalo_db.vl_support_base_type where id = 17 and value_fr = 'SPCH–Type 4';
+DELETE FROM signalo_db.vl_support_base_type where id = 16 and value_fr = 'SPCH-Type 3';
+DELETE FROM signalo_db.vl_support_base_type where id = 17 and value_fr = 'SPCH-Type 4';
 DELETE FROM signalo_db.vl_support_base_type where id = 18 and value_fr = 'SPCH-Type 5';
 DELETE FROM signalo_db.vl_support_base_type where id = 19 and value_fr = 'SPCH-Type 6';
 DELETE FROM signalo_db.vl_support_base_type where id = 20 and value_fr = 'OFROU-Type A';
