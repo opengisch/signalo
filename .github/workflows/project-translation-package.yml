@@ -102,7 +102,7 @@ jobs:
             project/**/*
             !project/.tx
             !project/**/*.qgs~
-            /project/scripts/*
+            !project/scripts/*
           if-no-files-found: error
 
   release:
@@ -120,8 +120,8 @@ jobs:
 
       - name: Create project translations zip
         run: |
-          cd project-artifact
-          zip -r ../project-translations.zip .
+          cd project-artifact/project
+          zip -r ../../project-translations.zip .
 
       - name: Upload project translations as GitHub Release asset
         run: |
