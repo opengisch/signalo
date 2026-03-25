@@ -76,25 +76,25 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
+     font-size="12px"
      id="svg_12"
-     y="15.188704"
-     x="35.43203"
+     y="15"
+     x="36"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.3733px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
+     font-size="12px"
      id="svg_12-9"
-     y="27.368427"
-     x="35.43203"
+     y="29.5"
+     x="36"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:10.3733px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text2)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text2)</text>
 </svg>

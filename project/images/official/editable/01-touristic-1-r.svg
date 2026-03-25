@@ -76,12 +76,12 @@
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
+     font-size="12px"
      id="svg_12"
-     y="20.906191"
-     x="7.0577393"
+     y="22"
+     x="10"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:13.1037px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
 </svg>
