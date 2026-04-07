@@ -96,7 +96,7 @@ jobs:
         id: upload-artifact
         uses: actions/upload-artifact@v7
         with:
-          name: project
+          name: oqtopus.project
           path: |
             project/**/*
             !project/.tx
@@ -114,7 +114,7 @@ jobs:
       - name: Download artifact
         uses: actions/download-artifact@v7
         with:
-          name: project
+          name: oqtopus.project
           path: ./project-artifact
 
       - name: Create project translations zip
