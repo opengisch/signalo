@@ -69,45 +69,45 @@
   </g>
   <path
      style="fill:#7a2017;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.88043"
-     d="M 112.56839,34.500264 129.28692,18.698272 113.15442,2.7712192 2.5912494,2.6386482 V 34.609358"
+     d="M 112.5684,34.500264 129.28693,18.698272 113.15443,2.7712192 2.5912494,2.6386482 V 34.609358"
      id="path949" />
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
+     font-size="10px"
      id="svg_12"
-     y="11.280643"
-     x="5.8289633"
+     y="10.9"
+     x="10"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.27524px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text1)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
+     font-size="10px"
      id="svg_12-9"
-     y="20.591715"
-     x="5.8289633"
+     y="20.9"
+     x="10"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.27524px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text2)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text2)</text>
   <text
      xml:space="default"
      dominant-baseline="middle"
      text-anchor="left"
      font-family="sans-serif"
-     font-size="13.1037px"
-     id="svg_12-6"
-     y="29.902781"
-     x="5.8289633"
+     font-size="10px"
+     id="svg_12-9-2"
+     y="30.9"
+     x="10"
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:9.27524px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text3)</text>
+     style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Italic';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;dominant-baseline:middle;fill:#ffffff;stroke:#ffffff;stroke-width:0">param(text3)</text>
 </svg>
