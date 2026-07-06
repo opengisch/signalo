@@ -1,90 +1,83 @@
 name: 📖 Build Atlas PDF of all signs
+
+concurrency:
+  group: atlas-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: ${{ github.event_name != 'workflow_call' }}
+
 on:
-    workflow_dispatch:
-    workflow_call:
-    push:
-        branches:
-            - atlas-sign
+  pull_request:
+    branches:
+      - main
+    paths:
+      - project/signalo.qgs
+      - project/images/official/**
+      - datamodel/**
+      - '.github/workflows/sign-documentation-atlas.yml'
+  workflow_dispatch:
+  workflow_call: # Allows this workflow to be called by other workflows
+    inputs:
+      release_tag:
+        required: false
+        description: 'Release tag to upload the atlas PDF as a GitHub Release asset'
+        default: ''
+        type: string
 
 permissions:
   contents: write
-  pull-requests: write
 
 jobs:
-    build:
-        runs-on: ubuntu-latest
-        steps:
-        - uses: actions/checkout@v7
+  build:
+    name: Build Atlas PDF of official signs
+    runs-on: ubuntu-latest
+    env:
+      PGSERVICE: pg_signalo
+      DB_NAME: signalo
+      COMPOSE_PROFILES: qgis
+      COMPOSE_PROJECT_NAME: signalo
+    steps:
+      - uses: actions/checkout@v7
 
-        - name: "build dockerfile"
-          run: docker build -f .docker/Dockerfile --tag opengisch/signalo:unstable .
+      - name: Setup env
+        run: cp .env.example .env
 
-        - name: "initialize container"
-          run: |
-                docker network create signalo_network
-                docker run -d -p 5432:5432 --network signalo_network --name signalo -v $(pwd):/src opengisch/signalo:unstable
-                docker exec signalo init_db.sh wait
-                docker exec -e PGSERVICE=pg_signalo_demo signalo init_db.sh build
+      - name: Initialize container
+        run: |
+          docker compose up -d --build
+          until docker compose exec db pg_isready -U postgres; do
+            echo "Waiting for PostgreSQL to be ready..."
+            sleep 3
+          done
+          docker compose exec db createdb -U postgres ${DB_NAME}
+          docker compose run pum -vvv -p ${PGSERVICE} -d datamodel install -p SRID 2056
 
-        - name: "create pg_service.conf"
-          run: |
-                cat <<EOF > .pg_service.conf
-                [pg_signalo]
-                host=signalo
-                port=5432
-                dbname=signalo
-                user=postgres
-                password=postgres
-                EOF
+      - name: Build Atlas PDF
+        run: |
+          docker compose run --rm \
+            -e QT_QPA_PLATFORM=offscreen \
+            qgis \
+            qgis_process run native:atlaslayouttopdf \
+              --PROJECT_PATH="/usr/src/project/signalo.qgs" \
+              LAYOUT="official sign" \
+              OUTPUT="/usr/src/atlas-full.pdf"
 
-        - name: Build Atlas PDF
-          run: |
-                docker run \
-                --network signalo_network \
-                --platform linux/amd64 \
-                -e QT_QPA_PLATFORM=offscreen \
-                -e PGSERVICEFILE=/src/.pg_service.conf \
-                --rm \
-                -v $(pwd):/src \
-                qgis/qgis \
-                qgis_process run native:atlaslayouttopdf \
-                    --PROJECT_PATH="/src/project/signalo.qgs" \
-                    LAYOUT="official sign" \
-                    OUTPUT="/src/doc/official-sign-fr.pdf"
+      - name: Create condensed layout PDF
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y texlive-extra-utils
+          pdfjam --nup 4x3 --landscape --outfile official-sign-fr.pdf atlas-full.pdf
 
-        - name: Create layout PDF
-          run: |
-                sudo apt-get update
-                sudo apt-get install -y texlive-extra-utils
-                pdfjam --nup 4x3 --landscape --outfile doc/official-sign-fr.pdf atlas_export.pdf
+      - name: Docker logs
+        if: failure()
+        run: docker compose logs
 
+      - uses: actions/upload-artifact@v7
+        with:
+          name: official-sign-fr.pdf
+          path: official-sign-fr.pdf
+          if-no-files-found: error
 
-        - name: Upload PDF
-          uses: actions/upload-artifact@v7
-          with:
-            name: official-sign-fr.pdf
-            path: doc/official-sign-fr.pdf
-
-        - name: Commit and push to branch
-          if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
-          run: |
-            git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
-            git config --global user.name "github-actions[bot]"
-            git config --global user.email "github-actions[bot]@users.noreply.github.com"
-            branch_name=update-atlas-pdf-${GITHUB_RUN_ID}
-            git checkout -b $branch_name
-            git add doc/official-sign-fr.pdf
-            git commit -m "Update official-sign-fr.pdf"
-            git push origin $branch_name
-
-        - name: Create Pull Request
-          if: github.event_name == 'workflow_dispatch' || github.event_name == 'workflow_call'
-          env:
-            GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            gh pr create \
-              --title "Update official-sign-fr.pdf" \
-              --body "Automated update of the Atlas PDF." \
-              --head update-atlas-pdf-${GITHUB_RUN_ID} \
-              --base ${{ github.ref_name }} \
-              --repo ${{ github.repository }}
+      - name: Upload atlas PDF as GitHub Release asset
+        if: ${{ inputs.release_tag != '' }}
+        run: gh release upload "${{ inputs.release_tag }}" official-sign-fr.pdf --repo "$GITHUB_REPOSITORY"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

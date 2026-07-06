@@ -25,7 +25,16 @@ jobs:
     with:
       db_name: signalo_stable
 
+  sign-documentation-atlas:
+    name: Build Atlas PDF of official signs
+    uses: ./.github/workflows/sign-documentation-atlas.yml
+    secrets: inherit
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+
   rebuild-website:
     uses: ./.github/workflows/website.yml
     secrets: inherit
-    needs: datamodel-dumps-documentation
+    needs:
+      - datamodel-dumps-documentation
+      - sign-documentation-atlas

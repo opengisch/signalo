@@ -22,3 +22,7 @@ official-signs.json
 postgresql.jar
 schemaspy*.jar
 schemaspy/
+
+# Atlas PDF build artifacts (built in CI, published as release asset)
+atlas-full.pdf
+official-sign-fr.pdf
