@@ -17,8 +17,9 @@ PUM_GH_SHA=${PUM_GH_SHA:-}
 
 BUILD=0
 DEMO_DATA=
+LOAD=
 
-while getopts 'bdq' opt; do
+while getopts 'bdql:' opt; do
   case "$opt" in
     b)
       echo "Rebuild docker image"
@@ -34,8 +35,13 @@ while getopts 'bdq' opt; do
       echo "enable QGIS"
       export COMPOSE_PROFILES=qgis
       ;;
+
+    l)
+      echo "Load heavy test data (${OPTARG}x official signs)"
+      LOAD="${OPTARG}"
+      ;;
     ?|h)
-      echo "Usage: $(basename $0) [-bdq]"
+      echo "Usage: $(basename $0) [-bdq] [-l MULTIPLIER]"
       exit 1
       ;;
   esac
@@ -60,3 +66,12 @@ done
 echo "Creating database ${DB_NAME}"
 docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
 docker compose run --rm pum -vvv -p ${PGSERVICE} -d datamodel install -p SRID 2056 ${DEMO_DATA}
+
+if [[ -n "${LOAD}" ]]; then
+  echo "Generating heavy test data (${LOAD}x official signs)"
+  docker compose run --rm \
+    -e PGSERVICE=${PGSERVICE} \
+    -e PGSERVICEFILE=/.pg_service.conf \
+    --entrypoint python3 \
+    pum /pum/scripts/all-signs.py "${LOAD}"
+fi

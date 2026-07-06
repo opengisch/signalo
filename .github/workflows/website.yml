@@ -87,7 +87,8 @@ jobs:
       - name: Official signs atlas PDF
         run: |
           mkdir -p site/doc
-          curl -fsSL -L -o site/doc/official-sign-fr.pdf https://github.com/opengisch/signalo/releases/latest/download/official-sign-fr.pdf
+          curl -fsSL -L --remove-on-error -o site/doc/official-sign-fr.pdf https://github.com/opengisch/signalo/releases/latest/download/official-sign-fr.pdf \
+            || echo "::warning::official-sign-fr.pdf not available yet (no release has published it)"
 
       - uses: actions/upload-artifact@v7
         if: ${{ github.event_name == 'pull_request' }}
