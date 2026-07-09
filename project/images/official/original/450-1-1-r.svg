@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="60.110432mm"
-   height="11.329401mm"
-   viewBox="0 0 60.110432 11.329401"
+   width="60.160446mm"
+   height="11.3794mm"
+   viewBox="0 0 60.160446 11.3794"
    version="1.1"
    id="svg1"
    xml:space="preserve"
@@ -22,14 +22,14 @@
        height="16.67804"
        id="rect71-0" /></defs><g
      id="layer1"
-     transform="translate(-31.568264,-151.10735)"><g
+     transform="translate(-31.518042,-151.05735)"><g
        id="layer1-8"
        transform="translate(-8.8362431,62.737923)"><g
          id="g73"
          transform="translate(0,-12.117615)"><g
            id="g74"><path
-             style="fill:#ffffff;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
-             d="m 40.454507,100.62837 v 11.13807 h 53.134082 l 6.847181,-5.56904 -6.938475,-5.66033 z"
+             style="fill:#ffffff;fill-opacity:1;stroke:#000000;stroke-width:0.1;stroke-linecap:butt;stroke-linejoin:miter;stroke-dasharray:none;stroke-opacity:1"
+             d="m 40.404507,100.48704 0.05,11.2794 h 53.134082 l 6.847181,-5.56904 -6.938475,-5.71036 z"
              id="path1" /><path
              style="fill:#c90b1c;fill-opacity:1"
              d="m 41.120872,106.15214 v -4.826 h 26.144364 26.144363 l 2.582769,2.41096 2.582768,2.41096 -2.522799,2.41165 -2.5228,2.41163 -26.204332,0.003 -26.204333,0.003 z"
@@ -43,15 +43,15 @@
              style="font-weight:bold;font-size:12.005px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;letter-spacing:0.542724px;white-space:pre;shape-inside:url(#rect71);display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.241611;stroke-dasharray:none;stroke-opacity:1"><tspan
                x="128.62778"
                y="522.31707"
-               id="tspan3"><tspan
+               id="tspan6"><tspan
                  style="font-weight:normal;font-family:Geneva;-inkscape-font-specification:Geneva;baseline-shift:baseline"
-                 id="tspan1">Bellinzona</tspan></tspan></text><text
+                 id="tspan2">Bellinzona</tspan></tspan></text><text
              xml:space="preserve"
              transform="matrix(0.28155333,0,0,0.33115831,44.167101,-64.673485)"
              id="text71-2"
              style="font-weight:bold;font-size:12.005px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial, Bold';text-align:center;letter-spacing:0.542724px;white-space:pre;shape-inside:url(#rect71-0);display:inline;fill:#ffffff;fill-opacity:1;stroke:#ffffff;stroke-width:0.114623;stroke-dasharray:none;stroke-opacity:1"><tspan
                x="145.69978"
                y="522.16903"
-               id="tspan5"><tspan
+               id="tspan8"><tspan
                  style="font-weight:normal;font-family:'Avenir Next';-inkscape-font-specification:'Avenir Next'"
-                 id="tspan4">7 km</tspan></tspan></text></g></g></g></g></svg>
+                 id="tspan7">7 km</tspan></tspan></text></g></g></g></g></svg>
