@@ -104,7 +104,7 @@
        d="m 94.76146,100.13693 -8.5474,22.57643 h 21.70697 c 0,-9.94599 -5.28925,-18.13157 -13.15958,-22.57643" />
   </g>
   <text
-     xml:space="default"
+     xml:space="preserve"
      dominant-baseline="middle"
      text-anchor="middle"
      font-family="sans-serif"
@@ -115,7 +115,10 @@
      stroke-width="0"
      stroke="#ffffff"
      fill="#ffffff"
-     style="stroke-width:0.188976;stroke-miterlimit:4;stroke-dasharray:none"><tspan
-       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.188976;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
-       id="tspan16486">param(text1)</tspan></text>
+     style="white-space:pre;inline-size:87.6846;stroke-width:0.188976;stroke-miterlimit:4;stroke-dasharray:none"><tspan
+       x="94.283501"
+       y="21.363918"
+       id="tspan2"><tspan
+         style="stroke:none"
+         id="tspan1">param(text1)</tspan></tspan></text>
 </svg>
