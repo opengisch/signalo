@@ -60,6 +60,14 @@ VALUES ('4.51.3a-mtb', true, 'Bestätigungstafel (Mountainbike) mit Angabe der R
 INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_it, value_ro, description_de, description_fr, description_it, description_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription, default_inscription1, default_inscription2, default_inscription3, default_inscription4,directional_sign, img_de_right, img_fr_right, img_it_right, img_ro_right) 
 VALUES ('4.51.3-vel-mtb', true, 'Bestätigungstafel (Fahrrad, Mountainbike)', 'Plaque de confirmation (vélo, VTT)', 'Cartello di conferma (bicicletta, mountain bike)', NULL, NULL, NULL, NULL, NULL, '451-3-vel-mtb.svg', '451-3-vel-mtb.svg', '451-3-vel-mtb.svg', '451-3-vel-mtb.svg', 48, 32, 0, NULL, NULL, NULL, NULL, false, '451-3-vel-mtb.svg', '451-3-vel-mtb.svg', '451-3-vel-mtb.svg', '451-3-vel-mtb.svg');
 
+-- 4.50.5
+
+INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_it, value_ro, description_de, description_fr, description_it, description_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription, default_inscription1, default_inscription2, default_inscription3, default_inscription4,directional_sign, img_de_right, img_fr_right, img_it_right, img_ro_right) 
+VALUES ('4.50.5-vel', true, 'Wegweiser in Tabellenform für einen einzigen Adressatenkreis (Fahrrad)', 'Indicateur de direction en forme de tableau destiné à un seul cercle d''usagers (vélo)', 'Indicatore di direzione a forma di tabella per una sola cerchia di utilizzatori (bicicletta)', NULL, NULL, NULL, NULL, NULL, '450-5-vel.svg', '450-5-vel.svg', '450-5-vel.svg', '450-5-vel.svg', 120, 115, 0, NULL, NULL, NULL, NULL, false, '450-5-vel.svg', '450-5-vel.svg', '450-5-vel.svg', '450-5-vel.svg');
+
+INSERT INTO signalo_db.vl_official_sign (id, active, value_de, value_fr, value_it, value_ro, description_de, description_fr, description_it, description_ro, img_de, img_fr, img_it, img_ro, img_height, img_width, no_dynamic_inscription, default_inscription1, default_inscription2, default_inscription3, default_inscription4,directional_sign, img_de_right, img_fr_right, img_it_right, img_ro_right) 
+VALUES ('4.50.5-mtb', true, 'Wegweiser in Tabellenform für einen einzigen Adressatenkreis (Mountainbike)', 'Indicateur de direction en forme de tableau destiné à un seul cercle d''usagers (VTT)', 'Indicatore di direzione a forma di tabella per una sola cerchia di utilizzatori (mountain bike)', NULL, NULL, NULL, NULL, NULL, '450-5-mtb.svg', '450-5-mtb.svg', '450-5-mtb.svg', '450-5-mtb.svg', 120, 115, 0, NULL, NULL, NULL, NULL, false, '450-5-mtb.svg', '450-5-mtb.svg', '450-5-mtb.svg', '450-5-mtb.svg');
+
 -- delete old signs ?
 DELETE FROM signalo_db.vl_official_sign WHERE id = '4.51.1-a';
 DELETE FROM signalo_db.vl_official_sign WHERE id = '4.51.1-b';
