@@ -30,13 +30,13 @@ Voici une liste non-exhaustive des améliorations prévues pour SIGNALO.
 
 ### Changements majeurs
 **1.4 (pour septembre 2026)**  
-* Amélioration du rendu cartographique sur mobile 
+* Amélioration du rendu cartographique sur mobile
 
 * Autoriser valeurs `null` ou non  
 A travers la variable de projet `@signalo_null_autorised`, l'administrateur du projet peut décider si les champs avec listes déroulantes doivent être `not null` ou non.
 * Amélioration de l'export DXF  
-Ce développement a été directement fait dans QGIS core ([#66233](https://github.com/qgis/QGIS/pull/66233), 
-[#66261](https://github.com/qgis/QGIS/pull/66261), 
+Ce développement a été directement fait dans QGIS core ([#66233](https://github.com/qgis/QGIS/pull/66233),
+[#66261](https://github.com/qgis/QGIS/pull/66261),
 [#66262](https://github.com/qgis/QGIS/pull/66262)).
 
 **1.3**  
