@@ -29,7 +29,7 @@ Voici une liste non-exhaustive des améliorations prévues pour SIGNALO.
 ## Derniers changements
 
 ### Changements majeurs
-**1.4.0**  
+**1.4 (pour septembre 2026)**  
 * Amélioration du rendu cartographique sur mobile 
 
 * Autoriser valeurs `null` ou non  
@@ -39,19 +39,19 @@ Ce développement a été directement fait dans QGIS core ([#66233](https://gith
 [#66261](https://github.com/qgis/QGIS/pull/66261), 
 [#66262](https://github.com/qgis/QGIS/pull/66262)).
 
-**1.3.0**  
+**1.3**  
 * Amélioration du contrôle des mises à jour du modèle de données, info de versionnement dans le modèle, contrôle dans la CI  
 Avec l'intégration de PUM dans SIGNALO et la possibilité d'installer et de mettre à jour le module à travers l'extension QGIS oQtopus, ces étapes sont devenues beaucoup plus faciles. Le contrôle sur la version utilisée, la mise en place d'un environnement test et l'attribution de rôles et droits aux utilisateurs des données sont maintenant possibles avec quelques cliques. Voir [Installation](https://signalo.ch/user-guide/installation/) et [Tests](https://signalo.ch/user-guide/tests/).
 
-**1.2.0**  
+**1.2**  
 * Outil de validation des changements  
 Chaque table de données contient une information sur la dernière modification (date, utilisateur, plateforme). L'administrateur du projet peut décider (à travers la variable de projet `@signalo_validation`) si et après quelles modifications, les changements doivent être validés. Voir [Validation](https://signalo.ch/user-guide/validation/).
 
-**1.1.0**  
+**1.1**  
 * Intégration des balises  
 Les panneaux de balises principales sont intégrés dans SIGNALO. Voir [Balises](https://signalo.ch/user-guide/marker/).
 
-**1.0.0**  
+**1.0**  
 * Outil azimut  
 Un outil graphique a été intégré pour créer un nouveau signal à partir d'un azimut ou pour changer un azimut existant. Voir [Ajout de signaux](https://signalo.ch/user-guide/adddata/#onglet-azimut).
 
