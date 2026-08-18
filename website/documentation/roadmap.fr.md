@@ -41,7 +41,7 @@ Ce développement a été directement fait dans QGIS core ([#66233](https://gith
 
 **1.3**  
 * Amélioration du contrôle des mises à jour du modèle de données, info de versionnement dans le modèle, contrôle dans la CI  
-Avec l'intégration de PUM dans SIGNALO et la possibilité d'installer et de mettre à jour le module à travers l'extension QGIS oQtopus, ces étapes sont devenues beaucoup plus faciles. Le contrôle sur la version utilisée, la mise en place d'un environnement test et l'attribution de rôles et droits aux utilisateurs des données sont maintenant possibles avec quelques cliques. Voir [Installation](https://signalo.ch/user-guide/installation/) et [Tests](https://signalo.ch/user-guide/tests/).
+Avec l'intégration de PUM dans SIGNALO et la possibilité d'installer et de mettre à jour le module à travers l'extension QGIS oQtopus, ces étapes sont devenues beaucoup plus faciles. Le contrôle sur la version utilisée, la mise en place d'un environnement test et l'attribution de rôles et droits aux utilisateurs des données sont maintenant possibles avec quelques clics. Voir [Installation](https://signalo.ch/user-guide/installation/) et [Tests](https://signalo.ch/user-guide/tests/).
 
 **1.2**  
 * Outil de validation des changements  
