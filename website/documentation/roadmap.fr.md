@@ -33,7 +33,7 @@ Voici une liste non-exhaustive des améliorations prévues pour SIGNALO.
 * Amélioration du rendu cartographique sur mobile
 
 * Autoriser valeurs `null` ou non  
-A travers la variable de projet `@signalo_null_autorised`, l'administrateur du projet peut décider si les champs avec listes déroulantes doivent être `not null` ou non.
+A travers la variable de projet `@signalo_null_authorised`, l'administrateur du projet peut décider si les champs avec listes déroulantes doivent être `not null` ou non.
 * Amélioration de l'export DXF  
 Ce développement a été directement fait dans QGIS core ([#66233](https://github.com/qgis/QGIS/pull/66233),
 [#66261](https://github.com/qgis/QGIS/pull/66261),
