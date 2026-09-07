@@ -15,11 +15,13 @@ Les versions sont nommées major.minor.bugfix (par exemple 0.5.1). Tout changeme
 ## Roadmap
 Voici une liste non-exhaustive des améliorations prévues pour SIGNALO.
 
-**2026**
+**2026**  
+
 * Analyse et amélioration du contrôle de l'édition hors-ligne
     * investigation de l'utilisation d'un moteur de rendu développé spécifiquement (plugin QGIS + code spécifique pour QField)
 
-**2027**
+**2027**  
+
 * Amélioration de l'interface du formulaire avec un regroupement des cadres et signaux:
     * une visualisation unique selon chaque azimut: tous les cadres et signaux sont affichés sur le même dessin
     * si possible une optimisation des requêtes (une seule requête pour tous les signaux par regroupement des cadres)
