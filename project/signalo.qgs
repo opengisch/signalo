@@ -22252,23 +22252,6 @@ def my_form_open(dialog, layer, feature):
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -25883,23 +25866,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -29514,23 +29480,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -33145,23 +33094,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -36776,23 +36708,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -40407,23 +40322,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -44038,23 +43936,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -47669,23 +47550,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -51300,23 +51164,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="QString" value=""></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
@@ -54931,23 +54778,6 @@ END</previewExpression>
             </labeling>
             <customproperties>
               <Option type="Map">
-                <Option name="QFieldSync/action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/attribute_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
-                <Option name="QFieldSync/feature_addition_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/feature_deletion_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/geometry_editing_locked_expression" type="invalid"></Option>
-                <Option name="QFieldSync/is_feature_addition_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_feature_deletion_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/is_geometry_editing_locked" type="bool" value="true"></Option>
-                <Option name="QFieldSync/photo_naming" type="QString" value="{&quot;photo&quot;: &quot;'DCIM/vw-sign-symbol_' || format_date(now(),'yyyyMMddhhmmsszzz') || '.jpg'&quot;}"></Option>
-                <Option name="QFieldSync/relationship_maximum_visible" type="QString" value="{}"></Option>
-                <Option name="QFieldSync/tracking_distance_requirement_minimum_meters" type="int" value="30"></Option>
-                <Option name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters" type="int" value="1"></Option>
-                <Option name="QFieldSync/tracking_measurement_type" type="int" value="0"></Option>
-                <Option name="QFieldSync/tracking_time_requirement_interval_seconds" type="int" value="30"></Option>
-                <Option name="QFieldSync/value_map_button_interface_threshold" type="int" value="0"></Option>
                 <Option name="dualview/previewExpressions" type="List">
                   <Option type="QString" value="CASE&#xA;WHEN &quot;fk_user_sign&quot; is not NULL&#xA;&#xA;THEN  &quot;fk_user_sign&quot;&#xA;ELSE&#xA; concat(&quot;fk_official_sign&quot;,' ', &quot;_symbol_value_fr&quot;)&#xA;END"></Option>
                 </Option>
