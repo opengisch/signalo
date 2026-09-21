@@ -26,3 +26,7 @@ schemaspy/
 # Atlas PDF build artifacts (built in CI, published as release asset)
 atlas-full.pdf
 official-sign-fr.pdf
+
+# QField package produced by project/scripts/package-qfield.py
+qfield-package/
+signalo-qfield-package.zip
