@@ -22033,7 +22033,7 @@ def my_form_open(dialog, layer, feature):
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -25408,11 +25408,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -25664,7 +25664,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -29039,11 +29039,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -29295,7 +29295,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -32670,11 +32670,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -32926,7 +32926,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -36301,11 +36301,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -36528,7 +36528,7 @@ END</previewExpression>
                           </Option>
                           <Option name="name" type="Map">
                             <Option name="active" type="bool" value="true"></Option>
-                            <Option name="expression" type="QString" value="'images/' ||&#xA;CASE&#xA;WHEN &quot;sign_fk_sign_type&quot; = 11 and &quot;sign_fk_sign_type&quot; is not true THEN 'official/editable/'&#xA;WHEN &quot;sign_fk_sign_type&quot; = 12 &#xA;THEN 'marker/editable/'&#xA;WHEN &quot;sign_fk_sign_type&quot; = 15 &#xA;THEN 'user-defined/editable/'&#xA;ELSE 'other/editable/'&#xA;END&#xA;||&#xA;attribute('_img_'|| if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr')   || &quot;_img_direction&quot; )"></Option>
+                            <Option name="expression" type="QString" value="'images/' ||&#xA;CASE&#xA;WHEN &quot;sign_fk_sign_type&quot; = 11 and &quot;sign_complex&quot; is not true THEN 'official/editable/'&#xA;WHEN &quot;sign_fk_sign_type&quot; = 12 &#xA;THEN 'marker/editable/'&#xA;WHEN &quot;sign_fk_sign_type&quot; = 15 &#xA;THEN 'user-defined/editable/'&#xA;ELSE 'other/editable/'&#xA;END&#xA;||&#xA;attribute('_img_'|| if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr')   || &quot;_img_direction&quot; )"></Option>
                             <Option name="type" type="int" value="3"></Option>
                           </Option>
                           <Option name="offset" type="Map">
@@ -36557,7 +36557,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -39932,11 +39932,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -40188,7 +40188,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -43563,11 +43563,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -43819,7 +43819,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -47194,11 +47194,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -47450,7 +47450,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -50825,11 +50825,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -51081,7 +51081,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -54456,11 +54456,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -54712,7 +54712,7 @@ END</previewExpression>
                       <Option name="color" type="QString" value="255,0,0,255,rgb:1,0,0,1"></Option>
                       <Option name="fixedAspectRatio" type="QString" value="0"></Option>
                       <Option name="horizontal_anchor_point" type="QString" value="1"></Option>
-                      <Option name="name" type="QString" value="/Users/isabelkiefer/Docker/signalo/project/images/other/original/marker.svg"></Option>
+                      <Option name="name" type="QString" value="images/other/original/marker.svg"></Option>
                       <Option name="offset" type="QString" value="0,0"></Option>
                       <Option name="offset_map_unit_scale" type="QString" value="3x:0,0,0,0,0,0"></Option>
                       <Option name="offset_unit" type="QString" value="Point"></Option>
@@ -58087,11 +58087,11 @@ def my_form_open(dialog, layer, feature):
               </widget>
             </widgets>
             <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -61466,11 +61466,11 @@ def my_form_open(dialog, layer, feature):
         </widget>
       </widgets>
       <previewExpression>CASE
-WHEN "fk_user_sign" is not NULL
+WHEN "sign_fk_user_sign" is not NULL
 
-THEN  "fk_user_sign"
+THEN  "sign_fk_user_sign"
 ELSE
- concat("fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', "_symbol_value_fr")
 END</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
