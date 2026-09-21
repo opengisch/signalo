@@ -28,7 +28,12 @@ services:
       - db
 
   qgis:
-    image: qgis/qgis:3.44
+    # qgis/qgis plus the QField packaging dependency -- see docker/qgis/Dockerfile.
+    # Bumping the pin in docker/qgis/requirements.txt needs a `--build` to take effect.
+    build:
+      context: docker/qgis
+      args:
+        QGIS_VERSION: ${QGIS_VERSION:-3.44}
     platform: linux/amd64
     tty: true
     environment:
