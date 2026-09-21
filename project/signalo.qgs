@@ -21776,28 +21776,7 @@ def my_form_open(dialog, layer, feature):
         </extent>
       </resourceMetadata>
       <provider encoding="">postgres</provider>
-      <vectorjoins>
-        <join cascadedDelete="0" customPrefix="support_" dynamicForm="0" editable="0" hasCustomPrefix="1" joinFieldName="id" joinLayerId="support_347aa750_1661_498f_a7e8_017adc616ba0" memoryCache="1" targetFieldName="support_id" upsertOnEdit="0">
-          <joinFieldsSubset>
-            <field name="_edited"></field>
-          </joinFieldsSubset>
-        </join>
-        <join cascadedDelete="0" customPrefix="azimut_" dynamicForm="0" editable="0" hasCustomPrefix="1" joinFieldName="id" joinLayerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" memoryCache="1" targetFieldName="frame_fk_azimut" upsertOnEdit="0">
-          <joinFieldsSubset>
-            <field name="_edited"></field>
-          </joinFieldsSubset>
-        </join>
-        <join cascadedDelete="0" customPrefix="sign_" dynamicForm="0" editable="0" hasCustomPrefix="1" joinFieldName="id" joinLayerId="sign_2499f9bd_24a2_4384_b329_dc522a94c545" memoryCache="1" targetFieldName="id" upsertOnEdit="0">
-          <joinFieldsSubset>
-            <field name="_edited"></field>
-          </joinFieldsSubset>
-        </join>
-        <join cascadedDelete="0" customPrefix="frame_" dynamicForm="0" editable="0" hasCustomPrefix="1" joinFieldName="id" joinLayerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" memoryCache="1" targetFieldName="frame_id" upsertOnEdit="0">
-          <joinFieldsSubset>
-            <field name="_edited"></field>
-          </joinFieldsSubset>
-        </join>
-      </vectorjoins>
+      <vectorjoins></vectorjoins>
       <layerDependencies></layerDependencies>
       <dataDependencies>
         <layer id="vw_azimut_edit_b7acca0e_e618_4f1d_8de3_08e2eb5bf359"></layer>
@@ -21956,7 +21935,7 @@ def my_form_open(dialog, layer, feature):
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Road dangers (1.01-1.18)&#xA;-- Other dangers (1.22-1.32)&#xA;&#xA; &quot;sign_fk_official_sign&quot; in ('1.01','1.02','1.03','1.04','1.05','1.06','1.07','1.08',&#xA;'1.09','1.10','1.11','1.12','1.13','1.13a','1.14','1.15','1.16','1.17','1.18',&#xA;'1.22','1.23','1.24','1.25','1.25a','1.26','1.27','1.28','1.29','1.30','1.31', '1.32')&#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Road dangers (1.01-1.18)&#xA;-- Other dangers (1.22-1.32)&#xA;&#xA; &quot;sign_fk_official_sign&quot; in ('1.01','1.02','1.03','1.04','1.05','1.06','1.07','1.08',&#xA;'1.09','1.10','1.11','1.12','1.13','1.13a','1.14','1.15','1.16','1.17','1.18',&#xA;'1.22','1.23','1.24','1.25','1.25a','1.26','1.27','1.28','1.29','1.30','1.31', '1.32')&#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -24886,7 +24865,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -24924,7 +24902,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -24971,7 +24948,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -25008,7 +24984,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -25087,7 +25062,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -25125,7 +25099,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -25172,7 +25145,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -25209,7 +25181,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -25288,7 +25259,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -25325,7 +25295,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -25366,7 +25335,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -25403,7 +25371,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -25599,7 +25566,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Traffic restrictions, weight and size limitations (2.01-2.20)&#xA;-- Traffic regulations, parking restrictions (2.30-2.59.6)&#xA;-- Special lanes and paths, bus-only lanes, traffic light system for temporary traffic lane control (2.60-2.65)&#xA;&#xA;&#xA;(&quot;sign_fk_official_sign&quot; like '2.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.1%' &#xA;or &quot;sign_fk_official_sign&quot; = '2.20'&#xA;or &quot;sign_fk_official_sign&quot; like '2.3%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.4%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.5%'&#xA;or &quot;sign_fk_official_sign&quot; like '2.6%') &#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Traffic restrictions, weight and size limitations (2.01-2.20)&#xA;-- Traffic regulations, parking restrictions (2.30-2.59.6)&#xA;-- Special lanes and paths, bus-only lanes, traffic light system for temporary traffic lane control (2.60-2.65)&#xA;&#xA;&#xA;(&quot;sign_fk_official_sign&quot; like '2.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.1%' &#xA;or &quot;sign_fk_official_sign&quot; = '2.20'&#xA;or &quot;sign_fk_official_sign&quot; like '2.3%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.4%' &#xA;or &quot;sign_fk_official_sign&quot; like '2.5%'&#xA;or &quot;sign_fk_official_sign&quot; like '2.6%') &#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -28529,7 +28496,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -28567,7 +28533,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -28614,7 +28579,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -28651,7 +28615,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -28730,7 +28693,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -28768,7 +28730,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -28815,7 +28776,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -28852,7 +28812,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -28931,7 +28890,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -28968,7 +28926,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -29009,7 +28966,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -29046,7 +29002,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -29242,7 +29197,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Priority signs (3.01-3.25)&#xA;&#xA;&#xA;(&quot;sign_fk_official_sign&quot; like '3.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '3.1%' &#xA;or &quot;sign_fk_official_sign&quot; like '3.2%') &#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Priority signs (3.01-3.25)&#xA;&#xA;&#xA;(&quot;sign_fk_official_sign&quot; like '3.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '3.1%' &#xA;or &quot;sign_fk_official_sign&quot; like '3.2%') &#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -32172,7 +32127,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -32210,7 +32164,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -32257,7 +32210,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -32294,7 +32246,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -32373,7 +32324,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -32411,7 +32361,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -32458,7 +32407,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -32495,7 +32443,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -32574,7 +32521,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -32611,7 +32557,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -32652,7 +32597,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -32689,7 +32633,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -32885,7 +32828,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and (&#xA; &#xA;--   4.  Signaux d'indication&#xA;-- 4.1 Signaux impliquant des règles de comportement (4.01-4.25)&#xA;(&quot;sign_fk_official_sign&quot; like '4.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '4.1%'&#xA;or &quot;sign_fk_official_sign&quot; in ('4.20','4.22','4.23','4.24')&#xA;or &quot;sign_fk_official_sign&quot; like '4.21%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.25%')&#xA;&#xA;&#xA;-- 4.2 Direction indication signs on main roads and secondary roads (4.27-4.59.1)&#xA;&#xA;or &#xA;(&quot;sign_fk_official_sign&quot; like '4.27%' &#xA;or &quot;sign_fk_official_sign&quot; = '4.28'&#xA;or &quot;sign_fk_official_sign&quot; like '4.29%' &#xA;or &quot;sign_fk_official_sign&quot; like '4.3%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.4%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.5%')&#xA;&#xA;-- 4.3 Direction indication signs motorways and semi-motorways (4.60-4.73)&#xA;or&#xA;(&quot;sign_fk_official_sign&quot; like '4.6%'&#xA;or &quot;sign_fk_official_sign&quot; in ('4.70','4.71','4.72','4.73'))&#xA;&#xA;-- 4.4 Informations (4.75-4.95)&#xA;or &#xA;(&quot;sign_fk_official_sign&quot; in ('4.75','4.76','4.79')&#xA;or &quot;sign_fk_official_sign&quot; like '4.77%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.8%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.9%')&#xA;&#xA;-- keep this parenthesis!&#xA;)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter=" (&#xA; &#xA;--   4.  Signaux d'indication&#xA;-- 4.1 Signaux impliquant des règles de comportement (4.01-4.25)&#xA;(&quot;sign_fk_official_sign&quot; like '4.0%' &#xA;or &quot;sign_fk_official_sign&quot; like '4.1%'&#xA;or &quot;sign_fk_official_sign&quot; in ('4.20','4.22','4.23','4.24')&#xA;or &quot;sign_fk_official_sign&quot; like '4.21%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.25%')&#xA;&#xA;&#xA;-- 4.2 Direction indication signs on main roads and secondary roads (4.27-4.59.1)&#xA;&#xA;or &#xA;(&quot;sign_fk_official_sign&quot; like '4.27%' &#xA;or &quot;sign_fk_official_sign&quot; = '4.28'&#xA;or &quot;sign_fk_official_sign&quot; like '4.29%' &#xA;or &quot;sign_fk_official_sign&quot; like '4.3%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.4%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.5%')&#xA;&#xA;-- 4.3 Direction indication signs motorways and semi-motorways (4.60-4.73)&#xA;or&#xA;(&quot;sign_fk_official_sign&quot; like '4.6%'&#xA;or &quot;sign_fk_official_sign&quot; in ('4.70','4.71','4.72','4.73'))&#xA;&#xA;-- 4.4 Informations (4.75-4.95)&#xA;or &#xA;(&quot;sign_fk_official_sign&quot; in ('4.75','4.76','4.79')&#xA;or &quot;sign_fk_official_sign&quot; like '4.77%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.8%'&#xA;or &quot;sign_fk_official_sign&quot; like '4.9%')&#xA;&#xA;-- keep this parenthesis!&#xA;)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -35815,7 +35758,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -35853,7 +35795,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -35900,7 +35841,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -35937,7 +35877,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -36016,7 +35955,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -36054,7 +35992,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -36101,7 +36038,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -36138,7 +36074,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -36217,7 +36152,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -36254,7 +36188,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -36295,7 +36228,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -36332,7 +36264,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -36528,7 +36459,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Indications supplementing signals (5.01-5.58)&#xA;(&quot;sign_fk_official_sign&quot; like '5.%')" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Indications supplementing signals (5.01-5.58)&#xA;(&quot;sign_fk_official_sign&quot; like '5.%')" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -39458,7 +39389,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -39496,7 +39426,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -39543,7 +39472,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -39580,7 +39508,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -39659,7 +39586,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -39697,7 +39623,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -39744,7 +39669,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -39781,7 +39705,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -39860,7 +39783,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -39897,7 +39819,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -39938,7 +39859,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -39975,7 +39895,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -40171,7 +40090,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Markings and marking devices &#xA;(&quot;sign_fk_sign_type&quot; = 12)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Markings and marking devices &#xA;(&quot;sign_fk_sign_type&quot; = 12)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -43101,7 +43020,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -43139,7 +43057,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -43186,7 +43103,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -43223,7 +43139,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -43302,7 +43217,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -43340,7 +43254,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -43387,7 +43300,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -43424,7 +43336,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -43503,7 +43414,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -43540,7 +43450,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -43581,7 +43490,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -43618,7 +43526,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -43814,7 +43721,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Mirrors &#xA;(&quot;sign_fk_sign_type&quot; =  13)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Mirrors &#xA;(&quot;sign_fk_sign_type&quot; =  13)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -46744,7 +46651,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -46782,7 +46688,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -46829,7 +46734,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -46866,7 +46770,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -46945,7 +46848,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -46983,7 +46885,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -47030,7 +46931,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -47067,7 +46967,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -47146,7 +47045,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -47183,7 +47081,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -47224,7 +47121,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -47261,7 +47157,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -47457,7 +47352,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Road names &#xA;(&quot;sign_fk_sign_type&quot; =   14)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Road names &#xA;(&quot;sign_fk_sign_type&quot; =   14)" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -50387,7 +50282,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -50425,7 +50319,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -50472,7 +50365,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -50509,7 +50401,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -50588,7 +50479,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -50626,7 +50516,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -50673,7 +50562,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -50710,7 +50598,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -50789,7 +50676,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -50826,7 +50712,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -50867,7 +50752,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -50904,7 +50788,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -51100,7 +50983,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Touristic&#xA;(&quot;sign_fk_official_sign&quot; like '0.%')" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Touristic&#xA;(&quot;sign_fk_official_sign&quot; like '0.%')" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -54030,7 +53913,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -54068,7 +53950,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -54115,7 +53996,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -54152,7 +54032,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -54231,7 +54110,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -54269,7 +54147,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -54316,7 +54193,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -54353,7 +54229,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -54432,7 +54307,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -54469,7 +54343,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -54510,7 +54383,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -54547,7 +54419,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -54743,7 +54614,7 @@ END</previewExpression>
             </elevation>
             <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
               <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-                <rule filter=" (@qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )) and&#xA; &#xA;-- Filter by names (optional)&#xA;-- (&quot;inscription_1&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')&#xA;-- or &quot;inscription_2&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')&#xA;-- or &quot;inscription_3&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')) and&#xA;&#xA;-- Directional signs&#xA;&quot;directional_sign&quot; is true &#xA;&#xA;&#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+                <rule filter="&#xA; &#xA;-- Filter by names (optional)&#xA;-- (&quot;inscription_1&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')&#xA;-- or &quot;inscription_2&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')&#xA;-- or &quot;inscription_3&quot; in ('Genève' , 'Geneve', 'genève', 'geneve')) and&#xA;&#xA;-- Directional signs&#xA;&quot;directional_sign&quot; is true &#xA;&#xA;&#xA;" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
               </rules>
               <symbols>
                 <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -57673,7 +57544,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="azimut"></field>
               <field editable="1" name="azimut__creation_date"></field>
               <field editable="1" name="azimut__creation_user"></field>
-              <field editable="0" name="azimut__edited"></field>
               <field editable="1" name="azimut__last_modification_date"></field>
               <field editable="1" name="azimut__last_modification_user"></field>
               <field editable="0" name="azimut_azimut"></field>
@@ -57711,7 +57581,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="fk_user_sign"></field>
               <field editable="1" name="frame__creation_date"></field>
               <field editable="1" name="frame__creation_user"></field>
-              <field editable="0" name="frame__edited"></field>
               <field editable="1" name="frame__last_modification_date"></field>
               <field editable="1" name="frame__last_modification_user"></field>
               <field editable="1" name="frame_comment"></field>
@@ -57758,7 +57627,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="0" name="rank"></field>
               <field editable="1" name="sign__creation_date"></field>
               <field editable="1" name="sign__creation_user"></field>
-              <field editable="0" name="sign__edited"></field>
               <field editable="1" name="sign__last_modification_date"></field>
               <field editable="1" name="sign__last_modification_user"></field>
               <field editable="1" name="sign_case_decision"></field>
@@ -57795,7 +57663,6 @@ def my_form_open(dialog, layer, feature):
               <field editable="1" name="sign_usr_sign_3"></field>
               <field editable="1" name="support__creation_date"></field>
               <field editable="1" name="support__creation_user"></field>
-              <field editable="0" name="support__edited"></field>
               <field editable="1" name="support__last_modification_date"></field>
               <field editable="1" name="support__last_modification_user"></field>
               <field editable="1" name="support_address"></field>
@@ -57874,7 +57741,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="azimut"></field>
               <field labelOnTop="0" name="azimut__creation_date"></field>
               <field labelOnTop="0" name="azimut__creation_user"></field>
-              <field labelOnTop="0" name="azimut__edited"></field>
               <field labelOnTop="0" name="azimut__last_modification_date"></field>
               <field labelOnTop="0" name="azimut__last_modification_user"></field>
               <field labelOnTop="0" name="azimut_azimut"></field>
@@ -57912,7 +57778,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="fk_user_sign"></field>
               <field labelOnTop="0" name="frame__creation_date"></field>
               <field labelOnTop="0" name="frame__creation_user"></field>
-              <field labelOnTop="0" name="frame__edited"></field>
               <field labelOnTop="0" name="frame__last_modification_date"></field>
               <field labelOnTop="0" name="frame__last_modification_user"></field>
               <field labelOnTop="0" name="frame_comment"></field>
@@ -57959,7 +57824,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="rank"></field>
               <field labelOnTop="0" name="sign__creation_date"></field>
               <field labelOnTop="0" name="sign__creation_user"></field>
-              <field labelOnTop="0" name="sign__edited"></field>
               <field labelOnTop="0" name="sign__last_modification_date"></field>
               <field labelOnTop="0" name="sign__last_modification_user"></field>
               <field labelOnTop="0" name="sign_case_decision"></field>
@@ -57996,7 +57860,6 @@ def my_form_open(dialog, layer, feature):
               <field labelOnTop="0" name="sign_usr_sign_3"></field>
               <field labelOnTop="0" name="support__creation_date"></field>
               <field labelOnTop="0" name="support__creation_user"></field>
-              <field labelOnTop="0" name="support__edited"></field>
               <field labelOnTop="0" name="support__last_modification_date"></field>
               <field labelOnTop="0" name="support__last_modification_user"></field>
               <field labelOnTop="0" name="support_address"></field>
@@ -58075,7 +57938,6 @@ def my_form_open(dialog, layer, feature):
               <field name="azimut" reuseLastValue="0"></field>
               <field name="azimut__creation_date" reuseLastValue="0"></field>
               <field name="azimut__creation_user" reuseLastValue="0"></field>
-              <field name="azimut__edited" reuseLastValue="0"></field>
               <field name="azimut__last_modification_date" reuseLastValue="0"></field>
               <field name="azimut__last_modification_user" reuseLastValue="0"></field>
               <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -58112,7 +57974,6 @@ def my_form_open(dialog, layer, feature):
               <field name="fk_user_sign" reuseLastValue="0"></field>
               <field name="frame__creation_date" reuseLastValue="0"></field>
               <field name="frame__creation_user" reuseLastValue="0"></field>
-              <field name="frame__edited" reuseLastValue="0"></field>
               <field name="frame__last_modification_date" reuseLastValue="0"></field>
               <field name="frame__last_modification_user" reuseLastValue="0"></field>
               <field name="frame_comment" reuseLastValue="0"></field>
@@ -58153,7 +58014,6 @@ def my_form_open(dialog, layer, feature):
               <field name="pk" reuseLastValue="0"></field>
               <field name="sign__creation_date" reuseLastValue="0"></field>
               <field name="sign__creation_user" reuseLastValue="0"></field>
-              <field name="sign__edited" reuseLastValue="0"></field>
               <field name="sign__last_modification_date" reuseLastValue="0"></field>
               <field name="sign__last_modification_user" reuseLastValue="0"></field>
               <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -58190,7 +58050,6 @@ def my_form_open(dialog, layer, feature):
               <field name="sign_usr_sign_3" reuseLastValue="0"></field>
               <field name="support__creation_date" reuseLastValue="0"></field>
               <field name="support__creation_user" reuseLastValue="0"></field>
-              <field name="support__edited" reuseLastValue="0"></field>
               <field name="support__last_modification_date" reuseLastValue="0"></field>
               <field name="support__last_modification_user" reuseLastValue="0"></field>
               <field name="support_address" reuseLastValue="0"></field>
@@ -58387,7 +58246,7 @@ END</previewExpression>
       </elevation>
       <renderer-v2 enableorderby="0" forceraster="0" referencescale="-1" symbollevels="0" type="RuleRenderer">
         <rules key="{70799911-cf7d-489d-b6ca-2b8082fa6923}">
-          <rule filter=" @qgis_platform = 'desktop' or &#xA; ( &#xA;&quot;support__edited&quot; is not true and &quot;azimut__edited&quot; is not true and  &quot;sign__edited&quot; is not true and  &quot;frame__edited&quot; is not true&#xA; )" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
+          <rule filter="" key="{9fb3def5-e8b7-4825-add6-4b0041e8e0a6}" label="Signaux" symbol="0"></rule>
         </rules>
         <symbols>
           <symbol alpha="1" clip_to_extent="1" force_rhr="0" frame_rate="10" is_animated="0" name="0" type="marker">
@@ -61064,7 +60923,6 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="azimut"></field>
         <field editable="1" name="azimut__creation_date"></field>
         <field editable="1" name="azimut__creation_user"></field>
-        <field editable="0" name="azimut__edited"></field>
         <field editable="1" name="azimut__last_modification_date"></field>
         <field editable="1" name="azimut__last_modification_user"></field>
         <field editable="0" name="azimut_azimut"></field>
@@ -61102,7 +60960,6 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="fk_user_sign"></field>
         <field editable="1" name="frame__creation_date"></field>
         <field editable="1" name="frame__creation_user"></field>
-        <field editable="0" name="frame__edited"></field>
         <field editable="1" name="frame__last_modification_date"></field>
         <field editable="1" name="frame__last_modification_user"></field>
         <field editable="1" name="frame_comment"></field>
@@ -61149,7 +61006,6 @@ def my_form_open(dialog, layer, feature):
         <field editable="0" name="rank"></field>
         <field editable="1" name="sign__creation_date"></field>
         <field editable="1" name="sign__creation_user"></field>
-        <field editable="0" name="sign__edited"></field>
         <field editable="1" name="sign__last_modification_date"></field>
         <field editable="1" name="sign__last_modification_user"></field>
         <field editable="1" name="sign_case_decision"></field>
@@ -61186,7 +61042,6 @@ def my_form_open(dialog, layer, feature):
         <field editable="1" name="sign_usr_sign_3"></field>
         <field editable="1" name="support__creation_date"></field>
         <field editable="1" name="support__creation_user"></field>
-        <field editable="0" name="support__edited"></field>
         <field editable="1" name="support__last_modification_date"></field>
         <field editable="1" name="support__last_modification_user"></field>
         <field editable="1" name="support_address"></field>
@@ -61265,7 +61120,6 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="azimut"></field>
         <field labelOnTop="0" name="azimut__creation_date"></field>
         <field labelOnTop="0" name="azimut__creation_user"></field>
-        <field labelOnTop="0" name="azimut__edited"></field>
         <field labelOnTop="0" name="azimut__last_modification_date"></field>
         <field labelOnTop="0" name="azimut__last_modification_user"></field>
         <field labelOnTop="0" name="azimut_azimut"></field>
@@ -61303,7 +61157,6 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="fk_user_sign"></field>
         <field labelOnTop="0" name="frame__creation_date"></field>
         <field labelOnTop="0" name="frame__creation_user"></field>
-        <field labelOnTop="0" name="frame__edited"></field>
         <field labelOnTop="0" name="frame__last_modification_date"></field>
         <field labelOnTop="0" name="frame__last_modification_user"></field>
         <field labelOnTop="0" name="frame_comment"></field>
@@ -61350,7 +61203,6 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="rank"></field>
         <field labelOnTop="0" name="sign__creation_date"></field>
         <field labelOnTop="0" name="sign__creation_user"></field>
-        <field labelOnTop="0" name="sign__edited"></field>
         <field labelOnTop="0" name="sign__last_modification_date"></field>
         <field labelOnTop="0" name="sign__last_modification_user"></field>
         <field labelOnTop="0" name="sign_case_decision"></field>
@@ -61387,7 +61239,6 @@ def my_form_open(dialog, layer, feature):
         <field labelOnTop="0" name="sign_usr_sign_3"></field>
         <field labelOnTop="0" name="support__creation_date"></field>
         <field labelOnTop="0" name="support__creation_user"></field>
-        <field labelOnTop="0" name="support__edited"></field>
         <field labelOnTop="0" name="support__last_modification_date"></field>
         <field labelOnTop="0" name="support__last_modification_user"></field>
         <field labelOnTop="0" name="support_address"></field>
@@ -61466,7 +61317,6 @@ def my_form_open(dialog, layer, feature):
         <field name="azimut" reuseLastValue="0"></field>
         <field name="azimut__creation_date" reuseLastValue="0"></field>
         <field name="azimut__creation_user" reuseLastValue="0"></field>
-        <field name="azimut__edited" reuseLastValue="0"></field>
         <field name="azimut__last_modification_date" reuseLastValue="0"></field>
         <field name="azimut__last_modification_user" reuseLastValue="0"></field>
         <field name="azimut_azimut" reuseLastValue="0"></field>
@@ -61503,7 +61353,6 @@ def my_form_open(dialog, layer, feature):
         <field name="fk_user_sign" reuseLastValue="0"></field>
         <field name="frame__creation_date" reuseLastValue="0"></field>
         <field name="frame__creation_user" reuseLastValue="0"></field>
-        <field name="frame__edited" reuseLastValue="0"></field>
         <field name="frame__last_modification_date" reuseLastValue="0"></field>
         <field name="frame__last_modification_user" reuseLastValue="0"></field>
         <field name="frame_comment" reuseLastValue="0"></field>
@@ -61544,7 +61393,6 @@ def my_form_open(dialog, layer, feature):
         <field name="pk" reuseLastValue="0"></field>
         <field name="sign__creation_date" reuseLastValue="0"></field>
         <field name="sign__creation_user" reuseLastValue="0"></field>
-        <field name="sign__edited" reuseLastValue="0"></field>
         <field name="sign__last_modification_date" reuseLastValue="0"></field>
         <field name="sign__last_modification_user" reuseLastValue="0"></field>
         <field name="sign_case_decision" reuseLastValue="0"></field>
@@ -61581,7 +61429,6 @@ def my_form_open(dialog, layer, feature):
         <field name="sign_usr_sign_3" reuseLastValue="0"></field>
         <field name="support__creation_date" reuseLastValue="0"></field>
         <field name="support__creation_user" reuseLastValue="0"></field>
-        <field name="support__edited" reuseLastValue="0"></field>
         <field name="support__last_modification_date" reuseLastValue="0"></field>
         <field name="support__last_modification_user" reuseLastValue="0"></field>
         <field name="support_address" reuseLastValue="0"></field>
