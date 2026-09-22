@@ -1,7 +1,9 @@
 import os
 import re
 import unittest
+import xml.etree.ElementTree as ET
 from pathlib import Path
+from urllib.parse import parse_qs, unquote, urlparse
 
 import psycopg
 
@@ -12,6 +14,7 @@ SQL_PATH = (
     / "vw_sign_symbol.sql"
 )
 
+PROJECT_PATH = Path(__file__).resolve().parents[1] / "project" / "signalo.qgs"
 PG_VIEW_PATH = (
     Path(__file__).resolve().parents[1] / "datamodel" / "app" / "vw_sign_symbol.py"
 )
@@ -162,6 +165,64 @@ class TestSignTypeCoverage(unittest.TestCase):
             missing,
             f"no sign in the database uses type(s) {missing}, so the parity check never "
             "compares that branch -- add one to datamodel/demo_data/sign_content.sql",
+        )
+
+
+class TestProjectMatchesSql(unittest.TestCase):
+    """The project carries a second copy of the SQL, and it has to stay in step.
+
+    signalo.qgs holds the virtual layer's whole query percent-encoded in its datasource,
+    because that is the only way QGIS stores one -- and it has to be in the project rather
+    than injected at packaging time, since QFieldCloud packages what you push and offers no
+    hook. vw_sign_symbol.sql stays the readable copy; this fails when they diverge.
+
+    Regenerate with:
+        docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+            python3 /usr/src/project/virtual_layers/sign_symbol_layer.py \
+            /usr/src/project/signalo.qgs
+    """
+
+    def datasource(self):
+        root = ET.parse(PROJECT_PATH).getroot()
+        sources = [
+            layer.findtext("datasource")
+            for layer in root.iter("maplayer")
+            if layer.findtext("provider") == "virtual"
+        ]
+        self.assertEqual(
+            len(sources), 1, f"expected exactly one virtual layer, found {len(sources)}"
+        )
+        return sources[0]
+
+    def test_project_sql_matches_the_file(self):
+        # unquote, not parse_qs: the latter applies form-encoding rules where "+" means a
+        # space, which would turn the SQL's `azimut_azimut + 180` into `azimut_azimut  180`.
+        # Qt's QUrlQuery, which QGIS uses to read this, does not do that.
+        parts = urlparse(self.datasource()).query.split("&")
+        query = [unquote(p[len("query=") :]) for p in parts if p.startswith("query=")]
+        self.assertEqual(len(query), 1, "no query= in the virtual layer datasource")
+        self.assertEqual(
+            query[0].strip(),
+            SQL_PATH.read_text(encoding="utf-8").strip(),
+            "signalo.qgs and vw_sign_symbol.sql have diverged -- regenerate the project",
+        )
+
+    def test_sources_are_referenced_not_embedded(self):
+        """Embedded sources make QFieldCloud refuse the project.
+
+        The server treats a virtual layer with `layer=` as online vector data; `layer_ref=`
+        is exempt. QGIS's own Add/Edit Virtual Layer dialog always writes the embedded form,
+        so this is one careless edit away at any time.
+        """
+        query = parse_qs(urlparse(self.datasource()).query)
+        self.assertFalse(
+            query.get("layer"),
+            "the virtual layer has embedded sources -- QFieldCloud will refuse the project",
+        )
+        self.assertEqual(
+            len(query.get("layer_ref", [])),
+            len(SOURCE_TABLES),
+            "expected one layer_ref per source table",
         )
 
 

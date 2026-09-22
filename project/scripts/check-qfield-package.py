@@ -26,6 +26,7 @@ import shutil
 import sys
 import tempfile
 from pathlib import Path
+from urllib.parse import parse_qs, urlparse
 
 from qgis.core import (
     QgsApplication,
@@ -41,10 +42,11 @@ from qgis.core import (
 from qgis.PyQt.QtCore import QUrl
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "virtual_layers"))
+from sign_symbol_layer import VIRTUAL_LAYER_NAME  # noqa: E402
 from signalo_symbology import symbology_digest  # noqa: E402
 
 MANIFEST_NAME = "signalo-package.json"
-VIRTUAL_LAYER_NAME = "Vue signal (symbologie hors ligne)"
 POSTGRES_LAYER_NAME = "Vue signal (symbologie)"
 
 
@@ -65,10 +67,10 @@ class Checks:
 def undrawn_platforms(layer):
     """Platforms on which the packaged layer would draw nothing.
 
-    The source project gates the virtual layer on `@qgis_platform != 'desktop'` so it does
-    not fight the PostgreSQL layer. That gate must not survive packaging: the package has
-    no PostgreSQL layer, and carrying the gate over means an empty map for anyone opening
-    the package in QGIS Desktop to inspect it.
+    The two symbology layers are kept apart by the mutually exclusive "Symbologie" group
+    rather than by a platform filter, so nothing should gate rendering at all. This guards
+    against a filter creeping back in and leaving the package drawing nothing -- on the
+    device, or for anyone opening it in QGIS Desktop to inspect it.
     """
     rules = [
         rule
@@ -234,6 +236,25 @@ def main():
     sources = [project.mapLayer(r) for r in refs if project.mapLayer(r) is not None]
     not_ogr = sorted({l.name() for l in sources if l.providerType() != "ogr"})
     checks.check(not not_ogr, "all sources are geopackage", ", ".join(not_ogr))
+
+    # QFieldCloud classifies a virtual layer with EMBEDDED sources as online vector data
+    # and refuses to package the project. Referenced sources are exempt. QGIS's own
+    # "Add/Edit Virtual Layer" dialog always writes embedded ones, so redefining the query
+    # through it would break cloud packaging -- with an error naming subscription plans,
+    # not layers. This is the exact condition the server applies.
+    query = parse_qs(urlparse(virtual.source()).query)
+    checks.check(
+        bool(query.get("layer_ref")) and not query.get("layer"),
+        "sources are referenced, not embedded",
+        f"{len(query.get('layer_ref', []))} layer_ref",
+        on_fail="found embedded layer= -- QFieldCloud will refuse this project",
+    )
+
+    # Deliberately not asserted: that the layer is checked in the legend. Packaging removes
+    # the PostgreSQL layer from the mutually exclusive "Symbologie" group, and QGIS restores
+    # such a group's selection on load -- the surviving child comes out checked whatever the
+    # file says, including with mutually-exclusive-child="-1". The assertion could not be
+    # made to fail, so it would only give false assurance.
 
     count = virtual.featureCount()
     manifest_path = source.parent / MANIFEST_NAME
