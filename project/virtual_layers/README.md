@@ -45,6 +45,12 @@ The SQL lives twice — in `vw_sign_symbol.sql` and percent-encoded inside the `
 that is the only way QGIS stores a virtual layer's query. **After editing the SQL, regenerate
 the project and commit both.** `test/test_virtual_layer_sql.py` fails when they diverge.
 
+The generator canonicalises the `.qgs` on the way out, matching what the
+[trackable_project_files](https://plugins.qgis.org/plugins/trackable_project_files/) plugin
+does on every desktop save. Without that the two writers disagree on attribute order and
+empty-element form, and regenerating produces a 40,000-line diff of pure noise. Keep the
+plugin installed in QGIS, or a desktop save will undo it.
+
 ```sh
 # regenerate the layer in the project after editing vw_sign_symbol.sql
 docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \

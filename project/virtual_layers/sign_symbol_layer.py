@@ -16,6 +16,7 @@ Both layers carry all 11 named styles for that comparison, which is the cost of 
 transition: a symbology change has to be made twice until the PostgreSQL layer is deleted.
 """
 
+import xml.etree.ElementTree as ET
 from pathlib import Path
 
 from qgis.core import (
@@ -98,8 +99,14 @@ def copy_styles(source, target):
     relative to the project, and QField has a long history of failing to resolve those
     (QField #282, #299, #2287).
     """
+    # Read the styles off a throwaway clone, never off the project's own layer.
+    # QgsMapLayerStyleManager.setCurrentStyle writes the layer's live state back into the
+    # style being left, and a layer's split/duplicate policies do not survive that round
+    # trip: walking the styles in place silently stripped all 2500 <policy> entries from
+    # "Vue signal (symbologie)". The clone carries the same named styles and is discarded.
+    source = source.clone()
     src_mgr, dst_mgr = source.styleManager(), target.styleManager()
-    src_original, dst_original = src_mgr.currentStyle(), dst_mgr.currentStyle()
+    dst_original = dst_mgr.currentStyle()
 
     for name in src_mgr.styles():
         src_mgr.setCurrentStyle(name)
@@ -111,13 +118,15 @@ def copy_styles(source, target):
         if not style.isValid():
             raise RuntimeError(f"style {name!r} did not export cleanly")
 
+        # Replace rather than write into an existing style. writeToLayer applies the
+        # symbology and the manager then re-serialises that style from the layer's full
+        # live state, so every re-run folded the field configuration back in and the
+        # layer's block in the .qgs grew from 2800 lines to 8400 and kept going.
         if name in dst_mgr.styles():
-            dst_mgr.setCurrentStyle(name)
-            style.writeToLayer(target)
-        else:
-            dst_mgr.addStyle(name, style)
+            dst_mgr.removeStyle(name)
+        if not dst_mgr.addStyle(name, style):
+            raise RuntimeError(f"could not store style {name!r} on the virtual layer")
 
-    src_mgr.setCurrentStyle(src_original)
     if dst_original in dst_mgr.styles():
         dst_mgr.setCurrentStyle(dst_original)
     return len(src_mgr.styles())
@@ -187,6 +196,22 @@ def add_to_project(project):
     return layer, styles
 
 
+def canonicalize(path):
+    """Rewrite a .qgs as canonical XML, as the trackable_project_files plugin does.
+
+    That plugin runs C14N on every desktop save, which sorts attributes alphabetically
+    and settles the empty-element form. Qt writes XML attributes in hash order, which is
+    randomised per process, so a project written without this differs from a desktop save
+    -- and from the previous headless run -- in tens of thousands of lines of pure noise.
+    Canonicalising here keeps a regenerated project diffable against one saved from QGIS.
+    """
+    # Trailing newline: C14N does not emit one, and pre-commit's end-of-file-fixer
+    # would otherwise rewrite the file after every regeneration.
+    path.write_text(
+        ET.canonicalize(from_file=str(path)).rstrip("\n") + "\n", encoding="utf-8"
+    )
+
+
 def main():
     """Write the virtual layer into a project file.
 
@@ -221,6 +246,7 @@ def main():
 
     if not project.write():
         raise SystemExit("failed to write project")
+    canonicalize(Path(args.project))
     print(f"wrote {args.project}")
     app.exitQgis()
 
