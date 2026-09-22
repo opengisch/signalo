@@ -1,13 +1,17 @@
 #!/usr/bin/python3
-"""Compare the offline virtual layer against the PostgreSQL vw_sign_symbol view.
+"""Compare vw_sign_symbol.sql against the PostgreSQL vw_sign_symbol view.
 
-Both layers must agree row for row on every column they share, keyed on `pk`
+The two must agree row for row on every column they share, keyed on `pk`
 (`<sign uuid>-<0|1>`), which is unique across the recto/verso duplication while the
-bare sign `id` is not. Also guards the virtual layer's feature ids, which silently
-collapse onto 0 if the uid column is ever pointed back at the text `pk`.
+bare sign `id` is not. Also guards the feature ids, which silently collapse onto 0 if
+the uid column is ever pointed back at the text `pk`.
 
-    docker compose run --rm qgis \
-        xvfb-run /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
+This builds its own layer from vw_sign_symbol.sql rather than reading the one committed
+in the project, so it compares the *file* with the database. That the project's embedded
+copy still matches the file is a separate check, in test/test_virtual_layer_sql.py.
+
+    docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+        python3 /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
 """
 
 import argparse

@@ -16,7 +16,6 @@ Both layers carry all 11 named styles for that comparison, which is the cost of 
 transition: a symbology change has to be made twice until the PostgreSQL layer is deleted.
 """
 
-import re
 from pathlib import Path
 
 from qgis.core import (
@@ -49,13 +48,6 @@ VIRTUAL_LAYER_NAME = "Vue signal (symbologie hors ligne)"
 REFRESH_ON = ("sign", "frame", "azimut", "support")
 
 SQL_PATH = Path(__file__).with_name("vw_sign_symbol.sql")
-
-# A saved style carries a copy of the layer's custom properties, so a style switch would
-# otherwise restore whatever QFieldSync action was current when the style was saved --
-# silently undoing the no_action set below. Packaging config is not symbology.
-QFIELDSYNC_OPTION = re.compile(
-    r'\s*<Option\b[^>]*\bname="QFieldSync/[^"]*"(?:[^>]*/>|[^>]*>.*?</Option>)', re.S
-)
 
 # The symbology builds its SVG paths relative to the project. QGIS resolves those against
 # the project directory, but QField has a long history of failing to (QField #282, #299,

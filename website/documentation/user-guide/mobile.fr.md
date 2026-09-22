@@ -28,7 +28,7 @@ Nous renvoyons ici vers la [documentation de QField](https://docs.qfield.org/get
 
     Elle voisine dans le groupe **Symbologie** avec la couche PostgreSQL **Vue signal (symbologie)**, dont elle reproduit le rendu. Le groupe est à sélection exclusive : une seule des deux s'affiche à la fois. La couche hors ligne est celle qui est cochée, de sorte que le bureau montre ce que le terrain recevra ; cochez l'autre pour comparer les deux rendus. L'empaquetage retire la couche PostgreSQL.
 
-    Tant que les deux couches coexistent, **une modification de symbologie doit être reportée sur les deux**, faute de quoi la comparaison ne veut plus rien dire.
+    La symbologie ne se modifie toutefois qu'à un seul endroit : c'est celle de la couche PostgreSQL qui fait foi, la couche hors ligne en reçoit une copie lorsque le projet est régénéré.
 
 !!! warning "Le dossier `images` doit accompagner le projet"
 

@@ -89,8 +89,9 @@ jobs:
           # is the database the parity and packaging checks read, and only the demo rows
           # cover the mirror / street-plate / marker / user-sign branches. all-signs.py
           # adds official signs alone, so without this those four are never compared.
-          # ${DB_NAME}_demo stays separate -- it is dumped as the PR artifact, before
-          # all-signs.py loads its synthetic signs here.
+          # ${DB_NAME}_demo stays separate so it keeps demo data alone, without the
+          # synthetic signs all-signs.py loads into ${DB_NAME} below. It is the database
+          # the PR dump is taken from.
           docker compose run --rm pum -vvv -p ${PGSERVICE} -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA}
           docker compose run --rm pum -vvv -p ${PGSERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA}
 

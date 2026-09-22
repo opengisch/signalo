@@ -23,8 +23,9 @@ why no platform filter is needed. The virtual layer is the checked one, so the d
 what the field will get; tick the other to compare. Packaging drops the PostgreSQL layer
 (`action` and `cloud_action` are both `remove`).
 
-While both layers exist, a symbology change has to be made twice or the comparison is
-meaningless.
+The symbology still has a single source. `sign_symbol_layer.py` copies the PostgreSQL
+layer's symbology onto the virtual one every time it runs, so edit the PostgreSQL layer and
+regenerate — styling the virtual layer directly is lost on the next run.
 
 ## Files
 
