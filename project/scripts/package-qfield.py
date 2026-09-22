@@ -42,28 +42,27 @@ MANIFEST_NAME = "signalo-package.json"
 
 
 def attachment_dirs(project):
-    """Read QFieldSync/attachmentDirs from the project, as the plugin's dialog does."""
-    dirs, ok = project.readListEntry("QFieldSync", "attachmentDirs")
-    return dirs if ok and dirs else ["DCIM"]
+    """Directories copied into the package, read exactly as the cloud worker reads them.
 
+    QFieldCloud's packaging worker does:
 
-def dirs_to_copy(project_dir):
-    """Project subdirectories that travel with the package.
+        attachment_dirs, _ = project.readListEntry("QFieldSync", "attachmentDirs", ["DCIM"])
+        data_dirs, _ = project.readListEntry("QFieldSync", "dataDirs", [])
+        OfflineConverter(..., attachment_dirs=attachment_dirs + data_dirs, ...)
 
-    This has to be passed explicitly. Left as None, OfflineConverter falls back to the
-    attachment dirs alone (DCIM) -- and the sign symbology resolves its SVGs through
-    relative paths built as `'images/' || ...`, so a package without images/ beside the
-    project draws no signs at all while looking perfectly healthy.
+    and passes no dirs_to_copy, so OfflineConverter copies precisely these. This script
+    mirrors that on purpose. It used to pass its own dirs_to_copy listing every project
+    subdirectory, which made a cable package that contained images/ while a cloud package
+    of the same project did not -- so the checks here passed and the field still saw no
+    signs. Reading the same project setting is what keeps the two packages comparable.
 
-    The QFieldSync dialog ticks every project subdirectory by default, so copying them
-    all keeps this script's output equivalent to a package built through the GUI. Hidden
-    directories are skipped: .tx is Transifex configuration, of no use in the field.
+    images/ therefore has to be declared in QFieldSync/dataDirs; the sign symbology
+    resolves its SVGs relative to the project, and a package without images/ beside the
+    project draws nothing at all while looking perfectly healthy.
     """
-    return {
-        directory.name: True
-        for directory in sorted(project_dir.iterdir())
-        if directory.is_dir() and not directory.name.startswith(".")
-    }
+    dirs, _ = project.readListEntry("QFieldSync", "attachmentDirs", ["DCIM"])
+    data, _ = project.readListEntry("QFieldSync", "dataDirs", [])
+    return dirs + data
 
 
 def main():
@@ -120,7 +119,6 @@ def main():
         attachment_dirs(project),
         QgisCoreOffliner(offline_editing=QgsOfflineEditing()),
         ExportType.Cable,
-        dirs_to_copy=dirs_to_copy(Path(args.project).parent),
         export_title=args.title,
     )
     converter.warning.connect(lambda title, body: print(f"WARNING {title}: {body}"))
