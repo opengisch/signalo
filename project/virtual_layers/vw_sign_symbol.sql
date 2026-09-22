@@ -13,14 +13,17 @@
 --     the WHERE clause, recto/verso by `_verso`), so no row can be deduplicated;
 --   * `::type` casts and `false::bool` become CAST(...)/0-1, and the cosmetic
 --     ORDER BY inside the branch CTEs is dropped.
--- The `*_n` CTEs exist for one reason: the virtual layer provider declares uuid columns
--- with an affinity that makes two identical uuid strings compare unequal, so sign->frame
--- matched 0 of 34 rows when joined directly. Casting inside the ON clause fixes the match
--- but defeats SQLite's index use, turning every join into a per-row provider lookup (a
--- 34-sign project did not finish in 9 minutes). Normalising each source once into a
--- MATERIALIZED CTE gives both: correct comparisons and ordinary indexable joins.
--- Text and integer keys (official_sign.id, marker_type.id) are unaffected by the affinity
--- bug, but are carried through the same CTEs to keep the shape uniform.
+-- The `*_n` CTEs exist for one reason. The virtual layer provider offers to satisfy an `=`
+-- on a layer's primary key itself, then honours it with setFilterFid(sqlite3_value_int()),
+-- coercing the key to an integer feature id -- so a uuid join asks for feature 0 and
+-- sign->frame matched 0 of 34 rows, silently. Casting inside the ON clause blocks that
+-- push-down and fixes the result, but also defeats SQLite's index use, turning every join
+-- into a per-row provider lookup (a 34-sign project did not finish in 9 minutes).
+-- Normalising each source once into a MATERIALIZED CTE gives both.
+-- Text and integer keys (official_sign.id, marker_type.id) are unaffected, but are carried
+-- through the same CTEs to keep the shape uniform.
+-- Fixed upstream by QGIS 5cb8ed11a09 (master and 4.2, not 3.44): these CTEs can become
+-- plain joins once the QGIS floor -- desktop and the one QField embeds -- is past 3.44.
 -- `_azimut_rectified` keeps the view's asymmetry (+180 with no % 360) on purpose, so
 -- the two layers stay comparable row for row.
 WITH sign_n AS MATERIALIZED (

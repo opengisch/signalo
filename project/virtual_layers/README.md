@@ -67,18 +67,28 @@ column because it is the stable key `diff_vw.py` compares the two layers on, and
 
 ### Join the `*_n` CTEs, never the source layers directly
 
-Through this provider, two identical uuid strings do not compare equal. Joining `sign` to
-`frame` on `frame.id = sign.fk_frame` matches **0 of 34 rows** — no error, just a full set
-of features whose joined columns are all NULL.
+Joining `sign` to `frame` on `frame.id = sign.fk_frame` matches **0 of 34 rows** — no
+error, just a full set of features whose joined columns are all NULL.
 
-Casting both sides with `CAST(... AS TEXT)` fixes the comparison, but an expression in the
-`ON` clause stops SQLite using an index, so it falls back to fetching features from the
-provider one row at a time. A 34-sign project did not finish in nine minutes that way.
+The values are fine; they are never compared. The provider tells SQLite it can satisfy an
+`=` on a layer's primary key itself (`vtableBestIndex`, `idxNum = 1`), and then honours it
+with `setFilterFid( sqlite3_value_int( … ) )` — coercing the key to an integer feature id.
+For a uuid that is 0, so the join asks for feature 0 and gets nothing. SQLite is told to
+omit its own check, so the wrong rows pass silently.
+
+Wrapping each side in `CAST(... AS TEXT)` blocks that push-down, which is why it fixes the
+result — but it also stops SQLite using an index, so the join falls back to fetching
+features one row at a time. A 34-sign project did not finish in nine minutes that way.
 
 The `*_n AS MATERIALIZED` CTEs cast each source's keys once, up front, so everything
 downstream joins plain normalised text columns: correct *and* indexable. Text and integer
 keys (`official_sign.id`, `marker_type.id`) never had the problem, but go through the same
 CTEs so there is one pattern to follow rather than two.
+
+**This is fixed upstream** — QGIS `5cb8ed11a09` only uses a primary key column for the
+push-down when it is an integer. The fix is in QGIS master and 4.2, but not in the 3.44 the
+`qgis` compose image pins, and QField embeds its own QGIS. Once both are past 3.44 these
+CTEs can collapse back into plain joins.
 
 Those CTEs double as the SQL's dependency manifest — `test/test_virtual_layer_sql.py` reads
 the column lists out of them and fails if one no longer exists in `signalo_db`.
