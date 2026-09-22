@@ -114,19 +114,6 @@ jobs:
           docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
             python3 /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
 
-      # The parity check only builds the layer definition. Packaging is what assembles
-      # the layer people actually get: styles, QFieldSync actions, images, layer tree.
-      - name: "package for QField"
-        run: |
-          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
-            /usr/src/project/scripts/package-qfield.py \
-              /usr/src/project/signalo.qgs /usr/src/qfield-package --title "Signalo"
-
-      - name: "verify the QField package"
-        run: |
-          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
-            /usr/src/project/scripts/check-qfield-package.py /usr/src/qfield-package/signalo.qgs
-
 #      - name: "schema lint"
 #        run: |
 #          npm i --no-fund -g schemalint

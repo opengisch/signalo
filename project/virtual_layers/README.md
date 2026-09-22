@@ -9,33 +9,56 @@ added, deleted or reordered in the field keeps the arrangement it had at packagi
 
 A QGIS Virtual Layer runs the equivalent SQL over the project's own sign/frame/azimut/support
 layers. QFieldSync carries virtual layers into the package untouched (`no_action` is their
-only cable-packaging option) and the offliners keep layer ids stable, so the SQL keeps
-resolving against the offline GeoPackage copies and the symbology recomputes in the field.
+only packaging option) and the offliners keep layer ids stable, so the SQL keeps resolving
+against the offline GeoPackage copies and the symbology recomputes in the field.
+
+## Where the layer lives
+
+**The layer is committed inside `project/signalo.qgs`.** It has to be: QFieldCloud packages
+the project you push and runs no plugins, so there is no hook that could add it later.
+
+It sits in the mutually exclusive layer-tree group **Symbologie**, next to the PostgreSQL
+layer `Vue signal (symbologie)` it replaces. Only one of the two draws at a time, which is
+why no platform filter is needed. The virtual layer is the checked one, so the desktop shows
+what the field will get; tick the other to compare. Packaging drops the PostgreSQL layer
+(`action` and `cloud_action` are both `remove`).
+
+While both layers exist, a symbology change has to be made twice or the comparison is
+meaningless.
 
 ## Files
 
-- `vw_sign_symbol.sql` — the static SQLite port of the view. Sources are referenced by the
-  aliases bound in the layer URI (`layer_ref=<layerid>:<alias>`), so the file needs no
-  substitution step.
-- `sign_symbol_layer.py` — builds the virtual layer: definition, styles, QFieldSync actions,
-  layer-tree placement. Imported by the packaging script; it never writes a project itself.
-- `diff_vw.py` — asserts the virtual layer matches the PostgreSQL view row for row. Run in CI.
+- `vw_sign_symbol.sql` — the static SQLite port of the view, and the readable copy of the
+  SQL. Sources are referenced by the aliases bound in the layer URI
+  (`layer_ref=<layerid>:<alias>`), so the file needs no substitution step.
+- `sign_symbol_layer.py` — the generator. Run it to write the layer into a project:
+  definition, styles, QFieldSync actions, layer-tree placement. Re-running refreshes the
+  existing layer in place rather than adding a second one.
+- `diff_vw.py` — asserts the virtual layer matches the PostgreSQL view row for row, and that
+  its feature ids come out distinct. Run in CI. It builds its own layer from
+  `vw_sign_symbol.sql`, so it compares the *file* against the database.
 
 ## Usage
 
+The SQL lives twice — in `vw_sign_symbol.sql` and percent-encoded inside the `.qgs`, because
+that is the only way QGIS stores a virtual layer's query. **After editing the SQL, regenerate
+the project and commit both.** `test/test_virtual_layer_sql.py` fails when they diverge.
+
 ```sh
+# regenerate the layer in the project after editing vw_sign_symbol.sql
+docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+    python3 /usr/src/project/virtual_layers/sign_symbol_layer.py \
+    /usr/src/project/signalo.qgs
+
 # does the virtual layer still match the view?
 docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \
     python3 /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
-
-# build the field package and check it
-docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \
-    /usr/src/project/scripts/package-qfield.py \
-    /usr/src/project/signalo.qgs /usr/src/qfield-package
-
-docker compose --profile qgis run --rm -e QT_QPA_PLATFORM=offscreen qgis \
-    /usr/src/project/scripts/check-qfield-package.py /usr/src/qfield-package/signalo.qgs
 ```
+
+Packaging itself is done from the QFieldSync plugin, by cable or through QFieldCloud; nothing
+here has to run first. One project setting matters: `images` must stay in the project's
+QFieldSync attachment directories, or the package ships without the sign SVGs and draws
+nothing. `test/test_qfield_packaging.py` guards it.
 
 ## Two rules for editing the SQL
 
@@ -62,8 +85,8 @@ correct, which is what makes it nasty — what breaks is identify, selection, an
 that addresses a feature by id.
 
 So the uid is `_vl_fid`, a `ROW_NUMBER()` over the final result. `pk` stays as an ordinary
-column because it is the stable key `diff_vw.py` compares the two layers on, and
-`check-qfield-package.py` asserts the feature ids come out distinct.
+column because it is the stable key `diff_vw.py` compares the two layers on, while the
+same script asserts the feature ids come out distinct.
 
 ### Join the `*_n` CTEs, never the source layers directly
 
