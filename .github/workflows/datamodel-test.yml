@@ -70,6 +70,7 @@ jobs:
       PGSERVICE: pg_signalo
       DB_NAME: signalo
       RUN_TESTS: True
+      COMPOSE_PROFILES: qgis
 
     steps:
       - uses: actions/checkout@v7
@@ -77,14 +78,21 @@ jobs:
       - name: Initialize container
         run: |
           docker compose up --build -d
-          until docker compose exec db pg_isready -U postgres; do
+          until docker compose exec db pg_isready -h localhost -U postgres; do
             echo "Waiting for PostgreSQL to be ready..."
             sleep 2
           done
           # create the database
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
-          docker compose run --rm pum -vvv -p ${PGSERVICE} -d datamodel install -p SRID 2056
+          # Demo data here too, because signalo.qgs is pinned to service pg_signalo: this
+          # is the database pytest and the parity check read, and only the demo rows
+          # cover the mirror / street-plate / marker / user-sign branches. all-signs.py
+          # adds official signs alone, so without this those four are never compared.
+          # ${DB_NAME}_demo stays separate so it keeps demo data alone, without the
+          # synthetic signs all-signs.py loads into ${DB_NAME} below. It is the database
+          # the PR dump is taken from.
+          docker compose run --rm pum -vvv -p ${PGSERVICE} -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA}
           docker compose run --rm pum -vvv -p ${PGSERVICE}_demo -d datamodel install -p SRID 2056 --demo-data ${DEMO_DATA}
 
       - name: "dumps + all signs"
@@ -98,6 +106,14 @@ jobs:
 
       - name: "test data model"
         run: docker compose run --entrypoint pytest pum
+
+      # Runs after "dumps + all signs", so this also guards performance: the virtual
+      # layer degrades into per-row provider lookups if its joins stop being indexable,
+      # which on a loaded database shows up here as a job that never finishes.
+      - name: "offline sign symbology matches the view"
+        run: |
+          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+            python3 /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
 
 #      - name: "schema lint"
 #        run: |

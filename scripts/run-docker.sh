@@ -58,7 +58,7 @@ docker compose up -d
 
 docker compose run --rm pum --version
 
-until docker compose exec db pg_isready -U postgres; do
+until docker compose exec db pg_isready -h localhost -U postgres; do
   echo "Waiting for PostgreSQL to be ready..."
   sleep 2
 done

@@ -13,6 +13,15 @@ services:
       - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/.pg_service.conf:ro
       - dump-data:/dump
       - db-data:/var/lib/postgresql/data
+    healthcheck:
+      # Probe TCP, not the socket: while initdb runs, the entrypoint starts a
+      # temporary server with listen_addresses='' that answers on the socket only.
+      # A socket probe reports "accepting connections" moments before that server
+      # is shut down to hand over to the real one.
+      test: ["CMD-SHELL", "pg_isready -h localhost -U postgres"]
+      interval: 2s
+      timeout: 5s
+      retries: 45
 
   pum:
     image: opengisch/pum:${PUM_VERSION:-latest}
@@ -25,10 +34,11 @@ services:
       - .:/pum
       - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/.pg_service.conf:ro
     depends_on:
-      - db
+      db:
+        condition: service_healthy
 
   qgis:
-    image: qgis/qgis:3.44
+    image: qgis/qgis:${QGIS_VERSION:-3.44}
     platform: linux/amd64
     tty: true
     environment:
@@ -38,6 +48,9 @@ services:
       - ${PGSERVICEFILE:-./datamodel/.docker/.pg_service.conf}:/.pg_service.conf:ro
     links:
       - db
+    depends_on:
+      db:
+        condition: service_healthy
     profiles:
       - qgis
 
@@ -48,7 +61,8 @@ services:
       - ./datamodel/schemaspy:/output
       - ./datamodel/schemaspy.properties:/schemaspy.properties
     depends_on:
-      - db
+      db:
+        condition: service_healthy
     network_mode: "service:db"
     command: [
       "-configFile",
