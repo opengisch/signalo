@@ -70,6 +70,7 @@ jobs:
       PGSERVICE: pg_signalo
       DB_NAME: signalo
       RUN_TESTS: True
+      COMPOSE_PROFILES: qgis
 
     steps:
       - uses: actions/checkout@v7
@@ -98,6 +99,27 @@ jobs:
 
       - name: "test data model"
         run: docker compose run --entrypoint pytest pum
+
+      # Runs after "dumps + all signs", so this also guards performance: the virtual
+      # layer degrades into per-row provider lookups if its joins stop being indexable,
+      # which on a loaded database shows up here as a job that never finishes.
+      - name: "offline sign symbology matches the view"
+        run: |
+          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+            python3 /usr/src/project/virtual_layers/diff_vw.py /usr/src/project/signalo.qgs
+
+      # The parity check only builds the layer definition. Packaging is what assembles
+      # the layer people actually get: styles, QFieldSync actions, images, layer tree.
+      - name: "package for QField"
+        run: |
+          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+            /usr/src/project/scripts/package-qfield.py \
+              /usr/src/project/signalo.qgs /usr/src/qfield-package --title "Signalo"
+
+      - name: "verify the QField package"
+        run: |
+          docker compose run --rm -e QT_QPA_PLATFORM=offscreen qgis \
+            /usr/src/project/scripts/check-qfield-package.py /usr/src/qfield-package/signalo.qgs
 
 #      - name: "schema lint"
 #        run: |

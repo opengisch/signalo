@@ -32,6 +32,13 @@ jobs:
     with:
       release_tag: ${{ github.event.release.tag_name }}
 
+  qfield-package:
+    name: Package project for QField
+    uses: ./.github/workflows/qfield-package.yml
+    secrets: inherit
+    with:
+      release_tag: ${{ github.event.release.tag_name }}
+
   rebuild-website:
     uses: ./.github/workflows/website.yml
     secrets: inherit
