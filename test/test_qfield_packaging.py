@@ -52,9 +52,8 @@ class TestPackagedDirectories(unittest.TestCase):
     directory in the project is the only hook there is.
 
     `images` therefore lives in attachmentDirs, which is the one list both of them read.
-    This was found the hard way: a cloud project was built without images/ and drew an
-    empty map, while the cable package -- which used to pass its own dirs_to_copy -- looked
-    perfectly healthy.
+    This was found the hard way: a cloud project was built without it, and drew an empty
+    map while reporting no error at all.
     """
 
     def test_images_are_declared_as_a_copied_directory(self):
