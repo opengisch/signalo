@@ -12,6 +12,13 @@ SQL_PATH = (
     / "vw_sign_symbol.sql"
 )
 
+PG_VIEW_PATH = (
+    Path(__file__).resolve().parents[1] / "datamodel" / "app" / "vw_sign_symbol.py"
+)
+
+# `WHEN sign.fk_sign_type = 12 THEN ...` -- the ladder deciding which image a sign gets.
+SIGN_TYPE_BRANCH = re.compile(r"fk_sign_type\s*=\s*(\d+)")
+
 # Alias used inside vw_sign_symbol.sql -> the signalo_db table it is bound to by the
 # layer_ref= entries in the virtual layer URI (see project/virtual_layers/sign_symbol_layer.py).
 SOURCE_TABLES = {
@@ -97,6 +104,65 @@ class TestVirtualLayerSql(unittest.TestCase):
         sql = SQL_PATH.read_text(encoding="utf-8")
         self.assertIn("AS _vl_fid", sql)
         self.assertIn("ROW_NUMBER() OVER (ORDER BY id, _verso) AS _vl_fid", sql)
+
+
+class TestSignTypeParity(unittest.TestCase):
+    """The sign-type branches must not drift between the two implementations.
+
+    datamodel/app/vw_sign_symbol.py builds the PostgreSQL view and
+    project/virtual_layers/vw_sign_symbol.sql the virtual layer, and both carry the same
+    CASE ladder deciding which image a sign type gets. They are edited separately, so
+    adding a type to one and forgetting the other is easy -- and invisible until someone
+    in the field sees a sign with no image.
+
+    diff_vw.py compares the two for real, but only over whatever rows the database holds,
+    so it proves nothing about a type the data does not contain. Hence both a structural
+    check here and a coverage check below.
+    """
+
+    def branches(self, path):
+        return {
+            int(n) for n in SIGN_TYPE_BRANCH.findall(path.read_text(encoding="utf-8"))
+        }
+
+    def test_both_implementations_branch_on_the_same_types(self):
+        pg = self.branches(PG_VIEW_PATH)
+        virtual = self.branches(SQL_PATH)
+        self.assertTrue(pg, "no sign-type branches found in the PostgreSQL view")
+        self.assertEqual(
+            pg,
+            virtual,
+            f"sign types handled by the view but not the virtual layer: {sorted(pg - virtual)}; "
+            f"handled by the virtual layer but not the view: {sorted(virtual - pg)}",
+        )
+
+
+class TestSignTypeCoverage(unittest.TestCase):
+    """Every branched sign type must exist in the data, or diff_vw.py never compares it."""
+
+    @classmethod
+    def setUpClass(cls):
+        pg_service = os.environ.get("PGSERVICE") or "signalo"
+        cls.conn = psycopg.connect(f"service={pg_service}")
+
+    @classmethod
+    def tearDownClass(cls):
+        cls.conn.close()
+
+    def test_demo_data_exercises_every_branch(self):
+        branched = {
+            int(n)
+            for n in SIGN_TYPE_BRANCH.findall(SQL_PATH.read_text(encoding="utf-8"))
+        }
+        with self.conn.cursor() as cur:
+            cur.execute("SELECT DISTINCT fk_sign_type FROM signalo_db.sign")
+            present = {row[0] for row in cur.fetchall() if row[0] is not None}
+        missing = sorted(branched - present)
+        self.assertFalse(
+            missing,
+            f"no sign in the database uses type(s) {missing}, so the parity check never "
+            "compares that branch -- add one to datamodel/demo_data/sign_content.sql",
+        )
 
 
 if __name__ == "__main__":
