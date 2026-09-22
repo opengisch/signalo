@@ -2,4 +2,8 @@
 #
 # libqfieldsync is not published on PyPI and carries no git tags, so it is pinned by
 # commit SHA. Bump deliberately and re-run the packaging check afterwards.
-git+https://github.com/opengisch/libqfieldsync.git@1eef2ad108d2503804b3a8829fdde6070c30fb7b
+#
+# Installed from the GitHub tarball rather than `git+https://`: qgis/qgis:3.44 is a rolling
+# tag, and a build of it that ships without git turns a pip install into a failed image
+# build. pip fetches a tarball itself, so nothing in the base image is required.
+libqfieldsync @ https://github.com/opengisch/libqfieldsync/archive/1eef2ad108d2503804b3a8829fdde6070c30fb7b.tar.gz
