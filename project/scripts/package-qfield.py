@@ -35,8 +35,6 @@ from qgis.core import (
 )
 
 sys.path.insert(0, str(Path(__file__).parent))
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "virtual_layers"))
-from sign_symbol_layer import add_to_project  # noqa: E402
 from signalo_symbology import symbology_digest  # noqa: E402
 
 # Written next to the package so check-qfield-package.py can assert nothing was lost.
@@ -85,9 +83,17 @@ def main():
     if not project.read(args.project):
         sys.exit(f"cannot read project {args.project}")
 
-    # The offline symbology layer is not part of the committed project; it is built
-    # here, from the PostgreSQL layer's styles, and only ever exists in the package.
-    virtual, styles = add_to_project(project)
+    # The offline symbology layer is part of the committed project -- it has to be, because
+    # QFieldCloud packages what you push and has no hook we could run. Packaging just drops
+    # the PostgreSQL layer beside it, per the QFieldSync actions set in the project.
+    virtual = next(
+        (l for l in project.mapLayers().values() if l.providerType() == "virtual"), None
+    )
+    if virtual is None:
+        sys.exit(
+            "no virtual layer in the project -- run "
+            "project/virtual_layers/sign_symbol_layer.py against it first"
+        )
 
     manifest = {
         "virtual_layer_name": virtual.name(),
@@ -136,7 +142,6 @@ def main():
     print(
         f"virtual layer    : {manifest['virtual_layer_features']} symbols before packaging"
     )
-    print(f"styles copied    : {styles}")
     for path in sorted(output_dir.iterdir()):
         print(f"  {path.name} ({path.stat().st_size} bytes)")
 
