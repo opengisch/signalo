@@ -21473,7 +21473,7 @@ def my_form_open(dialog, layer, feature):
       </selection>
       <customproperties>
         <Option type="Map">
-          <Option name="QFieldSync/action" type="QString" value="offline"></Option>
+          <Option name="QFieldSync/action" type="QString" value="remove"></Option>
           <Option name="QFieldSync/attachment_naming" type="QString" value="{}"></Option>
           <Option name="QFieldSync/attribute_editing_locked_expression" type="invalid"></Option>
           <Option name="QFieldSync/cloud_action" type="QString" value="offline"></Option>
