@@ -39,31 +39,46 @@ class TestPackagedDirectories(unittest.TestCase):
     without images/ beside the .qgs is valid, has every feature, reports no error -- and
     draws no signs at all.
 
-    QFieldCloud's packaging worker decides what to copy from the project alone:
+    Two different pieces of code decide what gets copied, and they do not read the same
+    setting. QFieldCloud's packaging worker reads both lists:
 
         attachment_dirs, _ = project.readListEntry("QFieldSync", "attachmentDirs", ["DCIM"])
         data_dirs, _ = project.readListEntry("QFieldSync", "dataDirs", [])
         OfflineConverter(..., attachment_dirs=attachment_dirs + data_dirs, ...)
 
-    It passes no dirs_to_copy and loads no plugins, so there is no other hook. This was
-    found the hard way: a cloud package shipped without images/ and QField drew an empty
-    map, while the cable package -- which used to pass its own dirs_to_copy -- looked fine.
+    while the QFieldSync plugin's cloud converter, which builds the cloud project in the
+    first place, copies only `Preferences().value("attachmentDirs")` and ignores dataDirs
+    entirely. Neither passes dirs_to_copy and neither loads plugins, so declaring the
+    directory in the project is the only hook there is.
+
+    `images` therefore lives in attachmentDirs, which is the one list both of them read.
+    This was found the hard way: a cloud project was built without images/ and drew an
+    empty map, while the cable package -- which used to pass its own dirs_to_copy -- looked
+    perfectly healthy.
     """
 
-    def test_images_are_declared_as_a_data_dir(self):
+    def test_images_are_declared_as_a_copied_directory(self):
+        attachment_dirs = qfieldsync_list("attachmentDirs") or []
         data_dirs = qfieldsync_list("dataDirs") or []
+
         self.assertIn(
             IMAGE_DIR,
-            data_dirs,
-            "QFieldSync/dataDirs does not list 'images', so a QFieldCloud package will "
-            "not contain the sign SVGs and QField will draw no signs. Set it in "
-            "Project Properties > QFieldSync, or add it to the project XML.",
+            attachment_dirs + data_dirs,
+            "neither QFieldSync/attachmentDirs nor QFieldSync/dataDirs lists 'images', so "
+            "a package will not contain the sign SVGs and QField will draw no signs",
+        )
+        self.assertIn(
+            IMAGE_DIR,
+            attachment_dirs,
+            "'images' is only in QFieldSync/dataDirs. The packaging worker would copy it, "
+            "but the cloud converter reads attachmentDirs alone, so a project converted to "
+            "QFieldCloud would have no sign images",
         )
 
     def test_the_source_images_directory_exists(self):
         self.assertTrue(
             (PROJECT_PATH.parent / IMAGE_DIR).is_dir(),
-            f"{IMAGE_DIR}/ is declared in QFieldSync/dataDirs but is not next to the "
+            f"{IMAGE_DIR}/ is declared in QFieldSync/attachmentDirs but is not next to the "
             "project, so nothing would be copied",
         )
 

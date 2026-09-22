@@ -62163,10 +62163,9 @@ def my_form_open(dialog, layer, feature):
     <QFieldSync>
       <attachmentDirs type="QStringList">
         <value>DCIM</value>
-      </attachmentDirs>
-      <dataDirs type="QStringList">
         <value>images</value>
-      </dataDirs>
+      </attachmentDirs>
+      <dataDirs type="QStringList"/>
       <exportDirectoryProject type="QString">/Users/denis/Documents/signalo/QField</exportDirectoryProject>
       <importDirectoryProject type="QString">/Users/denis/Documents/signalo/import</importDirectoryProject>
     </QFieldSync>

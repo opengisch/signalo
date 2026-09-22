@@ -56,7 +56,9 @@ def attachment_dirs(project):
     of the same project did not -- so the checks here passed and the field still saw no
     signs. Reading the same project setting is what keeps the two packages comparable.
 
-    images/ therefore has to be declared in QFieldSync/dataDirs; the sign symbology
+    images/ therefore has to be declared in the project. It sits in attachmentDirs rather
+    than dataDirs because the plugin's cloud converter -- which builds the cloud project
+    that the worker later packages -- copies attachmentDirs alone. The sign symbology
     resolves its SVGs relative to the project, and a package without images/ beside the
     project draws nothing at all while looking perfectly healthy.
     """
