@@ -195,6 +195,24 @@ def main():
     live = sorted({l.name() for l in layers if l.providerType() == "postgres"})
     checks.check(not live, "no layer still points at postgres", ", ".join(live))
 
+    # Views in signalo_app are derived data whose write logic lives in INSTEAD OF
+    # triggers, and neither the derivation nor the triggers survive into GeoPackage. An
+    # offlined copy is therefore a snapshot that goes stale the moment anything is edited
+    # -- which is the whole reason the sign symbology needed a virtual layer. Not a
+    # failure, because whether that matters depends on the view, but worth seeing.
+    app_views = sorted(
+        l.name()
+        for l in layers
+        if "signalo_app"
+        in str(
+            l.customProperty("remoteSource")
+            or l.customProperty("QFieldSync/remoteSource")
+            or ""
+        )
+    )
+    if app_views:
+        print(f"  ..    offlined app views (frozen snapshots): {', '.join(app_views)}")
+
     if virtual is None:
         return report(checks, work, app)
 
