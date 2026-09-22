@@ -86,7 +86,7 @@ jobs:
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}"
           docker compose exec db sh -c "createdb -U postgres ${DB_NAME}_demo"
           # Demo data here too, because signalo.qgs is pinned to service pg_signalo: this
-          # is the database the parity and packaging checks read, and only the demo rows
+          # is the database pytest and the parity check read, and only the demo rows
           # cover the mirror / street-plate / marker / user-sign branches. all-signs.py
           # adds official signs alone, so without this those four are never compared.
           # ${DB_NAME}_demo stays separate so it keeps demo data alone, without the
