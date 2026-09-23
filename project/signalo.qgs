@@ -384,7 +384,7 @@
         <map-layer-style name="défaut"></map-layer-style>
       </map-layer-style-manager>
       <flags>
-        <Identifiable>1</Identifiable>
+        <Identifiable>0</Identifiable>
         <Removable>1</Removable>
         <Searchable>0</Searchable>
         <Private>0</Private>
@@ -805,7 +805,7 @@
         <map-layer-style name="default"></map-layer-style>
       </map-layer-style-manager>
       <flags>
-        <Identifiable>1</Identifiable>
+        <Identifiable>0</Identifiable>
         <Removable>1</Removable>
         <Searchable>0</Searchable>
         <Private>0</Private>
@@ -6612,7 +6612,7 @@
         <map-layer-style name="default"></map-layer-style>
       </map-layer-style-manager>
       <flags>
-        <Identifiable>1</Identifiable>
+        <Identifiable>0</Identifiable>
         <Removable>1</Removable>
         <Searchable>0</Searchable>
         <Private>0</Private>
@@ -6826,7 +6826,7 @@
         <map-layer-style name="défaut"></map-layer-style>
       </map-layer-style-manager>
       <flags>
-        <Identifiable>1</Identifiable>
+        <Identifiable>0</Identifiable>
         <Removable>1</Removable>
         <Searchable>0</Searchable>
         <Private>0</Private>
