@@ -119,7 +119,7 @@ jobs:
 
       - name: Create project translations zip
         run: |
-          cd project-artifact/project
+          cd project-artifact
           zip -r ../../project-translations.zip .
 
       - name: Upload project translations as GitHub Release asset
