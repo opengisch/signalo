@@ -39,7 +39,8 @@ jobs:
       COMPOSE_PROFILES: qgis
       MODULE_NAME: signalo
       QGS_PROJECT_FILE: signalo
-      QGS_PROJECT_TITLE: Signalo
+      # as in the title of the project, which the release step replaces
+      QGS_PROJECT_TITLE: SIGNALO
       PGSERVICE: pg_signalo
       DB_NAME: signalo
 
