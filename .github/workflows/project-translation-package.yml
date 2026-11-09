@@ -76,9 +76,12 @@ jobs:
         working-directory: project
         env:
           TX_TOKEN: ${{ secrets.TX_TOKEN }}
+        # on the runner: the slim image of qgis has no lrelease
         run: |
           ../tx pull -a
-          docker compose exec qgis sh -c '/usr/src/project/scripts/project-translation-compile.sh /usr/src/project/${QGS_PROJECT_FILE}.qgs'
+          sudo apt-get update
+          sudo apt-get install -y --no-install-recommends qt6-l10n-tools
+          PATH=/usr/lib/qt6/bin:$PATH scripts/project-translation-compile.sh ${QGS_PROJECT_FILE}.qgs
 
       - name: Update project version
         if: ${{ inputs.release_tag != '' }}
