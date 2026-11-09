@@ -26,3 +26,6 @@ schemaspy/
 # Atlas PDF build artifacts (built in CI, published as release asset)
 atlas-full.pdf
 official-sign-fr.pdf
+
+# renders and exports of the agent skill qgis
+build/

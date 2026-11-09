@@ -116,9 +116,9 @@ keys (`official_sign.id`, `marker_type.id`) never had the problem, but go throug
 CTEs so there is one pattern to follow rather than two.
 
 **This is fixed upstream** — QGIS `5cb8ed11a09` only uses a primary key column for the
-push-down when it is an integer. The fix is in QGIS master and 4.2, but not in the 3.44 the
-`qgis` compose image pins, and QField embeds its own QGIS. Once both are past 3.44 these
-CTEs can collapse back into plain joins.
+push-down when it is an integer. The fix is in QGIS master and 4.2, but not in the 3.44 LTR
+the users run, and QField embeds its own QGIS. Once both are past 3.44 these CTEs can
+collapse back into plain joins.
 
 Those CTEs double as the SQL's dependency manifest — `test/test_virtual_layer_sql.py` reads
 the column lists out of them and fails if one no longer exists in `signalo_db`.

@@ -38,8 +38,10 @@ services:
         condition: service_healthy
 
   qgis:
-    image: qgis/qgis:${QGIS_VERSION:-3.44}
-    platform: linux/amd64
+    # QGIS and its Python, without the desktop; also built for arm64. It has no LTR tag.
+    image: qgis/qgis-slim:${QGIS_VERSION:-4.2}
+    # up, for docker compose exec: the image has no command of its own
+    command: bash
     tty: true
     environment:
       - PGSERVICEFILE=/.pg_service.conf
