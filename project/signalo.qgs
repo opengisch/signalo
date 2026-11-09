@@ -236,13 +236,13 @@
     </individual-layer-settings>
   </snapping-settings>
   <relations>
-    <relation id="azimut-cadre" name="azimut-cadre" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
+    <relation id="azimut-cadre" name="Cadres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
       <fieldRef referencedField="id" referencingField="fk_azimut"></fieldRef>
     </relation>
     <relation id="dms_rel_do_fk_document_dms_docume_id" name="Documents" referencedLayer="dms_document_fda9c16e_95ed_4277_85dd_30a1dc7c52c2" referencingLayer="dms_rel_document_62c2a0d8_3860_428b_a495_9c8a8a8fcc7b" strength="Association">
       <fieldRef referencedField="id" referencingField="fk_document"></fieldRef>
     </relation>
-    <relation id="frame-sign" name="cadre-signal" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
+    <relation id="frame-sign" name="Signaux" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
       <fieldRef referencedField="id" referencingField="fk_frame"></fieldRef>
     </relation>
     <relation id="sign-official-sign" name="Signal officiel" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Association">
@@ -254,7 +254,7 @@
     <relation id="sign_2499f_fk_parent_sign_2499f_id" name="signal_parent_signal" referencedLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Association">
       <fieldRef referencedField="id" referencingField="fk_parent"></fieldRef>
     </relation>
-    <relation id="support_azimut" name="support_azimut" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
+    <relation id="support_azimut" name="Azimuts" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
       <fieldRef referencedField="id" referencingField="fk_support"></fieldRef>
     </relation>
   </relations>
@@ -7278,7 +7278,7 @@
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="1" legendPlaceholderImage="" maxScale="0" minScale="0" readOnly="1" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
@@ -10910,12 +10910,12 @@
       </geometryOptions>
       <legend showLabelLegend="0" type="default-vector"></legend>
       <referencedLayers>
-        <relation dataSource="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" id="support_azimut" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" layerName="Support" name="support_azimut" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' srid=2056 type=Point checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;support&quot; (geometry)" id="support_azimut" layerId="support_347aa750_1661_498f_a7e8_017adc616ba0" layerName="Support" name="Azimuts" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_support"></fieldRef>
         </relation>
       </referencedLayers>
       <referencingLayers>
-        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" id="azimut-cadre" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" name="azimut-cadre" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" id="azimut-cadre" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" name="Cadres" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_azimut"></fieldRef>
         </relation>
       </referencingLayers>
@@ -11282,7 +11282,7 @@ def my_form_open(dialog, layer, feature):
               <labelFont bold="0" description="Academy Engraved LET,12,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
             </labelStyle>
           </attributeEditorField>
-          <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="Cadres" name="azimut-cadre" nmRelationId="" relation="azimut-cadre" relationWidgetTypeId="ordered_relation_editor" showLabel="1" verticalStretch="0">
+          <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="" name="azimut-cadre" nmRelationId="" relation="azimut-cadre" relationWidgetTypeId="ordered_relation_editor" showLabel="1" verticalStretch="0">
             <labelStyle labelColor="0,0,0,255,rgb:0,0,0,1" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont bold="0" description="Academy Engraved LET,12,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
             </labelStyle>
@@ -11754,7 +11754,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -12885,7 +12885,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -13132,12 +13132,12 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend showLabelLegend="0" type="default-vector"></legend>
       <referencedLayers>
-        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" id="azimut-cadre" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" name="azimut-cadre" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" id="azimut-cadre" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" name="Cadres" providerKey="postgres" referencedLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" referencingLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_azimut"></fieldRef>
         </relation>
       </referencedLayers>
       <referencingLayers>
-        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;sign&quot;" id="frame-sign" layerId="sign_2499f9bd_24a2_4384_b329_dc522a94c545" layerName="Signal" name="cadre-signal" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;sign&quot;" id="frame-sign" layerId="sign_2499f9bd_24a2_4384_b329_dc522a94c545" layerName="Signal" name="Signaux" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_frame"></fieldRef>
         </relation>
       </referencingLayers>
@@ -13694,7 +13694,7 @@ def my_form_open(dialog, layer, feature):
             <labelFont bold="0" description="Academy Engraved LET,12,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
           </labelStyle>
         </attributeEditorField>
-        <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="signal" name="frame-sign" nmRelationId="" relation="frame-sign" relationWidgetTypeId="ordered_relation_editor" showLabel="1" verticalStretch="0">
+        <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="" name="frame-sign" nmRelationId="" relation="frame-sign" relationWidgetTypeId="ordered_relation_editor" showLabel="1" verticalStretch="0">
           <labelStyle labelColor="0,0,0,255,rgb:0,0,0,1" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont bold="0" description="Academy Engraved LET,12,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
           </labelStyle>
@@ -14125,7 +14125,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -14451,7 +14451,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -14784,7 +14784,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"value_en"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -15398,7 +15398,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"value_de"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -15799,7 +15799,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"value_de"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -17676,7 +17676,7 @@ def my_form_open(dialog, layer, feature):
       </geometryOptions>
       <legend showLabelLegend="0" type="default-vector"></legend>
       <referencedLayers>
-        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" id="frame-sign" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" name="cadre-signal" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;frame&quot;" id="frame-sign" layerId="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" layerName="Cadre" name="Signaux" providerKey="postgres" referencedLayer="frame_b99392c7_2b01_4b3a_bde4_f003e2b838e4" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_frame"></fieldRef>
         </relation>
         <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;vl_official_sign&quot;" id="sign-official-sign" layerId="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" layerName="Signal officiel" name="Signal officiel" providerKey="postgres" referencedLayer="official_sign_02419ef5_80b5_48e3_869b_58a12167b0ae" referencingLayer="sign_2499f9bd_24a2_4384_b329_dc522a94c545" strength="Association">
@@ -20448,7 +20448,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"value_de"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -20774,7 +20774,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Point" hasScaleBasedVisibilityFlag="0" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="100000000" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="0" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="Point">
@@ -21199,7 +21199,7 @@ def my_form_open(dialog, layer, feature):
       <legend showLabelLegend="0" type="default-vector"></legend>
       <referencedLayers></referencedLayers>
       <referencingLayers>
-        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" id="support_azimut" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" name="support_azimut" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
+        <relation dataSource="service='pg_signalo' key='id' checkPrimaryKeyUnicity='1' table=&quot;signalo_db&quot;.&quot;azimut&quot;" id="support_azimut" layerId="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" layerName="Azimut" name="Azimuts" providerKey="postgres" referencedLayer="support_347aa750_1661_498f_a7e8_017adc616ba0" referencingLayer="azimut_f5e94397_ee15_4ae1_95b8_af8a412676b3" strength="Composition">
           <fieldRef referencedField="id" referencingField="fk_support"></fieldRef>
         </relation>
       </referencingLayers>
@@ -21906,7 +21906,7 @@ def my_form_open(dialog, layer, feature):
           <labelStyle labelColor="0,0,0,255,rgb:0,0,0,1" overrideLabelColor="0" overrideLabelFont="0">
             <labelFont bold="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
           </labelStyle>
-          <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="azimuts" name="support_azimut" nmRelationId="" relation="support_azimut" relationWidgetTypeId="relation_editor" showLabel="1" verticalStretch="0">
+          <attributeEditorRelation forceSuppressFormPopup="0" horizontalStretch="0" label="" name="support_azimut" nmRelationId="" relation="support_azimut" relationWidgetTypeId="relation_editor" showLabel="1" verticalStretch="0">
             <labelStyle labelColor="0,0,0,255,rgb:0,0,0,1" overrideLabelColor="0" overrideLabelFont="0">
               <labelFont bold="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" italic="0" strikethrough="0" style="" underline="0"></labelFont>
             </labelStyle>
@@ -22430,7 +22430,7 @@ def my_form_open(dialog, layer, feature):
       <reuseLastValue></reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression></previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -22819,7 +22819,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"value_en"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -23208,7 +23208,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"description_fr"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -23597,7 +23597,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"description_fr"</previewExpression>
+      <previewExpression>attribute(concat('value_', if(@qgis_locale IN ('de', 'fr'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="No geometry" hasScaleBasedVisibilityFlag="0" legendPlaceholderImage="" maxScale="0" minScale="1e+08" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" styleCategories="AllStyleCategories" type="vector" wkbType="NoGeometry">
@@ -24300,7 +24300,7 @@ def my_form_open(dialog, layer, feature):
       </reuseLastValue>
       <dataDefinedFieldProperties></dataDefinedFieldProperties>
       <widgets></widgets>
-      <previewExpression>"id" || ' ' || attribute(concat('value_',@qgis_locale))</previewExpression>
+      <previewExpression>"id" || ' ' || attribute(concat('value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr')))</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" autoRefreshTime="0" geometry="Line" hasScaleBasedVisibilityFlag="1" labelsEnabled="0" legendPlaceholderImage="" maxScale="0" minScale="2500" readOnly="0" refreshOnNotifyEnabled="0" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyDrawingHints="1" simplifyDrawingTol="1" simplifyLocal="1" simplifyMaxScale="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" type="vector" wkbType="LineString">
@@ -28590,7 +28590,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -32204,7 +32204,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -35818,7 +35818,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -39432,7 +39432,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -43046,7 +43046,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -46660,7 +46660,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -50274,7 +50274,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -53888,7 +53888,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -57502,7 +57502,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -61116,7 +61116,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
             <mapTip enabled="1"></mapTip>
             <layerGeometryType>0</layerGeometryType>
@@ -64495,7 +64495,7 @@ WHEN "sign_fk_user_sign" is not NULL
 
 THEN  "sign_fk_user_sign"
 ELSE
- concat("sign_fk_official_sign",' ', "_symbol_value_fr")
+ concat("sign_fk_official_sign",' ', attribute(concat('_symbol_value_', if(@qgis_locale IN ('de', 'fr', 'it', 'ro'), @qgis_locale, 'fr'))))
 END</previewExpression>
       <mapTip enabled="1"></mapTip>
     </maplayer>
